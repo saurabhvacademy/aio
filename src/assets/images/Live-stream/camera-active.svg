@@ -1,9 +1,0 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 19.6">
-  <title>icon1</title>
-  <g>
-    <path d="M11,21.41v-2.1a8.5,8.5,0,1,0-2,0v2.1M2.94,10.91A7.06,7.06,0,1,1,10,18,7,7,0,0,1,2.94,10.91Z" transform="translate(-1.5 -2.41)" fill="#939395"/>
-    <path d="M10,9.81a3.1,3.1,0,1,0,3.1,3.1A3.12,3.12,0,0,0,10,9.81Zm0,4.81a1.71,1.71,0,1,1,1.71-1.71A1.73,1.73,0,0,1,10,14.62Z" transform="translate(-1.5 -2.41)" fill="#939395"/>
-    <circle cx="7.5" cy="5" r="1" fill="#939395"/>
-  </g>
-  <rect x="4.01" y="18.32" width="8.98" height="1.29" rx="0.64" fill="#939395"/>
-</svg>

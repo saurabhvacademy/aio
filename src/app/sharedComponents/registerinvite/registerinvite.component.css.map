@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,4BAA4B,CAAA;EAC1B,MAAM,EAAC,KAAK;EACZ,gBAAgB,EAAC,kBAAe;CASjC;;AAXD,AAGE,4BAH0B,CAG1B,UAAU,CAAA;EACR,WAAW,EAAC,KAAK;CAClB;;AALH,AAMA,4BAN4B,CAM5B,sBAAsB,CAAA;EACpB,SAAS,EAAC,KAAK;EACf,KAAK,EAAC,IAAI;EACV,MAAM,EAAC,MAAM;CACd",
-    "sources": [
-        "registerinvite.component.scss"
-    ],
-    "names": [],
-    "file": "registerinvite.component.css"
-}

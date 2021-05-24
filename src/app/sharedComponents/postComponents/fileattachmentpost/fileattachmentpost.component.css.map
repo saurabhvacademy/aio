@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,QAAQ,CAAA;EAAC,OAAO,EAAC,IAAI;CAAG",
-    "sources": [
-        "fileattachmentpost.component.scss"
-    ],
-    "names": [],
-    "file": "fileattachmentpost.component.css"
-}

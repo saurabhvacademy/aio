@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAgBA,AAAA,4BAA4B,CAAA;EAC1B,OAAO,EAAE,eAAe;EACxB,KAAK,EAAC,IAAI;CACX;;AACD,AAAA,0BAA0B,CAAA;EACxB,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,KAAK;EACd,mBAAmB,EAAE,OAAO;EAC5B,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,SAAS;CAC7B",
-    "sources": [
-        "newtextpostedit.component.scss"
-    ],
-    "names": [],
-    "file": "newtextpostedit.component.css"
-}

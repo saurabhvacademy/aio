@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,AAAA,gBAAgB,CAAC;EAC5B,QAAQ,EAAE,KAAK;EACf,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,cAAc;EACzB,KAAK,EAAE,IAAI;EACX,KAAK,EAAE,GAAG;EACV,GAAG,EAAE,GAAG;EACR,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,CAAC;CACX",
-    "sources": [
-        "testreport.component.scss"
-    ],
-    "names": [],
-    "file": "testreport.component.css"
-}

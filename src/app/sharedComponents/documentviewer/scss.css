@@ -1,9 +1,0 @@
-.document-view-outer-wrapper {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: 20;
-  background-color: rgba(0, 0, 0, 0.8);
-  left: 0;
-  top: 0;
-}

@@ -1,4 +1,0 @@
-[1008/164704.647:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
-[1008/164705.319:ERROR:exception_snapshot_win.cc(88)] thread ID 7892 not found in process
-[1008/164705.319:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
-[1023/171755.440:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
