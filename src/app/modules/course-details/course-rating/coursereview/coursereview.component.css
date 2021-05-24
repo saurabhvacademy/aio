@@ -1,0 +1,514 @@
+.userReviewWrtWrapper {
+  float: left;
+  width: 100%;
+}
+
+.userReviewWrtWrapper h3 {
+  font-size: 14px;
+  color: #2c2e2f;
+  opacity: .9;
+  margin: 10px 10px 15px 20px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper {
+  float: left;
+  width: 97%;
+  padding: 20px 20px 20px 0px;
+  border-bottom: 1px solid #f7f7f7;
+  margin-left: 20px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .userDetail {
+  float: left;
+  width: 31%;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .userDetail .post_profilepic {
+  border-radius: 50%;
+  border: 1px solid #eaeaea !important;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  float: left;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .userDetail .post_profilepic img {
+  width: 100%;
+  height: 100%;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .userName {
+  float: left;
+  display: inline-block;
+  width: 105px;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .userName .name {
+  float: left;
+  line-height: 14px;
+  width: 100%;
+  color: #2c2e2f;
+  font-weight: 500;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .userName .activeTime {
+  display: block;
+  padding-top: 7px;
+  float: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(44, 46, 47, 0.6);
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail {
+  float: right;
+  width: 69%;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate {
+  float: left;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate input.star {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star {
+  float: right;
+  padding: 0px;
+  font-size: 14px;
+  color: #444;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  margin: 0px 5px 0px 0px;
+  cursor: pointer;
+  width: auto;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star img {
+  width: 18px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star .star-rate {
+  display: inline-block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star .star-active {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star .rating-state5,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star .rating-state4,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star .rating-state3,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star .rating-state2,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star .rating-state1 {
+  display: none;
+  float: left;
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-weight: 500;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate input.star:checked ~ label.star .star-rate {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate input.star:checked ~ label.star .star-active {
+  display: inline-block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate > label.star:hover .star-rate,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate > label.star:hover ~ label.star .star-rate {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate > label.star:hover .star-active,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate > label.star:hover ~ label.star .star-active {
+  display: inline-block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-5:hover .rating-state5,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-5:hover .rating-state4,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-5:hover .rating-state3,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-5:hover .rating-state2,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-5:hover .rating-state1,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-4:hover .rating-state5,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-4:hover .rating-state4,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-4:hover .rating-state3,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-4:hover .rating-state2,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-4:hover .rating-state1,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-3:hover .rating-state5,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-3:hover .rating-state4,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-3:hover .rating-state3,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-3:hover .rating-state2,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-3:hover .rating-state1,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-2:hover .rating-state5,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-2:hover .rating-state4,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-2:hover .rating-state3,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-2:hover .rating-state2,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-2:hover .rating-state1,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-1:hover .rating-state5,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-1:hover .rating-state4,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-1:hover .rating-state3,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-1:hover .rating-state2,
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star-rating .stars-rate label.star-1:hover .rating-state1 {
+  display: block;
+  left: 120px;
+  top: 3px;
+  width: 64px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewTextBox {
+  float: left;
+  resize: none;
+  width: 90%;
+  height: 70px;
+  border: 1px solid rgba(44, 46, 47, 0.15);
+  padding: 5px 6px;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star {
+  float: left;
+  width: 100%;
+  float: left;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper {
+  float: left;
+  margin-right: 5px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label {
+  margin-right: 5px;
+  width: 16px;
+  height: 9px;
+  margin-bottom: 0px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.fill .star-fill-svg {
+  display: block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.fill .star-half-svg {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.fill .star-blank-svg {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.half_fill .star-fill-svg {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.half_fill .star-half-svg {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.half_fill .star-blank-svg {
+  display: block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.blank .star-fill-svg {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.blank .star-half-svg {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper label.blank .star-blank-svg {
+  display: block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper .Pagerating {
+  width: 106px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper .Pagerating img {
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  margin-bottom: 0px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .star_wrapper .Pagerating img last-child {
+  margin-right: 0px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .star .ratingText {
+  float: left;
+  font-size: 14px;
+  margin-right: 5px;
+  color: #8c8c8c;
+  font-weight: 500;
+  padding-top: 2px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail p {
+  float: left;
+  width: 100%;
+  margin-top: 5px;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp {
+  float: left;
+  margin-right: 35px;
+  cursor: pointer;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .tik {
+  float: left;
+  margin-right: 2px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .tik .defoult {
+  display: block;
+  width: 18px !important;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .tik .defoult img {
+  width: 100%;
+  height: 100%;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .tik .hover {
+  display: none;
+  width: 18px !important;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .tik .hover img {
+  width: 100%;
+  height: 100%;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .tik .activeTik {
+  display: none;
+  width: 18px !important;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .tik .activeTik img {
+  width: 100%;
+  height: 100%;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .text {
+  float: left;
+  margin-top: 2px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .count {
+  margin-top: 2px;
+  float: left;
+  position: relative;
+  margin-left: 10px;
+  line-height: 17px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp .count:before {
+  content: "";
+  display: block;
+  height: 12px;
+  width: 1px;
+  background-color: rgba(44, 46, 47, 0.4);
+  position: absolute;
+  left: -5px;
+  top: 1.5px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp:hover .tik .defoult {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp:hover .tik .hover {
+  display: block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp:hover .text {
+  color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp:hover .count {
+  color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewImp:hover .count:before {
+  background-color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .activeImp .tik .defoult {
+  display: none !important;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .activeImp .tik .hover {
+  display: none !important;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .activeImp .tik .activeTik {
+  display: block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .activeImp .text {
+  color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .activeImp .count {
+  color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .activeImp .count:before {
+  background-color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt {
+  width: 124px;
+  float: left;
+  cursor: pointer;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt .commntIcon {
+  float: left;
+  margin-right: 5px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt .commntIcon .defoult {
+  display: block;
+  width: 18px !important;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt .commntIcon .defoult img {
+  width: 100%;
+  height: 100%;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt .commntIcon .hover {
+  display: none;
+  width: 18px !important;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt .commntIcon .hover img {
+  width: 100%;
+  height: 100%;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt .text {
+  float: left;
+  margin-top: 2px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt .count {
+  float: left;
+  margin-top: 2px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt .count:before {
+  content: "";
+  display: block;
+  height: 12px;
+  width: 1px;
+  background-color: rgba(44, 46, 47, 0.4);
+  position: absolute;
+  left: -5px;
+  top: 1.5px;
+  line-height: 17px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt:hover .commntIcon .defoult {
+  display: none;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt:hover .commntIcon .hover {
+  display: block;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt:hover .text {
+  color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt:hover .count {
+  color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .reviewfooter .reviewCommnt:hover .count:before {
+  background-color: #f05050;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .btn-pagetips {
+  -webkit-box-shadow: 0 1px 2px 0 #2c2e2f20;
+          box-shadow: 0 1px 2px 0 #2c2e2f20;
+  border-radius: 18px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #fff;
+  width: auto;
+  float: right;
+  margin-top: 5px;
+  line-height: 0;
+  color: #2c2e2f;
+  border: none;
+  margin: 10px 30px;
+}
+
+.userReviewWrtWrapper .userDetailWrapper .reviewDetail .btn-pagetips:hover {
+  background-color: #2e2c2f20;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.userReviewWrtWrapper .comment_outer {
+  float: left;
+  padding: 10px;
+  width: 100%;
+  background: #f5f7fa;
+}
+
+.userReviewWrtWrapper .comment_outer .writecomment {
+  border-top-color: rgba(44, 46, 47, 0.2);
+  border-radius: 0px 0px 5px 5px;
+  background: #f5f7fa;
+}
+
+.userReviewWrtWrapper .comment_outer .writecomment figure {
+  width: 40px;
+  float: left;
+  margin: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #eaeaea !important;
+}
+
+.userReviewWrtWrapper .comment_outer .writecomment .optionoutr {
+  width: calc(100% - 45px);
+}
+
+.userReviewWrtWrapper .comment_outer .rplyReviwOuter {
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+}
+
+.comment_list {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=coursereview.component.css.map */

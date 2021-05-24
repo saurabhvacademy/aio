@@ -1,0 +1,118 @@
+<div class="mypages-outer-wrap" data-infinite-scroll
+     [infiniteScrollDistance]='5'
+     [infiniteScrollThrottle]='300'
+     (scrolled)="onScrollDown()"
+     [immediateCheck] = "true"
+     [scrollWindow]="true" >
+     <div class="row mypages-inner-wrap" *ngIf="pagePresent">
+       <div *ngIf="userType==2" class="col-sm-4 col-md-4 col-lg-3 col-xs-6 mview_m mview_mleft" style="padding-right:0">
+        <div  class="creat-page-box-wrap">
+            <div class="img_cont cont_imgg">
+                <img src="./assets/images/svg-three/page_icon/createpage.svg" class="cursor-pointer" alt="study24x7" (click)="createnewpage()">
+            </div>
+            <div class="btn_cont">
+                <button type="button" class="btn red_rds createpage" (click)="createnewpage()">Create Page</button>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-3 col-xs-6 mview_m  mypage_item" *ngFor="let list of pages; let i= index;" id="{{list.PAGE_ID}}" >
+             <div class="page-box-wrap" (mouseleave)="hidepageDelMenu(i)">
+                <div class="page-box-inner-wrap">
+                    <div class="image-wrap cursor-pointer">
+
+                        <!-- <span class="delMenu" (click)="pageDeleteMenu($event,i);toggleDelelte()" [attr.id]="i" *ngIf="userType==2"><img src="assets/images/svg-three/inbox_icon/menu.svg" alt="study24x7"></span>
+                        <div  class="deletmsglist" class="pageDelete" *ngIf="list.delOpen==true && hideDelete" (click)="pageDeletePopup()" >
+                            <span class="icon">
+                                <img  class="defoult" src="assets/images/svg/dustbindrop.svg">
+                                <img  class="hover" src="assets/images/svg/dustbindrophover.svg">
+                            </span>
+                            <span class="text">Delete</span>
+                        </div> -->
+                        <div class="inner-img-wrapper" routerLink="/page/{{list.URL}}">
+                            <img src="{{list.PROFILE_PHOTO_PATH}}" alt="">
+                        </div>
+                    </div>
+                    <div class="page-box-content text-center">
+                        <h5 routerLink="/page/{{list.URL}}" class="cursor-pointer" title="{{list.TITLE}}">{{list.TITLE|trimData:17}}</h5>
+                        <h4 class="followewCount"> {{list.FOLLOW_COUNT}} followers</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  class="emptystate empty_wrap" *ngIf="!pagePresent && userType == 1 && startLoader==false">
+        <div  class="emptystate_inner">
+            <img class="emptyimg emptyfeed" src="./assets/images/svg-three/page_icon/emptypage.svg" style="width:100px!important">
+            <p  class="emptystates_heading1">No pages to show !</p>
+        </div>
+    </div>
+    <div  class="emptystate empty_wrap" *ngIf="!pagePresent && userType == 2 && startLoader==false">
+        <div  class="emptystate_inner">
+            <img class="emptyimg emptyfeed" src="./assets/images/svg-three/page_icon/createpage.svg" style="width:100px!important">
+            <p  class="emptystates_heading1">You don't have any page</p>
+            <p class="emptystates_heading2">Create a page on Study24x7 by clicking below</p>
+            <button class="whiteColorButton button24x7" (click)="createnewpage()">Create Page</button>
+        </div>
+    </div>
+</div>
+<div class="loader2" *ngIf="startLoader">
+    <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+</div>
+
+<app-createpage *ngIf="datatext" (hidecreatepagePopup)="hidePageCreatePopup($event)"></app-createpage>
+
+
+
+
+
+
+<!-- page delete popup -->
+<div class="addpost_outer relative popup-open-wrapper" *ngIf="pagedeletePopup">
+    <div class="darkbackground"></div>
+    <div class="container popup-container">
+        <div  class="popup-inner-wrap popup-open-inner-wrap" style="height:auto !important; max-width:450px;">
+
+            <div  class="toolbar addpost_hdng  error_main_heading">
+                Delete this page
+                <span  class="close_div" (click)="hidepageDelPopup()">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img  class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+            </div>
+
+
+            <div class="alertwrapper" *ngIf="wrongPass">
+                    <div class="alertmessage">
+                        <img src="assets/images/svg-three/login_icon/loginerror.svg" alt="study24x7" class="redcancel" >
+<!--                        <span  class="close_err" (click)="hidealertmsg()">
+                          <img  class="default" src="assets/images/svg/tagcross.svg">
+                          <img  class="hover" src="assets/images/svg/tagcross-gray.svg">
+                        </span>-->
+                        invalid information
+                    </div>
+                </div>
+
+
+
+
+
+            <div class="popupinnerwrapper">
+                <div class="profileImg">
+                    <img src="{{User_Pp}}" alt="study24x7">
+                </div>
+                <div class="text">
+                    <h3><a href="">{{User_fullname}}</a></h3>
+                </div>
+                <div class="inputwrapper">
+                    <p>Are you sure , you are gonna delete this page ?</p>
+                    <label >
+                        <span>Password :</span> <input id="password" type="password" placeholder="*******" (keyup)="wrongPass=false;">
+                    </label>
+                </div>
+            </div>
+            <div class="footer">
+                <button class="button24x7 redColorButton fright" (click)="GETverifyPass();">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

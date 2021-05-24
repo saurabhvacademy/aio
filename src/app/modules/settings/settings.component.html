@@ -1,0 +1,1024 @@
+<app-header (sessionLogout)="sessionExpire($event)"></app-header>
+<!-- <div style="width: 1507px;position: relative;text-align: left;"> -->
+<div id="windiv">
+    <div class="container main_body settingbody">
+        <div class="row ">
+            <div id="left-side-bar" class="col-md-3 col-sm-3 left_stickytab">
+                <!-- <div class="leftmenuouter settingsleftmenu" id="someDiv" [ngStyle]="{'width': secWidth+'px'}"> -->
+                <div class="leftmenuouter settingsleftmenu" id="someDiv" >
+                     <div class="widgetheading setting_wrap">Settings</div>
+                    <div class='leftmenulist' (click)='getdata()'>
+                        <ul >
+                            <li class="icon_headng"  (click)="settingpage(1);" [ngClass]="{'active' : Settingtab === 1}" >
+                                <span class='leftmenuicon icon_img secIconPerInfo'>
+                                    <!-- <img class="defaultt" src="assets/images/svg/personalinfo.svg">
+                                    <img class="hover" src="assets/images/svg/personalinfored.svg"> -->
+                                </span>
+                                <span class="tab1 icon_headng" (click)="getdata()"> Personal Information</span></li>
+
+                            <li class="icon_headng" (click)="settingpage(2);" [ngClass]="{'active' : Settingtab === 2}">
+
+                                <span class='leftmenuicon icon_img secIconSec'>
+                                    <!-- <img class="defaultt" src="assets/images/svg/security.svg">
+                                    <img class="hover" src="assets/images/svg/securityred.svg"> -->
+
+                                </span>
+                                Security</li>
+
+
+                            <!-- <li (click)="settingpage(3);" [ngClass]="{'active' : Settingtab === 3}">
+
+                            <span class='leftmenuicon'><img src="assets/images/svg/notification.svg"></span> Notification</li> -->
+                            <li class="icon_headng" (click)="settingpage(4);" [ngClass]="{'active' : Settingtab === 4}">
+                                <span class='leftmenuicon icon_img secIconCont'>
+                                    <!-- <img class="defaultt" src="assets/images/svg/contact.svg">
+                                    <img class="hover" src="assets/images/svg/contactred.svg"> -->
+                                </span>
+                                Contact Information</li>
+
+                           <!-- <li class="icon_headng" (click)="settingpage(5);" [ngClass]="{'active' : Settingtab === 5}">
+                                <span class='leftmenuicon icon_img'>
+                                    <img class="defaultt" src="assets/images/svg-three/head/settings.svg">
+                                    <img class="hover" src="assets/images/svg-three/head/f05050/settings.svg">
+                                </span>
+                                Notification setting
+                            </li>
+
+                            <li class="icon_headng" (click)="settingpage(6);" [ngClass]="{'active' : Settingtab === 6}">
+                                <span class='leftmenuicon icon_img'>
+                                    <img class="defaultt" src="assets/images/svg-three/head/settings.svg">
+                                    <img class="hover" src="assets/images/svg-three/head/f05050/settings.svg">
+                                </span>
+                                Personal setting
+                            </li> -->
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 zero-padding center_feed form_wrap top_navigation">
+              <div class="post_outer navbottom" >
+                <div class="mobile_nav ">
+              <div class="main_nav">
+
+              <div class="icon_sec " (click)="settingpage(1);" [ngClass]="{'navactive' : Settingtab === 1}">
+
+                <span class="glyphsSpriteHome">
+                  <img class="nav_icon_default" src="assets/images/svg/personalinfo.svg">
+                  <img class="nav_icon_active" src="assets/images/svg/personalinfored.svg">
+                </span>
+                <span class="glyphsSpriteHome icon_cont">Personal Information</span>
+
+              </div>
+              <div class="icon_sec" (click)="settingpage(2);" [ngClass]="{'navactive' : Settingtab === 2}">
+
+                  <span class="glyphsSpriteHome ">
+                    <img class="nav_icon_default" src="assets/images/svg/security.svg">
+                    <img class="nav_icon_active" src="assets/images/svg/securityred.svg">
+                  </span>
+                  <span class="glyphsSpriteHome icon_cont">Security</span>
+
+              </div>
+              <div class="icon_sec " (click)="settingpage(4);" [ngClass]="{'navactive' : Settingtab === 4}">
+
+                <span class="glyphsSpriteHome ">
+                  <img class="nav_icon_default" src="assets/images/svg/contact.svg">
+                  <img class="nav_icon_active" src="assets/images/svg/contactred.svg">
+                </span>
+                <span class="glyphsSpriteHome icon_cont" >Contact Information</span>
+
+              </div>
+              </div>
+              </div>
+              </div>
+            </div>
+            <div class="col-md-9 col-sm-9 zero-padding center_feed form_wrap" style="float:right;">
+
+                <div class="maindiv main_wrapp" style="padding: 0 15px 15px !important;float:left;width:100%;" *ngIf="Settingtab === 1">
+                    <div class="mainheading main_inner_wrap"  >
+
+                      <div class="mobileBackButton" (click)="goBackToUrl()" >
+                        <img src="assets/images/svg-three/login_icon/left-arrow.svg" alt="">
+                      </div>
+
+                      Personal Information
+                    </div>
+
+
+
+                    <div class="head_wrapper_in">
+                        <div class="row margintop">
+                            <div class="col-md-2 col-sm-3 col-wrap">
+                                First name
+                            </div>
+                            <div class="col-md-6 col-sm-9">
+                                <input id="full_name" class="gray_rds" type="text" [(ngModel)]="f_name">
+                            </div>
+                        </div>
+                        <div class="row margintop">
+                            <div class="col-md-2 col-sm-3 col-wrap">
+                                Last name
+                            </div>
+                            <div class="col-md-6 col-sm-9">
+                                <input id="full_name1" class="gray_rds" type="text" [(ngModel)]="l_name">
+                            </div>
+                        </div>
+                        <div class="row margintop">
+                            <div class="col-md-2 col-sm-3 col-wrap">
+                                Username
+                            </div>
+                            <div class="col-md-6 col-sm-9">
+                                <input type="text" class="gray_rds" value="{{u_name}}" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row margintop">
+                            <div class="col-md-2 col-sm-3 col-wrap">
+                                Date of Birth
+                            </div>
+                            <div class="col-md-6 col-sm-9">
+                                <!--<input type="text" class="gray_rds" name="r_dob" id="r_dob" placeholder="Enter Your D.O.B. dd/mm/yyyy" [ngClass]="{'error': rg_dob_class === 1}" value="{{dob}}" (input)="KeyUpCalled($event.target.value)" maxlength="10">-->
+                                <!-- <input type="text" class="gray_rds" placeholder="{{timePlaceholder}}" (focus)="showlable()" (focusout)="hidelable()" (input)="KeyUpCalled($event.target.value)" maxlength="10" [(ngModel)]="dob"  type="text" name="r_dob" id="r_dob" [ngClass]="{'error': rg_dob_class === 1} "  required #inputdob> -->
+                                <input type="text" class="gray_rds" placeholder="{{timePlaceholder}}" (focus)="showlable()" (focusout)="hidelable()" (input)="KeyUpCalled($event.target.value)" maxlength="10" [(ngModel)]="inputValue" [(ngModel)]="inputValue"   name="r_dob" id="r_dob" [ngClass]="{'error': rg_dob_class === 1} "  required>
+                                <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            </div>
+                        </div>
+
+                        <div class="row margintop">
+                            <div class="col-md-2 col-sm-3 col-wrap">
+                                Gender
+                            </div>
+                            <div class="col-md-6 col-sm-9">
+                                <select title="Select gender" id="gender" class="gray_rds">
+                                    <option value="0">Select Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row margintop">
+                            <div class="col-md-2  col-sm-3 col-wrap">
+                                Country
+                            </div>
+                            <div class="col-md-6 col-sm-9">
+                                <select id='country' class="gray_rds" (change)="changeState($event)">
+                                    <option value='default'>Select Country</option>
+                                    <option *ngFor="let country of countryArr" [id]='country.COUNTRY_ID' [value]='country.COUNTRY_ID' >{{country.COUNTRY_NAME}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row margintop">
+                            <div class="col-md-2 col-sm-3 col-wrap">
+                                State
+                            </div>
+                            <div class="col-md-6 col-sm-9">
+                                <select id='state' class="gray_rds" (change)="changeCity($event)">
+                                    <option value='default'>Select State</option>
+                                    <option *ngFor="let state of states" [id]='state.STATE_ID' [value]='state.STATE_ID' >{{state.STATE_NAME}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row margintop">
+                            <div class="col-md-2 col-sm-3 col-wrap">
+                                City
+                            </div>
+                            <div class="col-md-6 col-sm-9">
+                                <select id='city' class="gray_rds">
+                                    <option value='default'>Select City</option>
+                                    <option *ngFor="let city of citys" [id]='city.CITY_ID' [value]='city.CITY_ID' >{{city.CITY_NAME}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="footer_message f_right clearfix">
+                            <button  [disabled]="showPreloader" class="button24x7 redColorButton" (click)="updateUsrdetails();"><span class="show" *ngIf="showText">Save</span>
+                                <span class="preloder">
+                                    <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader">
+                                </span>
+                            </button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+
+                <div class="maindiv main_wrapp clearfix" style="padding: 0 15px 15px !important; float:left;" *ngIf="Settingtab === 2">
+                    <div class="mainheading main_inner_wrap">
+
+                      <div routerLink="/home" class="mobileBackButton" (click)="savedfolderClick(0);getRecentPostInSavedFolder();">
+                        <img src="assets/images/svg-three/login_icon/left-arrow.svg" alt="">
+                      </div>
+
+                      Password Change
+                    </div>
+                    <div class="head_wrapper_in clearfix">
+                        <div class="margintop row" *ngIf="changepassword === 0">
+                            <div class="col-md-12" >
+                                <p>Generate new OTP to change your password. Recommended to use a strong and unique password. </p>
+                                <div class="margintop  ">
+                                    <div class="col-md-4 row" >
+                                        <button  [disabled]="prloader"  class="button24x7 redColorButton" style="float:left" (click)="sendVerificationCode4PassChng()">
+                                            <span class="text" *ngIf="shwText">
+                                                Generate OTP
+                                            </span>
+                                            <span class="loader">
+                                                <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="prloader">
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="margintop row" *ngIf="changepassword === 1">
+                            <div class="col-md-12" >
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>{{otpsendMsg}}</p>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 marginBottom" >
+                                        <input value="" class="gray_rds" placeholder="Enter OTP" [(ngModel)]="verification_code">
+                                    </div>
+
+                                    <div style="display:inline;float:left;margin: 0px 20px;">
+                                        <div>
+                                            <button [disabled]="loader === true"  class="btn btn-primary button_width"   (click)="verifyOTP4PassChng()" style="float:left;" >
+                                                <span class="text" *ngIf="showText">
+                                                    Verify OTP
+                                                </span>
+                                                <span class="loader">
+                                                    <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader">
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="" style="display:inline;float:left;margin: 0px 20px;" *ngIf="shwResend">
+                                        <a class="link cursor-pointer link_pointer" (click)='sendVerificationCode4PassChng()' >
+                                            Resend OTP
+                                        </a>
+                                    </div>
+                                    <div class="" style="display:inline;float:left;margin: 0px 20px;" *ngIf="!shwResend">
+                                        <a class="link link_pointer">{{countDisplay}}</a>
+                                    </div>
+                                    <!--                                    <div class="otp_timer" *ngIf="!shwResend"></div>-->
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="note">If there is a delay in receipt of OTP or you didn't recieve OTP, you can click on Resend OTP to generate OTP again.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div *ngIf="changepassword === 2">
+                            <div class="row margintop">
+                                <div class="col-md-3 col-sm-4 margn_cont">
+                                    New Password
+                                </div>
+                                <div class="col-md-6 col-sm-8">
+                                    <input type="password" class="gray_rds" value="" placeholder="New Password" [(ngModel)]='new_password'>
+                                </div>
+                            </div>
+                            <div class="row margintop">
+                                <div class="col-md-3 col-sm-4 margn_cont">
+                                    Confirm Password
+                                </div>
+                                <div class="col-md-6 col-sm-8">
+                                    <input type="password" class="gray_rds" value="" placeholder="Confirm Password" [(ngModel)]='confirm_password'>
+                                </div>
+                            </div>
+
+
+
+                            <div class="footer_message">
+                                <button [disabled]="showPreloader === true" class="btn btn-primary btn_sbmt button_width"  (click)="changePassword()" ><span class="text" *ngIf="showText">Save</span>
+                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                                <button [disabled]="showPreloader" class="cancel_button button_width" (click)="settingpage(2)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="maindiv" *ngIf="Settingtab === 3">
+                    <div class="mainheading">Notifications</div>
+
+                    <div class="row margintop">
+                        <div class="col-md-2">
+                            <input type="checkbox" class="switch gray_rds" id="notification">
+                            <label class="switchbtn" for="notification"><span></span></label>
+                        </div>
+                        <div class="col-md-6">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+
+
+                    <div class="footer_message">
+                        <button   [disabled]="showPreloader === true" class="btn btn-primary button_width" ><span class="text" *ngIf="showText">Save</span>
+                            <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                        <button  [disabled]="showPreloader" class="cancel_button button_width" routerLink="/home">Cancel</button>
+                    </div>
+                </div>
+                <div class="contact_info_main" *ngIf="Settingtab === 4" style="float:left;">
+                    <div class="maindiv main_wrapp" style="padding: 0 15px 15px !important;" >
+
+                        <div class="mainheading main_inner_wrap">
+
+                          <div routerLink="/home" class="mobileBackButton" (click)="savedfolderClick(0);getRecentPostInSavedFolder();">
+                            <img src="assets/images/svg-three/login_icon/left-arrow.svg" alt="">
+                          </div>
+
+
+                          Email Information
+                          <a _ngcontent-c23="" class="edit-summary"  href="javascript:void(0)" (click)="editemail(1)"  *ngIf="isEditableEmail"><img _ngcontent-c23="" class="defaultt"  src="assets/images/svg-three/profile_about/edit.svg" >
+                                <img _ngcontent-c23="" class="hoverr" src="assets/images/svg-three/profile_about/f05050/edit.svg"  ></a></div>
+                        <div class="head_wrapper_in">
+                            <div class="row margintop " >
+                                <div class="col-md-12">
+                                    <p class="note" *ngIf="editoption === 0">Click on edit button to change your email address. We’ll use this email to send you updates and notifications, connected to your personal Study24x7 account. Updating this email will change your login email address as well as your notification email address.</p>
+                                    <p class="note" *ngIf="editoption === 1">Enter new email address that you want to save.</p>
+                                    <p class="note" *ngIf="editoption === 2">To receive mails. kindly verify your email address.</p>
+                                </div>
+                            </div>
+
+                            <div class="row margintop">
+                                <div class="col-md-3 col-sm-4 col-wrap">
+                                    Email address
+                                </div>
+                                <div class="col-md-6 col-sm-8 verify-info" >
+                                    <div class="row col-md-12" *ngIf="editoption == 0">
+                                        <input type="text" class="gray_rds" disabled="" value="{{_constantService.getSessionDataBYKey('em')}}">
+                                        <span *ngIf="!verified">
+                                            <div class=" margintop verify_link_top">
+                                                <span  class="link cursor-pointer"  (click)="VerificationCode('e')" *ngIf="verifyLink">Verify email</span><br>
+                                                <span *ngIf="verifyemailid === 2" class="info-msg">Verification code successfully sent</span>
+                                            </div>
+                                        </span>
+
+                                        <span class="verify" *ngIf="verified"><img src="assets/images/svg/thumbactive.svg" title="Verified"></span>
+                                        <span class="verify" *ngIf="!verified"><img src="assets/images/svg/error.svg" title="Please verify email"></span>
+
+                                    </div>
+
+                                    <div class="row col-md-12"  *ngIf="editoption == 1">
+                                        <input type="text" class="gray_rds" value=" " id="chng_email" [(ngModel)]="new_email">
+                                        <div class="footer_message">
+                                            <button  [disabled]="showPreloader === true" class="button24x7 redColorButton"  (click)="editemail(2)"  ><span class="text" *ngIf="showText">Save</span>
+                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                                            <button [disabled]="showPreloader === true" class="button24x7 whiteColorButton cancelSetting" (click)="cancel1()" >Cancel</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row col-md-12"  *ngIf="editoption == 2" >
+                                        <input type="text" class="gray_rds" disabled="" [(ngModel)]="new_email">
+                                        <span *ngIf="verifyemailid === 1" class="info-msg">Verification code successfully sent</span>
+                                        <span class="verify"><img src="assets/images/svg/error.svg"></span>
+
+                                    </div>
+                                    <div class="row col-md-12"  *ngIf="editoption === 2" >
+                                        <div class=" margintop">
+                                            <span  class="link cursor-pointer" *ngIf="verifyemailid !== 1" (click)="sendOtpForEmailMobileChange('e')" >Verify email</span>
+                                            <span *ngIf="verifyemailid === 2" class="info-msg">Verification code successfully sent</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row col-md-12" *ngIf="verifyemailid === 1">
+                                        <div class=" margintop">
+                                            <input type="text" class="gray_rds" placeholder="Enter Verification Code" [(ngModel)]="vcodEmail">
+                                        </div>
+                                        <div class=" margintop verify-btn verifyOtp">
+                                            <button [disabled]="showPreloader === true" class="button24x7 redColorButton" (click)="verifyOtpForEmailMobileChange('e')"><span class="text" *ngIf="showText">Verify</span>
+                                                <span class="preloder"><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader" ></span></button>
+                                        </div>
+                                        <span *ngIf="shwResend" class="link cursor-pointer link_counter"  (click)="sendOtpForEmailMobileChange('e')">Resend Code</span>
+                                        <span *ngIf="!shwResend" class="cursor-pointer link_counter"  >{{countDisplay}}</span>
+                                    </div>
+
+                                    <span *ngIf="!verified"> <div class="row col-md-12" *ngIf="verifyemailid === 2">
+                                            <div class=" margintop">
+                                                <input id="textt" type="text" class="gray_rds" placeholder="Enter Verification Code" [(ngModel)]="vcodEmail">
+                                            </div>
+                                            <div class=" margintop verify-btn verifyOtp">
+                                                <button [disabled]="showPreloader === true" class="button24x7 redColorButton" (click)="verificationSubmit('e')"><span class="text" *ngIf="showText">Verify</span>
+                                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader && showText===false" ></span></button>
+                                            </div>
+                                            <span *ngIf="shwResend" class="link cursor-pointer link_counter" (click)="VerificationCode('e')">Resend code</span>
+                                            <span *ngIf="!shwResend" class="cursor-pointer link_counter" >{{countDisplay}}</span>
+
+                                        </div></span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="maindiv main_wrapp phone_main" style="padding: 0 15px 15px !important;" >
+                        <div class="mainheading main_inner_wrap" >Mobile Information
+                            <a _ngcontent-c23="" class="edit-summary" href="javascript:void(0)" (click)="editphone(1)" *ngIf="isEditableMobile">
+                                <img _ngcontent-c23="" class="defaultt" src="assets/images/svg-three/profile_about/edit.svg">
+                                <img _ngcontent-c23="" class="hoverr" src="assets/images/svg-three/profile_about/f05050/edit.svg"></a>
+                        </div>
+                        <div class="head_wrapper_in">
+                            <div class="row margintop " >
+                                <div class="col-md-12">
+                                    <p class="note" *ngIf="editphoneinput == 0">Click on edit button to change your mobile number. We’ll use this mobile number to send you OTP and notifications, connected to your personal Study24x7 account. Updating this mobile number will change your login mobile number as well as your notification mobile number.</p>
+                                    <p class="note" *ngIf="editphoneinput == 1">Enter new mobile number that you want to save.</p>
+                                    <p class="note" *ngIf="editphoneinput == 2">To receive notification. kindly verify your mobile number.</p>
+                                </div>
+                            </div>
+                            <div class="row margintop">
+                                <div class="col-md-3 col-sm-4 col-wrap">
+                                    Mobile number
+                                </div>
+                                <div class="col-md-6 col-sm-8 verify-info">
+                                    <div class="row col-md-12 " *ngIf="editphoneinput == 0">
+                                        <!-- <app-mobileno ></app-mobileno> -->
+                                        <input type="text" class="gray_rds" disabled="" value="+{{countryCode}} - {{_constantService.getSessionDataBYKey('mobile')}}">
+                                        <span *ngIf="!mobverified"><div class=" margintop">
+                                                <span  class="link cursor-pointer"  (click)="VerificationCode('m')">Verify Mobile</span><br>
+                                                <span *ngIf="verifyphone === 2" class="info-msg">Verification code successfully sent</span>
+                                            </div></span>
+                                        <span class="verify" *ngIf="mobverified"><img src="assets/images/svg/thumbactive.svg" title="Verified"></span>
+                                        <span class="verify" *ngIf="!mobverified"><img src="assets/images/svg/error.svg" title="Please verify mobile"></span>
+
+                                    </div>
+
+                                    <div class="row col-md-12" *ngIf="editphoneinput === 1">
+                                        <app-mobileno [countryId]=countryId  (emitter)="setMobileNumberAndCountryCode($event)"  [className]="'pageSetting'"></app-mobileno>
+
+
+                                        <!-- <input type="text" class="gray_rds"  value=" " id="chng_mobile" [(ngModel)]="new_mobileno"> -->
+                                        <div class="footer_message">
+                                            <button [disabled]="showPreloader === true" class="button24x7 redColorButton"  (click)="editphone(2)">
+                                                <span class="text" *ngIf="showText">Save</span>
+                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span>  </button>
+                                            <button  [disabled]="showPreloader === true" class="button24x7 whiteColorButton cancelSetting" (click)="cancel()" >Cancel</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row col-md-12"   *ngIf="editphoneinput === 2">
+                                        <input type="text" class="gray_rds" disabled="" value="{{'+'+countryCode+' - '+new_mobileno}}">
+                                        <span class="info-msg" *ngIf="verifyphone === 1">Verification code successfully sent</span>
+
+                                    </div>
+                                    <div class="row col-md-12"  *ngIf="editphoneinput === 2 " >
+                                        <div class=" margintop">
+                                            <span class="link cursor-pointer link_point" (click)="sendOtpForEmailMobileChange('m')">Verify mobile no.</span><br>
+                                            <span class="info-msg" *ngIf="verifyphone === 2">Verification code successfully sent</span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row col-md-12" *ngIf="verifyphone === 1">
+                                        <div class=" margintop">
+                                            <input type="text" class="gray_rds" placeholder="Enter Verification Code" [(ngModel)]="vcodMobile">
+
+                                        </div>
+                                        <div class=" margintop verify-btn">
+                                            <button [disabled]="showPreloader === true"  class="btn btn-primary btn_sbmt button_width" (click)="verifyOtpForEmailMobileChange('m')">
+                                                <span class="text" *ngIf="showText">Verify</span>
+                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader && showText===false"></span></button>
+                                            <span *ngIf="shwResend" (click)="sendOtpForEmailMobileChange('m')" class="link_counter link">Resend code</span>
+                                            <span *ngIf="!shwResend" class="link_counter">{{countDisplay}}</span></div>
+                                    </div>
+
+                                    <span *ngIf="!mobverified"> <div class="row col-md-12" *ngIf="verifyphone === 2">
+                                            <div class=" margintop">
+                                                <input type="text" class="gray_rds" placeholder="Enter Verification Code" [(ngModel)]="vcodMobile">
+                                            </div>
+                                            <div class=" margintop verify-btn">
+                                                <button [disabled]="showPreloader === true" class="btn btn-primary button_width" (click)="verificationSubmit('m')"><span class="text" *ngIf="showText">Verify</span>
+                                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader && showText===false" ></span></button>
+                                            </div>
+                                            <span *ngIf="showResend" class="link cursor-pointer link_counter"  (click)="VerificationCode('m')">Resend Code</span>
+
+                                        </div></span>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- notification setting start -->
+                <div class="noti_setting" *ngIf="">
+                    <!-- <div class="header">
+                      <h2>Notifications settings</h2>
+                    </div> -->
+
+                    <div class="mainheading main_inner_wrap" >
+                        Notifications settings
+                    </div>
+                    <div class="inner_wrapper">
+                        <div class="sub_heading">
+                            <span class="img">
+                                <img src="./assets/images/svg-three/head/noti-01.svg" alt="study24x7">
+                            </span>
+                            <span class="text"></span>
+                        </div>
+                        <p class="note">You'll see every notification on Study24x7, but you can turn off notifications about specific activity from below settings.</p>
+                        <div id="email_toogle" class="tooglecollapse">
+                            <div class="email_ntfi_container">
+                                <ul>
+                                    <li class="inner_heading">What You Get Notified About</li>
+                                    <li>
+                                        <div class="sub_div_left">
+                                            <span class="img_icon">
+                                                <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                            </span>
+                                            <span class="inner_text">PUBLIC</span>
+                                            <p>You'll always get notifications about activity that involves you.</p>
+                                        </div>
+                                        <div class="radio_button_wrapper">
+                                            <div class="outer_border" (click)="timer_switch(1)">
+                                                <span class="dote" [ngClass]="{'timer_right':PUBLIC}"></span>
+                                                <span class="no" *ngIf="PUBLIC">No</span>
+                                                <span class="yes" *ngIf="!PUBLIC">Yes</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="sub_div_left">
+                                            <span class="img_icon">
+                                                <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                            </span>
+                                            <span class="inner_text">RELATED TO USER</span>
+                                            <p>You'll always get notifications about activity that involves you.</p>
+                                        </div>
+
+                                        <div class="radio_button_wrapper">
+                                            <div class="outer_border" (click)="timer_switch(3)">
+                                                <span class="dote" [ngClass]="{'timer_right':RELATED_TO_USER}"></span>
+                                                <span class="no" *ngIf="RELATED_TO_USER">No</span>
+                                                <span class="yes" *ngIf="!RELATED_TO_USER">Yes</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="sub_div_left">
+                                            <span class="img_icon">
+                                                <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                            </span>
+                                            <span class="inner_text">PAGES</span>
+                                            <p>Pages you manage</p>
+                                        </div>
+                                        <div class="radio_button_wrapper">
+                                            <div class="outer_border" (click)="timer_switch(4)">
+                                                <span class="dote" [ngClass]="{'timer_right':PAGES}"></span>
+                                                <span class="no" *ngIf="PAGES">No</span>
+                                                <span class="yes" *ngIf="!PAGES">Yes</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="sub_div_left">
+                                            <span class="img_icon">
+                                                <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                            </span>
+                                            <span class="inner_text">SECURITY</span>
+                                            <p>You'll always get notifications about activity that involves your security.</p>
+                                        </div>
+
+<!--                                        <div class="radio_button_wrapper">
+                                            <div class="outer_border" (click)="timer_switch(2)">
+                                                <span class="dote" [ngClass]="{'timer_right':SECURITY}"></span>
+                                                <span class="no" *ngIf="SECURITY">No</span>
+                                                <span class="yes" *ngIf="!SECURITY">Yes</span>
+                                            </div>
+                                        </div>-->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul>
+                            <li class="inner_heading">What You Get Email About</li>
+                            <li class="inner_heading">To turn off a specific email notification, just toggle the button to Off.</li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">Missing activities</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(7)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_7}"></span>
+                                        <span class="no" *ngIf="BTN_7">No</span>
+                                        <span class="yes" *ngIf="!BTN_7">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When someone accept your request</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(8)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_8}"></span>
+                                        <span class="no" *ngIf="BTN_8">No</span>
+                                        <span class="yes" *ngIf="!BTN_8">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When someone sent you connection request.</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(9)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_9}"></span>
+                                        <span class="no" *ngIf="BTN_9">No</span>
+                                        <span class="yes" *ngIf="!BTN_9">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When someone interested in your post.</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(10)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_10}"></span>
+                                        <span class="no" *ngIf="BTN_10">No</span>
+                                        <span class="yes" *ngIf="!BTN_10">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When you have more than 10 unseen notifications.</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(11)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_11}"></span>
+                                        <span class="no" *ngIf="BTN_11">No</span>
+                                        <span class="yes" *ngIf="!BTN_11">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When result of question you posted is disclosed.</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(12)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_12}"></span>
+                                        <span class="no" *ngIf="BTN_12">No</span>
+                                        <span class="yes" *ngIf="!BTN_12">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When someone shared your post.</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(13)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_13}"></span>
+                                        <span class="no" *ngIf="BTN_13">No</span>
+                                        <span class="yes" *ngIf="!BTN_13">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When someone accept your invitation.</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(14)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_14}"></span>
+                                        <span class="no" *ngIf="BTN_14">No</span>
+                                        <span class="yes" *ngIf="!BTN_14">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When result of question you responded is disclosed.</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(15)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_15}"></span>
+                                        <span class="no" *ngIf="BTN_15">No</span>
+                                        <span class="yes" *ngIf="!BTN_15">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">When someone responded on your question posted.</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(16)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_16}"></span>
+                                        <span class="no" *ngIf="BTN_16">No</span>
+                                        <span class="yes" *ngIf="!BTN_16">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">On page invitation</span>
+<!--                                    <p>
+                                        Choose whether you want to get notifications about your friends' birthdays.
+                                    </p>-->
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(17)">
+                                        <span class="dote" [ngClass]="{'timer_right':BTN_17}"></span>
+                                        <span class="no" *ngIf="BTN_17">No</span>
+                                        <span class="yes" *ngIf="!BTN_17">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">Welcome to STUDY24X7</span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(5)">
+                                        <span class="dote" [ngClass]="{'timer_right':PUBLIC_M}"></span>
+                                        <span class="no" *ngIf="PUBLIC_M">No</span>
+                                        <span class="yes" *ngIf="!PUBLIC_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text"> Email Verification Code</span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(5)">
+                                        <span class="dote" [ngClass]="{'timer_right':PUBLIC_M}"></span>
+                                        <span class="no" *ngIf="PUBLIC_M">No</span>
+                                        <span class="yes" *ngIf="!PUBLIC_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">OTP for Verification </span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(5)">
+                                        <span class="dote" [ngClass]="{'timer_right':PUBLIC_M}"></span>
+                                        <span class="no" *ngIf="PUBLIC_M">No</span>
+                                        <span class="yes" *ngIf="!PUBLIC_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">Email Verification Complete</span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(5)">
+                                        <span class="dote" [ngClass]="{'timer_right':PUBLIC_M}"></span>
+                                        <span class="no" *ngIf="PUBLIC_M">No</span>
+                                        <span class="yes" *ngIf="!PUBLIC_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">OTP for Password Reset</span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(5)">
+                                        <span class="dote" [ngClass]="{'timer_right':PUBLIC_M}"></span>
+                                        <span class="no" *ngIf="PUBLIC_M">No</span>
+                                        <span class="yes" *ngIf="!PUBLIC_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text"> Password change notification</span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(5)">
+                                        <span class="dote" [ngClass]="{'timer_right':PUBLIC_M}"></span>
+                                        <span class="no" *ngIf="PUBLIC_M">No</span>
+                                        <span class="yes" *ngIf="!PUBLIC_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text"> XXXXXXXXXXXX invited to join Study24x7 "The most exciting edusocial platform"</span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(5)">
+                                        <span class="dote" [ngClass]="{'timer_right':PUBLIC_M}"></span>
+                                        <span class="no" *ngIf="PUBLIC_M">No</span>
+                                        <span class="yes" *ngIf="!PUBLIC_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">Verification code for page claim</span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(5)">
+                                        <span class="dote" [ngClass]="{'timer_right':PUBLIC_M}"></span>
+                                        <span class="no" *ngIf="PUBLIC_M">No</span>
+                                        <span class="yes" *ngIf="!PUBLIC_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sub_div_left">
+                                    <span class="img_icon">
+                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                    </span>
+                                    <span class="inner_text">SECURITY M</span>
+                                    <p>
+                                        You'll always get notifications about activity that involves you,
+                                        such as when someone tags you in a photo or comments on your post.
+                                    </p>
+                                </div>
+                                <div class="radio_button_wrapper">
+                                    <div class="outer_border" (click)="timer_switch(6)">
+                                        <span class="dote" [ngClass]="{'timer_right':SECURITY_M}"></span>
+                                        <span class="no" *ngIf="SECURITY_M">No</span>
+                                        <span class="yes" *ngIf="!SECURITY_M">Yes</span>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- notification setting end -->
+
+                <div class="deactivate_wrapper" *ngIf="">
+
+                    <div class="mainheading main_inner_wrap">
+                        Personal settings
+                    </div>
+
+                    <div class="deactivate">
+                        <h3>Deactivate your account</h3>
+                        <p>
+                            Deactivating your account will disable your
+                            Profile and remove your name and photo from most
+                            things that you've shared on Facebook. Some information may still be
+                            visible to others, such as your name in their Friends list and messages
+                            that you've sent. Learn More.
+                        </p>
+                        <a href="#">Deactivate your account.</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

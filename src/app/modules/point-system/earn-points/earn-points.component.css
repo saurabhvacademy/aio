@@ -1,0 +1,137 @@
+._earn_points_container {
+  width: 100%;
+  float: left;
+}
+
+._earn_points_container ._point_heading {
+  width: 100%;
+  padding: 20px 15px;
+}
+
+._earn_points_container ._point_heading h2 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #262626;
+  margin-bottom: 5px;
+}
+
+._earn_points_container ._point_heading p {
+  opacity: 0.8;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: left;
+  color: #262626;
+}
+
+._earn_points_container ._center_one {
+  width: 100%;
+  float: left;
+  border-top: 1px solid #dfe5eb;
+  padding: 5px 15px 0;
+}
+
+._earn_points_container ._center_contribute {
+  width: 100%;
+  float: left;
+  background-color: rgba(74, 165, 100, 0.1);
+}
+
+._earn_points_container ._center_contribute ._pointContainer {
+  width: 100%;
+  float: left;
+  padding: 0 15px 10px;
+}
+
+._earn_points_container ._center_contribute .gainPoint_heading {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.28;
+  color: #333333;
+  padding: 20px 20px 0px 48px;
+}
+
+._point_detail {
+  width: 100%;
+  float: left;
+  position: relative;
+  padding-left: 30px;
+  margin: 15px 0;
+}
+
+._point_detail ._discritionImg {
+  width: 14px;
+  height: 13px;
+  float: left;
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+._point_detail .flagicon {
+  background-image: url("./../../../../assets/images/leaderboard/flagIcon.svg");
+}
+
+._point_detail .tickicon {
+  background-image: url("./../../../../assets/images/leaderboard/earntick.svg");
+}
+
+._point_detail .happyicon {
+  background-image: url("./../../../../assets/images/leaderboard/svg2.svg");
+}
+
+._point_detail .sadicon {
+  background-image: url("./../../../../assets/images/leaderboard/svg3.svg");
+}
+
+._point_detail p {
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.8);
+  padding-bottom: 8px;
+  position: relative;
+}
+
+._point_detail .pointearn {
+  padding-left: 32px;
+}
+
+._point_detail .pointearn ._discritionImg {
+  width: 16px;
+  height: 16px;
+}
+
+._point_detail ._btn_fill {
+  float: left;
+  margin-top: 10px;
+}
+
+._point_detail ._contr_hding {
+  margin-bottom: 6px;
+}
+
+span.bold_earnpoint {
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 3px;
+  color: #000;
+}
+
+button._earnpoint {
+  height: 32px;
+  border-radius: 4px;
+  padding: 0 15px;
+  -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+  background-color: #02bfe7;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 0.71;
+  color: #ffffff;
+}
+/*# sourceMappingURL=earn-points.component.css.map */

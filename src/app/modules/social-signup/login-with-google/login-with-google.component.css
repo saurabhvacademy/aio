@@ -1,0 +1,75 @@
+.btneffect:before,
+.btneffect:hover {
+  background: #e6e6e6 !important;
+}
+
+.login-button:hover {
+  background-color: #dfdfdf;
+}
+
+.login-gm {
+  background: #fff;
+  color: #8c8c8c;
+  text-align: center;
+}
+
+.login-gm .gmail-icon {
+  width: 19px;
+  height: 19px;
+  background-image: url(../../../../assets/images/sprite/loginpage.svg#googleicon);
+}
+
+.singlepostglogin {
+  background-color: transparent !important;
+  border-radius: 5px;
+  border: solid 1px #c8c8c8;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eeeeee));
+  background-image: linear-gradient(to bottom, #ffffff, #eeeeee);
+}
+
+.singlepostglogin .button-text {
+  padding: 0;
+}
+
+.prehubsGlogin {
+  float: right;
+  width: 190px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: left;
+  padding: 11px 15px;
+  line-height: 18px;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1) !important;
+          box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1) !important;
+  background-color: #f8f8f8;
+  height: 40px;
+  cursor: pointer !important;
+  border-radius: 6px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  /* display: flex; */
+  /* flex-direction: row; */
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.prehubsGlogin .gmail-icon {
+  width: 19px !important;
+  height: 19px !important;
+}
+
+.prehubsGlogin .button-text span:nth-child(2) {
+  display: none;
+}
+
+.login-main {
+  padding: 12px 5px;
+}
+
+@media only screen and (max-width: 450px) {
+  .prehubsGlogin {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=login-with-google.component.css.map */

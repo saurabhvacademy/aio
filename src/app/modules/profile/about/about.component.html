@@ -1,0 +1,281 @@
+<div class="about_outer">
+    <div *ngIf="!loaderscreen">
+        <h6 class="widgetheading abouthead" >About</h6>
+        <div class='about_inr' *ngIf="summaryView === 1">
+            <!--<p class="abouttitle">Getting Thing right !</p>-->
+            <p class="widgetheading rmvbg" style="padding-top:0px;" [innerHTML]="summary">
+            </p>
+            <a *ngIf="seeMore && tokenStatus" id="publicSee" style="float:none;" class="cursor-pointer seemore">see more</a>
+            <a *ngIf="seeMore && !tokenStatus" id="personalSee"  (click)="goToAboutUs()"  style="float:none;" class="cursor-pointer seemore">see more</a>
+
+        </div>
+        <div class="emptystate empty_wrap" *ngIf="summaryView === 2 && profile==true && emptystate1" >
+            <div class="emptystate_inner">
+                <img src="assets/images/emptystates/svg/summary.svg"  style="top: -16px;">
+                <span *ngIf="aboutArr['profile_view']==2">Write some details about you.</span>
+                <div class="emptybutton">
+                  <button (click)="goToAboutUs()" class="button24x7 whiteColorButton">Add Info</button>
+                </div>
+            </div>
+        </div>
+         <div class="emptystate empty_wrap emptyotheruserinfo" *ngIf="summaryView === 2 && profile==false && emptystate1">
+            <div class="emptystate_inner">
+                <img src="assets/images/emptystates/svg/summary.svg"  style="top: -16px;">
+                <span *ngIf="aboutArr['profile_view']==1">No user info</span>
+            </div>
+        </div>
+        <div class='about_inr'>
+            <ul class='about_list'>
+                <li *ngIf="eduView==1 && aboutArr['profile_view']==2" class="edu">
+                    <!----<span class='glyphicon glyphicon-pencil'></span>---->
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+                    Add your education
+                    <a class="addlocicon">
+                        <span class="check check_edit_wrap" *ngIf="profile"> <img src="assets/images/svg-three/profile_about/edit.svg" (click)="goToAboutUs()" class="cursor-pointer"></span>
+                    </a>
+                </li>
+
+                <li *ngIf="eduView==3" >
+                    <!-- <span class='glyphicon glyphicon-pencil'></span> -->
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+                    Student at <a >Kurukshetra University</a>
+                </li>
+
+                <li *ngIf="eduView==2 && aboutArr['user_edu']['COURSE'] && aboutArr['user_edu']['INSTITUTE']" class="edu">
+                    <!-- <span class='glyphicon glyphicon-book'> -->
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+
+                     <span *ngIf="aboutArr['user_edu']['COURSE']">Studied {{postDataService.decodeURIPostData(aboutArr['user_edu']['COURSE'])}}</span> 
+                    <a *ngIf="aboutArr['user_edu']['INSTITUTE']"> at {{postDataService.decodeURIPostData(aboutArr['user_edu']['INSTITUTE'])}}
+                        <span class="check check_edit_wrap" *ngIf="profile"><img src="assets/images/svg-three/profile_about/edit.svg" style="" (click)="goToAboutUs()" class="cursor-pointer"></span>
+                    </a>
+                </li>
+
+                <li *ngIf="expView==1 && aboutArr['profile_view']==2" class="edu">
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>Add your experience
+                    <a class="addlocicon">
+                        <span class="check check_edit_wrap" *ngIf="profile">
+                            <img src="assets/images/svg-three/profile_about/edit.svg"  (click)="goToAboutUs()" class="cursor-pointer" ></span>
+                    </a>
+                </li>
+                <li *ngIf="expView==3">
+                    <!-- <span class='glyphicon glyphicon-book'></span> -->
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+
+                    Studied Btech at
+                    <a >Delhi University
+                    </a>
+                </li>
+                <li *ngIf="expView==2 && aboutArr['user_exp']['POSITION'] && aboutArr['user_exp']['ORGANIZATION']" class="edu">
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+                    <span *ngIf="aboutArr['user_exp']['POSITION']">{{aboutArr['user_exp']['POSITION']}}</span> 
+                    <a *ngIf="aboutArr['user_exp']['ORGANIZATION']"> at {{aboutArr['user_exp']['ORGANIZATION']}}
+                        <span class="check check_edit_wrap" *ngIf="profile">
+                            <img src="assets/images/svg-three/profile_about/edit.svg" style="" (click)="goToAboutUs()" class="cursor-pointer"></span></a>
+                </li>
+                <!--                <li *ngIf="cityView==2" class="edu">
+                                     <span class='glyphicon glyphicon-home'></span>
+                                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="study24x7"></span>
+                                          Lives in <a >
+                                        {{aboutArr['city']}}
+                                        <span *ngIf="emptystate">,
+                                            Lives in {{aboutArr['state']}}
+                                        </span>
+                                        <span  class="check check_edit_wrap" *ngIf="profile"><img src="assets/images/svg-three/profile_about/edit.svg" style="" routerLink="/settings" class="cursor-pointer">
+                                        </span></a>
+                                </li>-->
+
+                <li class="edu" *ngIf="!profile && aboutArr['state']!= ''"  >
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/city2.svg" alt="study24x7">
+                    </span>
+                     Lives in
+                    <a><span *ngIf="aboutArr['city']!=null">
+                            {{aboutArr['city']}}</span>
+                        <span *ngIf="aboutArr['state']!=null">,
+                            {{aboutArr['state']}}
+                        </span>
+                    </a>
+                </li>
+
+                <li *ngIf="aboutArr['state']!= '' && profile" class="edu">
+
+                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="study24x7"></span>
+                    <span *ngIf="aboutArr['city'] !=''">Lives in {{aboutArr['city']+ ' ,'}}</span>       <!-------------add by vijay------------>
+                    <span *ngIf="emptystate">  {{aboutArr['state']}}</span>
+                    <p *ngIf="!emptystate">Add your state</p>
+                    <a  class="check check_edit_wrap" *ngIf="profile">
+
+                        <img src="assets/images/svg-three/profile_about/edit.svg" style="" routerLink="/settings" class="cursor-pointer">
+                    </a>
+                </li>
+                <li *ngIf="aboutArr['city'] =='' && profile" class="edu">
+                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="study24x7"></span>Add your city
+                    <a >
+                        <span class="check check_edit_wrap" *ngIf="profile"><img src="assets/images/svg-three/profile_about/edit.svg" style="" routerLink="/settings" class="cursor-pointer">
+                        </span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!--about menu pre loader start -->
+    <div class="placeholde-wrapper right_reloader " *ngIf="loaderscreen">
+        <div class="animated-background rightloader">
+            <div class="whitediv bottom11"></div>
+            <div class="whitediv bottom9 width100 " ></div>
+            <div class="whitediv bottom8"></div>
+            <div class="whitediv bottom5"></div>
+        </div>
+
+        <div class="animated-background rightloader ">
+            <div class="whitediv bottom11"></div>
+            <div class="whitediv bottom9 width100"></div>
+            <div class="whitediv bottom8"></div>
+            <div class="whitediv bottom5"></div>
+        </div>
+
+        <div class="animated-background rightloader ">
+            <div class="whitediv bottom11"></div>
+            <div class="whitediv bottom9 width100"></div>
+            <div class="whitediv bottom8"></div>
+            <div class="whitediv bottom5"></div>
+        </div>
+
+    </div>
+    <!--about menu pre loader end -->
+</div>
+
+
+
+
+
+
+
+<!-- other post view start-->
+<div class="about_outer" *ngIf="">
+    <div *ngIf="!loaderscreen">
+        <h6 class="widgetheading abouthead" >About</h6>
+        <div class='about_inr' *ngIf="summaryView === 1" >
+            <p class="widgetheading rmvbg" style="padding-top:0px;" [innerHTML]="summary">
+            </p>
+            <a *ngIf="seeMore" style="float:none;" class="cursor-pointer seemore">see more</a>
+        </div>
+        <div class="emptystate empty_wrap" *ngIf="summaryView === 2 && emptystate1" >
+            <div class="emptystate_inner">
+                <img src="assets/images/emptystates/svg/summary.svg"  style="top: -16px;">
+                <span *ngIf="aboutArr['profile_view']==2">Write some details about you</span>
+                <div class="emptybutton" *ngIf="profile">
+                    <button  class=".btn .btn-primary">Add Info</button>
+                </div>
+            </div>
+        </div>
+        <div class='about_inr'>
+            <ul class='about_list'>
+                <li *ngIf="eduView==1 && aboutArr['profile_view']==2" class="edu">
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                    </span>
+                    Add your education
+                    <a class="addlocicon">
+                    </a>
+                </li>
+
+                <li *ngIf="eduView==3" >
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                    </span>
+                    Student at <a >Kurukshetra University
+                    </a>
+                </li>
+
+                <li *ngIf="eduView==2" class="edu">
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                    </span>
+                    Studied {{postDataService.decodeURIPostData(aboutArr['user_edu']['COURSE'])}} at
+                    <a>{{postDataService.decodeURIPostData(aboutArr['user_edu']['INSTITUTE'])}}
+                    </a>
+                </li>
+
+                <li *ngIf="expView==1 && aboutArr['profile_view']==2" class="edu">
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                    </span>
+                    Add your experience
+                    <a class="addlocicon">
+                    </a>
+                </li>
+                <li *ngIf="expView==3">
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                    </span>
+                    Studied Btech at
+                    <a>Delhi University
+                    </a>
+                </li>
+                <li *ngIf="expView==2" class="edu">
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                    </span>
+                    {{postDataService.decodeURIPostData(aboutArr['user_exp']['POSITION'])}} at
+                    <a>{{postDataService.decodeURIPostData(aboutArr['user_exp']['ORGANIZATION'])}}
+                    </a>
+                </li>
+                <li *ngIf="cityView==2" class="edu">
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/city2.svg" alt="study24x7">
+                    </span>
+                    Lives in
+                    <a>
+                        {{aboutArr['city']}}
+                        <span *ngIf="aboutArr['state']!=null">,
+                            {{aboutArr['state']}}
+                        </span>
+                    </a>
+                </li>
+                <li *ngIf="cityView==1 && aboutArr['profile_view']==2" class="edu">
+                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="study24x7"></span>
+                    Add your state
+                </li>
+                <li *ngIf="stateView==1 && aboutArr['profile_view']==2" class="edu">
+                    <span class="lives_icon">
+                        <img src="assets/images/svg-three/city2.svg" alt="study24x7">
+                    </span>
+                    Add your city
+                    <a>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!--about menu pre loader start -->
+    <div class="placeholde-wrapper right_reloader " *ngIf="loaderscreen">
+        <div class="animated-background rightloader">
+            <div class="whitediv bottom11"></div>
+            <div class="whitediv bottom9 width100 " ></div>
+            <div class="whitediv bottom8"></div>
+            <div class="whitediv bottom5"></div>
+        </div>
+
+        <div class="animated-background rightloader ">
+            <div class="whitediv bottom11"></div>
+            <div class="whitediv bottom9 width100"></div>
+            <div class="whitediv bottom8"></div>
+            <div class="whitediv bottom5"></div>
+        </div>
+
+        <div class="animated-background rightloader ">
+            <div class="whitediv bottom11"></div>
+            <div class="whitediv bottom9 width100"></div>
+            <div class="whitediv bottom8"></div>
+            <div class="whitediv bottom5"></div>
+        </div>
+
+    </div>
+    <!--about menu pre loader end -->
+</div>
+<!-- other post view end -->

@@ -1,0 +1,45 @@
+<div class="vodMainSec controlMsg" *ngIf="timerStop">
+<app-msg-after-sample [content]=vodContent ></app-msg-after-sample>
+</div>
+
+
+<div  class="vodMainSec" *ngIf="!timerStop" (click)=playerClicked()>
+  <div class="videoPlayer">
+
+  </div>
+
+    <div *ngIf="content.CONTENT_TYPE==1"  class="videoPlayer" id="{{'player'+content.CONTENT_UUID}}">
+      <div class="previewTime">Free Preview <span>{{countDisplay}}</span></div>
+      <div class="playerclose" (click)="close()">
+        <img alt="study24x7" src="assets/images/svg-three/live-wall/crossIcon.svg">
+      </div>
+    </div>
+    <div *ngIf="content.CONTENT_TYPE==4" >
+
+      <iframe class="videoPlayerYTube"    [src]="content.iframeSource | safe" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+
+                      </div>
+    <div class="videoBottom">
+      <div class="courseinfo">
+        <div  class="profilethumb_wrapper">
+          <span  class="image" *ngIf="content.PAGE_PROFILE_PHOTO_PATH">
+            <img alt="study24x7" style="width:100%;float:left;margin-top:-1px;" src="{{content.PAGE_PROFILE_PHOTO_PATH
+              +'profile/'+content.PAGE_UUID+'_120x120.png'}}"></span>
+              <span  class="image" *ngIf="content.PAGE_PROFILE_PHOTO_PATH==null">
+                <img alt="study24x7" style="width:100%;float:left;margin-top:-1px;" src="{{_constentService.defaultImgPath}}"></span>
+            <span  title="Justtt"  class="pagename">{{postData.decodeURIPostData(content.STREAM_TITLE)}}</span>
+            <span  class="content_detail">{{postData.decodeURIPostData(content.COURSE_TITLE)}}</span>
+            <div class="viewCourse">
+            <button  type="button" name="button" routerLink="/course/{{content.courseURL}}">View Course</button>
+    <div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div (click)="close()" style="z-index:2;position: fixed;top:0;left:0;bottom: 0;right:0;opacity: .5;background-color: black;height: 100vh;width:100vw;">
+
+</div>

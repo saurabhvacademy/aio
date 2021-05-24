@@ -1,0 +1,117 @@
+<app-mnavbar *ngIf="selected!='interests' && selected !='saved'" (showMobileMenu)="displayMobileMenu($event)" (hideMenu)="hideMobileMenu($event)"></app-mnavbar>
+<div class="wrapper" (onscroll)="scrolledLength()">
+  <app-header (sessionLogout)="sessionExpire($event)" (acceptId)="frmHeader($event)"></app-header>
+  <div id="windiv">
+    <div class="container main_body">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 pdng_right left_stickytab" id="left-side-bar">
+          <div class="width:100%;float:left;">
+          <div class="rightmenu_fixed" id="someDivleft" [ngClass]="{'fixedleft': isScrolled1}">
+            <app-leftmenu (hidePopup)="hidePageCreatePopup($event)" (showPopup)="displayPageCreatePopup($event)"
+              [acceptId]="acceptId" [sendId]="sendId" [cancelId]="cancelId" 
+              (sessionLogout)="sessionExpire($event)" (onclickEvent)=setCenterComponent($event)></app-leftmenu>
+          </div>
+          </div>
+        </div>
+
+        <div *ngIf="!isMobileMenue && (selected == 'all' || selected=='articles')" class="col-md-6 col-sm-12 col-xs-12 center_feed" id="centersection" >
+          <!--for articles and all posts-->
+          <div  style="float: left;width: 100%;">
+            <div>
+              <app-addpost (hideScroll)="overFlowStatus($event)" (postId)="postId=$event"></app-addpost>
+            </div>
+            <div>
+              <app-newsfeed [from]="'wall'" [postId]="postId" (sessionLogout)="sessionExpire($event)"></app-newsfeed>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="!isMobileMenue && (selected != 'all' && selected != 'articles')" class="col-md-9 col-sm-12 col-xs-12 center_feed" id="centersection">
+          <!-- For question for you-->
+          <div *ngIf="!isMobileMenue && selected=='questionforyou'" style="float: left;width: 100%;">
+            <div>
+              <app-questionforyou (hideScroll)="overFlowStatus($event)" (postId)="postId=$event"></app-questionforyou>
+            </div>
+          </div>
+
+          <!--For saved posts-->
+          <div *ngIf="!isMobileMenue && selected=='saved'" style="float: left;width: 100%;">
+            <div>
+              <app-saved (hideScroll)="overFlowStatus($event)" (postId)="postId=$event"></app-saved>
+            </div>
+          </div>
+
+          <!--For Interests-->
+          <div *ngIf="!isMobileMenue && selected=='interests'" style="float: left;width: 100%;">
+            <div>
+              <app-interest (hideScroll)="overFlowStatus($event)" (postId)="postId=$event"></app-interest>
+            </div>
+          </div>
+          <!--For live-classes-->
+          <div *ngIf="!isMobileMenue && selected=='live-classes'" style="float: left;width: 100%;">
+            <div>
+              <app-live-classes (hideScroll)="overFlowStatus($event)" (postId)="postId=$event"></app-live-classes>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="sidemenu" [ngClass]="{'openfilter': isMobileMenue }">
+          <div *ngIf="isMobileMenue">
+            <div class="menuslidedarkbg" (click)="leftSidemenu()"></div>
+            <app-mmenu (showPopup)=displayPageCreatePopup($event) class="cntrMmenu"></app-mmenu>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 right_tab pdng_left right_stickytab" id="wall-sidebar-wrap">
+          <div *ngIf="selected=='all' || selected=='articles'" class="rightmenu_fixed" id="someDiv" [ngClass]="{'fixedleft': isScrolled}">
+            <div class="mentorship peopleknow_outer ppl-you-may-know livestreamswrapper" style="cursor:pointer;"
+              *ngIf='message != "0"'>
+              <div class="innermentorship" (click)='viewAll()'>
+                <span class="img_mentor"><img src="assets/images/svg-three/page_icon/iconwall.svg" alt=""></span><span
+                  class="mentor_content">{{message}} Mentorship Invitations</span>
+              </div>
+            </div>
+            <app-upcomingclasses></app-upcomingclasses>
+            <app-rank-statistics></app-rank-statistics>
+
+
+            <app-peopleyouknow (sessionLogout)="sessionExpire($event)" (sendId)="frmPplUKnow($event)"
+              (cancelId)="frmPplUKnowCancel($event)"></app-peopleyouknow>
+            <app-invite-live-streams (messageEvent)="receiveMessage($event)"></app-invite-live-streams>
+
+            <app-socialinvite (popupOverFlow)="popupOverflowStatus($event);"></app-socialinvite>
+            <app-recommendedpage *ngIf="pageSuggPresent" (hideSugg)="hideSuggPg($event)"></app-recommendedpage>
+            <p *ngIf="false" class="footer_bottom" style="color:#9ba1ab;margin-top: 15px">
+              <!--<a routerLink="/privacy">About . </a>-->
+              <a routerLink="/privacy" target="_blank">Privacy Policy</a><span> | </span>
+              <a routerLink="/termandcondition" target="_blank">Terms of Use</a>
+              <a>{{this._constantService.version}}</a>
+            </p>
+            <footer *ngIf="false" class="footer_bottom"> © {{current_year}} @Edubabble Learning Pvt. Ltd. </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- </div> -->
+<div class="help-icon" routerLink="{{_constantService.askAssistantPath}}"
+  (click)="_constantService.setSessionJsonPair('friend_user_id',2)">
+  <img src="./assets/images/svg-three/wall/help.svg" alt="study24x7">
+  <p>Need any help?</p>
+</div>
+
+<div class="topScroll scroll" (click)="scrollStart()" id="scrollButton">
+  <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+</div>
+<!-- <div class="stream_wrapper" *ngIf="showliveclass">
+  <app-upcomingclasses></app-upcomingclasses>
+
+</div> -->
+
+<div *ngIf="isCratePagePopup">
+  <app-createpage (hidecreatepagePopup)="hidePageCreatePopup($event)"></app-createpage>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);closePopup($event);"
+  [dataObj]="dataConf"></app-confirmationpopup>

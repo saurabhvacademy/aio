@@ -1,0 +1,587 @@
+<div *ngIf="!isPublicView">
+    <div class="previewcourseDescription">
+        <div class="previewhead previewheadtop">
+            <h2>About This Course</h2>
+        </div>
+        <div class="descripption descripptionTop">
+
+
+                <!--<div class="articleContent">-->
+                <div  class=" ql-snow-list">
+                    <div innerHTML="{{description}}"></div>
+                </div>
+
+            <div class="previewhead" style="border-bottom: none;padding:0px;margin-top:10px;">
+                <!-- <h2>Includes</h2> -->
+            </div>
+
+
+            <ul>
+                <li *ngIf="rDays">
+                    <span><img src="assets/images/svg-three/course/freetrial.png" alt="study24x7"></span>
+                    <span class="contentCount">Free <span class="hightlight">{{rDays}}
+                            {{rDays==1 ? 'day':'days'}}</span> trial classes</span>
+                </li>
+                <li>
+                    <span><img src="assets/images/course_icon/done-red.svg" alt="study24x7"></span>
+                    <span class="contentCount">Total <span class="hightlight">{{sectionCount}}</span>
+                        {{sectionCount >1 ? 'Modules' : 'Module'}} </span>
+                    <!--<span class="contentCount" *ngIf="VISIBILABLE_CONTENT != 0">and {{VISIBILABLE_CONTENT}} free preview contents</span>-->
+                </li>
+                <li *ngIf="pdfCount != 0 || videoCount != 0 || quizzeCount != 0">
+                    <span><img src="assets/images/svg-three/course/course_creation/lesson-red.svg"
+                            alt="study24x7"></span>
+                    <span class="contentCount" *ngIf="videoCount != 0"><span class="hightlight">{{videoCount}}</span>
+                        {{videoCount > 1 ? 'Videos' : 'Video'}}</span>
+
+                    <span class="contentCount" *ngIf="quizzeCount != 0 && videoCount != 0">,</span>
+
+                    <span class="contentCount" *ngIf="pdfCount != 0"><span class="hightlight">{{pdfCount}}</span>
+                        {{pdfCount > 1 ? 'Pdfs' : 'Pdf'}}</span>
+
+                    <span class="contentCount" *ngIf="pdfCount != 0 && quizzeCount != 0">,</span>
+
+                    <span class="contentCount" *ngIf="quizzeCount != 0"><span class="hightlight">{{quizzeCount}}</span>
+                        {{quizzeCount > 1 ? 'Quizzes' : 'Quiz'}}</span>
+                </li>
+                <li *ngIf="liveStreamCount != 0">
+                    <span><img src="assets/images/svg-three/page_icon/iconwall_red.svg" alt="study24x7"></span>
+                    <span class="contentCount">Contains Live Stream</span>
+                </li>
+                <li>
+                    <span><img src="assets/images/svg-three/course/course_creation/downloadable-red.svg"
+                            alt="study24x7"></span> Downloadable on mobile
+                </li>
+                <li>
+                    <span><img src="assets/images/svg-three/course/publishedIcon.svg" alt="study24x7"></span> Published
+                    on <span class="hightlight">{{publishedDate |date :'dd MMM, yyyy'}}</span>
+                </li>
+
+
+            </ul>
+        </div>
+        <div *ngIf="mentorData.length != 0 && _constantService.getSessionDataBYKey('STREAM_FLAG') == 1"
+            class="previewhead previewheadmentor">
+            <h2>Mentors</h2>
+        </div>
+        <div *ngIf="mentorData.length != 0 && _constantService.getSessionDataBYKey('STREAM_FLAG') == 1"
+            class="descripption descripptionMentor" [ngClass]="{'seemoreMentor': isSeeMoreMentor}">
+            <div class="profiledet" *ngFor="let mentor of mentorDataFun(); let mentorIndex = index;">
+                <span class="imgprofile" (click)="routeMentorProfile(mentor.USER_NAME,mentor.USER_ID)">
+                    <img alt="" src="{{mentor.PROFILE_PHOTO_PATH || './assets/images/defaultProfilePic.svg' }}">
+                </span>
+                <span class="profilehead"
+                    (click)="routeMentorProfile(mentor.USER_NAME,mentor.USER_ID)">{{mentor.USER_FULL_NAME}}</span>
+                <!-- <span class="profilestatus">{{mentor.SUMMARY}}</span> -->
+
+                <button class="button24x7 redfollowbutton redfollowActive"
+                    (click)="changefollow(mentor.IS_FOLLOW, mentorIndex)" *ngIf="mentor.IS_FOLLOW == 1">
+                    <img src="assets/images/svg/red_checkbox.svg" alt="">
+                    Following
+                </button>
+                <button class="button24x7 redfollowbutton" (click)="changefollow(mentor.IS_FOLLOW , mentorIndex)"
+                    *ngIf="mentor.IS_FOLLOW == 0">
+                    <!-- <img  src="assets/images/svg-three/course/course_creation/downloadable.svg" alt=""> -->
+                    Follow
+                </button>
+            </div>
+            <div *ngIf="mentorData.length > 2">
+                <div class="seemore" (click)="seeMoreMentor()" *ngIf="isSeeMoreMentor">See More</div>
+            </div>
+        </div>
+        <!-- <div class="previewhead">
+<h2>Related keywords</h2>
+<p>
+{{detail.COURSE_TAGS}}
+</p>
+</div> -->
+    </div>
+
+
+
+
+    <div class="previewcourseDescription" style="margin-top: 15px;">
+
+        <div class="previewhead previewheadtop">
+            <h2>Course Curriculum</h2>
+        </div>
+
+        <div class="preDropdownwrapper" [ngClass]="{'hasFreeTrial': isTrialBased}">
+
+            <div *ngIf="enrolled == 0 && trialStripMsg!=''">
+                <div class="freeTrialSrip" *ngIf="isTrialBased==1 && isSubscribed==0">
+                    <h2>{{trialStripMsg}}</h2>
+                    <button type="button" name="button" (click)="enrollBtnHandler()">Start free trial</button>
+                </div>
+
+                <div class="freeTrialSrip" *ngIf="isTrialBased==1 && isSubscribed==1">
+                    <h2>{{trialStripMsg}}</h2>
+                    <button type="button" name="button" (click)="enrollBtnHandler()">Buy now</button>
+                </div>
+
+                <div class="freeTrialSrip afterBuy" *ngIf="isTrialBased==1 && isSubscribed==2">
+                    <h2>{{trialStripMsg}}</h2>
+                    <button type="button" name="button" (click)="enrollBtnHandler()">Buy now</button>
+                </div>
+            </div>
+
+
+            <div class="preDropdowInnernWrapper" *ngFor="let section of contents; let index = index">
+                <div class="head" (click)="preview_dropdown('previewlist'+index,index)">
+                    <h2>{{postData.decodeURIPostData(section.section_title)}}</h2>
+                    <span class="downarrow" [ngClass]="{'rotateImg': index == 0}" id="{{'previewlisthead'+index}}">
+                        <img src="assets/images/svg-three/course/courseDetails/arrowrightIcon.svg" alt="study24x7">
+                    </span>
+                </div>
+                <div [ngClass]="{'contentHeightZero': index != 0,'contentHeight': index == 0}" class="content"
+                    id="{{'previewlist'+index}}">
+                    <ul id="{{'previewInnerlist'+index}}">
+
+                        <ng-container *ngFor="let content of section.sectionContents; let contentIndex = index">
+                            <li
+                                *ngIf="(content.CONTENT_TYPE == 7 && _constantService.getSessionDataBYKey('STREAM_FLAG') == 1) || content.CONTENT_TYPE != 7">
+                                <div class="listInnerWrapper">
+                                    <span (click)="viewContent(content)" class="images leftImage verCenterAlign">
+                                        <img src="assets/images/svg-three/course/courseDetails/gray_quiz.svg"
+                                            alt="study24x7"
+                                            *ngIf="content.CONTENT_TYPE == 3 || content.CONTENT_TYPE == 6">
+                                        <img src="assets/images/svg-three/course/courseDetails/videoPlayIcon.svg"
+                                            alt="study24x7"
+                                            *ngIf="content.CONTENT_TYPE == 1 || content.CONTENT_TYPE == 4 || content.CONTENT_TYPE == 5 ">
+                                        <img src="assets/images/svg-three/course/courseDetails/documentIcon.svg"
+                                            alt="study24x7" *ngIf="content.CONTENT_TYPE == 2">
+                                        <img src="assets/images/svg-three/course/courseDetails/videoLiveIcon.svg"
+                                            alt="study24x7" *ngIf="content.CONTENT_TYPE == 7">
+                                    </span>
+                                    <div (click)="viewContent(content)">
+                                        <p class="verCenterAlign"> {{content.TITLE}} <span
+                                                class="liveStrteamingMentorName" *ngIf="content.CONTENT_TYPE == 7">by
+                                                {{content.mentorName}}</span> </p>
+
+                                        <span class="detail verCenterAlign" *ngIf="content.CONTENT_TYPE != 7">
+                                            {{content.INFO}}</span>
+
+                                        <span class="liveStreamDetailWrapper" *ngIf="content.CONTENT_TYPE == 7">
+                                            <span class="liveIcon">Live</span>
+                                            <span class="detail">{{content.INFO}}</span>
+                                            <span class="dote"><img alt="study24x7"
+                                                    src="assets/images/svg-three/post_icon/dote1-black.svg"></span>
+                                            <span class="detail">
+                                                {{ content.streamingDate}}
+                                            </span>
+                                        </span>
+
+                                        <span class="viewReportCard verCenterAlign"
+                                            *ngIf="content.isSubmited == 1 && (content.CONTENT_TYPE == 6 || content.CONTENT_TYPE == 3 )"
+                                            (click)="showResult(content.scoreCard,content.CONTENT_UUID,content.CONTENT_TYPE)">
+
+                                            <img src="assets/images/svg-three/add_post/wall/add_doc.svg" alt="">
+                                        </span>
+
+                                        <span class="tik verCenterAlign" *ngIf="content.SEEN == '1'">
+                                            <img src="assets/images/svg-three/course/courseDetails/documentReadIcon.svg"
+                                                alt="study24x7">
+                                        </span>
+
+                                        <span class="images lock verCenterAlign"
+                                            *ngIf="content.VISIBILITY ==1 && enrolled == 0 && !withoutToken">
+                                            <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg"
+                                                alt="study24x7">
+                                        </span>
+
+                                        <span class="images lock verCenterAlign" *ngIf="withoutToken">
+                                            <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg"
+                                                alt="study24x7">
+                                        </span>
+                                    </div>
+                                    <a href="{{content.PATH+'base/'+content.CONTENT_UUID+'.pdf'}}" target="blank"
+                                        class="download-hover" style="position: absolute;cursor: pointer; float:right"
+                                        *ngIf="content.CONTENT_TYPE == 2 && isDownloadable==1 && enrolled==1">
+                                        <img style="width: 16px;" src="assets/images/svg/download-doc.svg" />
+                                    </a>
+                                </div>
+                            </li>
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------------------------------without token---------------------------------------------------------------->
+<div *ngIf="isPublicView">
+    <div class="previewcourseDescription">
+
+        <div class="previewhead previewheadtop">
+            <h2>About This Course</h2>
+        </div>
+        <div class="descripption descripptionTop">
+            <p innerHTML="{{description}}"></p>
+
+            <div class="previewhead" style="border-bottom: none;padding:0px;margin-top:10px;">
+                <!-- <h2>Includes</h2> -->
+            </div>
+            <ul>
+                <li *ngIf="rDays">
+                    <span><img src="assets/images/svg-three/course/freetrial.png" alt="study24x7"></span>
+                    <span class="contentCount">Free <span class="hightlight">{{rDays}}
+                            {{rDays==1 ? 'day':'days'}}</span> trial classes</span>
+                </li>
+                <li>
+                    <span><img src="assets/images/course_icon/done-red.svg" alt="study24x7"></span>
+                    <span class="contentCount">Total <span class="hightlight">{{sectionCount}}</span>
+                        {{sectionCount >1 ? 'Modules' : 'Module'}} </span>
+                    <!--<span class="contentCount" *ngIf="VISIBILABLE_CONTENT != 0">and {{VISIBILABLE_CONTENT}} free preview contents</span>-->
+                </li>
+                <li *ngIf="pdfCount != 0 || videoCount != 0 || quizzeCount != 0">
+                    <span><img src="assets/images/svg-three/course/course_creation/lesson-red.svg"
+                            alt="study24x7"></span>
+                    <span class="contentCount" *ngIf="videoCount != 0"><span class="hightlight">{{videoCount}}</span>
+                        {{videoCount > 1 ? 'Videos' : 'Video'}}</span>
+
+                    <span class="contentCount" *ngIf="quizzeCount != 0 && videoCount != 0">,</span>
+
+                    <span class="contentCount" *ngIf="pdfCount != 0"><span class="hightlight">{{pdfCount}}</span>
+                        {{pdfCount > 1 ? 'Pdfs' : 'Pdf'}}</span>
+
+                    <span class="contentCount" *ngIf="pdfCount != 0 && quizzeCount != 0">,</span>
+
+                    <span class="contentCount" *ngIf="quizzeCount != 0"><span class="hightlight">{{quizzeCount}}</span>
+                        {{quizzeCount > 1 ? 'Quizzes' : 'Quiz'}}</span>
+                </li>
+                <li *ngIf="liveStreamCount != 0">
+                    <span><img src="assets/images/svg-three/page_icon/iconwall_red.svg" alt="study24x7"></span>
+                    <span class="contentCount">Contains Live Stream</span>
+                </li>
+                <li>
+                    <span><img src="assets/images/svg-three/course/course_creation/downloadable-red.svg"
+                            alt="study24x7"></span> Downloadable on mobile
+                </li>
+                <li>
+                    <span><img src="assets/images/svg-three/course/publishedIcon.svg" alt="study24x7"></span> Published
+                    on <span class="hightlight">{{publishedDate |date :'dd MMM, yyyy'}}</span>
+                </li>
+
+
+            </ul>
+
+            <!-- <ul>
+            <li *ngIf="rDays">
+                <span><img src="assets/images/svg-three/course/freetrial.png" alt="study24x7"></span>
+                <span class="contentCount">Free {{rDays}} {{rDays==1 ? 'day':'days'}} trial classes</span>
+            </li>
+            <li>
+                <span><img src="assets/images/course_icon/done.svg" alt="study24x7"></span>
+                <span class="contentCount">Total {{sectionCount}} {{sectionCount >1 ? 'Modules' : 'Module'}} </span>
+
+            </li>
+            <li *ngIf="pdfCount != 0 || videoCount != 0 || quizzeCount != 0">
+                <span><img src="assets/images/svg-three/course/course_creation/lesson.svg" alt="study24x7"></span>
+                <span class="contentCount" *ngIf="videoCount != 0"><span style="color:#000;font-weight: 500;">{{videoCount}}</span> {{videoCount > 1 ? 'Videos' : 'Video'}}</span>
+
+                <span class="contentCount" *ngIf="quizzeCount != 0 && videoCount != 0">,</span>
+
+                <span class="contentCount" *ngIf="pdfCount != 0"><span style="color:#000;font-weight: 500;">{{pdfCount}}</span> {{pdfCount > 1 ? 'Pdfs' : 'Pdf'}}</span>
+
+                <span class="contentCount" *ngIf="pdfCount != 0 && quizzeCount != 0">,</span>
+
+                <span class="contentCount" *ngIf="quizzeCount != 0"><span style="color:#000;font-weight: 500;">{{quizzeCount}}</span> {{quizzeCount > 1 ? 'Quizzes' : 'Quiz'}}</span>
+            </li>
+            <li *ngIf="liveStreamCount != 0">
+                <span><img src="assets/images/svg-three/page_icon/iconwall_gray.svg" alt="study24x7"></span>
+                <span class="contentCount">Contains Live Stream</span>
+            </li>
+            <li>
+                <span><img src="assets/images/svg-three/course/course_creation/downloadable.svg" alt="study24x7"></span> Downloadable on mobile
+            </li>
+            <li>
+                <span><img src="assets/images/svg-three/course/published.svg" alt="study24x7"></span> Published on <span style="color:#000;font-weight: 500;">{{publishedDate |date :'dd MMM, yyyy'}}</span>
+            </li>
+
+
+        </ul> -->
+        </div>
+        <div *ngIf="mentorData.length != 0 && _constantService.getSessionDataBYKey('STREAM_FLAG') == 1"
+            class="previewhead previewheadmentor">
+            <h2>Mentors</h2>
+        </div>
+        <div *ngIf="mentorData.length != 0 && _constantService.getSessionDataBYKey('STREAM_FLAG') == 1"
+            class="descripption seemorepresent" [ngClass]="{'seemoreMentor': isSeeMoreMentor}">
+            <div class="profiledet" *ngFor="let mentor of mentorDataFun(); let mentorIndex = index;">
+                <span class="imgprofile" (click)="routeMentorProfile(mentor.USER_NAME,mentor.USER_ID)">
+                    <img alt="" src="{{mentor.PROFILE_PHOTO_PATH || './assets/images/defaultProfilePic.svg' }}">
+                </span>
+                <span class="profilehead"
+                    (click)="routeMentorProfile(mentor.USER_NAME,mentor.USER_ID)">{{mentor.USER_FULL_NAME}}</span>
+                <!-- <span class="profilestatus">{{mentor.SUMMARY}}</span> -->
+
+                <button class="button24x7 redfollowbutton" (click)="changefollow(mentor.IS_FOLLOW, mentorIndex)"
+                    *ngIf="mentor.IS_FOLLOW == 1">
+                    <img src="assets/images/svg/red_checkbox.svg" alt="">
+                    Following
+                </button>
+                <button class="button24x7 redfollowbutton" (click)="loginpopupopen()" *ngIf="mentor.IS_FOLLOW == 0">
+                    <!-- <img  src="assets/images/svg-three/course/course_creation/downloadable.svg" alt=""> -->
+                    Follow
+                </button>
+            </div>
+            <div *ngIf="mentorData.length > 2">
+                <div class="seemore" (click)="seeMoreMentor()" *ngIf="isSeeMoreMentor">See More</div>
+            </div>
+        </div>
+        <!-- <div class="previewhead">
+<h2>Related keywords</h2>
+<p>
+{{detail.COURSE_TAGS}}
+</p>
+</div> -->
+
+    </div>
+
+
+
+
+    <div class="previewcourseDescription" style="margin-top: 15px;">
+        <div class="previewhead previewheadtop">
+            <h2>Course Curriculum</h2>
+        </div>
+
+        <div class="preDropdownwrapper" [ngClass]="{'hasFreeTrial': isTrialBased}">
+
+            <div *ngIf="enrolled == 0 && trialStripMsg!=''">
+                <div class="freeTrialSrip" *ngIf="isTrialBased==1 && isSubscribed==0">
+                    <h2>{{trialStripMsg}}</h2>
+                    <button type="button" name="button" (click)="enrollBtnHandler()">Start free trial</button>
+                </div>
+
+                <div class="freeTrialSrip" *ngIf="isTrialBased==1 && isSubscribed==1">
+                    <h2>{{trialStripMsg}}</h2>
+                    <button type="button" name="button" (click)="enrollBtnHandler()">Buy now</button>
+                </div>
+
+                <div class="freeTrialSrip afterBuy" *ngIf="isTrialBased==1 && isSubscribed==2">
+                    <h2>{{trialStripMsg}}</h2>
+                    <button type="button" name="button" (click)="enrollBtnHandler()">Buy now</button>
+                </div>
+            </div>
+
+
+            <div class="preDropdowInnernWrapper" *ngFor="let section of contents; let index = index">
+                <div class="head" (click)="preview_dropdown('previewlist'+index,index)">
+                    <h2>{{postData.decodeURIPostData(section.section_title)}}</h2>
+                    <span class="downarrow" [ngClass]="{'rotateImg': index == 0}" id="{{'previewlisthead'+index}}">
+                        <img src="assets/images/svg-three/course/courseDetails/arrowrightIcon.svg" alt="study24x7">
+                    </span>
+                </div>
+                <div [ngClass]="{'contentHeightZero': index != 0,'contentHeight': index == 0}" class="content"
+                    id="{{'previewlist'+index}}">
+
+                    <ul id="{{'previewInnerlist'+index}}">
+
+                        <ng-container *ngFor="let content of section.sectionContents; let contentIndex = index">
+                            <li *ngIf="(content.CONTENT_TYPE == 7 && _constantService.getSessionDataBYKey('STREAM_FLAG') == 1) || content.CONTENT_TYPE != 7"
+                                (click)="loginpopupopen()">
+                                <div class="listInnerWrapper">
+                                    <span class="images leftImage verCenterAlign">
+                                        <img src="assets/images/svg-three/course/courseDetails/gray_quiz.svg"
+                                            alt="study24x7"
+                                            *ngIf="content.CONTENT_TYPE == 3 || content.CONTENT_TYPE == 6">
+                                        <img src="assets/images/svg-three/course/courseDetails/videoPlayIcon.svg"
+                                            alt="study24x7"
+                                            *ngIf="content.CONTENT_TYPE == 1 || content.CONTENT_TYPE == 4 || content.CONTENT_TYPE == 5 ">
+                                        <img src="assets/images/svg-three/course/courseDetails/documentIcon.svg"
+                                            alt="study24x7" *ngIf="content.CONTENT_TYPE == 2">
+                                        <img src="assets/images/svg-three/course/courseDetails/videoLiveIcon.svg"
+                                            alt="study24x7" *ngIf="content.CONTENT_TYPE == 7">
+                                    </span>
+                                    <p class="verCenterAlign"> {{content.TITLE}} <span class="liveStrteamingMentorName"
+                                            *ngIf="content.CONTENT_TYPE == 7">by {{content.mentorName}}</span> </p>
+
+                                    <span class="detail verCenterAlign" *ngIf="content.CONTENT_TYPE != 7">
+                                        {{content.INFO}}</span>
+
+                                    <span class="liveStreamDetailWrapper" *ngIf="content.CONTENT_TYPE == 7">
+                                        <span class="liveIcon">Live</span>
+                                        <span class="detail">{{content.INFO}}</span>
+                                        <span class="dote"><img alt="study24x7"
+                                                src="assets/images/svg-three/post_icon/dote1-black.svg"></span>
+                                        <span class="detail">
+                                            {{ content.streamingDate}}
+                                        </span>
+                                    </span>
+
+                                    <span class="viewReportCard verCenterAlign"
+                                        *ngIf="content.isSubmited == 1 && (content.CONTENT_TYPE == 6 || content.CONTENT_TYPE == 3 )"
+                                        (click)="showResult(content.scoreCard,content.CONTENT_UUID,content.CONTENT_TYPE)">
+
+                                        <img src="assets/images/svg-three/add_post/wall/add_doc.svg" alt="">
+                                    </span>
+
+                                    <span class="tik verCenterAlign" *ngIf="content.SEEN == '1'">
+                                        <img src="assets/images/svg-three/course/courseDetails/documentReadIcon.svg"
+                                            alt="study24x7">
+                                    </span>
+
+                                    <span class="images lock verCenterAlign"
+                                        *ngIf="content.VISIBILITY ==1 && enrolled == 0 && !withoutToken">
+                                        <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg"
+                                            alt="study24x7">
+                                    </span>
+
+                                    <span class="images lock verCenterAlign" *ngIf="withoutToken">
+                                        <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg"
+                                            alt="study24x7">
+                                    </span>
+
+
+                                </div>
+                            </li>
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- popup start -->
+<div class="popup" *ngIf="isBuyNowPopup">
+    <div class="popup_background"></div>
+    <div class="popup_main wrappcoursepopup report-popup">
+        <div class="popup_inner">
+            <div class="popup_heading">
+                <span (click)="buyNowPopupHandler()" class="close_div">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+                <!-- <img (click)="reportpopuphide()" src="assets/images/svg/tagcross.svg" style="float: right;margin: 17px 0;cursor: pointer;"> -->
+            </div>
+            <div class="col-md-12 inner_center" style="padding:0px;">
+
+                <div class='post_outer report_popup'>
+                    <div class='post_profile'>
+                        <p>UNLOCK COMPLETE COURSE</p>
+                        <h2>{{postData.decodeURIPostData(detailObject['COURSE_TITLE']) | trimData:56 }}</h2>
+                        <div class="heading_top">
+                            <span>
+                                <img src="{{detailObject['PAGE_PROFILE_PHOTO_PATH']}}"
+                                    (error)="updateProfilePic($event)"
+                                    alt="{{postData.decodeURIPostData(detailObject['PAGE_TITLE'])}}">
+                            </span> {{postData.decodeURIPostData(detailObject['PAGE_TITLE']) | trimData:25 }}
+                        </div>
+                    </div>
+                    <!-- <div class="expire_heading"><span><img src="assets/images/course_icon/popupicon/staricon.svg" alt=""></span> Your free trial will expire in 10 days</div> -->
+                    <div class="expire_heading " [ngClass]="{'red_expire':  isSubscribed == 2}">
+                        <span><img src="assets/images/course_icon/popupicon/staricon.svg" alt=""></span>
+                        {{trialStripMsg}}, <a (click)="enrollBtnHandler(); buyNow()" class="cursor-pointer">Buy now</a>
+                    </div>
+                    <div class='wrapper_optins'>
+                        <div class="inner_wrap" *ngIf="detailObject.LECTURE_COUNT != 0">
+                            <span class="img_wrap"><img class="img1" src="assets/images/course_icon/popupicon/video.png"
+                                    alt=""></span>
+                            <span class="digit">{{detailObject.LECTURE_COUNT}}</span> Videos
+                            <span class="write_tick"><img src="assets/images/course_icon/popupicon/right.png"
+                                    alt=""></span>
+                        </div>
+                        <div class="inner_wrap" *ngIf="detailObject.STREAM_COUNT != 0">
+                            <span class="img_wrap"><img class="img2" src="assets/images/course_icon/popupicon/class.png"
+                                    alt=""></span>
+                            <span class="digit">{{detailObject.STREAM_COUNT}}</span> Live Classes
+                            <span class="write_tick"><img src="assets/images/course_icon/popupicon/right.png"
+                                    alt=""></span>
+                        </div>
+                        <div class="inner_wrap" *ngIf="detailObject.DOCUMENT_COUNT != 0">
+                            <span class="img_wrap"><img class="img3" src="assets/images/course_icon/popupicon/page.png"
+                                    alt=""></span>
+                            <span class="digit">{{detailObject.DOCUMENT_COUNT}}</span> Study Materials
+                            <span class="write_tick"><img src="assets/images/course_icon/popupicon/right.png"
+                                    alt=""></span>
+                        </div>
+                        <div class="inner_wrap" *ngIf="detailObject.QUIZ_COUNT != 0">
+                            <span class="img_wrap"><img class="img4" src="assets/images/course_icon/popupicon/quiz.png"
+                                    alt=""></span>
+                            <span class="digit">{{detailObject.QUIZ_COUNT}}</span> Interactive Quizzes
+                            <span class="write_tick"><img src="assets/images/course_icon/popupicon/right.png"
+                                    alt=""></span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class='footer_wrap_profile'>
+                <span class="wrap_price">
+                    <span class="org_price"><img src="assets/images/svg-three/course/course_creation/gray_rupe.svg"
+                            alt="">{{detailObject['COURSE_PRICE'][0]['COST']|number}}</span>
+                    <span class="disc_price"><img src="assets/images/svg-three/course/course_creation/rupe.svg"
+                            alt="">{{detailObject['COURSE_PRICE'][0]['DISCOUNT_COST']|number}}</span>
+                </span>
+                <button type="submit" class="button24x7 redColorButton fright"
+                    (click)="enrollBtnHandler(); buyNow()">Buy now</button>
+                <!-- <button  type="submit" class="fright whiteColorButton button24x7 " *ngIf="report_input_option"  (click)="hide_option()" (change)="otherReport($event);" >Back</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popup end  -->
+
+
+
+
+
+<!-- popup start -->
+<div class="popup courseNotPublishYet" *ngIf="isCourseNotLivePopup">
+    <div class="popup_background"></div>
+    <div class="popup_main wrappcoursepopup report-popup">
+        <div class="popup_inner">
+            <div class="popup_heading">
+                <span class="close_div" (click)="notLivePopupHandler()">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+            </div>
+            <div class="col-md-12 inner_center">
+                <div class='post_outer report_popup'>
+                    <div class='post_profile'>
+                        <p>COURSE</p>
+                        <h2>{{postData.decodeURIPostData(detailObject.COURSE_TITLE) | trimData:56 }}</h2>
+                        <div class="heading_top">
+                            <span>
+                                <img src="{{detailObject['PAGE_PROFILE_PHOTO_PATH']}}"
+                                    (error)="updateProfilePic($event)"
+                                    alt="{{postData.decodeURIPostData(detailObject['PAGE_TITLE'])}}">
+                            </span> {{postData.decodeURIPostData(detailObject.PAGE_TITLE) | trimData:25 }}
+                        </div>
+                    </div>
+                    <div class='wrapper_optins'>
+                        <div class="inner_wrap" style="">
+                            <p class="hedingonly" style="">Course will start on </p>
+                            <p class="dateonly" style="">{{detailObject['START_DATE_TIME'] | date}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='footer_wrap_profile' (click)="notLivePopupHandler()">
+                <button type="submit" class="button24x7 redColorButton">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popup end  -->
+
+
+
+
+
+<app-loginpopup *ngIf="openLoginPopup" (closePopup)="closeLoginPopUp($event)" [usrData]="courseData" [isError]="isError"
+    [errorText]="errorText" [type]="openLoginPopupType"></app-loginpopup>
+<app-testreport [courseTestReport]="courseReport" [testType]="quizType" [contentUuid]="contentTestUuid"
+    (hideReport)='hideReportPopup()' *ngIf="showResultPopup"></app-testreport>
+<app-confirmationpopup *ngIf="openConfirmation" [dataObj]="dataConf"
+    (closeComfirmPopupThread)="openConfirmation = $event['error']"></app-confirmationpopup>

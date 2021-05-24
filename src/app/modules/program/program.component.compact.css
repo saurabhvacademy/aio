@@ -1,0 +1,237 @@
+.fl { float: left; }
+
+.cp { cursor: pointer; }
+
+.font_mon { font-family: 'Montserrat'; }
+
+.font_san { font-family: 'Source Sans Pro'; }
+
+.f-w-600 { font-weight: 600; }
+
+.f-w-500 { font-weight: 500; }
+
+.banner_wrapper { width: 100%; background-image: url("./../../../assets/images/university/layer.png"); height: 514px; background-size: cover; }
+
+.banner-header { width: 100%; float: left; padding: 36px 250px 50px 0px; }
+
+.banner-header .leftInfo { height: 60px; position: relative; }
+
+.banner-header .leftInfo img { position: absolute; width: 60px; }
+
+.banner-header .Details { width: 100%; padding-left: 75px; height: 100%; display: flex; align-items: start; justify-content: center; vertical-align: middle; flex-direction: column; }
+
+.banner-header .Details p { font-family: Roboto; font-size: 18px; font-weight: 500; color: #ffffff; }
+
+.banner-header .Details .fllowerCount { font-size: 16px; color: rgba(255, 255, 255, 0.9); margin-top: 5px; }
+
+.banner-header .Details .fllowerCount button { width: 60px; height: 24px; color: #f05050; border-radius: 13px; background-color: #ffffff; margin-left: 10px; cursor: pointer; }
+
+.courseName { float: left; width: 700px; }
+
+.courseName h2 { font-family: "Montserrat"; font-size: 38px; font-weight: 600; color: #ffffff; }
+
+.fl100 { float: left; width: 100%; }
+
+.ratting { margin: 10px 0px 20px 0px; }
+
+.ratting label { margin-bottom: 0px; float: left; }
+
+.ratting .Pagerating { display: inline; }
+
+.ratting .Pagerating img { width: 22px; margin-right: 5px; }
+
+.ratting .ratingAvg { font-size: 18px; font-weight: 600; color: #ffbb58; margin: 5px 8px 0px 5px; }
+
+.ratting .ratingNo { font-size: 14px; color: #fff; margin-top: 6px; }
+
+.courseDesp { color: #fff; line-height: 26px; margin-bottom: 50px; }
+
+.coursePrice { display: flex; align-items: start; justify-content: left; }
+
+.coursePrice button { width: 202px; height: 65.5px; border-radius: 39px; box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16); background-color: #f05050; font-size: 24px; color: #fff; cursor: pointer; }
+
+.coursePrice button img { width: 10px; }
+
+.priceSec { display: inline-block; margin: 13px 0px 0px 50px; }
+
+.priceSec p { color: #fff; font-size: 16px; }
+
+.priceSec .stock { position: absolute; top: 10px; width: 100%; height: 2px; left: 0px; color: rgba(255, 255, 255, 0.8); background-color: rgba(255, 255, 255, 0.8); }
+
+.priceSec .priceSec { display: flex; margin-top: 10px; }
+
+.priceSec .priceDiv { margin-top: 8px; }
+
+.priceSec .sellingPrice { font-size: 20px; color: #fff; }
+
+.priceSec .actualPrice { position: relative; color: rgba(255, 255, 255, 0.8); margin-left: 10px; line-height: 20px; font-size: 16px; }
+
+.educator_program { background-color: #fff; }
+
+.educator { width: 100%; box-sizing: border-box; float: left; transition: all .2s ease; border-radius: 0 0 5px 5px; }
+
+.educator .educatorInner { box-sizing: border-box; display: inline-block; width: 100%; padding-right: 25px; }
+
+.educatorCardOuter { margin: 0 0 25px; padding-left: 30px; box-sizing: border-box; float: left; position: relative; padding-right: 0; width: 33.33%; }
+
+.educatorCard { width: 100%; box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.06); border: solid 1px rgba(223, 229, 235, 0.5); background-color: #ffffff; padding: 30px; border-radius: 10px; margin-left: -26px; }
+
+.educatorCard:hover { border: solid 1px #f05050; }
+
+.educatorCard .educatorInfo { float: left; width: 100%; padding-left: 100px; height: 100px; position: relative; }
+
+.educatorCard .imageSec { position: absolute; width: 85px; height: 85px; left: 0; border-radius: 100%; overflow: hidden; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
+
+.despSec .profession { font-family: "Montserrat"; font-size: 12px; font-weight: 600; color: #f05050; }
+
+.despSec .nameEdu { margin: 5px 0px 10px 0px; font-family: "Montserrat"; font-size: 18px; font-weight: 600; color: #000000; }
+
+.despSec .followEdu button { width: 90px; height: 36px; border-radius: 20px; font-size: 14px; color: #f05050; cursor: pointer; border: 1px solid #f05050; background-color: #fff; }
+
+.EduDesp { margin: 60px 0px 0px 0px; font-size: 16px; color: rgba(0, 0, 0, 0.5); line-height: 22px; }
+
+.headMain { width: 750px; }
+
+.headMain .heading_bold { font-family: "Montserrat"; font-size: 34px; font-weight: 600; }
+
+.headMain p { margin: 20px 0px 40px 0px; color: rgba(0, 0, 0, 0.9); line-height: 22px; font-size: 16px; }
+
+.main_container { height: 360px; background: #f05050; background: linear-gradient(0deg, #b42a2a 0%, #f05050 100%); border-radius: 10px; padding: 40px 390px 40px 50px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16); position: relative; }
+
+.main_container .rightImg { width: 390px; height: 100%; position: absolute; top: 0px; right: 0px; background-image: url("./../../../assets/images/university/camera.png"); background-size: 100% 100%; }
+
+.main_container .leftWidth .headMain { width: 375px; }
+
+.main_container .leftWidth .headMain .heading_bold, .main_container .leftWidth .headMain p { color: #fff; }
+
+.main_container .leftWidth { width: 600px; }
+
+.main_container .despList { margin-top: 35px; }
+
+.main_container .despList ul li { position: relative; font-size: 18px; font-weight: 500; line-height: 20px; color: #ffffff; margin-bottom: 15px; padding-left: 30px; width: 50%; float: left; }
+
+.main_container .despList ul li .outerSpan { position: absolute; width: 16px; height: 16px; background-color: rgba(255, 255, 255, 0.5); border-radius: 10px; top: 0px; left: 0px; }
+
+.main_container .despList ul li .outerSpan .innerSpan { width: 8px; height: 8px; background-color: white; margin: 0px 0px 4px 4px; display: inline-block; border-radius: 8px; }
+
+.career_program { padding: 0px 0px 85px 0px; background-color: #fff; }
+
+.university_program { padding: 0px; background-color: #fff; }
+
+.university_program .universityOuet { padding: 36px 0px 80px 0px; position: relative; }
+
+.university_program .universityOuet h2 { font-family: "Montserrat"; font-size: 18px; font-weight: 600; line-height: 20px; color: #000000; }
+
+.university_program .universityOuet .universityDetails { padding: 36px 500px 80px 230px; position: relative; }
+
+.university_program .universityOuet .universityDetails img { position: absolute; width: 200px; left: 0px; }
+
+.university_program .universityOuet .uDetails .para1 { font-family: "Montserrat"; font-size: 20px; font-weight: 600; line-height: 22px; color: #f05050; }
+
+.university_program .universityOuet .uDetails .para2 { font-size: 14px; line-height: 22px; margin: 10px auto 15px; color: rgba(0, 0, 0, 0.7); }
+
+.university_program .universityOuet .uDetails span { font-size: 16px; font-weight: 500; line-height: 20px; color: #f05050; cursor: pointer; }
+
+.university_program .universityOuet .uDetails span:hover { text-decoration: underline; }
+
+.rightInfoBanner { position: absolute; right: 0px; width: 430px; height: 580px; border-radius: 6px; top: -332px; background: #fff; box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15); }
+
+.rightInfoBanner .bannerInfo { width: 100%; height: 214px; background-image: url("./../../../assets/images/university/youtube-cover.png"); }
+
+.rightInfoBanner .courseKeyInfo { padding: 25px; }
+
+.rightInfoBanner .courseKeyInfo ul { padding: 25px 0px 0px; border-bottom: solid 1px rgba(112, 112, 112, 0.2); }
+
+.rightInfoBanner .courseKeyInfo ul li { padding: 0px 0px 20px 40px; width: 50%; float: left; position: relative; }
+
+.rightInfoBanner .courseKeyInfo ul li:before { content: ""; width: 30px; height: 30px; display: inline-block; position: absolute; left: 0px; background: center; background-repeat: no-repeat; background-size: 100% 100%; }
+
+.rightInfoBanner .courseKeyInfo ul li .firstData, .rightInfoBanner .courseKeyInfo ul li .secData { font-size: 14px; line-height: normal; }
+
+.rightInfoBanner .courseKeyInfo ul li .firstData { font-family: "Montserrat"; font-weight: 600; color: #000000; }
+
+.rightInfoBanner .courseKeyInfo ul li .secData { color: rgba(0, 0, 0, 0.7); margin-top: 3px; }
+
+.rightInfoBanner .courseKeyInfo ul .li1:before { background-image: url("./../../../assets/images/university/chat-icon.svg"); }
+
+.rightInfoBanner .courseKeyInfo ul .li2:before { background-image: url("./../../../assets/images/university/leaner-people.svg"); }
+
+.rightInfoBanner .courseKeyInfo .topicInfo { padding: 18px 0px 15px 0px; }
+
+.rightInfoBanner .courseKeyInfo .topicInfo p { font-size: 16px; font-weight: 500; line-height: 20px; color: rgba(0, 0, 0, 0.9); margin-bottom: 15px; }
+
+.rightInfoBanner .courseKeyInfo .topicInfo span { border-radius: 17px; box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.16); background-color: #ffffff; margin-right: 10px; padding: 8px 18px; color: rgba(0, 0, 0, 0.8); line-height: 32px; font-weight: 500; }
+
+.menu { margin: 0 auto; width: 840px; height: 70px; padding: 9px; border-radius: 39px; margin-bottom: 60px; background-color: #dfe5eb; }
+
+.menu ul li { padding: 14px 40px; font-size: 16px; display: inline-block; font-weight: 500; line-height: 25px; color: rgba(0, 0, 0, 0.9); cursor: pointer; border-radius: 30px; margin-right: 5px; }
+
+.menu ul li.active { color: #f05050; background-color: #fff; }
+
+.menu ul li.active:after { content: ""; }
+
+.menu.menusticky { position: fixed; top: 0; z-index: 11; left: 165px; }
+
+.about_program_main h3 { font-family: "Montserrat"; font-size: 34px; color: #000000; }
+
+.about_program_main .about_program_details { margin: 30px 0px 60px 0px; width: 100%; padding-right: 500px; position: relative; }
+
+.about_program_main .about_program_details .youtubeImage { position: absolute; top: 0px; right: 8%; height: 100%; }
+
+.about_program_main .about_program_details .youtubeImage img { width: 254px; height: 254px; left: 5%; }
+
+.about_program_main .about_program_details p { font-size: 16px; line-height: 22px; color: rgba(0, 0, 0, 0.9); }
+
+.about_program_main h5 { font-family: "Montserrat"; font-size: 20px; font-weight: 600; line-height: 22px; margin: 33px 0px; color: #000000; }
+
+.course_feat_info ul li { padding: 0px 30px 20px 25px; width: 50%; float: left; position: relative; font-size: 16px; color: rgba(0, 0, 0, 0.9); line-height: 24px; }
+
+.course_feat_info ul li::before { content: ""; background-image: url("./../../../assets/images/university/red-tik.svg"); width: 15px; height: 12px; position: absolute; left: 0; top: 6px; }
+
+.courseDataDesp { padding: 0px 0px 0px 0px; }
+
+.courseDataDespLeft { width: 50%; float: left; }
+
+.courseDataDespRight { width: 50%; float: right; padding-left: 80px; }
+
+.courseDataDespRight .downloadBtn { border-radius: 39px; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1); border: solid 2px #f05050; background-color: #ffffff; position: relative; padding: 20px 38px 20px 70px; font-size: 18px; font-weight: 500; line-height: 1.22; color: #f05050; margin: 0 auto; display: block; }
+
+.courseDataDespRight .downloadBtn:before { content: ""; background-image: url("./../../../assets/images/university/Files_icon.svg"); position: absolute; left: 33px; width: 20px; height: 23px; background-size: 100% 100%; top: 20px; }
+
+.courseDataDespRight .courseInfoAll { margin: 15px 0px 80px -30px; display: flex; flex-wrap: wrap; justify-content: start; }
+
+.courseDataDespRight .courseInfoAll .oneCardInfo { width: 33.33%; display: flex; margin-top: 35px; justify-content: center; align-items: center; flex-direction: column; }
+
+.courseDataDespRight .courseInfoAll .oneCardInfo .cardCircle { width: 90px; height: 90px; border: solid 1px rgba(240, 80, 80, 0.5); background-color: #ffffff; border-radius: 50px; display: flex; justify-content: center; align-content: center; }
+
+.courseDataDespRight .courseInfoAll .oneCardInfo .cardCircle .imgIcon { width: 40px; background-repeat: no-repeat; }
+
+.courseDataDespRight .courseInfoAll .oneCardInfo .infodetail1 { font-size: 20px; font-family: "Montserrat"; font-weight: 600; line-height: 18px; text-align: center; color: #f05050; margin: 15px 0px 7px 0px; }
+
+.courseDataDespRight .courseInfoAll .oneCardInfo .infodetail2 { font-size: 16px; font-weight: 500; line-height: 22px; color: rgba(0, 0, 0, 0.9); }
+
+.courseDataDespRight .courseCertificate { padding: 0px 0px 0px 150px; position: relative; }
+
+.courseDataDespRight .courseCertificate img { position: absolute; left: 0px; top: 0px; }
+
+.courseDataDespRight .courseCertificate h4 { font-family: "Montserrat"; font-size: 18px; font-weight: 600; line-height: 1.22; color: #000000; }
+
+.courseDataDespRight .courseCertificate p, .courseDataDespRight .courseCertificate span { font-size: 16px; line-height: 22px; color: rgba(0, 0, 0, 0.9); margin: 10px 0px 15px 0px; }
+
+.courseDataDespRight .courseCertificate span { font-size: 16px; font-weight: 500; color: #f05050; cursor: pointer; }
+
+.about_program_cont h4 { font-family: "Montserrat"; font-size: 20px; width: 655px; line-height: 26px; font-weight: 600; margin-bottom: 50px; color: #000000; }
+
+.about_program_cont .maincoursedata { width: 400px; min-height: 208px; overflow: hidden; position: relative; border: 1px solid #f05050; box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16); padding: 20px; margin-right: 25px; float: left; }
+
+.about_program_cont .maincoursedata:before { content: ""; font-size: 30px; width: 170px; height: 170px; border-radius: 10px 100% 100% 0px; position: absolute; background-color: #f05050; top: -85px; left: -85px; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
+
+.about_program_cont .maincoursedata span { position: absolute; font-size: 32px; font-family: "Montserrat"; color: #fff; font-weight: bold; left: 25px; top: 25px; }
+
+.about_program_cont .maincoursedata h2 { font-family: Montserrat; font-size: 24px; font-weight: bold; line-height: 30px; padding: 8px 0px 30px 95px; color: #f05050; }
+
+.about_program_cont .maincoursedata p { font-size: 16px; color: rgba(0, 0, 0, 0.9); line-height: 22px; }
+
+.asked_ques_program { background-color: #ffefef; font-family: "Montserrat"; }
+
+.asked_ques_program .inner_accordian { max-width: 100%; }

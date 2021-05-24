@@ -1,0 +1,355 @@
+.h5heading {
+  margin-bottom: 0px;
+}
+
+.searchpage .mainheading {
+  margin-bottom: 15px;
+}
+
+.searchpage .Experiance_list li .prfl_detail {
+  float: left;
+  width: 70%;
+}
+
+.searchpage .Experiance_list li p {
+  color: #2c2e2f;
+  display: inline-block;
+  width: 100%;
+}
+
+.searchpage .Experiance_list li .graybutton {
+  margin-left: 10px;
+}
+
+.searchpage .peopleknow_outer.searchrightmenu .people_list {
+  height: auto;
+}
+
+.searchpage .peopleknow_outer.searchrightmenu ul li:first-child {
+  padding-top: 15px;
+}
+
+.searchpage .peopleknow_outer.searchrightmenu ul li {
+  color: #2c2e2f;
+  padding-top: 0px;
+}
+
+.searchpage .peopleknow_outer.searchrightmenu ul li .widgetheading {
+  padding: 15px 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.searchpage .peopleknow_outer.searchrightmenu ul li .mainlabel {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.searchpage .peopleknow_outer.searchrightmenu ul li label {
+  font-weight: normal;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .post-wrap {
+  background-color: white;
+  margin-bottom: 10px;
+  -moz-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .all.common-search-result .people-wrap {
+  -moz-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .people-wrap {
+  background-color: white;
+  -moz-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .people-wrap .person-name-wrap {
+  float: left;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .people-wrap .person-name-wrap .profileimg_know {
+  display: block;
+  float: left;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .people-wrap .person-name-wrap .prfl_detail {
+  display: block;
+  float: left;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .people-wrap .person-name-wrap .prfl_detail .profilename {
+  margin-bottom: 4px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .people-wrap .person-name-wrap .prfl_detail .grayinfo {
+  line-height: 1;
+  color: rgba(44, 46, 47, 0.6);
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .people-wrap ul li {
+  padding: 10px;
+  border-top: 1px solid rgba(44, 46, 47, 0.15);
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .people-wrap ul li .graybutton {
+  margin-top: 5px;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .post_outer {
+  margin-bottom: 0;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid rgba(44, 46, 47, 0.15);
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .post_outer .attached-file-wrap {
+  margin-bottom: 10px;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .head-wrap {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .head-wrap h6 {
+  float: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 50px;
+}
+
+.search-result-outer-wrap .search-result-inner-wrap .head-wrap a {
+  display: block;
+  float: right;
+  line-height: 50px;
+  color: #F05050;
+  cursor: pointer;
+}
+
+.search-result-outer-wrap .shared-post-blocks-wrap {
+  margin-bottom: 10px;
+}
+
+.search-result-outer-wrap .search-tab-wrap ul {
+  background-color: #fff;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search-result-outer-wrap .search-tab-wrap ul li {
+  font-weight: normal;
+  padding: 13px 15px;
+  line-height: 1;
+  margin: auto 8px;
+  border-bottom: 2px solid;
+  cursor: pointer;
+  border-bottom-color: transparent;
+}
+
+.search-result-outer-wrap .search-tab-wrap ul li.active {
+  border-bottom-color: #F05050;
+}
+
+.search-result-outer-wrap .continue-reading {
+  display: none;
+}
+
+.search-result-outer-wrap .img-post-comp .post_profileContent .postmain_container img {
+  display: block;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 10px;
+  width: 20%;
+}
+
+.search-result-outer-wrap .img-post-comp .post_profileContent .postmain_container .imgpostimgcontainer img {
+  max-width: 100%;
+  min-width: auto;
+  clear: both;
+}
+
+.search-result-outer-wrap .img-post-comp .post_profileContent .postmain_container .posttext.posttextauto {
+  width: 78%;
+  float: right;
+}
+
+.whiteColorButton {
+  margin-top: 5px;
+}
+
+.whiteColorButton .text {
+  color: #2c2e2f;
+}
+
+.people-wrap {
+  border-radius: 0 0 5px 5px !important;
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 992px) {
+  .people-wrap {
+    margin-top: 10px;
+  }
+  .rightFilter, .leftFilter {
+    display: none;
+  }
+  .fixedSearchTab {
+    padding: 10px 0 !important;
+  }
+  .sidefilter {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    display: block;
+  }
+  .sidefilter .innerSideFilter {
+    width: 100%;
+    float: left;
+    height: 100%;
+    position: relative;
+  }
+  .sidefilter .innerSideFilter .open_left {
+    width: 30px;
+    height: 36px;
+    border-radius: 0 18px 18px 0;
+    right: -30px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 118px;
+    z-index: 11;
+    border: 1px solid rgba(44, 46, 47, 0.3);
+    border-left-width: 1px;
+    border-left-width: 0;
+    padding: 8px;
+    display: block;
+    cursor: pointer;
+    -webkit-box-shadow: 3px 0 8px 0 rgba(44, 46, 47, 0.09);
+            box-shadow: 3px 0 8px 0 rgba(44, 46, 47, 0.09);
+  }
+  .sidefilter .innerSideFilter .open_left img {
+    width: 12px;
+    height: 12px;
+  }
+  .sidefilter.openfilter {
+    width: 270px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .tabinnerwrap {
+    border-radius: 0;
+  }
+  .tabinnerwrap ul {
+    width: 430px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .search_wrapp {
+    padding: 0;
+  }
+  .people-wrap {
+    border-radius: 0 !important;
+  }
+  .search-result-outer-wrap .search-tab-wrap ul, .search-result-outer-wrap .search-result-inner-wrap .post-wrap {
+    border-radius: 0;
+  }
+  .tabinnerwrap {
+    border-radius: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 601px) {
+  .center_feed {
+    max-width: 600px;
+  }
+}
+
+.coursesDertailTop {
+  pointer-events: auto !important;
+}
+
+.rightmenu_fixed.fixedleft {
+  position: fixed;
+  width: 278px;
+  float: left;
+}
+
+.fixedSearchTab {
+  position: fixed;
+  width: 555px;
+  top: 77px;
+  z-index: 2;
+  float: left;
+  background: #dfe5eb;
+  padding: 15px 0;
+  margin-top: -20px;
+}
+
+.centerContainWrap {
+  margin-top: 42px;
+  float: left;
+  width: 100%;
+}
+
+#sideThreeCol .rightmenu_fixed {
+  float: left;
+  width: 100%;
+}
+
+.tabinnerwrap {
+  background-color: #ffffff;
+  width: 100%;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.open_left {
+  display: none;
+}
+
+.unpublishButton {
+  background-color: white;
+}
+
+.unpublishButton:hover {
+  background-color: lightgray !important;
+}
+
+.hideleftfilter {
+  display: none;
+}
+
+.hideleftfilter.showleftfilter {
+  display: block;
+}
+/*# sourceMappingURL=search.component.css.map */

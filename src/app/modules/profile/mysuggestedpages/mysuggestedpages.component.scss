@@ -1,0 +1,46 @@
+@mixin btn_shadow($offset-x, $offset-y, $blur-radius, $spread-radius, $color, $inset: false) {
+@if $inset {
+-ms-box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+-o-box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+-webkit-box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+-moz-box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+}
+@else {
+-ms-box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+-o-box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+-webkit-box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+-moz-box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+}
+}
+.page-box-content{
+  .btn-secondary.graybutton.cursor-pointer{
+    text-align: center;
+    // box-shadow: 0 1px 2px 1px #2c2e2f20;
+    @include btn_shadow(0, 1px, 2px, 1px, rgba(44, 46, 47, 0.1));
+    border-radius: 18px;
+    height: 30px;
+    font-size: 14px;
+    background-color: #fff !important;
+    position: relative;
+    border: none;
+    padding: 2px 14px 0px 14px;
+    cursor: pointer;
+    float: left;
+    width: 95px;
+    margin-top: 5px;
+     &:hover{
+       background-color: rgba(44, 46, 47, 0.1) !important;
+        box-shadow: none;
+     }
+  }
+
+}
+.emptystate {
+  .emptystate_inner {
+  img{
+      width: 200px !important;
+  }
+}
+}

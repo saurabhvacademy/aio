@@ -1,0 +1,781 @@
+<div style="max-height: 100vh; overflow:auto;">
+<div class="testpopup">
+    <div class="test_wrapper">
+        <div class="wrapper_inner">
+            <div class="wrapper_inner_sec">
+                <div class="topstrip">
+                    <div class="t_left">
+                        <span class="test_name">
+                            <p style="float: left;">Live Session: {{content_title}}</p>
+                            <div class="rec_show" *ngIf="streamProgress == 1">
+                                <!-- <span class="tag_head" style="line-height:20px;"> Live</span> -->
+                                <div class="switch">
+                                    <span class="dote"><img src="./assets/images/Live-stream/eye-icon.svg"></span>
+                                    <span class="no">{{count.userCount}}</span>
+                                </div>
+                            </div>
+                        </span>
+
+                        <div class=" icon_div_right" style="right: 300px;" *ngIf="streamProgress != 0" >
+                            <ul class="stream_wrapp">
+                                <li class=" user_online">
+                                    <div class="headericon" (click)="dropnotification(3)"><img class="iconimage iconimage1"
+                                                                                               src="./assets/images/Live-stream/online.svg" title="Notifications">
+                                        <span class="count">{{count.userCount}}</span>
+                                    </div>
+                                    <div class="chatNotification notification_drpdwn" *ngIf="showNotification == 3">
+                                        <div style="float: left;width: 100%;clear: both;padding: 15px 15px 5px;">
+                                            <p style="font-size: 14px;color: #2c2e2f;margin-top: 0px;">online / Enrollment <label
+                                                    style="font-weight: normal;">(<span>{{count.userCount}}</span>/<span>{{count.enrolledUserCount}}</span>)</label>
+                                            </p>
+                                            <!-- <div class="course_search_li">
+                                                <span class=" course_search">
+                                                    <button>
+                                                        <span class="glyphicon glyphicon-search"></span>
+                                                    </button>
+                                                </span>
+                                                <input class="form-control active" placeholder="&nbsp;Enter your Search" type="text">
+                                            </div> -->
+                                        </div>
+                                        <div class="notificationshowabsolute" >
+                                            <div class="notificationshow" [perfectScrollbar]="config" >
+                                                <div class="showEnrollmentDetails" *ngFor="let users of getUserList(); let i = index;">
+                                                     <div class="showEnrollmentDetailsLeft">
+                                                        <div class="studentInfo">
+                                                            <img class="studentImg" src={{createProfilePic1(users.userId,users.profilePic)}}>
+                                                            <div class="studentName">
+                                                                <p style="height:16px;"> {{users.fullName}}</p>
+                                                                <!-- <span class="chatRoomStatus">
+                                                                  <img src="assets/images/Live-stream/icon/chat-icon.svg">
+                                                                </span> -->
+                                                                <p class="staus">
+                                                                  <span class="studusActive">Joined</span>
+                                                                  <span class="studusTime">{{this.postdata.getPostDateTime(users.timestamp)}} </span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="showEnrollmentDetailsRight">
+                                                            <!-- <p class="staus">
+                                                              <span class="studusActive">Joined</span>
+                                                              <span class="studusTime">{{this.postdata.getPostDateTime(users.timestamp)}} </span></p> -->
+                                                            <div class="toggle_notification">
+                                                                <label class="switch"><input type="checkbox" [checked]="users.userStatus == 1" (click)="blockUnblockUser(users,i)">
+                                                                <span class="slider round">
+                                                                <span class="bubble">
+                                                                <img class="mute" src="assets/images/svg/tagcross-red.svg">
+                                                                <img class="active" src="assets/images/svg-one/checkbox-green.svg">
+                                                              </span>
+                                                            </span>
+                                                          </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="showEnrollmentDetails showEnrollmentDetailsActive ">
+                                        <div  class="showEnrollmentDetailsLeft">
+                                        <div class="studentInfo">
+                                        <img  class="studentImg" src="https://s3.ap-south-1.amazonaws.com/247-user-test/development/2.0.0.7/profile/19_60x60.png?v=1560843040000">
+                                        <div class="studentName">
+                                        <p>Dharmendra Pal</p>
+                                        <span class="chatRoomStatus"><img src="https://s3.ap-south-1.amazonaws.com/247-user-test/development/2.0.0.7/profile/19_60x60.png?v=1560843040000"></span>
+                                      </div>
+                                    </div>
+                                    <div class="showEnrollmentDetailsRight">
+                                    <p class="staus"><span class="studusActive">left</span><span class="studusTime">12:30 PM</span></p>
+                                    <div class="toggle_notification">
+                                    <label class="switch"><input type="checkbox">
+                                    <span class="slider round">
+                                    <span class="bubble">
+                                    <img class="mute" src="assets/images/svg/tagcross-red.svg">
+                                    <img class="active" src="assets/images/svg-one/checkbox-green.svg">
+                                  </span>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                          </div>
+                          </div> -->
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <!-- <div *ngIf="!isMentor">
+                                    <div class="headericon" (click)="dropnotification(1)"><img class="iconimage iconimage1"
+                                    src="./assets/images/Live-stream/notification.svg" title="Notifications">
+                                    <span class="count">12</span>
+
+                                  </div>
+                                  <div class="notification_drpdwn" *ngIf="showNotification == 1">
+                                  <span class="notification_heading">Notifications</span>
+                                  <div *ngFor="let chatPublic of userNotiification">
+                                  <span class="noti_inner"><span><img src="./assets/images/Live-stream/polling.svg"
+                                  alt=""></span>{{chatPublic.message}}</span>
+                                  </div>
+
+
+                                  </div>
+                                  </div> -->
+                                    <div>
+                                        <div class="headericon" (click)="dropnotification(1)"><img class="iconimage iconimage1"
+                                                                                                   src="./assets/images/Live-stream/notification.svg" title="Notifications">
+                                            <span class="count">{{this.adminNotification.length}}</span>
+
+                                        </div>
+                                        <div class="notification_drpdwn" *ngIf="showNotification == 1" (mouseleave)="this.showNotification = !this.showNotification">
+                                            <span class="notification_heading">Notifications</span>
+
+                                            <div class="notificationshow" [perfectScrollbar]="config" >
+                                                <div *ngFor="let chatPublic of adminNotification">
+                                                    <span class="noti_inner"><span><img src="./assets/images/Live-stream/polling.svg"
+                                                                                    alt=""></span>{{chatPublic.message}}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- <li class="layout">
+                                <div class="headericon"><img class="iconimage iconimage1"
+                                src="./assets/images/Live-stream/layout.svg" title="Notifications">
+                                <span class="count"></span>
+                                </div>
+                                </li> -->
+                                <!-- <li class="polling">
+                                <div class="headericon"><img class="iconimage iconimage1"
+                                src="./assets/images/Live-stream/polling.svg" title="Notifications">
+                                <span class="count"></span>
+                                </div>
+                                </li> -->
+                                <li class="polling">
+                                    <div *ngIf="streamProgress==2" class="headericon" (click)="dropnotification(2)">
+                                        <img class="iconimage iconimage1" src="./assets/images/Live-stream/polling.svg" title="Notifications">
+                                        <span class="count"></span>
+                                    </div>
+                                    <div class="notification_drpdwn timeremaining" *ngIf="showNotification == 2" (mouseleave)="this.showNotification = !this.showNotification">
+                                        <div class="streamTimeWrapper">
+                                            <span class="streamheadwrap">Stream Time Remaining</span>
+                                            <!--<span class="streamhead">You can extent stream time if needed maximum by 60 minutes</span>-->
+                                            <div class="timewrapp">
+                                                <span class="timeinnerleft"><b>{{hoursLeft}}</b>:{{minuteLeft}}:{{secondLeft}}</span>
+                                                <span class="timeinnerright">{{durationStr}}</span>
+                                                <div class="timebar"><span class="timeinnerbar" [ngStyle]="{ 'width': timeLapseBar + '%' }"></span></div>
+                                            </div>
+                                            <div class="tmouter">
+                                                <span class="tminnerleft"><span class="timeat">Started at</span><span class="timeto">{{startTime| date:'hh:mm:ss aaa'}}
+                                                    </span></span>
+                                                <!--                                                <span class="tminnerright"><span class="timeatelap">Time Elapsed</span><span
+                                                class="timetoelap"></span></span>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="logout" (click)="startMentorStream()" style='right:160px !important;right:140px !important;background-color: #00b01d;border: 1px solid #00b01d;'  *ngIf="streamProgress == 1">
+                            <img style="width: 16px;" src="assets/images/svg-three/page_icon/iconwall_white.svg">
+                            <span>Open streaming window</span>
+                        </div> -->
+                        <div class="logout" (click)="exitStream()">
+                            <img src="assets/images/Live-stream/exit-stream.svg"><span>Exit stream</span>
+                        </div>
+                        <div class="logout"  (click)="refreshStream()" style='right:160px !important;right:140px !important;background-color: #00b01d;border: 1px solid #00b01d;'  *ngIf="streamProgress == 2 && !broadcastStatus">
+                            <img style="width: 16px;" src="assets/images/svg-three/page_icon/iconwall_white.svg">
+                            <span>Refresh Stream</span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="middle_sec wrapper_middle mainmiddle" >
+                    <div class="middlestrip">
+                        <div class="middle_sec_left m_left">
+                            <div class="outer_sec"   *ngIf="streamProgress == 0 || streamProgress == 2">
+                                <div class="obs_twosecwrapp"  *ngIf="streamProgress == 0">
+                                    <div class="innerwrap">
+                                        <h2>Activate Screen Share</h2>
+                                        <p>Begin teaching your students on live stream</p>
+                                    </div>
+                                    <div class="two_secwrap">
+
+                                        <div class="left_secobs" (click)="showPanelStream();">
+                                            <img src="assets/images/Live-stream/Shareemptystate.svg" alt="">
+                                            <h2>Webcam & Screen Share</h2>
+                                            <p>Share your pc screen with <br> your students "live"</p>
+                                        </div>
+
+                                        <div class="or">or</div>
+
+                                        <div class="right_secobs" (click)="showobspupup();">
+                                            <img src="assets/images/Live-stream/OBS-icon.png" alt="">
+                                            <h2>OBS Studio</h2>
+                                            <p>Use OBS Studio broadcasting <br> software for live streams</p>
+                                        </div>
+
+                                    </div>
+
+                                    <!--          <div class="socialLinkWrapper">
+                                                <h3>Cast your Stream on your favourite channels by linking you account</h3>
+                                                <div class="socialImgWrapper">
+
+                                                  <div class="fbWrapper">
+                                                      <div class="fbInnerWrapper">
+                                                        <input class="obsCheckBox" type="checkbox" name="" id="facebookObs" value="">
+                                                        <label class="obsCheckLabel" for="facebookObs" style="left: calc(100% - 140px);">
+                                                          <img src="assets/images/svg/white_checkbox.svg" alt="">
+                                                        </label>
+                                                    <img src="assets/images/facebook02.png" alt="">
+                                                    <a href="#">Link Account</a>
+                                                  </div>
+                                                  </div>
+
+                                                  <div class="youtubeWrapper">
+                                                    <div class="youtubeInnerWrapper">
+                                                      <input class="obsCheckBox" type="checkbox" name="" id="youtubeObs" value="">
+                                                      <label class="obsCheckLabel" for="youtubeObs">
+                                                        <img src="assets/images/svg/white_checkbox.svg" alt="">
+                                                      </label>
+                                                    <img src="assets/images/youtube02.png" alt="">
+                                                    <p>avnitkr227
+                                                      <span>
+                                                        <img src="assets/images/svg/tagcross.svg" alt="">
+                                                      </span>
+                                                    </p>
+                                                  </div>
+                                                  </div>
+                                                </div>
+                                              </div>-->
+
+                                    <div class="socialLinkWrapper">
+                                        <h3>Cast your stream to your favorite channels by linking your account.</h3>
+                                        <div class="socialImgWrapper">
+                                            <div class="fbWrapper">
+                                                <div class="fbInnerWrapper">
+                                                    <input class="obsCheckBox" type="checkbox" name="fbIntegration" id="facebookObs" value="" [(ngModel)]="fbCheckbox">
+                                                    <label class="obsCheckLabel" for="facebookObs" style="left: calc(100% - 140px);" [ngStyle]="{'pointer-events' : !isFbChnl ? 'none' : 'auto'}">
+                                                        <img src="assets/images/svg/white_checkbox.svg" alt="">
+                                                    </label>
+                                                    <img src="assets/images/facebook02.png" alt="">
+                                                    <a *ngIf="!isFbChnl" (click)="getSocialAuthParams(1)" class="cursor-pointer">Link Account</a>
+                                                    <p *ngIf="isFbChnl">{{fbDataId}}
+                                                        <span (click)="delSocialConfirmation('f')">
+                                                            <img src="assets/images/svg/tagcross.svg" alt="">
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="youtubeWrapper">
+                                                <div class="youtubeInnerWrapper">
+                                                    <input class="obsCheckBox" type="checkbox" name="ytIntegration" id="youtubeObs" value="" [(ngModel)]="youtubeCheckbox">
+                                                    <label class="obsCheckLabel" for="youtubeObs" [ngStyle]="{'pointer-events' : !isYoutubeChnl ? 'none' : 'auto'}">
+                                                        <img src="assets/images/svg/white_checkbox.svg" alt="">
+                                                    </label>
+                                                    <img src="assets/images/youtube02.png" alt="">
+                                                    <a *ngIf="!isYoutubeChnl" (click)="getSocialAuthParams(0)" class="cursor-pointer">Link Account</a>
+                                                    <p *ngIf="isYoutubeChnl">{{youtubeDataId}}
+                                                        <span (click)="delSocialConfirmation('y')">
+                                                            <img src="assets/images/svg/tagcross.svg" alt="">
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div  class="popup-inner-wrap popup-open-inner-wrap obs_popupwrap"  *ngIf="streamProgress == 2">
+
+                                    <div class="obs_centerwrapp">
+                                        <div class="inviteStream_popupHead closeone" (click)="showobspupup();">
+                                          <span class="close_div">
+                                            <img class="defaultt" src="assets/images/svg/tagcross.svg" style="cursor: pointer;">
+                                            <img class="hoverr" src="assets/images/svg/tagcross-gray.svg" style="cursor: pointer;">
+                                          </span>
+                                        </div>
+                                        <div class="centerleft">
+                                            <h2 class="Hheading">Connect your live stream with OBS studio</h2>
+                                            <span class="hcontent">Enter the information below into your software's settings.</span>
+                                            <div class="invite_footer"><p>Make sure you have OBS studio installed.  <a href="https://obsproject.com/">Download</a></p></div>
+
+                                            <div class="linkcopy_wrapp">
+                                                <span class="input_heading">Server URL</span>
+                                                <div class="inner_linkwrap">
+                                                    <input  type="text" name="" style='pointer-events: none' value="{{_constantService.antMediaStreamUrl}}">
+                                                    <button (click)="postdata.copyPostURL(_constantService.antMediaStreamUrl)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="linkcopy_wrapp">
+                                                <span class="input_heading">Server Key</span>
+                                                <div class="inner_linkwrap">
+                                                    <input  type="text" name="" style='pointer-events: none' value="{{obsToken}}">
+                                                    <button (click)="postdata.copyPostURL(obsToken)">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="centerright">
+                                            <div class="inviteStream_popupHead closetwo" (click)="showobspupup();">
+                                                <span class="close_div"  >
+                                                    <img class="defaultt"  src="assets/images/svg/tagcross.svg" style="cursor: pointer;">
+                                                    <img class="hoverr"  src="assets/images/svg/tagcross-gray.svg" style="cursor: pointer;">
+                                                </span>
+                                            </div>
+
+
+                                            <div id="demo" class="carousel slide obs_slide" data-ride="carousel">
+                                                <ul class="carousel-indicators">
+                                                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#demo" data-slide-to="1"></li>
+                                                    <li data-target="#demo" data-slide-to="2"></li>
+                                                    <li data-target="#demo" data-slide-to="3"></li>
+                                                </ul>
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <div class="obsimg_wrap imgcont_a">
+                                                            <img src="assets/images/Live-stream/assets1.png" alt="Los Angeles" >
+                                                        </div>
+                                                        <div class="obs_content">
+                                                            <h2>OBS Studio integration</h2>
+                                                            <p><b>Step 1</b>: Go to setting panel in OBS software at the bottom right</p>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <div class="obsimg_wrap imgcont_b">
+                                                            <img src=" assets/images/Live-stream/assets4.png" alt="Chicago" >
+                                                        </div>
+                                                        <div class="obs_content">
+                                                            <h2>OBS Studio integration</h2>
+                                                            <p><b>Step 2</b>: Go to setting panel in OBS software at the bottom right</p>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <div class="obsimg_wrap imgcont_c">
+                                                            <img src="assets/images/Live-stream/assets3.png" alt="New York">
+                                                        </div>
+                                                        <div class="obs_content">
+                                                            <h2>OBS Studio integration</h2>
+                                                            <p><b>Step 3</b>: Go to setting panel in OBS software at the bottom right</p>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <div class="obsimg_wrap imgcont_d">
+                                                            <img src="assets/images/Live-stream/assets2.png" alt="New York">
+                                                        </div>
+                                                        <div class="obs_content">
+                                                            <h2>OBS Studio integration</h2>
+                                                            <p><b>Step 4</b>: Go to setting panel in OBS software at the bottom right</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon"></span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#demo" data-slide="next">
+                                                    <span class="carousel-control-next-icon"></span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- <div class="outer_sec popuphide" [ngClass]="{'addclass': obspopup}">
+                            <div  class="popup-inner-wrap popup-open-inner-wrap obs_popupwrap" >
+
+                            <div class="obs_centerwrapp">
+                            <div class="centerleft">
+                            <h2 class="Hheading">Connect your live stream with OBS studio</h2>
+                            <span class="hcontent">Enter the information below into your software's settings.</span>
+                            <div class="invite_footer"><p>Make sure you have OBS studio installed.  <a href="">Download</a></p></div>
+
+                            <div class="linkcopy_wrapp">
+                            <span class="input_heading">Server URL</span>
+                            <div class="inner_linkwrap">
+                            <input type="text" name="" value="">
+                            <button>Copy</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="centerright" (click)="showobspupup();">
+                      <div class="inviteStream_popupHead">
+                      <span class="close_div">
+                      <img class="defaultt"  src="assets/images/svg/tagcross.svg" style="cursor: pointer;">
+                      <img class="hoverr"  src="assets/images/svg/tagcross-gray.svg" style="cursor: pointer;">
+                      </span>
+                      </div>
+
+
+                      <div id="demo" class="carousel slide obs_slide" data-ride="carousel">
+                      <ul class="carousel-indicators">
+                      <li data-target="#demo" data-slide-to="0" class="active"></li>
+                      <li data-target="#demo" data-slide-to="1"></li>
+                      <li data-target="#demo" data-slide-to="2"></li>
+                      <li data-target="#demo" data-slide-to="3"></li>
+                      </ul>
+                      <div class="carousel-inner">
+                      <div class="carousel-item active">
+                      <div class="obsimg_wrap imgcont_a">
+                      <img src="assets/images/Live-stream/assets1.png" alt="Los Angeles" >
+                      </div>
+                      <div class="obs_content">
+                      <h2>OBS Studio integration</h2>
+                      <p><b>Step 2</b>: Go to setting panel in OBS software at the bottom right</p>
+
+                      </div>
+                      </div>
+                      <div class="carousel-item">
+                      <div class="obsimg_wrap imgcont_b">
+                      <img src="assets/images/Live-stream/assets2.png" alt="Chicago" >
+                      </div>
+                      <div class="obs_content">
+                      <h2>OBS Studio integration</h2>
+                      <p><b>Step 2</b>: Go to setting panel in OBS software at the bottom right</p>
+
+                      </div>
+                      </div>
+                      <div class="carousel-item">
+                      <div class="obsimg_wrap imgcont_c">
+                      <img src="assets/images/Live-stream/assets3.png" alt="New York">
+                      </div>
+                      <div class="obs_content">
+                      <h2>OBS Studio integration</h2>
+                      <p><b>Step 2</b>: Go to setting panel in OBS software at the bottom right</p>
+
+                      </div>
+                      </div>
+                      <div class="carousel-item">
+                      <div class="obsimg_wrap imgcont_d">
+                      <img src="assets/images/Live-stream/assets4.png" alt="New York">
+                      </div>
+                      <div class="obs_content">
+                      <h2>OBS Studio integration</h2>
+                      <p><b>Step 2</b>: Go to setting panel in OBS software at the bottom right</p>
+
+                      </div>
+                      </div>
+                      </div>
+                      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                      </a>
+                      <a class="carousel-control-next" href="#demo" data-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                      </a>
+                      </div>
+
+                      </div>
+                      </div>
+
+                      </div>
+                      </div> -->
+                            <div style="height: 100%;border-radius: 5px;position: relative;" *ngIf="streamProgress == 1" >
+                                <div class="live_cont_head">
+                                    <div class="col-md-4 col-sm-5 " style="padding-left: 0px;">
+                                    </div>
+                                </div>
+
+
+                                <div class="live_cont_head" style="background: #fff;padding: 0px 10px !important;display: none">
+                                    <div class="cont_sec_drpdown" [ngClass]="{'wallpostdrpdwn':walldropdown}"
+                                         (mouseleave)="closewalldropdown();" style="display:none;">
+                                        <div class="wll_img_pey_cont">
+                                            <span style="">{{visibilityText}}</span>
+                                        </div>
+                                        <span class="tab-article "
+                                              style="padding: 0px 10px 0px 8px;float: right;padding:  0px;position:  relative;right: 8px;">
+                                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt"
+                                                 style="width:10px !important;">
+                                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg" class="hoverr"
+                                                 style="top: 0px;width:10px !important;">
+                                        </span>
+                                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdown}"
+                                             *ngIf="walldropdown">
+                                            <ul>
+                                                <li *ngIf="visibilityTyp != 3" (click)="changeVisibility(3)"> Youtube</li>
+                                                <li *ngIf="visibilityTyp != 2" (click)="changeVisibility(2)"> Whiteboard</li>
+                                                <li *ngIf="visibilityTyp != 1" (click)="changeVisibility(1)"> Content</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cont_show_sec" >
+
+                                    <!-- <input [(ngModel)]="vidUrl" type="text">
+                                    <button (click)="setVideoUrlToLocalStorage(true)">video</button>
+                                    <button (click)="setVideoUrlToLocalStorage(false)">canvas</button> -->
+
+                                    <div *ngIf="StreamingStart" style="width: 100%;  height: 100%;      text-align: center; ">
+                                        <video style="height: 99%;margin: 0 auto; " id="localVideo" autoplay="" muted=""></video>
+                                        <!-- <video style="height: 99%;margin: 0 auto; " id="localVideo1" autoplay="" muted=""></video> -->
+                                    </div>
+
+                                    <!-- <div *ngIf="!StreamingStart" class="show_empty_state" id="video_play">
+
+                                        <img src="./assets/images/Live-stream/share-empty-state.svg" title="empty state">
+                                        <p>You are currently not teaching anything ...
+                                            <span>You can share multiple responses within your session</span>
+                                        </p>
+                                    </div> -->
+                                    <!-- <div *ngIf="!StreamingStart" class="show_empty_state" id="video_play"> -->
+
+                                <div class="shareScreenSec" *ngIf="!StreamingStart">
+                                  <h2>Get Ready to Deliver your Live Class</h2>
+                                  <div class="streamData">
+                                   <p>{{postdata.decodeURIPostData(courseTitle)| trimData:150}}</p>
+                                   <span></span>
+                                   <div class="streamDataDiv">
+                                     <div class="mentorDtata">
+                                       <img class="profileImg" alt="study24x7" src="{{userData.profilePic}}">
+                                       <p>MENTOR</p>
+                                       <span>{{userData.mentorName}}</span>
+                                     </div>
+                                     <span class="verticleLine"></span>
+                                     <div class="streamTimeData mentorDtata">
+                                       <img class="profileImg" alt="study24x7" src="assets/images/Live-stream/icon/timecount.svg">
+                                       <p>TIME LEFT</p>
+                                       <span>{{timeLeft}}</span>
+                                     </div>
+                                   </div>
+                                  </div>
+                                  <!-- <button style="border-radius: 20px;width: 40px; height: 40px; text-align: center;padding:5px;color:black; background:whitesmoke;border: solid 1px gray;" (click)="toggleChatClick();">Chat</button> -->
+                                </div>
+
+                                  <div *ngIf="false" class="intructionDiv">
+                                    <h3>Follow these steps to start with your live class</h3>
+                                    <p>Welcome to the <label>admin dashboard</label>, where you can manage your live class users, start stream, see notifications and time</p>
+                                    <div class="noteList">
+
+                                      <p>1. Click on the button <label>"Launch Stream Screen"</label></p>
+                                      <!-- <p>2. We will perform a <label>system device check</label> for assuring the proper functioning of camera and microphone</p> -->
+                                      <p>2. The live stream window will pop up, having a button at the top right <label> "Go Live"</label></p>
+                                      <p>3. Once you are ready, click on <label> "Go Live"</label></p>
+                                      <p>4. A <label>window selection popup </label> will open</p>
+                                      <p>5. Select the <label>Live stream window</label></p>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                    <!-- </div> -->
+
+
+
+
+                            </div>
+
+                            <!--chat toggle button-->
+
+                            <!--chat toggle button-->
+                            <!-- toggle sreen shared start--->
+
+                            <!-- toggle sreen shared end--->
+
+                        </div>
+
+
+
+                        <!--chating widget-->
+                        <div class="stream_chat_sec "   style="background: transparent;z-index: 9;">
+                          <div class="middle_sec_right" [ngClass]="{'chatshow':toggleChatSection }" >
+                            <div class="stram_video_main">
+
+                                <div class="live_chating_sec" >
+                                    <div class="live_stream_msg">
+                                        <!-- <ul class="live_stream_tab" *ngIf="false">
+                                            <li class="active" (click)="toggleChatClick();">Class Conversation
+                                              <span class="closeConversation">
+                                                <img class="hoverractive" src="assets/images/svg/remove.svg">
+                                              </span>
+                                            </li>
+                                            <li [ngClass]="{'active' : msgtab === 2 }" (click)="smstabClick(2);">Private Chating</li>
+                                        </ul> -->
+                                        <div class="msg_chat_sec" >
+                                            <div class="msg_chat_cont">
+                                                <div class="msg_chat_show">
+                                                    <perfect-scrollbar class="msg_chat_inner" #scrolltobottom [perfectScrollbar]="config" >
+                                                      <!-- Empty chat section start--->
+                                                      <div style="  position: absolute;  top: 50%;  left: 50%;  margin-left: -72px;  height: 150px;  opacity: .6;  margin-top: -75px;" *ngIf="chatList.length == 0" >
+                                                          <img alt=""  style="  width: 142px;  text-align: center;  margin: 0 auto;"
+                                                              src="./assets/images/emptystates/png-empty-state.png">
+                                                      </div>
+                                                        <!-- Empty chat section end--->
+                                                        <div *ngFor="let chat of chatList; let index = index;">
+                                                            <div class="chatoutr chatoutrmine"
+                                                             *ngIf="chat.sender.userId == _constantService.getSessionDataBYKey('u_id')">
+                                                             <div class="profileimg_know masgprofilepic">
+                                                                    <img tabindex="0" ng-reflect-router-link="/profile/rahul.jain8940"
+                                                                         src={{createProfilePic(chat.sender.userId,chat.sender.profilePic)}}>
+                                                                </div>
+                                                                <div class="mainmsgdiv">
+                                                                    <div>
+                                                                        <div class="chatmessage">
+                                                                            <p>{{chat.message}}</p>
+                                                                            <span class="indivisualName">{{chat.sender.fullName}}</span>
+                                                                        </div>
+                                                                        <div class="chattime">
+                                                                            <span class="timeOfMessage">{{postdata.getPostDateTime(chat.timeStamp)}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chatoutr"
+                                                                 *ngIf="chat.sender.userId != _constantService.getSessionDataBYKey('u_id')">
+                                                                 <div class="profileimg_know masgprofilepic">
+                                                                    <img src={{createProfilePic1(chat.sender.userId,chat.sender.profilePic)}}>
+                                                                </div>
+                                                                <div class="mainmsgdiv">
+                                                                    <div>
+                                                                        <div class="chatmessage">
+                                                                            <p>{{chat.message}}</p>
+                                                                            <span class="indivisualName"> {{chat.sender.fullName}}</span>
+                                                                        </div>
+                                                                        <div class="chattime">
+                                                                            <span class="timeOfMessage">{{postdata.getPostDateTime(chat.timeStamp)}} </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </perfect-scrollbar>
+                                                </div>
+                                                <div class="msg_chat_send" >
+                                                    <div class="msg_outer" >
+                                                        <div class="msg_out_cont" [perfectScrollbar]="config">
+                                                            <div class="placeholdercolor   Editableplaceholder" (keyup)="$event.keyCode == 13 && sendMsg()" style="color: black !important;" class="placeholdercolor   Editableplaceholder" id="writemsg"
+                                                                ondrop="return false;" contenteditable="true"></div>
+
+                                                        </div>
+                                                          <span class=" msgsendiconwrapper" (click)="sendMsg()">
+                                                            <div class="cntrsend"><img alt=""
+                                                                  src="./assets/images/svg-three/inbox_icon/send.svg"></div></span>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <!--chating widget-->
+
+                        </div>
+                        <div class="chattooltip" (click)="toggleChatClick();"   [ngClass]="{'chattooltipactive':toggleChatSection }">
+                            <span>
+                                <img class="defaulttshow"   src="assets/images/Live-stream/chat-icon-wh.svg">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<<<<<<<<<<<<<<<<<<    Check system popup >>>>>>>>>>>>>>>>-->
+        <div class="popuplayout" style="background-color: #0000005e;" *ngIf="testPanel"  >
+            <div class="confirm_acess">
+                <div class="headInfo">
+                    <p>Making sure everything is ready.</p>
+                    <span>Connect all the devices and extension for seemless experience.</span>
+                </div>
+                <div class="CheckInfoDiv">
+                    <div class="checkinfo">
+                        <div class="checkInfoList checkInfoListImg" [ngClass]="{'checkinfoactive': webcamAvailable == 1,'checkinfosucess':webcamAvailable == 0,'checkinfofailed':webcamAvailable == 2}">
+                            <img class="checkactive" src="assets/images/Live-stream/camera-active.svg" >
+                            <img class="checksucess" src="assets/images/Live-stream/camera-sucess.svg" >
+                            <span class="status">
+                                <img class="errorstatusimg" src="assets/images/Live-stream/error.svg">
+                                <img class="progressstatusimg" src="assets/images/Live-stream/refresh-icon.svg">
+                                <img class="activestatusimg" src="assets/images/Live-stream/tick.svg">
+                            </span>
+                        </div>
+                        <p class="infoListName">webcame</p>
+                    </div>
+                    <div class="checkinfo ">
+                        <div class="checkInfoList checkInfoListImg" [ngClass]="{'checkinfoactive': microphoneAvailable==1,'checkinfosucess':microphoneAvailable == 0,'checkinfofailed':microphoneAvailable == 2}">
+                            <img class="checkactive" src="assets/images/Live-stream/mic.svg" >
+                            <img class="checksucess" src="assets/images/Live-stream/mic-sucess.svg" >
+                            <span class="status">
+                                <img class="errorstatusimg" src="assets/images/Live-stream/error.svg">
+                                <img class="progressstatusimg" src="assets/images/Live-stream/refresh-icon.svg">
+                                <img class="activestatusimg" src="assets/images/Live-stream/tick.svg">
+                            </span>
+                        </div>
+                        <p class="infoListName">Microphone</p>
+                    </div>
+                    <div class="checkinfo ">
+                        <div class="checkInfoList checkInfoListImg" [ngClass]="{'checkinfoactive': screenExtensionAvailable == 1 || browser=='firefox','checkinfosucess':screenExtensionAvailable == 0 && browser!='firefox','checkinfofailed':screenExtensionAvailable == 2 && browser!='firefox'}">
+                            <img class="checkactive" src="assets/images/Live-stream/screen-share-icon.svg" >
+                            <img class="checksucess" src="assets/images/Live-stream/screen-share-sucess.svg" >
+                            <span class="status">
+                                <img class="errorstatusimg" src="assets/images/Live-stream/error.svg">
+                                <img class="progressstatusimg" src="assets/images/Live-stream/refresh-icon.svg">
+                                <img class="activestatusimg" src="assets/images/Live-stream/tick.svg">
+                            </span>
+                        </div>
+                        <p class="infoListName">screen share</p>
+                    </div>
+                    <div class="checkinfo ">
+                        <div class="checkInfoList  checkInfoListImg" [ngClass]="{'checkinfoactive': screenExtensionAvailable == 1 || browser=='firefox','checkinfosucess':screenExtensionAvailable == 0 && browser!='firefox','checkinfofailed':screenExtensionAvailable == 2 && browser!='firefox'}">
+
+                            <img class="checkactive" src="assets/images/Live-stream/all-active.svg" >
+                            <img class="checksucess" src="assets/images/Live-stream/all-sucess.svg" >
+                            <span class="status">
+                                <img class="errorstatusimg" src="assets/images/Live-stream/error.svg">
+                                <img class="progressstatusimg" src="assets/images/Live-stream/refresh-icon.svg">
+                                <img class="activestatusimg" src="assets/images/Live-stream/tick.svg">
+                            </span>
+                        </div>
+                        <p class="infoListName">Finishing setup</p>
+                    </div>
+                </div>
+                <div class="statusDataInfo"  >
+                    <div class="checkingInfo" style="display:none;" >
+                        <p class="datainfo"><span class="status"><img  class="progressstatusimg" src="assets/images/Live-stream/refresh-active.svg"></span>Checking Microphone.</p>
+                    </div>
+                    <div class="Inforesult">
+                        <div *ngIf="screenExtensionAvailable!=1 && browser!='firefox'">
+                        <p class="datainfo"><span><img  class="errorstatusimg" src="assets/images/Live-stream/errorfill.svg"></span>Screen share extension available.</p>
+                        <p class="downloadinfo"><a href="https://chrome.google.com/webstore/detail/study24x7-screen-share-ex/hphfgcfdakcjhhpnhgkmbpkngiapljll/" target="_blank">Click to download</a></p>
+                        </div>
+                        <div class="page_container">
+                            <button  class="whiteColorButton button24x7" name="button" type="button" (click)="checkCamerMicAndExtension()"> Re-Check </button>
+                            <button *ngIf="microphoneAvailable ==1 && webcamAvailable ==1 && (screenExtensionAvailable ==1 || browser=='firefox')"  class="whiteColorButton button24x7" name="button" type="button" (click)="skipDeviceTest()"> SKIP </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<<<<<<<<<<<<<<<<<<    Check system popup end >>>>>>>>>>>>>>>>-->
+
+    </div>
+</div>
+<!-- <app-livestreampollpopup></app-livestreampollpopup> -->
+
+<div *ngIf="isSocialParams" style="position: relative;  width: 100%;height: 100vh;float: left;">
+    <div class="darkbackground"> </div>
+    <div class="obsPopupInnerWrap">
+        <div class="popup_heading ">Link your {{this.platformTyp == 0 ? 'youtube':'facebook'}} account</div>
+        <div class="obsPopupMiddleWrapper">
+            <img src="assets/images/svg-three/info.svg" alt="">
+            <p>Copy this code <b (click)="postdata.copyPostURL(usrCode)">{{usrCode}}</b> and enter it to <br>
+                <a href="{{activationUrl}}" target="_blank">{{activationUrl}}</a> address</p>
+        </div>
+        <div class="obsFooter">
+            <button class=" whiteColorButton button24x7 fleft" (click)="authPopupClose(1)">Cancel</button>
+            <button class="fright button24x7 redColorButton" type="button" name="button" (click)="authPopupClose(2)">Done</button>
+        </div>
+
+    </div>
+</div>
+
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+</div>

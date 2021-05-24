@@ -1,0 +1,33 @@
+.sharedPostMain {
+  width: 100%;
+  float: left;
+  padding: 0px 10px;
+}
+
+.sharedPostMain .sharedPostInner {
+  float: left;
+  width: 100%;
+  border: 1px solid rgba(204, 204, 204, 0.7);
+  border-radius: 5px;
+  clear: both;
+}
+
+.sharedPostMain .sharedPostInner .postmain_container {
+  padding: 0px 10px 0px 10px !important;
+}
+
+.sharedText {
+  padding: 10px;
+  float: left;
+  width: 100%;
+}
+
+.sharedText p {
+  float: left;
+  width: 100%;
+  line-height: 24px;
+  word-break: break-word;
+  white-space: pre-wrap;
+  text-align: justify;
+}
+/*# sourceMappingURL=shared-post.component.css.map */

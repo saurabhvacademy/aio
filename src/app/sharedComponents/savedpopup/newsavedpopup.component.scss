@@ -1,0 +1,28 @@
+// .popup_main.savepostpopup{
+//    .people_list{
+//      min-height: 170px !important;
+//    }
+//  }
+
+
+ .popup_main.savepostpopup{
+    .people_list{
+      input{
+        &:focus{
+          border: 1px solid #66a9d5 !important;
+          outline: 0;
+          box-shadow: 0 0 0 0.3rem rgba(153, 197, 227, 0.3) !important;
+        }
+      }
+    }
+  }
+  .word_break_data{word-break: break-all;}
+.savepostpopup{
+  .post_outer{
+    .post_profileContent{
+      float: left;
+      width: 100%;
+      word-wrap: break-word;
+    }
+  }
+}

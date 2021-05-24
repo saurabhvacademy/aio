@@ -1,0 +1,43 @@
+.popup_fixed_scroll {
+  overflow-y: scroll;
+}
+
+.createfolder {
+  width: 400px !important;
+  height: 200px;
+}
+
+.createfolder .interesrsearch {
+  width: 100%;
+}
+
+.createfolder .profiledetail {
+  width: 357px !important;
+}
+
+.createfolder .post_outer {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.createfolder .post_outer .savedcont {
+  font-size: 14px;
+  border-bottom: 1px solid #eaeaea;
+  line-height: 18px;
+  padding: 12px 0px 15px;
+  margin-bottom: 15px;
+}
+
+.createfolder .post_outer .savedcont .collectionname {
+  margin-bottom: 10px;
+  float: left;
+}
+
+.createfolder .post_outer .post_profile {
+  padding: 0px;
+}
+
+.createfolder .post_outer .post_profile p {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=createfolder.component.css.map */

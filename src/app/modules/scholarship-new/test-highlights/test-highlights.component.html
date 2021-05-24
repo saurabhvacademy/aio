@@ -1,0 +1,177 @@
+<!-- class use for background color -->
+
+<!-- .benefit_scholarshipBg
+.benefit_natBg
+.benefit_nttBg -->
+<div class="benefit_scholarship "
+[ngClass]="{'benefit_scholarshipBg': endpoint=='scholarship','benefit_natBg':endpoint=='nat', 'benefit_nttBg':endpoint=='ntt'}">
+
+   <h2 *ngIf="endpoint== 'scholarship' || endpoint== 'nat' "  class="heading_bold __heading">What Benefits you get from<br> this Scholarship Test ?  </h2>
+   <!-- for ntt -->
+   <h2 *ngIf="endpoint== 'ntt'" class="heading_bold __heading">What Benefits you get from<br> this National Talent Test ?  </h2>
+  <div class="left_section">
+    <!-- for scholarship and nat -->
+   <img *ngIf="endpoint=='scholarship' || endpoint== 'nat'" src="assets/images/scholarship/benefit.svg" alt="">
+   <!-- for ntt -->
+   <img *ngIf="endpoint=='ntt'" src="assets/images/scholarship/nttbenefit.svg" alt="">
+  </div>
+  <div class="right_section">
+    <!-- <h2>What Benefits you <br> get from SIST Scholarship ? </h2> -->
+    <!-- <p class="cnt">Students of class IX to XII can apply for this programme in two different levels:</p> -->
+    <div class="grid_view">
+       <img src="assets/images/scholarship/colours.svg" alt="">
+       <p>Merit Based Scholarships (Top 3 students)</p>
+    </div>
+    <div class="grid_view">
+       <img src="assets/images/scholarship/monocle.svg" alt="">
+       <p>National Level Ranking.</p>
+    </div>
+    <div class="grid_view">
+       <img src="assets/images/scholarship/user.svg" alt="">
+       <p>Benchmark themselves against other students at the state and All-India Level..</p>
+    </div>
+    <div class="grid_view">
+       <img src="assets/images/scholarship/branching.svg" alt="">
+       <p>Personalized 1-1 Counselling.</p>
+    </div>
+    <div class="grid_view">
+       <img src="assets/images/scholarship/line-chart.svg" alt="">
+       <p>Career Guidance which will in selecting the best stream in XI & XII along with counselling.</p>
+    </div>
+  </div>
+ <div class="benefit_footer">
+    <div class="benefit_left">
+      <img *ngIf="endpoint== 'scholarship' || endpoint== 'nat' " src="assets/images/scholarship/threeStudent.png" alt="">
+      <img *ngIf="endpoint== 'ntt' " src="assets/images/scholarship/threeParticipents.png" alt="">
+      <p class="b_cnt">will get certificates & 100% scholarship from Premier Institutes</p>
+    </div>
+    <div class="benefit_right">
+      <img *ngIf="endpoint== 'scholarship' || endpoint== 'nat' " src="assets/images/scholarship/hundredStudent.png" alt="">
+      <img *ngIf="endpoint== 'ntt' " src="assets/images/scholarship/100participants.png" alt="">
+      <p class="b_cnt">will get Certificate & career assistance from top psychologists & HR professionals</p>
+    </div>
+ </div>
+</div>
+<div class="test_highlights inner_wrapp inner-left-right_padding">
+  <h2 class="heading_bold ">Key Test Highlights</h2>
+  <!-- <p class="heading_content heading_test">Students of class IX to XII can apply for this programme in two different levels:</p> -->
+  <div class="card_main_wrap desktop_view">
+    <div class="leftcardholder">
+      <div class="highlight_card_wrapper" (mouseenter)= mouseup(1)>
+        <div class="high_grid_view" [ngClass] = "{'active_hover' : hoveractive == 1 }">
+           <div class="image_top one">
+              <img src="assets/images/scholarship/student-male.svg" alt="">
+           </div>
+            <h2>Extensive Assessment Report  (Aptitude, Personality, Interest, Emotional Quotient and Orientation Style)</h2>
+            <p>Students of class IX to XII can apply for this
+programme in two different levels Students of class IX to XII</p>
+        </div>
+     </div>
+     <div class="highlight_card_wrapper third__card" (mouseenter)= mouseup(2)>
+        <div class="high_grid_view" [ngClass] = "{'active_hover' : hoveractive == 2 }">
+           <div class="image_top three">
+              <img src="assets/images/scholarship/task-planning.svg" alt="">
+           </div>
+            <h2>14 Pages Detailed Report</h2>
+            <p>Students of class IX to XII can apply for this
+programme in two different levels:</p>
+        </div>
+     </div>
+    </div>
+    <div class="rightcardholder">
+      <div class="highlight_card_wrapper" (mouseenter)= mouseup(3)>
+       <div class="high_grid_view" [ngClass] = "{'active_hover' : hoveractive == 3 }">
+          <div class="image_top two">
+             <img src="assets/images/scholarship/area-chart.svg" alt="">
+          </div>
+           <h2>Top 5 Career Suitability</h2>
+           <p>Students of class IX to XII can apply for this
+programme in two different levels Students of class IX to XII</p>
+       </div>
+    </div>
+    <div class="highlight_card_wrapper" (mouseenter)= mouseup(4)>
+      <div class="high_grid_view" [ngClass] = "{'active_hover' : hoveractive == 4 }">
+         <div class="image_top four">
+            <img src="assets/images/scholarship/light-on.svg" alt="">
+         </div>
+          <h2>Detailed Action Oriented Plan to Map
+Out Career Path</h2>
+          <p>Students of class IX to XII can apply for this
+programme in two different levels Students of class IX to XII</p>
+      </div>
+   </div>
+    </div>
+</div>
+<!-- <div class="share_btn__">
+ <button type="button" name="button"><img src="assets/images/scholarship/share.svg" alt="">Share the Test</button>
+</div> -->
+<div class="sc_card_wrapp test_resp_slider">
+  <div class="slider_inn">
+  <ngx-slick-carousel
+    class="carousel carousel_card_scroll"
+    #slickModal2="slick-carousel"
+    [config]="slideConfig"
+    (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)"
+    (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem class="slide">
+      <div class="sc_card_upper">
+        <div class="highlight_card_wrapper">
+          <div class="high_grid_view">
+             <div class="image_top one">
+                <img src="assets/images/scholarship/student-male.svg" alt="">
+             </div>
+              <h2>Extensive Assessment Report  (Aptitude, Personality, Interest, Emotional Quotient and Orientation Style)</h2>
+              <p>Students of class IX to XII can apply for this
+  programme in two different levels Students of class IX to XII</p>
+          </div>
+       </div>
+    </div>
+    </div>
+    <div ngxSlickItem class="slide">
+      <div class="sc_card_upper">
+        <div class="highlight_card_wrapper third__card">
+           <div class="high_grid_view">
+              <div class="image_top three">
+                 <img src="assets/images/scholarship/task-planning.svg" alt="">
+              </div>
+               <h2>14 Pages Detailed Report</h2>
+               <p>Students of class IX to XII can apply for this
+   programme in two different levels:</p>
+           </div>
+        </div>
+    </div>
+    </div>
+    <div ngxSlickItem class="slide">
+      <div class="sc_card_upper">
+        <div class="highlight_card_wrapper">
+         <div class="high_grid_view">
+            <div class="image_top two">
+               <img src="assets/images/scholarship/area-chart.svg" alt="">
+            </div>
+             <h2>Top 5 Career Suitability</h2>
+             <p>Students of class IX to XII can apply for this
+  programme in two different levels Students of class IX to XII</p>
+         </div>
+      </div>
+    </div>
+    </div>
+    <div ngxSlickItem class="slide">
+      <div class="sc_card_upper">
+        <div class="highlight_card_wrapper">
+          <div class="high_grid_view">
+             <div class="image_top four">
+                <img src="assets/images/scholarship/light-on.svg" alt="">
+             </div>
+              <h2>Detailed Action Oriented Plan to Map
+    Out Career Path</h2>
+              <p>Students of class IX to XII can apply for this
+    programme in two different levels Students of class IX to XII</p>
+          </div>
+       </div>
+    </div>
+    </div>
+  </ngx-slick-carousel>
+</div>
+</div>
+</div>

@@ -1,0 +1,277 @@
+<!-- <div class="widgetpage_outer ">
+  <h6 class="widgetheading"><span ><img src="assets/images/svg/addcourse.svg"></span>Course  </h6>
+  <div class='pageinfo'>
+    <carousel>
+      <slide>
+        <img src="assets/images/course/sugg-page5.jpg" alt="first slide" style="display: block; width: 100%;">
+      </slide>
+      <slide>
+        <img src="assets/images/course/sugg-page4.jpg" alt="second slide" style="display: block; width: 100%;">
+      </slide>
+      <slide>
+        <img src="assets/images/course/sugg-page3.jpg" alt="third slide" style="display: block; width: 100%;">
+      </slide>
+    </carousel>
+    <div class="s_page_desp">
+      <div class="course_details">
+        <div class="course_name">
+          <p>Certification Economist</p>
+          <span>Published on 24 Aug 2017</span>
+        </div>
+        <div class="star_rating course_name">
+          <div class="stars">
+            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="study24x7"></label>
+            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="study24x7"></label>
+            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="study24x7"></label>
+            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-half-empty-filled.svg" alt="study24x7"></label>
+            <label class="star"><img src="assets/images/svg-one/icons8-star-pokemon.svg" alt="study24x7"></label>
+          </div>
+          <span>4<label>(2400)</label></span>
+          <span  class="course_type"><img _ngcontent-c5="" src="assets/images/svg-one/rupee.svg"> 700</span>
+        </div>
+        <div class="enroll_course course_name">
+          <p>Recentally Enrolled</p>
+          <span class="c_l_people">
+            <img class="f_people" src="assets/images/profile15.jpg" title="Jahanvi" />
+            <img class="s_people" src="assets/images/profile8.jpg" title="Vinay">
+            <label>+ 11k</label>
+          </span>
+          <button  class="btn btn-primary">View Course</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="similarCourseWrapper" *ngIf="!withoutToken && similarCorsPresent">
+    <h2 class="header">Similar Courses</h2>
+    <div class="innerImgWrapper">
+        <carousel>
+            <slide *ngFor="let courseData of similarCourse;let i= index " (click)="goToCourse(courseData.COURSE_URL, courseData.PAGE_UUID)" >
+                <div class="coverWrapper">
+                <img class="sliderImg" src="{{courseData.COURSE_COVER_PHOTO_PATH}}" alt="study24x7" style="">
+
+                <div class="profileLogo">
+                    <img src="{{courseData.PAGE_PROFILE_PHOTO_PATH}}" alt="study24x7">
+                </div>
+              </div>
+                <div class="courseDetailWrapper">
+                    <h2 class="courseName">{{courseData.COURSE_TITLE}}</h2>
+                    <h6 class="author">by {{courseData.PAGE_TITLE}}</h6>
+                    <div class="star">
+                        <div class="star_wrapper">
+                            <label class="star"  *ngIf="courseData.COURSE_RATING==0.0">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==0.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==1.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==1.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==2.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==2.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==3.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==3.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==4.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==4.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==5.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                </label>
+                        </div>
+                        <span class="rating">{{courseData.COURSE_RATING}}</span>
+                        <span class="number">({{courseData.TOTAL_COURSE_RATING_COUNT}})</span>
+                    </div>
+                    <h3 class="enroll_course"><span><img src="assets/images/svg-three/course/course_creation/enrollments.svg" alt="study24x7"></span>{{courseData.TOTAL_ENROLLED_USER}} Enrollments</h3>
+                    <h3 class="course_validity" *ngIf="courseData.RVALIDITY!=''">
+                        <span><img src="assets/images/svg-three/course/course_creation/validity.svg" alt="study24x7"></span>
+                        Validity {{courseData.RVALIDITY}}
+                    </h3>
+                    <h3 class="course_price" *ngIf="courseData.COURSE_TYPE ==1">
+                        <span>{{courseData.DISCOUNT_COST}}</span>
+                        <span><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7"></span>
+                    </h3>
+                    <h3 class="course_price" *ngIf="courseData.COURSE_TYPE ==0">
+                        <span>FREE</span>
+                    </h3>
+                </div>
+            </slide>
+        </carousel>
+    </div>
+</div>
+
+<div class="similarCourseWrapper" *ngIf="withoutToken && similarCorsPresent">
+    <h2 class="header">Similar Courses</h2>
+    <div class="innerImgWrapper">
+        <carousel>
+            <slide *ngFor="let courseData of similarCourse;let i= index " (click)="goToCourse(courseData.COURSE_URL, courseData.PAGE_UUID)">
+                <img class="sliderImg" src="{{courseData.COURSE_COVER_PHOTO_PATH}}" alt="" style="">
+
+                <div class="profileLogo">
+                    <img src="{{courseData.PAGE_PROFILE_PHOTO_PATH}}" alt="">
+                </div>
+
+                <div class="courseDetailWrapper">
+                    <h2 class="courseName">{{courseData.COURSE_TITLE}}</h2>
+                    <h6 class="author">by {{courseData.PAGE_TITLE}}</h6>
+                    <div class="star">
+                        <div class="star_wrapper">
+                            <label class="star"  *ngIf="courseData.COURSE_RATING==0.0">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==0.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==1.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==1.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==2.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==2.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==3.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==3.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==4.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==4.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                </label>
+                                <label class="star"  *ngIf="courseData.COURSE_RATING==5.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                </label>
+                        </div>
+                        <span class="rating">{{courseData.COURSE_RATING}}</span>
+                        <span class="number">({{courseData.TOTAL_COURSE_RATING_COUNT}})</span>
+                    </div>
+                    <h3 class="enroll_course"><span><img src="assets/images/svg-three/course/course_creation/enrollments.svg" alt=""></span>{{courseData.TOTAL_ENROLLED_USER}} Enrollments</h3>
+                    <h3 class="course_validity" *ngIf="courseData.RVALIDITY!=''">
+                        <span><img src="assets/images/svg-three/course/course_creation/validity.svg" alt=""></span>
+                        Validity {{courseData.RVALIDITY}}
+                    </h3>
+                    <h3 class="course_price" *ngIf="courseData.COURSE_TYPE ==1">
+                        <span>{{courseData.DISCOUNT_COST}}</span>
+                        <span><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt=""></span>
+                    </h3>
+                    <h3 class="course_price" *ngIf="courseData.COURSE_TYPE ==0">
+                        <span>FREE</span>
+
+                    </h3>
+                </div>
+            </slide>
+        </carousel>
+    </div>
+</div>

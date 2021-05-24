@@ -1,0 +1,322 @@
+<!-- =======================================
+ course rating wrapper start
+ ======================================= -->
+<div class="courseRatingWrapper" *ngIf="rating['TOTAL_COUNT'] != 0 || ((isEnrolled==1 || isTrialUser!=0) && isReviewed==0)">
+    <div class="header" *ngIf="rating['TOTAL_COUNT'] != 0">
+        <h1 id="reviewRating">Review & Ratings</h1>
+    </div>
+    <div class="ratingWrapper">
+
+        <div class="ratingTopWrapper" *ngIf="rating['TOTAL_COUNT'] != 0">
+            <div class="leftRatingWrapper">
+                <div class="ratinginnerwrapper">
+                    <div class="ratingCount">{{rating['TOTAL_AVERAGE_RAT']}}</div>
+                    <p>{{rating['TOTAL_COUNT']}} Ratings</p>
+                    <div class="star">
+                        <div class="star_wrapper">
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==0.0">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==0.5">
+                                <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==1.0">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==1.5">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==2.0">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==2.5">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==3.0">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==3.5">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==4.0">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==4.5">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                            </label>
+                            <label class="Pagerating" *ngIf="rating['TOTAL_AVERAGE_RAT']==5.0">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="RightRatingWrapper">
+
+                <div class="line_bar_div">
+                    <div class="star_num">5 <img src="assets/images/course_icon/star-gray.svg" alt="study24x7"></div>
+                    <div class="line_bar">
+                        <div class="line-wrapper">
+                            <div class="skills html" [style.width.%]="rating['TOTAL_5_RAT_COUNT']">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div [ngClass]="(star5rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{rating['TOTAL_5_RAT_COUNT'] }}%</div>
+                </div>
+
+
+                <div class="line_bar_div">
+                    <div class="star_num">4 <img src="assets/images/course_icon/star-gray.svg" alt="study24x7"></div>
+                    <div class="line_bar">
+                        <div class="line-wrapper">
+                            <div class="skills html" [style.width.%]="rating['TOTAL_4_RAT_COUNT']">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div [ngClass]="(star5rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{rating['TOTAL_4_RAT_COUNT'] }}%</div>
+                </div>
+
+                <div class="line_bar_div">
+                    <div class="star_num">3 <img src="assets/images/course_icon/star-gray.svg" alt="study24x7"></div>
+                    <div class="line_bar">
+                        <div class="line-wrapper">
+                            <div class="skills html" [style.width.%]="rating['TOTAL_3_RAT_COUNT']">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div [ngClass]="(star5rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{rating['TOTAL_3_RAT_COUNT']}}%</div>
+                </div>
+
+                <div class="line_bar_div">
+                    <div class="star_num">2 <img src="assets/images/course_icon/star-gray.svg" alt="study24x7"></div>
+                    <div class="line_bar">
+                        <div class="line-wrapper">
+                            <div class="skills html" [style.width.%]="rating['TOTAL_2_RAT_COUNT']">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div [ngClass]="(star5rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{rating['TOTAL_2_RAT_COUNT']}}%</div>
+                </div>
+
+                <div class="line_bar_div">
+                    <div class="star_num">1 <img src="assets/images/course_icon/star-gray.svg" alt="study24x7"></div>
+                    <div class="line_bar">
+                        <div class="line-wrapper">
+                            <div class="skills html" [style.width.%]="rating['TOTAL_1_RAT_COUNT']">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div [ngClass]="(star5rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{rating['TOTAL_1_RAT_COUNT']}}%</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="userReviewWrtWrapper" *ngIf="((isEnrolled==1 || isTrialUser!=0) && isReviewed==0)">
+            <h3>User Reviews</h3>
+            <div class="userDetailWrapper">
+                <div class="userDetail">
+                    <span class="post_profilepic cursor-pointer">
+                        <img src="{{_constantService.getSessionDataBYKey('p_pic')}}" alt="study24x7" (error)="updateProfilePic($event)">
+                    </span>
+                    <div class="userName">
+                        <p class="name">{{_constantService.getSessionDataBYKey('full_name')}}</p>
+                    </div>
+                </div>
+                <div class="reviewDetail">
+                    <span class="star-rating">
+                        <div class="stars-rate" style="position:relative;">
+                            <input class="star star-5" id="star-5" type="radio" name="star" value='5.0' />
+                            <label class="star star-5" for="star-5">
+                                <img class="star-rate" src="assets/images/course_icon/star-gray.svg">
+                                <img class="star-active" src="assets/images/course_icon/star-filled.svg">
+                                <div class="rating-state5" >Excellent</div>
+                            </label>
+                            <input class="star star-4" id="star-4" type="radio" name="star" value='4.0'/>
+                            <label class="star star-4" for="star-4">
+                                <img class="star-rate" src="assets/images/course_icon/star-gray.svg">
+                                <img class="star-active" src="assets/images/course_icon/star-filled.svg">
+                                <div class="rating-state4">Very good</div>
+                            </label>
+                            <input class="star star-3" id="star-3" type="radio" name="star" value='3.0'/>
+                            <label class="star star-3" for="star-3">
+                                <img class="star-rate" src="assets/images/course_icon/star-gray.svg">
+                                <img class="star-active" src="assets/images/course_icon/star-filled.svg">
+                                <div class="rating-state3"> Good</div>
+                            </label>
+                            <input class="star star-2" id="star-2" type="radio" name="star" value='2.0'/>
+                            <label class="star star-2" for="star-2">
+                                <img class="star-rate" src="assets/images/course_icon/star-gray.svg">
+                                <img class="star-active" src="assets/images/course_icon/star-filled.svg">
+                                <div class="rating-state2">Fair </div>
+                            </label>
+                            <input class="star star-1" id="star-1" type="radio" name="star" value='1.0'/>
+                            <label class="star star-1" for="star-1">
+                                <img class="star-rate" src="assets/images/course_icon/star-gray.svg">
+                                <img class="star-active" src="assets/images/course_icon/star-filled.svg">
+                                <div class="rating-state1" >Poor</div>
+                            </label>
+                        </div>
+                    </span>
+                    <!-- <div id="reviewDescription" class="reviewTextBox" contenteditable="true" (focus)="hideRevPlaceholder($event)" (focusout)="showRevPlaceholder($event)" [perfectScrollbar]="config" style="position: relative;">
+                        <span *ngIf="shwRevPlaceholder">Tell us how you feel about this course..</span>
+                    </div> -->
+                    <textarea id="reviewDescription" class="reviewTextBox"   [perfectScrollbar]="config" 
+                    placeholder="Tell us how you feel about this course.."></textarea>
+                    
+                    <button type="button" name="button" class="button24x7 whiteColorButton fright" *ngIf="isReviewed==0" (click)="addCourseRating($event)">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div #container></div>
+        <!-- <app-coursereview></app-coursereview> -->
+
+        <!--           <div style="float: left;width: 100%;">
+                        <div class="userDetailWrapper">
+                            <div class="userDetail">
+                                <span class="post_profilepic cursor-pointer">
+                                    <img src="https://s3.ap-south-1.amazonaws.com/247-user-test/development/2.0.0.7/profile/19_60x60.png" alt="study24x7">
+                                </span>
+                                <div class="userName">
+                                    <p class="name">Ayush sahu</p>
+                                    <p class="activeTime">Just Now</p>
+                                </div>
+                            </div>
+                            <div class="reviewDetail">
+                                <div class="star">
+                                    <div class="star_wrapper">
+                                        <label class="fill">
+                                            <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                            <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                            <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                        </label>
+                                        <label class="fill">
+                                            <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                            <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                            <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                        </label>
+                                        <label class="fill">
+                                            <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                            <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                            <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                        </label>
+                                        <label class="fill">
+                                            <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                            <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                            <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                        </label>
+                                        <label class="blank">
+                                            <img   class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7">
+                                            <img   class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7">
+                                            <img   class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7">
+                                        </label>
+                                    </div>
+                                    <span class="ratingText">Good</span>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque fugit libero laborum qui placeat, nisi cum animi? Laudantium id maiores error, consequuntur, odio fugit vero asperiores aut, nostrum molestias ipsam!
+                                </p>
+                                <div class="reviewfooter">
+                                    <div class="reviewImp">
+                                        <span class="tik">
+                                            <img class="defoult"  src="assets/images/svg-three/post_icon/imp1.svg" alt="study24x7">
+                                            <img class="hover" src="assets/images/svg-three/post_icon/f05050/imp1.svg" alt="study24x7">
+                                            <img class="activeTik" src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="study24x7">
+                                        </span>
+                                        <span class="text">Important</span>
+                                        <span class="count">2</span>
+                                    </div>
+
+                                    <div  class="reviewCommnt" (click)="showReviewComentBox('2')">
+                                        <span class="commntIcon">
+                                            <img class="defoult" src="assets/images/svg-three/post_icon/comment.svg" alt="study24x7">
+                                            <img class="hover" src="assets/images/svg-three/post_icon/f05050/comment.svg" alt="study24x7">
+                                        </span>
+                                        <span class="text">Comment</span>
+                                        <span class="count">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='comment_outer' *ngIf="showReviewComment==2">
+                            <div class="writecomment clearfix main-comment" [ngClass]="{'comment-present':viewCommentList}">
+                                <figure class="comment-profile cursor-pointer"><img src="{{_constantService.profilePic()}}" alt="study24x7"></figure>
+                                <div class='optionoutr' >
+                                    <div class="placeholdercolor" contenteditable="true" (paste)="postdata.onPaste($event)" ondrop="return false;" (keydown.enter)="false" (focusout)="showPlaceHolder()"  (click)="hidePlaceHolder($event)" (keyup)="addComment($event)"   id='{{u_id}}_{{post_id}}_comm' #commentPlaceHolder  (contextmenu)="autoFocus();postdata.onPaste($event)">
+                                        {{_constantService.commentPlaceHolder}}
+                                    </div>
+                                    <div class="upload-img-outer-wrp" *ngIf="showCommentImg==2">
+                                        <span class='uploaded_image'>
+                                            <span class="file-preloder" style="margin-top: 0px;"><img style="width:40px" src="assets/images/svg/preloader-25.svg" *ngIf="showPreloader"></span>
+                                            <span class="changeimg" (click) = "showCommentImg=1;comment_image=null;uuid='';file_path='';" id="chng_{{u_id}}_{{post_id}}">Cancel</span>>
+                                            <img (click)="postimageshow($event);" src="{{image_upload_url}}">
+                                        </span>
+                                    </div>
+                                    <label class="option_image" >
+                                        <input type="file" class="post_image" id="{{u_id}}_{{post_id}}_nci" (change)="addImageFile($event);" accept="image/*">
+                                        <label class="fileupload_image" for="{{u_id}}_{{post_id}}_nci"><img class="default" src="assets/images/svg-three/post_icon/img.svg" ><img class="on-hover" src="assets/images/svg-three/post_icon/f05050/img.svg" ></label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class='comment_list' *ngIf="viewCommentList">
+                                <div #container></div>
+                            </div>
+                            <a class="seemore" (click)="getComment()" *ngIf="commentPresent">See more comments</a>
+                        </div>
+                    </div>-->
+        <!--             ================================================================================   -->
+    </div>
+    <!--    <div class="emptystate" *ngIf="EmptyREVstate" >
+            <div class="emptystate_inner">
+                <img class="emptyimg emptyreview" src="assets/images/svg-three/review/empty.svg">
+                <p style="padding:15px">No reviews yet!</p>
+            </div>
+    </div>-->
+</div>
+<!--         user review end    -->
+
+<!-- =======================================
+     course rating wrapper end
+     ======================================= -->

@@ -1,0 +1,97 @@
+.filterprofile { margin-bottom: 15px; overflow: hidden; }
+
+.filterprofile .filterhead { padding: 10px; font-weight: 500; font-size: 14px; }
+
+.filterprofile .stylish-input-group { padding: 15px 15px 0px 15px; }
+
+.filterprofile .stylish-input-group .input-group-addon { padding: 0px 0px 0px 0px; background-color: #fff; border-right: 0px solid #dfe0e8; }
+
+.filterprofile .stylish-input-group .input-group-addon button { padding: 0 5px; background-color: transparent; border: none; height: 25px; line-height: 25px; }
+
+.filterprofile .stylish-input-group .input-group-addon .glyphicon-search { color: #8c8c8c; }
+
+.filterprofile .stylish-input-group .form-control { box-shadow: none; padding-left: 5px; height: 27px; line-height: 28px; border-left: none; }
+
+.filterprofile .stylish-input-group .form-control:focus { border-color: #dfe0e8; }
+
+.filterprofile .people_list { float: left; width: 100%; background-color: #fff; padding: 10px; height: 150px; }
+
+.filterprofile .people_list .post_profileContent { float: left; width: 100%; }
+
+.filterprofile .people_list .post_profileContent ul { float: left; }
+
+.filterprofile .people_list .post_profileContent li { border-bottom: 0px solid #ccc; padding: 0px; margin-bottom: 5px; padding-top: 0px; }
+
+.filterprofile .people_list .post_profileContent li:last-child { margin-bottom: 0px; }
+
+.filterprofile .people_list .post_profileContent li .attach_list_type { float: left; width: 100%; padding-left: 30px; }
+
+.filterprofile .people_list .post_profileContent li .attach_list_type span { float: left; width: 100%; margin: 2px 0px 0px 0px; }
+
+.filterprofile .people_list .post_profileContent li .attach_list_type span .mainlabel { font-weight: 400; line-height: 13px; color: #2c2e2f; }
+
+.filterprofile .people_list .post_profileContent li .attach_list_type span .mainlabel .checkbox { width: 13px !important; height: 13px !important; }
+
+.filterprofile .people_list .post_profileContent li .attach_list_type span .mainlabel .checkbox img { height: 9px; width: 8px; }
+
+.filterprofile .fieldlist { margin: 0 0 -1em; padding: 0; }
+
+.filterprofile .fieldlist li { list-style: none; padding-bottom: 10px; line-height: 30px; }
+
+.filterprofile .fieldlist li:last-child { padding-bottom: 0px; }
+
+.filterprofile .fieldlist li .k-radio, .filterprofile .fieldlist li input.k-checkbox { display: inline; opacity: 0; width: 0; margin: 0; -webkit-appearance: none; overflow: hidden; position: absolute; height: auto; }
+
+.filterprofile .fieldlist li .k-checkbox-label, .filterprofile .fieldlist li .k-radio-label { display: inline-block; position: relative; padding-left: 22px; vertical-align: text-top; line-height: 14px; cursor: pointer; border-style: solid; border-width: 0; }
+
+.filterprofile .fieldlist li .k-checkbox-label, .filterprofile .fieldlist li .k-radio-label { line-height: 13px; color: #2c2e2f; font-size: 12px; margin-bottom: 0px; font-weight: normal; }
+
+.filterprofile .fieldlist li .k-radio-label:before { border-color: #dfe0e8; border-radius: 50%; background-color: #fff; border-width: 1.5px; }
+
+.filterprofile .fieldlist li .k-radio-label:before { content: ""; position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-style: solid; }
+
+.filterprofile .fieldlist li .k-radio:checked + .k-radio-label:before, .filterprofile .fieldlist li .k-radio:checked + .k-radio-label:hover:before { border-color: #F05050; }
+
+.filterprofile .fieldlist li .k-radio:checked + .k-radio-label:after { content: ""; width: 6px; height: 6px; position: absolute; top: 3px; left: 3px; }
+
+.filterprofile .fieldlist li .k-radio:checked + .k-radio-label:after { top: 4px; left: 4px; }
+
+.filterprofile .fieldlist li .k-radio:checked + .k-radio-label:after { background-color: #F05050; border-radius: 50%; }
+
+.mainlabel { line-height: 25px !important; font-size: 14px; font-weight: 500; }
+
+.filterprofile .mainlabel { position: relative; margin-bottom: 0px; display: block; }
+
+.filterprofile .mainlabel .checkboxhide { display: block; position: relative; z-index: 2; opacity: 0; float: left; height: auto; width: 20px; margin-right: 8px; cursor: pointer; }
+
+.filterprofile .mainlabel .checkbox { position: absolute; left: 2px; top: 3px; z-index: 0; }
+
+.peopleknow_outer.filterprofile { margin-top: 0px; margin-bottom: 15px !important; }
+
+.filterprofile h6 { background: #f5f7fa; margin-bottom: 0px !important; }
+
+.filterprofile .mainlabel { color: #2c2e2f; cursor: pointer; }
+
+.mview_filter { display: none; }
+
+.mview_filter .form-group { display: inline-block; margin-bottom: 15px; margin-right: 15px; }
+
+.mview_filter .form-group input { padding: 0; height: initial; width: initial; margin-bottom: 0; display: none; cursor: pointer; }
+
+.mview_filter .form-group label { position: relative; cursor: pointer; }
+
+.mview_filter .form-group input:checked + label { color: #f05050; }
+
+@media only screen and (max-width: 992px) { .about-profile { margin-bottom: 40px; }
+  .peopleknow_outer.filterprofile { margin-bottom: 10px !important; }
+  .web_filter { display: block; }
+  .mview_filter { display: none; }
+  .people_list { height: auto !important; padding: 10px; }
+  .people_list .web_filter .fieldlist { float: left; }
+  .people_list .web_filter .fieldlist li { width: auto; float: left; margin-right: 10px; } }
+
+@media only screen and (max-width: 600px) { .peopleknow_outer.filterprofile { border-radius: 0 !important; margin-bottom: 10px !important; }
+  .peopleknow_outer.filterprofile .widgetheading.top_heading { border-radius: 0 !important; } }
+
+@media only screen and (max-width: 360px) { .people_list { padding: 10px 5px !important; }
+  .people_list .web_filter .fieldlist li { margin-right: 5px; } }

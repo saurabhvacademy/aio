@@ -1,0 +1,68 @@
+<div class="sub_Comment">
+    <span class="post_profilepic"><img src="{{profile_pic_path}}" alt="{{'study24x7 ' +full_name |trimData:17}}" routerLink="/profile/{{u_name}}" (error)="updateSourcePic($event)"></span>
+    <div class="profiledetail">
+        <div class="profiledetailinr">
+            <div class='profilecmntdetail profilecmntdetail_sub_cnt' autofocus="autofocus" [ngClass]="{seemorecomt:morecomt}">
+                <div class='name' routerLink="/profile/{{u_name}}">
+                  {{full_name |trimData:17}} &nbsp;
+                </div>
+                <span [innerHTML]="comment_data" ></span>
+                <figure class="comment-img" *ngIf="imagePath!=''">
+                    <img src="{{imagePath}}" alt="{{altName}}" (click)="postimageshow($event);">
+                </figure>
+
+                <p class="seemore" (click)="more_cmt()" *ngIf="!morecomt && isLargeText">see more</p>
+                <p class="seeless" (click)="less_cmt()" *ngIf="morecomt && isLargeText">see less</p>
+            </div>
+
+            <!--<span class="glyphicon glyphicon-chevron-down commenticon"></span>-->
+            <div class="commenticon">
+            <span class="del-arrow-cont" (click)="replyEditPopup()" *ngIf="_constantService.getSessionDataBYKey('u_id')==u_id">
+              <img src="./../../../assets/images/svg-three/post_icon/dot_menu.svg" alt="study24x7">
+            </span>
+                <span class="drpdwn_post postdrop for-post" *ngIf="replyEditStatus">
+                    <ul>
+                        <li>
+                          <div class="width100">
+                            <span class='default del_icon' >
+                              <img src="assets/images/svg/dustbindrop.svg">
+                            </span>
+                            <span class='hoverimg del_icon'>
+                              <img src="assets/images/svg/dustbindrop-green.svg">
+                            </span>
+                            <div class="postdropdown_inner " (click)="Delete($event)">Delete</div>
+                        </div>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            <div class="post_footer comment_footer post_footer_like" style="padding-bottom:0 !important;padding-left: 3px;">
+                <span class='post_footeroption '  [ngClass]="{ clicked : importantCondition}" (click)="important()">
+
+                  <span  class="default">
+                    <img  class="grayTik"  src="assets/images/svg-three/post_icon/imp1.svg">
+                    <img  class="redTik"  src="assets/images/svg-three/post_icon/f05050/imp1.svg">
+                    <img  class="activeimp"  src="assets/images/svg-three/post_icon/f05050/imp2.svg">
+                 </span>
+                  Imp
+
+                      <!--<span class='glyphicon glyphicon-thumbs-up'></span>-->
+                    <span *ngIf="like!=0">{{like}}</span>
+                </span>
+                <!--<span class='post_footeroption' (click)="focus()">Reply</span>-->
+                <span class='post_footeroption cmnt_time'>{{time}}</span>
+            </div>
+        </div>
+        <!-- <div class="writecomment" *ngIf="showAddReplyOnComment">
+            <div class='optionoutr' >
+                <input type="text">
+        <!--                <div class="option_input"  contenteditable="true" (focusout)="hidePlaceHolder($event);" (focus)="hideSpan=2" (keyup)="addReplyOnComment($event)"  (click)="showCommentData()" id='{{u_id}}_{{postId}}_comm' (keydown.enter)="confirmText(c_data.value, $event);false">
+                            <span  class="placeholder" *ngIf="hideSpan==1" >Write a comment...</span>
+                            <span></span>
+                        </div>-->
+
+    </div>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<app-imageview *ngIf="postimagediv=='2'" (closePopUp)="postImageHide($event)" [imageUrl]="oneViewPath"></app-imageview>

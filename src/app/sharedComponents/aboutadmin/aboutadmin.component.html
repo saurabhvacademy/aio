@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="container main_body">
+    <div class="row">
+        <div class="col-md-9" style="padding-right: 0px;" >
+            <div class="addpost_outer connectionpage_outr">{{aboutUs}}</div>
+        </div>
+    </div></div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);" [dataObj]="dataConf"></app-confirmationpopup>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet"> 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #e7ecef;
+        margin: 0;
+        padding: 0;
+    }
+    .container_wrap{
+        width: 100%;
+        float: left;
+    }
+    .wrapper_market{
+        max-width:1170px;
+        margin-top: 75px !important;
+        margin: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .wrapper_market .col-data, .panel .col-data{
+        width:20%;
+        float: left;
+        height: auto;
+        padding: 0 15px;
+                
+    }
+    .wrapper_market .col-data h6, .panel .col-data h6{
+        
+          font-family: 'Poppins', sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 0.16px;
+          text-align: left;
+          color: #222222;
+            margin-bottom: 24px;
+            margin-top: 0;
+    }
+    .wrapper_market .col-data ul, .panel .col-data ul{
+       display: block;
+        margin: 0;
+        padding: 0;
+        
+    }
+    .wrapper_market .col-data ul li, .panel .col-data ul li{
+        display: block;
+        padding: 10px 0;
+          font-family: 'Lato', sans-serif;
+          font-size: 15px;
+          letter-spacing: 0.15px;
+          text-align: left;
+          color: #222222;
+    }
+/*    accordian*/
+    .accordion {
+  background-color: #e7ecef;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+border-bottom: 1px solid #DDD;
+}
+
+/*
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+*/
+
+.accordion:after {
+  content: '';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  background-image: url('up-arrow.svg');
+    width: 15px;
+height: 15px;
+    transition: 0.2s;
+}
+
+.active:after {
+  content: "";
+    background-image: url('up-arrow.svg');
+    transform: rotate(180deg);
+    transition: 0.2s;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+    .market_accordian{
+        display: none;
+    }
+    
+/*    end accordian*/
+    @media only screen and (max-width:991px){
+        .wrapper_market{ 
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .wrapper_market .col-data{
+            padding: 0 5px 0 0;
+        }
+    }
+    @media only screen and (max-width:767px){
+            .market_accordian{
+            display: block;
+        }
+        .wrapper_market{
+            display: none;
+        }
+       .panel .col-data{
+        width:100%;
+        float: left;
+        height: auto;
+        padding: 5px 0;
+                
+        }
+    }
+    
+/*    featuredCourses*/
+    .featuredCourses{
+        width: 100%;
+        float: left;
+    }
+    .featuredCourses .courseheading{
+        width: 100%;
+        float:left;
+    }
+    .courseheading h6{
+          font-family: Poppins;
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 0.75;
+          letter-spacing: 0.24px;
+          text-align: left;
+          color: #2c2e2f;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .featuredCourses .courseslide{
+        width: 100%;
+        float:left;
+        padding: 15px;
+        background: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0px 2px 10px 0 rgba(44, 46, 47, 0.15);
+        border: solid 1px #0f98df;
+    
+    }
+    .featuredCourses .courseslide .imgLeft{
+        width:35%;
+        float: left;
+        height: 182px;
+        position: relative;
+        border-radius: 3px;
+        background-color:#fdeded;
+    }
+   .courseslide .imgLeft img{
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+    }
+    .courseslide .imgLeft .leftTop{
+        position: absolute;
+        left:5px;
+        top:5px;
+        border-radius: 3.5px;
+        background-color: #91f6d2;
+        opacity: 0.8;
+      font-family: Poppins;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.8;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.8);
+      padding: 0 10px;
+        
+    }
+    .featuredCourses .courseslide .dataRight{
+        width:65%;
+        float: left;
+        padding-left: 15px;
+        position: relative;
+    }
+    .courseslide .dataRight headingMn{
+        font-family: Poppins;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.35;
+      text-align: left;
+      color: #222222;
+        display: block;
+        margin-bottom: 7px;
+    }
+    .courseslide .dataRight .dWnhead{
+      font-family: OpenSans;
+      font-size: 12px;
+      line-height: 1.5;
+      text-align: left;
+      color: #0f98df;  
+     display: block;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    .dataRight .dtcontr{
+        display: block;
+        text-align: left;
+        width: 100%;
+        float: left;
+        margin-bottom: 15px;
+    }
+    .dataRight .dtcontr .dotLft, .dataRight .dtcontr .aftdot{
+        opacity: 0.56;
+          font-family: OpenSans;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.29;
+          letter-spacing: normal;
+          text-align: left;
+          color: rgba(51, 51, 51, 0.56);
+        float: left;
+    }
+    .dataRight .dtcontr .dot{
+        float: left;
+        margin: 7px 5px;
+        color:rgba(44, 46, 47, 0.9);
+        line-height: 14px;
+        width: 3px;
+        height: 3px;
+        background: rgba(44, 46, 47, 0.9);
+        border-radius: 50%;
+        }
+        .curcContent{
+            font-family: OpenSans;
+              font-size: 14px;
+              line-height: 1.29;
+              text-align: left;
+              color: #333333;
+            width: 80%;
+            float: left;
+        }
+    .leftmenuicons{
+       display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .leftmenuicons .rmenu{
+        width: 30px;
+  height: 30px;
+  box-shadow: 0px 2px 8px 0 rgba(44, 46, 47, 0.1);
+  border: solid 1px #bebebe;
+  background-color: #bebebe;
+        text-align: center;
+        display: inline-block;
+border-radius: 50%;
+        display: flex;
+        float: right;
+margin-left: 10px;
+    }
+    .leftmenuicons .rmenu img{
+        width: 11px;
+        height: 12px;
+        margin: auto;
+    }
+    .amntcourse{
+        display: block;
+        width: 100%;
+        float: right;
+    }
+    .amntcourse .courserate{
+        font-family: Poppins;
+      font-size: 22px;
+      text-align: right;
+      color: #161616;
+        float: right;
+        line-height: 27px;
+    }
+    .courserate img{
+        width: 15px;
+        margin-top: -3px;
+        
+    }
+    .offrate img{
+        width: 10px;
+        margin-top: -2px;
+    }
+    .amntcourse .discount{
+        width: 100%;
+        float: right;
+    }
+    .discount .offfprc{
+        font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #0f98df;
+        float: right;
+    }
+   .discount .offrate{
+    height: 12px;
+  font-family: Poppins;
+  font-size: 14px;
+  text-align: left;
+  color: #161616;
+   float: right;
+   margin-left: 5px;
+    }
+    .leftdown{
+         font-size: 14px;
+          line-height: 1.29;
+          text-align: left;
+          color: #333333;
+        position: absolute;
+            left: 15px;
+            bottom: 0;
+    }
+    .leftdown img{
+        width: 15px;
+        height: 15px;
+        float: left;
+        margin-right: 5px;
+    }
+    .carousel-control-prev, .carousel-control-next{
+        bottom: unset;
+        color: #2c2e2f;
+        width: auto;
+        opacity: 0.56;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.13;
+      letter-spacing: 0.16px;
+      text-align: left;
+      color: rgba(34, 34, 34, 0.56);
+      top: 15px;
+    }
+    .carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover{
+        color: #2c2e2f;
+        opacity: unset;
+    }
+    .carousel-control-prev{
+       right: 75px; 
+        left: unset;
+    }
+    .carousel-control-next{
+        
+    }
+    .carousel-control-prev img{
+        width: 12px;
+        transform: rotate(270deg);
+        margin-top: -2px;
+    }
+     .carousel-control-next img{
+        width: 12px;
+        transform: rotate(90deg);
+        margin-top: -1px;
+    }
+/*    end featuredCourses*/
+</style>
+</head>
+<body>
+ <div class="container_wrap">
+       <div class="wrapper_market">
+       <div class="featuredCourses">
+             <div class="courseheading">
+                 <h6>Featured Courses</h6>
+             </div>
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+         <div class="courseslide">
+                 <div class="imgLeft">
+                     <img src="Humanities.jpg" alt="">
+                     <span class="leftTop">BESTSELLER</span>
+                 </div>
+                 <div class="dataRight">
+                    <span class="headingMn">The Ultimate Drawing Course-Beginner to Advanced copy </span>
+                    <span class="dWnhead">By Leonardo David</span>
+                    <span class="dtcontr">
+                        <span class="dotLft">Intermediate</span>
+                        <span class="dot"></span>
+                        <span class="aftdot">Spanish</span>
+                    </span>
+                    <div class="curcContent">
+                        Hi Welcome to the Web Developer Bootcamp the only course you  Hi Welcome to the Web Developer Bootcamp the only course youHi Welcome to the Web Developer Bootcamp the only course you
+                    </div>
+                    <span class="leftmenuicons">
+                        <span class="rmenu"><img src="share.png" alt=""></span>
+                        <span class="rmenu"><img src="share.png" alt=""></span>
+                    </span>
+                    <span class="amntcourse">
+                        <span class="courserate"><img src="rupe.svg" alt="">5000</span>
+                        <span class="discount">
+                            <span class="offrate"><del><img src="rupe.svg" alt="">6000</del></span>
+                            <span class="offfprc">30% off</span>
+                        </span>
+                    </span>
+                    <span class="leftdown"><img src="star-filled.svg" alt="">5.0</span>
+                     
+                 </div>
+             </div>
+    </div>
+    <div class="carousel-item">
+          <div class="courseslide">
+                 <div class="imgLeft">
+                     <img src="Humanities.jpg" alt="">
+                     <span class="leftTop">BESTSELLER</span>
+                 </div>
+                 <div class="dataRight">
+                    <span class="headingMn">The Ultimate Drawing Course-Beginner to Advanced copy </span>
+                    <span class="dWnhead">By Leonardo David</span>
+                    <span class="dtcontr">
+                        <span class="dotLft">Intermediate</span>
+                        <span class="dot"></span>
+                        <span class="aftdot">Spanish</span>
+                    </span>
+                    <div class="curcContent">
+                        Hi Welcome to the Web Developer Bootcamp the only course you  Hi Welcome to the Web Developer Bootcamp the only course youHi Welcome to the Web Developer Bootcamp the only course you
+                    </div>
+                    <span class="leftmenuicons">
+                        <span class="rmenu"><img src="share.png" alt=""></span>
+                        <span class="rmenu"><img src="share.png" alt=""></span>
+                    </span>
+                    <span class="amntcourse">
+                        <span class="courserate"><img src="rupe.svg" alt="">5000</span>
+                        <span class="discount">
+                            <span class="offrate"><del><img src="rupe.svg" alt="">6000</del></span>
+                            <span class="offfprc">30% off</span>
+                        </span>
+                    </span>
+                    <span class="leftdown"><img src="star-filled.svg" alt="">5.0</span>
+                     
+                 </div>
+             </div>
+    </div>
+    <div class="carousel-item">
+          <div class="courseslide">
+                 <div class="imgLeft">
+                     <img src="Humanities.jpg" alt="">
+                     <span class="leftTop">BESTSELLER</span>
+                 </div>
+                 <div class="dataRight">
+                    <span class="headingMn">The Ultimate Drawing Course-Beginner to Advanced copy </span>
+                    <span class="dWnhead">By Leonardo David</span>
+                    <span class="dtcontr">
+                        <span class="dotLft">Intermediate</span>
+                        <span class="dot"></span>
+                        <span class="aftdot">Spanish</span>
+                    </span>
+                    <div class="curcContent">
+                        Hi Welcome to the Web Developer Bootcamp the only course you  Hi Welcome to the Web Developer Bootcamp the only course youHi Welcome to the Web Developer Bootcamp the only course you
+                    </div>
+                    <span class="leftmenuicons">
+                        <span class="rmenu"><img src="share.png" alt=""></span>
+                        <span class="rmenu"><img src="share.png" alt=""></span>
+                    </span>
+                    <span class="amntcourse">
+                        <span class="courserate"><img src="rupe.svg" alt="">5000</span>
+                        <span class="discount">
+                            <span class="offrate"><del><img src="rupe.svg" alt="">6000</del></span>
+                            <span class="offfprc">30% off</span>
+                        </span>
+                    </span>
+                    <span class="leftdown"><img src="star-filled.svg" alt="">5.0</span>
+                     
+                 </div>
+             </div>
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="pre"><img src="up-arrow.svg" alt=""> Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="Next">Next <img src="up-arrow.svg" alt=""></span>
+  </a>
+</div>
+     </div>
+    </div>
+    </div>
+   <div class="container_wrap">
+       <div class="wrapper_market">
+          <div class="featuredCourses">
+             <div class="courseheading">
+                 <h6>Featured Courses</h6>
+             </div>
+             <div class="courseslide">
+                 <div class="imgLeft">
+                     <img src="Humanities.jpg" alt="">
+                     <span class="leftTop">BESTSELLER</span>
+                 </div>
+                 <div class="dataRight">
+                    <span class="headingMn">The Ultimate Drawing Course-Beginner to Advanced copy </span>
+                    <span class="dWnhead">By Leonardo David</span>
+                    <span class="dtcontr">
+                        <span class="dotLft">Intermediate</span>
+                        <span class="dot"></span>
+                        <span class="aftdot">Spanish</span>
+                    </span>
+                    <div class="curcContent">
+                        Hi Welcome to the Web Developer Bootcamp the only course you  Hi Welcome to the Web Developer Bootcamp the only course youHi Welcome to the Web Developer Bootcamp the only course you
+                    </div>
+                    <span class="leftmenuicons">
+                        <span class="rmenu"><img src="share.png" alt=""></span>
+                        <span class="rmenu"><img src="share.png" alt=""></span>
+                    </span>
+                    <span class="amntcourse">
+                        <span class="courserate"><img src="" alt="">5000</span>
+                        <span class="discount">
+                            <span class="offrate"><del><img src="" alt="">6000</del></span>
+                            <span class="offfprc">30% off</span>
+                        </span>
+                    </span>
+                    <span class="leftdown"><img src="star-filled.svg" alt="">5.0</span>
+                     
+                 </div>
+             </div>
+              
+          </div>
+       </div>
+    </div>
+   <div class="container_wrap">
+    <div class="wrapper_market">
+        <div class="col-data">
+            <h6>K-12</h6>
+            <ul>
+                <li>Class 5</li>
+                <li>Class 6</li>
+                <li>Class 7</li>
+                <li>Class 8</li>
+                <li>Class 9</li>
+                <li>Class 10</li>
+                <li>Class 11</li>
+                <li>K-12 Medical</li>
+                <li>K-12 Non-Medical</li>
+                <li>K-12 Commerce</li>
+                <li>K-12 Arts</li>
+            </ul>
+        </div>
+        <div class="col-data">
+            <h6>Higher Education</h6>
+             <ul>
+                <li>Engineering </li>
+                <li>Medical </li>
+                <li>Commerce </li>
+                <li>Law </li>
+                <li>Media-Journalism</li>
+                <li>Sciences</li>
+                <li>Arts</li>
+            </ul>
+        </div>
+        <div class="col-data">
+            <h6>Government Jobs</h6>
+             <ul>
+               <li>Engineering </li>
+                <li>Medical </li>
+                <li>MBAManagment  </li>
+                <li>GATEESEPSU  </li>
+                <li>PG MEDICAL </li>
+                <li>CE Law </li>
+                <li>Arts and Design</li>
+                <li>Hotel-Managmentt  </li>
+                <li>FinanceCA   </li>
+                <li>CE-Media-Journalism</li>
+                <li>UG-Entrance</li>
+                <li>PG-Entrance</li>
+            </ul>
+        </div>
+        <div class="col-data">
+            <h6>Competitive Exam</h6>
+             <ul>
+               <li>SSC  </li>
+                <li>Banking  </li>
+                <li>Defence   </li>
+                <li>Railways   </li>
+                <li>TET </li>
+                <li>NET  </li>
+                <li>UPSCPSC </li>
+                <li>Private-Jobs   </li>
+                <li>Public-Jobs   </li>
+            </ul>
+        </div>
+        <div class="col-data">
+            <h6>Technology</h6>
+             <ul>
+               <li>Engineering </li>
+                <li>Medical </li>
+                <li>MBAManagment  </li>
+                <li>GATEESEPSU  </li>
+                <li>PG MEDICAL </li>
+                <li>CE Law </li>
+                <li>Arts and Design</li>
+                <li>Hotel-Managmentt  </li>
+                <li>FinanceCA   </li>
+                <li>CE-Media-Journalism</li>
+                <li>UG-Entrance</li>
+                <li>PG-Entrance</li>
+                <li>Big-Data-Analytics</li>
+                <li>UG-Entrance</li>
+                <li>PG-Entrance</li>
+            </ul>
+        </div>
+    </div>
+   </div>
+   <div class="market_accordian">
+       <button class="accordion">K-12</button>
+            <div class="panel">
+               <div class="col-data">
+                    <ul>
+                        <li>Class 5</li>
+                        <li>Class 6</li>
+                        <li>Class 7</li>
+                        <li>Class 8</li>
+                        <li>Class 9</li>
+                        <li>Class 10</li>
+                        <li>Class 11</li>
+                        <li>K-12 Medical</li>
+                        <li>K-12 Non-Medical</li>
+                        <li>K-12 Commerce</li>
+                        <li>K-12 Arts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="accordion">Higher Education</button>
+            <div class="panel">
+              <div class="col-data">
+             <ul>
+                <li>Engineering </li>
+                <li>Medical </li>
+                <li>Commerce </li>
+                <li>Law </li>
+                <li>Media-Journalism</li>
+                <li>Sciences</li>
+                <li>Arts</li>
+            </ul>
+        </div>
+            </div>
+
+            <button class="accordion">Government Jobs</button>
+            <div class="panel">
+               <div class="col-data">
+             <ul>
+               <li>Engineering </li>
+                <li>Medical </li>
+                <li>MBAManagment  </li>
+                <li>GATEESEPSU  </li>
+                <li>PG MEDICAL </li>
+                <li>CE Law </li>
+                <li>Arts and Design</li>
+                <li>Hotel-Managmentt  </li>
+                <li>FinanceCA   </li>
+                <li>CE-Media-Journalism</li>
+                <li>UG-Entrance</li>
+                <li>PG-Entrance</li>
+            </ul>
+        </div>
+            </div>
+            <button class="accordion">Competitive Exam</button>
+            <div class="panel">
+               <div class="col-data">
+             <ul>
+               <li>SSC  </li>
+                <li>Banking  </li>
+                <li>Defence   </li>
+                <li>Railways   </li>
+                <li>TET </li>
+                <li>NET  </li>
+                <li>UPSCPSC </li>
+                <li>Private-Jobs   </li>
+                <li>Public-Jobs   </li>
+            </ul>
+        </div>
+            </div>
+            <button class="accordion">Technology</button>
+            <div class="panel">
+                 <div class="col-data">
+             <ul>
+               <li>Engineering </li>
+                <li>Medical </li>
+                <li>MBAManagment  </li>
+                <li>GATEESEPSU  </li>
+                <li>PG MEDICAL </li>
+                <li>CE Law </li>
+                <li>Arts and Design</li>
+                <li>Hotel-Managmentt  </li>
+                <li>FinanceCA   </li>
+                <li>CE-Media-Journalism</li>
+                <li>UG-Entrance</li>
+                <li>PG-Entrance</li>
+                <li>Big-Data-Analytics</li>
+                <li>UG-Entrance</li>
+                <li>PG-Entrance</li>
+            </ul>
+        </div>
+            </div>
+   </div>
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+
+   
+</body>
+</html>

@@ -1,0 +1,207 @@
+.inviteLeft_card {
+  display: block !important;
+  width: 75% !important;
+}
+
+.mentor_name {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.inviteLeft_card .live_headingwrapp {
+  margin-bottom: 5px;
+  color: #6f7071;
+}
+
+.live_livementordetail {
+  width: 25% !important;
+}
+
+.invite_liveblock_up .invite_doticon img {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.box_dropdown {
+  top: 0;
+  right: 100%;
+}
+
+.course_search_sec {
+  width: 100px !important;
+}
+
+.wallpostdrpdwn {
+  width: 100px !important;
+}
+
+.course_search_sec .walldropdencnt {
+  width: 100px !important;
+}
+
+.stream_accepted .green_round {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  float: left;
+  background: #4dcc97;
+  border-radius: 18px;
+  margin-right: 10px;
+  position: relative;
+  margin-left: -4px;
+  position: relative;
+  z-index: 1;
+}
+
+.stream_accepted .green_round img {
+  width: 8px;
+  margin-left: 3px;
+  margin-top: -3px;
+}
+
+.stream_accepted .arrow_right {
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
+  color: #807f7f;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.stream_accepted {
+  display: inline-block;
+  float: left;
+  background: #f5f7fa;
+  padding: 5px 8px 5px 10px;
+  border-radius: 14px;
+  margin-top: 10px;
+  font-size: 13px;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+  height: 28px;
+  border: 1px solid #cdcdcd;
+  overflow: hidden;
+}
+
+.stream_accepted .green_round_pending {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  float: left;
+  background: #f5ca62;
+  border-radius: 18px;
+  margin-right: 10px;
+  margin-top: 4px;
+  position: relative;
+}
+
+.stream_accepted .stock {
+  background-color: #dfe5eb;
+  width: 2px;
+  height: 22px;
+  position: absolute;
+  top: 100%;
+  right: 1px;
+  left: 2px;
+  margin: auto;
+}
+
+.wrapper_box {
+  display: inline-block;
+  float: left;
+}
+
+.wrapper_box .reject_reason {
+  display: block;
+  background: #f4f4f4;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #2c2e2f;
+}
+
+.wrap_gray {
+  display: table;
+  content: "";
+  clear: both;
+  margin-top: 10px;
+}
+
+.wrap_gray .green_round_pending {
+  background: #dfe5eb;
+  position: relative;
+}
+
+.wrap_gray .green_round_pending:before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 25px;
+  background: #dfe5eb;
+  left: 50%;
+  margin-left: -1px;
+  top: -18px;
+}
+
+.red_reason {
+  color: #f05050;
+}
+
+.wrap_top {
+  cursor: pointer;
+}
+
+.box_dropdown {
+  border-radius: 12px;
+}
+
+.stream_accepted.showStatus {
+  border: 1px solid transparent;
+  background: none;
+  padding-bottom: 0px;
+  height: 108px;
+}
+
+.stream_accepted.showStatus .arrow_right {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.box_dropdown .box span.request {
+  margin-bottom: 5px;
+}
+
+.livecard_wrapper .invite_stream_heading_card {
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.invite_doticon .postdropmenu.defaultt {
+  width: 15px !important;
+}
+
+.course_search_sec .walldropdencnt {
+  left: -0.5px;
+}
+
+.inviteLeft_card .duration_card .date_wrap {
+  color: #6f7071;
+}
+
+.live_time_wrapper .live_timewrap .live_wordwrapp {
+  color: #6f7071;
+}
+
+.setHeight {
+  height: 0px;
+  overflow: hidden;
+}
+
+.hide {
+  display: none !important;
+}
+/*# sourceMappingURL=mentormanager.component.css.map */

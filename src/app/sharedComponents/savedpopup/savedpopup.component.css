@@ -1,0 +1,570 @@
+.savepostpopup {
+  width: 750px !important;
+}
+
+.savepostpopup .interesrsearch {
+  width: 100%;
+}
+
+.savepostpopup .profiledetail {
+  width: 250px !important;
+}
+
+.savepostpopup .post_outer {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-top: 10px !important;
+}
+
+.savepostpopup .post_outer .post_profile {
+  padding: 0px;
+}
+
+.savepostpopup .post_profileContent {
+  padding: 15px 0 5px !important;
+}
+
+.savepostpopup .widgetheading {
+  border-bottom: 1px solid #dfe0e8;
+  padding: 10px 0;
+}
+
+.savepostpopup .people_list {
+  padding: 0px;
+  height: 175px;
+  margin-bottom: 0px;
+}
+
+.savepostpopup .people_list li {
+  border: 1px solid #dfe0e8 !important;
+  border-radius: 5px !important;
+  padding: 5px !important;
+  background: #f5f7fa;
+  margin-bottom: 10px;
+}
+
+.savepostpopup .strokebtn {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 40px;
+}
+
+.savepostpopup .btn-Secondary {
+  margin-left: 10px;
+}
+
+.savepostpopup .save_addimage {
+  text-align: center;
+  line-height: 200px;
+  border: 3px dashed #dfe0e8;
+  height: 200px;
+  width: 100%;
+  float: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.savepostpopup .save_addimage img {
+  width: 80px !important;
+}
+
+.savepostpopup .inlineblock {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.post_headingg {
+  margin-top: 10px;
+}
+
+input {
+  -webkit-transition: border-color .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+  transition: border-color .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+  transition: border-color .2s ease-in-out,box-shadow .2s ease-in-out;
+  transition: border-color .2s ease-in-out,box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+}
+
+input:focus {
+  border: 1px solid #66a9d5 !important;
+  border-color: #66a9d5 !important;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.3rem rgba(153, 197, 227, 0.3) !important;
+  box-shadow: 0 0 0 0.3rem rgba(153, 197, 227, 0.3) !important;
+}
+
+.back_btn {
+  margin-right: 5px;
+  height: 31px;
+  font-size: 14px;
+  line-height: 16px;
+  border-radius: 18px !important;
+  border: 1px solid #dfe0e8;
+  background: #f5f7fa;
+  color: #000;
+}
+
+.back_btn:hover, .back_btn:active {
+  background: #f5f7fa;
+  color: #000;
+  border: 1px solid #dfe0e8;
+}
+
+.savepostpopup .post_outer .post_profile {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.savepostpopup .post_outer .post_profileContent {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.savepostpopup .post_outer .post_profileContent span.iframe_span {
+  width: 150px;
+  hieght: 150px;
+}
+
+.savepostpopup .post_outer .post_profile {
+  padding-top: 10px !important;
+  padding-left: 10px !important;
+}
+
+.popup_main.savepostpopup .interesrsearch input {
+  height: 35px;
+  line-height: 35px;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.popup_main.savepostpopup .interesrsearch .input-group-addon {
+  background-color: transparent;
+}
+
+.popup_main.savepostpopup .interesrsearch .input-group-addon button {
+  border: none;
+  padding: 1px 8px 0;
+  background-color: transparent;
+}
+
+.popup_main.savepostpopup {
+  height: auto;
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.popup_main.savepostpopup .folder-wrap .people_list {
+  min-height: 112px;
+}
+
+.popup_main.savepostpopup .borderLeft {
+  padding-bottom: 0;
+  height: auto;
+  max-height: 400px;
+  padding-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.popup_main.savepostpopup .borderLeft .folder-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 225px;
+}
+
+.popup_main.savepostpopup .widgetheading {
+  border-bottom: none;
+  padding-top: 12px;
+}
+
+.popup_main.savepostpopup .people_list {
+  height: auto;
+  max-height: 170px;
+  margin-bottom: 70px;
+  min-height: 170px !important;
+}
+
+.popup_main.savepostpopup .people_list ul {
+  padding-right: 15px;
+}
+
+.popup_main.savepostpopup .people_list ul li {
+  padding: 8px 10px !important;
+  cursor: pointer;
+  border: none !important;
+}
+
+.popup_main.savepostpopup .people_list ul li .prfl_detail {
+  height: auto;
+  width: auto;
+  display: block;
+  float: none;
+}
+
+.popup_main.savepostpopup .people_list ul li:hover {
+  color: #F05050;
+  border-color: #F05050 !important;
+  background-color: rgba(240, 80, 80, 0.15);
+}
+
+.popup_main.savepostpopup .people_list ul li h6 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2c2e2f;
+  line-height: 20px;
+}
+
+.popup_main.savepostpopup .strokebtn-wrap {
+  position: absolute;
+  padding-right: 15px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.popup_main.savepostpopup .strokebtn-wrap .strokebtn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #f05050;
+  font-size: 14px;
+  border-color: #F05050;
+  height: 40px;
+  line-height: 38px;
+  font-weight: 500;
+  border-radius: 40px;
+  font-weight: 500;
+}
+
+.popup_main.savepostpopup .strokebtn-wrap .strokebtn:hover {
+  color: #fff;
+  background-color: #f05050 !important;
+}
+
+.popup_main.savepostpopup .post-wrap {
+  padding-right: 15px;
+  padding-left: 15px;
+  min-height: 100px;
+  max-height: 306px;
+  float: left;
+  overflow: scroll;
+}
+
+.popup_main.savepostpopup .post-wrap img {
+  margin-bottom: 0;
+  border-radius: 5px;
+}
+
+.popup_main.savepostpopup .inner-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.popup_main.savepostpopup .inner-wrap .post_outer {
+  -webkit-box-shadow: unset;
+  -ms-box-shadow: unset;
+  -o-box-shadow: unset;
+  box-shadow: unset;
+  margin-top: 15px !important;
+  margin-bottom: 15px;
+}
+
+.popup_main.savepostpopup .create-folder-wrap {
+  padding-right: 15px;
+  padding-bottom: 15px;
+  min-height: 225px;
+}
+
+.popup_main.savepostpopup .create-folder-wrap .back_btn {
+  margin-right: 5px;
+  height: 31px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.popup_main.savepostpopup .create-folder-wrap .name-info {
+  padding-top: 10px;
+  font-size: 12px;
+  float: left;
+}
+
+.popup_main.savepostpopup .create-folder-wrap .people_list {
+  margin-bottom: 10px;
+}
+
+.popup_main.savepostpopup .create-folder-wrap .cancel_btn.popup_btn {
+  height: 30px;
+  line-height: 28	px;
+  margin-right: 10px;
+  font-size: 14px;
+  border-radius: 30px;
+}
+
+.popup_main.savepostpopup .create-folder-wrap .cancel_btn.popup_btn:hover {
+  background-color: #e3e3e3;
+}
+
+.popup_main.savepostpopup .saveinrimg.save_addimage {
+  margin-top: 0;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  width: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.popup_main.savepostpopup .people_list input:focus {
+  border: 1px solid #66a9d5 !important;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.3rem rgba(153, 197, 227, 0.3) !important;
+          box-shadow: 0 0 0 0.3rem rgba(153, 197, 227, 0.3) !important;
+}
+
+.popup_main.savepostpopup .post_profile .post_profilepic {
+  position: static;
+}
+
+@media only screen and (max-width: 767px) {
+  .popup_main.savepostpopup .post-wrap {
+    display: none;
+  }
+  .popup_main.savepostpopup {
+    width: calc(100% - 20px) !important;
+  }
+}
+
+.post_outer.popup_outer .course_post_profileContent {
+  background-color: #e8ecf1;
+  float: left;
+  width: 100%;
+  padding: 0px !important;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .coursesDetailBottom {
+  float: left;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail {
+  float: left;
+  width: 70%;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail h1 {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+  color: #2c2e2f;
+  padding: 0px 0px 5px 0px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail p {
+  color: #8c8c8c;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail p .text {
+  float: left;
+  font-size: 12px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail p .dote {
+  float: left;
+  width: 3px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail p .dote img {
+  width: 100%;
+  height: 100%;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail p .dote:nth-child(2n+2) {
+  margin: 0px 5px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star {
+  float: left;
+  width: 100%;
+  float: left;
+  margin-top: 5px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper {
+  float: left;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label {
+  margin-right: 5px;
+  width: 12px;
+  margin-bottom: 0px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.fill .star-fill-svg {
+  display: block;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.fill .star-half-svg {
+  display: none;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.fill .star-blank-svg {
+  display: none;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.half_fill .star-fill-svg {
+  display: none;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.half_fill .star-half-svg {
+  display: none;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.half_fill .star-blank-svg {
+  display: block;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.blank .star-fill-svg {
+  display: none;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.blank .star-half-svg {
+  display: none;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .star_wrapper label.blank .star-blank-svg {
+  display: block;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .Pagerating {
+  float: left;
+  width: 66px !important;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .Pagerating img {
+  margin: 0px 2px 0px 0px;
+  height: 11px;
+  float: left;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .Pagerating img:last-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .rating {
+  float: left;
+  font-size: 12px;
+  margin-right: 5px;
+  color: #ffbb58;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.post_outer.popup_outer .course_post_profileContent .leftDetail .star .number {
+  float: left;
+  font-size: 12px;
+  color: #8c8c8c;
+  line-height: normal;
+}
+
+.post_outer.popup_outer .course_post_profileContent .rightDetail {
+  float: right;
+  width: 25%;
+}
+
+.post_outer.popup_outer .course_post_profileContent .rightDetail .priceIcon {
+  float: left;
+  font-size: 16px;
+  line-height: 22px;
+  color: #f05050;
+  margin-left: 0px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .rightDetail .priceIcon img {
+  width: 13px;
+  margin-right: 1px;
+  position: relative;
+  top: -1px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .rightDetail .discountPriceIcon {
+  float: left;
+  font-size: 14px;
+  line-height: 20px;
+  color: #8c8c8c;
+  margin-left: 2px;
+  line-height: 20px;
+  position: relative;
+}
+
+.post_outer.popup_outer .course_post_profileContent .rightDetail .discountPriceIcon img {
+  width: 12px;
+  margin-right: 1px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .rightDetail .discountPriceIcon .stock {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 1px;
+  color: #2c2e2f;
+  background-color: #8c8c8c;
+  left: 0px;
+}
+
+.post_outer.popup_outer .course_post_profileContent .rightDetail button {
+  float: left;
+  background: transparent;
+  border: 1px solid #2c2e2f20;
+  border-radius: 3px;
+  font-size: 12px;
+  width: 92px;
+  margin-top: 5px;
+  height: 30px;
+  line-height: 27px;
+}
+
+.enroll {
+  background: #00bb24 !important;
+  color: #fff;
+  padding: 0px;
+  font-size: 14px !important;
+  margin-top: 15px !important;
+}
+
+.enroll img {
+  width: 13px;
+  margin-right: 3px;
+  position: relative;
+  top: -1px;
+}
+
+.pricingWrapper {
+  float: left;
+  width: 100%;
+}
+
+.centerAlign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  float: left;
+  width: 100%;
+}
+/*# sourceMappingURL=savedpopup.component.css.map */

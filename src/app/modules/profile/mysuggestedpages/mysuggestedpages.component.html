@@ -1,0 +1,38 @@
+<div class="mypages-outer-wrap" data-infinite-scroll
+     [infiniteScrollDistance]='5'
+     [infiniteScrollThrottle]='300'
+     [immediateCheck] = "true"
+     (scrolled)="onScrollDown()"
+     [scrollWindow]="true" *ngIf="pagePresent && startLoader==false">
+     <div class="row mypages-inner-wrap">
+        <div class="col-sm-4 col-md-4 col-lg-3 col-xs-6 mview_m mypage_item" *ngFor="let list of pages;let i= index;" id="{{list.PAGE_ID}}">
+             <div class="page-box-wrap">
+                <div class="page-box-inner-wrap box_wrap_inn">
+                    <figure class="image-wrap cursor-pointer">
+                        <div class="inner-img-wrapper">
+                            <img src="{{list.PROFILE_PHOTO_PATH}}" alt="" routerLink="/page/{{list.ID}}" style="width:100%;height:100%">
+                            <!-- <img src="{{list.PROFILE_PHOTO_PATH}}" alt="study24x7" routerLink="/page/{{list.ID}}" style="width:120px;height:120px"> -->
+                        </div>
+                    </figure>
+                    <div class="page-box-content text-center">
+                        <h5 title="{{list.TITLE}}" routerLink="/page/{{list.PAGE_UUID}}" class="cursor-pointer" >{{list.TITLE |trimData:17}}</h5>
+                        <!--<span class="sub-title cursor-pointer" routerLink="/page/{{list.PAGE_UUID}}">{{list.PAGE_NAME}}</span>-->
+                        <button *ngIf="list.FOLLOW_STATUS==0" class="button24x7 whiteColorButton buttonPadding25" (click)="pageFollowUnFollow(list.PAGE_UUID,i);" style="position:relative;top:10px">Follow</button>
+                        <button *ngIf="list.FOLLOW_STATUS==1" class="button24x7 whiteColorButton buttonPadding25" style="position:relative;top:10px">Following</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mypages-outer-wrap" *ngIf="pagePresent==false && startLoader==false">
+    <div class ="emptystate">
+        <div class="emptystate_inner">
+              <img  src="./assets/images/svg-three/page_icon/emptypage.svg" style="padding-bottom:10px;width:100px !important">
+            <p>No suggested pages</p>
+        </div>
+    </div>
+</div>
+<div class="loader2" *ngIf="startLoader">
+        <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+    </div>

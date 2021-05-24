@@ -1,0 +1,45 @@
+<div  id="sidebar">
+    <div class="trending_outer_inner" >
+
+        <div class="trending_outer">
+            <h6 class="widgetheading trend_head top_heading">Trendings <a href='/trending' >view all</a></h6> 
+            <div class='people_list'   *ngIf = "trendingPresent">
+                <ul>
+                    <li *ngFor='let trendings of trend'>
+                        <span><img src='assets/images/svg/fire.svg' style="float:left;margin-top:1px;"></span>
+                        <div class='prfl_detail'>
+                            <div class="profilename">{{ trendings.TEXT | trimData:13}}</div>
+                            <!-- <div class="grayinfo">Followers {{ trendings.followers }}</div> -->
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="emptystate" *ngIf = "trendingPresent==false">
+                <div class="emptystate_inner">
+                    <img src="assets/images/emptystates/svg/trending.png">
+                    <span>Trending</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>  </div>
+<!--
+     <script type="text/javascript" src="./assets/js/sticky-sidebar.js"></script>
+     <script type="text/javascript" src="./assets/js/sticky.js"></script>
+        <script type="text/javascript">
+                var a = new StickySidebar('#sidebar', {
+                        topSpacing: 600,
+                        bottomSpacing: 20,
+                        containerSelector: '.main_body',
+                        innerWrapperSelector: '.trending_outer_inner'
+                });
+      var b = new StickySidebar('#leftmenudiv', {
+                        topSpacing: 50,
+                        bottomSpacing: 20,
+                        containerSelector: '.main_body',
+                        innerWrapperSelector: '.leftmenuinner'
+                });
+    </script>
+-->

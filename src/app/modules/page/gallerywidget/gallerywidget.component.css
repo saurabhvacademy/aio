@@ -1,0 +1,81 @@
+.galleryWidgetWrapper {
+  float: left;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.galleryWidgetWrapper .header {
+  float: left;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px;
+  color: #2c2e2f;
+  background-color: #f5f7fa;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.galleryWidgetWrapper .imageContainerWrapper {
+  float: left;
+  width: 100%;
+  padding: 5px 5px 0 0;
+}
+
+.galleryWidgetWrapper .imageContainerWrapper .gallery_wrapper {
+  width: 33.33%;
+  height: 82px;
+  padding-left: 5px;
+  float: left;
+  padding-bottom: 5px;
+}
+
+.galleryWidgetWrapper .imageContainerWrapper .imgWrapper {
+  width: 100%;
+  height: 100%;
+  float: left;
+  background: #e6ecf0;
+  background-position: 50% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.galleryWidgetWrapper .imageContainerWrapper .imgWrapper img {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.galleryWidgetWrapper .imageContainerWrapper .imgWrapper:nth-child(4n) {
+  margin-left: 0px;
+}
+
+.galleryWidgetWrapper .imageContainerWrapper .imgWrapper:first-child {
+  margin-left: 0px;
+}
+
+.galleryWidgetWrapper .footer {
+  bottom: 0px;
+  padding: 10px !important;
+  color: #2c2e2f;
+  background-color: #fff;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #e9e9e9;
+  float: left;
+  font-weight: 500;
+}
+
+.galleryWidgetWrapper .footer span img {
+  width: 6px;
+  position: relative;
+  top: -2px;
+}
+
+.galleryWidgetWrapper .footer:hover {
+  background-color: #f5f7fa;
+}
+/*# sourceMappingURL=gallerywidget.component.css.map */

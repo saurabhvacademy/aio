@@ -1,0 +1,351 @@
+<!-- <div class='leftmenuouter' [ngStyle]="{'width': leftSecWidth+'px'}"> -->
+<div id="leftfixed">
+    <div class='leftmenuouter' id="leftfixmenu">
+        <!-- wall left menu pre loader start -->
+        <div class="placeholde-wrapper " *ngIf="loaderscreen">
+            <!-- <div class="placeholde-wrapper " *ngIf="loaderscreen"> -->
+            <div class="animated-background leftloader">
+                <div class="circle cir_animation animated-background"></div>
+                <div class="whitediv bottom11"></div>
+                <div class="whitediv bottom10"></div>
+                <div class="whitediv bottom9"></div>
+                <div class="whitediv bottom8"></div>
+                <div class="whitediv bottom7"></div>
+                <div class="whitediv bottom6"></div>
+                <div class="whitediv bottom5"></div>
+                <div class="whitediv bottom4"></div>
+                <div class="whitediv bottom4 bottom4left"></div>
+                <div class="whitediv bottom4 bottom4middle1"></div>
+                <div class="whitediv bottom4 bottom4middle2"></div>
+                <div class="whitediv bottom3"></div>
+                <div class="whitediv bottom2"></div>
+                <div class="whitediv bottom2 bottom2left"></div>
+                <div class="whitediv bottom2 bottom2middle1"></div>
+                <div class="whitediv bottom2 bottom2middle2"></div>
+                <div class="bottom1 whitediv "></div>
+            </div>
+        </div>
+        <div *ngIf="!loaderscreen">
+            <!--wall left menu pre loader end -->
+            <div class='profileouter' >
+                <a class='profile' routerLink="/profile/{{userInfo.uname}}">
+                    <img src="{{userInfo.profile_pic_path}}" (error)="updateSourcePic($event)">
+                </a>
+                <div class='basicdetails' >
+                    <p class="name cursor-pointer" routerLink="/profile/{{userInfo.uname}}">{{this.userInfo.full_name |trimData:17}}</p>
+                    <!--		<p class="username cursor-pointer">{{userInfo.uname}}</p>-->
+                    <p class="username editprofile cursor-pointer"><a routerLink="/profile/{{userInfo.uname}}/#About">Edit profile</a></p>
+                </div>
+                <div class="row profile_desc" style="display:none;">
+                    <div class='col-md-4 col-sm-4 lftconnection fleft' routerLink="/profile/{{userInfo.uname}}/#connection:connection">
+                        <p class="count cnt_top">{{connection}}</p>
+                        <p class="countname" > Connections</p>
+                    </div>
+                    <div class='col-md-4 col-sm-4 middlefollowers fleft' routerLink="/profile/{{userInfo.uname}}/#connection:followers"  style="box-sizing: border-box;">
+                        <!-- <div class='col-md-3 col-sm-3' ng-click="$()"> -->
+                        <p class="count cnt_top">{{follower}}</p>
+                        <p class="countname">&nbsp;&nbsp;Followers</p>
+                    </div>
+                    <div class='col-md-4 col-sm-4 rightfollowing' routerLink="/profile/{{userInfo.uname}}/#connection:following" style="box-sizing: border-box;">
+                        <p class="count cnt_top">{{following}}</p>
+                        <p class="countname" >Following</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class='leftmenulist'>
+
+              <ul class='listdropdown'>
+              <li [routerLinkActive]="'active'" routerLink='/home'>
+                <span class="default home_cnt">  </span>
+                <p>Home</p>
+               </li>
+              <li [routerLinkActive]="'active'" routerLink='/profile/{{userInfo.uname}}/#connection:connection'>
+                <span class="default connection_cnt">  </span>
+                <p>Connections</p>
+              </li>
+              <li (click)="toggleShowHide(1)">
+               <span class="default interest_cnt"></span>
+                <p>Interests</p>
+              </li>
+              <li class="interestlist">
+                <div id="interestshow" class="interestlistdiv panel-collapse collapse " [perfectScrollbar]="config" style="position:relative;">
+                <ul class='interestlistdropdown'>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests</p>
+                  </li>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests2</p>
+                  </li>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests3</p>
+                  </li>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests4</p>
+                  </li>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests5</p>
+                  </li>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests6</p>
+                  </li>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests7</p>
+                  </li>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests8</p>
+                  </li>
+                  <li>
+                   <span class="default arrowright"></span>
+                    <p>Interests9</p>
+                  </li>
+                  </ul>
+                </div>
+               <p class="hrrow"></p>
+              </li>
+
+
+            </ul>
+            <ul class='listdropdown '>
+              <li [routerLinkActive]="'active'" routerLink='/questionforyou'>
+                <span class="default question_cnt"></span>
+                <p>Questions</p></li>
+               <li [routerLinkActive]="'active'" (click)="articleFilter()">
+                 <span class="default article_cnt"> </span>
+                <p>Articles</p>
+
+              </li>
+               <li  [routerLinkActive]="'active'" routerLink='/saved'>
+                 <span class="default saved_cnt"> </span>
+                <p>Saved</p>
+                <p class="hrrow"></p>
+              </li>
+            </ul>
+            <ul class='listdropdown '>
+              <li routerLink=''>
+               <span class="default page_cnt"></span>
+               <p>Pages</p></li>
+              <li routerLink=''>
+               <span class="default marketplace_cnt"></span>
+               <p>Course Marketplace</p></li>
+              <li routerLink=''>
+               <span class="default mycourse_cnt"></span>
+               <p>My Courses</p>
+
+             </li>
+            </ul>
+                <!-- <h5>Favourite</h5>	 -->
+                <ul  style="display:none;">
+                    <!-- <li class="active"><span class='glyphicon glyphicon-globe'></span> News Feed</li> -->
+                    <!-- <li class="" [routerLinkActive]="'active'" routerLink='/home'>
+                        <a>
+                            <span class='leftmenuicon'>
+                                <img class="defaultt" src="assets/images/svg-three/page_icon/earth.svg">
+                                <img class="hover" src="assets/images/svg-three/page_icon/f05050/earth.svg">
+                            </span> Latest Feeds -->
+                    <!--                <span class="interest_count">5</span>-->
+                    <!-- </a>
+
+                </li> -->
+                    <!-- <li class="" [routerLinkActive]="'active'">
+                            <a routerLink="/profile">
+                                    <span class='leftmenuicon'><img class="defaultt" src="assets/images/svg-one/newicon/gender-neutral-user-2.svg"><img class="hover" src="assets/images/svg-one/newicon/hover/gender-neutral-user-2.svg"></span> My Profile</a></li> -->
+                    <!-- <li class="">
+                                    <span class='leftmenuicon'><img src="assets/images/svg/earth.svg"></span> My Post</li>	 -->
+                    <li class="" [routerLinkActive]="'active'" routerLink="/questionforyou">
+                        <a >
+
+                            <span class='leftmenuicon menuiconquestion' >
+                                <!-- <img class="defaultt" src="assets/images/svg-three/page_icon/earth.svg" style="width: 18px !important;">
+                                <img class="hover" src="assets/images/svg-three/page_icon/f05050/earth.svg" style="width: 18px !important;"> -->
+                            </span>Questions</a>
+
+                    </li>
+                    <li  [ngClass]="{'active': isWallFilter==1}" (click)="articleFilter()">
+                        <a >
+                            <span class='leftmenuicon menuiconarticle' >
+                                <!-- <img class="defaultt" src="assets/images/svg-three/page_icon/earth.svg" style="width: 18px !important;">
+                                <img class="hover" src="assets/images/svg-three/page_icon/f05050/earth.svg" style="width: 18px !important;"> -->
+                            </span>Articles</a>
+
+                    </li>
+
+
+
+                    <li class="" [routerLinkActive]="'active'"  routerLink="/saved">
+                        <a>
+
+                            <span class='leftmenuicon menuiconsaved'>
+                                <!-- <img class="defaultt" src="assets/images/svg-three/left_menu/saved.svg">
+                                <img class="hover" src="assets/images/svg-three/left_menu/f05050/saved.svg"> -->
+                            </span> Saved
+                        </a>
+                    </li>
+
+                    <li class="" >
+                        <!-- <a (click)="interestPopup=true"> -->
+                        <a data-toggle="collapse" >
+
+                            <span class='leftmenuicon menuiconinterest'>
+                                <!-- <img class="defaultt" src="assets/images/svg-three/left_menu/interest.svg">
+                                <img class="hover" src="assets/images/svg-three/left_menu/f05050/interest.svg"> -->
+                            </span> Interests</a>
+
+                    </li>
+
+
+
+                    <!-- <li class="" [routerLinkActive]="'active'">
+                    <a routerLink="/inbox">
+                                    <span class='leftmenuicon'><img class="defaultt" src="assets/images/svg-one/newicon/Msg.svg"><img class="hover" src="assets/images/svg-one/newicon/hover/Msg.svg"></span> Message</a></li> -->
+
+
+
+                    <!--
+                                        <li class="" [routerLinkActive]="'active'"  routerLink="/profile/#connection:connection">
+                                            <a>
+                                                <span class='leftmenuicon'>
+                                                    <img class="defaultt" src="assets/images/svg-three/left_menu/connection.svg" style="width: 20px !important;">
+                                                    <img class="hover" src="assets/images/svg-three/left_menu/f05050/connection.svg" style="width: 20px !important;">
+                                                </span> Connections</a></li> -->
+
+
+                    <!-- <li class="" [routerLinkActive]="'active'" routerLink="/profile/#Pages:mypages"> -->
+                    <!-- <a (click)="interestPopup=true"> -->
+                    <!-- <a >
+                        <span class='leftmenuicon'><img class="defaultt" src="assets/images/svg-three/left_menu/my_pages.svg"><img class="hover" src="assets/images/svg-three/left_menu/f05050/my_pages.svg"></span>Pages</a>
+
+
+                </li> -->
+
+
+                    <!-- <li routerLink="/profile/#course:followed">
+                        <a>
+                            <span class='leftmenuicon'><img class="defaultt" src="assets/images/svg-three/course/all_courses.svg"><img class="hover" src="assets/images/svg-three/course/all_red_courses.svg"></span> Courses
+                        </a>
+                    </li> -->
+
+
+                    <!-- <li class="" [routerLinkActive]="'active'" >
+                    <a routerLink="/notification">
+                                    <span class='leftmenuicon'><img class="defaultt" src="assets/images/svg-one/newicon/notification_unfill.svg"><img class="hover" src="assets/images/svg-one/newicon/hover/notification_unfill.svg"></span> Notifications</a>
+                            </li> -->
+                    <!-- <li><a routerLink="/saved"><span class='glyphicon glyphicon-bookmark'></span> Saved</a></li> -->
+                    <!-- <li><span class='glyphicon glyphicon-user'></span> Groups</li> -->
+                    <!-- <li><span class='glyphicon glyphicon-globe'></span>Interest</li> -->
+                </ul>
+
+
+                <!-- pages sub menu pages-wall -->
+
+                <h4 style="display:none;">Pages</h4>
+                <ul class="sub-menu" style="display:none;">
+                    <li class="" [routerLinkActive]="'active'" routerLink="/profile/{{userInfo.uname}}/#Pages:mypages">
+
+                        <a >
+                            <span class='leftmenuicon menuiconmapage'>
+                                <!-- <img class="defaultt" src="assets/images/svg-three/left_menu/my_pages.svg">
+                                <img class="hover" src="assets/images/svg-three/left_menu/f05050/my_pages.svg"> -->
+                            </span>My Pages</a></li>
+                    <!-- <li class="" [routerLinkActive]="'active'" routerLink="/profile/#pages:followed">
+
+                        <a>
+                            <span class='leftmenuicon'><img class="defaultt" src="assets/images/svg-three/left_menu/followed_page.svg"><img class="hover" src="assets/images/svg-three/left_menu/f05050/followed_page.svg"></span>Followed Pages</a>
+                  </li> -->
+                    <li class="" [routerLinkActive]="'active'" (click)="showPageCreatePopup();">
+
+                        <a >
+                            <span class='leftmenuicon menuiconscreatepage'>
+                                <!-- <img class="defaultt" src="assets/images/svg-three/left_menu/create_page.svg">
+                                <img class="hover" src="assets/images/svg-three/left_menu/f05050/create_page.svg"> -->
+                            </span> Create a Page</a></li>
+
+
+                </ul>
+
+                <!-- courses sub menu		 -->
+
+                <h4 style="display:none;">Courses</h4>
+                <ul class="sub-menu" style="display:none;">
+                    <!-- <li>
+                        <a>
+                            <span class='leftmenuicon'><img class="defaultt" src="assets/images/svg-three/course/all_courses.svg"><img class="hover" src="assets/images/svg-three/course/all_red_courses.svg"></span>Find  Courses
+                        </a>
+                    </li> -->
+                    <li routerLink="/profile/{{userInfo.uname}}/#Courses:allcourses">
+                        <a>
+                            <span class='leftmenuicon menuiconallcourse'>
+                                <!-- <img class="defaultt" src="assets/images/svg-three/course/all_courses.svg">
+                                <img class="hover" src="assets/images/svg-three/course/all_red_courses.svg"> -->
+                            </span> All Courses
+                        </a>
+                    </li>
+                    <li routerLink="/profile/{{userInfo.uname}}/#Courses:mycourses">
+                        <a>
+                            <span class='leftmenuicon menuiconsmycourse'>
+                                <!-- <img class="defaultt" src="assets/images/svg-three/course/mycourse.svg">
+                                <img class="hover" src="assets/images/svg-three/course/redmycourse.svg"> -->
+                            </span> My Courses
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a>
+                            <span class='leftmenuicon'><img class="defaultt" src="assets/images/svg-three/course/all_courses.svg"><img class="hover" src="assets/images/svg-three/course/all_red_courses.svg"></span>Create Course
+                        </a>
+                    </li> -->
+                </ul>
+
+
+
+
+            </div>
+        </div>
+
+        <!--
+                <div class='leftmenulist'>
+                        <h5>Pages</h5>
+                        <ul>
+                                <li><span class='glyphicon glyphicon-globe'></span> Like Pages</li>
+                                <li><span class='glyphicon glyphicon-bookmark'></span> My Pages</li>
+                                <li><span class='glyphicon glyphicon-user'></span> Create Page</li>
+                        </ul>
+                </div> -->
+        <!--
+                <div class='leftmenulist'>
+                        <h5>Interests</h5>
+                        <ul>
+                                <li><span class='glyphicon glyphicon-globe'></span>Interest</li>
+                        </ul>
+                </div> -->
+        <!-- 	<div class='leftmenulist'>
+                        <h5>Media And Documents</h5>
+                        <ul>
+                                <li><span class='glyphicon glyphicon-globe'></span> Files</li>
+                                <li><span class='glyphicon glyphicon-bookmark'></span> Videos</li>
+                                <li><span class='glyphicon glyphicon-user'></span> Quizzes</li>
+                        </ul>
+                </div> -->
+
+
+
+
+
+
+    </div>
+
+    <!--<div *ngIf="interestPopup">
+        <app-interest (closePopup)="interestPopup=$event"></app-interest>
+    </div>-->
+    <!-- <div *ngIf="createpagePopupShow">
+        <app-createpage (closePopupcreatepage)="closeCreatePagePopup($event)" ></app-createpage>
+    </div> -->
+</div>

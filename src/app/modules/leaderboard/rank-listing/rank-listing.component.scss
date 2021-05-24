@@ -1,0 +1,87 @@
+.rankListingMian{
+font-size: 16px;
+width: 100%;float: left;background: #fff;border-radius: 0px 0px 5px 5px;padding-bottom: 10px;padding-top: 10px;
+}
+.rankListing{
+width: 100%;
+font-weight: 500;
+.rankListingRow{
+  padding: 10px 100px 10px 115px;border-bottom: 1px solid #dfe5eb;position: relative;height: 60px;
+  display: inline-flex;width:100%;
+  align-items: center;
+  color:rgba(0, 0, 0, 0.7);font-size: 15px;
+}
+&:hover{
+  .myRank{text-decoration: underline;}
+}
+&:last-child{
+  .rankListingRow{
+  border-bottom: none;
+}
+}
+}
+.profileImgSec{
+  width: 95px;position: absolute;left: 0px;height: 40px;
+.rankNo{padding:13px 10px 12px 20px;float: left;}
+  .profileImg{width: 40px;height: 40px;border-radius: 100%;overflow: hidden;float: right;
+    position: absolute;
+    right: 0px;
+    img {
+      width: 100%;
+    }
+  }
+}
+.rankListing.otherRank {
+  margin: 0px 10px;
+  background: #02bfe7;
+  border-radius: 5px;
+  color:#fff;
+  width: calc(100% - 20px);
+   .rankListingRow{
+    border-bottom: 1px solid transparent;
+    padding-left: 105px;
+    color: #fff;
+    box-shadow: 0px 3px 6px 0px #e1e1e1;
+  }
+  .profileImgSec {
+    width: 85px;
+    .rankNo {
+      padding-left: 18px;
+      float: left;
+    }
+  }
+}
+
+.rankoverflow {
+  height: calc(100vh - 350px);
+  // max-height: calc(100vh - 330px);
+  width: 100%;
+  scrollbar-width: thin;
+}
+
+.myRank {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  span {
+    width: 100%;
+  }
+}
+.otherRank {
+}
+.pointNo {
+  position: absolute;
+  right: 25px;
+}
+.red_font {
+  color: red;
+}
+@media only screen and (max-width:992px){
+
+.rankoverflow {
+ //  max-height: max-content;
+ // height: auto;
+  max-height: 300px;
+
+}
+}

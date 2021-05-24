@@ -1,0 +1,29 @@
+<div class="_right_rank_panel _outer" style="cursor: pointer;" (click)=routerleaderboard()>
+  <div class="_heading_panel">
+    Rank Statistics
+  </div>
+  <div class="_center_rank_panel">
+    <ul>
+      <li>
+        <div class="_point_option_rank">
+          <span class="_rank_point"><span></span>Study24x7 Rank</span>
+          <span class="_rank_heading">Gets updated daily for all interests</span> 
+          <span class="_rank_count">{{usetDtlsData.OVERALL_RANK}}
+             <span *ngIf="!(change>=0)" class="_rank_span _rank_img"></span>
+             <span *ngIf="(change>0)" class="_rank_span _rank_img_red"></span>
+
+            </span>
+        </div>
+        <div class="_point_option_rank">
+          <!-- <span class="_rank_point"><span></span>{{usetDtlsData.HIGHEST_RANK_INTEREST_NAME}}</span> -->
+          <span class="_rank_point _rank_point_no_img">Best Interest Rank</span>
+          <span class="_rank_heading">Your rank in <span style="font-weight: bold;">{{usetDtlsData.HIGHEST_RANK_INTEREST_NAME}}</span></span>
+          <span class="_rank_count">{{usetDtlsData.HIGHEST_INTEREST_RANK}}
+            <span class="_rank_span _rank_img"></span>
+          </span>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,1468 @@
+<div class="about-profile">
+
+    <!-- summary wrapper start -->
+    <div class="maindiv summary-wrap main_summ main_abt_edit_wrap" >
+        <h6 class='mainheading summary-sec-title' *ngIf="summaryDivShow !== 2">
+            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-description.png" alt="study24x7"> -->
+            <span >
+                Summary
+            </span>
+            <span class="rightedit educat" (click)="show_abt_popup(1)" *ngIf="myprofile == 1 && editSummary && EmptySumm==false" ><img src="assets/images/svg-three/profile_about/editdark.svg" alt=""></span>
+            <!-- <button class="edit-summary" href="javascript:void(0)" (click)="summaryDiv(1);" *ngIf="myprofile == 1 && editSummary"> -->
+            <button class="editButton"  (click)="show_abt_popup(1);" *ngIf="myprofile == 1 && editSummary && EmptySumm==false">
+                    <img class="defaultt plus" src="assets/images/svg-three/profile_about/editdark.svg">
+                <img class="hoverr plus" src="assets/images/svg-three/profile_about/f05050/edit.svg">
+            </button>
+        </h6>
+        <div class="content" *ngIf="summaryDivShow === 1 && updateSummary">
+             <!--<div class="summary_head">Getting Thing right !</div>-->
+             <p class="class abt_summary_text" >{{summary}}</p>
+        </div>
+        <div class="emptystate empty_wrap" *ngIf="summaryDivShow === 2" >
+            <div class="emptystate_inner">
+                <img src="assets/images/svg-three/profile_about/add_sum.png" class="abtproempimg">
+                <span  *ngIf="myprofile==2">
+                    <span class="emptystates_heading1">No summary data to show</span>
+                </span>
+                <span  *ngIf="myprofile!=2">
+                    <span class="emptystates_heading1">Add your Summary</span>
+                    <span class="emptystates_heading2">Inform about yourself to your community</span>
+                    <!-- <button class="btn-primary editbtn"   *ngIf="myprofile == 1 && !experienceAdd && expDetailsView==2" style="float:none;"> -->
+                    <button (click)="show_abt_popup(1);" class="btn-roundBg-red btnflex btnflex-center" style="float:none;" *ngIf="EmptySumm">
+                        <!-- <span class="abt_img_wrapper">
+                            <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="study24x7">
+                        </span> -->
+                        Add Summary
+                    </button>
+                </span>
+            </div>
+        </div>
+        <div class="edit-block-wrap block_wrap_outr" *ngIf="Summaryshow">
+            <div class="row margintop editblock">
+                <textarea class='generaltextarea gray_rds text_area_wrap' id="summ" [(ngModel)]="userSummary"  (Paste)="post_data.onPaste($event);OnFocus($event);"></textarea>
+                <div class="footer_message footer_inner clearfix">
+                    <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary" (click)="submitSummary();"><span class="test" *ngIf="showText">Save</span>
+                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                    <button  class="btn-secondary graybutton btn_alg btn_sbmt" (click)="summaryDiv(2);">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- summary wrapper end -->
+    <!-- Experience wrapper start  -->
+    <div class="maindiv margintop exp-wrap main_wrap main_summ main_abt_edit_wrap">
+        <h6 class='mainheading' *ngIf="expDetailsView !== 2">
+            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-exp.png" alt="study24x7"> -->
+            <span >Experience </span>
+            <span class="rightedit educat" (click)="show_abt_popup(3)" *ngIf="myprofile == 1 && !experienceAdd && expDetailsView!=2" ><img src="assets/images/redPlus.svg" alt=""></span>
+            <!-- <button class="edit-summary"  (click)="experienceAddBox();" *ngIf="myprofile == 1 && !experienceAdd && expDetailsView!=2" > -->
+            <button class="editButton"  (click)="show_abt_popup(3)" *ngIf="myprofile == 1 && !experienceAdd && expDetailsView!=2" >
+                    <img class="defaultt plus" src="assets/images/svg-three/profile_about/abt_plus.svg">
+                <img class="hoverr plus" src="assets/images/svg-three/profile_about/f05050/abt_plus.svg">
+            </button>
+        </h6>
+        <div class="content">
+            <!--add exp start -->
+            <div class="edit-block-wrap block_wrap_outr" *ngIf="addExpStatus">
+                <div class="row margintop editblock" style="margin-top:0;">
+                    <div class="col-md-3 nlp sbtwidth">
+                        Position
+                    </div>
+                    <div class="col-md-9">
+                        <div class="selectbox">
+
+                            <Select class="" id='exp_position' (change)="hidePositionInput($event)" class="gray_rds">
+                                <option value="default">--Select a Position--</option>
+                                <option *ngFor ="let position of positionArr" [id]='position.POSITION_ID' [value]='position.POSITION_ID' >{{position.POSITION_NAME}}</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margintop editblock" *ngIf="inputPosition == 2">
+                    <div class="col-md-3 nlp sbtwidth">
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="posInput" [(ngModel)]="positionOthers" class="gray_rds">
+                    </div>
+                </div>
+                <div class="row margintop editblock">
+                    <div class="col-md-3 nlp sbtwidth">
+                        Organizaiton
+                    </div>
+                    <div class="col-md-9">
+                        <div class="selectbox">
+
+                            <Select class="" id='exp_organization' (change)="hideOrganizationInput($event)" class="gray_rds">
+                                <option value="default">--Select a Organization--</option>
+                                <option *ngFor ="let organization of organizationArr" [id]='organization.ORGANIZATION_ID' [value]='organization.ORGANIZATION_ID' >{{organization.ORGANIZATION_NAME}}</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margintop editblock" *ngIf="inputOrganization == 2">
+                    <div class="col-md-3 nlp sbtwidth">
+                    </div>
+                    <div class="col-md-9" id="others_input">
+                        <input type="text" id="orgInput" [(ngModel)]="organizationOthers" class="gray_rds">
+                    </div>
+                </div>
+                <div class="row margintop editblock">
+                    <div class="col-md-3 nlp sbtwidth">
+                        Time Period
+                    </div>
+                    <div class="col-md-2 remvpad nlp">
+                        <div class="selectbox">
+
+                            <Select class="" id="expYr_from" class="gray_rds" (change)="getExpYears()">
+                                <option value="default">--Select Year--</option>
+                                <option *ngFor="let year of years; let i = index" [attr.data-index]="i">{{year}}</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 remvpad">
+                        <div class="selectbox">
+
+                            <Select class="" id="expMon_from" class="gray_rds">
+                                <option value="default">--Select Month--</option>
+                                <option id="1" value="01">January</option>
+                                <option id="2" value="02">February</option>
+                                <option id="3" value="03">March</option>
+                                <option id="4" value="04">April</option>
+                                <option id="5" value="05">May</option>
+                                <option id="6" value="06">June</option>
+                                <option id="7" value="07">July</option>
+                                <option id="8" value="08">August</option>
+                                <option id="9" value="09">September</option>
+                                <option id="10" value="10">October</option>
+                                <option id="11" value="11">November</option>
+                                <option id="12" value="12">December</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-1">to</div>
+                    <div class="col-md-2 remvpad">
+                        <div class="selectbox">
+
+                            <Select class="" id="expYr_to" class="gray_rds">
+                                <option value="default">--Select Year--</option>
+                                <option *ngFor="let year of ExpYears; let i = index" [attr.data-index]="i"  >{{year}}</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 remvpad sltmon">
+                        <div class="selectbox">
+
+                            <Select class="" id="expMon_to" class="gray_rds">
+                                <option value="default">--Select Month--</option>
+                                <option id="1" value="01">January</option>
+                                <option id="2" value="02">February</option>
+                                <option id="3" value="03">March</option>
+                                <option id="4" value="04">April</option>
+                                <option id="5" value="05">May</option>
+                                <option id="6" value="06">June</option>
+                                <option id="7" value="07">July</option>
+                                <option id="8" value="08">August</option>
+                                <option id="9" value="09">September</option>
+                                <option id="10" value="10">October</option>
+                                <option id="11" value="11">November</option>
+                                <option id="12" value="12">December</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margintop editblock">
+                    <div class="col-md-3 nlp sbtwidth">
+                        Summary
+                    </div>
+                    <div class="col-md-9">
+                        <textarea class='generaltextarea head_n gray_rds text_area_wrap' id='exp_summ' placeholder="Enter Experience Summary" [(ngModel)]="expSummary">
+                        </textarea>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="footer_message footer_inner clearfix">
+                        <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary second_primary"  (click)="submitExpDetails('')"><span class="text" *ngIf="showText">Save</span>
+                            <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                        <button  class="btn-secondary graybutton btn_alg btn_sbmt"   (click)="hideExpBox();">Cancel </button>
+
+                    </div>
+                </div>
+            </div>
+            <!--add exp-->
+            <div class='people_list Experiance_list' *ngIf="expDetailsView === 1">
+                <ul>
+                    <li *ngFor="let experiences of experience;let i = index" id="exp_{{experiences.USER_EXPERIENCE_ID}}" >
+                        <div class="abtdetailimg">
+                            <!-- <img src='{{experiences.profile}}'> -->
+                            <img src="assets/images/svg-three/profile_about/about_exp.svg" alt="study24x7">
+                        </div>
+
+                        <div class='prfl_detail' [ngClass]="{'hide-on-edit':experienceshow && expEditIndex === i}" class="exppadd">
+                             <div class="profilename head">
+                                <div href='#' class='experiancename'>
+                                    <span class="abteditcontainer">{{experiences.POSITION}} </span>
+                                    <!--<span class="abteditcontainer">Visual Designer</span>-->
+
+                                    <!-- <span class="abtedit edit-summary2" (click)="updateExperienceDetails($event,i,experiences.FROM,experiences.TO)" id='{{experiences.USER_EXPERIENCE_ID}}'> -->
+                                    <span class="abtedit edit-summary2" (click)="show_abt_popup(3);updateExperienceDetails(i)" id='{{experiences.USER_EXPERIENCE_ID}}' *ngIf="myprofile == 1">
+                                        <img class="defaultt" src="assets/images/svg-three/profile_about/editdark.svg">
+                                        <img class="hoverr" src="assets/images/svg-three/profile_about/f05050/edit.svg">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="profilename sub-title">
+                                {{experiences.ORGANIZATION}}
+                                <!--Gingerwebs Pvt. Ltd-->
+                                <br>
+                                <span class="abt_duration">{{experiences.FROM|dateview}} - {{experiences.TO|dateview}}</span>
+                                <!--<span class="abt_duration">April 2008 - Jan 2012</span>-->
+                            </div>
+                            <div>
+                                <p class="summary_text" [innerHTML]="experiences.SUMMARY" style="margin-bottom:0px;">
+                                    <!--                                <p class="summary_text"  style="margin-bottom:0px;">
+                                                                        Everything you see all around are made from someones thought and creative colors, designing is the most awesome and never -ending
+                                                                    </p>-->
+                            </div>
+                        </div>
+                        <!-- <div class="edit-info-wrap wrp_info" *ngIf="myprofile == 1" [ngClass]="{'hide-on-edit':experienceshow && expEditIndex === i}">
+                        <span (click)="manageEditInfoPopup(i,'exp')" class="cursor-pointer">
+                        <img src="assets/images/svg-three/post_icon/dot_menu.svg" alt="study24x7" class="defaultt">
+                        <img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" alt="study24x7" class="hoverr"></span>
+                        <span class="drpdwn_post postdrop for-post" *ngIf="infoPopupStatus === i && infoPopupShowStatus && 'exp' == secName">
+                        <ul (mouseleave)="this.infoPopupStatus = '' ">
+                        <li (click)="updateExperienceDetails($event,i,experiences.FROM,experiences.TO)" id='{{experiences.USER_EXPERIENCE_ID}}' *ngIf="myprofile == 1">
+                        <div class="width100 abtmargin">
+                        <span class='default abt_lineheight' >
+                        <img src="assets/images/svg/dropedit.svg">
+                      </span>
+                      <span class='hoverimg abt_lineheight' >
+                      <img src="assets/images/svg/dropedithover.svg"></span>
+                      <div class="postdropdown_inner">Edit</div></div></li>
+                      <li id='{{experiences.USER_EXPERIENCE_ID}}' (click)="delUserExp($event,i);" *ngIf="myprofile == 1"> <div class="width100 abtmargin"><span class='default abt_lineheight' ><img src="assets/images/svg/dustbindrop.svg"></span><span class='hoverimg abt_lineheight' ><img src="assets/images/svg/dustbindrophover.svg"></span> <div class="postdropdown_inner">Delete</div></div></li>
+                    </ul>
+                  </span>
+                </div> -->
+                        <!--edit exp start-->
+                        <div class="edit-block-wrap block_wrap_outr" *ngIf="experienceshow && expEditIndex === i">
+                             <div class="row margintop editblock" style="margin-top:0;">
+                                <div class="col-md-3 nlp sbtwidth">
+                                    Position
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="selectbox">
+
+                                        <Select class="" id='exp_position' (change)="hidePositionInput($event)" class="gray_rds">
+                                            <option value="default">--Select a Position--</option>
+                                            <option *ngFor ="let position of positionArr" [id]='position.POSITION_ID' [value]='position.POSITION_ID' >{{position.POSITION_NAME}}</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margintop editblock" *ngIf="inputPosition == 2">
+                                <div class="col-md-3 nlp sbtwidth">
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" id="posInput" [(ngModel)]="positionOthers" class="gray_rds">
+                                </div>
+                            </div>
+                            <div class="row margintop editblock">
+                                <div class="col-md-3 nlp sbtwidth">
+                                    Organization
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="selectbox">
+
+                                        <Select class="" id='exp_organization' (change)="hideOrganizationInput($event)" class="gray_rds">
+                                            <option value="default">--Select a Organization--</option>
+                                            <option *ngFor ="let organization of organizationArr" [id]='organization.ORGANIZATION_ID' [value]='organization.ORGANIZATION_ID' >{{organization.ORGANIZATION_NAME}}</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margintop editblock" *ngIf="inputOrganization == 2">
+                                <div class="col-md-3 nlp sbtwidth">
+                                </div>
+                                <div class="col-md-9" id="others_input">
+                                    <input type="text" id="orgInput" [(ngModel)]="organizationOthers" class="gray_rds">
+                                </div>
+                            </div>
+                            <div class="row margintop editblock">
+                                <div class="col-md-3 nlp sbtwidth">
+                                    Time Period
+                                </div>
+                                <div class="col-md-2 remvpad nlp">
+                                    <div class="selectbox">
+
+                                        <Select class="" id="expYr_from" class="gray_rds" (change)="getExpYears();">
+                                            <option value="default">--Select Year--</option>
+                                            <option *ngFor="let year of years; let i = index" [attr.data-index]="i" >{{year}}</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 remvpad">
+                                    <div class="selectbox">
+
+                                        <Select class="" id="expMon_from" class="gray_rds">
+                                            <option value="default">--Select Month--</option>
+                                            <option id="1" value="01">January</option>
+                                            <option id="2" value="02">February</option>
+                                            <option id="3" value="03">March</option>
+                                            <option id="4" value="04">April</option>
+                                            <option id="5" value="05">May</option>
+                                            <option id="6" value="06">June</option>
+                                            <option id="7" value="07">July</option>
+                                            <option id="8" value="08">August</option>
+                                            <option id="9" value="09">September</option>
+                                            <option id="10" value="10">October</option>
+                                            <option id="11" value="11">November</option>
+                                            <option id="12" value="12">December</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">to</div>
+                                <div class="col-md-2 remvpad">
+                                    <div class="selectbox">
+
+                                        <Select class="" id="expYr_to" class="gray_rds">
+                                            <option value="default">--Select Year--</option>
+                                            <option *ngFor="let year of ExpYears; let i = index" [attr.data-index]="i" >{{year}}</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 remvpad sltmon" style="padding:0;">
+                                    <div class="selectbox">
+
+                                        <Select class="" id="expMon_to sltmon" class="gray_rds">\
+                                            <option value="default">--Select Month--</option>
+                                            <option id="1" value="01">January</option>
+                                            <option id="2" value="02">February</option>
+                                            <option id="3" value="03">March</option>
+                                            <option id="4" value="04">April</option>
+                                            <option id="5" value="05">May</option>
+                                            <option id="6" value="06">June</option>
+                                            <option id="7" value="07">July</option>
+                                            <option id="8" value="08">August</option>
+                                            <option id="9" value="09">September</option>
+                                            <option id="10" value="10">October</option>
+                                            <option id="11" value="11">November</option>
+                                            <option id="12" value="12">December</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margintop editblock">
+                                <div class="col-md-3 nlp sbtwidth">
+                                    Summary
+                                </div>
+                                <div class="col-md-9">
+                                    <textarea class='generaltextarea gray_rds text_area_wrap' id='exp_summ' placeholder="Enter Experience Summary" [(ngModel)]="expSummary">{{expSummary}}
+                                    </textarea>
+                                </div>
+                                <div class="footer_message footer_inner clearfix">
+
+                                    <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary" (click)="submitExpDetails(experiences.USER_EXPERIENCE_ID)"><span class="text" *ngIf="showText">Save</span>
+                                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                                    <button  class="btn-secondary graybutton btn_alg btn_sbmt"  (click)="hideExpEditBox()">Cancel </button>
+                                    <button  class="whiteColorRedBorderButton button24x7 fleft"  id='{{experiences.USER_EXPERIENCE_ID}}' (click)="delUserExp($event,i);">Delete </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- edit exp end -->
+                        <!-- <span class="listcross" id='{{experiences.USER_EXPERIENCE_ID}}' (click)="delUserExp($event,i);" *ngIf="myprofile == 1"><img src="assets/images/svg/dustbin.svg"></span> -->
+                        <!-- <span class="listcross" (click)="updateExperienceDetails($event,i)" id='{{experiences.USER_EXPERIENCE_ID}}' *ngIf="myprofile == 1"><img src="assets/images/svg/pencil.svg" class="listedit defaultt"><img src="assets/images/svg/pencil-g.svg" class="listedit hoverr"></span> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="emptystate empty_wrap " *ngIf="expDetailsView === 2" >
+                <div class="emptystate_inner">
+                    <img src="assets/images/svg-three/profile_about/add_exp.png" class="emp_img_edu abtproempimg">
+                    <span  *ngIf="myprofile==2">
+                        <span class="emptystates_heading1">No experience data to show</span>
+                    </span>
+                    <span *ngIf="myprofile!=2">
+                        <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority</p>-->
+                        <span class="emptystates_heading1">Add your Experience</span>
+                        <span class="emptystates_heading2">Share your thoughts with the network</span>
+                        <!-- <button class="btn-primary editbtn " (click)="experienceAddBox();" (click)="show_exp();" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView === 2" style="float:none;"> -->
+                        <button class="btn-roundBg-red btnflex btnflex-center"  (click)="show_abt_popup(3);" *ngIf="myprofile == 1 && !experienceAdd && expDetailsView==2" style="float:none;">
+                            <!-- <span class="abt_img_wrapper">
+                                <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="study24x7">
+                            </span> -->
+                            Add Experience
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="edit-block-wrap" [hidden]="!experienceshow">
+            <div class="row margintop editblock">
+            <div class="col-md-3 nlp">
+            Position
+          </div>
+          <div class="col-md-9">
+          <div class="selectbox">
+
+          <Select class="" id='exp_position' (change)="hidePositionInput($event)">
+          <option value="default">--Select a Position--</option>
+          <option *ngFor ="let position of positionArr" [id]='position.POSITION_ID' [value]='position.POSITION_ID' >{{position.POSITION_NAME}}</option>
+          </Select>
+          <span class="validation"><img src="assets/images/svg/error.svg"></span>
+          <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+          </div>
+          </div>
+          </div>
+          <div class="row margintop editblock" *ngIf="inputPosition == 2">
+          <div class="col-md-3 nlp">
+          </div>
+          <div class="col-md-9">
+          <input type="text" id="posInput" [(ngModel)]="positionOthers">
+          </div>
+          </div>
+          <div class="row margintop editblock">
+          <div class="col-md-3 nlp">
+          Organizaiton
+          </div>
+          <div class="col-md-9">
+          <div class="selectbox">
+
+          <Select class="" id='exp_organization' (change)="hideOrganizationInput($event)">
+          <option value="default">--Select a Organization--</option>
+          <option *ngFor ="let organization of organizationArr" [id]='organization.ORGANIZATION_ID' [value]='organization.ORGANIZATION_ID' >{{organization.ORGANIZATION_NAME}}</option>
+          </Select>
+          <span class="validation"><img src="assets/images/svg/error.svg"></span>
+          <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+          </div>
+          </div>
+          </div>
+          <div class="row margintop editblock" *ngIf="inputOrganization == 2">
+          <div class="col-md-3 nlp">
+          </div>
+          <div class="col-md-9" id="others_input">
+          <input type="text" id="orgInput" [(ngModel)]="organizationOthers">
+          </div>
+          </div>
+          <div class="row margintop editblock">
+          <div class="col-md-3 nlp">
+          Time Period
+          </div>
+          <div class="col-md-2 nlp">
+          <div class="selectbox">
+
+          <Select class="" id="expYr_from">
+          <option value="default">--Select Year--</option>
+          <option *ngFor="let year of years; let i = index" [attr.data-index]="i">{{year}}</option>
+          </Select>
+          <span class="validation"><img src="assets/images/svg/error.svg"></span>
+          <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+          </div>
+          </div>
+          <div class="col-md-2">
+          <div class="selectbox">
+
+          <Select class="" id="expMon_from">
+          <option value="default">--Select Month--</option>
+          <option id="1" value="01">January</option>
+          <option id="2" value="02">February</option>
+          <option id="3" value="03">March</option>
+          <option id="4" value="04">April</option>
+          <option id="5" value="05">May</option>
+          <option id="6" value="06">June</option>
+          <option id="7" value="07">July</option>
+          <option id="8" value="08">August</option>
+          <option id="9" value="09">September</option>
+          <option id="10" value="10">October</option>
+          <option id="11" value="11">November</option>
+          <option id="12" value="12">December</option>
+          </Select>
+          <span class="validation"><img src="assets/images/svg/error.svg"></span>
+          <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+          </div>
+          </div>
+          <div class="col-md-1">to</div>
+          <div class="col-md-2">
+          <div class="selectbox">
+
+          <Select class="" id="expYr_to">
+          <option value="default">--Select Year--</option>
+          <option *ngFor="let year of years; let i = index" [attr.data-index]="i">{{year}}</option>
+          </Select>
+          <span class="validation"><img src="assets/images/svg/error.svg"></span>
+          <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+          </div>
+          </div>
+          <div class="col-md-2" style="padding:0;">
+          <div class="selectbox">
+
+          <Select class="" id="expMon_to">\
+          <option value="default">--Select Month--</option>
+          <option id="1" value="01">January</option>
+          <option id="2" value="02">February</option>
+          <option id="3" value="03">March</option>
+          <option id="4" value="04">April</option>
+          <option id="5" value="05">May</option>
+          <option id="6" value="06">June</option>
+          <option id="7" value="07">July</option>
+          <option id="8" value="08">August</option>
+          <option id="9" value="09">September</option>
+          <option id="10" value="10">October</option>
+          <option id="11" value="11">November</option>
+          <option id="12" value="12">December</option>
+          </Select>
+          <span class="validation"><img src="assets/images/svg/error.svg"></span>
+          <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+          </div>
+          </div>
+          </div>
+          <div class="row margintop editblock">
+          <div class="col-md-3 nlp">
+          Summary
+          </div>
+          <div class="col-md-9">
+          <textarea class='generaltextarea' id='exp_summ' placeholder="Enter Experience Summary" [(ngModel)]="expSummary">
+          </textarea>
+          </div>
+          <div class="footer_message footer_inner">
+          <button class="btn btn-primary" (click)="submitExpDetails()">Save</button>
+          <button class="btn-secondary graybutton" (click)="hideExpEditBox();">Cancel</button>
+          </div>
+          </div>
+          </div> -->
+        </div>
+    </div>
+    <!-- Experience div end; -->
+
+    <div class="maindiv margintop edu-wrap main_wrap main_summ main_abt_edit_wrap">
+        <h6 class='mainheading' *ngIf="eduDetailsView !== 2">
+            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-edu.png" alt="study24x7"> -->
+            <span >Education </span>
+            <span class="rightedit educat" (click)="show_abt_popup(2)" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView != 2" ><img src="assets/images/redPlus.svg" alt=""></span>
+            <!-- <button class="edit-summary" (click)="educationAddBox()" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView != 2 "> -->
+            <button class="editButton" (click)="show_abt_popup(2)" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView != 2">
+                    <img  class="defaultt plus" src="assets/images/svg-three/profile_about/abt_plus.svg">
+                <img  class="hoverr plus" src="assets/images/svg-three/profile_about/f05050/abt_plus.svg">
+            </button>
+        </h6>
+        <div class="content">
+            <!--add edu start -->
+            <div class="edit-block-wrap block_wrap_outr" *ngIf="addEduStatus">
+                <div class="row margintop editblock" style="margin-top:0;">
+                    <div class="col-md-3 nlp sbtwidth">
+                        School/Institute Name
+                    </div>
+                    <div class="col-md-9">
+                        <div class="selectbox">
+                            <Select  id="edu_institute" (change)="hideInstituteInput($event)" class="gray_rds">
+                                <option value="default">--Select Institute--</option>
+                                <option *ngFor ="let institute of instituteArr" [id]='institute.INSTITUTE_ID' [value]='institute.INSTITUTE_ID'>{{institute.INSTITUTE_NAME}}</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margintop editblock" *ngIf="inputInstitute == 2">
+                    <div class="col-md-3 nlp sbtwidth">
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="insInput" [(ngModel)]="instituteOthers" class="gray_rds">
+                    </div>
+                </div>
+                <div class="row margintop editblock">
+                    <div class="col-md-3 nlp sbtwidth">
+                        Course Name
+                    </div>
+                    <div class="col-md-9">
+                        <div class="selectbox">
+
+                            <Select class="" id="edu_course" (change)="hideCourseInput($event)" class="gray_rds">
+                                <option value="default">--Select a Course--</option>
+                                <option *ngFor = "let course of courseArr" [id]='course.COURSE_ID' [value]='course.COURSE_ID'>{{course.COURSE_NAME}}</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margintop editblock" *ngIf="inputCourse == 2">
+                    <div class="col-md-3 nlp sbtwidth">
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="couInput" [(ngModel)]="courseOthers" class="gray_rds">
+                    </div>
+                </div>
+
+                <div class="row margintop editblock">
+                    <div class="col-md-3 nlp sbtwidth">
+                        Time Period
+                    </div>
+
+                    <div class="col-md-2 remvpad">
+                        <div class="selectbox">
+                            <Select class="" id="eduMon_from" class="gray_rds">
+                                <option value="default">--Select Month--</option>
+                                <option id="1" value="01">January</option>
+                                <option id="2" value="02">February</option>
+                                <option id="3" value="03">March</option>
+                                <option id="4" value="04">April</option>
+                                <option id="5" value="05">May</option>
+                                <option id="6" value="06">June</option>
+                                <option id="7" value="07">July</option>
+                                <option id="8" value="08">August</option>
+                                <option id="9" value="09">September</option>
+                                <option id="10" value="10">October</option>
+                                <option id="11" value="11">November</option>
+                                <option id="12" value="12">December</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 nlp remvpad">
+                        <div class="selectbox">
+                            <Select class="" id="eduYr_from" class="gray_rds" (change)="getEduYears();">
+                                <option value="default">--Select Year--</option>
+                                <option *ngFor="let year of years; let i = index" [attr.id]="i">{{year}}</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-1">to</div>
+
+                    <div class="col-md-2 remvpad">
+                        <div class="selectbox">
+                            <Select class="gray_rds" id="eduMon_to" class="gray_rds">
+                                <option value="default">--Select Month--</option>
+                                <option id="1" value="01">January</option>
+                                <option id="2" value="02">February</option>
+                                <option id="3" value="03">March</option>
+                                <option id="4" value="04">April</option>
+                                <option id="5" value="05">May</option>
+                                <option id="6" value="06">June</option>
+                                <option id="7" value="07">July</option>
+                                <option id="8" value="08">August</option>
+                                <option id="9" value="09">September</option>
+                                <option id="10" value="10">October</option>
+                                <option id="11" value="11">November</option>
+                                <option id="12" value="12">December</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 remvpad  sltmon">
+                        <div class="selectbox">
+                            <Select class="gray_rds" id="eduYr_to" class="gray_rds">
+                                <option value="default">--Select Year--</option>
+                                <option *ngFor="let year of EduYears; let i = index" [attr.data-index]="i">{{year}}</option>
+                            </Select>
+                            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margintop editblock">
+                    <div class="col-md-3 nlp sbtwidth">
+                        Summary
+                    </div>
+                    <div class="col-md-9">
+                        <textarea  class='generaltextarea gray_rds text_area_wrap' id='edu_summ' placeholder="Enter Education Summary" [(ngModel)]="eduSummary"></textarea>
+                    </div>
+                </div>
+                <div class="footer_message footer_inner clearfix">
+
+                    <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary" (click)="submitEducationDetails('')"><span class="text" *ngIf="showText">Save</span>
+                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                    <button  class="btn-secondary graybutton btn_alg btn_sbmt"   (click)="hideEduBox()">Cancel </button>
+                </div>
+            </div>
+            <!--add edu end-->
+            <div class='people_list Experiance_list' *ngIf="eduDetailsView === 1">
+                <ul>
+                    <li *ngFor="let education of education;let i = index" id="edu_{{education.USER_EDUCATION_ID}}" >
+                        <div class="edu_inst_img">
+                            <img src="assets/images/svg-three/profile_about/about_edu.svg" alt="study24x7">
+                        </div>
+                        <div class='prfl_detail' [ngClass]="{'hide-on-edit':educationedit && eduEditIndex === i}" class="exppadd">
+                             <div class="profilename " >
+                                <input class="gray_rds" type='hidden' id='edu_{{education.USER_EDUCATION_ID}}_insid' value='{{education.INSTITUTE_ID}}'>
+                                <div href='#' class='experiancename' id="edu_{{education.USER_EDUCATION_ID}}_ins">
+                                    <span class="abteditcontainer">{{education.INSTITUTE }}</span>
+                                    <!-- <span class="abtedit edit-summary2" (click)="updateEducationDetails($event,i,education.FROM,education.TO)" id="{{education.USER_EDUCATION_ID}}"> -->
+                                    <span class="abtedit edit-summary2" (click)="show_abt_popup(2);updateEducationDetails($event,i,education.FROM,education.TO);" id="{{education.USER_EDUCATION_ID}}" *ngIf="myprofile == 1">
+                                        <img class="defaultt" src="assets/images/svg-three/profile_about/editdark.svg">
+                                        <img class="hoverr" src="assets/images/svg-three/profile_about/f05050/edit.svg">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="profilename sub-title" id="edu_{{education.USER_EDUCATION_ID}}_cou">
+                                <input class="gray_rds" type='hidden' id='edu_{{education.USER_EDUCATION_ID}}_couid' value='{{education.COURSE_ID}}'>
+                                {{education.COURSE}} <br>
+                                <span class="abt_duration">{{education.FROM|dateview}} - {{education.TO|dateview}}</span>
+                                <!--<span class="abt_duration">April 2008 - Jan 2012</span>-->
+                            </div>
+                            <div id="edu_{{education.USER_EDUCATION_ID}}_summ">
+                                <p class="summary_text" [innerHTML]="education.SUMMARY" style="margin-bottom:0px;">
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <div class="edit-info-wrap wrp_info" *ngIf="myprofile == 1" [ngClass]="{'hide-on-edit':educationedit && eduEditIndex === i}">
+                        <span (click)="manageEditInfoPopup(i,'edu')" class="cursor-pointer"><img src="assets/images/svg-three/post_icon/dot_menu.svg" alt="study24x7" class="defaultt"><img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" alt="study24x7" class="hoverr"></span>
+                        <span class="drpdwn_post postdrop for-post" *ngIf="infoPopupStatus === i && infoPopupShowStatus && 'edu' == secName">
+                        <ul (mouseleave)="this.infoPopupStatus = '' ">
+                        <li (click)="updateEducationDetails($event,i,education.FROM,education.TO)" id="{{education.USER_EDUCATION_ID}}" *ngIf="myprofile == 1">
+                        <div class="width100 abtmargin">
+                        <span class='default abt_lineheight' >
+                        <img src="assets/images/svg/dropedit.svg">
+                      </span>
+                      <span class='hoverimg abt_lineheight' >
+                      <img src="assets/images/svg/dropedithover.svg">
+                    </span>
+                    <div class="postdropdown_inner">Edit</div>
+                  </div>
+                </li>
+                <li id='{{education.USER_EDUCATION_ID}}' (click)="delUserEdu($event,i);" *ngIf="myprofile == 1">
+                <div class="width100 abtmargin">
+                <span class='default abt_lineheight' >
+                <img src="assets/images/svg/dustbindrop.svg">
+              </span>
+              <span class='hoverimg abt_lineheight' >
+              <img src="assets/images/svg/dustbindrophover.svg">
+            </span>
+            <div class="postdropdown_inner">Delete</div>
+          </div>
+          </li>
+          </ul>
+          </span>
+          </div> -->
+                        <!--  edit details start-->
+                        <div class="edit-block-wrap block_wrap_outr" *ngIf="educationedit && eduEditIndex === i">
+                             <div class="row margintop editblock" style="margin-top:0;">
+                                <div class="col-md-3 nlp sbtwidth">
+                                    School/Institute Name
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="selectbox">
+                                        <Select  id="edu_institute" (change)="hideInstituteInput($event)"  class="gray_rds">
+                                            <option value="default">--Select a Institute--</option>
+                                            <option *ngFor ="let institute of instituteArr" [id]='institute.INSTITUTE_ID' [value]='institute.INSTITUTE_ID'>{{institute.INSTITUTE_NAME}}</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margintop editblock" *ngIf="inputInstitute == 2">
+                                <div class="col-md-3 nlp sbtwidth">
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" id="insInput" [(ngModel)]="instituteOthers" class="gray_rds">
+                                </div>
+                            </div>
+                            <div class="row margintop editblock">
+                                <div class="col-md-3 nlp sbtwidth">
+                                    Course Name
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="selectbox">
+
+                                        <Select class="" id="edu_course" (change)="hideCourseInput($event)" class="gray_rds">
+                                            <option value="default">--Select a Course--</option>
+                                            <option *ngFor = "let course of courseArr" [id]='course.COURSE_ID' [value]='course.COURSE_ID'>{{course.COURSE_NAME}}</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margintop editblock" *ngIf="inputCourse == 2">
+                                <div class="col-md-3 nlp sbtwidth">
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" id="couInput" [(ngModel)]="courseOthers" class="gray_rds">
+                                </div>
+                            </div>
+
+                            <div class="row margintop editblock">
+                                <div class="col-md-3 nlp sbtwidth">
+                                    Time Period
+                                </div>
+
+                                <div class="col-md-2 remvpad">
+                                    <div class="selectbox">
+                                        <Select class="" id="eduMon_from" class="gray_rds">
+                                            <option value="default">--Select Month--</option>
+                                            <option id="1" value="01">January</option>
+                                            <option id="2" value="02">February</option>
+                                            <option id="3" value="03">March</option>
+                                            <option id="4" value="04">April</option>
+                                            <option id="5" value="05">May</option>
+                                            <option id="6" value="06">June</option>
+                                            <option id="7" value="07">July</option>
+                                            <option id="8" value="08">August</option>
+                                            <option id="9" value="09">September</option>
+                                            <option id="10" value="10">October</option>
+                                            <option id="11" value="11">November</option>
+                                            <option id="12" value="12">December</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 nlp remvpad ">
+                                    <div class="selectbox">
+                                        <Select class="" id="eduYr_from" class="gray_rds" (change)="getEduYears();">
+                                            <option value="default">--Select Year--</option>
+                                            <option *ngFor="let year of years; let i = index" [attr.data-index]="i">{{year}}</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">to</div>
+
+                                <div class="col-md-2 remvpad">
+                                    <div class="selectbox">
+                                        <Select class="" id="eduMon_to" class="gray_rds">
+                                            <option value="default">--Select Month--</option>
+                                            <option id="1" value="01">January</option>
+                                            <option id="2" value="02">February</option>
+                                            <option id="3" value="03">March</option>
+                                            <option id="4" value="04">April</option>
+                                            <option id="5" value="05">May</option>
+                                            <option id="6" value="06">June</option>
+                                            <option id="7" value="07">July</option>
+                                            <option id="8" value="08">August</option>
+                                            <option id="9" value="09">September</option>
+                                            <option id="10" value="10">October</option>
+                                            <option id="11" value="11">November</option>
+                                            <option id="12" value="12">December</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 remvpad sltmon">
+                                    <div class="selectbox">
+                                        <Select class="" id="eduYr_to" class="gray_rds">
+                                            <option value="default">--Select Year--</option>
+                                            <option *ngFor="let year of EduYears; let i = index" [attr.data-index]="i">{{year}}</option>
+                                        </Select>
+                                        <span class="validation"><img src="assets/images/svg/error.svg"></span>
+                                        <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margintop editblock">
+                                <div class="col-md-3 nlp sbtwidth">
+                                    Summary
+                                </div>
+                                <div class="col-md-9">
+                                    <textarea  class='generaltextarea gray_rds text_area_wrap' id='edu_summ' placeholder="Enter Education Summary" [(ngModel)]="eduSummary"></textarea>
+                                </div>
+                            </div>
+                            <div class="footer_message footer_inner clearfix">
+
+                                <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary" (click)="submitEducationDetails(education.USER_EDUCATION_ID)"><span class="text" *ngIf="showText">Save</span>
+                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                                <button  class="btn-secondary graybutton btn_alg btn_sbmt"   (click)="hideEduEditBox()">Cancel </button>
+                                <button  class="whiteColorRedBorderButton button24x7 fleft"   id='{{education.USER_EDUCATION_ID}}' (click)="delUserEdu($event,i);">Delete </button>
+                            </div>
+                        </div>
+                        <!--  edit details end -->
+                        <!-- <span class="listcross" id='{{education.USER_EDUCATION_ID}}' (click)="delUserEdu($event,i);" *ngIf="myprofile == 1"><img src="assets/images/svg/dustbin.svg" ></span> -->
+                        <!-- <span class="listcross"(click)="updateEducationDetails($event,i)" id="{{education.USER_EDUCATION_ID}}" *ngIf="myprofile == 1"><img src="assets/images/svg/pencil.svg" class="listedit"s></span> -->
+                        <!-- <span class="listcross" id='{{education.USER_EDUCATION_ID}}' (click)="delUserEdu($event,i);" ><img src="assets/images/svg/dustbin.svg" ></span> -->
+                        <!-- <span class="listcross"(click)="updateEducationDetails($event,i)" id="{{education.USER_EDUCATION_ID}}" *ngIf="myprofile == 1"><img src="assets/images/svg/pencil.svg" class="listedit defaultt"><img src="assets/images/svg/pencil-g.svg" class="listedit hoverr"></span> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="emptystate empty_wrap main_abt_edit_wrap" *ngIf="eduDetailsView === 2" >
+                <div class="emptystate_inner" *ngIf="eduDetailsView === 2">
+                    <img src="assets/images/svg-three/profile_about/add_edu.png" class="abtproempimg">
+                    <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority</p>-->
+                    <span  *ngIf="myprofile==2">
+                        <span class="emptystates_heading1">No education data to show</span>
+                    </span>
+                    <span *ngIf="myprofile!=2">
+                        <span class="emptystates_heading1">Add Education</span>
+                        <span class="emptystates_heading2">Share your thoughts with the network</span>
+                        <button class="btn-roundBg-red btnflex btnflex-center" (click)="show_abt_popup(2);" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView === 2" style="float:none;">
+                            <!-- <span class="abt_img_wrapper">
+                                <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="study24x7">
+                            </span> -->
+                            Add Education
+                        </button>
+                    </span>
+                    <!-- <span *ngIf="myprofile!=2">Add Your Education Details</span> -->
+                </div>
+            </div>
+
+            <!-- <div class="edit-block-wrap" [hidden]="!educationedit">
+            <div class="row margintop editblock">
+            <div class="col-md-3 nlp">
+            School/Institute Name
+            </div>
+            <div class="col-md-9">
+            <div class="selectbox">
+            <Select  id="edu_institute" (change)="hideInstituteInput($event)" >
+            <option value="default">--Select a Institute--</option>
+            <option *ngFor ="let institute of instituteArr" [id]='institute.INSTITUTE_ID' [value]='institute.INSTITUTE_ID'>{{institute.INSTITUTE_NAME}}</option>
+            </Select>
+            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+            </div>
+            </div>
+            </div>
+            <div class="row margintop editblock" *ngIf="inputInstitute == 2">
+            <div class="col-md-3 nlp">
+            </div>
+            <div class="col-md-9">
+            <input type="text" id="insInput" [(ngModel)]="instituteOthers">
+            </div>
+            </div>
+            <div class="row margintop editblock">
+            <div class="col-md-3 nlp">
+            Course Name
+            </div>
+            <div class="col-md-9">
+            <div class="selectbox">
+
+            <Select class="" id="edu_course" (change)="hideCourseInput($event)">
+            <option value="default">--Select a Course--</option>
+            <option *ngFor = "let course of courseArr" [id]='course.COURSE_ID' [value]='course.COURSE_ID'>{{course.COURSE_NAME}}</option>
+            </Select>
+            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+            </div>
+            </div>
+            </div>
+            <div class="row margintop editblock" *ngIf="inputCourse == 2">
+            <div class="col-md-3 nlp ">
+            </div>
+            <div class="col-md-9">
+            <input type="text" id="couInput" [(ngModel)]="courseOthers">
+            </div>
+            </div>
+
+            <div class="row margintop editblock">
+            <div class="col-md-3 nlp">
+            Time Period
+            </div>
+            <div class="col-md-2 nlp">
+            <div class="selectbox">
+            <Select class="" id="eduYr_from" >
+            <option value="default">--Select Year--</option>
+            <option *ngFor="let year of years; let i = index" [attr.data-index]="i">{{year}}</option>
+            </Select>
+            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+            </div>
+            </div>
+            <div class="col-md-2">
+            <div class="selectbox">
+            <Select class="" id="eduMon_from" >
+            <option value="default">--Select Month--</option>
+            <option id="1" value="01">January</option>
+            <option id="2" value="02">February</option>
+            <option id="3" value="03">March</option>
+            <option id="4" value="04">April</option>
+            <option id="5" value="05">May</option>
+            <option id="6" value="06">June</option>
+            <option id="7" value="07">July</option>
+            <option id="8" value="08">August</option>
+            <option id="9" value="09">September</option>
+            <option id="10" value="10">October</option>
+            <option id="11" value="11">November</option>
+            <option id="12" value="12">December</option>
+            </Select>
+            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+            </div>
+            </div>
+            <div class="col-md-1">to</div>
+            <div class="col-md-2">
+            <div class="selectbox">
+            <Select class="" id="eduYr_to">
+            <option value="default">--Select Year--</option>
+            <option *ngFor="let year of years; let i = index" [attr.data-index]="i">{{year}}</option>
+            </Select>
+            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+            </div>
+            </div>
+            <div class="col-md-2" style="padding:0;">
+            <div class="selectbox">
+            <Select class="" id="eduMon_to">
+            <option value="default">--Select Month--</option>
+            <option id="1" value="01">January</option>
+            <option id="2" value="02">February</option>
+            <option id="3" value="03">March</option>
+            <option id="4" value="04">April</option>
+            <option id="5" value="05">May</option>
+            <option id="6" value="06">June</option>
+            <option id="7" value="07">July</option>
+            <option id="8" value="08">August</option>
+            <option id="9" value="09">September</option>
+            <option id="10" value="10">October</option>
+            <option id="11" value="11">November</option>
+            <option id="12" value="12">December</option>
+            </Select>
+            <span class="validation"><img src="assets/images/svg/error.svg"></span>
+            <span class="glyphicon glyphicon-menu-down selectdrop"></span>
+            </div>
+            </div>
+            </div>
+            <div class="row margintop editblock">
+            <div class="col-md-3 nlp">
+            Summary
+            </div>
+            <div class="col-md-9">
+            <textarea  class='generaltextarea' id='edu_summ' placeholder="Enter Education Summary" [(ngModel)]="eduSummary"></textarea>
+            </div>
+            </div>
+            <div class="footer_message footer_inner">
+            <button class="btn btn-primary" (click)="submitEducationDetails()">Save</button>
+            <button class="btn-secondary graybutton" (click)="hideEduEditBox()">Cancel</button>
+            </div>
+            </div> -->
+        </div>
+    </div>
+    <div *ngIf="myprofile == 1 " class="maindiv margintop exp-wrap main_wrap main_summ main_abt_edit_wrap personalInfo">
+        <h6 class='mainheading'>
+            <span>Personal info </span>
+            <span class="rightedit" [routerLink]="['/settings/#personalinfo']"
+            routerLinkActive="router-link-active" ><img src="assets/images/svg-three/profile_about/editdark.svg" alt=""></span>
+            <!-- <button class="editButton">
+                    <img class="defaultt plus" src="assets/images/svg-three/profile_about/abt_plus.svg">
+                <img class="hoverr plus" src="assets/images/svg-three/profile_about/f05050/abt_plus.svg">
+            </button> -->
+        </h6>
+        <div class="content">
+          <div class="pg-about-content" *ngIf="mobileNumber">
+            <span>Mobile Number</span>
+            <p>{{mobileNumber}}</p>
+          </div>
+          <div class="pg-about-content" *ngIf="emailId">
+            <span>Email Address</span>
+            <p>{{emailId}}</p>
+          </div>
+          <div class="pg-about-content" *ngIf="dateOdBirth">
+            <span>Date of Birth</span>
+            <p>{{dateOdBirth}}</p>
+          </div>
+          <div class="pg-about-content" *ngIf="gender">
+            <span>Gender</span>
+            <p *ngIf="gender==1">Male</p>
+            <p *ngIf="gender==2">Female</p>
+          </div>
+        </div>
+   </div>
+    <div *ngIf="myprofile == 1 && interestsList!=0" class="maindiv margintop exp-wrap main_wrap main_summ main_abt_edit_wrap interestedin">
+        <h6 class='mainheading'>
+            <span>Interested in</span>
+            <span class="rightedit" [routerLink]="['/home/interests']"
+            routerLinkActive="router-link-active"><img src="assets/images/svg-three/profile_about/editdark.svg" alt=""></span>
+            <!-- <button class="editButton">
+                    <img class="defaultt plus" src="assets/images/svg-three/profile_about/abt_plus.svg">
+                <img class="hoverr plus" src="assets/images/svg-three/profile_about/f05050/abt_plus.svg">
+            </button> -->
+        </h6>
+        <div class="content">
+            <span *ngFor="let interest of interestsList | keyvalue" class="intInfo">{{interest.value}}</span>
+
+        </div>
+   </div>
+
+</div>
+<!-- education  pop up start -->
+<div class="popup"  *ngIf="edu_popup">
+    <div class="popup_background" ></div>
+    <div class=" abt_exp_popup" >
+        <div class="popup_heading close_parent " style="background:#fff;">
+            Education
+            <span class="close_div" (click)="hide_popus();">
+                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+            </span>
+        </div>
+        <div class="inner-wrap inner-wrap-cntr" >
+            <div class="col-md-12 col-sm-12 fleft post-wrap" >
+                <div class="input_wrapper" #institute>
+                    <span class="input_label">School/Institute Name</span>
+                    <div class="input_inner_wrapper">
+                        <input type="text" name="" value="" placeholder="Ex. ABE Managment School" style="padding-left: 40px;" (keyup)="showInstitute()" (focus)="showInstitute()" [(ngModel)]="instituteName">
+                        <span class="inputfiled_icon">
+                            <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                        </span>
+                    </div>
+                    <div class="abt_info_list "  *ngIf="searchList" [perfectScrollbar]="config" style="position:relative"data-infinite-scroll
+                        [infiniteScrollDistance]="2"
+                        [immediateCheck] = "true"
+                        (scrolled)="onScrollDown()"
+                        [scrollWindow]="false">
+                        <ul >
+                            <li *ngFor="let insArr of searchedInsArr" (click)="setInstitute(insArr.INSTITUTE_NAME,insArr.INSTITUTE_ID)">
+                                <!-- <div class="col-md-1 search_list_img_cont">
+                                     <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                                     </div>-->
+                                <div class="col-md-11 abt_search_list">
+                                    <div class="abt_search_head1">{{insArr.INSTITUTE_NAME}}</div>
+                                    <div class="abt_search_head2" *ngIf="insArr.CITY!='' && insArr.STATE!=''">{{insArr.CITY}} <span *ngIf="insArr.CITY!='' && insArr.STATE!=''">,</span> {{insArr.STATE}}</div>
+                                </div>
+                            </li>
+                            <li *ngIf="searchedInsArr.length==0">
+                                <div class="emptystate_inner " style="text-align: center;padding: 10px;">
+                                    <img class="emptyreview" src="assets/images/svg-three/empty_state/search.svg" width="100px">
+                                    <p>No result found</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="alert_msg" *ngIf="showErrorInsOrg">{{error}}</p>
+                </div>
+                <div class="input_wrapper" #course>
+                    <span class="input_label">Course Name</span>
+                    <div class="input_inner_wrapper">
+                        <input type="text" name="" value="" placeholder="Ex. Computer Science & Technology" (keyup)="showCourse()"  (focus)="showCourse()" [(ngModel)]="courseName">
+                    </div>
+                    <div class="abt_info_list instbranchlist"  *ngIf="searchListCou" [perfectScrollbar]="config" style="position:relative"data-infinite-scroll
+                        [infiniteScrollDistance]="2"
+                        [immediateCheck] = "true"
+                        (scrolled)="onScrollDown()"
+                        [scrollWindow]="false">
+                        <ul >
+                            <li *ngFor="let couArr of searchedCouArr" (click)="setCourse(couArr.COURSE_NAME,couArr.COURSE_ID)">
+<!--                                <div class="col-md-1 search_list_img_cont">
+                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                                </div>-->
+                                <div class="col-md-11 abt_search_list">
+                                    <div class="abt_search_head1">{{couArr.COURSE_NAME}}</div>
+                                    <!--<div class="abt_search_head2">{{couArr.ADDRESS.city}}, {{couArr.ADDRESS.state}}</div>-->
+                                </div>
+                            </li>
+                            <li *ngIf="searchedCouArr.length==0">
+                                <div class="emptystate_inner " style="text-align: center;padding: 10px;">
+                                    <img class="emptyreview" src="assets/images/svg-three/empty_state/search.svg" width="100px">
+                                    <p>No result found</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="alert_msg" *ngIf="showErrorCouPos">{{error}}</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 selectbox_wrap">
+                    <div class="selectbox_innerwrap left">
+                        <span>From (Month)</span>
+                        <select class="" name="" id="eduMon_from" (change)="getedumonth();getcheckcurryrEdufrom();">
+                            <option value="default">Select Month</option>
+                            <option id="1" value="01">January</option>
+                            <option id="2" value="02">February</option>
+                            <option id="3" value="03">March</option>
+                            <option id="4" value="04">April</option>
+                            <option id="5" value="05">May</option>
+                            <option id="6" value="06">June</option>
+                            <option id="7" value="07">July</option>
+                            <option id="8" value="08">August</option>
+                            <option id="9" value="09">September</option>
+                            <option id="10" value="10">October</option>
+                            <option id="11" value="11">November</option>
+                            <option id="12" value="12">December</option>
+                        </select>
+                        <span class="deopdownarrow">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                        </span>
+                    </div>
+                    <div class="selectbox_innerwrap right">
+                        <span>From (Year)</span>
+                        <select class="" name="" id="eduYr_from" (change)="getEduYears();showErrorDate=false;getcheckcurryrEdufrom();">
+                            <option value="default">--Select Year--</option>
+                            <option *ngFor="let year of years; let i = index" [attr.data-index]="i">{{year}}</option>
+                        </select>
+                        <span class="deopdownarrow">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12 selectbox_wrap right_wrapp">
+                    <div class="selectbox_innerwrap left">
+                        <span>To (Month)</span>
+                        <select class="" name="" id="eduMon_to" (change)="PresentSel($event);getedumonth();getcheckcurryrEdu();">
+                            <option value="default" >Select Month</option>
+                            <option id="0" value="00" >Present</option>
+                            <option id="1" value="01" >January</option>
+                            <option id="2" value="02" >February</option>
+                            <option id="3" value="03" >March</option>
+                            <option id="4" value="04" >April</option>
+                            <option id="5" value="05" >May</option>
+                            <option id="6" value="06" >June</option>
+                            <option id="7" value="07" >July</option>
+                            <option id="8" value="08" >August</option>
+                            <option id="9" value="09" >September</option>
+                            <option id="10" value="10">October</option>
+                            <option id="11" value="11" >November</option>
+                            <option id="12" value="12" >December</option>
+
+
+                        </select>
+
+                        <span class="deopdownarrow">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                        </span>
+                    </div>
+                    <div class="selectbox_innerwrap right" *ngIf="!Presentselected">
+                        <span>To (Year)</span>
+                        <select class="" name="" id="eduYr_to" (change)="showErrorDate=false;getedumonth();getcheckcurryrEdu();">
+                            <option value="default">--Select Year--</option>
+                            <option *ngFor="let year of EduYears; let i = index" [attr.data-index]="i">{{year}}</option>
+                        </select>
+                        <span class="deopdownarrow">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                        </span>
+                    </div>
+                </div>
+                <p class="alert_msg" *ngIf="showErrorDate">{{error}}</p>
+                <div class="input_wrapper">
+                    <span class="input_label">Description</span>
+                    <div class="input_inner_wrapper">
+                        <textarea name="name" rows="8" cols="80" placeholder="Provide brief summary" [(ngModel)]= "eduSummary" [perfectScrollbar]="config" style="position:relative" onkeypress="checkempty()"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer col-md-12 col-sm-12 col-xs-12 fleft">
+                <button type="button" name="button" class="fright button24x7 redColorButton" (click)="submitEducationDetails(eduId)">Save</button>
+                <button type="button" name="button" class="whiteColorRedBorderButton button24x7 fleft" *ngIf="eduId!=0" (click)="delUserEdu();">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- education  pop up End -->
+
+<!-- summary popup start -->
+<div class="popup"  *ngIf="summary_popup">
+    <div class="popup_background" ></div>
+    <div class=" abt_exp_popup" >
+        <div class="popup_heading close_parent " style="background:#fff;">
+            Summary
+            <span class="close_div" (click)="hide_popus();">
+                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+            </span>
+        </div>
+        <div class="inner-wrap in_wrap_sum inner-wrap-cntr">
+            <div class="col-md-12 col-sm-12 col-xs-12 fleft post-wrap post_wrap_sum" >
+                <div class="input_wrapper input_wrapper_sum">
+                    <!-- <span class="input_label">Getting Thing right !</span> -->
+                    <div class="input_inner_wrapper input_sum" style="position: relative;">
+                        <textarea class="textbox-summary" name="name" id="summUpd" rows="8" cols="80" placeholder="Provide brief summary" (keyup)="countCheck()" [(ngModel)]="userSummary" [perfectScrollbar]="config" style="position:relative"></textarea>
+                      <div *ngIf="summaryClearButton" class="clearsummaryIcon" (click)="emptySubmitSummary()">
+                      <span class='default'><img title="Clear summary" src="assets/images/svg/dustbindrop.svg"></span>
+                      <span class='hoverimg'><img title="Clear summary" src="assets/images/svg/dustbindrophover.svg"></span>
+                    </div>
+                    </div>
+                    <span id="counting" class="count"><b>{{summaryCount}}</b>/1000</span>
+                </div>
+            </div>
+            <div class="footer col-md-12 col-sm-12 col-xs-12 fleft">
+                <button [disabled]="(showPreloader === true || summaryBtn) || !userSummary" [ngClass]="{'fright':true, 'button24x7':true,'redColorButton':true, 'desablebutton':!userSummary}"   (click)="submitSummary();"><span class="test" *ngIf="showText">Save</span></button>
+                <!--<button type="button" name="button" class="btn btn-primary">Done</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- summary popup start -->
+
+<!-- experience popup start -->
+<div class="popup"  *ngIf="exp_popup">
+    <div class="popup_background" ></div>
+    <div class=" abt_exp_popup" >
+        <div class="popup_heading close_parent " style="background:#fff;">
+            Experience
+            <span class="close_div" (click)="hide_popus();">
+                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+            </span>
+        </div>
+        <div class="inner-wrap inner-wrap-cntr">
+            <div class="col-md-12 col-sm-12 fleft post-wrap" >
+                <div class="input_wrapper" #organization>
+                    <span class="input_label">Organization Name</span>
+                    <div class="input_inner_wrapper">
+                        <input type="text" name="" value="" placeholder="Ex. ABC Managment School" style="padding-left: 40px;" (keyup)="showOrganisation()" (focus)="showOrganisation()" [(ngModel)]="organisationName">
+                        <span class="inputfiled_icon">
+                            <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                        </span>
+                    </div>
+                    <div class="abt_info_list"  *ngIf="searchListOrg"  [perfectScrollbar]="config" style="position:relative"  data-infinite-scroll
+                        [infiniteScrollDistance]="2"
+                        [immediateCheck] = "true"
+                        (scrolled)="onScrollDown()"
+                        [scrollWindow]="false">
+                        <ul>
+                            <li *ngFor="let orgArr of searchedOrgArr" (click)="setOrganization(orgArr.ORGANIZATION_NAME,orgArr.ORGANIZATION_ID)">
+<!--                                <div class="col-md-1 search_list_img_cont">
+                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                                </div>-->
+                                <div class="col-md-11 abt_search_list">
+                                    <div class="abt_search_head1">{{orgArr.ORGANIZATION_NAME}}</div>
+                                    <div class="abt_search_head2" *ngIf="orgArr.CITY!='' && orgArr.STATE!=''">{{orgArr.CITY}}<span *ngIf="orgArr.CITY!='' && orgArr.STATE!=''">,</span> {{orgArr.STATE}}</div>
+                                </div>
+                            </li>
+                            <li *ngIf="searchedOrgArr.length==0">
+                                <div class="emptystate_inner " style="text-align: center;padding: 10px;">
+                                    <img class="emptyreview" src="assets/images/svg-three/empty_state/search.svg" width="100px">
+                                    <p>No result found</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="alert_msg" *ngIf="showErrorInsOrg">{{error}}</p>
+                </div>
+                <div class="input_wrapper" #position>
+                    <span class="input_label">Position</span>
+                    <div class="input_inner_wrapper">
+                        <input type="text" name="" value="" placeholder="Ex. Software Developer" (keyup)="showPosition()" (focus)="showPosition()" [(ngModel)]="positionName">
+                    </div>
+                    <div class="abt_info_list instbranchlist"  *ngIf="searchListPos"  [perfectScrollbar]="config" style="position:relative"data-infinite-scroll
+                        [infiniteScrollDistance]="2"
+                        [immediateCheck] = "true"
+                        (scrolled)="onScrollDown()"
+                        [scrollWindow]="false">
+                        <ul>
+                            <li *ngFor="let posArr of searchedPosArr" (click)="setPosition(posArr.POSITION_NAME,posArr.POSITION_ID)">
+<!--                                <div class="col-md-1 search_list_img_cont">
+                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                                </div>-->
+                                <div class="col-md-11 abt_search_list">
+                                    <div class="abt_search_head1">{{posArr.POSITION_NAME}}</div>
+                                    <!--<div class="abt_search_head2">{{couArr.ADDRESS.city}}, {{couArr.ADDRESS.state}}</div>-->
+                                </div>
+                            </li>
+                            <li *ngIf="searchedPosArr.length==0">
+                                <div class="emptystate_inner " style="text-align: center;padding: 10px;">
+                                    <img class="emptyreview" src="assets/images/svg-three/empty_state/search.svg" width="100px">
+                                    <p>No result found</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="alert_msg" *ngIf="showErrorCouPos">{{error}}</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 selectbox_wrap">
+                    <div class="selectbox_innerwrap left">
+                        <span>From (Month)</span>
+                        <select class="" name="" id="expMon_from" (change)="getexpmonth();getcheckcurryrExpfrom();">
+                            <option value="default">Select Month</option>
+                            <option id="1" value="01">January</option>
+                            <option id="2" value="02">February</option>
+                            <option id="3" value="03">March</option>
+                            <option id="4" value="04">April</option>
+                            <option id="5" value="05">May</option>
+                            <option id="6" value="06">June</option>
+                            <option id="7" value="07">July</option>
+                            <option id="8" value="08">August</option>
+                            <option id="9" value="09">September</option>
+                            <option id="10" value="10">October</option>
+                            <option id="11" value="11">November</option>
+                            <option id="12" value="12">December</option>
+
+                        </select>
+                        <span class="deopdownarrow">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                        </span>
+                    </div>
+                    <div class="selectbox_innerwrap right">
+                        <span>From (Year)</span>
+                        <select class="" name="" id="expYr_from" (change)="getExpYears();showErrorDate=false;getcheckcurryrExpfrom();getYears()">
+                            <option value="default">--Select Year--</option>
+                            <option *ngFor="let year of years; let i = index" [attr.data-index]="i" >{{year}}</option>
+                        </select>
+                        <span class="deopdownarrow">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12 selectbox_wrap right_wrapp">
+                    <div class="selectbox_innerwrap left">
+                        <span>To (Month)</span>
+                        <select class="" name="" id="expMon_to" (change)="ExpPresentsel($event);getexpmonth();getcheckcurryrExp();">
+                            <option value="default">Select Month</option>
+                            <option id="0" value="00" >Present</option>
+                            <option id="1" value="01">January</option>
+                            <option id="2" value="02">February</option>
+                            <option id="3" value="03">March</option>
+                            <option id="4" value="04">April</option>
+                            <option id="5" value="05" >May</option>
+                            <option id="6" value="06" >June</option>
+                            <option id="7" value="07" >July</option>
+                            <option id="8" value="08" >August</option>
+                            <option id="9" value="09" >September</option>
+                            <option id="10" value="10">October</option>
+                            <option id="11" value="11">November</option>
+                            <option id="12" value="12">December</option>
+
+
+                        </select>
+                        <span class="deopdownarrow">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                        </span>
+                    </div>
+                    <div class="selectbox_innerwrap right" *ngIf="!ExpPresentselected">
+                        <span>To (Year)</span>
+                        <select class="" name="" id="expYr_to" (change)="getexpmonth();getcheckcurryrExp();">
+                            <option value="default">--Select Year--</option>
+                            <option *ngFor="let year of ExpYears; let i = index" [attr.data-index]="i" >{{year}}</option>
+                        </select>
+                        <span class="deopdownarrow">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                        </span>
+                    </div>
+                </div>
+                <p class="alert_msg" *ngIf="showErrorDate">{{error}}</p>
+                <div class="input_wrapper">
+                    <span class="input_label">Description</span>
+                    <div class="input_inner_wrapper">
+                        <textarea name="name" rows="8" cols="80" placeholder="Provide brief summary" [(ngModel)]="expSummary" [perfectScrollbar]="config" style="position:relative"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer col-md-12 col-sm-12 fleft">
+                <button type="button" name="button" class="whiteColorRedBorderButton button24x7 fleft" *ngIf="expId!=0" (click)="delUserExp();">Delete</button>
+                <button type="button" name="button" id="doneButton" class="fright button24x7 redColorButton" (click)="submitExpDetails(expId)">Save</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- experience popup end -->
+
+
+
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

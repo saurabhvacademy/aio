@@ -1,0 +1,1097 @@
+.wrapper {
+  float: left;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.wrapper .header {
+  background-color: #f7f8fa;
+  border-radius: 5px 5px 0px 0px;
+  padding: 10px 15px 10px 15px;
+  font-weight: 500;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.wrapper .topNav {
+  float: left;
+  width: 100%;
+  list-style-type: none;
+  border-bottom: 1px solid #f6f6f6;
+  -webkit-box-shadow: 0px 1px 0px 0px #f6f6f6;
+          box-shadow: 0px 1px 0px 0px #f6f6f6;
+}
+
+.wrapper .topNav li {
+  float: left;
+  color: #2c2e2f;
+  font-weight: 500;
+  font-size: 14px !important;
+  float: left;
+  cursor: pointer;
+  padding: 15px 0px;
+  margin: 0px 15px;
+}
+
+.wrapper .innerhWrapper {
+  float: left;
+  width: 100%;
+  padding: 15px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper {
+  float: left;
+  width: 100%;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper p {
+  float: left;
+  width: 40%;
+  font-size: 14px;
+  padding-top: 10px;
+  color: #2c2e2f;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper {
+  width: 60%;
+  float: right;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper {
+  padding: 10px 40px;
+  width: 45%;
+  float: right;
+  position: relative;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper .courseList {
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  right: -70%;
+  background-color: #fff;
+  border: 1px solid #66a9d5;
+  top: 0px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper .courseList ul {
+  float: left;
+  width: 100%;
+  list-style-type: none;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper .courseList ul li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f7f7f7;
+  cursor: pointer;
+  color: #2c2e2f;
+  opacity: .8;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper .courseList ul li:hover {
+  background-color: #f5f7fa;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper .courseList ul .courseListHeading {
+  position: relative;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper .courseList ul .courseListHeading img {
+  position: absolute;
+  width: 18px;
+  right: 10px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper {
+  padding: 10px 40px;
+  width: 40%;
+  float: right;
+  margin-left: 10px;
+  position: relative;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper {
+  position: absolute;
+  left: -30%;
+  right: 0px;
+  background: #fff;
+  top: 0px;
+  border: 1px solid #66a9d5 !important;
+  border-radius: 3px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul {
+  float: left;
+  width: 100%;
+  list-style-type: none;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul li {
+  background-color: #f7f8fa;
+  float: left;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #2c2e2f;
+  font-weight: 500;
+  margin-bottom: 10px;
+  border: 1px solid #e9e9e9;
+  cursor: pointer;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul li:last-child {
+  margin-bottom: 0px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul .topDateContainer {
+  float: left;
+  width: 100%;
+  background-color: #fff;
+  padding: 0px;
+  border: none;
+  background-color: #fff;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul .topDateContainer .datewrapper {
+  background-color: #f7f8fa;
+  width: 47%;
+  border: 1px solid #e9e9e9;
+  border-radius: 3px;
+  font-size: 14px;
+  position: relative;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul .topDateContainer .datewrapper .date {
+  text-align: left;
+  font-size: 14px;
+  color: #2c2e2f;
+  float: left;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul .topDateContainer .datewrapper img {
+  width: 15px;
+  float: right;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+  top: 9px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul .leftDateWrapper {
+  float: left;
+  position: relative;
+  margin-top: 20px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul .leftDateWrapper:before {
+  content: "From";
+  position: absolute;
+  font-size: 14px;
+  color: #2c2e2f;
+  opacity: .8;
+  top: -20px;
+  left: 0px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul .rightDateWrapper {
+  float: right;
+  margin-top: 20px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper .dateListWrapper ul .rightDateWrapper:before {
+  content: "To";
+  position: absolute;
+  font-size: 14px;
+  color: #2c2e2f;
+  opacity: .8;
+  top: -20px;
+  left: 0px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .download {
+  padding: 8px;
+  float: right;
+  margin-left: 10px;
+}
+
+.wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .download img {
+  width: 17px;
+}
+
+.wrapper .innerhWrapper .mapWrapper {
+  float: left;
+  width: 100%;
+  height: 250px;
+  background-color: #fff;
+  margin: 30px 0px 0px 0px;
+}
+
+.wrapper .summaryWrapper {
+  float: left;
+  width: 100%;
+}
+
+.wrapper .summaryWrapper .summaryWrapperCont {
+  margin: 0px 0px 0px -15px;
+}
+
+.wrapper .summaryWrapper .summaryInnerWrapper {
+  width: 33.33%;
+  padding-left: 15px;
+  display: inline-block;
+  float: left;
+}
+
+.wrapper .summaryWrapper .summaryInnerWrapper .summaryInnerMain {
+  background-color: #f7f8fa;
+  width: 100%;
+  float: left;
+  border-radius: 3px;
+  padding: 15px;
+  border: 1px solid #e9e9e9;
+  position: relative;
+}
+
+.wrapper .summaryWrapper .summaryInnerWrapper h3 {
+  float: left;
+  width: 100%;
+  font-size: 14px;
+  color: #2c2e2f;
+  opacity: .9;
+}
+
+.wrapper .summaryWrapper .summaryInnerWrapper .perCount {
+  background-color: #DFF2EE;
+  color: #65BEA2;
+  border: 1px solid #65BEA2;
+  padding: 3px 7px;
+  position: absolute;
+  right: 15px;
+  border-radius: 3px;
+  font-size: 12px;
+  top: 25px;
+}
+
+.wrapper .summaryWrapper .summaryInnerWrapper .summaryFooter {
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.wrapper .summaryWrapper .summaryInnerWrapper .summaryFooter .Count {
+  float: left;
+  font-size: 16px;
+  color: #2c2e2f;
+  font-weight: 500;
+}
+
+.wrapper .summaryWrapper .summaryInnerWrapper .summaryFooter .text {
+  float: right;
+  font-size: 12px;
+  color: #2c2e2f;
+  opacity: .8;
+}
+
+.wrapper .summaryWrapper .summaryInnerWrapper:first-child {
+  margin-left: 0px;
+}
+
+.wrapper .tableWrapper {
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.wrapper .tableWrapper table {
+  float: left;
+  width: 100%;
+  border: 1px solid #e9e9e9;
+}
+
+.wrapper .tableWrapper table thead {
+  background-color: #f7f8fa;
+}
+
+.wrapper .tableWrapper table thead th {
+  height: 35px;
+  padding-left: 20px;
+  border-left: 1px solid #e9e9e9;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.wrapper .tableWrapper table tr {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.wrapper .tableWrapper table tr td {
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.wrapper .tableWrapper table tr .date {
+  width: 15%;
+  cursor: pointer;
+  position: relative;
+}
+
+.wrapper .tableWrapper table tr .date img {
+  width: 15px;
+  float: right;
+  margin-right: 25%;
+}
+
+.wrapper .tableWrapper table tr .search {
+  width: 25%;
+  position: relative;
+  padding-left: 0px;
+}
+
+.wrapper .tableWrapper table tr .search input {
+  width: 100%;
+  padding-right: 30px;
+  border-radius: 3px;
+  border: 1px solid #66a9d5;
+  height: 30px;
+  width: 96%;
+  margin-left: 2%;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.wrapper .tableWrapper table tr .search img {
+  width: 15px;
+  position: absolute;
+  right: 15px;
+  top: 9px;
+  float: right;
+}
+
+.wrapper .tableWrapper table tr .courseName {
+  width: 40%;
+}
+
+.wrapper .tableWrapper table tr .ammout {
+  width: 14%;
+}
+
+.wrapper .tableWrapper table tr .sort {
+  position: relative;
+  border-left: none;
+}
+
+.wrapper .tableWrapper table tr .sort img {
+  width: 15px;
+  cursor: pointer;
+}
+
+.wrapper .tableWrapper table tr .name {
+  color: #66a9d5;
+  cursor: pointer;
+}
+
+.wrapper .tableWrapper table tr .cost span {
+  float: left;
+  display: inline-block;
+  height: 15px;
+  position: relative;
+}
+
+.wrapper .tableWrapper table tr .cost span img {
+  opacity: .5;
+}
+
+.wrapper .tableWrapper table tr .cost span img:hover {
+  opacity: 1;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList {
+  display: none;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  background-color: #fff;
+  left: -185px;
+  position: absolute;
+  z-index: 1;
+  width: 250px;
+  top: 25px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul {
+  float: left;
+  width: 100%;
+  list-style-type: none;
+  padding: 10px;
+  position: relative;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul .topTriangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  position: absolute;
+  top: -8px;
+  right: 47px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul .triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(27, 31, 35, 0.15);
+  position: absolute;
+  top: -9px;
+  right: 47px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul li {
+  float: left;
+  width: 100%;
+  text-decoration: none;
+  padding: 5px 0px 5px 0px;
+  color: #2c2e2f;
+  font-size: 12px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul li span.cost {
+  float: right;
+  width: auto;
+  height: 15px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul li span.cost:hover {
+  opacity: 1;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul .firstList {
+  padding-top: 0px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul .discount {
+  padding-bottom: 10px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList ul .total {
+  border-top: 1px dotted #dfe0e8;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList .priceListFooter {
+  float: left;
+  width: 100%;
+  border-top: 1px solid #dfe0e8;
+  padding-top: 10px;
+}
+
+.wrapper .tableWrapper table tr .cost span .priceDetailList .priceListFooter p {
+  float: left;
+  width: 100%;
+  padding: 0px 10px 10px 10px;
+  font-size: 12px;
+  color: #66a9d5;
+}
+
+.wrapper .tableWrapper table tr .cost span img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.wrapper .tableWrapper table tr .cost span:hover .priceDetailList {
+  display: block;
+}
+
+.wrapper .tableWrapper table tr .menu {
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.wrapper .tableWrapper table tr .menu img {
+  width: 15px;
+}
+
+.wrapper .tableWrapper table tr .menu .subMenu {
+  position: absolute;
+  width: 130px;
+  background-color: #fff;
+  left: -80px;
+  z-index: 1;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(27, 31, 35, 0.15);
+}
+
+.wrapper .tableWrapper table tr .menu .subMenu span {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  border-top: 1px solid #dfe0e8;
+}
+
+.wrapper .tableWrapper table tr .menu .subMenu span:first-child {
+  border-top: none;
+}
+
+.wrapper .tableWrapper table tr .menu .subMenu span:hover {
+  background-color: #f5f7fa;
+}
+
+.wrapper .tableWrapper table tr:nth-child(2n+0) {
+  background-color: #f7f8fa;
+}
+
+.wrapper .tableWrapper table tr td {
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 0px 10px 20px;
+  border-left: 1px solid #e9e9e9;
+  color: #2c2e2f;
+}
+
+.dropDowninnerWrapper {
+  float: left;
+  width: 100%;
+}
+
+.dropDowninnerWrapper .leftIcon {
+  float: left;
+  position: absolute;
+  left: 10px;
+}
+
+.dropDowninnerWrapper .rightIcon {
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 16px;
+}
+
+.dropDowninnerWrapper img {
+  width: 18px;
+}
+
+.dropDown {
+  cursor: pointer;
+  float: left;
+  border: 1px solid #e9e9e9;
+  border-radius: 3px;
+  position: relative;
+  background-color: #f7f8fa;
+}
+
+.red {
+  border-color: #ED6568 !important;
+  color: #ED6568 !important;
+  background-color: #FAE0E1 !important;
+}
+
+/* @media screen  and (max-width:1088px){
+.wrapper {
+.innerhWrapper{
+.summaryWrapper {
+.summaryInnerWrapper{
+margin-left: 10px;
+&:first-child{
+margin-left: 0px;
+}
+}
+}
+}
+}
+} */
+@media screen and (max-width: 991px) {
+  .wrapper .innerhWrapper .topSearchWrapper p {
+    width: 100%;
+    line-height: 18px;
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dropDown {
+    float: right;
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dropDown .courseList {
+    right: 0px;
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dropDown .dateListWrapper {
+    left: -15px;
+  }
+  .wrapper .innerhWrapper .tableWrapper table thead th {
+    padding-left: 10px;
+  }
+  .wrapper .innerhWrapper .tableWrapper table tr td {
+    padding: 10px 0px 10px 10px;
+  }
+  .wrapper .summaryInnerWrapper {
+    margin-left: 0px;
+    margin-top: 15px;
+  }
+  .wrapper .summaryInnerWrapper:first-child {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .wrapper {
+    /* .summaryWrapper {
+    .summaryInnerWrapper{
+    width: 100%;
+
+    margin-left: 0px !important;
+    margin-top: 15px;
+  }
+} */
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper {
+    width: 47%;
+    float: left;
+    margin-top: 0px;
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper {
+    width: 47%;
+    margin: 0px;
+    float: right;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .wrapper .summaryWrapper .summaryInnerWrapper {
+    width: 50%;
+    margin-left: 0px !important;
+    margin-top: 15px;
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper {
+    width: 80%;
+    margin-top: 15px;
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper {
+    width: 80%;
+    float: left;
+  }
+  .searchRightWrapper .dropDown .dateListWrapper {
+    left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper .innerhWrapper {
+    padding: 15px 10px;
+    /* .tableWrapper{
+      table {
+      thead{
+      th{
+      padding-left: 5px;
+    }
+  }
+  tr{
+  td{
+  padding: 5px 0px 5px 5px;
+}
+}
+
+}
+} */
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .courseDropdownWrapper {
+    width: 100%;
+  }
+  .wrapper .innerhWrapper .topSearchWrapper .searchRightWrapper .dateWrapper {
+    width: 100%;
+  }
+  .wrapper .tableFlow {
+    width: 100%;
+    overflow-x: auto;
+    float: left;
+  }
+  .wrapper .tableFlow table {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .wrapper .summaryWrapper .summaryInnerWrapper {
+    width: 100%;
+  }
+}
+
+.graph {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.datepicker-container {
+  width: 100%;
+  height: auto;
+  float: left;
+  position: relative;
+}
+
+.ngx-datepicker-container .ngx-datepicker-input {
+  width: 100%;
+}
+
+.opt_menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.opt_menu .opt_dropdown {
+  position: absolute;
+  right: 5px;
+  top: 80%;
+  width: 115px;
+  height: auto;
+  padding: 10px;
+  float: left;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.2) !important;
+          box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(27, 31, 35, 0.15);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.opt_menu .opt_dropdown .opt_cnt {
+  font-size: 12px;
+}
+
+.list_courses {
+  height: 275px;
+  overflow: auto;
+}
+
+.searchcrc {
+  padding-left: 0 !important;
+  width: 200px;
+}
+
+.searchcrc input {
+  outline: none;
+}
+
+.searchcrc input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.searchcrc input::-webkit-search-decoration,
+.searchcrc input::-webkit-search-cancel-button {
+  display: none !important;
+}
+
+.searchcrc input[type=search] {
+  border: solid 1px transparent;
+  padding: 9px 10px 9px 32px;
+  border-radius: 10em;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.searchcrc input[type=search] {
+  width: 100%;
+  height: 13px;
+  padding-left: 10px;
+  float: right;
+  background: #f7f8fa;
+}
+
+.input_wrapper {
+  width: 100%;
+  float: left;
+  height: auto;
+}
+
+.dateListWrapper .reload_img {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dateListWrapper .reload_img img {
+  width: 100%;
+}
+
+.search_heading {
+  line-height: 34px;
+  padding-left: 15px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.tableWrapper .empty_state_table {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tableWrapper .empty_state_table span {
+  width: 30%;
+  margin: auto;
+}
+
+.tableWrapper .empty_state_table span img {
+  width: 100%;
+}
+
+.search_btn {
+  width: 15px;
+  float: right;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.search_btn button {
+  background: #f7f8fa;
+  position: absolute;
+  right: 7px;
+  top: 3px;
+  width: 30px;
+  border-radius: 18px;
+  border: none;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+  height: 25px;
+}
+
+.search_btn button span {
+  font-size: 15px;
+  margin: auto;
+}
+
+.seachwidth {
+  width: calc(100% - 5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.seachwidth button {
+  background: #fff;
+}
+
+.search_btn.seachwidth input[type=search] {
+  border-radius: 0;
+  background-color: #fff;
+  border-color: #66a9d5;
+  -webkit-box-shadow: 0 0 5px #66a9d5;
+  box-shadow: 0 0 1px #66a9d5;
+  width: calc(100% - 25px);
+  margin-right: 5px;
+  height: 10px;
+}
+
+.next_previous {
+  width: 100%;
+  float: left;
+  margin-top: 15px;
+}
+
+.next_previous .arrow_wrapper {
+  width: 90px;
+}
+
+.next_previous .arrow_wrapper .arrowleft {
+  width: 45%;
+  float: left;
+}
+
+.next_previous .arrow_wrapper .arrowright {
+  width: 45%;
+  float: right;
+}
+
+.next_previous .paginationText {
+  float: left;
+  padding-top: 5px;
+}
+
+.next_previous .paginationWrapper {
+  float: right;
+}
+
+.next_previous .paginationWrapper ul {
+  width: 100%;
+  list-style-type: none;
+}
+
+.next_previous .paginationWrapper ul li {
+  float: left;
+  text-decoration: none;
+  background-color: #e3e7ed;
+  padding: 5px 10px;
+  margin: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+.next_previous .paginationWrapper ul .active {
+  background-color: #f5f7fa;
+  background-color: #555555;
+  color: #fff;
+}
+
+.scrollList {
+  position: relative;
+  max-height: 260px;
+}
+
+.disableButton {
+  opacity: .5;
+  pointer-events: none;
+}
+
+.removePointer {
+  pointer-events: none;
+}
+
+.dropdownMenuIcon {
+  width: 15px;
+  height: 12px !important;
+  margin-left: 5px;
+}
+
+span.up {
+  position: absolute;
+  font-size: 9px;
+  right: 15px;
+  top: 10px;
+}
+
+span.down {
+  position: absolute;
+  font-size: 9px;
+  right: 15px;
+  top: 18px;
+}
+
+.showUp span.up {
+  top: 13px;
+}
+
+.showUp span.down {
+  display: none;
+}
+
+.showDown span.up {
+  display: none;
+}
+
+.showDown span.down {
+  top: 13px;
+}
+
+.activeList {
+  border-bottom: 2px solid #f05050;
+}
+
+.infoButton {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  border: solid 1px #66a9d5;
+  padding: 2px;
+  margin: 2px;
+  float: right;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.infoCard {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: auto;
+  position: absolute;
+  background: white;
+  border-radius: 5px;
+  color: blue;
+  border-bottom-style: outset;
+  border: 1px solid #66a9d5;
+  -webkit-box-shadow: 6px 6px 8px #aaaaaa;
+  box-shadow: 6px 6px 8px #aaaaaa;
+  font-weight: normal;
+  text-align: left;
+  color: black;
+  top: 0px;
+  padding: 0px 5px;
+  left: 30px;
+}
+
+.infoCard a:hover {
+  text-decoration: underline !important;
+}
+
+.activeInfo {
+  background: #66a9d5;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 10px solid #66a9d5;
+  position: absolute;
+  top: 2px;
+  left: -10px;
+}
+
+.inner-triangle {
+  position: absolute;
+  /* top: -20px; */
+  left: 2px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid white;
+  top: 3px;
+  left: -8px;
+}
+/*# sourceMappingURL=analytics.component.css.map */

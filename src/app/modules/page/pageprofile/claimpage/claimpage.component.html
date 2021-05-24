@@ -1,0 +1,77 @@
+<!-- error popup -->
+<div class='darkbackground'></div>
+<div class='addpost_outer relative popup-open-wrapper' *ngIf="errorpopupshow">
+    <!-- <div class='darkbackground-close' (click)="hidecreatepagePopup();"></div> -->
+    <div class='darkbackground-close'></div>
+
+    <div class='container popup-container' style="position:relative;">
+        <div  class="popup-inner-wrap popup-open-inner-wrap claim_mail_wrap" >
+            <div class="toolbar addpost_hdng tlbar error_main_heading">Claim Your Page
+                <img (click)="diman()" src="assets/images/svg/tagcross.svg" style="float: right;margin: 17px 0;cursor: pointer;">
+
+              </div>
+            <div class="middle_wrapperr">
+              <div class="alert_claim" *ngIf="error">
+                <span class="alertimg"><img src="assets/images/svg-one/hover/globe.svg" alt="study24x7"></span>
+                <div class="rightalert">
+                  <span>{{error_typ}}</span><br>
+                  <!--<span>{{error_msg}}</span>-->
+                </div>
+              </div>
+              <div class="claim_wrapper_inner">
+                <div class="fieldset">
+                  <span class="left">
+                    <input type="radio" class="k-radio" id="report1" name="radioreport" value="1" checked>
+                    <label class="k-radio-label" for="report1" [ngClass]= "{'active' : leftmenutab === 1 }" (click)="leftmenutabClick(1);">Email Address</label></span>
+                  <span class="center">OR</span>
+                  <span class="right">
+                    <input type="radio" class="k-radio" id="report2" name="radioreport" value="2">
+                    <label class="k-radio-label" for="report2" [ngClass]= "{'active' : leftmenutab === 2 }" (click)="leftmenutabClick(2);">  Phone Number</label>
+                  </span>
+              </div>
+              <div class="input_field" *ngIf="leftmenutab === 1">
+                <div class="field-inner">
+                  <label for="mail">Enter Email</label>
+                  <input required="" type="text" class="input_inner" [disabled]="resend" [(ngModel)]="credential" (click) = "this.error= false">
+                </div>
+                <div class="field-inner" *ngIf="resend">
+                  <label for="mail">Confirmation Code</label>
+                  <input required="" type="text" class="input_inner" [(ngModel)]="otp">
+                </div>
+                <p *ngIf="resend">A-4 digit verification Code send your registered email id</p>
+              </div>
+
+              <div class="input_field" *ngIf="leftmenutab === 2">
+                <div class="field-inner">
+                  <label for="Email">Enter Phone Number</label>
+                  <input required="" type="text" class="input_inner" [disabled]="resendph" [(ngModel)]="credential" (click) = "this.error= false">
+                </div>
+                <div class="field-inner" *ngIf="resendph">
+                  <label for="mail">Confirmation Code</label>
+                  <input required="" type="text" class="input_inner" [(ngModel)]="otp">
+                </div>
+                <p *ngIf="resendph">A-4 digit verification Code send your registered mobile number</p>
+              </div>
+
+              </div>
+            </div>
+
+            <div class="claim_footerr" *ngIf="leftmenutab === 1">
+             <button class="btn btn-primary claim_btn" *ngIf = "submit"  (click)="sendOpt4Claim()">Submit</button>
+             <button class="btn btn-primary claim_btn" *ngIf = "resend" (click)="verifyOpt()">Confirm</button>
+             <!-- <a class="cancel_btn" *ngIf = "cancelbtn">Cancel</a> -->
+             <a class="cancel_btn_red" *ngIf="resend" (click)="sendOpt4Claim()">Resend the code</a>
+
+            </div>
+            <div class="claim_footerr" *ngIf="leftmenutab === 2">
+             <button class="btn btn-primary claim_btn" *ngIf = "submitph"  (click)="sendOpt4Claim()">Submit</button>
+             <button class="btn btn-primary claim_btn" *ngIf = "resendph" (click)="verifyOpt()">Confirm</button>
+             <!-- <a class="cancel_btn" *ngIf = "cancelbtnph">Cancel</a> -->
+             <a class="cancel_btn_red" *ngIf="resendph" (click)="sendOpt4Claim()">Resend the code</a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end error popup -->

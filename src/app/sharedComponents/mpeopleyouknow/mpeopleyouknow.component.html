@@ -1,0 +1,26 @@
+<div class="post_outer mwall_wiget" >
+<div class="peopleknow_outer ppl-you-may-know">
+<h6 class="widgetheading head_n top_heading">Page Suggestions</h6>
+<div class="pageSuggestionOuterWrapper">
+    <div class="pageSuggestionInnerWrapper">
+      <div class="card mb-2" *ngFor="let imgId of pageSugg;let j= index;"  style="position:relative">
+        <div class="card-body">
+
+            <div class="page_container">
+              <span  class="image" routerLink="/page/{{imgId.ID}}">
+              <img src="{{imgId.PROFILE_PHOTO_PATH}}" alt="study24x7">
+              </span>
+                <h4  class="pagename" title="{{imgId.TITLE}}" routerLink="/page/{{imgId.PAGE_UUID}}">  {{imgId.TITLE | trimData:35}}</h4>
+                <span  class="follower_count" >  {{imgId.PAGE_FOLLOW_COUNT}} Followers </span>
+                <button  name="button" type="button"  (click)="pageFollowUnFollow(imgId.PAGE_UUID,i,j)">
+                   <img  class="hover" src="assets/images/svg-three/left_menu/f05050/followed_page_wh.svg">
+                   Follow
+                 </button>
+              </div>
+        </div>
+      </div>
+    </div>
+</div>
+<h6  class="footer_heading"  routerLink="/profile/{{username}}/#Pages:suggestedpages"> View all &nbsp; <span ><img class="greater" src="assets/images/svg-three/greater.svg"></span></h6>
+</div>
+</div>

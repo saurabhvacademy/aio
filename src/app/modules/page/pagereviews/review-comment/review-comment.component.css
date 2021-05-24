@@ -1,0 +1,70 @@
+.post_profile.comment-outer.sub-commentss {
+  position: relative;
+}
+
+.post_profile.comment-outer.sub-commentss:before {
+  content: "";
+  display: block;
+  width: 2px;
+  height: calc(100% - 73px);
+  top: 51px;
+  left: 24px;
+  background-color: #F05050;
+  position: absolute;
+}
+
+.writecomment .optionoutr {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #dfe0e8;
+  color: #2c2e2f;
+}
+
+.writecomment .optionoutr:focus, .writecomment .optionoutr:visited {
+  border: 1px solid #F05050;
+}
+
+.writecomment .optionoutr .placeholder {
+  font-size: 12px;
+  color: #2c2e2f;
+  opacity: 0.3;
+}
+
+.upload-img-outer-wrp {
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+  padding-top: 15px;
+  position: relative;
+}
+
+.upload-img-outer-wrp:before {
+  content: "";
+  width: 90%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  background-color: #F05050;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.upload-img-outer-wrp .uploaded_image {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  float: none;
+  border: none;
+  width: auto;
+  height: auto;
+  max-height: 165px;
+  max-width: 165px;
+}
+
+.comment_outer.comment_outer_reply.outer-wrap {
+  margin-top: 15px;
+}

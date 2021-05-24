@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACA,+BAD+B,CAC/B,KAAK,AAAA,MAAM,CAAC;EACR,YAAY,EAAE,eAAe;EAC7B,KAAK,EAAE,IAAI;CACd;;AAMD,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK;EACtC,AACA,+BAD+B,CAC/B,KAAK,AAAA,MAAM,CAAC;IACR,YAAY,EAAE,cAAc;IAC5B,KAAK,EAAE,IAAI;GACd",
+    "sources": [
+        "unsubscribe.component.scss"
+    ],
+    "names": [],
+    "file": "unsubscribe.component.css"
+}

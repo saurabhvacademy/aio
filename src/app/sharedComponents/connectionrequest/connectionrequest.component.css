@@ -1,0 +1,183 @@
+.connectionrequest_outer {
+  background: #ffffff;
+  display: inline-block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+.connectionrequest_outer .profileimg_know {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  float: left;
+  overflow: hidden;
+}
+
+.connectionrequest_outer .profileimg_know img {
+  width: 100%;
+}
+
+.connectionrequest_outer .people_list {
+  display: inline-block;
+  width: 100%;
+  padding: 0 10px 0px;
+  margin-bottom: 15px;
+  height: 254px;
+  overflow: auto;
+}
+
+.connectionrequest_outer .people_list li {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: 1px solid #dfe0e8;
+  color: #8c8c8c;
+}
+
+.connectionrequest_outer .people_list li .graybutton {
+  float: right;
+  padding: 0;
+  height: 28px;
+  line-height: 28px;
+  margin-top: 5px;
+  width: 28px;
+}
+
+.connectionrequest_outer .people_list li .profilename {
+  color: #2c2e2f;
+}
+
+.connectionrequest_outer .people_list li .prfl_detail {
+  display: inline-block;
+  margin-left: 10px;
+  width: 105px;
+  overflow: hidden;
+}
+
+.connectionrequest_outer .people_list li .graybutton2 {
+  margin-left: 8px;
+}
+
+.connectionrequest_outer .people_list li .friendbtn {
+  display: inline-block;
+  float: right;
+}
+
+.connectionrequest_outer .people_list li .friendbtn .graybutton {
+  border-radius: 3px;
+}
+
+.connectionrequest_outer .people_list li .friendbtn .btn-primary {
+  width: 28px;
+  padding: 0 4px;
+  height: 28px;
+  line-height: 28px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border-radius: 3px;
+  margin-right: 5px;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.connectionrequest_outer .people_list li .friendbtn .btn-primary:hover {
+  background-color: #ec2121;
+  border-color: #ec2121;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.connectionrequest_outer .people_list li:last-child {
+  padding-bottom: 0px;
+  border: 0px;
+}
+
+.connection_out {
+  padding: 10px !important;
+  background-color: #F5F7FA;
+  border-radius: 5px 5px 0 0;
+}
+
+.connectionrequest_outer .profileimg_know {
+  cursor: none !important;
+}
+
+.connectionrequest_outer .Notificationlist_name {
+  color: #2c2e2f;
+}
+
+.connectionrequest_outer {
+  overflow: hidden;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.connectionrequest_outer h6 {
+  background: #f5f7fa;
+  padding-bottom: 15px;
+  float: left;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.connectionrequest_outer h5 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  padding: 8px 10px 10px 10px !important;
+  border-top: 1px solid #e9e9e9;
+  background-color: #F5F7FA;
+  font-size: 14px;
+  font-weight: 500;
+  height: 31px;
+  color: #f05050;
+  cursor: pointer;
+  margin-bottom: 0px !important;
+}
+
+.connectionrequest_outer .people_list {
+  height: 275px;
+  padding-top: 6px;
+}
+
+.connectionrequest_outer .people_list ul li {
+  border: 0px solid #fff;
+  padding: 8px 0;
+}
+
+.connectionrequest_outer .people_list ul li .profilename {
+  margin-bottom: 3px;
+}
+
+.connectionrequest_outer {
+  margin-top: 0 !important;
+}
+
+.connectionrequest_outer .people_list {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.footer_heading {
+  font-weight: normal;
+}
+
+.emptystate .emptystate_inner img.img_width {
+  width: 200px !important;
+}
+
+@media screen and (max-width: 1050px) and (min-width: 768px) {
+  .connectionrequest_outer .people_list li .friendbtn {
+    float: left;
+    margin-left: 10px;
+  }
+}
+/*# sourceMappingURL=connectionrequest.component.css.map */

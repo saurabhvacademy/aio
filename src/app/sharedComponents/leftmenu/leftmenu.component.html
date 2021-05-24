@@ -1,0 +1,147 @@
+<div id="leftfixed">
+    <div class='leftmenuouter' id="leftfixmenu">
+        <!-- wall left menu pre loader start -->
+        <div class="placeholde-wrapper " *ngIf="loaderscreen">
+            <div class="animated-background leftloader">
+                <div class="circle cir_animation animated-background"></div>
+                <div class="whitediv bottom11"></div>
+                <div class="whitediv bottom10"></div>
+                <div class="whitediv bottom9"></div>
+                <div class="whitediv bottom8"></div>
+                <div class="whitediv bottom7"></div>
+                <div class="whitediv bottom6"></div>
+                <div class="whitediv bottom5"></div>
+                <div class="whitediv bottom4"></div>
+                <div class="whitediv bottom4 bottom4left"></div>
+                <div class="whitediv bottom4 bottom4middle1"></div>
+                <div class="whitediv bottom4 bottom4middle2"></div>
+                <div class="whitediv bottom3"></div>
+                <div class="whitediv bottom2"></div>
+                <div class="whitediv bottom2 bottom2left"></div>
+                <div class="whitediv bottom2 bottom2middle1"></div>
+                <div class="whitediv bottom2 bottom2middle2"></div>
+                <div class="bottom1 whitediv "></div>
+            </div>
+        </div>
+        <div *ngIf="!loaderscreen">
+            <!--wall left menu pre loader end -->
+            <div class='profileouter'>
+                <a class='profile' routerLink="/profile/{{userInfo.uname}}">
+                    <img src="{{userInfo.profile_pic_path}}" (error)="updateSourcePic($event)">
+                </a>
+                <div class='basicdetails'>
+                    <p class="name cursor-pointer" routerLink="/profile/{{userInfo.uname}}">
+                        {{userInfo.full_name |trimData:17}}</p>
+                    <p class="username editprofile cursor-pointer"><a
+                            routerLink="/profile/{{userInfo.uname}}/#About">Edit profile</a></p>
+                </div>
+                <div class="row profile_desc">
+                    <div class='col-md-4 col-sm-4 lftconnection fleft'
+                        routerLink="/profile/{{userInfo.uname}}/#connection:connection">
+                        <p class="count cnt_top">{{connection}}</p>
+                        <p class="countname"> Connections</p>
+                    </div>
+                    <div class='col-md-4 col-sm-4 middlefollowers fleft'
+                        routerLink="/profile/{{userInfo.uname}}/#connection:followers" style="box-sizing: border-box;">
+                        <p class="count cnt_top">{{follower}}</p>
+                        <p class="countname">&nbsp;&nbsp;Followers</p>
+                    </div>
+                    <div class='col-md-4 col-sm-4 rightfollowing'
+                        routerLink="/profile/{{userInfo.uname}}/#connection:following" style="box-sizing: border-box;">
+                        <p class="count cnt_top">{{following}}</p>
+                        <p class="countname">Following</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class='leftmenulist'>
+                <!-- <h5>Favourite</h5>	 -->
+                <ul>
+
+                    <li [ngClass]="{'active': isWallFilter==2}" (click)="routTo('questionforyou')">
+                        <a>
+                            <span class='leftmenuicon menuiconquestion'>
+                            </span>Questions</a>
+
+                    </li>
+                    <li [ngClass]="{'active': isWallFilter==5}" (click)="routTo('live-classes')">
+                        <a>
+                            <span class='leftmenuicon menuiconlivewall'>
+                            </span>Live Classes</a>
+
+                    </li>
+                    <li (click)="articleFilter()" [ngClass]="{'active': isWallFilter==1}">
+                        <a>
+                            <span class='leftmenuicon menuiconarticle'>
+                            </span>Articles</a>
+
+                    </li>
+
+
+
+                    <li [ngClass]="{'active': isWallFilter==3}" (click)="routTo('saved')">
+                        <a>
+
+                            <span class='leftmenuicon menuiconsaved'>
+                            </span> Saved
+                        </a>
+                    </li>
+
+                    <li [ngClass]="{'active': isWallFilter==4}" (click)="routTo('interests')">
+                        <a>
+                            <span class='leftmenuicon menuiconinterest'>
+                            </span> Interests</a>
+                    </li>
+
+
+
+                </ul>
+
+
+                <!-- pages sub menu pages-wall -->
+
+                <h4>Pages</h4>
+                <ul class="sub-menu">
+                    <li class="" [routerLinkActive]="'active'" routerLink="/profile/{{userInfo.uname}}/#Pages:mypages">
+
+                        <a>
+                            <span class='leftmenuicon menuiconmapage'>
+
+                            </span>My Pages</a></li>
+
+                    <li class="" [routerLinkActive]="'active'" (click)="showPageCreatePopup();">
+
+                        <a>
+                            <span class='leftmenuicon menuiconscreatepage'>
+
+                            </span> Create a Page</a></li>
+
+
+                </ul>
+
+                <!-- courses sub menu		 -->
+
+                <h4>Courses</h4>
+                <ul class="sub-menu">
+
+                    <li routerLink="/all-courses">
+                        <a>
+                            <span class='leftmenuicon menuiconallcourse'>
+
+                            </span> All Courses
+                        </a>
+                    </li>
+                    <li routerLink="/profile/{{userInfo.uname}}/#Courses:mycourses">
+                        <a>
+                            <span class='leftmenuicon menuiconsmycourse'>
+
+                            </span> My Courses
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

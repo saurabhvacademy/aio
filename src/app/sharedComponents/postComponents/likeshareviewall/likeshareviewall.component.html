@@ -1,0 +1,51 @@
+<div class="popup like-share-viewall-wrap" style="position:relative;">
+    <div class=" popup_background_view" >
+        <div class=" sharescreenpostview">
+            <div class="popup_heading" >
+                <!-- <div class="main_head" [innerHTML]="text"> -->
+                <div class="main_head">
+                    <div *ngIf="this.data['type'] == 1" class="count">
+                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="study24x7">
+                        <span>Important {{data['count']}}</span>
+                    </div>
+                    <div *ngIf="this.data['type'] == 2" class="count">
+                        <img src="assets/images/svg-three/post_icon/f05050/share.svg" alt="study24x7">
+                        <span>Shared {{data['count']}}</span>
+                    </div>
+                    <div *ngIf="this.data['type'] == 3" class="count">
+                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="study24x7">
+                        <span>Important {{data['count']}}</span>
+                    </div>
+                    <div *ngIf="this.data['type'] == 4" class="count">
+                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="study24x7">
+                        <span>Important {{data['count']}}</span>
+                    </div>
+                </div>
+            <img (click)="closeViewAll()" src="assets/images/svg/tagcross.svg" style="float: right;margin: 0 !important;cursor: pointer;position: absolute;top: 19px;right: 15px;">
+                </div>
+            <div class="col-md-12" style="width:100%;float:left;">
+                <div class="row">
+                    <div class='post_outer clearfix'   data-infinite-scroll
+                         [infiniteScrollDistance]="2"
+                         (scrolled)="onScrollDown()"
+                         [scrollWindow]="true"  [perfectScrollbar]="config" style="position: relative;">
+                         <div class="profile-wrap clearfix" *ngFor="let list of userList; let i = index">
+                         <div class="profile-inner-wrap clearfix" style="padding: 15px 15px;">
+                                <figure><img src="{{list.PROFILE_PHOTO_PATH}}" alt="study24x7 {{list.USER_FULL_NAME}}" routerLink="/profile/{{list.USER_NAME}}"></figure>
+                                <div class="name-user-wrap">
+                                    <a href="javascript:void(0)" routerLink="/profile/{{list.USER_NAME}}">{{list.USER_FULL_NAME |trimData:17}}</a>
+                                    <span class="grayinfo" routerLink="/profile/{{list.USER_NAME}}">{{list.USER_NAME}}</span>
+                                </div>
+                            </div>
+                            <button class="button24x7 redColorButton" *ngIf='(list.ISFRIEND==0) && (list.ISREQSENT==0) && (list.USER_ID != userId) && (data["type"]==1 || data["type"]==2)' (click)="sendRequest(list.USER_ID,i);">Connect</button>
+                            <button class="button24x7 redColorButton" *ngIf='(list.ISFRIEND==0) && (list.ISREQSENT==0) && (list.USER_OLD_ID != userId) && (data["type"]==3)' (click)="sendRequest(list.USER_ID,i);">Connect</button>
+                            <button class="button24x7 redColorButton" *ngIf='list.CONN_STATUS == 2 && list.ISFRIEND!=1 && list.USER_ID != userId' (click)="acceptRequest(list.USER_ID,i);">Accept Request</button>
+                            <button class="button24x7 whiteColorbutton" *ngIf='(list.ISFRIEND==0) && (list.ISREQSENT==1)' (click)="cancelFrndReq(list.USER_ID,i)" >Cancel Request</button>
+                            <button class="button24x7 whiteColorButton" *ngIf='(list.ISFRIEND==1)'  routerLink="/inbox/{{list.USER_NAME}}" (click)="removeClass(list.USER_FULL_NAME,list.USER_ID)">Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

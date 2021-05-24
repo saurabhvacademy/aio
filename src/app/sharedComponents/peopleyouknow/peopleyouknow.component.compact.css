@@ -1,0 +1,101 @@
+.peopleknow_outer, .popup_main { background: #ffffff; display: inline-block; width: 100%; box-sizing: border-box; box-shadow: 0 0 7px rgba(0, 0, 0, 0.1); border-radius: 5px; }
+
+.profileimg_know { display: inline-block; height: 40px; width: 40px; float: left; border-radius: 5px; overflow: hidden; cursor: default !important; }
+
+.profileimg_know img { width: 100%; }
+
+.people_list { display: inline-block; width: 100%; padding: 0 10px 0px; overflow: auto; }
+
+.people_list li { display: inline-block; width: 100%; padding: 15px 0; border-bottom: 1px solid #dfe0e8; color: #8c8c8c; float: left; }
+
+.people_list li .graybutton { width: auto; float: right; padding: 0 6px; height: 28px; line-height: 26px; margin-top: 2px; }
+
+.people_list li .profilename { color: #2c2e2f; height: 16px; overflow: hidden; line-height: 16px; color: #2c2e2f; }
+
+.people_list li .prfl_detail { display: inline-block; margin-left: 10px; width: 175px; overflow: hidden; float: left; }
+
+.people_list li .prfl_detail .Notificationlist_name:hover { color: #F05050; }
+
+.people_list li:last-child { padding-bottom: 0px; border: 0px; }
+
+.connectionrequest_outer .people_list .profileimg_know { cursor: default !important; }
+
+.view_n { line-height: 20px; }
+
+.top_heading { padding: 10px !important; background-color: #F5F7FA; border-radius: 5px 5px 0 0; }
+
+.peopleknow_outer.ppl-you-may-know .people_list li .graybutton { height: 28px; line-height: 28px; }
+
+.ppl-you-may-know { overflow: hidden; position: relative; }
+
+.ppl-you-may-know h6 { background: #f5f7fa; margin-bottom: 0px !important; padding-bottom: 15px; margin-bottom: 5px; font-size: 14px; font-weight: 500; }
+
+.ppl-you-may-know .footer_heading { bottom: 0px; padding: 10px !important; color: #8c8c8c; background-color: #fff; cursor: pointer; width: 100%; text-align: center; font-size: 14px; border-top: 1px solid #e9e9e9; float: left; font-weight: normal; }
+
+.ppl-you-may-know .footer_heading:hover { color: #8c8c8c !important; background-color: #f5f7fa; }
+
+.ppl-you-may-know .footer_heading .greater { width: 6px; position: relative; top: -2px; }
+
+.ppl-you-may-know .people_list { height: 275px; float: left; }
+
+.ppl-you-may-know .people_list li { border: 0px solid #fff; padding: 7px 0; }
+
+.ppl-you-may-know .people_list li .graybutton { border: none; background-color: transparent; padding: 0; margin-right: 5px; width: 8px; }
+
+.ppl-you-may-know .people_list li .graybutton:hover { box-shadow: unset; border: none; background-color: transparent; }
+
+.ppl-you-may-know .people_list li .prfl_detail .graybutton { width: auto; float: left; border: 1px solid #dfe0e8; padding: 0px 15px; border-radius: 20px; height: 25px; line-height: 1; font-size: 12px; margin-top: 5px; }
+
+.ppl-you-may-know .people_list li .prfl_detail .graybutton:hover { box-shadow: 0 0 2px rgba(240, 80, 80, 0.4); border: 1px solid rgba(240, 80, 80, 0.6); }
+
+.people_list .profileimg_know { border-radius: 50%; border: none !important; border: 1px solid #eaeaea !important; }
+
+.profileimg_know { -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; border: none !important; }
+
+.profileimg_know { cursor: pointer; }
+
+.people_list li .prfl_detail { margin-top: 3px; }
+
+.people_list .prfl_detail { line-height: 1; }
+
+.people_list .prfl_detail .grayinfo { padding-bottom: 3px; }
+
+.people_list li .profilename { font-weight: 500; }
+
+.people_list li .profilename { height: 17px; }
+
+.people_list li .profilename:hover { text-decoration: underline; cursor: pointer; }
+
+.connictionlink { margin-top: 3px; color: #8c8c8c; text-decoration: none; width: auto; float: left; }
+
+.connictionlink img { float: left; margin-right: 5px; width: 14px; }
+
+.connictionlink:hover { cursor: pointer; text-decoration: underline !important; color: #8c8c8c; }
+
+.peopleknow_outer .people_list li .graybutton img { -webkit-translate: all ease-in-out 0.3s; -moz-translate: all ease-in-out 0.3s; -ms-translate: all ease-in-out 0.3s; -o-translate: all ease-in-out 0.3s; translate: all ease-in-out 0.3s; display: inline-block; max-width: 100%; }
+
+.peopleknow_outer .people_list li .graybutton .defaultt { -webkit-translate: all ease-in-out 0.3s; -moz-translate: all ease-in-out 0.3s; -ms-translate: all ease-in-out 0.3s; -o-translate: all ease-in-out 0.3s; translate: all ease-in-out 0.3s; display: inline-block; }
+
+.peopleknow_outer .people_list li .graybutton .hoverr { -webkit-translate: all ease-in-out 0.3s; -moz-translate: all ease-in-out 0.3s; -ms-translate: all ease-in-out 0.3s; -o-translate: all ease-in-out 0.3s; translate: all ease-in-out 0.3s; display: none; }
+
+.peopleknow_outer .people_list li .graybutton:hover .hoverr { -webkit-translate: all ease-in-out 0.3s; -moz-translate: all ease-in-out 0.3s; -ms-translate: all ease-in-out 0.3s; -o-translate: all ease-in-out 0.3s; translate: all ease-in-out 0.3s; display: inline-block; }
+
+.peopleknow_outer .people_list li .graybutton:hover .defaultt { -webkit-translate: all ease-in-out 0.3s; -moz-translate: all ease-in-out 0.3s; -ms-translate: all ease-in-out 0.3s; -o-translate: all ease-in-out 0.3s; translate: all ease-in-out 0.3s; display: none; }
+
+.footer_heading { background-color: #fff !important; text-align: center; font-size: 14px; color: #8c8c8c; border-top: 1px solid #e9e9e9; cursor: pointer; }
+
+.footer_heading:hover { color: #8c8c8c !important; background-color: #f5f7fa !important; cursor: pointer; }
+
+.footer_heading .greater { width: 6px; position: relative; top: -2px; }
+
+.people_list li { border-bottom-color: #f7f7f7 !important; }
+
+.peopleknow_outer .people_list li .graybutton img { display: inline-block; margin-top: -5px; }
+
+.people_list li.li_profileimg_know .prfl_detail { margin-top: 0px; margin-left: 5px; }
+
+.people_list li.li_profileimg_know .prfl_detail .profilename { height: auto; font-weight: 500; margin-bottom: 5px; }
+
+.people_list li.li_profileimg_know .prfl_detail .grayinfo { padding-bottom: 0px; }
+
+.people_list li.li_profileimg_know .prfl_detail .grayinfo .typeVisitor { margin-bottom: 5px; font-size: 14px; font-weight: normal; color: rgba(0, 0, 0, 0.6); }

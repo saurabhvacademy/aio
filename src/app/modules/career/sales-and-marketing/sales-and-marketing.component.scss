@@ -1,0 +1,478 @@
+@import './../../../sass/abstracts/variables';
+@import './../../../sass/abstracts/fontfamily';
+$fontmontserrat: 'Montserrat';
+$SourceSansPro:  'Source Sans Pro';
+.hrLine1{
+  opacity: 0.3;
+  border-top: solid 1px #707070;
+  position: absolute;
+  top: -80px;
+  left: 0px;
+  right: 0px;
+  z-index: 0;
+  .bgwh{
+    width: 200px;
+left: 50%;
+margin-left: -100px;
+position: absolute;
+height: 60px;
+top: -30px;
+background-color: #fff;
+  }
+}
+.bgwhite{
+  background: #fff;
+  width: 100%;
+  float: left;
+}
+.pd80{
+  padding: 90px 0px;
+}
+.main_wrapper{
+  width:100%;
+  float:left;
+}
+// .sales-and-marketing{
+//   padding-bottom: 100px;
+// }
+.card_sales_marketing{
+  width: 100%;
+  float: left;
+  .topup_section{
+    width: 100%;
+    float: left;
+    margin-bottom: 60px;
+    .mrktng_text_left{
+      width: 60%;
+      float: left;
+      padding-right: 150px;
+      span{
+        font-family: $fontmontserrat;
+        font-size: 14px;
+        font-weight: bold;
+        color: #f05050;
+      }
+      h2{
+      font-family: $fontmontserrat;
+        font-size: 36px;
+        font-weight: bold;
+        color: #000000;
+        margin-top: 15px;
+      }
+      p{
+        font-size: 16px;
+        color: #000000;
+        margin-top: 20px;
+        line-height: 20px;
+      }
+    }
+    .mrkting_profile_right{
+      width: 40%;
+      float: left;
+      .mrkting_inner{
+        position: relative;
+        width: 100%;
+        float: left;
+        padding-left: 140px;
+        margin-top: 15px;
+        .profile_left_{
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          overflow: hidden;
+          background-color: #f05050;
+          position: absolute;
+          top: 0;
+          left: 0;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .textt_right{
+        p{
+          font-size: 14px;
+          line-height: 20px;
+          color: #000000;
+          margin-bottom: 20px;
+        }
+        .name__{
+          font-family: $fontmontserrat;
+           font-size: 14px;
+           font-weight: bold;
+           color: #f05050;
+           margin-bottom: 5px;
+           display: block;
+        }
+        .position__{
+           font-size: 14px;
+           color: #000000;
+           display: block;
+        }
+      }
+    }
+  }
+  .skill_qualities_sec{
+    width: 100%;
+    float: left;
+    /* padding-right: 100px; */
+    .main_heding_p{
+      font-family: $fontmontserrat;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 30px;
+    }
+    .card_grid{
+      width: 100%;
+      float: left;
+      .cardss{
+        width: 20%;
+        float: left;
+        padding-right: 30px;
+        .cards_heading{
+          font-family: $fontmontserrat;
+          font-size: 14px;
+          font-weight: bold;
+          color: #f05050;
+          margin-bottom: 10px;
+          display: block;
+          text-transform: uppercase;
+        }
+        .cards_p{
+          font-size: 14px;
+          color: #000000;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+.applyFlowSec{
+    margin-top: 160px;
+    position: relative;
+    .flowStep1{
+      &:after {
+    content: '';
+    width: 12px;
+    right: -6px;
+    top: 50%;
+    margin-top: -6px;
+    height: 12px;
+
+}
+}
+.flowStep2, .flowStep3, .flowStep4, .flowStep5{
+  padding: 0px 10px;
+  .applyfor{
+    width: 100%;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+margin-top: 18px;
+height: 36px;
+span{
+  font-family: $fontmontserrat;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+}
+  }
+
+}
+.flowStep5 .applyfor span {
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+}
+.containerWeb{display:block;}
+.containerRes{display:none;
+  .card_top{
+    width:100%;
+    float:left;
+    margin-bottom: 10px;
+
+    .card_left{
+      width: 100%;
+      float: left;
+      padding: 0px;
+       p{
+         font-family: $fontmontserrat;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom:25px;
+
+        margin-top: 45px;
+        color:#f05050;
+       }
+       ul{
+         margin-top: 10px;
+         position:realtive;
+         li{
+
+            font-size: 14px;
+            line-height: 14px;
+            color: #000;
+            margin-top: 8px;
+            padding-left:30px;
+            position:relative;
+
+         }
+
+         .listli{
+
+           margin-top:0px;
+           margin-bottom:20px;
+           &:before{
+             content: '';
+             margin-right:10px;
+             width: 10px;
+             height: 10px;
+             display: inline-block;
+             margin-top: 2px;
+             background-color:#f05050;
+
+             color:#fff;
+             position: absolute;
+            left: 0;
+            border-radius: 100%;
+
+           }
+           &after{
+
+           }
+         }
+
+         .list1{
+           &:before{
+                opacity: .5;
+           }
+         }
+         .list2{
+           position: relative;
+           &:before{
+        opacity: 1;
+         border: 2px solid #f05050;
+         background-color: #f05050;
+         color: #f05050;
+         width: 10px;
+         height: 10px;
+         left: 1px;
+         top: 5px;
+         z-index: 1;
+         margin-top: 0px;
+           }
+           &:after{
+             content: '';
+             position: absolute;
+             border: 6px solid rgba(246, 150, 150, 0.5);
+         background-color: rgba(246, 150, 150, 0.5);
+         color: #f05050;
+         width: 20px;
+         height: 20px;
+         left: -3px;
+         border-radius: 100%;
+          opacity: 1;
+        top:0px;
+         left: -4px;
+         border-radius: 100%;
+           }
+         }
+
+
+       }
+
+
+       ul.stepsul{
+         position:relative;
+         &:before{
+           content:'';
+
+ width: 1px;
+
+ opacity: 0.2;
+position:absolute;left:4.5px;
+ background-color:  #707070;
+ top: 11px;
+bottom: 5px;
+
+}
+}
+
+
+
+    }
+
+
+  }
+}
+
+
+@media only screen and (max-width:1200px){
+
+}
+@media only screen and (max-width:1024px){
+  .heading_bold {
+    font-size: 32px;
+}
+}
+@media only screen and (max-width:920px){
+  /* .sales-and-marketing {
+    display:none;
+} */
+}
+@media only screen and (max-width:768px){
+  .card_sales_marketing{
+    .topup_section{margin-bottom: 40px;
+      .mrktng_text_left{
+        width: 100%;
+        padding-right: 0px;
+        margin-bottom:30px;
+        span{
+          font-size: 14px;
+          padding: 0px 45px;
+          width: 100%;
+          text-align: center;
+          display: block;
+        }
+        h2{
+          font-size: 22px;
+          text-align: center;
+          padding: 0px 45px;
+          margin-top: 5px;
+        }
+        p{
+          font-size: 16px;
+          margin-top: 30px;
+          line-height: 20px;
+        }
+      }
+
+      .mrkting_profile_right{
+        width: 100%;
+        float: left;
+        .mrkting_inner{
+          padding-left: 120px;
+          margin-top: 15px;
+          .profile_left_{
+            width: 100px;
+            height: 100px;
+
+          }
+        }
+      }
+    }
+    .skill_qualities_sec{
+      width: 100%;
+      float: left;
+      /* padding-right: 100px; */
+      .main_heding_p{
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      .card_grid{
+        .cardss{
+          width: 50%;
+          float: left;
+          padding-right: 2%;
+          margin-bottom: 20px;
+          .cards_heading{
+            margin-bottom: 10px;
+
+          }
+
+        }
+      }
+    }
+  }
+  .containerWeb{
+    display: none;
+  }
+  .containerRes{
+    display: block;
+    float: left;
+width: 100%;
+margin-top: 60px;
+  }
+  .pd80 {
+      padding: 40px 0px 40px 0px;
+
+  }
+  .heading_bold {
+    font-size: 26px;
+}
+
+
+}
+@media only screen and (max-width:480px){
+  .card_sales_marketing{
+    .topup_section{
+      .mrktng_text_left{
+
+        span{
+          font-size: 12px;
+
+        }
+        h2{
+          font-size: 18px;
+margin-top: 5px;
+        }
+        p{
+          font-size: 14px;
+
+        }
+      }
+      .mrkting_profile_right{
+        width: 100%;
+        float: left;
+        .mrkting_inner{
+          padding-left: 80px;
+          margin-top: 0px;
+          .profile_left_{
+            width: 60px;
+            height: 60px;
+
+          }
+        }
+      }
+    }
+    .skill_qualities_sec{
+      width: 100%;
+      float: left;
+      /* padding-right: 100px; */
+      .main_heding_p{
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .card_grid{
+        .cardss{
+          width: 100%;
+          padding-right: 0%;
+          .cards_heading{
+            margin-bottom: 10px;
+
+          }
+
+        }
+      }
+    }
+  }
+  .containerRes {
+    margin-top: 0px;
+    .card_top .card_left{
+      ul li {
+   font-size: 14px;
+   padding-left: 30px;
+   line-height: 18px;
+   margin-bottom:15px;
+}
+     p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+}
+}
+}

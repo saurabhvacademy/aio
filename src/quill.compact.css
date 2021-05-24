@@ -1,0 +1,194 @@
+/* ========================================================================== Common variables ========================================================================== */
+/**
+*
+* DO NOT use these variables directly in components.
+* Assign them to component specific variables
+*
+*/
+/* font-family */
+/* font-family*/
+/* Colors */
+/* Border radius */
+/* ========================================================================== Browser support ========================================================================== */
+/* ========================================================================== Component specific variables ========================================================================== */
+/* Typography ========================================================================== */
+/* $baseFontFamily: Arial, sans-serif; */
+/* $baseSpacing: $baseLineHeight+em; */
+/* $baseTextColor: $black; */
+/* Type Color */
+/* $typeHighlight: $blue;
+$typeLowlight: $lightGrey; */
+/* Link ========================================================================== */
+/* $linkColor: $blue;
+$linkHoverColor: $lightBlue; */
+/* Background ========================================================================== */
+/* $bgBasic: #fff; */
+/* Box ========================================================================== */
+/* Contour */
+/* $boxBasicBorderRadius: $borderRadiusDefault; */
+/* Box foot */
+/* $boxFootDivider: $blue; */
+/* Divider ========================================================================== */
+/* $dividerColor: $blue; */
+/* List ========================================================================== */
+/* $listInlineDividerBorder: $lightGrey;
+$listBorder: $lightGrey; */
+/* Table ========================================================================== */
+/* $tableBorderColor: $blue; */
+/* Form ========================================================================== */
+/* $labelLeftWidth: 30%;
+$formFieldBorder: 1px solid $grey;
+$placeholderText: $lightGrey; */
+/* Button ========================================================================== */
+/* $btnDefaultBg: #ddd;
+$btnDefaultBorder: $lightGrey; */
+/* Template ========================================================================== */
+/* $skipLinkBg: $black;
+$bodyBg: #fff;
+$pageWidth: 997px; */
+/* header */
+/* $headerBgStop1: #09456a;
+$headerBgStop2: #02587e;
+$contentBg: #fff;
+$contentWidth: 960px; */
+/* footer */
+/* $footerBorder: $lightGrey; */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,500,600,700&display=swap&subset=chinese-simplified");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+.font_sans_pro { font-family: "Source Sans Pro"; }
+
+.font_montserrat { font-family: "Montserrat"; }
+
+.font_noto_serif { font-family: "Noto Serif SC", serif; }
+
+.font_roboto { font-family: "Noto Serif SC", serif; }
+
+.ql-toolbar.ql-snow { position: fixed; left: calc(11% + 5px); top: 62px; border: none !important; color: #fff; z-index: 2; }
+
+.ql-toolbar.ql-snow .ql-picker-label { color: #fff !important; }
+
+.ql-toolbar.ql-snow .ql-stroke { stroke: #fff !important; }
+
+.ql-toolbar.ql-snow .ql-picker-label:hover { color: #fff !important; }
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options { background: #545353; }
+
+.ql-snow .ql-picker-options .ql-picker-item { color: #fff; }
+
+.ql-snow .ql-editor h1 { color: #2c2e2f; }
+
+.ql-editor.ql-blank::before { font-style: normal !important; font-family: "Noto Serif SC", serif; opacity: 0.5; font-size: 16px; color: #2c2e2f !important; left: 0 !important; }
+
+.ql-editor, .ql-container { padding: 0 !important; opcity: 1 !important; }
+
+.ql-editor *, .ql-container * { font-family: "Noto Serif SC", serif; }
+
+.ql-editor a, .ql-container a { color: #06c !important; text-decoration: none !important; cursor: pointer; }
+
+.ql-editor a *, .ql-container a * { color: #06c !important; }
+
+.ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6, .ql-editor b, .ql-editor strong, .ql-container h1, .ql-container h2, .ql-container h3, .ql-container h4, .ql-container h5, .ql-container h6, .ql-container b, .ql-container strong { font-weight: 700; }
+
+.ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6, .ql-container h1, .ql-container h2, .ql-container h3, .ql-container h4, .ql-container h5, .ql-container h6 { line-height: normal; }
+
+.ql-editor span, .ql-container span { color: #2c2e2f !important; }
+
+.ql-snow .ql-fill, .ql-snow .ql-stroke.ql-fill { fill: #fff !important; }
+
+.ql-toolbar.ql-snow .ql-formats { margin-right: 0 !important; }
+
+.ql-snow.ql-toolbar button:hover, .ql-snow .ql-toolbar button:hover, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.ql-active, .ql-snow .ql-toolbar button.ql-active, .ql-snow.ql-toolbar .ql-picker-label:hover, .ql-snow .ql-toolbar .ql-picker-label:hover, .ql-snow.ql-toolbar .ql-picker-label.ql-active, .ql-snow .ql-toolbar .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker-item:hover, .ql-snow .ql-toolbar .ql-picker-item:hover, .ql-snow.ql-toolbar .ql-picker-item.ql-selected, .ql-snow .ql-toolbar .ql-picker-item.ql-selected { color: #fff !important; background: #2c2e2f; border-radius: 3px; }
+
+.ql-snow .ql-picker-options .ql-picker-item { padding: 10px !important; }
+
+.ql-formats .ql-clean { display: none !important; }
+
+.ql-formats .ql-bold, .ql-formats .ql-italic, .ql-formats .ql-align.ql-picker.ql-icon-picker, .ql-formats .ql-list, .ql-formats .ql-link, .ql-formats .ql-image, .ql-formats .ql-video { margin-left: 10px !important; }
+
+.ql-snow .ql-picker-options { padding: 0 !important; }
+
+.ql-editor.ql-blank p { font-size: 16px !important; }
+
+#ql-picker-options-1 .ql-picker-item { padding: 2px 4px !important; }
+
+.down_data .ql-toolbar.ql-snow { display: none; }
+
+.down_data .ql-container.ql-snow { margin-top: 0px; border: none; }
+
+.down_data .ql-editor.ql-blank { overflow-y: unset !important; }
+
+.down_data .ql-editor.ql-blank ul { padding: 0; }
+
+.ql-container.ql-snow .ql-editor.ql-blank p { font-size: 18px !important; line-height: 1.71; color: #2c2e2f; }
+
+.ql-snow .ql-editor img { margin-bottom: 5px; margin-top: 10px; }
+
+.input_ffld .ql-editor iframe.ql-video, .down_data .ql-editor iframe.ql-video { width: 100% !important; height: 337px !important; margin-top: 10px; margin-bottom: 5px; }
+
+.input_ffld .ql-editor iframe.ql-video img, .down_data .ql-editor iframe.ql-video img { width: 100%; height: 100%; }
+
+.input_ffld .ql-editor p:last-child { padding-bottom: 100px; }
+
+.ql-container { font-family: "Noto Serif SC", serif; }
+
+.ql-container h2 { font-size: 1.5em; line-height: 1.1 !important; font-weight: 700; }
+
+.ql-container h3 { font-size: 1.17em; line-height: 1.1 !important; font-weight: 700; }
+
+.ql-container h4 { font-size: 1em; font-weight: 700; }
+
+button.ql-video { background-image: url("/../../../assets/images/article/linkvideo.svg") !important; }
+
+button.ql-image { background-image: url("/../../../assets/images/article/insertpicture.svg") !important; }
+
+button.ql-image, button.ql-video { background-position: center !important; background-repeat: no-repeat !important; background-size: 14px 14px !important; }
+
+button.ql-image svg, button.ql-video svg { display: none; }
+
+.ql-editor *, .ql-container * { font-family: "Noto Serif SC", serif; }
+
+.ql-editor p, .ql-container p { font-family: "Noto Serif SC", serif; font-size: 18px; line-height: 1.86; }
+
+.ql-editor strong, .ql-container strong { font-family: "Noto Serif SC", serif; }
+
+.ql-editor a, .ql-container a { text-decoration: underline !important; }
+
+.ql-editor ol, .ql-editor ul, .ql-container ol, .ql-container ul { padding-left: 0 !important; }
+
+.ql-editor ol li, .ql-editor ul li, .ql-container ol li, .ql-container ul li { font-size: 18px !important; line-height: 1.86; font-family: "Noto Serif SC", serif; }
+
+.ql-editor ul li, .ql-container ul li { padding-left: 15px !important; }
+
+.ql-snow .ql-picker.ql-header { width: 111px !important; }
+
+.ql-snow .ql-picker.ql-header .ql-picker-label::before, .ql-snow .ql-picker.ql-header .ql-picker-item::before { content: 'Normal Text' !important; }
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="1"]::before, .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before { content: 'Heading 1' !important; }
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="2"]::before, .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before { content: 'Heading 2' !important; }
+
+.articleContent p a { color: #06c; }
+
+.ql-snow .ql-editor p a { color: #06c; }
+
+.ql-container p a { color: #06c; }
+
+.down_data .ql-container.ql-snow .ql-editor.ql-blank p { font-size: 18px !important; line-height: 1.86; }
+
+.down_data .ql-container.ql-snow p { font-size: 18px !important; line-height: 1.86; }
+
+.quill-better-table { width: 100% !important; border-collapse: collapse; border: 1px solid #000; }
+
+.quill-better-table td, .quill-better-table th { border: 1px solid #dddddd; padding: 8px; font-size: 18px; }
+
+.qlbt-operation-menu { border: 1px solid #ccc; padding: 5px 10px 5px 10px; background-color: #f1f1f1; }
+
+.qlbt-operation-menu .qlbt-operation-menu-item .qlbt-operation-menu-icon { margin-right: 5px; }
+
+.qlbt-operation-menu .qlbt-operation-menu-item .qlbt-operation-menu-icon, .qlbt-operation-menu .qlbt-operation-menu-item .qlbt-operation-menu-text { float: left; line-height: 20px; }
+
+@media only screen and (max-width: 1200px) { .ql-toolbar.ql-snow { left: 5px; } }
+
+@media only screen and (max-width: 991px) { .ql-toolbar.ql-snow { left: 0; } }

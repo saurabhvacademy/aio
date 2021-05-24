@@ -1,0 +1,225 @@
+// $backgroundgray : #e6e6e6;
+// $themeblue : #F05050;
+// $themegray : #f5f7fa;
+$textcolor : #2c2e2f;
+// $textgrey : #8c8c8c;
+// $maingreen: rgb(7,162,8);
+//
+ $stroke : #E9E9E9;
+// $borderRadius: 5px;
+// $inputTypeHeight: 35px;
+// $inputTypeFont: 12px;
+// $headerHeight: 60px;
+// $headerLineHeight: $headerHeight - 5px;
+// $mainboxShadow: 0 0 7px rgba(0,0,0,0.1);
+// $dropdownwidth: 400px;
+// $dropdwncontentwidth: $dropdownwidth - 100px;
+// $ntfctnprofile: 40px;
+// $inrprflimg : $ntfctnprofile + 8px;
+// $PostPicture: 40px;
+// $commentPicture: $PostPicture - 10px;
+// $subcommentPicture: $commentPicture - 10px;
+// $mainpostName: 14px;
+// $maincommentName: $mainpostName - 2px;
+// $darkthemestroke: $themeblue;
+// $progressbarRed: #ed6568;
+// $rightanswer : #5bbc5b;
+@mixin btn_shadow($offset-x, $offset-y, $blur-radius, $spread-radius, $color, $inset: false) {
+@if $inset {
+-ms-box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+-o-box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+-webkit-box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+-moz-box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+}
+@else {
+-ms-box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+-o-box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+-webkit-box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+-moz-box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+}
+}
+
+.verificationpopup{
+	height: 478px;
+  input{
+      border: none;
+  }
+}
+.verificationheader{
+	// background: $themeblue;
+	color:  #fff;
+    display: inline-block;
+    width: 100%;
+    padding: 60px 0 65px;
+    text-align: center;
+    position: relative;
+}
+
+.verify_heading{
+	font-size: 24px;
+  color: #2c2e2f;
+	// font-family: 'Roboto', sans-serif;font-weight: 500;;
+}
+.verify_stepcount{
+	font-size:22px;
+	font-family: 'Roboto', sans-serif;font-weight: 500;;
+	margin-top: 10px
+}
+.verificationimage{
+	display: inline-block;
+    height: 80px;
+    width: 80px;
+    border: 3px solid #fff;
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -38px;
+    line-height: 80px;
+    background: rgb(47, 64, 90);
+
+	img{
+		width: 40px;
+	}
+}
+.verificationContent{
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 65px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 23px;
+    .vloginbtn{
+      border: 1px solid #cccccc;
+      background-color: #e8ecf1 !important;
+    color: #000;
+
+
+    }
+		button{
+			&:first-child{
+				margin-right: 20px;
+			}
+		}
+
+    b{
+    	font-weight: normal;
+    	font-family: 'Roboto', sans-serif;font-weight: 500;;
+    }
+
+    .selectbox{
+    	width: 200px;
+    	margin: 30px 0;
+
+      }
+
+    .btn{
+    	float: none;
+    	width: 120px;
+
+    }
+    .otp_input{
+    width: 30px;
+    border: 0px;
+    border-radius: 0px;
+    border-bottom: 2px solid $stroke;
+    display: inline-block;
+    font-size: 26px;
+    margin: 0 3px;
+
+}
+a {
+  font-size: 14px;
+    text-decoration: underline !important;
+    width: 50%;
+    float: left;
+    margin-bottom: 20px;
+    color: #f05050;
+}
+}
+input:focus {
+    border: 0px solid transparent !important;
+    border-color: transparent !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.3rem transparent !important;
+    border-bottom:2px solid #E9E9E9 !important;
+}
+.button_container{
+  position: absolute;
+  bottom: 50px;
+  width: 75%;
+  text-align: center;
+  .backbutton{
+    text-align: center;
+    // box-shadow: 0 1px 2px 1px #2c2e2f20!important;
+    @include btn_shadow(0, 1px, 2px, 1px, rgba($textcolor, 0.1));
+    border-radius: 18px;
+    font-size: 14px;
+    background-color: #fff !important;
+    position: relative;
+    border: none;
+    padding: 2px 14px 0px 14px;
+    cursor: pointer;
+    &:hover{
+      background-color: rgba($textcolor, 0.1) !important;
+      box-shadow: none;
+    }
+  }
+}
+.btn.btn-primary{
+height: 36px;
+
+// box-shadow: 0 1px 2px 1px #2c2e2f20!important;
+@include btn_shadow(0, 1px, 2px, 1px, rgba($textcolor, 0.1));
+}
+// new scss file
+.otp_timer{
+  float: left;
+width: 100%;
+text-align: center;
+position: relative;
+top: -15px;
+color: #f05050;
+}
+.mobileNumInpWrapper{
+  float: left;
+  width: 100%;
+  margin-top: 25px;
+   input{
+     border: 1px solid #dfe0e8 !important;
+    color: #2c2e2f;
+    font-size: 14px;
+      &:focus{
+         border: 1px solid #dfe0e8 !important;
+      }
+   }
+}
+// end new scss file
+
+@media only screen and (max-width:767px){
+  .popup_main.verificationpopup{
+    max-width:500px;
+    width:auto;
+  }
+}
+@media only screen and (max-width:520px){
+  .popup_main.verificationpopup{
+    width:calc(100% - 20px);
+  }
+}
+@media only screen and (max-width:480px){
+  .verificationContent{
+    padding: 50px 25px;
+  }
+  .button_container{
+    bottom: 35px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    right: 0;
+  }
+}

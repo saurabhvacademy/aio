@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="22.5" viewBox="0 0 27 22.5">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__Group_830" data-name="Group 830" transform="translate(-68 -488)">
+        <g id="prefix__Group_829" data-name="Group 829" transform="translate(-1876 219)">
+            <path id="prefix__Path_12" d="M1959.75 284v1.125h-4.5V284H1944v3.375a2.253 2.253 0 0 0 2.25 2.25h22.5a2.254 2.254 0 0 0 2.25-2.25V284zm-13.5 3.375v-1.125h7.875v1.125zm22.5 0h-7.875v-1.125h7.875z" class="prefix__cls-1" data-name="Path 12" transform="translate(0 1.875)"/>
+            <path id="prefix__Path_13" d="M1947.25 271.25h20.25v13.5h2.25v-13.5a2.253 2.253 0 0 0-2.25-2.25h-20.25a2.252 2.252 0 0 0-2.25 2.25v13.5h2.25z" class="prefix__cls-1" data-name="Path 13" transform="translate(.125)"/>
+            <path id="prefix__Path_14" d="M1949 281.25v2.25h9v-2.25a2.25 2.25 0 0 0-2.25-2.25h-4.5a2.249 2.249 0 0 0-2.25 2.25z" class="prefix__cls-1" data-name="Path 14" transform="translate(.625 1.25)"/>
+            <circle id="prefix__Ellipse_1" cx="2" cy="2" r="2" class="prefix__cls-1" data-name="Ellipse 1" transform="translate(1952 275)"/>
+            <path id="prefix__Path_15" d="M1959 276.39v3.355l1.685-1.677 1.688-1.678-1.687-1.678-1.686-1.677z" class="prefix__cls-1" data-name="Path 15" transform="translate(1.875 .504)"/>
+        </g>
+    </g>
+</svg>

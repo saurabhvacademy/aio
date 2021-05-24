@@ -1,0 +1,225 @@
+$textgrey : #8c8c8c;
+$backgroundgray : #e6e6e6;
+$themeblue : #F05050;
+$themegray : #f5f7fa;
+$textcolor : #2c2e2f;
+$borderRadius: 5px;
+
+.container_top{
+  margin-top: 90px;
+    .contain_wrapper{
+      padding: 15px 30px;
+      height: auto;
+      background-color: white;
+      border-radius: $borderRadius;
+      .detail_cmp{
+        padding: 20px 0;
+        border-bottom: 2px solid $backgroundgray;
+        span{
+
+          &:first-child{
+            float: left;
+
+            h3{
+              font-size: 18px;
+              color:$themeblue;
+              margin-bottom: 5px;
+            }
+            p{
+              color: $textcolor;
+            }
+          }
+          &:last-child{
+            float: right;
+            img{
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+}
+.ship_to{
+  padding: 15px;
+   color: $textcolor;
+  .shipto_heading{
+      margin-bottom: 15px;
+        }
+  span{
+
+
+    &:nth-child(1),  &:nth-child(2){
+      float: left;
+      width: 40%;
+      color:$themeblue !important;
+    }
+
+    &:nth-child(3){
+      float: left;
+      width: 20%;
+      color:$themeblue;
+    }
+  }
+
+}
+.decription_wrapper{
+  .discription_heading{
+    padding: 15px;
+    background-color:$themegray;
+    border-radius: $borderRadius;
+    p{
+      span{
+        color: $textcolor;
+        &:nth-child(1){
+          float: left;
+        }
+         &:nth-child(2), &:nth-child(3), &:nth-child(4)  {
+          width: 12%;
+          float: right;
+        }
+      }
+    }
+  }
+}
+.discription_content{
+  padding: 15px;
+border-bottom: 2px solid $backgroundgray;
+  p{
+    span{
+      color: $textcolor;
+      &:nth-child(1){
+        float: left;
+        .certification_eco{
+          width: auto !important;
+          margin: 19px;
+        }
+      }
+       &:nth-child(2), &:nth-child(3), &:nth-child(4)  {
+        width: 12%;
+        float: right;
+        margin: 19px 0;
+        img{
+          width: 11px;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}
+.decription_wrapper_total{
+  .discription_subtotal{
+    padding: 15px;
+    p{
+      float: left;
+      width: 100%;
+      margin-bottom: 15px;
+
+      span{
+        &:first-child, &:last-child{
+          width: 12%;
+          float: right;
+        }
+        &:first-child{
+          img{
+            width: 11px;
+            margin-top: -2px;
+          }
+        }
+      }
+    }
+
+  }
+  .discription_heading_total{
+    padding: 15px;
+    background-color:$themegray;
+    border-radius: $borderRadius;
+    p{font-weight: bold;
+      span{
+         &:first-child, &:last-child{
+          width: 12%;
+          float: right;
+        }
+        &:first-child{
+          img{
+            width: 11px;
+            margin-top: -2px;
+          }
+        }
+      }
+    }
+  }
+
+}
+.icon_wrapper{
+  padding-top: 35px;
+.bottom_icon{
+  margin: auto;
+  width: 145px;
+  padding:10px 0;
+  span{
+    width: 51px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 9px;
+    margin-right: 5px;
+    cursor: pointer;
+    &:hover{
+      border:1px solid $themeblue;
+    }
+    &:hover .img_hover{
+      display: inline-block;
+    }
+    &:hover img{
+      display: none;
+    }
+    .img_hover{
+      display: none;
+      // &:hover{
+      //   display: block;
+      // }
+    }
+
+
+    img{
+      width: 20px;
+      height: 15px;
+      margin-top:-5px;
+    }
+  }
+}
+}
+
+
+// error popup scss
+.error_main_heading{
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px !important;
+}
+.center_wrapperr{
+  padding:20px;
+  p{
+    font-size: 14px;
+  }
+}
+.error_footerr{
+  background-color: #f5f7fa;
+  position: fixed;
+  width: 100%;
+  padding: 10px 15px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 5px 5px;
+  .btn_delete{
+    margin-left: 10px;
+  }
+  button{
+    height: 35px;
+    border-radius: 20px;
+padding-left: 20px;
+padding-right: 20px;
+  }
+}
+// end error popup

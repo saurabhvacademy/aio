@@ -1,0 +1,530 @@
+<!-- keyboard  -->
+<div class="editor_bar" style="height: auto;">
+
+  <!-- keyboard side button menu bar -->
+  <ul class="editor_menu">
+    <button class="left_menu_img1" [ngClass]= "{'active' : editortab === 1 }" (click)="editortabClick(1);" selected="selected">
+    </button>
+    <button class="left_menu_img2" [ngClass]= "{'active' : editortab === 2 }" (click)="editortabClick(2);">
+    </button>
+    <button class="left_menu_img3" [ngClass]= "{'active' : editortab === 3 }" (click)="editortabClick(3);">
+    </button>
+    <button class="left_menu_img4" [ngClass]= "{'active' : editortab === 4 }" (click)="editortabClick(4);">
+    </button>
+    <button class="left_menu_img5" [ngClass]= "{'active' : editortab === 5 }" (click)="editortabClick(5);">
+    </button>
+    <button class="left_menu_img6" [ngClass]= "{'active' : editortab === 6 }" (click)="editortabClick(6);">
+    </button>
+    <button class="left_menu_img7" [ngClass]= "{'active' : editortab === 7 }" (click)="editortabClick(7);">
+    </button>
+    <button class="left_menu_img8" [ngClass]= "{'active' : editortab === 8 }" (click)="editortabClick(8);">
+    </button>
+    <button class="left_menu_img9" [ngClass]= "{'active' : editortab === 9 }" (click)="editortabClick(9);">
+    </button>
+    <button class="left_menu_img10" [ngClass]= "{'active' : editortab === 10 }" (click)="editortabClick(10);">
+    </button>
+    <button class="left_menu_img11" [ngClass]= "{'active' : editortab === 11 }" (click)="editortabClick(11);">
+    </button>
+    <button class="left_menu_img12" [ngClass]= "{'active' : editortab === 12 }" (click)="editortabClick(12);">
+    </button>
+  </ul>
+  <!-- keyboard side button menu bar End  -->
+
+  <!-- keyboard right button menu bar  -->
+  <div  style="overflow:auto;float:right;height: 660px;position: relative;width:195px;" *ngIf="editortab === 1" [perfectScrollbar]="config">
+    <div class="keyboard_sub_menu ">
+      <button class="ab_button1 ab_button_img" (click)="pasteHtmlAtCaret('fraction');"></button>
+      <button class="ab_button2 ab_button_img" (click)="pasteHtmlAtCaret('sqareroot');"></button>
+      <button class="ab_button3 ab_button_img" (click)="pasteHtmlAtCaret('sqarerootpower');"></button>
+      <button class="ab_button4 ab_button_img" (click)="pasteHtmlAtCaret('superscript');"></button>
+      <button class="ab_button5 ab_button_img"  (click)="pasteHtmlAtCaret('subscript');"></button>
+      <button class="ab_button6 ab_button_img" (click)="pasteHtmlAtCaret('subscriptleft');"></button>
+      <button class="ab_button7 ab_button_img" (click)="pasteHtmlAtCaret('superscriptleft');"></button>
+      <button class="ab_button8 ab_button_img" (click)="pasteHtmlAtCaret('subsuperscript');"></button>
+      <button class="ab_button9 ab_button_img" (click)="pasteHtmlAtCaret('subsuperscriptleft');"></button>
+      <button class="ab_button10 ab_button_img" (click)="pasteHtmlAtCaret('UpBracketScript');"></button>
+      <button class="ab_button11 ab_button_img" (click)="pasteHtmlAtCaret('DownBracketScript');"></button>
+      <button class="ab_button12 ab_button_img" (click)="pasteHtmlAtCaret('TopDownScript');"></button>
+      <button class="ab_button13 ab_button_img" (click)="pasteHtmlAtCaret('TopScript');"></button>
+      <button class="ab_button14 ab_button_img" (click)="pasteHtmlAtCaret('DownScript');"></button>
+      <button class="ab_button15 ab_button_img" (click)="pasteHtmlAtCaret('BigTopDownScript');"></button>
+      <button class="ab_button16 ab_button_img" (click)="pasteHtmlAtCaret('BigDownScript');"></button>
+      <button class="ab_button17 ab_button_img" (click)="pasteHtmlAtCaret('BigDownSubScript');"></button>
+      <button class="ab_button18 ab_button_img" (click)="pasteHtmlAtCaret('BigTopDownSubScript');"></button>
+      <button class="ab_button19 ab_button_img" (click)="pasteHtmlAtCaret('BevelledFraction');"></button>
+    </div>
+  </div>
+
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 2">
+    <button class="pie1 pie_button_img" (click)="pasteHtmlAtCaret('sigmaUnder');"></button>
+    <button class="pie2 pie_button_img" (click)="pasteHtmlAtCaret('SigmaDownSubScript');"></button>
+    <button class="pie3 pie_button_img" (click)="pasteHtmlAtCaret('sigmaUnderOver');"></button>
+    <button class="pie4 pie_button_img" (click)="pasteHtmlAtCaret('SigmaTopDownSubScript');"></button>
+    <button class="pie5 pie_button_img" (click)="pasteHtmlAtCaret('piUnder');"></button>
+    <button class="pie6 pie_button_img" (click)="pasteHtmlAtCaret('PieDownSubScript');"></button>
+    <button class="pie7 pie_button_img" (click)="pasteHtmlAtCaret('piUnderOver');"></button>
+    <button class="pie8 pie_button_img" (click)="pasteHtmlAtCaret('PieTopDownSubScript');"></button>
+  </div>
+
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 3">
+    <button class="dy_dx1 dy_dx_button_img" (click)="pasteHtmlAtCaret('integralsubscript');"></button>
+    <button class="dy_dx2 dy_dx_button_img" (click)="pasteHtmlAtCaret('subsuperscriptintegral');"></button>
+    <button class="dy_dx3 dy_dx_button_img" (click)="pasteHtmlAtCaret('subsuperscriptintegraldata');"></button>
+    <button class="dy_dx4 dy_dx_button_img" (click)="pasteHtmlAtCaret('integralsubscriptdata');"></button>
+    <button class="dy_dx5  dy_dx_button_img" (click)="pasteHtmlAtCaret('d');"></button>
+    <button class="dy_dx6 dy_dx_button_img" (click)="pasteHtmlAtCaret('partialdifferentialsymbol');"></button>
+    <button class="dy_dx7 dy_dx_button_img" (click)="pasteHtmlAtCaret('differenciation');"></button>
+    <button class="dy_dx8 dy_dx_button_img" (click)="pasteHtmlAtCaret('differenciationdelta');">}</button>
+    <button class="dy_dx9 dy_dx_button_img" (click)="pasteHtmlAtCaret('limitinfinity');"></button>
+    <button class="dy_dx10 dy_dx_button_img" (click)="pasteHtmlAtCaret('limit');"></button>
+    <button class="dy_dx11  dy_dx_button_img" (click)="pasteHtmlAtCaret('nablasigncross');"></button>
+    <button class="dy_dx12  dy_dx_button_img" (click)="pasteHtmlAtCaret('nablasigndot');"></button>
+    <button class="dy_dx13  dy_dx_button_img" (click)="pasteHtmlAtCaret('nablasign');"></button>
+    <button class="dy_dx14  dy_dx_button_img" (click)="pasteHtmlAtCaret('trianglesign');"></button>
+    <button class="dy_dx15  dy_dx_button_img" (click)="pasteHtmlAtCaret('integeral');"></button>
+    <button class="dy_dx16  dy_dx_button_img" (click)="pasteHtmlAtCaret('contourintegeral');"></button>
+    <button class="dy_dx17  dy_dx_button_img" (click)="pasteHtmlAtCaret('custom_lim1');"></button>
+    <button class="dy_dx18  dy_dx_button_img" (click)="pasteHtmlAtCaret('custom_lim2');"></button>
+  </div>
+
+  <div  style="overflow:auto;float:right;height: 660px;position:relative;width: 202px;" *ngIf="editortab === 4" [perfectScrollbar]="config">
+    <div class="keyboard_sub_menu sine_keyboard_sub_menu"  style="    width: 202px;">
+      <button class="sine_button1 sine_button_img"  (click)="pasteHtmlAtCaret('sin');"></button>
+      <button class="sine_button2 sine_button_img"  (click)="pasteHtmlAtCaret('cos');"></button>
+      <button class="sine_button3 sine_button_img"  (click)="pasteHtmlAtCaret('tan');"></button>
+      <button class="sine_button4 sine_button_img"  (click)="pasteHtmlAtCaret('cosec');"></button>
+      <button class="sine_button5 sine_button_img"  (click)="pasteHtmlAtCaret('cot');"></button>
+      <button class="sine_button6 sine_button_img"  (click)="pasteHtmlAtCaret('sec');"></button>
+      <button class="sine_button7 sine_button_img"  (click)="pasteHtmlAtCaret('csc');"></button>
+      <button class="sine_button8 sine_button_img"  (click)="pasteHtmlAtCaret('cotan');"></button>
+      <button class="sine_button9 sine_button_img"  (click)="pasteHtmlAtCaret('sinh');"></button>
+      <button class="sine_button10 sine_button_img"  (click)="pasteHtmlAtCaret('cosh');"></button>
+      <button class="sine_button11 sine_button_img"  (click)="pasteHtmlAtCaret('tanh');"></button>
+      <button class="sine_button12 sine_button_img"  (click)="pasteHtmlAtCaret('cosech');"></button>
+      <button class="sine_button13 sine_button_img"  (click)="pasteHtmlAtCaret('coth');"></button>
+      <button class="sine_button14 sine_button_img"  (click)="pasteHtmlAtCaret('sech');"></button>
+      <button class="sine_button15 sine_button_img"  (click)="pasteHtmlAtCaret('csch');"></button>
+      <button class="sine_button16 sine_button_img"  (click)="pasteHtmlAtCaret('cotanh');"></button>
+      <button class="sine_button17 sine_button_img"  (click)="pasteHtmlAtCaret('arcsin');"></button>
+      <button class="sine_button18 sine_button_img"  (click)="pasteHtmlAtCaret('arccos');"></button>
+      <button class="sine_button19 sine_button_img"  (click)="pasteHtmlAtCaret('arctan');"></button>
+      <button class="sine_button20 sine_button_img"  (click)="pasteHtmlAtCaret('arccosec');"></button>
+      <button class="sine_button21 sine_button_img"  (click)="pasteHtmlAtCaret('arccot');"></button>
+      <button class="sine_button22 sine_button_img"  (click)="pasteHtmlAtCaret('arcsec');"></button>
+      <button class="sine_button23 sine_button_img"  (click)="pasteHtmlAtCaret('arccsc');"></button>
+      <button class="sine_button24 sine_button_img"  (click)="pasteHtmlAtCaret('arccotan');"></button>
+      <button class="sine_button25 sine_button_img"  (click)="pasteHtmlAtCaret('arcsinh');"></button>
+      <button class="sine_button26 sine_button_img"  (click)="pasteHtmlAtCaret('arccosh');"></button>
+      <button class="sine_button27 sine_button_img"  (click)="pasteHtmlAtCaret('arctanh');"></button>
+      <button class="sine_button28 sine_button_img"  (click)="pasteHtmlAtCaret('arccosech');"></button>
+      <button class="sine_button29 sine_button_img"  (click)="pasteHtmlAtCaret('arccoth');"></button>
+      <button class="sine_button30 sine_button_img"  (click)="pasteHtmlAtCaret('arcsech');"></button>
+      <button class="sine_button31 sine_button_img"  (click)="pasteHtmlAtCaret('arccsch');"></button>
+      <button class="sine_button32 sine_button_img"  (click)="pasteHtmlAtCaret('arccotanh');"></button>
+      <button class="sine_button33 sine_button_img"  (click)="pasteHtmlAtCaret('log');"></button>
+      <button class="sine_button34 sine_button_img"  (click)="pasteHtmlAtCaret('logbasenumber');"></button>
+      <button class="sine_button35 sine_button_img"  (click)="pasteHtmlAtCaret('ln');"></button>
+      <button class="sine_button36 sine_button_img"  (click)="pasteHtmlAtCaret('lnbasenumber');"></button>
+      <button class="sine_button37 sine_button_img"  (click)="pasteHtmlAtCaret('logpower');"></button>
+      <button class="sine_button38 sine_button_img"  (click)="pasteHtmlAtCaret('logpowerbase');"></button>
+      <button class="sine_button39 sine_button_img"  (click)="pasteHtmlAtCaret('lnpower');"></button>
+      <button class="sine_button40 sine_button_img"  (click)="pasteHtmlAtCaret('lnpowerbase');"></button>
+
+    </div>
+  </div>
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 5">
+    <button class="a__b1 a__b_img_button" (click)="pasteHtmlAtCaret('LongLeftwardsArrow');"></button>
+    <button class="a__b2 a__b_img_button" (click)="pasteHtmlAtCaret('LongRightwardsArrow');"></button>
+    <button class="a__b3 a__b_img_button" (click)="pasteHtmlAtCaret('LongRightwardsArrowNum');"></button>
+    <button class="a__b4 a__b_img_button" (click)="pasteHtmlAtCaret('LongLeftwardsArrowNum');"></button>
+    <button class="a__b5 a__b_img_button" (click)="pasteHtmlAtCaret('LongRightwardsArrowDino');"></button>
+    <button class="a__b6 a__b_img_button" (click)="pasteHtmlAtCaret('LongLeftwardsArrowDino');"></button>
+  </div>
+
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 6">
+    <button class="symbolss1 symbolss_button_img" (click)="pasteHtmlAtCaret('overline');"></button>
+    <button class="symbolss2 symbolss_button_img" (click)="pasteHtmlAtCaret('infinity');"></button>
+    <button class="symbolss3 symbolss_button_img" (click)="pasteHtmlAtCaret('alpha');"></button>
+    <button class="symbolss4 symbolss_button_img" (click)="pasteHtmlAtCaret('beta');"></button>
+    <button class="symbolss5 symbolss_button_img" (click)="pasteHtmlAtCaret('gamma');"></button>
+    <button class="symbolss6 symbolss_button_img" (click)="pasteHtmlAtCaret('delta');"></button>
+    <button class="symbolss7 symbolss_button_img" (click)="pasteHtmlAtCaret('epsilon');"></button>
+    <button class="symbolss8 symbolss_button_img" (click)="pasteHtmlAtCaret('zeta');"></button>
+    <button class="symbolss9 symbolss_button_img" (click)="pasteHtmlAtCaret('theta');"></button>
+    <button class="symbolss10 symbolss_button_img" (click)="pasteHtmlAtCaret('vartheta');"></button>
+    <button class="symbolss11 symbolss_button_img" (click)="pasteHtmlAtCaret('iota');"></button>
+    <button class="symbolss12 symbolss_button_img" (click)="pasteHtmlAtCaret('kappa');"></button>
+    <button class="symbolss13 symbolss_button_img" (click)="pasteHtmlAtCaret('lambda');"></button>
+    <button class="symbolss14 symbolss_button_img" (click)="pasteHtmlAtCaret('mu');"> </button>
+    <button class="symbolss15 symbolss_button_img" (click)="pasteHtmlAtCaret('nu');"></button>
+    <button class="symbolss16 symbolss_button_img" (click)="pasteHtmlAtCaret('xi');"></button>
+    <button class="symbolss17 symbolss_button_img" (click)="pasteHtmlAtCaret('pi');"></button>
+    <button class="symbolss18 symbolss_button_img" (click)="pasteHtmlAtCaret('varpi');"></button>
+    <button class="symbolss19 symbolss_button_img" (click)="pasteHtmlAtCaret('omicron');"></button>
+    <button class="symbolss20 symbolss_button_img" (click)="pasteHtmlAtCaret('rho');"> </button>
+    <button class="symbolss21 symbolss_button_img" (click)="pasteHtmlAtCaret('varsigma');"></button>
+    <button class="symbolss22 symbolss_button_img" (click)="pasteHtmlAtCaret('sigma');"></button>
+    <button class="symbolss23 symbolss_button_img" (click)="pasteHtmlAtCaret('tau');"></button>
+    <button class="symbolss24 symbolss_button_img" (click)="pasteHtmlAtCaret('upsilon');"></button>
+    <button class="symbolss25 symbolss_button_img" (click)="pasteHtmlAtCaret('varphi');"></button>
+    <button class="symbolss26 symbolss_button_img" (click)="pasteHtmlAtCaret('phi');"></button>
+    <button class="symbolss27 symbolss_button_img" (click)="pasteHtmlAtCaret('chi');"></button>
+    <button class="symbolss28 symbolss_button_img" (click)="pasteHtmlAtCaret('vsi');"></button>
+    <button class="symbolss29 symbolss_button_img" (click)="pasteHtmlAtCaret('real');"></button>
+    <button class="symbolss30 symbolss_button_img" (click)="pasteHtmlAtCaret('omega');"> </button>
+    <button class="symbolss31 symbolss_button_img" (click)="pasteHtmlAtCaret('imaginarypartI');"> </button>
+    <button class="symbolss32 symbolss_button_img" (click)="pasteHtmlAtCaret('real');"></button>
+    <button class="symbolss33 symbolss_button_img" (click)="pasteHtmlAtCaret('custom_alpha2');"> </button>
+    <button class="symbolss34 symbolss_button_img" (click)="pasteHtmlAtCaret('custom_alpha3');"></button>
+    <button class="symbolss35 symbolss_button_img" (click)="pasteHtmlAtCaret('custom_alpha4');"></button>
+    <button class="symbolss36 symbolss_button_img" (click)="pasteHtmlAtCaret('custom_alpha5');"></button>
+    <button class="symbolss37 symbolss_button_img" (click)="pasteHtmlAtCaret('custom_alpha6');"></button>
+    <button class="symbolss38 symbolss_button_img" (click)="pasteHtmlAtCaret('custom_alpha7');"></button>
+    <!-- <button class="symbolss39 symbolss_button_img" (click)="pasteHtmlAtCaret('custom_alpha8');"></button> -->
+  </div>
+
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 7">
+    <button class="symbol1 symbol_button_img"  (click)="pasteHtmlAtCaret('custom_op1');"></button>
+    <button class="symbol2 symbol_button_img" (click)="pasteHtmlAtCaret('custom_op2');"></button>
+    <button class="symbol3 symbol_button_img" (click)="pasteHtmlAtCaret('custom_op3');"></button>
+    <button class="symbol4 symbol_button_img" (click)="pasteHtmlAtCaret('custom_op4');"></button>
+    <button class="symbol5 symbol_button_img" (click)="pasteHtmlAtCaret('custom_op5');"></button>
+    <button class="symbol6 symbol_button_img" (click)="pasteHtmlAtCaret('custom_op6');"></button>
+    <button class="symbol7 symbol_button_img" (click)="pasteHtmlAtCaret('custom_op7');"></button>
+    <button class="symbol8 symbol_button_img" (click)="pasteHtmlAtCaret('congruent');"></button>
+    <button class="symbol9 symbol_button_img" (click)="pasteHtmlAtCaret('approximatelyequals');"></button>
+    <button class="symbol10 symbol_button_img" (click)="pasteHtmlAtCaret('custom_alpha1');"></button>
+    <button class="symbol11 symbol_button_img" (click)="pasteHtmlAtCaret('nabla');"></button>
+    <button class="symbol12 symbol_button_img" (click)="pasteHtmlAtCaret('asterisk');"></button>
+    <button class="symbol13 symbol_button_img" (click)="pasteHtmlAtCaret('ringoperator');"></button>
+    <button class="symbol14 symbol_button_img" (click)="pasteHtmlAtCaret('cross');"></button>
+    <button class="symbol15 symbol_button_img" (click)="pasteHtmlAtCaret('divide');"></button>
+    <button class="symbol16 symbol_button_img" (click)="pasteHtmlAtCaret('plusminus');"></button>
+    <button class="symbol17 symbol_button_img" (click)="pasteHtmlAtCaret('minus');"></button>
+    <button class="symbol18 symbol_button_img" (click)="pasteHtmlAtCaret('apostrophe');"></button>
+    <button class="symbol19 symbol_button_img" (click)="pasteHtmlAtCaret('doubleapostrophe');"></button>
+    <button class="symbol20 symbol_button_img" (click)="pasteHtmlAtCaret('plus');"></button>
+    <button class="symbol21 symbol_button_img" (click)="pasteHtmlAtCaret('forwardslash');"></button>
+    <button class="symbol22 symbol_button_img" (click)="pasteHtmlAtCaret('dot');"></button>
+    <button class="symbol23 symbol_button_img" (click)="pasteHtmlAtCaret('equal');"></button>
+    <button class="symbol24 symbol_button_img" (click)="pasteHtmlAtCaret('identicalto');"></button>
+    <button class="symbol25 symbol_button_img" (click)="pasteHtmlAtCaret('tilde');">\sim</button>
+    <button class="symbol26 symbol_button_img" (click)="pasteHtmlAtCaret('asymptoticallyequal');"></button>
+    <button class="symbol27 symbol_button_img" (click)="pasteHtmlAtCaret('greaterthan');"></button>
+    <button class="symbol28 symbol_button_img" (click)="pasteHtmlAtCaret('greaterthanequalto');"></button>
+    <button class="symbol29 symbol_button_img" (click)="pasteHtmlAtCaret('lessthanequalto');"></button>
+    <button class="symbol30 symbol_button_img" (click)="pasteHtmlAtCaret('elementof');"></button>
+    <button class="symbol31 symbol_button_img" (click)="pasteHtmlAtCaret('containsas');"></button>
+    <button class="symbol32 symbol_button_img" (click)="pasteHtmlAtCaret('subset');"></button>
+    <button class="symbol33 symbol_button_img" (click)="pasteHtmlAtCaret('superset');"></button>
+    <button class="symbol34 symbol_button_img" (click)="pasteHtmlAtCaret('custom_op9');"></button>
+  </div>
+
+
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 8">
+    <button class="a1 a_button_img" (click)="pasteHtmlAtCaret('curly');"></button>
+    <button class="a2 a_button_img" (click)="pasteHtmlAtCaret('square');"></button>
+    <button class="a3 a_button_img" (click)="pasteHtmlAtCaret('round');"></button>
+    <button class="a4 a_button_img" (click)="pasteHtmlAtCaret('DoubleBarEnclosed');"></button>
+    <button class="a5 a_button_img" (click)="pasteHtmlAtCaret('AngleBracketEnclosed');"></button>
+    <button class="a6 a_button_img" (click)="pasteHtmlAtCaret('EncloseRight');"></button>
+    <button class="a7 a_button_img" (click)="pasteHtmlAtCaret('EncloseLeft');"></button>
+    <button class="a8 a_button_img" (click)="pasteHtmlAtCaret('DotAccent');"></button>
+    <button class="a9 a_button_img" (click)="pasteHtmlAtCaret('Diaeresis');"></button>
+    <button class="a10 a_button_img" (click)="pasteHtmlAtCaret('TildeAccent');"></button>
+    <button class="a11 a_button_img" (click)="pasteHtmlAtCaret('HatAccent');"></button>
+    <button class="a12 a_button_img" (click)="pasteHtmlAtCaret('BottomCurlyBracket');"></button>
+    <button class="a13 a_button_img" (click)="pasteHtmlAtCaret('BottomParenthasis');"></button>
+    <button class="a14 a_button_img" (click)="pasteHtmlAtCaret('TopParenthasis');"></button>
+    <button class="a15 a_button_img" (click)="pasteHtmlAtCaret('TopCurlyBracket');"></button>
+    <button class="a16 a_button_img" (click)="pasteHtmlAtCaret('HalfArrow');"></button>
+    <button class="a17 a_button_img" (click)="pasteHtmlAtCaret('BarNum');"></button>
+    <button class="a18 a_button_img" (click)="pasteHtmlAtCaret('BarDino');"></button>
+    <button class="a19 a_button_img" (click)="pasteHtmlAtCaret('LeftRightArrowDino');"></button>
+    <button class="a20 a_button_img" (click)="pasteHtmlAtCaret('RightwardsArrowDino');"></button>
+  </div>
+
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 9">
+    <button class="matirix1 matrix_button_img" (click)="pasteHtmlAtCaret('curly');"></button>
+    <button class="matirix2 matrix_button_img" (click)="pasteHtmlAtCaret('square');"></button>
+    <button class="matirix3 matrix_button_img" (click)="pasteHtmlAtCaret('round');"></button>
+    <button class="matirix4 matrix_button_img" (click)="pasteHtmlAtCaret('DoubleBarEnclosed');"></button>
+    <button class="matirix5 matrix_button_img" (click)="pasteHtmlAtCaret('AngleBracketEnclosed');"></button>
+    <button class="matirix6 matrix_button_img" (click)="pasteHtmlAtCaret('EncloseRight');"></button>
+    <button class="matirix7 matrix_button_img" (click)="pasteHtmlAtCaret('EncloseLeft');"></button>
+    <button class="matirix8 matrix_button_img" (click)="pasteHtmlAtCaret('DotAccent');"></button>
+    <button class="matirix9 matrix_button_img" (click)="pasteHtmlAtCaret('Diaeresis');"></button>
+    <button class="matirix10 matrix_button_img" (click)="pasteHtmlAtCaret('TildeAccent');"></button>
+    <button class="matirix11 matrix_button_img" (click)="pasteHtmlAtCaret('HatAccent');"></button>
+  </div>
+
+
+
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 10">
+    <button class="mix1 mix_button_img"   (click)="pasteHtmlAtCaret('intersect');"></button>
+    <button class="mix2 mix_button_img" (click)="pasteHtmlAtCaret('union');"></button>
+    <button class="mix3 mix_button_img" (click)="pasteHtmlAtCaret('logicaland');"></button>
+    <button class="mix4 mix_button_img" (click)="pasteHtmlAtCaret('logicalor');"></button>
+    <button class="mix5 mix_button_img" (click)="pasteHtmlAtCaret('forall');"></button>
+    <button class="mix6 mix_button_img" (click)="pasteHtmlAtCaret('thereexist');"></button>
+    <button class="mix7 mix_button_img" (click)="pasteHtmlAtCaret('angle');"></button>
+    <button class="mix8 mix_button_img" (click)="pasteHtmlAtCaret('parallel');"></button>
+    <button class="mix9 mix_button_img" (click)="pasteHtmlAtCaret('perpendicular');"></button>
+    <button class="mix10 mix_button_img" (click)="pasteHtmlAtCaret('bigcircle');"></button>
+    <button class="mix11 mix_button_img" (click)="pasteHtmlAtCaret('circleplus');"></button>
+    <button class="mix12 mix_button_img" (click)="pasteHtmlAtCaret('circlecross');"></button>
+    <button class="mix13 mix_button_img" (click)="pasteHtmlAtCaret('circledot');"></button>
+    <button class="mix14 mix_button_img" (click)="pasteHtmlAtCaret('custom_misc1');"></button>
+    <button class="mix15 mix_button_img" (click)="pasteHtmlAtCaret('custom_misc2');"></button>
+    <button class="mix16 mix_button_img" (click)="pasteHtmlAtCaret('custom_misc3');"></button>
+    <button class="mix17 mix_button_img" (click)="pasteHtmlAtCaret('custom_misc4');"></button>
+    <button class="mix18 mix_button_img" (click)="pasteHtmlAtCaret('custom_misc5');"></button>
+    <button class="mix19 mix_button_img" (click)="pasteHtmlAtCaret('custom_misc6');"></button>
+    <button class="mix20 mix_button_img" (click)="pasteHtmlAtCaret('custom_misc7');"></button>
+    <button class="mix21 mix_button_img" (click)="pasteHtmlAtCaret('EncloseCircle');"></button>
+    <button class="mix22 mix_button_img" (click)="pasteHtmlAtCaret('EncloseBox');"></button>
+    <button class="mix23 mix_button_img" (click)="pasteHtmlAtCaret('UpDiagonalStrike');"></button>
+    <button class="mix24 mix_button_img" (click)="pasteHtmlAtCaret('BarStrike');"></button>
+    <button class="mix25 mix_button_img" (click)="pasteHtmlAtCaret('CrossStrike');"></button>
+
+  </div>
+
+  <div class="keyboard_sub_menu"  *ngIf="editortab === 11">
+    <div class="mathicon">
+      <table>
+        <tr>
+          <td>
+            <span class="editorimages2 mathiconspan" >Examples</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- arrow button -->
+  <div  style="overflow:auto;float:right;    height: 660px;position:relative;" *ngIf="editortab === 12" [perfectScrollbar]="config">
+    <div class="keyboard_sub_menu"  >
+      <button class="arrow_button1 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq1');"></button>
+      <button class="arrow_button2 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq2');"></button>
+      <button class="arrow_button3 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq3');"></button>
+      <button class="arrow_button4 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq4');"></button>
+      <button class="arrow_button5 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq5');"></button>
+      <button class="arrow_button6 arrow_button_img" (click)="pasteHtmlAtCaret('hookleftarrow');"></button>
+      <button class="arrow_button7 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq6');"></button>
+      <button class="arrow_button8 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq7');"></button>
+      <button class="arrow_button9 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq8');"></button>
+      <button class="arrow_button10 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq9');"></button>
+      <button class="arrow_button11 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq10');"></button>
+      <button class="arrow_button12 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq11');"></button>
+      <button class="arrow_button13 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq12');"></button>
+      <button class="arrow_button14 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq13');"></button>
+      <button class="arrow_button15 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq14');"></button>
+      <button class="arrow_button16 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq15');"></button>
+      <button class="arrow_button17 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq16');"></button>
+      <button class="arrow_button18 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq17');"></button>
+      <button class="arrow_button19 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq18');"></button>
+      <button class="arrow_button20 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq19');"></button>
+      <button class="arrow_button21 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq20');"></button>
+      <button class="arrow_button22 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq21');"></button>
+      <button class="arrow_button23 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq22');"></button>
+      <button class="arrow_button24 arrow_button_img"  (click)="pasteHtmlAtCaret('custom_eq23');"></button>
+      <button class="arrow_button25 arrow_button_img"  (click)="pasteHtmlAtCaret('custom_eq24');"></button>
+      <button class="arrow_button26 arrow_button_img"  (click)="pasteHtmlAtCaret('custom_eq25');"></button>
+      <button class="arrow_button27 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq26');"></button>
+      <button class="arrow_button28 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq27');"></button>
+      <button class="arrow_button29 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq28');"></button>
+      <button class="arrow_button30 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq29');"></button>
+      <button class="arrow_button31 arrow_button_img"  (click)="pasteHtmlAtCaret('custom_eq30');"></button>
+      <button class="arrow_button32 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq31');"></button>
+      <button class="arrow_button33 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq32');"></button>
+      <button class="arrow_button34 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq33');"></button>
+      <button class="arrow_button35 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq34');"></button>
+      <button class="arrow_button36 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq35');"></button>
+      <button class="arrow_button37 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq36');"></button>
+      <button class="arrow_button38 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq37');"></button>
+      <button class="arrow_button39 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq38');"></button>
+      <button class="arrow_button40 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq39');"></button>
+      <button class="arrow_button41 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq40');"></button>
+      <button class="arrow_button42 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq41');"></button>
+      <button class="arrow_button43 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq42');"></button>
+      <button class="arrow_button44 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq43');"></button>
+      <button class="arrow_button45 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq44');"></button>
+      <button class="arrow_button46 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq45');"></button>
+      <button class="arrow_button47 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq46');"></button>
+      <button class="arrow_button48 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq47');"></button>
+
+      <button class="arrow_button49 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq48');"></button>
+      <button class="arrow_button50 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq49');"></button>
+      <button class="arrow_button51 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq50');"></button>
+      <button class="arrow_button52 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq51');"></button>
+      <button class="arrow_button53 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq52');"></button>
+      <button class="arrow_button54 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq53');"></button>
+      <button class="arrow_button55 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq54');"></button>
+      <button class="arrow_button56 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq55');"></button>
+      <button class="arrow_button57 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq56');"></button>
+      <button class="arrow_button58 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq57');"></button>
+      <button class="arrow_button59 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq58');"></button>
+      <button class="arrow_button60 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq59');"></button>
+      <button class="arrow_button61 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq60');"></button>
+      <button class="arrow_button62 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq61');"></button>
+      <button class="arrow_button63 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq62');"></button>
+      <button class="arrow_button64 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq63');"></button>
+      <button class="arrow_button65 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq64');"></button>
+      <button class="arrow_button66 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq65');"></button>
+      <button class="arrow_button67 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq66');"></button>
+      <button class="arrow_button68 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq67');"></button>
+      <button class="arrow_button69 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq68');"></button>
+      <button class="arrow_button70 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq69');"></button>
+      <button class="arrow_button71 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq70');"></button>
+      <button class="arrow_button72 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq71');"></button>
+      <button class="arrow_button73 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq72');"></button>
+      <button class="arrow_button74 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq73');"></button>
+      <button class="arrow_button75 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq74');"></button>
+      <button class="arrow_button76 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq75');"></button>
+      <button class="arrow_button77 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq76');"></button>
+      <button class="arrow_button78 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq77');"></button>
+      <button class="arrow_button79 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq78');"></button>
+      <button class="arrow_button80 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq79');"></button>
+      <button class="arrow_button81 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq80');"></button>
+      <button class="arrow_button82 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq81');"></button>
+      <button class="arrow_button83 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq82');"></button>
+      <button class="arrow_button84 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq83');"></button>
+      <button class="arrow_button85 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq84');"></button>
+      <button class="arrow_button86 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq85');"></button>
+      <button class="arrow_button87 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq86');"></button>
+      <button class="arrow_button88 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq87');"></button>
+      <button class="arrow_button89 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq88');"></button>
+      <button class="arrow_button90 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq89');"></button>
+      <button class="arrow_button91 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq90');"></button>
+      <button class="arrow_button92 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq91');"></button>
+      <button class="arrow_button93 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq92');"></button>
+      <button class="arrow_button94 arrow_button_img" (click)="pasteHtmlAtCaret('custom_eq93');"></button>
+      <button class="arrow_button95 arrow_button_img" (click)="pasteHtmlAtCaret('leftrightarrow');"></button>
+      <button class="arrow_button96 arrow_button_img" (click)="pasteHtmlAtCaret('leftarrow');"></button>
+      <button class="arrow_button97 arrow_button_img" (click)="pasteHtmlAtCaret('rightarrow');"></button>
+      <button class="arrow_button98 arrow_button_img" (click)="pasteHtmlAtCaret('leftdoublearrow');"></button>
+      <button class="arrow_button99 arrow_button_img" (click)="pasteHtmlAtCaret('rightdoublearrow');"></button>
+      <button class="arrow_button100 arrow_button_img" (click)="pasteHtmlAtCaret('leftrightdoublearrow');"></button>
+      <button class="arrow_button101 arrow_button_img" (click)="pasteHtmlAtCaret('rightarrowbar');"></button>
+      <button class="arrow_button102 arrow_button_img" (click)="pasteHtmlAtCaret('verticalellipsis');"></button>
+      <button class="arrow_button103 arrow_button_img" (click)="pasteHtmlAtCaret('uprightdiagonalellipsis');"></button>
+      <button class="arrow_button104 arrow_button_img" (click)="pasteHtmlAtCaret('midlinehorizontalellipsis');"></button>
+      <button class="arrow_button105 arrow_button_img" (click)="pasteHtmlAtCaret('downrightdiagonalellipsis');"></button>
+      <button class="arrow_button106 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button103 arrow_button_img" (click)="pasteHtmlAtCaret('uprightdiagonalellipsis');"></button>
+      <button class="arrow_button104 arrow_button_img" (click)="pasteHtmlAtCaret('midlinehorizontalellipsis');"></button>
+      <button class="arrow_button105 arrow_button_img" (click)="pasteHtmlAtCaret('downrightdiagonalellipsis');"></button>
+      <button class="arrow_button106 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button107 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button108 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button109 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button110 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button111 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button112 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button113 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button114 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button115 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button116 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button117 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button118 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button119 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button110 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button121 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button122 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button123 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button124 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button125 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button126 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button127 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button128 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button129 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button130 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+
+      <button class="arrow_button131 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button132 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button133 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button134 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button135 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button136 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button137 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button138 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button139 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button140 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+
+      <button class="arrow_button141 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button142 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button143 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button144 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button145 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button146 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button147 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button148 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button149 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button150 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+
+      <button class="arrow_button151 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button152 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button153 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button154 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button155 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button156 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button157 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button158 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button160 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+
+      <button class="arrow_button161 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button162 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button163 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button164 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button165 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button166 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button167 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button168 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button169 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button170 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+
+      <button class="arrow_button171 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button172 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button173 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button174 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button175 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button176 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button177 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button178 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button179 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button180 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+
+      <button class="arrow_button181 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button182 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button183 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button184 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button185 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button186 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button187 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button188 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button189 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button190 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button191 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button192 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button193 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button194 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button195 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button196 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button197 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button198 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button199 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button200 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button201 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button202 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button203 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button204 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button205 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button206 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+      <button class="arrow_button207 arrow_button_img" (click)="pasteHtmlAtCaret('horizontalellipsis');"></button>
+    </div>
+  </div>
+  <!-- keyboard right button menu bar  end -->
+
+</div>
+
+<!-- keyboard  end -->

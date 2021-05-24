@@ -1,0 +1,37 @@
+<div class="maindiv saved-post-main notification-wrap">
+    <div class="mainheading">Notification</div>
+    <div class="inner-main-div " *ngIf="loadNotifications==false ">
+        <div class="content">
+            <div class="people_list Experiance_list people_list_noti" data-infinite-scroll
+                 [infiniteScrollDistance]="10"
+                 (scrolled)="onScrollDown()"
+                 [scrollWindow]="true">
+                 <ul >
+                    <li *ngFor="let notify of notification;let i=index;" (click)="goToPost(i)" >
+
+                        <div class="profileimg_know">
+                            <img _ngcontent-c1="" src="{{notify.PROFILE_PIC_PATH}}" (error)="updateProfilePic($event)">
+                        </div>
+                        <div class='prfl_detail ntfi_pro_detail'>
+                            <div class="profilename" [innerHTML]="notify.TEXT"></div>
+                            <div class="grayinfo noti-grayinfo">
+                                <span class="nficon {{notify.CLASS}}"></span>{{notify.ADD_DATE_TIME|timeformated}}
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+  <div  class="emptystate" *ngIf="notification.length==0 && loadNotifications==false ">
+         <div  class="emptystate_inner">
+             <img  class="emptyimg emptyreview" src="assets/images/svg-three/empty_state/notification.svg">
+             <p>Don't have  any notifications</p>
+         </div>
+  </div>
+  
+  <div class="loader2" *ngIf="loadNotifications">
+                        <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+                    </div>  
+</div>

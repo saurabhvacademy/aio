@@ -1,0 +1,51 @@
+<!-- <app-coursepost></app-coursepost> -->
+<!-- <app-mnavbar></app-mnavbar> -->
+
+<!-- <app-mpeopleyouknow *ngIf="showInviteFrndMobile && !publicView"></app-mpeopleyouknow> -->
+
+
+
+<!-- <app-socialinvite *ngIf="showInviteFrndMobile"></app-socialinvite> -->
+
+<div   data-infinite-scroll
+       [infiniteScrollDistance]="1"
+       [immediateCheck] = "true"
+       (scrolled)="onScrollDown()"
+       [scrollWindow]="true" style="float:left;width:100%;">
+       <!--<div *ngIf="preloader_top"><img src="assets/images/svg/preloader.svg"></div>-->
+
+       <div  #container></div>
+
+        <div class= "emptystate" *ngIf="postPresent==false && loaderscreen==false" style="border-radius:5px;overflow:hidden;">
+            <div class="emptystate_inner ">
+                <img class="emptyimg emptyfeed" src="assets/images/svg-three/post_icon/no_post.svg" style="width:200px!important ">
+                <p style="padding:15px;">No more posts</p>
+            </div>
+        </div>
+        <!--<div *ngIf="preloader_bot"><img src="assets/images/svg/preloader.svg"></div>-->
+
+
+
+<!-- wall post preloader start -->
+<div class="placeholde-wrapper" *ngIf="loaderscreen" style="border-radius:5px;">
+  <div class="animated-background">
+    <div class="circle cir_animation animated-background"></div>
+    <div class="whitediv bottom11"></div>
+    <div class="whitediv bottom10"></div>
+    <div class="whitediv bottom9"></div>
+    <div class="whitediv bottom8"></div>
+    <div class="whitediv bottom7"></div>
+    <div class="whitediv bottom6"></div>
+    <div class="whitediv bottom5"></div>
+    <div class="whitediv bottom4"></div>
+    <div class="whitediv bottom3"></div>
+    <div class="whitediv bottom2"></div>
+    <div class="bottom1 whitediv "></div>
+  </div>
+</div>
+<!-- wall post preloader end -->
+</div>
+
+<div *ngIf="coverAll" class="cover-all">
+
+</div>

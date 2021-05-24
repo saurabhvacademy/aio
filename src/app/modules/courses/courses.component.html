@@ -1,0 +1,1231 @@
+<div *ngIf="!istoken">
+<div class="col-md-12 col-sm-12 course_wrapper" *ngIf="!is_admin">
+    <div class="row">
+        <div class="course_filter_top">
+            <div class="mainheading">Course</div>
+            <div class="profile_bar course_bar" >
+                <ul class="profile_menu course_menu admin_menu" style="width:100%">
+                    <li [ngClass]= "{'active' : courseTabAdmin === 1 }" (click)="courseTabAdminClick(1)">All Courses</li>
+                </ul>
+            </div>
+            <ul class="course_fl" *ngIf="courseTabAdmin == 1 && 2"  style="">
+                <li class="course_filter">
+                    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldropdown}" (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                        <div class="wll_img_pey_cont"   >
+                            <span style="">{{visibilityText}}</span>
+                        </div>
+                        <span class="tab-article " >
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                        </span>
+                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdown}" *ngIf="walldropdown" (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                            <ul>
+                                <!--<li   (click)="changeVisibility(3)">All</li>-->
+                                <li   (click)="changeVisibility(2)"> A-Z</li>
+                                <li   (click)="changeVisibility(3)"> Z-A</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="course_filter">
+                    <!-- <div class="course_search_sec wallpostdrpdwn"  > -->
+                    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldrop}" (click)="showwalldrop();" (mouseleave)="closeDrop()">
+                        <div class="wll_img_pey_cont"   >
+                            <span style="">{{visibilityfilter}}</span>
+                        </div>
+                        <span class="tab-article " >
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                        </span>
+                        <!-- <div class="walldropdencnt wallprydeopcnt wallprydeopcnt"  > -->
+                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldrop}" *ngIf="walldrop">
+                            <ul>
+                                <li   (click)="changeVisibilitySort(3)"> All</li>
+                                <li   (click)="changeVisibilitySort(2)"> Free</li>
+                                <li   (click)="changeVisibilitySort(1)"> Paid</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="course_search_li">
+                    <span class=" course_search"  >
+                        <button>
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <input id="courseSearch"  type="text" class="form-control active" (keyup)="searchKey($event)"  placeholder="&nbsp;&nbsp;Enter your Search" [autofocus]="courseSearchButtonStatus" [(ngModel)]="courseSearch" >
+                </li>
+            </ul>
+            <ul class="course_fl" *ngIf="courseTabAdmin == 2"  style="">
+
+
+
+                <li class="course_filter">
+                    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldropdown}" (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                        <div class="wll_img_pey_cont"   >
+                            <span style="">{{visibilityText}}</span>
+                        </div>
+                        <span class="tab-article " >
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                        </span>
+                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdown}" *ngIf="walldropdown">
+                            <ul>
+                                <!--<li  (click)="changeVisibilityDraft(3)"> All</li>-->
+                                <li  (click)="changeVisibilityDraft(2)"> A-Z</li>
+                                <li  (click)="changeVisibilityDraft(1)"> Z-A</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="course_filter">
+                    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldrop}" (click)="showwalldrop();" (mouseleave)="closeDrop()" >
+                        <div class="wll_img_pey_cont"   >
+                            <span style="">{{visibilityfilter}}</span>
+                        </div>
+                        <span class="tab-article " >
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="default                                                                                                                                                                                                                                                                                                                                                                                                        t" style="width:10px !important;">
+                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                        </span>
+                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldrop}" *ngIf="walldrop">
+                            <ul>
+                                <li  click)="changeVisibilitySortDraft(3)"> All</li>
+                                <li  (click)="changeVisibilitySortDraft(2)"> Free</li>
+                                <li  (click)="changeVisibilitySortDraft(1)"> Paid</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="course_search_li">
+                    <span class=" course_search"  >
+                        <button>
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <input id="courseSearch"  type="text" class="form-control active" (keyup)="searchKey($event)"  placeholder="Enter your Search" [autofocus]="courseSearchButtonStatus" [(ngModel)]="courseSearch" >
+                </li>
+            </ul>
+        </div>
+        <div class="coursepage_outer">
+            <div  class="course_div" *ngIf="EmptyState==false && startLoader==false">
+                <!--<div class="course_item"   >-->
+                <div class="course_item col-md-4 col-sm-6 col-xs-6 othercard"  *ngFor="let corses of AllCourse; let i = index;" >
+                     <div class="course_cont" data-infinite-scroll
+                     [infiniteScrollDistance]="3"
+                     (scrolled)="onScrollDown()"
+                     [scrollWindow]="true">
+                     <div (click)=goToCourse(corses.COURSE_URL)  class="course_img_div">
+                            <img  class="course_img" src='{{corses.COURSE_COVER_PHOTO_PATH}}'>
+                            <!-- <div  class="course_status">
+                                <div  class="course_status_inner">
+                                    <span  class="course_status1">New</span>
+                                    <span  class="course_status2"></span>
+                                </div>
+                            </div> -->
+
+                            <div class="freetrialWrapper" *ngIf="corses.SUBSCRIPTION == 1" >
+                               <img src="assets/images/course_icon/popupicon/staricon.svg" alt="">FREE TRIAL
+                            </div>
+
+
+                            <div  class="img_layer">
+
+                            </div>
+                        </div>
+                        <div (click)=goToCourse(corses.COURSE_URL) class="course_details">
+                            <div  class="course_name" style="height:37px;overflow:hidden;">
+                                <p >{{corses.COURSE_TITLE | trimData:60 }}</p>
+                            </div>
+                            <div  class="clearfix">
+
+                            </div>
+                            <div  class="card-course-rating">
+                                <label class="star"  *ngIf="corses.COURSE_RATING==0.0">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==0.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==1.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==1.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==2.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==2.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==3.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==3.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==4.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==4.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==5.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                </label>
+                                <label  class="c-rating-avg">
+                                    {{corses.COURSE_RATING}}
+                                </label>
+                                <label  class="c-rating-count">
+                                    ({{corses.TOTAL_COURSE_RATING_COUNT}})
+                                </label>
+                            </div>
+                            <div class="course_detail">
+                                <ul >
+                                    <li >
+                                        <span  class="c_enroll_count c_enroll_count_fix ">
+                                            <img  src="assets/images/course_icon/enrollments.svg">
+                                        </span>
+                                        <span  class="c_enroll_count_text" *ngIf="corses.TOTAL_ENROLLED_USER!=null">
+                                            {{corses.TOTAL_ENROLLED_USER}} Enrollments
+                                        </span>
+                                        <span  class="c_enroll_count_text" *ngIf="corses.TOTAL_ENROLLED_USER ==null">
+                                            0 Enrollments
+                                        </span>
+                                    </li>
+                                    <li >
+                                        <span  class="c_enroll_count">
+                                            <img  src="assets/images/course_icon/validity.svg">
+                                        </span>
+                                        <span class="c_enroll_count_text" *ngIf="corses.RVALIDITY!=''">Validity {{corses.RVALIDITY}}</span>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div  class="clearfix">
+
+                            </div>
+                            <div  class="c_card_bottom" *ngIf="corses.COURSE_TYPE != 0">
+                                <span  class="original-price"> {{corses.COST | currency:'INR':symbol:'1.0'}} </span>
+                                <span  class="sell-price"> {{corses.DISCOUNT_COST | currency:'INR':symbol:'1.0'}} </span>
+
+                            </div>
+                            <div  class="c_card_bottom" *ngIf="corses.COURSE_TYPE == 0">
+                                <span  class="sell-price">FREE</span>
+                            </div>
+                        </div>
+
+                        <span class="saveButton" (click)="saveCourse(corses,i)" *ngIf="corses.SAVED==0">
+                            <img  class="" src="assets/images/svg-three/left_menu/whitebookmark.svg">
+                        </span>
+
+                        <div  class="course_cont course_cont_hover" routerLink='/course/{{corses.COURSE_URL}}'>
+                            <div  class="course_img_div">
+                                <div  class="img_layer">
+
+                                    <span (click)="saveCourse(corses,i)" *ngIf="corses.SAVED==1">
+                                        <img  class="" src="assets/images/svg-three/post_icon/f05050/bookmark_fill.svg" title="Saved">
+                                    </span>
+                                </div>
+                            </div>
+                            <div  class="course_details">
+                                <div  class="course_name hover_course_name">
+                                    <p class="twoline_dot">{{corses.COURSE_TITLE | trimData:60  }}</p>
+                                    <p innerHTML="{{corses.DESCRIPTION | slice:0:70}}"  class="course_desp twoline_dot">
+                                        </p>
+                                </div>
+                                <div class="clearfix">
+
+                                </div>
+                                <div  class="course_detail">
+                                    <ul>
+                                        <li>
+                                            <span class="c_enroll_count c_enroll_count_fix ">
+                                                <img  src="assets/images/svg-three/course/level.svg" style="width:11px;margin:0px;">
+                                            </span>
+                                            <span  class="c_enroll_count_text" *ngIf="corses.COURSE_LEVEL==1">Beginner Level</span>
+                                            <span  class="c_enroll_count_text" *ngIf="corses.COURSE_LEVEL==2">Intermediate Level</span>
+                                            <span  class="c_enroll_count_text" *ngIf="corses.COURSE_LEVEL==3">Advance Level</span>
+                                            <span  class="c_enroll_count_text" *ngIf="corses.COURSE_LEVEL==4">All Levels</span>
+                                        </li>
+                                        <li >
+                                            <span  class="c_enroll_count">
+                                                <img  src="assets/images/svg-three/course/language.svg">
+                                            </span>
+                                            <span  class="c_enroll_count_text">
+                                                {{corses.LANGUAGE}}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div  class="clearfix">
+
+                                </div>
+                                <div  class="course_keyword">
+                                    <p >Related Keywords</p>
+                                    <span class="twoline_dot">{{corses.COURSE_TAGS}}</span>
+                                </div>
+                                <div  class="c_card_bottom">
+                                    <button  class="course_view"  name="button" type="button" >
+                                        <span  class="follow" > View Course </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--</div>-->
+            </div>
+
+
+            <!-- =============================================================================   -->
+            <!-- preloder for my course start  -->
+            <!-- ==============================================================================  -->
+
+            <div class="loader2" *ngIf="startLoader">
+                <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+            </div>
+
+            <!-- =============================================================================   -->
+            <!-- preloder for my course end  -->
+            <!-- ==============================================================================  -->
+
+
+
+            <!-- =============================================================================   -->
+            <!-- empty state start  -->
+            <!-- ==============================================================================  -->
+
+            <div class="emptystate" style="height:425px;" *ngIf="EmptyState && startLoader==false">
+                <div class="emptystate_inner">
+                    <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                    <p class="mainheading" style="padding-top:0px;">No Course found</p>
+                    <!--            <p class="subHeading">Create your own course containing<br>
+                                   interactive study content
+                                </p>-->
+                </div>
+            </div>
+
+            <!-- =============================================================================   -->
+            <!-- empty state end  -->
+            <!-- ==============================================================================  -->
+
+        </div>
+    </div>
+</div>
+
+<!-- ================================================================================================== -->
+
+<!-- for Admin show data of add course start--->
+<!-- <div class="col-md-12 col-sm-12 course_wrapper" *ngIf="is_admin"> -->
+<div class="col-md-12 col-sm-12 course_wrapper" *ngIf="is_admin">
+    <div class="row">
+        <div class="course_filter_top">
+            <div class="mainheading">Course</div>
+            <div class="profile_bar course_bar"  >
+                <ul class="profile_menu course_menu admin_menu" style="width:100%">
+                    <li [ngClass]= "{'active' : courseTabAdmin === 1 }" (click)="courseTabAdminClick(1)">All Courses</li>
+                    <li [ngClass]= "{'active' : courseTabAdmin === 2 }" (click)="courseTabAdminClick(2)">Saved as Draft</li>
+                </ul>
+            </div>
+            <ul class="course_fl" *ngIf="courseTabAdmin == 1 " style="">
+                <li class="course_filter">
+                    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldropdown}"  (mouseleave)="closewalldropdown();"  (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                        <div class="wll_img_pey_cont"   >
+                            <span style="">{{visibilityText}}</span>
+                        </div>
+                        <span class="tab-article " >
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                        </span>
+                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdown}" *ngIf="walldropdown" (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                            <ul>
+<!--                                <li  (click)="changeVisibility(1)">Sort</li>-->
+                                <li  (click)="changeVisibility(2)"> A-Z</li>
+                                <li  (click)="changeVisibility(3)"> Z-A</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="course_filter">
+                    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldrop}"(mouseleave)="closewalldrop();" (click)="showwalldrop();" (mouseleave)="closeDrop()">
+                        <div class="wll_img_pey_cont"   >
+                            <span style="">{{visibilityfilter}}</span>
+                        </div>
+                        <span class="tab-article " >
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px!important;">
+                        </span>
+                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldrop}" *ngIf="walldrop">
+                            <ul>
+                                <li  (click)="changeVisibilitySort(3)"> All</li>
+                                <li  (click)="changeVisibilitySort(2)"> Free</li>
+                                <li  (click)="changeVisibilitySort(1)"> Paid</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="course_search_li">
+                    <span class=" course_search"  >
+                        <button>
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <input id="courseSearch"  type="text" class="form-control active" (keyup)="searchKey($event)"  placeholder="&nbsp;&nbsp;Enter your Search" [autofocus]="courseSearchButtonStatus" [(ngModel)]="courseSearch" >
+                </li>
+            </ul>
+            <ul class="course_fl" *ngIf="courseTabAdmin == 2 "  style="" >
+                <li class="course_filter">
+                    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldropdown}"  (mouseleave)="closewalldropdown();" (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                        <div class="wll_img_pey_cont"   >
+                            <span style="">{{visibilityText}}</span>
+                        </div>
+                        <span class="tab-article " >
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                        </span>
+                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdown}" *ngIf="walldropdown">
+                            <ul>
+                                <li  *ngIf="visibilityTyp != 3" (click)="changeVisibilityDraft(3)"> All</li>
+                                <li  *ngIf="visibilityTyp != 2" (click)="changeVisibilityDraft(2)"> A-Z</li>
+                                <li  *ngIf="visibilityTyp != 1" (click)="changeVisibilityDraft(1)"> Z-A</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="course_filter">
+                    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldrop}" (mouseleave)="closewalldropdown();" (click)="showwalldrop();" (mouseleave)="closeDrop()">
+                        <div class="wll_img_pey_cont">
+                            <span style="">{{visibilityfilter}}</span>
+                        </div>
+                        <span class="tab-article " >
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt"style="width:10px !important;">
+                            <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                        </span>
+                        <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldrop}" *ngIf="walldrop">
+                            <ul>
+                                <li  *ngIf="visibilityTyp != 3" (click)="changeVisibilitySortDraft(3)"> All</li>
+                                <li  *ngIf="visibilityTyp != 2" (click)="changeVisibilitySortDraft(2)"> Free</li>
+                                <li  *ngIf="visibilityTyp != 1" (click)="changeVisibilitySortDraft(1)"> Paid</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="course_search_li">
+                    <span class=" course_search"  >
+                        <button>
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <input id="courseSearch"  type="text" class="form-control active" (keyup)="searchKey($event)"  placeholder="&nbsp;&nbsp;Enter your Search" [autofocus]="courseSearchButtonStatus" [(ngModel)]="courseSearch" >
+                </li>
+            </ul>
+
+
+        </div>
+        <div  class="coursepage_outer" *ngIf = "courseTabAdmin ==1 && AllCourse!=0 && startLoader2 == false">
+              <!-- page admin is viewing his/her courses, we have to not used hover design here start here ------>
+              <div  class="course_div course_admin_veiw" *ngIf="is_admin " (click)="closeConfirmPopupFn()">
+                <div class="course_item crc_item col-md-4 col-sm-6 col-xs-6" routerLink="/addcourse">
+                    <div class="course_cont"  style="background-color: #f6f7f9;cursor:pointer;">
+                        <div class="reg_course add_new_course">
+                            <div class="btn_plus">
+                                <img src="assets/images/course_icon/create_course.svg">
+                            </div>
+                        </div>
+                        <div class="course_details create_course_details" style="background-color: transparent;">
+
+
+                            <p>Create a New Course</p>
+                            <span>Compile your study content and provide awesome study materials as an educator.</span>
+                            <!-- <button style="float: none;" class="btnbtn-primary">New Course</button> -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="course_item crc_item crc_item_mob col-md-4 col-sm-6 col-xs-6" >
+                    <div class="course_cont"  >
+                      <div class="goforweb"><span >Switch to desktop for creating a course</span></div>
+                        <div class="reg_course add_new_course">
+                            <div class="btn_plus">
+                                <img src="assets/images/course_icon/create_course.svg" routerLink="/addcourse">
+                            </div>
+                        </div>
+                        <div class="course_details create_course_details" style="background-color: transparent;">
+                            <p routerLink="/addcourse">Create your first Course</p>
+                            <span routerLink="/addcourse">Create interactive and personalized courses using our user-friendly interface and earn instantly.</span>
+                            <!-- <button style="float: none;" class="btnbtn-primary">New Course</button> -->
+                            <div class="btnSec">
+                              <div class="btnAlign">
+    													<a class="redBtn" href="https://www.youtube.com/embed/6yc3z1qV_4U" target="_blank"><span class="videoIcon"></span>Watch Tutorial</a>
+    													<a class="whiteBtn" href="https://docs.google.com/spreadsheets/d/1FHO36YZsPGZgCwcOl487QRlEqque6a5HFz6Y1VQd8-s/edit#gid=1410320636" target="_blank"><span class="articleIcon"></span>Get Template</a>
+    													</div>
+
+                                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course_item col-md-4 col-sm-6 col-xs-6" [ngClass]="{'mobileeventnone': cardevent}"  *ngFor="let corses of AllCourse; let i = index;" >
+                     <div class="course_cont" data-infinite-scroll
+                     [infiniteScrollDistance]="3"
+                     (scrolled)="onScrollDown()"
+                     [scrollWindow]="true"  >
+                     <div (click)="routerTocoursedetails(corses);">
+                     <div class="course_img_div" >
+                            <img class="course_img" src='{{corses.COURSE_COVER_PHOTO_PATH}}'>
+                            <div class="img_layer">
+                            </div>
+                        </div>
+                        <div class="course_details">
+                            <div class="course_name">
+                                <p style="height:35px;">{{corses.COURSE_TITLE | trimData:60  }}</p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="card-course-rating acard-course-rating" *ngIf="show_rating && corses.PUBLISH === 1">
+                                <label class="star"  *ngIf="corses.COURSE_RATING==0.0">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==0.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==1.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==1.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==2.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==2.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==3.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==3.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==4.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==4.5">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                </label>
+                                <label class="star"  *ngIf="corses.COURSE_RATING==5.0">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                    <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                </label>
+                                <label  class="c-rating-avg">
+                                    {{corses.COURSE_RATING}}
+                                </label>
+                                <label  class="c-rating-count">
+                                    ({{corses.TOTAL_COURSE_RATING_COUNT}})
+                                </label>
+
+                            </div>
+                            <div class="card-course-rating">
+                                <label class="c-rating-count couse_last_change" [ngClass]="{'marginOnPendingCourse':corses.PUBLISH === 3}">
+
+                                    <span *ngIf="corses.PUBLISH === 1">Published on</span>
+                                    <span  *ngIf="corses.PUBLISH === 2 || corses.PUBLISH === 3 || corses.PUBLISH === 5">Last Updated on </span>
+                                    <span *ngIf="corses.PUBLISH === 4">Un-Published on </span>
+                                    {{corses.UPDATE_DATE_TIME | date :'dd MMM, yyyy'}}
+                                </label>
+                            </div>
+                            <div  class="course_detail" *ngIf="corses.PUBLISH === 1">
+                                <ul >
+                                    <li >
+                                        <span  class="c_enroll_count c_enroll_count_fix ">
+                                            <img  src="assets/images/course_icon/enrollments.svg">
+                                        </span> {{corses.TOTAL_ENROLLED_USER}} Enrollments
+                                    </li>
+                                    <li *ngIf="corses.RVALIDITY!=''">
+                                        <span  class="c_enroll_count">
+                                            <img  src="assets/images/course_icon/validity.svg">
+                                        </span>
+                                        Validity {{corses.RVALIDITY}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div  class="course_detail" *ngIf="corses.PUBLISH === 3">
+                                <ul >
+                                    <li *ngIf="corses.RVALIDITY!=''">
+                                        <span  class="c_enroll_count">
+                                            <img  src="assets/images/course_icon/validity.svg">
+                                        </span>
+                                        Validity {{corses.RVALIDITY}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="course_detail" *ngIf="corses.PUBLISH === 2">
+                                <!-- <div class="draft_desp">{{corses.DESCRIPTION|slice:0:70}}</div> -->
+                                <div class="draft_desp">
+                                    Once you will complete the course creation steps
+                                    you are ready to publish this course
+                                </div>
+                            </div>
+                            <!-- <div class="course_detail" *ngIf="corses.PUBLISH === 3">
+                                <div class="draft_desp">{{corses.DESCRIPTION|slice:0:70}}</div>
+                            </div> -->
+                            <div class="course_detail" *ngIf="corses.PUBLISH === 4">
+                                <!-- <div class="draft_desp">{{corses.DESCRIPTION|slice:0:70}}</div> -->
+                                <div class="draft_desp">This course is now removed from course marketplace, You can always publish it again</div>
+                            </div>
+                            <div class="course_detail" *ngIf="corses.PUBLISH === 5">
+                                <!-- <div class="draft_desp">{{corses.DESCRIPTION|slice:0:70}}</div> -->
+                                <div class="draft_desp">Your course can't be published ! please review your course content, unappropiate contents are marked</div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="c_card_bottom">
+
+
+
+
+                                <span class="admin_course_status admin_bg_pub" *ngIf="corses.PUBLISH === 1">PUBLISHED</span>
+                                <span class="admin_course_status admin_bg_draft" *ngIf="corses.PUBLISH === 2">IN DRAFT</span>
+                                <span class="admin_course_status admin_bg_review" *ngIf="corses.PUBLISH === 3">REVIEW PENDING</span>
+                                <span class="admin_course_status admin_bg_rej" *ngIf="corses.PUBLISH === 5">REJECTED</span>
+                                <span class="admin_course_status admin_bg_unpub" *ngIf="corses.PUBLISH === 4">UN PUBLISHED</span>
+
+
+                                <span class="coursePrise price" *ngIf="corses.COURSE_TYPE!=0 && corses['COURSE_PRICE'].length != 0">
+                                    <!--                                  <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">-->
+                                    {{corses['COURSE_PRICE']['0']['DISCOUNT_COST'] | currency:'INR':symbol:'1.0'}}
+                                </span>
+
+                                <span class="discount price" *ngIf="corses.COURSE_TYPE!=0 && corses['COURSE_PRICE'].length != 0">
+                                    {{corses['COURSE_PRICE']['0']['COST'] | currency:'INR':symbol:'1.0'}}
+                                    <span class="stock"></span>
+                                </span>
+
+
+                                <span class="freeCourse discount price" *ngIf="corses.COURSE_TYPE==0">
+                                    FREE
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div  class="coursepage_outer" *ngIf = "courseTabAdmin ==2 && courseList!=0 && startLoader2 == false ">
+              <div class="course_div" data-infinite-scroll
+             [infiniteScrollDistance]="300"
+             (scrolled)="onScrollDown()"
+             [scrollWindow]="true">
+<!--             <div class="course_item course_admin col-md-4 col-sm-6 col-xs-6" *ngIf="courseList.length !=0 && startLoader2==false ">
+                    <div class="course_cont" routerLink="/addcourse" router style="background-color: #f6f7f9;cursor:pointer;">
+                        <div class="reg_course add_new_course">
+                            <div class="btn_plus">
+                                <img src="assets/images/course_icon/create_course.svg">
+                            </div>
+                        </div>
+                        <div class="course_details create_course_details" style="background-color: transparent;">
+
+
+                            <p>Create a New Course</p>
+                            <span>Compile your study content and provide awesome study materials as an educator.</span>
+                             <button style="float: none;" class="btn btn-primary">New Course</button>
+
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="course_item col-md-4 col-sm-6 col-xs-6" [ngClass]="{'mobileeventnone': cardevent}"  *ngFor="let cors of courseList; let i = index;"   >
+                     <div class="course_cont course_admin_veiw" >
+                        <div class="course_img_div" (click)="courseDetail($event, i);routerToaddcourse(cors)">
+                            <img class="course_img" src="{{cors.COURSE_COVER_PHOTO_PATH}}">
+                            <div class="img_layer">
+                            </div>
+                        </div>
+                        <div class="course_details">
+                            <div class="course_name  withoutHover " >
+                                <p>{{cors.TITLE | trimData:60  }}x1</p>
+                                <span *ngIf="publishTym">Published on {{cors.PUBLISH_DATE_TIME | date :'dd MMM, yyyy'}}</span>
+                                <!-- <span *ngIf="!publishTym">Created on {{cors.ADD_DATE_TIME}}</span> -->
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="card-course-rating">
+                                <label class="c-rating-count couse_last_change">Last updated on {{cors.ADD_DATE_TIME | date :'dd MMM, yyyy'}} </label>
+                            </div>
+                            <div class="course_detail">
+                                <div class="draft_desp">
+                                    <!-- {{cors.DESCRIPTION |slice:0:100}} -->
+                                    Once you will complete the course creation steps
+                                    you are ready to publish this course
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="c_card_bottom">
+                                <span class="admin_course_status admin_bg_draft">IN DRAFT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- =============================================================================   -->
+        <!-- preloder for my course start  -->
+        <!-- ==============================================================================  -->
+
+        <div class="loader2" *ngIf="startLoader2">
+            <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+        </div>
+
+        <!-- =============================================================================   -->
+        <!-- preloder for my course end  -->
+        <!-- ==============================================================================  -->
+
+
+
+        <!-- =============================================================================   -->
+        <!-- empty state start  -->
+        <!-- ==============================================================================  -->
+
+        <div class="emptystate" style="height:425px;" *ngIf="EmptyState1==true  && startLoader2 ==false ">
+             <div class="emptystate_inner">
+                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                <p class="mainheading" style="padding-top:0px;">Create a new course</p>
+                <p class="subHeading">Create your own course containing<br>
+                    interactive study content
+                </p>
+                <div class="emptyStateButtonWrappercreate">
+                    <button class="button24x7 redColorButton " routerLink="/addcourse">Create</button>
+                </div>
+            </div>
+        </div>
+
+<!--        <div class="emptystate" style="height:425px;" *ngIf="EmptyState1 &&  courseSearch =='' && startLoader2 == false ">
+             <div class="emptystate_inner">
+                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                <p class="mainheading" style="padding-top:0px;">No Course found</p>
+                <p class="subHeading">Seems there is no course here<br>
+                    try another course here
+                </p>
+            </div>
+        </div>-->
+<!--        <div class="emptystate" style="height:425px;" *ngIf="(AllCourse==0 && courseList==0) && is_admin && startLoader2 ==false && courseSearch !=''">
+             <div class="emptystate_inner">
+                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                <p class="mainheading" style="padding-top:0px;">No Course found</p>
+                <p class="subHeading">Seems there is no course here<br>
+                    try another course here
+                </p>
+            </div>
+        </div>-->
+
+
+        <!-- =============================================================================   -->
+        <!-- empty state end  -->
+        <!-- ==============================================================================  -->
+
+
+    </div>
+</div>
+</div>
+<!-- ====================================================================================================== -->
+<!-- without token ui start-->
+<!-- ====================================================================================================== -->
+
+<div *ngIf="istoken">
+  <div class="col-md-12 col-sm-12 course_wrapper" *ngIf="!is_admin">
+      <div class="row">
+          <div class="course_filter_top">
+              <div class="mainheading">Course</div>
+              <div class="profile_bar course_bar" >
+                  <ul class="profile_menu course_menu admin_menu" style="width:100%">
+                      <li [ngClass]= "{'active' : courseTabAdmin === 1 }" (click)="courseTabAdminClick(1)">All Courses</li>
+                  </ul>
+              </div>
+              <!-- <ul class="course_fl" *ngIf="courseTabAdmin == 1 && 2"  style="">
+                  <li class="course_filter">
+                      <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldropdown}" (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                          <div class="wll_img_pey_cont"   >
+                              <span style="">{{visibilityText}}</span>
+                          </div>
+                          <span class="tab-article " >
+                              <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                              <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                          </span>
+                          <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdown}" *ngIf="walldropdown" (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                              <ul>
+
+                                  <li   (click)="changeVisibility(2)"> A-Z</li>
+                                  <li   (click)="changeVisibility(1)"> Z-A</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+
+                  <li class="course_filter">
+                      <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldrop}" (click)="showwalldrop();" (mouseleave)="closeDrop()">
+                          <div class="wll_img_pey_cont"   >
+                              <span style="">{{visibilityfilter}}</span>
+                          </div>
+                          <span class="tab-article " >
+                              <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                              <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                          </span>
+                          <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldrop}" *ngIf="walldrop">
+                              <ul>
+                                  <li   (click)="changeVisibilitySort(3)"> All</li>
+                                  <li   (click)="changeVisibilitySort(2)"> Free</li>
+                                  <li   (click)="changeVisibilitySort(1)"> Paid</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="course_search_li">
+                      <span class=" course_search"  >
+                          <button>
+                              <span class="glyphicon glyphicon-search"></span>
+                          </button>
+                      </span>
+                      <input id="courseSearch"  type="text" class="form-control active" (keyup)="searchKey($event)"  placeholder="&nbsp;&nbsp;Enter your Search" [autofocus]="courseSearchButtonStatus" [(ngModel)]="courseSearch" >
+                  </li>
+              </ul> -->
+              <!-- <ul class="course_fl" *ngIf="courseTabAdmin == 2"  style="">
+                  <li class="course_filter">
+                      <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldropdown}" (click)="showwalldropdown();" (mouseleave)="closewalldrop()">
+                          <div class="wll_img_pey_cont"   >
+                              <span style="">{{visibilityText}}</span>
+                          </div>
+                          <span class="tab-article " >
+                              <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                              <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                          </span>
+                          <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdown}" *ngIf="walldropdown">
+                              <ul>
+                                  <li  (click)="changeVisibilityDraft(2)"> A-Z</li>
+                                  <li  (click)="changeVisibilityDraft(1)"> Z-A</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+
+                  <li class="course_filter">
+                      <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldrop}" (click)="showwalldrop();" (mouseleave)="closeDrop()" >
+                          <div class="wll_img_pey_cont"   >
+                              <span style="">{{visibilityfilter}}</span>
+                          </div>
+                          <span class="tab-article " >
+                              <img src="assets/images/svg-three/add_post/downarrow.svg" class="default                                                                                                                                                                                                                                                                                                                                                                                                        t" style="width:10px !important;">
+                              <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+                          </span>
+                          <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldrop}" *ngIf="walldrop">
+                              <ul>
+                                  <li  click)="changeVisibilitySortDraft(3)"> All</li>
+                                  <li  (click)="changeVisibilitySortDraft(2)"> Free</li>
+                                  <li  (click)="changeVisibilitySortDraft(1)"> Paid</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="course_search_li">
+                      <span class=" course_search"  >
+                          <button>
+                              <span class="glyphicon glyphicon-search"></span>
+                          </button>
+                      </span>
+                      <input id="courseSearch"  type="text" class="form-control active" (keyup)="searchKey($event)"  placeholder="Enter your Search" [autofocus]="courseSearchButtonStatus" [(ngModel)]="courseSearch" >
+                  </li>
+              </ul> -->
+          </div>
+
+
+
+
+          <div class="coursepage_outer">
+              <div  class="course_div">
+                  <!--<div class="course_item"   >-->
+                  <div class="course_item col-md-4 col-sm-6 col-xs-6 othercard"  *ngFor="let corses of courseDataWithoutToken; let i = index;">
+                       <div class="course_cont" >
+                       <div  (click)="goToCourseWithoutToken(corses.COURSE_URL)" class="course_img_div">
+                              <img  class="course_img" src='{{corses.COURSE_COVER_PHOTO_PATH}}'>
+                              <!-- <div  class="course_status" *ngIf="i < 3">
+                                  <div  class="course_status_inner">
+                                      <span  class="course_status1">New</span>
+                                      <span  class="course_status2"></span>
+                                  </div>
+                              </div> -->
+                              <div class="freetrialWrapper" *ngIf="corses.SUBSCRIPTION">
+                                 <img src="assets/images/course_icon/popupicon/staricon.svg" alt="">FREE TRIAL
+                              </div>
+
+                              <div  class="img_layer">
+
+                              </div>
+                          </div>
+                          <div class="course_details">
+                              <div  class="course_name" style="height:37px;overflow:hidden;">
+                                  <p >{{corses.COURSE_TITLE | trimData:60  }}</p>
+                              </div>
+                              <div  class="clearfix">
+
+                              </div>
+                              <div  class="card-course-rating">
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==0.0">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==0.5">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==1.0">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==1.5">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==2.0">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==2.5">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==3.0">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==3.5">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==4.0">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==4.5">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg">
+                                  </label>
+                                  <label class="star"  *ngIf="corses.COURSE_RATING==5.0">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                      <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg">
+                                  </label>
+                                  <label  class="c-rating-avg">
+                                      {{corses.COURSE_RATING}}
+                                  </label>
+                                  <label  class="c-rating-count">
+                                      ({{corses.TOTAL_COURSE_RATING_COUNT}})
+                                  </label>
+                              </div>
+                              <div class="course_detail">
+                                  <ul >
+                                      <li >
+                                          <span  class="c_enroll_count c_enroll_count_fix ">
+                                              <img  src="assets/images/course_icon/enrollments.svg">
+                                          </span>
+                                          <span  class="c_enroll_count_text" *ngIf="corses.TOTAL_ENROLLED_USER!=null">
+                                              {{corses.TOTAL_ENROLLED_USER}} Enrollments
+                                          </span>
+                                          <span  class="c_enroll_count_text" *ngIf="corses.TOTAL_ENROLLED_USER ==null">
+                                              0 Enrollments
+                                          </span>
+                                      </li>
+                                      <li >
+                                          <span  class="c_enroll_count">
+                                              <img  src="assets/images/course_icon/validity.svg">
+                                          </span>
+                                          <span class="c_enroll_count_text" *ngIf="corses.RVALIDITY!=''">Validity {{corses.RVALIDITY}}</span>
+
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div  class="clearfix">
+
+                              </div>
+                              <div  class="c_card_bottom" *ngIf="corses.COURSE_TYPE != 0">
+                                  <span  class="original-price"> {{corses.COURSE_PRICE[0].COST | currency:'INR':symbol:'1.0'}} </span>
+                                  <span  class="sell-price"> {{corses.COURSE_PRICE[0].DISCOUNT_COST | currency:'INR':symbol:'1.0'}} </span>
+
+                              </div>
+                              <div  class="c_card_bottom" *ngIf="corses.COURSE_TYPE == 0">
+                                  <span  class="sell-price">FREE</span>
+                              </div>
+                          </div>
+
+                          <span class="saveButton">
+                              <img  class="" src="assets/images/svg-three/left_menu/whitebookmark.svg">
+                          </span>
+
+                          <div (click)="goToCourseWithoutToken(corses.COURSE_URL)" class="course_cont course_cont_hover">
+                              <div  class="course_img_div">
+                                  <div  class="img_layer">
+
+                                      <span  *ngIf="corses.SAVED==1">
+                                          <img  class="" src="assets/images/svg-three/post_icon/f05050/bookmark_fill.svg" title="Saved">
+                                      </span>
+                                  </div>
+                              </div>
+                              <div  class="course_details">
+                                  <div  class="course_name hover_course_name">
+                                      <p class="twoline_dot">{{corses.COURSE_TITLE | trimData:60  }}</p>
+                                      <p innerHTML="{{corses.DESCRIPTION | slice:0:70}}"  class="course_desp twoline_dot">
+                                          </p>
+                                  </div>
+                                  <div class="clearfix">
+
+                                  </div>
+                                  <div  class="course_detail">
+                                      <ul>
+                                          <li>
+                                              <span class="c_enroll_count c_enroll_count_fix ">
+                                                  <img  src="assets/images/svg-three/course/level.svg" style="width:11px;margin:0px;">
+                                              </span>
+                                              <span  class="c_enroll_count_text" *ngIf="corses.COURSE_LEVEL==1">Beginner Level</span>
+                                              <span  class="c_enroll_count_text" *ngIf="corses.COURSE_LEVEL==2">Intermediate Level</span>
+                                              <span  class="c_enroll_count_text" *ngIf="corses.COURSE_LEVEL==3">Advance Level</span>
+                                              <span  class="c_enroll_count_text" *ngIf="corses.COURSE_LEVEL==4">All Levels</span>
+                                          </li>
+                                          <li >
+                                              <span  class="c_enroll_count">
+                                                  <img  src="assets/images/svg-three/course/language.svg">
+                                              </span>
+                                              <span  class="c_enroll_count_text">
+                                                  {{corses.LANGUAGE}}
+                                              </span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                                  <div  class="clearfix">
+
+                                  </div>
+                                  <div  class="course_keyword">
+                                      <p >Related Keywords</p>
+                                      <span class="twoline_dot">{{corses.COURSE_TAGS}}</span>
+                                  </div>
+                                  <div  class="c_card_bottom">
+                                      <button  class="course_view"  name="button" type="button" >
+                                          <span  class="follow" > View Course </span>
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- =============================================================================   -->
+              <!-- preloder for my course start  -->
+              <!-- ==============================================================================  -->
+              <div class="loader2" *ngIf="preloaderWithoutToken">
+                  <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+              </div>
+              <!-- =============================================================================   -->
+              <!-- preloder for my course end  -->
+              <!-- ==============================================================================  -->
+
+              <!-- =============================================================================   -->
+              <!-- empty state start  -->
+              <!-- ==============================================================================  -->
+              <div class="emptystate" style="height:425px;" *ngIf="courseDataWithoutToken.length == 0 && !preloaderWithoutToken">
+                  <div class="emptystate_inner">
+                      <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                      <p class="mainheading" style="padding-top:0px;">No Course found</p>
+                  </div>
+              </div>
+
+              <!-- =============================================================================   -->
+              <!-- empty state end  -->
+              <!-- ==============================================================================  -->
+
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- ====================================================================================================== -->
+<!-- without token ui end-->
+<!-- ====================================================================================================== -->
+
+<!-- <div class="popup saved-popup-alert mobilepopup_aleart" *ngIf="hidemessage">
+    <div class="popup_background popup_fixed_scroll" ></div>
+    <div class="popup_main savedpopup mobileshowpopup">
+        <div class="popup_heading">{{dataObj?dataObj.msg:''}}
+            <img (click)="closeConfirmPopupFn()" src="assets/images/svg/tagcross.svg" style="float: right;margin: 17px 0;cursor: pointer;">
+        </div>
+        <div class="col-md-12">
+            <div class='post_outer post_outer_border_none' style="box-shadow:none !important;border:none !important;">
+                <div class='post_profile'>
+                    <div class="savedcont">Go to web</div>
+                </div>
+            </div>
+        </div>
+        <div class='post_profile saved_post_profile'>
+            <button  class="button24x7 fleft whiteColorButton "   (click)="closeConfirmPopupFn()">
+                Cancel
+            </button>
+            <button class="button24x7 redColorButton fright"  (click)="closeConfirmPopupFn()">
+                ok
+            </button>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- for Admin show data of add course end--->
+<div *ngIf="savepagepopup"><app-savedpopup (folder_id)="savedFolderId=$event" (closeSavedPopup)="savepagepopup=$event;" (savedStatus)="saveCondition=$event; updateSavedStatus($event);" [postData]='courseSavedData'></app-savedpopup></div>

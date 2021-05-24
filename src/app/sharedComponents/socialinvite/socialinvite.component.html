@@ -1,0 +1,162 @@
+<!-- <div class="trending_outer invite-wrap">
+    <h6 class="widgetheading top_heading"> Send Invites </h6>
+    <div class='people_list' style="height: auto;margin-top:15px;">
+        <ul>
+            <li class="clearfix" (click)="inviteopenpopup(1);"><img src="assets/images/svg/email-round.svg" class="inviteimage">
+                <div class="title-caption-wrap">
+                    <h5>Invite Friends</h5>
+                    <span>Invite your friends via email.</span>
+                </div>
+            </li>
+            <li class="clearfix" ><img src="assets/images/svg/google-plus-round-new.svg" class="inviteimage" >
+                <div class="title-caption-wrap" id="googleBtn">
+                    <h5>Google</h5>
+                    <span>Invite your friends from Google+.</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div> -->
+
+
+
+<div class="invite_container">
+  <div class="invite_container_inner">
+   <div class="image">
+     <img src="assets/images/svg-three/social_invite/girl.svg" alt="study24x7">
+   </div>
+   <div class="invite_text">
+      <h3>Invite your friends</h3>
+      <span>
+        Study along with your friends
+        on Study24x7
+      </span>
+      <!-- <span class="errMessage">*Lorem ipsum dolor sit amet.</span> -->
+   </div>
+   <div class="input_wrapper">
+   <div class="invite_input_field">
+     <input class="invitefield" type="text" name="" value="" placeholder="Your friend's email address" [(ngModel)]="email">
+     <button type="button" name="button" (click)="sendInvite()">Send</button>
+   </div>
+   </div>
+   <div class="stock_container">
+     <!-- <span class="stock left"></span> -->
+      <span class="stock_full"></span>
+     <h4>
+       or invite with
+     </h4>
+     <!-- <span class="stock right"></span> -->
+   </div>
+   <div class="invite_footer">
+<!--     <div class="social_button">
+       <div class="innerbuttonwrapper">
+       <img src="assets/images/svg-three/social_invite/fb.svg" alt="study24x7">
+       </div>
+       <span>Facebook</span>
+     </div>-->
+     <!-- <div class="social_button">
+       <div class="innerbuttonwrapper" id="googleBtn">
+       <img src="assets/images/svg/google-plus-round-new.svg" alt="study24x7">
+     </div>
+     <span>Google +</span>
+     </div> -->
+     <div class="social_button" (click)="inviteopenpopup(1);">
+       <div class="innerbuttonwrapper" (click)="inviteopenpopup(1);">
+       <img src="assets/images/svg/email-round.svg" alt="study24x7">
+       </div>
+       <span>Email</span>
+     </div>
+   </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- invite friend popup start-->
+<div class="popup" *ngIf="interestlist">
+    <div class="popup_background" ></div>
+    <div class="popup_main">
+        <div class="popup_heading">INVITE FRIENDS FROM FACEBOOK</div>
+        <div class="people_list interest_content">
+            <ul>
+                <li *ngFor="let invite of invite">
+                    <div class="profileimg_know">
+                        <img src='{{ invite.profile }}'>
+                    </div>
+                    <div class='prfl_detail'>
+                        <div class="profilename">{{ invite.name }}</div>
+                    </div>
+                    <button class="graybutton">Invite</button>
+                </li>
+            </ul>
+        </div>
+        <div class="popupfooter">
+            <button class='btn btn-secondary'  >Close</button>
+            <button class='btn btn-primary' >Invite all Friends</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="popup" *ngIf="interestlist">
+    <div class="popup_background" ></div>
+    <div class="popup_main">
+        <div class="popup_heading">INVITE FRIENDS FROM FACEBOOK</div>
+        <div class="people_list interest_content" >
+
+            <ul>
+                <li *ngFor="let invite of invite">
+                    <div class="profileimg_know">
+                        <img src='{{ invite.profile }}'>
+                    </div>
+                    <div class='prfl_detail'>
+                        <div class="profilename">{{ invite.name }}</div>
+                        <!-- <div class="grayinfo">Followers {{ invite.followers }}</div> -->
+                    </div>
+                    <button class="graybutton">Invite</button>
+                </li>
+            </ul>
+
+        </div>
+        <div class="popupfooter">
+
+            <button class='btn btn-secondary'  >Close</button>
+            <button class='btn btn-primary' >Invite all Friends</button>
+        </div>
+
+    </div>
+</div>
+<app-socialinvitepopup [mediaName]="popupMediaName" [showInnerPopupWrap]="socialInvitePopupShow" (closePopupThread)="invitClosePopup($event)" *ngIf="socialInvitePopupShow"></app-socialinvitepopup>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="openConfirmation=$event['status']" [dataObj]="dataConf"></app-confirmationpopup>
+<!-- <app-invitepeople [mediaTyp]="mediaName" (popupCloseByCancelThread)="closeByCancel($event)" (successPopupShowThread)="successPopupShow($event);"></app-invitepeople> -->

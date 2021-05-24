@@ -1,0 +1,80 @@
+<app-mnavbar (showMobileMenu)="displayMobileMenu($event)" (hideMenu)="hideMobileMenu($event)"></app-mnavbar>
+<app-header (sessionLogout)="sessionExpire($event)"></app-header>
+<div id="windiv">
+<div class="container main_body">
+    <div class="row">
+        <div class="col-md-3 col-sm-4 left_stickytab" id="left-side-bar" style="padding-right:0;">
+          <div class="rightmenu_fixed" id="someDivleft" [ngClass]="{'fixedleft': isScrolled1}">
+            <app-leftmenu  (hidePopup)="hidePageCreatePopup($event)" (showPopup)="displayPageCreatePopup($event)" ></app-leftmenu>
+        </div>
+        </div>
+        <div *ngIf="!isMobileMenue" class="col-md-6 center_feed">
+            <div class="maindiv saved-post-main notification-wrap">
+                <div class="mainheading" >Notification</div>
+                <div class="inner-main-div ">
+
+                    <div class="content">
+                        <div class='people_list Experiance_list people_list_noti' data-infinite-scroll
+                             [infiniteScrollDistance]="2"
+                             (scrolled)="onScrollDown()"
+                             [scrollWindow]="true">
+                             <ul >
+                                <li *ngFor="let notify of notification;let i=index;" (click)="goToPost(i)" >
+
+                                    <div class="profileimg_know">
+                                        <img _ngcontent-c1="" src="{{notify.PROFILE_PHOTO_PATH}}" (error)="updateProfilePic($event)">
+                                    </div>
+                                    <div class='prfl_detail ntfi_pro_detail'>
+                                        <div class="profilename" [innerHTML]="notify.TEXT"></div>
+                                        <div class="grayinfo noti-grayinfo">
+                                            <span class="nficon nPageIcon {{notify.CLASS}}">
+
+                                            </span>{{notify.ADD_DATE_TIME|timeformated}}
+                                        </div>
+                                    </div>
+                                    <!-- <span class='listcross' (click)="removenotify(i)"><img class="" src="assets/images/svg/tagcross.svg"></span> -->
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <div *ngIf="isMobileMenue" class="paddingBottom">
+        <app-mmenu></app-mmenu>
+        </div> -->
+        <div class="sidemenu" [ngClass]="{'openfilter': isMobileMenue }" >
+            <div *ngIf="isMobileMenue">
+            <div class="menuslidedarkbg"  (click)="leftSidemenu()"></div>
+            <app-mmenu (showPopup)=displayPageCreatePopup($event)  class="cntrMmenu" ></app-mmenu>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-3 col-sm-3 rightpanel pdng_left right_stickytab" id="wall-sidebar-wrap">
+          <div class="rightmenu_fixed" id="someDiv" [ngClass]="{'fixedleft': isScrolled}">
+            <app-peopleyouknow (sessionLogout)="sessionExpire($event)"></app-peopleyouknow>
+            <!-- <app-connectionrequest (sessionLogout)="sessionExpire($event)"></app-connectionrequest> -->
+            <p style="color:#9ba1ab;margin-top: 5px">
+                        <a routerLink="/privacy" target="_blank">Privacy Policy . </a>
+                  <a routerLink="/termandcondition" target="_blank">Terms of Use .  </a>
+                  <a href="http://support.study24x7.com/" target="_blank">Support . </a>
+                  <a >{{this._constantService.version}}</a>
+                    </p>
+                    <footer> © {{current_year}} @Edubabble Learning Pvt. Ltd. </footer>
+              </div>
+        </div>
+    </div>
+</div>
+</div>
+<div *ngIf="isCratePagePopup">
+<app-createpage (hidecreatepagePopup)="hidePageCreatePopup($event)" ></app-createpage>
+</div>
+<!--<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);" [dataObj]="dataConf"></app-confirmationpopup>-->
+ <app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

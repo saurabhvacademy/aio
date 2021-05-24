@@ -1,0 +1,25 @@
+.rankListingMian { font-size: 16px; width: 100%; float: left; background: #fff; border-radius: 0px 0px 5px 5px; padding-bottom: 10px; padding-top: 10px; }
+
+.rankListing { width: 100%; font-weight: 500; }
+
+.rankListing .rankListingRow { padding: 10px 100px 10px 115px; border-bottom: 1px solid #dfe5eb; position: relative; height: 60px; display: inline-flex; width: 100%; align-items: center; color: rgba(0, 0, 0, 0.7); }
+
+.rankListing:hover .myRank { text-decoration: underline; }
+
+.profileImgSec { width: 95px; position: absolute; left: 0px; height: 40px; }
+
+.profileImgSec .rankNo { padding: 13px 10px 12px 20px; float: left; }
+
+.profileImgSec .profileImg { width: 40px; height: 40px; border-radius: 100%; overflow: hidden; float: right; position: absolute; right: 0px; }
+
+.profileImgSec .profileImg img { width: 100%; }
+
+.rankListing.otherRank { margin: 0px 10px; background: #02bfe7; border-radius: 5px; color: #fff; width: calc(100% - 20px); }
+
+.rankListing.otherRank .rankListingRow { border-bottom: 1px solid transparent; padding-left: 105px; color: #fff; }
+
+.rankListing.otherRank .profileImgSec { width: 85px; }
+
+.rankListing.otherRank .profileImgSec .rankNo { padding-left: 18px; float: left; }
+
+.pointNo { position: absolute; right: 25px; }

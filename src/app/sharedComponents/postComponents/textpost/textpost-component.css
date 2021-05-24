@@ -1,0 +1,93 @@
+.reportspopup {
+  width: 300px !important;
+  height: 331px;
+}
+
+.reportspopup .popup_heading {
+  height: 40px;
+  line-height: 40px;
+  font-weight: 500;
+  text-align: left;
+  color: #2c2e2f;
+  font-size: 14px;
+  border-radius: 3px 3px 0px 0;
+  background-color: #f5f7fa;
+  font-weight: 500;
+  border-bottom: none !important;
+}
+
+.reportspopup .interesrsearch {
+  width: 100%;
+}
+
+.reportspopup .profiledetail {
+  width: 357px !important;
+}
+
+.reportspopup .post_outer {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.reportspopup .post_outer .post_profile {
+  padding: 0px 20px 10px 20px;
+}
+
+.reportspopup .post_outer .post_profile p {
+  margin-top: 10px;
+}
+
+.reportspopup .post_outer .post_profile button {
+  margin-bottom: 10px;
+}
+
+.reportspopup .report_popup {
+  border: none !important;
+  margin-bottom: 0px !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.reportspopup .post_profileContent {
+  height: 100%;
+  padding: 10px !important;
+}
+
+.reportspopup .post_profileContent .report_ul .report_li {
+  float: left;
+  width: 100%;
+  margin: 3px 0px;
+}
+
+.reportspopup .post_profileContent .report_ul .report_li .dis_inline {
+  float: left;
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+}
+
+.close_div img {
+  margin-left: 15px;
+}
+
+.footer_wrap_profile {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30px;
+  background: #f5f7fa;
+}
+
+.tag_wrapper {
+  padding: 0px;
+  height: calc(100% - 46px);
+  overflow: auto;
+}
+
+@media only screen and (max-width: 360px) {
+  .reportspopup {
+    width: calc(100% - 30px) !important;
+  }
+}
+/*# sourceMappingURL=textpost-component.css.map */

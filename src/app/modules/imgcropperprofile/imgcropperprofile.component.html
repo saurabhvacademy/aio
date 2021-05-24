@@ -1,0 +1,48 @@
+<!-- imgcropper popup -->
+<div class='darkbackground'></div>
+<div class='addpost_outer relative popup-open-wrapper'>
+    <!-- <div class='darkbackground-close' (click)="hidecreatepagePopup();"></div> -->
+    <div class='darkbackground-close'></div>
+
+    <div class='container popup-container' style="position:relative;">
+        <div  class="popup-inner-wrap popup-open-inner-wrap claim_mail_wrap" >
+            <div class="toolbar addpost_hdng tlbar error_main_heading">Change your profile image
+                <!-- <img src="assets/images/svg/tagcross.svg" style="float: right;margin: 17px 0;cursor: pointer;"> -->
+                <span class="close_div" (click)="profilepopup()">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+
+            </div>
+            <!-- empty state -->
+
+            <!-- end empty state -->
+            <div  class="middle_wrapperr" id="controlCropperSec" [ngStyle] ="{width:cropperSettings2.canvasWidth+'px', height:cropperSettings2.canvasHeight+'px' }" >
+              <div class="middle_wrapperr_inner">
+                <div *ngIf="!data2.image" class="empty-state" [ngStyle] ="{width:cropperSettings2.canvasWidth+'px', height:cropperSettings2.canvasHeight+'px' }">
+                    <img src="./assets/images/svg-three/uploadimage.svg" alt="study24x7">
+                </div>
+                <img-cropper #cropper [image]="data2" [settings]="cropperSettings2"></img-cropper>
+                <span  class="result rounded" *ngIf="data2.image && false" >
+                    <img [src]="data2.image" [width]="cropperSettings2.croppedWidth" [height]="cropperSettings2.croppedHeight">
+                </span>
+            </div>
+          </div>
+            <div class="claim_footerr">
+                <div class="file-upload-img">
+                    <input id="custom-input" type="file" (change)="fileChangeListener($event)" >
+                    <label for="custom-input">Upload</label>
+                </div>
+                <button class="redColorButton button24x7 fright"  (click)="uploadPic()">Apply</button>
+                <!--                <button [disabled]="showText === false && disabledPostBtn" class="btn btn-primary claim_btn" (click)="uploadPic()"  style="margin-top: 5px;">
+                                    <span class="text" *ngIf="showText">Apply</span>
+                                    <span class="loader"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader && showText == false"></span>
+                                </button>-->
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<!-- end imgcropper popup -->

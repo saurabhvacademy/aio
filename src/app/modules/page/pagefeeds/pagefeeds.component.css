@@ -1,0 +1,888 @@
+/* line 33, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_outer {
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  /* line 42, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .post_profile {
+    display: inline-block;
+    width: 100%;
+    float: left;
+    padding: 15px;
+    box-sizing: border-box; }
+    /* line 49, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_profile .post_profilepic {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      overflow: hidden;
+      float: left;
+      border-radius: 5px; }
+      /* line 57, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .post_profile .post_profilepic img {
+        width: 100%; }
+    /* line 61, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_profile .profiledetail {
+      display: inline-block;
+      float: left;
+      width: 400px;
+      margin-left: 10px;
+      line-height: 14px; }
+      /* line 68, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .post_profile .profiledetail .name, .post_outer .post_profile .profiledetail .time {
+        display: inline-block;
+        width: 100%;
+        line-height: 0px; }
+      /* line 73, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .post_profile .profiledetail .name {
+        color: #ec3024;
+        font-size: 16px;
+        font-family: 'Roboto';
+        font-weight: 500; }
+      /* line 78, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .post_profile .profiledetail .time {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.44);
+        margin-top: 12px; }
+    /* line 86, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_profile .glyphicon {
+      float: right;
+      color: rgba(0, 0, 0, 0.44); }
+  /* line 92, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .post_profileContent {
+    margin-top: -5px;
+    display: inline-block;
+    width: 100%;
+    padding: 0 15px 15px;
+    box-sizing: border-box;
+    line-height: 20px;
+    font-size: 14px; }
+    /* line 101, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_profileContent img {
+      max-width: 100%; }
+  /* line 107, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .post_footer {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 8px 15px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.44); }
+    /* line 117, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_footer .post_footeroption {
+      margin-right: 26px;
+      cursor: pointer; }
+    /* line 122, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_footer .glyphicon:before {
+      font-size: 13px;
+      line-height: 9px;
+      float: left;
+      color: rgba(0, 0, 0, 0.44); }
+    /* line 128, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_footer .glyphicon.glyphicon-thumbs-up:before {
+      font-size: 15px; }
+  /* line 136, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .comment_outer {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 0px 0px 3px 3px; }
+    /* line 143, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .comment_outer .writecomment input {
+      width: 87%; }
+    /* line 147, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .comment_outer .comment_list {
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box; }
+      /* line 152, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .comment_outer .comment_list .writecomment {
+        margin-bottom: 15px; }
+        /* line 154, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+        .post_outer .comment_outer .comment_list .writecomment input {
+          width: 86%; }
+    /* line 157, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .comment_outer .post_profile {
+      padding: 15px 0 0;
+      margin-top: 15px;
+      border-top: 1px solid #cccccc; }
+      /* line 162, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .comment_outer .post_profile .post_profilepic {
+        height: 30px;
+        width: 30px; }
+      /* line 166, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .comment_outer .post_profile .name {
+        font-size: 12px;
+        margin-right: 10px;
+        display: inline-block;
+        float: left;
+        width: auto;
+        line-height: 16px; }
+      /* line 174, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .comment_outer .post_profile .profiledetail {
+        line-height: 18px;
+        width: 515px; }
+      /* line 178, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .comment_outer .post_profile .profilecmntdetail {
+        width: 90%;
+        float: left;
+        font-size: 12px; }
+      /* line 184, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .comment_outer .post_profile .post_footer {
+        border: 0px;
+        padding: 8px 0; }
+        /* line 189, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+        .post_outer .comment_outer .post_profile .post_footer .glyphicon {
+          float: right;
+          margin-right: 5px; }
+        /* line 193, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+        .post_outer .comment_outer .post_profile .post_footer .glyphicon:before {
+          line-height: 12px;
+          font-size: 12px; }
+        /* line 198, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+        .post_outer .comment_outer .post_profile .post_footer .cmnt_time {
+          color: rgba(0, 0, 0, 0.44); }
+        /* line 201, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+        .post_outer .comment_outer .post_profile .post_footer .post_footeroption {
+          position: relative; }
+        /* line 204, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+        .post_outer .comment_outer .post_profile .post_footer .post_footeroption:first-child:after {
+          content: "";
+          display: inline-block;
+          height: 2px;
+          width: 2px;
+          border-radius: 50%;
+          background: #ec3024;
+          top: 8px;
+          position: absolute;
+          right: -5px;
+          display: none; }
+      /* line 221, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .comment_outer .post_profile .c_reply {
+        padding: 8px 0 0px 0px; }
+      /* line 223, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .comment_outer .post_profile .sub_Comment {
+        display: inline-block;
+        width: 100%; }
+        /* line 226, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+        .post_outer .comment_outer .post_profile .sub_Comment .profiledetail {
+          line-height: 18px;
+          width: 474px; }
+          /* line 229, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+          .post_outer .comment_outer .post_profile .sub_Comment .profiledetail input {
+            width: 85%; }
+  /* line 241, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .commenticon {
+    display: none; }
+  /* line 245, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .seemore {
+    color: rgba(0, 0, 0, 0.44);
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    border-top: 1px solid #cccccc;
+    padding-top: 10px;
+    cursor: pointer; }
+  /* line 255, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .questionResult {
+    box-shadow: none;
+    height: auto;
+    margin-bottom: 0;
+    border: 1px solid #ed6568;
+    border-radius: 5px;
+    position: relative;
+    display: table;
+    width: 100%;
+    overflow: hidden; }
+    /* line 268, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .questionResult .questionResult_percent {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #f1f1f1;
+      width: 50px;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      border-right: 1px solid #ed6568; }
+      /* line 282, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+      .post_outer .questionResult .questionResult_percent b {
+        display: inline-block;
+        width: 100%; }
+    /* line 290, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .questionResult div {
+      display: table-cell;
+      padding: 15px; }
+  /* line 295, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .rightanswer {
+    border: 1px solid #5bbc5b; }
+    /* line 298, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .rightanswer .questionResult_percent {
+      background: #5bbc5b;
+      color: #fff;
+      border-right: 1px solid #5bbc5b; }
+  /* line 308, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .wronganswer .questionResult_percent {
+    background: #ed6568;
+    color: #fff; }
+  /* line 315, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .comment_outer_reply {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    float: left; }
+    /* line 316, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .comment_outer_reply .writecomment {
+      margin-bottom: 0px !important; }
+    /* line 319, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .comment_outer_reply .writecommentinner {
+      margin-top: 8px; }
+
+/* line 327, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}
+
+.post_outer .post_profile {
+  display: inline-block;
+  width: 100%;
+  float: left;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.post_outer .post_profile .post_profilepic {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  float: left;
+  border-radius: 5px;
+}
+
+.post_outer .post_profile .post_profilepic img {
+  width: 100%;
+}
+
+.post_outer .post_profile .profiledetail {
+  display: inline-block;
+  float: left;
+  width: 400px;
+  margin-left: 10px;
+  line-height: 14px;
+}
+
+.post_outer .post_profile .profiledetail .name, .post_outer .post_profile .profiledetail .time {
+  display: inline-block;
+  width: 100%;
+  line-height: 0px;
+}
+
+.post_outer .post_profile .profiledetail .name {
+  color: #F05050;
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+.post_outer .post_profile .profiledetail .time {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.44);
+  margin-top: 12px;
+}
+
+.post_outer .post_profile .glyphicon {
+  float: right;
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.post_outer .post_profileContent {
+  margin-top: -5px;
+  display: inline-block;
+  width: 100%;
+  padding: 0 15px 15px;
+  box-sizing: border-box;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.post_outer .post_profileContent img {
+  max-width: 100%;
+}
+
+.post_outer .post_footer {
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 8px 15px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.post_outer .post_footer .post_footeroption {
+  margin-right: 26px;
+  cursor: pointer;
+}
+
+.post_outer .post_footer .glyphicon:before {
+  font-size: 13px;
+  line-height: 9px;
+  float: left;
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.post_outer .post_footer .glyphicon.glyphicon-thumbs-up:before {
+  font-size: 15px;
+}
+
+.post_outer .comment_outer {
+  background: #f5f7fa;
+  padding: 15px;
+  border-radius: 0px 0px 3px 3px;
+}
+
+.post_outer .comment_outer .writecomment input {
+  width: 87%;
+}
+
+.post_outer .comment_outer .comment_list {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post_outer .comment_outer .comment_list .writecomment {
+  margin-bottom: 15px;
+}
+
+.post_outer .comment_outer .comment_list .writecomment input {
+  width: 86%;
+}
+
+.post_outer .comment_outer .post_profile {
+  padding: 15px 0 0;
+  margin-top: 15px;
+  border-top: 1px solid #cccccc;
+}
+
+.post_outer .comment_outer .post_profile .post_profilepic {
+  height: 30px;
+  width: 30px;
+}
+
+.post_outer .comment_outer .post_profile .name {
+  font-size: 12px;
+  margin-right: 10px;
+  display: inline-block;
+  float: left;
+  width: auto;
+  line-height: 16px;
+}
+
+.post_outer .comment_outer .post_profile .profiledetail {
+  line-height: 18px;
+  width: 515px;
+}
+
+.post_outer .comment_outer .post_profile .profilecmntdetail {
+  width: 90%;
+  float: left;
+  font-size: 12px;
+}
+
+.post_outer .comment_outer .post_profile .post_footer {
+  border: 0px;
+  padding: 8px 0;
+}
+
+.post_outer .comment_outer .post_profile .post_footer .glyphicon {
+  float: right;
+  margin-right: 5px;
+}
+
+.post_outer .comment_outer .post_profile .post_footer .glyphicon:before {
+  line-height: 12px;
+  font-size: 12px;
+}
+
+.post_outer .comment_outer .post_profile .post_footer .cmnt_time {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.post_outer .comment_outer .post_profile .post_footer .post_footeroption {
+  position: relative;
+}
+
+.post_outer .comment_outer .post_profile .post_footer .post_footeroption:first-child:after {
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  background: #F05050;
+  top: 8px;
+  position: absolute;
+  right: -5px;
+  display: none;
+}
+
+.post_outer .comment_outer .post_profile .c_reply {
+  padding: 8px 0 0px 0px;
+}
+
+.post_outer .comment_outer .post_profile .sub_Comment {
+  display: inline-block;
+  width: 100%;
+}
+
+.post_outer .comment_outer .post_profile .sub_Comment .profiledetail {
+  line-height: 18px;
+  width: 474px;
+}
+
+.post_outer .comment_outer .post_profile .sub_Comment .profiledetail input {
+  width: 85%;
+}
+
+.post_outer .commenticon {
+  display: none;
+}
+
+.post_outer .seemore {
+  color: rgba(0, 0, 0, 0.44);
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  border-top: 1px solid #cccccc;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.post_outer .questionResult {
+  box-shadow: none;
+  height: auto;
+  margin-bottom: 0;
+  border: 1px solid #ed6568;
+  border-radius: 5px;
+  position: relative;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+}
+
+.post_outer .questionResult .questionResult_percent {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #f5f7fa;
+  width: 50px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  border-right: 1px solid #ed6568;
+}
+
+.post_outer .questionResult .questionResult_percent b {
+  display: inline-block;
+  width: 100%;
+}
+
+.post_outer .questionResult div {
+  display: table-cell;
+  padding: 15px;
+}
+
+.post_outer .rightanswer {
+  border: 1px solid #5bbc5b;
+}
+
+.post_outer .rightanswer .questionResult_percent {
+  background: #5bbc5b;
+  color: #fff;
+  border-right: 1px solid #5bbc5b;
+}
+
+.post_outer .wronganswer .questionResult_percent {
+  background: #ed6568;
+  color: #fff;
+}
+
+.post_outer .comment_outer_reply {
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+  float: left;
+}
+
+.post_outer .comment_outer_reply .writecomment {
+  margin-bottom: 0px !important;
+}
+
+.post_outer .comment_outer_reply .writecommentinner {
+  margin-top: 8px;
+}
+
+.leftmenudrop {
+  position: relative;
+  cursor: pointer; }
+  /* line 331, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .leftmenudrop .drpdwn_post {
+    right: 0px; }
+
+/* line 336, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.drpdwn_post ul li .default {
+  display: block;
+  float: left;
+  margin-right: 15px; }
+
+/* line 341, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.drpdwn_post ul li .hoverimg {
+  display: none;
+  float: left;
+  margin-right: 15px; }
+
+/* line 348, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.drpdwn_post ul li:hover .default {
+  display: none;
+  float: left;
+  margin-right: 15px; }
+
+/* line 353, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.drpdwn_post ul li:hover .hoverimg {
+  display: block;
+  float: left;
+  margin-right: 15px; }
+
+/* line 361, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_footeroption .hoverimg {
+  display: none; }
+
+/* line 365, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postright_btn {
+  background: #fafafa;
+  display: inline-block;
+  width: 35px;
+  float: right;
+  height: 28px;
+  border: 1px solid #cccccc;
+  line-height: 27px;
+  text-align: center;
+  border-radius: 3px 0 0 3px; }
+
+/* line 377, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postmenubtn {
+  border-left: 0px solid;
+  border-radius: 0px 3px 3px 0px; }
+
+/* line 381, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postbookmarkbtn {
+  border: 1px solid #cccccc; }
+
+/* line 390, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.saved {
+  display: none; }
+
+/* line 394, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.activesaved .unsaved {
+  display: none; }
+
+/* line 397, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.activesaved .saved {
+  display: inline-block; }
+
+/* line 401, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.questionpost_button {
+  background-color: red; }
+  /* line 403, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .questionpost_button .btn {
+    float: left; }
+
+/* line 409, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postshared_profile {
+  background: #f1f1f1; }
+  /* line 412, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .postshared_profile .post_profilepic {
+    height: 30px !important;
+    width: 30px !important; }
+  /* line 416, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .postshared_profile .name {
+    width: auto !important; }
+  /* line 420, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .postshared_profile .profiledetail {
+    margin-top: 8px; }
+
+
+
+.postshared_profile .post_profilepic {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.postshared_profile .name {
+  width: auto !important;
+}
+
+.postshared_profile .profiledetail {
+  margin-top: 8px;
+}
+
+.radiobtn_outer b {
+  float: left;
+  font-weight: normal;
+  font-family: 'Roboto';
+  font-weight: 500;
+  margin-right: 15px; }
+
+/* line 430, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.resultinfo {
+  color: #5bbc5b; }
+
+/* line 433, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.resultinfo.youranswer {
+  color: #ed6568; }
+
+/* line 436, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.uploaded_file {
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  background: #f5f7fa;
+  margin-top: 15px;
+}
+
+/* line 445, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postfile_details {
+  display: inline-block;
+  width: 77%;
+  padding: 15px;
+  box-sizing: border-box; }
+
+/* line 452, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postfilename {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'Roboto';
+  font-weight: 500; }
+
+/* line 457, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.graytextpost {
+  color: rgba(0, 0, 0, 0.44); }
+
+/* line 461, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postfile_download {
+  background: #e6e6e6;
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  float: left; }
+
+/* line 468, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postfile_download {
+  font-size: 14px; }
+  /* line 470, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .postfile_download img {
+    margin-right: 10px; }
+  /* line 473, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .postfile_download span {
+    float: left; }
+  /* line 476, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .postfile_download span:last-child {
+    float: right;
+    margin-top: 10px; }
+
+/* line 480, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.radiobtn_outer .Radio + .checkbox_btn {
+  float: left;
+  margin: 4px 10px 0 0; }
+
+/* line 484, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.timeremaining {
+  float: right;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin-top: -4px; }
+  /* line 490, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .timeremaining div {
+    font-size: 10px; }
+  /* line 494, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .timeremaining span {
+    font-size: 18px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.44); }
+
+/* line 502, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.activeimp {
+  display: none; }
+
+/* line 505, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.clicked {
+  color: #F05050;
+}
+
+.clicked .activeimp {
+  display: inline-block;
+}
+
+.clicked .defaultimp {
+  display: none;
+}
+
+.postdropdown_inner {
+  width: 155px;
+  display: inline-block;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: bold; }
+  /* line 521, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .postdropdown_inner .time {
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.44);
+    display: inline-block;
+    width: 100%;
+    font-weight: normal;
+    line-height: 16px; }
+
+/* line 531, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.drpdwn_post.postdrop {
+  width: 220px !important; }
+
+/* line 535, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.drpdwn_post.postdrop ul li:hover .time {
+  color: #fff; }
+
+/* line 539, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.sharedlink_post {
+  cursor: pointer;
+  background: transparent;
+  color: #8c8c8c;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  overflow: hidden; }
+  /* line 548, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .sharedlink_post img {
+    margin: 0px !important; }
+  /* line 553, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .sharedlink_post .sharedlink_content {
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    color: #8c8c8c; }
+    /* line 560, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .sharedlink_post .sharedlink_content h4 {
+      text-decoration: underline;
+      margin-bottom: 10px; }
+
+/* line 567, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_options {
+  margin-top: 15px; }
+
+/* line 572, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.postmain_container img, .postmain_container iframe {
+  overflow: hidden;
+  border-radius: 5px;
+  margin-top: 15px; }
+
+/* line 579, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_outer:first-child {
+  margin-top: 0px; }
+
+/* line 586, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_outer .comment_share_screen .post_profile .profiledetail {
+  width: 640px; }
+  /* line 587, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .comment_share_screen .post_profile .profiledetail .profilecmntdetail {
+    width: 100%;
+    padding-right: 15px; }
+
+/* line 589, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_outer .comment_share_screen .post_profile .profiledetailinr {
+  position: relative; }
+  /* line 590, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .comment_share_screen .post_profile .profiledetailinr .commenticon {
+    position: absolute;
+    right: 0px;
+    top: 4px; }
+
+/* line 600, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_outer .post_footer_top {
+  border: none;
+  width: auto;
+  float: right;
+  padding: 0px 0px; }
+  /* line 602, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .post_footer_top .postmenubtn {
+    border-left: 1px solid #ccc;
+    border-radius: 3px 3px 3px 3px;
+    background-color: #f7f8fa; }
+  /* line 607, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .post_footer_top .post_footeroption {
+    font-size: 12px;
+    margin-right: 10px;
+    line-height: 30px;
+    cursor: pointer;
+    font-weight: 500; }
+    /* line 611, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_footer_top .post_footeroption .default img {
+      width: 12px;
+      height: 12px; }
+
+/* line 618, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_outer .post_footer_bottom {
+  border: none;
+  padding: 0px 15px 15px 15px;
+  background-color: white;
+  margin-bottom: 15px;
+  float: left; }
+  /* line 624, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .post_footer_bottom .post_footeroption {
+    padding: 5px 10px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 12px; }
+    /* line 631, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+    .post_outer .post_footer_bottom .post_footeroption:hover {
+      box-shadow: 0 0 2px rgba(18, 188, 180, 0.4);
+      border: 1px solid rgba(18, 188, 180, 0.6); }
+  /* line 637, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .post_outer .post_footer_bottom .post_footeroption.clicked {
+    border: 1px solid rgba(18, 188, 180, 0.6);
+    color: #12bcb4; }
+
+/* line 647, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.post_outer .comment_list_text .seemore {
+  width: 515px;
+  margin-left: 10px;
+  float: right;
+  border: 1px solid rgba(18, 188, 180, 0.3);
+  padding: 5px 0px;
+  color: #12bcb4;
+  border-radius: 3px;
+  margin-top: 15px; }
+
+/* line 663, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.fileupload_image .on-hover {
+  width: 18px;
+  display: none; }
+
+/* line 666, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+.fileupload_image:hover {
+  cursor: pointer; }
+  /* line 668, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .fileupload_image:hover .on-hover {
+    display: inline; }
+  /* line 671, D:/247/study24x7_web/src/app/sharedComponents/newsfeed/newsfeed.component.scss */
+  .fileupload_image:hover .default {
+    display: none; }
+
+/*# sourceMappingURL=newsfeed.component.css.map */

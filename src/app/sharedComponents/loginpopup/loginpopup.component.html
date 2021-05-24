@@ -1,0 +1,331 @@
+<div class='darkbackground' *ngIf="showloginpopup" (click)="hidepopup();" style="z-index:5;"></div>
+<!-- Registration Start -->
+<!-- ================================================================================ -->
+<div id="loginPopupContainer" class="sidefilter openfilter">
+   <div class="innerSideFilter">
+      <div class="" *ngIf="sighup_container" [ngClass]="{'prehubsGlogin': sighup_container}">
+
+         <div class="login_header_">
+            <span class="close_login" (click)="hidepopup()">
+               <img src="assets/images/svg/tagcross-gray.svg" alt="">
+            </span>
+
+            <button type="button" class="create_acc_btn btneffect btneffectControl" (click)="loginbtn(2)" name="button"
+               *ngIf="loginright == 1">
+               Create Account
+            </button>
+            <button type="button" class="create_acc_btn" style="width:90px;background:#4a4a4a;" *ngIf="loginright == 2 "
+               (click)="loginbtn(1)" name="button">
+               Log in
+            </button>
+
+         </div>
+         <div class="main_wrapper">
+            <div class="registrationWrapper">
+               <div class="registrationWrapperscroll">
+                  <!-- error mess ui start-->
+                  <div class="registrationIneerscroll" [perfectScrollbar]="config" style="position: relative;">
+                     <div class="topErr" *ngIf="loginright == 2 " [ngClass]="{ showEror: regiterDetails.ERROR_MSG }">
+                        <div *ngIf=regiterDetails.ERROR_MSG class="rightErrorWrapper">
+                           <div class="leftImgWrapper">
+                              <span class="errormsglogin">
+
+                              </span>
+                           </div>
+                           <p>
+                              {{ regiterDetails.ERROR_MSG }}
+                           </p>
+                        </div>
+                        <span class="closeBtn" (click)="regiterDetails.ERROR_MSG=''">
+                           <span class="closeBtnsec"></span>
+                        </span>
+                     </div>
+                     <!-- error mess ui end-->
+                     <div class="signupWrapper" *ngIf=true>
+                        <div class="topErr" *ngIf="loginright == 1" [ngClass]="{ showEror: loginMessage.error }">
+                           <div class="rightErrorWrapper">
+                              <div class="leftImgWrapper">
+                                 <span class="errormsglogin">
+
+                                 </span>
+                              </div>
+                              <p>
+                                 {{ loginMessage.errorMessage }}
+
+                              </p>
+                           </div>
+                           <span class="closeBtn" (click)="loginMessage.error=false">
+                              <span class="closeBtnsec"></span>
+                           </span>
+                        </div>
+                        <h1 *ngIf="loginright == 1">
+                           Welcome Back
+                        </h1>
+                        <h1 *ngIf="loginright == 2">
+                           Get a free Account today !
+                        </h1>
+                        <div class="scrollable_sec_main">
+                           <div class="scrollable_sec_inner">
+                              <div class="social_login">
+                                 <span style="display:inline-block;" class="sociallogin google">
+                                    <app-login-with-google class="gmail_social_btn" [from]="'prehub'"
+                                       [buttonText]="isWebView?'Continue with Google':'Google'">
+
+                                    </app-login-with-google>
+                                 </span>
+                                 <span style="display: inline-block;" class="sociallogin fbook">
+                                    <app-login-with-facebook class="fb_button" [from]="'prehub'"
+                                       [buttonText]="isWebView?'Continue with FB':'Facebook'">
+
+                                    </app-login-with-facebook>
+                                 </span>
+                              </div>
+                              <div class="devider">
+                                 <span class="stock left">
+
+                                 </span>
+                                 <span class="text">
+                                    or
+                                 </span>
+                                 <span class="stock right">
+
+                                 </span>
+                              </div>
+                              <div class="scrollable_sec">
+                                 <!-- for signup -->
+                                 <div class="signIn_sec" *ngIf="loginright == 1">
+                                    <div class="inputWrapper">
+                                       <label class="inpulLabel">
+                                          Email or Mobile
+                                       </label>
+                                       <input  id="l_c" (keyup.enter)="loginSubmit()" type="text" placeholder="Email or Mobile" [(ngModel)]=model.loginId>
+                                       <span *ngIf="loginMessage.type=='id'" class="errorImg">
+                                       </span>
+                                    </div>
+                                    <div class="inputWrapper">
+                                       <label class="inpulLabel">
+                                          Password
+                                       </label>
+                                       <div class="password-strength">
+                                          <span id="passClass" class="defoult">
+
+                                          </span>
+                                       </div>
+                                       <input (keyup.enter)="loginSubmit()" type="password" id="l_p" placeholder="password" [(ngModel)]=model.password>
+                                       <span *ngIf="loginMessage.type=='pd'" class="errorImg"
+                                          style="margin-right: 2px;">
+                                       </span>
+                                    </div>
+                                 </div>
+                                 <div class="signup_sec" *ngIf="loginright == 2">
+                                    <div class="leftInputField">
+                                       <label class="inpulLabel">
+                                          First Name
+                                       </label>
+                                       <input [(ngModel)]=registrationDetails.firstName type="text" placeholder=""
+                                          (focus)="focusedRegistrationField='firstName'"
+                                          (focusout)="focusedRegistrationField=0"
+                                          [ngClass]="{ bgColor: focusedRegistrationField!= 'firstName' , inputFilled: focusedRegistrationField!= 'firstName' && registrationDetails.firstName }" />
+                                       <div class="tooltip_in top_in"
+                                          *ngIf="(regiterDetails.firstName.error && focusedRegistrationField=='firstName')"
+                                          [ngClass]="{ onmobtooltip: (focusedRegistrationField=='firstName'),
+                              error: regiterDetails.firstName.error }" style="top: unset !important;">
+                                          <span class="left_logo infoIcon">
+                                          </span>
+                                          <p class="password-strength-text" style="top:unset !important;"
+                                             *ngIf="regiterDetails.firstName.error">
+                                             {{regiterDetails.firstName.msg}}
+                                          </p>
+                                       </div>
+                                       <span class="errorImg" style="margin-right: 2px;"
+                                          *ngIf="regiterDetails.firstName.error">
+                                          <!-- <img src="assets/images/svg-three/alert_icon.png" alt=""> -->
+                                       </span>
+                                    </div>
+                                    <div class="rightinputField">
+                                       <label class="inpulLabel">
+                                          Last Name
+                                       </label>
+                                       <input type="text" placeholder="" [(ngModel)]="registrationDetails.lastName"
+                                          id="r_ln" required (focus)="focusedRegistrationField='lastName'"
+                                          (focusout)="focusedRegistrationField=0"
+                                          [ngClass]="{ bgColor: focusedRegistrationField!= 'lastName' , inputFilled: focusedRegistrationField!= 'lastName' && registrationDetails.lastName }" />
+                                       <div class="tooltip_in top_in"
+                                          *ngIf="(regiterDetails.lastName.error && focusedRegistrationField=='lastName')"
+                                          [ngClass]="{ onmobtooltip: (focusedRegistrationField=='lastName'),
+                     error: regiterDetails.lastName.error }" style="top: unset !important;">
+                                          <span class="left_logo infoIcon">
+                                          </span>
+                                          <p class="password-strength-text" style="top:unset !important;"
+                                             *ngIf="regiterDetails.lastName.error">
+                                             {{regiterDetails.lastName.msg}}
+                                          </p>
+                                       </div>
+                                       <span class="errorImg" style="margin-right: 2px;"
+                                          *ngIf="regiterDetails.lastName.error">
+                                          <!-- <img src="assets/images/svg-three/alert_icon.png" alt=""> -->
+                                       </span>
+                                    </div>
+                                    <div class="inputWrapper">
+                                       <label class="inpulLabel">
+                                          Email Address
+                                       </label>
+                                       <input type="text" placeholder="" [(ngModel)]="registrationDetails.email"
+                                          id="r_e" required [ngClass]="{bgColor: true,  inputFilled: true }"
+                                          (focus)="focusedRegistrationField='email'"
+                                          (focusout)="focusedRegistrationField=0"
+                                          [ngClass]="{ bgColor: focusedRegistrationField!= 'email' , inputFilled: focusedRegistrationField!= 'email' && registrationDetails.email }" />
+                                       <div class="tooltip_in top_in"
+                                          *ngIf="(regiterDetails.email.error && focusedRegistrationField=='email')"
+                                          [ngClass]="{ onmobtooltip: (focusedRegistrationField=='email'),
+                           error: regiterDetails.email.error }" style="top: unset !important;">
+                                          <span class="left_logo infoIcon">
+                                          </span>
+                                          <p class="password-strength-text" style="top:unset !important;"
+                                             *ngIf="regiterDetails.email.error">
+                                             {{regiterDetails.email.msg}}
+                                          </p>
+                                       </div>
+                                       <span class="errorImg" style="margin-right: 2px;"
+                                          *ngIf="regiterDetails.mobileNumber.error">
+                                          <!-- <img src="assets/images/svg-three/alert_icon.png" alt=""> -->
+                                       </span>
+                                    </div>
+                                    <div class="leftInputField">
+                                       <label class="inpulLabel">
+                                          Mobile Number</label>
+                                       <app-mobileno (emitter)="setMobileNumberAndCountryCode($event)" [className]="'loginPopup'"></app-mobileno>
+
+                                       <!-- <input type="text" placeholder="" [(ngModel)]=registrationDetails.mobileNumber
+                                          id="r_ph" required [ngClass]="{ bgColor: true, inputFilled: true }"
+                                          (focus)="focusedRegistrationField='mobileNumber'"
+                                          (focusout)="focusedRegistrationField='mobileNumber'"
+                                          [ngClass]="{ bgColor: focusedRegistrationField!= 'mobileNumber' , inputFilled: focusedRegistrationField!= 'mobileNumber' && registrationDetails.mobileNumber }" /> -->
+                                       <div class="tooltip_in top_in"
+                                          *ngIf="(regiterDetails.mobileNumber.error && focusedRegistrationField=='mobileNumber')"
+                                          [ngClass]="{ onmobtooltip: (focusedRegistrationField=='mobileNumber'),
+                           error: regiterDetails.mobileNumber.error }" style="top: unset !important;height:auto;">
+                                          <span class="left_logo infoIcon">
+                                          </span>
+                                          <p class="password-strength-text" style="top:unset !important;"
+                                             *ngIf="regiterDetails.mobileNumber.error">
+                                             {{regiterDetails.mobileNumber.msg}}
+                                          </p>
+                                       </div>
+                                       <span class="errorImg" style="margin-right: 2px;"
+                                          *ngIf="regiterDetails.mobileNumber.error">
+                                          <!-- <img src="assets/images/svg-three/alert_icon.png" alt=""> -->
+                                       </span>
+                                    </div>
+                                    <!-- DOB input start-->
+
+                                    <div class="rightinputField">
+                                       <label class="inpulLabel">
+                                          Date of Birth
+                                       </label>
+                                       <input type="text" placeholder="Eg:12/05/1994"
+                                          [(ngModel)]=registrationDetails.dateOfBirth required
+                                          (focus)="focusedRegistrationField='dob'"
+                                          (focusout)="focusedRegistrationField='0'"
+                                          [ngClass]="{dob1:true, bgColor: focusedRegistrationField!= 'dob' , inputFilled: focusedRegistrationField!= 'dob' && registrationDetails.dateOfBirth }" />
+                                       <div class="tooltip_in top_in"
+                                          *ngIf="(regiterDetails.dateOfBirth.error && focusedRegistrationField=='dob')"
+                                          [ngClass]="{ onmobtooltip: (focusedRegistrationField=='dob'),
+                        error: regiterDetails.dateOfBirth.error }" style="top: unset !important;">
+                                          <span class="left_logo infoIcon">
+                                          </span>
+                                          <p class="password-strength-text" style="top:unset !important;"
+                                             *ngIf="regiterDetails.dateOfBirth.error">
+                                             {{regiterDetails.dateOfBirth.msg}}
+                                          </p>
+                                       </div>
+                                       <span class="errorImg" style="margin-right: 2px;"
+                                          *ngIf="regiterDetails.dateOfBirth.error">
+                                          <!-- <img src="assets/images/svg-three/alert_icon.png" alt=""> -->
+                                       </span>
+                                    </div>
+                                    <!-- DOB input end-->
+
+                                    <!-- password input start-->
+                                    <div class="inputWrapper">
+                                       <label class="inpulLabel">
+                                          Password
+                                       </label>
+                                       <div class="password-strength">
+                                          <span id="passClass" class="defoult">
+
+                                          </span>
+                                       </div>
+                                       <input type="password" placeholder="" [(ngModel)]=registrationDetails.password
+                                          [ngClass]="{inputFilled: true }" (focus)="focusedRegistrationField='password'"
+                                          (focusout)="focusedRegistrationField='0'"
+                                          [ngClass]="{ bgColor: focusedRegistrationField!= 'password' , inputFilled: focusedRegistrationField!= 'password' && registrationDetails.password }" />
+                                       <div class="tooltip_in top_in"
+                                          *ngIf="(regiterDetails.password.error && focusedRegistrationField=='password')"
+                                          [ngClass]="{ onmobtooltip: (focusedRegistrationField=='password'),
+                     error1: regiterDetails.password.error }" style="top: unset !important;">
+                                          <span class="left_logo infoIcon">
+                                          </span>
+                                          <p class="password-strength-text" style="top:unset !important;"
+                                             *ngIf="regiterDetails.password.error">
+                                             {{regiterDetails.password.msg}}
+                                          </p>
+                                       </div>
+                                       <span class="errorImg" style="margin-right: 2px;"
+                                          *ngIf="regiterDetails.password.error">
+                                          <!-- <img src="assets/images/svg-three/alert_icon.png" alt=""> -->
+                                       </span>
+                                    </div>
+                                    <!-- password input end-->
+
+                                 </div>
+                                 <p *ngIf="loginright == 1" style="cursor: pointer;text-align:right;" (click)="forgotPasswordType='forgotPassword'" class="condition onHover"><a> Forgot password? </a></p>
+
+                                 <p class="condition">
+                                    By Registering, you agree to our
+                                    <span>
+                                       <a (click)="routTo('privacy')" target="_blank">
+                                          Privacy Policy
+                                       </a>
+                                    </span>
+                                    and
+                                    <span>
+                                       <a (click)="routTo('termandcondition')" target="_blank">
+                                          Terms
+                                       </a>
+                                    </span>
+                                    of use.
+                                 </p>
+                                 <button *ngIf="loginright == 2" type="button" name="button"
+                                    class="regButton inputButton btneffect btneffectControl"
+                                    [disabled]="showPreloaderS === true" (click)="registerSubmit()">
+                                    <span>
+                                       Create Account
+                                    </span>
+                                    <span class="preloder">
+                                       <img src="./assets/images/svg/preloader-25.svg" alt="" *ngIf="showPreloaderS" />
+                                    </span>
+                                 </button>
+                                 <button *ngIf="loginright == 1" type="button" name="button"
+                                    class="regButton inputButton login_black" [disabled]="showPreloader  === true"
+                                    (click)="loginSubmit()">
+                                    <span *ngIf="!showPreloader">
+                                       Log in
+                                    </span>
+
+                                    <span *ngIf="showPreloader" class="preloder">
+                                       <img src="./assets/images/svg/preloader-25.svg" alt=""  />
+                                    </span>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<app-forgot-password (messageEvent)="receiveMessage($event)" [forgotPasswordType]=forgotPasswordType *ngIf="forgotPasswordType!=''"></app-forgot-password>

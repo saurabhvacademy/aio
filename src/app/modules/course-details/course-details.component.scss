@@ -1,0 +1,981 @@
+$textcolor: #2c2e2f;
+.container.main_body.profile_body{
+  // =================================================
+  // left menue css start
+  // ==================================================
+  .leftmenu_fixed{
+    position: fixed;
+    float: left;
+    background-color: #fff;
+    width: 278px;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 15px 5px 15px 15px;
+    .profile{
+      display: inline-block;
+      width: 60px;
+      float: left;
+      height: 60px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid #dfe0e8;
+      border: 4px solid #fff;
+       img{
+         width: 100%;
+         height: 100%
+       }
+    }
+
+    .basicdetails{
+      display: inline-block;
+      width: auto;
+      float: left;
+      font-size: 14px;
+      margin-left: 10px;
+      margin-top: 15px;line-height: 18px;
+      .name{
+        font-weight: 500;
+        line-height: 12px;
+        color: #2c2e2f;
+        &:first-child{
+          margin-bottom: 10px;
+        }
+      }
+      .followerCount{  opacity: .7;  font-weight: normal;}
+    }
+    /* .coursebasicdetails{    width: clac(100% - 70px);
+
+    } */
+  }
+  // =================================================
+  // left menue css end
+  // ==================================================
+
+  // ===============================================================================
+
+  // =================================================
+  // course detail css start
+  // ==================================================
+  .coursesDertailTop{
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .coursesDetailBottom{
+      background-color: #e8ecf1;
+      float: left;
+      width: 100%;
+      padding: 10px;
+      .leftDetail{
+        float: left;
+        width: 70%;
+        h1{
+          float: left;
+          width: 100%;
+          font-size: 16px;
+          color: #2c2e2f;
+          padding: 0px 0px 5px 0px;
+        }
+        p{
+          color: #8c8c8c;
+          font-weight: 500;
+          font-size: 14px;
+          .text{
+            float: left;
+            font-size: 12px;
+
+          }
+          .dote{
+            float: left;
+            width: 3px;
+
+            img{
+              width: 100%;
+              height: 100%;
+            }
+
+            &:nth-child(2n+2){
+              margin:0px 5px;
+            }
+
+          }
+
+        }
+
+
+
+
+        .star{
+          float: left;
+          width: 100%;
+          float: left;
+          margin-top: 5px;
+
+          .star_wrapper {
+            float: left;
+            label{
+              margin-right: 5px;
+              width: 12px;
+              height: 9px;
+              margin-bottom: 0px;
+            }
+            label.fill{
+
+
+              .star-fill-svg{
+                display: block;
+              }
+              .star-half-svg{
+                display: none;
+              }
+              .star-blank-svg{
+                display: none;
+              }
+            }
+            label.half_fill{
+
+              .star-fill-svg{
+                display: none;
+              }
+              .star-half-svg{
+                display: none;
+              }
+              .star-blank-svg{
+                display:block;
+              }
+            }
+            label.blank{
+
+              .star-fill-svg{
+                display: none;
+              }
+              .star-half-svg{
+                display: none;
+              }
+              .star-blank-svg{
+                display: block;
+              }
+            }
+          }
+          .Pagerating{
+            margin-right: 5px;
+            width: 100px !important;
+            height: 9px;
+            margin-bottom: 0px;
+            img{
+              width: 20px;
+              height: 14px;
+              float: left;
+            }
+          }
+          .rating{
+            float: left;
+            font-size: 12px;
+            margin-right: 5px;
+              color: #ffbb58;
+            font-weight: 500;
+            padding-top: 2px;
+          }
+          .number{
+            float: left;
+            font-size: 12px;
+            color: #8c8c8c;
+            padding-top: 2px;
+          }
+        }
+      }
+      .rightDetail{
+        float: right;
+        width: 24%;
+        .price{
+
+        }
+        .priceIcon{
+          float: left;
+          font-size: 18px;
+          line-height: 22px;
+          color: #f05050;
+          margin-left: 8px;
+          img{
+            width: 15px;
+            margin-right: 1px;
+            position: relative;
+            top: -1px;
+          }
+        }
+        .discountPriceIcon{
+          float: left;
+          font-size: 14px;
+          line-height: 20px;
+          color: #8c8c8c;
+          margin-left: 7px;
+          line-height: 20px;
+          position: relative;
+          padding-top:2px;
+
+
+          img{
+            width: 12px;
+            margin-right: 1px;
+          }
+          .stock{
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            height: 1px;
+            color: #2c2e2f;
+            background-color: #8c8c8c;
+            left: 0px;
+          }
+        }
+        button{
+          float: left;
+          background: transparent;
+          width: 101px;
+          border: 1px solid rgba($textcolor, 0.1);
+          border-radius: 3px;
+          font-size: 14px;
+          margin-top: 6px;
+          line-height:34px;
+        }
+      }
+
+    }
+    .courseComment{
+      float: left;
+      width: 100%;
+      background-color: #fff;
+      box-sizing: border-box;
+      padding: 15px 5px;
+
+      .imp{
+        display: inline-block;
+        float: left;
+        cursor: pointer;
+        width: 33.33%;
+        text-align: center;
+        .tik{
+          margin-right: 5px;
+          .defoult{
+            width: 18px;
+          }
+          .hover{
+            display: none;
+            width: 18px;
+
+          }
+          .active{
+            display: none;
+            width: 18px;
+          }
+        }
+        .text{
+          position: relative;
+          margin-right: 15px;
+          font-weight: 500;
+          font-size: 14px;
+          cursor: pointer;
+          color: #8c8c8c;
+
+        }
+        .count{
+          font-weight: 500;
+          font-size: 14px;
+          cursor: pointer;
+          color: #8c8c8c;
+
+                    &:after{
+                      content: "";
+                      background-color: #8c8c8c;
+                      width: 1px;
+                      height: 10px;
+                      position: absolute;
+                      margin: 3px 0px 0px -7px;
+                    }
+        }
+        &:hover{
+          .tik{
+            .defoult{
+              display: none;
+            }
+            .hover{
+              display:inline-block;
+            }
+          }
+          .text{
+            color: #f05050;
+          }
+          .count{
+            color: #f05050;
+          }
+        }
+      }
+      .rytimp{
+        .tik{
+          .defoult{
+            display: none;
+          }
+          .hover{
+            display: none;
+
+          }
+          .active{
+            display:inline-block;
+          }
+        }
+        .text{
+          color: #f05050;
+        }
+        .count{
+          color: #f05050;
+        }
+        &:hover{
+          .tik{
+            .hover{
+              display: none;
+            }
+          }
+        }
+      }
+
+      .comment{
+        display: inline-block;
+        float: left;
+        // margin-left: 18%;
+        width: 33.33%;
+        text-align: center;
+        cursor: pointer;
+        .comment_icon{
+          margin-right: 5px;
+          .defoult{
+            width: 18px;
+          }
+          .hover{
+            display: none;
+            width: 18px;
+          }
+        }
+        .text{
+          position: relative;
+          margin-right: 15px;
+          font-weight: 500;
+          font-size: 14px;
+          cursor: pointer;
+          color: #8c8c8c;
+
+
+        }
+
+        .count{
+          font-weight: 500;
+          font-size: 14px;
+          cursor: pointer;
+          color: #8c8c8c;
+          &:after{
+            content: "";
+            background-color: #8c8c8c;
+            width: 1px;
+            height: 10px;
+            position: absolute;
+            margin: 3px 0px 0px -7px;
+          }
+        }
+
+        &:hover{
+          .comment_icon{
+            .defoult{
+              display: none;
+            }
+            .hover{
+              display:inline-block;
+            }
+          }
+          .text{
+            color: #f05050;
+          }
+          .count{
+            color: #f05050;
+          }
+        }
+      }
+
+      .share{
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+        width: 33.33%;
+        text-align: center;
+
+        .shreIcon{
+          margin-right: 5px;
+          .defoult{
+            width: 18px;
+
+          }
+          .hover{
+            display: none;
+            width: 18px;
+          }
+
+        }
+        .text{
+          position: relative;
+          margin-right: 15px;
+          font-weight: 500;
+          font-size: 14px;
+          cursor: pointer;
+          color: #8c8c8c;
+
+
+        }
+        .count{
+          font-weight: 500;
+          font-size: 14px;
+          cursor: pointer;
+          color: #8c8c8c;
+          &:after{
+            content: "";
+            background-color: #8c8c8c;
+            width: 1px;
+            height: 10px;
+            position: absolute;
+            margin: 3px 0px 0px -7px;
+          }
+        }
+        &:hover{
+          .shreIcon{
+            .defoult{
+              display: none;
+            }
+            .hover{
+              display:inline-block;
+            }
+          }
+          .text{
+            color: #f05050;
+          }
+          .count{
+            color: #f05050;
+          }
+        }
+
+      }
+    }
+    .commentOuter{
+      padding: 10px;
+      float: left;
+      width: 100%;
+      border-top: 1px solid #ccc;
+      border-radius: 0px 0px 5px 5px;
+      background: #f5f7fa;
+      .writecomment{
+        float: left;
+        width: 100%;
+        .comment-profile{
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          overflow: hidden;
+          width: 40px;
+          float: left;
+          height: 40px;
+           img{
+             width: 100%;
+             height: 100%;
+           }
+        }
+        .optionoutr{
+          width: calc(100% - 45px);
+          float: right;
+          border: 1px solid rgba(44, 46, 47, 0.15);
+        }
+
+
+      }
+    }
+  }
+
+
+
+
+  // =================================================
+  // course detail css end
+  // ==================================================
+
+  // ==============================================================================
+
+  // =================================================
+  // right menue css start
+  // ==================================================
+  .right_menu{
+    float: left;
+    width: 100%;
+    .previewwidgetwrapper{
+      background-color: #fff;
+      float: left;
+      width: 100%;
+      padding: 15px 10px;
+      border-radius: 3px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      h3{
+        float: left;
+
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        padding: 0px 0px 5px 0px;
+        color: #2c2e2f;
+      }
+      h5{
+        font-weight: normal;
+        float: left;
+        width: 100%;
+        padding: 0px 0px 10px 0px;
+        font-size: 14px;
+        color: #8c8c8c;
+      }
+      .videocontainer{
+        float: left;
+        width: 100%;
+        height: 140px;
+        overflow: hidden;
+        border-radius: 3px;
+        position: relative;
+        img{
+          float: left;
+          width: 100%;
+          height: 100%;
+        }
+        .playbutton{
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          right: 0px;
+          left: 0px;
+          margin: auto;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+  }
+  // =================================================
+  // right menue css end
+  // ==================================================
+
+
+  // de enroll css starts
+  .de-enrollment{
+    float: left;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    min-height: 820px;
+    .head{float: left;
+      width: 100%;
+      border-bottom: 1px solid #e9e9e9;
+      background: #fff;
+      h3{
+        font-size: 16px;
+        color: #2c2e2f;
+        padding: 10px 15px;
+      }
+    }
+    .middle_wrapper.deletecourse{
+      float: left;
+      width: 100%;
+      padding: 10px 15px;
+      margin-bottom: 100px;
+      background-color: #fff;
+      h3{
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        padding: 5px 0px 10px 0px;
+        width: auto;
+        color:#2c2e2f;
+        opacity: .9;
+        border-bottom: 1px solid #e9e9e9;
+      }
+
+      .top_wrapper{
+        float: left;
+        width: 100%;
+        background: #f5f7fa;
+        overflow: hidden;
+        border-radius: 5px;
+        padding: 20px;
+        h2{
+          margin-bottom: 15px;
+          font-size: 16px;
+          color: #2c2e2f;
+          padding-top: 0px;
+
+        }
+        .left_container{
+          float: left;
+          width: 10%;
+          background: #f5f7fa;
+          overflow: hidden;
+          border-radius: 5px;
+          padding: 0px 0px;
+
+          img{
+            float: left;
+            width: 80px;
+            padding: 0px 0px;
+          }
+        }
+        .right_container{
+          width: 90%;
+          float: right;
+          padding-left: 20px;
+          h3{
+            font-size: 16px;
+            color: #2c2e2f;
+            padding-top:0px;
+          }
+          p{
+            float: left;
+            width: 100%;
+            font-size: 14px;
+            line-height: 18px;
+            color: #8c8c8c
+          }
+        }
+        .button_container{
+          float: left;
+          width: 100%;
+          position: static;
+          padding: 20px 0px 0px 0px;
+          .comfirm{
+            float: left;
+            text-align: center;
+            box-shadow: 0 1px 2px 1px #2c2e2f20;
+            background-color: #fff!important;
+            border: none;
+            cursor: pointer;
+            border-radius: 34px!important;
+            font-size: 14px;
+          }
+          .notconfirm{
+            float: right;
+            text-align: center;
+            box-shadow: 0 1px 2px 1px #2c2e2f20;
+            border: none;
+            cursor: pointer;
+            border-radius: 34px!important;
+            font-size: 14px;
+            background-color: #f05050;
+            color: #fff;
+          }
+        }
+      }
+
+      .condition_wrapper{
+        float: left;
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 75px;
+        h3{
+          font-size: 16px;
+          padding: 10px 0px 10px 0px;
+        }
+        ul{
+          float: left;
+          width: 100%;
+          list-style-type: none;
+          li{
+            float: left;
+            width: 100%;
+            padding: 10px 10px 10px 37px;
+            position: relative;
+            font-size: 14px;
+            color: #8c8c8c;
+            line-height: 20px;
+            span{
+              position: absolute;
+              left: 0px;
+            }
+          }
+        }
+      }
+      .text_area_wapper{
+        width: 100%;
+        float: left;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        background: #f5f7fa;
+        h3{
+          float: left;
+          width: 100%;
+          font-size: 14px;
+          padding: 15px 20px 15px 20px;
+          color: #8c8c8c;
+        }
+        .text_wrapper{
+          float: left;
+          width: 100%;
+          padding: 0px 20px 20px 20px;
+
+          .textcontainer{
+            float: left;
+            width: 100%;
+            height: 100px;
+            border: 1px solid #dfe0e8;
+            font-size: 14px;
+            padding: 10px;
+            background-color: #fff;
+          }
+        }
+
+      }
+
+
+    }
+
+    // confrm css
+    .confirmation_wrapper{
+      float: left;
+      width: 100%;
+      text-align: center;
+      margin-top: 15%;
+      img{
+        width: 100px;
+      }
+      h2{
+        float: left;
+        width: 100%;
+        font-size: 16px;
+        color: #2c2e2f;
+        padding: 10px 10px 0px 10px;
+        opacity: .8;
+      }
+      h5{
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        color: #8c8c8c;
+        line-height: 20px;
+        padding-top: 12px;
+      }
+      .button_wrapper{
+        float: left;
+        width: 100%;
+        text-align: center;
+        button{
+          float: none;
+          margin-top: 30px;
+          color: #fff;
+          text-align: center;
+          box-shadow: 0 1px 2px 1px #2c2e2f20;
+          background-color: #f05050;
+          border: none;
+          cursor: pointer;
+          border-radius: 35px;
+          font-size: 14px;
+          height: 45px;
+          width: 170px;
+        }
+      }
+    }
+
+
+
+
+  }
+
+
+
+}
+.profileouter{
+    width: 100%;
+    padding-left: 60px;
+    position: relative;
+    float: left;
+    min-height: 60px;
+    .profile{
+      position: absolute;
+      left: 0;
+      top: 0px;
+      bottom: 0px;}
+}
+.imgwrapper{
+  position: relative;
+  .leftmenudrop{
+  position: absolute;
+  top: 15px;
+      z-index: 2;
+  right: 15px;
+  .postbookmarkbtn.postright_btn{
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .postright_btn.postmenubtn{
+    border-radius: 50%;
+    img{
+      transform: rotate(-90deg);
+    }
+  }
+  }
+}
+.centerAlign{
+    display:flex;justify-content:center;
+    float: left;
+width: 100%;
+}
+.back_course{
+  display: none;
+}
+.course_cover{
+  .imgwrapper{
+    max-height: 265px;
+    width:100%;
+    img{
+      max-height: 265px;
+      width:100%;
+    }
+  }
+}
+.post-footer-btn-outer-wrap{
+   .post_footer.post-footer-btn-wrap{
+    border-top: none !important;
+}
+}
+.publicPage{
+  .main_body.profile_body{
+    margin-top: 71px;
+  }
+}
+
+
+/***Responsive css start here***/
+//=============================//
+@media only screen and (max-width:991px){
+.container.main_body.profile_body{
+.course_middle_details, .course_left_details, .course_right_details{float:left;width:100%;padding-left:0px;}
+.course_middle_details, .course_right_details{margin-top: 10px;}
+.course_left_details{
+float: left;
+.leftmenu_fixed{position:relative;width: 100%;}
+}
+
+}
+.back_course{
+  position: absolute;
+
+top: 5px;
+
+left: 1px;
+
+cursor: pointer;
+
+display: block;
+
+bottom: 5px;
+
+width: 35px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+  img{
+    width:18px;
+    margin: auto;
+  }
+}
+.profileouter{
+  float: left;
+  padding-left: 65px;
+}
+.container.main_body.profile_body .leftmenu_fixed{
+  padding: 5px 5px 5px 32px;
+  .basicdetails{
+    margin-top: 14px;
+    .name:first-child {
+    margin-bottom: 8px;
+}
+}
+}
+.publicPage{
+  .main_body.profile_body{
+    margin-top: 65px;
+  }
+}
+/* .pdng_left.course_right_details{
+  margin-top:0;
+} */
+}
+@media only screen and (max-width:767px){
+  .course_middle_details, .course_left_details, .course_right_details{float:left;width:100%;padding-right:0px;}
+
+}
+@media only screen and (max-width:600px){
+  .container.main_body.profile_body .coursesDertailTop .coursesDetailBottom{
+    .leftDetail{
+      float: left;
+      width: 100%;
+    }
+    .rightDetail{
+      float: right;
+      width: 100%;
+      .centerAlign {
+        justify-content: right !important;
+      }
+    }
+  }
+  .container.main_body.profile_body .leftmenu_fixed,  .previewcourseDescription, .previewwidgetwrapper {
+    border-radius: 0 !important;
+  }
+}
+@media only screen and (max-width:600px){
+  .container.main_body.profile_body .leftmenu_fixed{
+    .profile{
+    width:45px;
+    height:45px;
+  }
+  .basicdetails{
+    margin-top: 8px;
+    .name:first-child{
+         margin-bottom: 6px;
+      }
+      .name:last-child{
+          font-size: 12px;
+          opacity: 0.5;
+        }
+    }
+
+  }
+  .container.main_body.profile_body{
+    margin-top: 67px !important;
+  }
+}
+@media only screen and (max-width:600px){
+  .container.main_body.profile_body .course_middle_details, .container.main_body.profile_body .course_right_details{
+    margin-top:10px;
+  }
+  .post_outer.text-post-comp{
+    margin-bottom: 10px !important;
+  }
+  .pdng_left.course_right_details{
+    margin-top:10 !important;
+  }
+  .container.main_body.profile_body .right_menu .previewwidgetwrapper{
+    margin-top: -5px;
+    margin-bottom: 10px;
+  }
+  .profileouter{
+    padding-left: 45px;
+    min-height: 45px;
+  }
+}
+
+//=============================//
+/***Responsive css end here***/

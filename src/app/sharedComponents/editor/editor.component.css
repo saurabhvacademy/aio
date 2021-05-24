@@ -1,0 +1,40 @@
+/* line 34, D:/247/study24x7_web/src/app/sharedComponents/editor/editor.component.scss */
+.toolbar {
+  display: inline-block;
+  width: 100%;
+  padding: 0px 15px;
+  box-sizing: border-box;
+  background: #f5f7fa;
+  height: 39px;
+  line-height: 39px; }
+
+/* line 44, D:/247/study24x7_web/src/app/sharedComponents/editor/editor.component.scss */
+.editorimages {
+  display: inline-block;
+  padding: 0px 5px;
+  float: left;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  margin: 2px; }
+  /* line 55, D:/247/study24x7_web/src/app/sharedComponents/editor/editor.component.scss */
+  .editorimages img {
+    width: 12px; }
+
+/* line 59, D:/247/study24x7_web/src/app/sharedComponents/editor/editor.component.scss */
+.editor_container {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #dfe0e8;
+  background: #f5f7fa;
+  border-radius: 5px;
+  border-radius: 3px;
+  height: auto;
+  padding: 0px 0px 15px 0px; }
+
+/* line 72, D:/247/study24x7_web/src/app/sharedComponents/editor/editor.component.scss */
+.editorimages {
+  background: #fff; }
+
+/*# sourceMappingURL=editor.component.css.map */

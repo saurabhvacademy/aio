@@ -1,0 +1,1798 @@
+.login_Header .head_container {
+  line-height: normal;
+}
+
+.contact_us_header {
+  margin-top: 5px;
+  padding: 0px 0px 5px 20px;
+  font-size: 20px;
+  float: right;
+  position: relative;
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+.contact_us_header:before {
+  content: "";
+  background-image: url("/assets/images/mentor_images/callus.svg");
+  width: 15px;
+  height: 16px;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 17px;
+  background-size: 100% 100%;
+  width: 14px;
+  height: 14px;
+  top: 6px;
+}
+
+.contact_us_header .stdCode {
+  margin-right: 10px;
+  font-weight: normal;
+}
+
+.contact_us_header a {
+  color: #000;
+}
+
+.inputError {
+  border: solid 1px #f05050;
+}
+
+.bottomEnroll {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  font-family: "Montserrat";
+  display: none;
+}
+
+.bottomEnroll .bottomEnrollInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 10px 12px;
+  width: 100%;
+  background-color: #eff2f5;
+  padding-right: 150px;
+}
+
+.bottomEnroll .bottomEnrollInner .courseInfo h2 {
+  font-weight: 600;
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.bottomEnroll .bottomEnrollInner .courseInfo p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.bottomEnroll .buttonres {
+  height: 44px;
+  padding: 13px 22px 13px 23px;
+  border-radius: 39px;
+  -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+  background-color: #f05050;
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  width: 140px;
+  position: absolute;
+  right: 12px;
+  font-weight: 500;
+}
+
+.bottomEnroll .buttonres img {
+  width: 6px;
+  height: 10px;
+  margin-left: 3px;
+}
+
+.fl {
+  float: left;
+}
+
+.cp {
+  cursor: pointer;
+  display: none;
+}
+
+.font_mon {
+  font-family: "Montserrat";
+}
+
+.font_san {
+  font-family: "Source Sans Pro";
+}
+
+.f-w-600 {
+  font-weight: 600;
+}
+
+.f-w-500 {
+  font-weight: 500;
+}
+
+.banner_wrapper {
+  width: 100%;
+  background-image: url("/../../../assets/images/university/Banner-minimized.jpg");
+  height: 425px;
+  background-size: cover;
+}
+
+.banner-header {
+  width: 100%;
+  float: left;
+  padding: 35px 0px 35px 0px;
+  position: relative;
+}
+
+.banner-header .leftInfo {
+  height: 60px;
+  position: relative;
+}
+
+.banner-header .leftInfo img {
+  position: absolute;
+  width: 60px;
+  background: #fff;
+  border-radius: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.banner-header .rightInfo {
+  width: auto;
+  height: 60px;
+  padding: 5px 10px 5px 23px;
+  border-radius: 29px;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  right: 0;
+  top: 40px;
+  display: none;
+}
+
+.banner-header .rightInfo .social_content {
+  width: 66px;
+  margin: 8px 0px 0px 0px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  float: left;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.banner-header .rightInfo .avatars {
+  display: inline-block;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+  float: right;
+}
+
+.banner-header .rightInfo .avatars .gram {
+  padding: 5px;
+}
+
+.banner-header .rightInfo .avatars .tweet {
+  padding: 5px;
+}
+
+.banner-header .rightInfo .avatar {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+}
+
+.banner-header .rightInfo .avatar:not(:first-child) {
+  margin-left: -20px;
+}
+
+.banner-header .rightInfo .avatar img {
+  width: 100%;
+  display: block;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.banner-header .Details {
+  width: 100%;
+  padding-left: 75px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.banner-header .Details p {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.banner-header .Details p a {
+  color: #fff;
+  cursor: pointer;
+}
+
+.banner-header .Details p a:hover {
+  text-decoration: underline;
+}
+
+.banner-header .Details .fllowerCount {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 5px;
+}
+
+.banner-header .Details .fllowerCount button {
+  width: 60px;
+  height: 24px;
+  color: #f05050;
+  border-radius: 13px;
+  background-color: #ffffff;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: Roboto;
+  border: none;
+}
+
+.courseName {
+  float: left;
+  width: calc(100% - 450px);
+  margin-top: 80px;
+}
+
+.courseName h2 {
+  font-family: "Montserrat";
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.fl100 {
+  float: left;
+  width: 100%;
+}
+
+.ratting {
+  margin: 10px 0px 20px 0px;
+}
+
+.ratting label {
+  margin-bottom: 0px;
+  float: left;
+}
+
+.ratting .Pagerating {
+  display: inline;
+  width: 150px;
+}
+
+.ratting .Pagerating img {
+  width: 22px;
+  margin-right: 5px;
+}
+
+.ratting .ratingAvg {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffbb58;
+  margin: 5px 8px 0px 5px;
+}
+
+.ratting .ratingNo {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 6px;
+}
+
+.courseDesp {
+  color: #fff;
+  line-height: 26px;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+
+.coursePrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.coursePrice button {
+  width: 210px;
+  height: 64px;
+  border-radius: 44px;
+  -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+  background-color: #f05050;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  font-family: "Montserrat";
+}
+
+.coursePrice button img {
+  width: 10px;
+}
+
+.priceSec {
+  display: inline-block;
+  margin: 10px 0px 0px 30px;
+  display: none;
+}
+
+.priceSec p {
+  color: #fff;
+  font-size: 16px;
+}
+
+.priceSec .stock {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 2px;
+  left: 0px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.priceSec .priceSec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.priceSec .priceDiv {
+  margin-top: 8px;
+}
+
+.priceSec .sellingPrice {
+  font-size: 20px;
+  color: #fff;
+}
+
+.priceSec .actualPrice {
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 10px;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.educator_program {
+  background-color: #fff;
+  padding: 70px 0;
+}
+
+.educator {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 0 0 5px 5px;
+  margin-top: 40px;
+}
+
+.educator .educatorInner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.educatorCardOuter {
+  margin: 0 0 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+  position: relative;
+  padding-right: 0;
+  width: 49%;
+}
+
+.educatorCard {
+  width: 100%;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.06);
+  border: solid 1px rgba(223, 229, 235, 0.5);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  height: 320px;
+}
+
+.educatorCard:hover {
+  border: solid 1px #f05050;
+}
+
+.educatorCard .educatorInfo {
+  float: left;
+  width: 100%;
+  padding-left: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.educatorCard .imageSec {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  left: 0;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.educatorCard .imageSec img {
+  width: 100%;
+}
+
+.despSec .profession {
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: 600;
+  color: #f05050;
+}
+
+.despSec .nameEdu {
+  margin: 20px 0px 10px 0px;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.despSec .followEdu button {
+  width: 90px;
+  height: 36px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #f05050;
+  cursor: pointer;
+  border: 1px solid #f05050;
+  background-color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.despSec .followEdu button:hover {
+  background: #f05050;
+  color: #ffffff;
+}
+
+.EduDesp {
+  margin: 20px 0px 0px 0px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 22px;
+}
+
+.headMain {
+  width: 750px;
+}
+
+.headMain .heading_bold {
+  font-family: "Montserrat";
+  font-size: 36px;
+  font-weight: 700;
+  color: black;
+  text-align: left !important;
+}
+
+.headMain p {
+  margin: 20px 0px 40px 0px;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 22px;
+  font-size: 16px;
+}
+
+.main_container {
+  height: 360px;
+  background: #f05050;
+  background: -webkit-gradient(linear, left bottom, left top, from(#b42a2a), to(#f05050));
+  background: linear-gradient(0deg, #b42a2a 0%, #f05050 100%);
+  border-radius: 10px;
+  padding: 40px 390px 40px 50px;
+  -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+  position: relative;
+}
+
+.main_container .rightImg {
+  width: 390px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-image: url("/../../../assets/images/university/Career.png");
+  background-size: 100% 100%;
+}
+
+.main_container .leftWidth .headMain {
+  width: 375px;
+}
+
+.main_container .leftWidth .headMain .heading_bold,
+.main_container .leftWidth .headMain p {
+  color: #fff;
+}
+
+.main_container .leftWidth {
+  width: 600px;
+}
+
+.main_container .despList {
+  margin-top: 15px;
+}
+
+.main_container .despList ul li {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  width: 100%;
+  float: left;
+}
+
+.main_container .despList ul li .outerSpan {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  top: 3px;
+  left: 0px;
+}
+
+.main_container .despList ul li .outerSpan .innerSpan {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  margin: 0px 0px 4px 4px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.career_program {
+  padding: 0px 0px 70px 0px;
+  background-color: #fff;
+}
+
+.university_program {
+  padding: 0px;
+  background-color: #fff;
+}
+
+.university_program .universityOuet {
+  padding: 36px 0px 0px 0px;
+  position: relative;
+}
+
+.university_program .universityOuet h2 {
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #000000;
+}
+
+.university_program .universityOuet .universityDetails {
+  padding: 20px 0px 70px 165px;
+  position: relative;
+  width: calc(100% - 460px);
+}
+
+.university_program .universityOuet .universityDetails img {
+  position: absolute;
+  width: 150px;
+  left: 0px;
+}
+
+.university_program .universityOuet .uDetails .para1 {
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #f05050;
+}
+
+.university_program .universityOuet .uDetails .para2 {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 10px auto 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.university_program .universityOuet .uDetails span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #f05050;
+  cursor: pointer;
+}
+
+.university_program .universityOuet .uDetails span:hover {
+  text-decoration: underline;
+}
+
+.rightInfoBanner {
+  position: absolute;
+  right: 0px;
+  width: 430px;
+  height: 615 px;
+  border-radius: 6px;
+  top: -335px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.rightInfoBanner .bannerInfo {
+  width: 100%;
+  height: 214px;
+}
+
+.rightInfoBanner .bannerInfo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.rightInfoBanner .courseKeyInfo {
+  padding: 20px 20px 5px 20px;
+}
+
+.rightInfoBanner .courseKeyInfo ul {
+  padding: 25px 0px 0px;
+  border-bottom: solid 1px rgba(112, 112, 112, 0.2);
+}
+
+.rightInfoBanner .courseKeyInfo ul li {
+  padding: 0px 0px 20px 40px;
+  width: 50%;
+  float: left;
+  position: relative;
+}
+
+.rightInfoBanner .courseKeyInfo ul li:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  background: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.rightInfoBanner .courseKeyInfo ul li .firstData,
+.rightInfoBanner .courseKeyInfo ul li .secData {
+  font-size: 14px;
+  line-height: normal;
+}
+
+.rightInfoBanner .courseKeyInfo ul li .firstData {
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: #000000;
+}
+
+.rightInfoBanner .courseKeyInfo ul li .secData {
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 3px;
+}
+
+.rightInfoBanner .courseKeyInfo ul .li1:before {
+  background-image: url("/../../../assets/images/university/startdate.svg");
+}
+
+.rightInfoBanner .courseKeyInfo ul .li2:before {
+  background-image: url("/../../../assets/images/university/chat-icon.png");
+}
+
+.rightInfoBanner .courseKeyInfo ul .li3:before {
+  background-image: url("/../../../assets/images/university/signal.svg");
+}
+
+.rightInfoBanner .courseKeyInfo ul .li4:before {
+  background-image: url("/../../../assets/images/university/leaner-people.svg");
+}
+
+.rightInfoBanner .courseKeyInfo ul .li5:before {
+  background-image: url("/../../../assets/images/university/clock-time.svg");
+}
+
+.rightInfoBanner .courseKeyInfo ul .li6 {
+  width: 100%;
+}
+
+.rightInfoBanner .courseKeyInfo ul .li6:before {
+  background-image: url("/../../../assets/images/university/mobile-icon.svg");
+}
+
+.rightInfoBanner .courseKeyInfo .topicInfo {
+  padding: 18px 0px 15px 0px;
+}
+
+.rightInfoBanner .courseKeyInfo .topicInfo p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.rightInfoBanner .courseKeyInfo .topicInfo span {
+  border-radius: 17px;
+  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  margin-right: 10px;
+  padding: 8px 18px;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: normal;
+  font-weight: 500;
+  float: left;
+  margin-top: 15px;
+}
+
+.about_program {
+  padding: 0px 0px 70px 0px;
+}
+
+.menu {
+  margin: 0 auto;
+  width: 700px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 40px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  background-color: #dfe5eb;
+}
+
+.menu ul li {
+  padding: 8px 30px;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  border-radius: 30px;
+  margin-right: 5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.menu ul li:hover {
+  background: #ffffff;
+}
+
+.menu ul li.active {
+  color: #f05050;
+  background-color: #fff;
+}
+
+.menu ul li.active:after {
+  content: "";
+}
+
+.menu.menusticky {
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  left: 165px;
+}
+
+.about_program_main h3 {
+  font-family: "Montserrat";
+  font-size: 36px;
+  color: #000000;
+  font-weight: 700;
+}
+
+.about_program_main .about_program_details {
+  margin: 30px 0px 40px 0px;
+  width: 100%;
+  padding-right: 510px;
+  position: relative;
+}
+
+.about_program_main .about_program_details .youtubeImage {
+  top: 0;
+  position: absolute;
+  margin-top: 0px;
+  right: 0%;
+  height: 100%;
+  width: 480px;
+}
+
+.about_program_main .about_program_details .youtubeImage .imgRight.course_left {
+  width: 100%;
+}
+
+.about_program_main .about_program_details .youtubeImage .imgRight.course_left iframe {
+  width: 100%;
+  height: 248px;
+  border-radius: 10px;
+}
+
+.about_program_main .about_program_details p {
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 24px;
+}
+
+.about_program_main h5 {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
+  margin: 33px 0px;
+  color: #000000;
+}
+
+.course_feat_info ul li {
+  padding: 0px 15px 10px 25px;
+  width: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 24px;
+}
+
+.course_feat_info ul li::before {
+  content: "";
+  background-image: url("/../../../assets/images/university/red-tik.svg");
+  width: 15px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+.courseDataDesp {
+  padding: 0px 0px 0px 0px;
+}
+
+.courseDataDespLeft {
+  width: 50%;
+  float: left;
+  display: none;
+}
+
+.courseDataDespRight {
+  width: 100%;
+  float: right;
+}
+
+.courseDataDespRight .downloadBtn {
+  border-radius: 39px;
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  border: solid 2px #f05050;
+  background-color: #ffffff;
+  position: relative;
+  padding: 20px 38px 20px 70px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+  color: #f05050;
+  margin: 0 auto;
+  display: block;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.courseDataDespRight .downloadBtn:hover {
+  background: #f05050;
+  color: #ffffff;
+}
+
+.courseDataDespRight .downloadBtn:hover:before {
+  background-image: url("/../../../assets/images/university/Files_icon_white.svg");
+}
+
+.courseDataDespRight .downloadBtn:before {
+  content: "";
+  background-image: url("/../../../assets/images/university/Files_icon.svg");
+  position: absolute;
+  left: 33px;
+  width: 20px;
+  height: 23px;
+  background-size: 100% 100%;
+  top: 20px;
+}
+
+.courseDataDespRight .courseInfoAll {
+  margin: 15px 0px 0px -30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.courseDataDespRight .courseInfoAll .oneCardInfo {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 35px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.courseDataDespRight .courseInfoAll .oneCardInfo .cardCircle {
+  width: 90px;
+  height: 90px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.courseDataDespRight .courseInfoAll .oneCardInfo .cardCircle .imgIcon {
+  width: 90px;
+  height: 90px;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+.courseDataDespRight .courseInfoAll .oneCardInfo .infodetail1 {
+  font-size: 20px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  color: #f05050;
+  margin: 15px 0px 7px 0px;
+}
+
+.courseDataDespRight .courseInfoAll .oneCardInfo .infodetail2 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.9);
+  font-family: "Roboto", sans-serif;
+}
+
+.courseDataDespRight .courseCertificate {
+  padding: 0px 0px 0px 150px;
+  position: relative;
+  display: none;
+}
+
+.courseDataDespRight .courseCertificate img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.courseDataDespRight .courseCertificate h4 {
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+  color: #000000;
+}
+
+.courseDataDespRight .courseCertificate p,
+.courseDataDespRight .courseCertificate span {
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 10px 0px 15px 0px;
+}
+
+.courseDataDespRight .courseCertificate span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #f05050;
+  cursor: pointer;
+}
+
+.courseDataDespRight .courseCertificate span:hover {
+  text-decoration: underline;
+}
+
+.button24x7 {
+  height: 40px;
+  padding: 0px 25px;
+  width: 130px !important;
+}
+
+.button24x7 span {
+  width: 100%;
+  text-align: center;
+  float: left;
+  padding: 0px 0px 0px 0px !important;
+}
+
+.about_program_cont h4 {
+  font-family: "Montserrat";
+  font-size: 20px;
+  width: 655px;
+  line-height: 26px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.about_program_cont .maincoursetop {
+  float: left;
+  width: 100%;
+}
+
+.about_program_cont .maincoursetop .maincourseineer {
+  float: left;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about_program_cont .maincoursedata {
+  width: 32.5%;
+  min-height: 208px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #f05050;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
+  padding: 20px;
+  float: left;
+}
+
+.about_program_cont .maincoursedata:before {
+  content: "";
+  font-size: 30px;
+  width: 170px;
+  height: 170px;
+  border-radius: 10px 100% 100% 0px;
+  position: absolute;
+  background-color: #f05050;
+  top: -85px;
+  left: -85px;
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.about_program_cont .maincoursedata span {
+  position: absolute;
+  font-size: 32px;
+  font-family: "Montserrat";
+  color: #fff;
+  font-weight: bold;
+  left: 25px;
+  top: 25px;
+}
+
+.about_program_cont .maincoursedata h2 {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  padding: 8px 0px 30px 75px;
+  color: #f05050;
+}
+
+.about_program_cont .maincoursedata p {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 22px;
+}
+
+.btnapply:hover {
+  padding-right: 25px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.btnapply:hover .start_test {
+  display: inline-block;
+}
+
+.start_test {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  display: none;
+  position: absolute;
+  right: 32px;
+  top: 23px;
+}
+
+.start_test img {
+  width: 100% !important;
+}
+
+.menu_sticky {
+  position: fixed;
+  top: 15px;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  left: 50%;
+  margin: 0 !important;
+  z-index: 4;
+}
+
+.preDropdowInnernWrapper .head.active:after {
+  display: none;
+}
+
+.preDropdowInnernWrapper .head.active .downarrow {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.asked_question .heading_bold {
+  font-family: "Montserrat";
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.asked_question .inner_accordian .accordion {
+  font-size: 16px;
+  padding: 22px 60px 22px 25px;
+  position: relative;
+  font-family: Montserrat;
+}
+
+.asked_question .inner_accordian .accordion:after {
+  position: absolute;
+  right: 35px;
+  top: 25px;
+  font-weight: 600;
+  float: right;
+  margin-left: 5px;
+  font-size: 26px;
+}
+
+.btneffect {
+  z-index: 3;
+  position: relative;
+  transition: all ease-in 0.3s !important;
+  -moz-transition: all ease-in 0.3s !important;
+  -ms-transition: all ease-in 0.3s !important;
+  -o-transition: all ease-in 0.3s !important;
+  -webkit-transition: all ease-in 0.3s !important;
+  -webkit-animation-name: btneffect;
+  overflow: hidden;
+}
+
+.btneffect:hover:before {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: btneffect;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-name: btneffect;
+}
+
+.btneffect:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 800px;
+  height: 800px;
+  content: "";
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+}
+
+.btneffect:before,
+.btneffect:hover {
+  background: #ff6363;
+}
+
+@keyframes btneffect {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes btneffect {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.asked_ques_program {
+  background-color: #ffefef;
+  font-family: "Montserrat";
+  padding: 70px 0;
+}
+
+.asked_ques_program .inner_accordian {
+  min-height: auto;
+  max-width: 100%;
+}
+
+.login_Header {
+  background: #fff;
+  width: 100%;
+  height: auto;
+  line-height: 72px;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}
+
+.login_Header .head_container {
+  padding: 10px 0px;
+  line-height: normal;
+  position: relative;
+  padding-right: 10px;
+}
+
+.login_Header .head_container .comp_logo {
+  float: left;
+}
+
+.login_Header .head_container .comp_logo .logo {
+  width: 120px;
+  float: left;
+  margin-top: -1px;
+}
+
+.popup .abt_exp_popup {
+  max-width: 500px;
+  overflow: hidden;
+  display: inline-block;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 999;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.popup .abt_exp_popup .inner-wrap .post-wrap {
+  float: left;
+  width: 100%;
+  padding: 0px 20px;
+}
+
+.popup .abt_exp_popup .inner-wrap .post-wrap .input_wrapper {
+  margin-top: 15px;
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.popup .abt_exp_popup .inner-wrap .post-wrap .input_wrapper .instbranchlist {
+  left: 0px;
+  top: 54px;
+}
+
+.popup .abt_exp_popup .inner-wrap .post-wrap .input_wrapper .input_label {
+  color: #8c8c8c;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.popup .abt_exp_popup .inner-wrap .post-wrap .input_wrapper .input_inner_wrapper {
+  margin-top: 5px;
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.popup .abt_exp_popup .inner-wrap .post-wrap .input_wrapper .input_inner_wrapper input {
+  font-size: 14px;
+}
+
+.popup .abt_exp_popup .inner-wrap .post-wrap .input_wrapper .input_inner_wrapper input:focus {
+  border: 1px solid #66a9d5 !important;
+  border-color: #66a9d5 !important;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.3rem rgba(153, 197, 227, 0.3) !important;
+  box-shadow: 0 0 0 0.3rem rgba(153, 197, 227, 0.3) !important;
+}
+
+.popup .abt_exp_popup .inner-wrap .footer {
+  margin-top: 15px !important;
+  padding: 16px 16px;
+  border-top: 1px solid #e9e9e9;
+  -webkit-box-shadow: 0px 1px 5px 1px #e9e9e9 !important;
+          box-shadow: 0px 1px 5px 1px #e9e9e9 !important;
+  background: #fff;
+  width: 100%;
+}
+
+.popup .abt_exp_popup .inner-wrap .footer button {
+  min-width: 70px;
+  margin-left: 10px;
+  line-height: 23px;
+}
+
+.success_msg .thanksSec {
+  width: 100%;
+  height: 100%;
+  float: left;
+  border-radius: 12px;
+  background-color: #ffffff;
+  text-align: center;
+  z-index: 99;
+  float: left;
+  padding: 30px;
+}
+
+.success_msg .thanksSec h2 {
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.23;
+  margin: 35px auto 20px auto;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.success_msg .thanksSec .reachUsInfo,
+.success_msg .thanksSec .mailid,
+.success_msg .thanksSec .contactNo {
+  font-size: 20px;
+  line-height: 1.27;
+  color: #000000;
+  margin: 22px 0px 40px 0px;
+}
+
+.success_msg .thanksSec .contactNo a {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.61;
+  background-color: #f05050;
+  padding: 8px 35px 8px 20px;
+  font-weight: 500;
+  position: relative;
+  transition: all ease-in 0.3s;
+  -moz-transition: all ease-in 0.3s;
+  -ms-transition: all ease-in 0.3s;
+  -o-transition: all ease-in 0.3s;
+  -webkit-transition: all ease-in 0.3s;
+  overflow: hidden;
+  z-index: 3;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .educator .educatorInner {
+    width: calc(100% + 0px);
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .university_program .universityOuet .universityDetails {
+    padding: 20px 0px 50px 0px;
+  }
+  .uDetails {
+    margin-top: 100px;
+  }
+  .about_program_cont .maincoursetop {
+    float: left;
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+  .about_program_cont .maincoursetop .maincourseineer {
+    float: left;
+    width: 1260px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    display: block;
+  }
+  .about_program_cont .maincoursetop .maincoursedata {
+    width: 400px;
+    margin-right: 20px;
+  }
+  .educator .educatorInner .educatorCardOuter .educatorCard {
+    height: 340px;
+  }
+  .courseDataDespRight .courseInfoAll .oneCardInfo {
+    width: 33.33%;
+  }
+  .banner_wrapper {
+    height: auto;
+    background-size: cover;
+  }
+  .main_container {
+    padding: 40px 50px 40px 50px;
+  }
+  .main_container .despList {
+    margin-top: 20px;
+  }
+  .main_container .rightImg {
+    display: none;
+  }
+  .main_container .leftWidth {
+    width: 100%;
+  }
+  .main_container .leftWidth .headMain {
+    width: 100%;
+  }
+  .courseName {
+    width: 100%;
+    padding-bottom: 35px;
+    margin-top: 40px;
+  }
+  .university_program .universityOuet h2 {
+    display: none;
+  }
+  .university_program .universityOuet .universityDetails {
+    padding: 20px 0px 70px 20px;
+    position: relative;
+    width: calc(100% - 0px);
+  }
+  .rightInfoBanner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    float: left;
+  }
+  .rightInfoBanner .bannerInfo {
+    height: auto;
+  }
+  .about_program_main .about_program_details {
+    width: 100%;
+    padding-right: 0px;
+  }
+  .about_program_main .about_program_details .youtubeImage {
+    position: relative;
+    top: 20px;
+    right: 0%;
+    height: 100%;
+    width: 100%;
+  }
+  .about_program_main .about_program_details .youtubeImage .imgRight.course_left {
+    text-align: center;
+  }
+  .about_program_main .about_program_details .youtubeImage .imgRight.course_left iframe {
+    width: 600px;
+    height: 338px;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .headMain {
+    width: 100%;
+  }
+  .about_program_cont h4 {
+    width: 100%;
+  }
+  .educator {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .educator .educatorInner {
+    width: 800px;
+    padding-right: 0px;
+    margin-left: 0px;
+  }
+  .educator .educatorInner .educatorCardOuter {
+    width: 400px;
+  }
+  .educator .educatorInner .educatorCardOuter .educatorCard {
+    height: 360px;
+  }
+  .educator .educatorInner .educatorCardOuter2 {
+    margin-left: 20px;
+  }
+  #menuDiv {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .popup .abt_exp_popup .inner-wrap .footer {
+    text-align: center;
+  }
+  .popup .abt_exp_popup .inner-wrap .footer .fright {
+    float: none;
+    margin: 0 auto;
+  }
+  .main_container {
+    padding: 25px 20px 25px 20px;
+    height: auto;
+  }
+  .main_container .despList {
+    margin-top: 0px;
+  }
+  .main_container .despList ul li {
+    width: 100%;
+  }
+  .about_program_main .about_program_details .youtubeImage {
+    top: 20px;
+    margin-bottom: 20px;
+  }
+  .about_program_main .about_program_details .youtubeImage .imgRight.course_left iframe {
+    width: 100%;
+    height: 320px;
+  }
+  .course_feat_info ul li {
+    padding: 0px 0px 10px 25px;
+    width: 100%;
+  }
+  .courseDataDespRight .courseInfoAll {
+    max-width: 400px;
+    margin: 0px auto 0px auto;
+  }
+  .courseDataDespRight .courseInfoAll .oneCardInfo {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 35px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .courseDataDespRight .courseInfoAll .oneCardInfoLast {
+    width: 100%;
+  }
+  .popup .abt_exp_popup {
+    max-width: calc(100% - 20%) !important;
+  }
+  .bottom_sticky {
+    display: block;
+  }
+  .courseName h2 {
+    font-size: 28px;
+  }
+  .btnapply {
+    padding-right: 25px;
+  }
+  .btnapply .start_test {
+    display: inline-block;
+  }
+  .university_program .universityOuet {
+    padding: 36px 0px 36px 0px;
+  }
+  .university_program .universityOuet .universityDetails {
+    display: none;
+  }
+  .asked_ques_program,
+  .educator_program {
+    padding: 40px 0;
+  }
+  .about_program_main .heading_bold,
+  .asked_ques_program .heading_bold,
+  .asked_question .heading_bold {
+    font-size: 24px;
+    text-align: left;
+    line-height: 1.1;
+  }
+  .about_program_main h3,
+  .asked_ques_program h3,
+  .asked_question h3 {
+    font-size: 24px;
+  }
+  .about_program_main h5,
+  .asked_ques_program h5,
+  .asked_question h5 {
+    font-size: 20px;
+    margin: 33px 0px 25px 0px;
+    float: left;
+  }
+  .about_program {
+    padding: 0px 0px 40px 0px;
+  }
+  .asked_question_last {
+    padding-bottom: 100px;
+  }
+  .educator .educatorInner {
+    width: 590px;
+  }
+  .educator .educatorInner .educatorCardOuter {
+    width: 285px;
+  }
+  .educator .educatorInner .educatorCardOuter .educatorCard {
+    padding: 20px 15px;
+    height: 315px;
+  }
+  .educator .educatorInner .educatorCardOuter .educatorCard .imageSec {
+    width: 65px;
+    height: 65px;
+  }
+  .educator .educatorInner .educatorCardOuter .educatorCard .educatorInfo {
+    height: auto;
+    padding-left: 75px;
+  }
+  .despSec .nameEdu {
+    margin: 10px 0px 10px 0px;
+  }
+  .EduDesp {
+    margin: 25px 0px 0px 0px;
+    font-size: 14px;
+  }
+  .main_container .despList ul li {
+    font-size: 16px;
+  }
+  .main_container .despList ul li .outerSpan {
+    top: 3px;
+  }
+  .main_container .despList ul li .outerSpan .innerSpan {
+    margin: 4px 0px 4px 4px;
+  }
+  .headMain p {
+    margin: 20px 0px 30px 0px;
+  }
+  .about_program_cont .maincoursedata h2 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about_program_main .about_program_details .youtubeImage .imgRight.course_left iframe {
+    height: 320px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .about_program_main .about_program_details .youtubeImage .imgRight.course_left iframe {
+    height: 287px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .about_program_main .about_program_details .youtubeImage .imgRight.course_left iframe {
+    height: 250px;
+  }
+  .banner-header {
+    padding: 35px 0px 20px 0px;
+  }
+  .courseDesp {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .about_program_main .about_program_details .youtubeImage .imgRight.course_left iframe {
+    height: 185px;
+  }
+  .rightInfoBanner .courseKeyInfo ul li {
+    width: 100%;
+  }
+  .rightInfoBanner .courseKeyInfo .topicInfo span {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  .contact_us_header {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  .contact_us_header:before {
+    top: 4px;
+  }
+  .login_Header .head_container .comp_logo .logo {
+    width: 110px;
+  }
+}
+/*# sourceMappingURL=program.component.css.map */

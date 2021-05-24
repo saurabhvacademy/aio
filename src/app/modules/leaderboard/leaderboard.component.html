@@ -1,0 +1,49 @@
+
+<app-mnavbar (showMobileMenu)="displayMobileMenu()" (hideMenu)="hideMobileMenu()"></app-mnavbar>
+
+<div class="wrapper not_publicview">
+    <app-header ></app-header>
+    <div class="sidemenu" [ngClass]="{'openfilter': isMobileMenue }" >
+    <div *ngIf="isMobileMenue">
+    <div class="menuslidedarkbg"  (click)="leftSidemenu()"></div>
+    <app-mmenu   class="cntrMmenu" ></app-mmenu>
+    </div>
+    </div>
+    <div [hidden]="isMobileMenue" id="wvidiv">
+        <div class="container main_body profile_body">
+            <div class="row ">
+                <!--- responsive ui start--->
+                <!-- left side nav -->
+                <div class="darkbackground bgadd" *ngIf="leftFilterMenu" (click)="leftSideFilter()"></div>
+                <div class="sidefilter" [ngClass]="{'openfilter': leftFilterMenu }">
+                    <div class="innerSideFilter">
+                        <app-filter-by-interest (filterEmitter)="filterByInterest($event)" *ngIf="leftFilterMenu">
+                        </app-filter-by-interest>
+                        <div class="open_left" (click)="leftSideFilter()"><img
+                                src="assets/images/svg-three/post_icon/filter.svg" alt=""></div>
+                    </div>
+                </div>
+                <!-- end side nav -->
+                <!--- responsive ui end--->
+                <div class="col-md-3 col-sm-4 fleft pdng_right left_stickytab">
+                    <app-filter-by-interest (filterEmitter)="filterByInterest($event)"></app-filter-by-interest>
+                </div>
+                <div class="col-md-6 fleft center_feed leaderboard-center_feed">
+                    <div class="topper-sec">
+                        <app-top-three-display></app-top-three-display>
+                    </div>
+                    <div class="listing-sec">
+                        <app-rank-listing></app-rank-listing>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-3 fright pdng_left right_stickytab center_feed" id="outerDivright">
+                    <app-rank-statistics></app-rank-statistics>
+                    <app-my-points></app-my-points>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,318 @@
+<div class="wrapper">
+  <div class="header">Analytics</div>
+  <ul class="topNav">
+    <li class="activeList">Course Analytics</li>
+    <!-- <li>Page Analytics</li> -->
+  </ul>
+  <div class="innerhWrapper">
+
+    <!-- top navigation var start -->
+    <div class="topSearchWrapper">
+      <p>Only published courses will have analytics data</p>
+      <div class="searchRightWrapper">
+
+        <!--                <div class="download dropDown">
+                                    <img src="./assets/images/download.svg" alt="">
+                                </div>-->
+        <div class="dateWrapper dropDown">
+          <span class="dropDowninnerWrapper"(click)="showDatelist()">
+            <img class="leftIcon" src="./assets/images/calendar.svg" alt="">
+            {{dateRange}}
+            <img class="rightIcon"
+              src="./assets/images/svg-three/add_post/downarrow.svg" alt="">
+          </span>
+
+          <div class="dateListWrapper" *ngIf="isShoeDateList"
+            (mouseleave)="showDatelist()">
+            <span class="reload_img" (click)="resetTimeSpanFxn()"><img alt=""
+                src="assets/images/svg-three/course/course_creation/refress.jpg"></span>
+            <ul>
+              <li class="topDateContainer">
+                <span class="leftDateWrapper datewrapper">
+                  <!-- <span class="date">12/09/18</span> -->
+                  <!-- <div class="datepicker-container">
+                                        model value: {{ date }}
+                                    </div> -->
+                  <div class="datepicker-container">
+                    <!--                                        <img src="./assets/images/calendar.svg" alt="">-->
+                    <ng-datepicker [(ngModel)]="fromDate" [options]="options"
+                      (ngModelChange)="dateChangeHandler()"></ng-datepicker>
+                  </div>
+                </span>
+                <span class="rightDateWrapper datewrapper">
+                  <!-- <span class="date">01/01/19</span> -->
+
+                  <div class="datepicker-container">
+                    <!--                                        <img src="./assets/images/calendar.svg" alt="">-->
+                    <ng-datepicker [(ngModel)]="toDate" [options]="options"
+                      (ngModelChange)="dateChangeHandler()"></ng-datepicker>
+                  </div>
+                </span>
+              </li>
+              <!--<li (click)="setDatesFrmDays(0)">Date Range</li>-->
+              <li (click)="setDatesFrmDays(1)">Past Week</li>
+              <li (click)="setDatesFrmDays(2)">This Month</li>
+              <li (click)="setDatesFrmDays(3)">Past Month</li>
+              <li (click)="setDatesFrmDays(4)">Past 3 Month</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="courseDropdownWrapper dropDown" [ngClass]="{'removePointer':
+          allCourseList.length == 0}" (click)="showCourselist()">
+          <span class="dropDowninnerWrapper">
+            <img class="leftIcon"
+              src="./assets/images/svg-three/course/all_courses.svg" alt="">
+            {{selectedCourse | trimData:15}}
+            <img class="rightIcon"
+              src="./assets/images/svg-three/add_post/downarrow.svg" alt="">
+          </span>
+
+          <div class="courseList" *ngIf="isShowCourseList"
+            (mouseleave)="showCourselist()">
+            <ul>
+              <li class="courseListHeading"
+                (click)="courseSelectionHandler(-1)">
+                All Course
+                <img src="./assets/images/svg-three/add_post/downarrow.svg"
+                  alt="">
+              </li>
+            </ul>
+
+            <!-- for loop yha se chalana  -->
+            <ul class="scrollList" [perfectScrollbar]="config">
+              <li *ngFor="let course of allCourseList; let i= index"
+                (click)="courseSelectionHandler(i)" [perfectScrollbar]="config"
+                style="position: relative;">
+                {{course.TITLE | trimData:40}}
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- top navigation var end -->
+
+
+    <!-- map wrapper start -->
+    <!--        <div class="mapWrapper">
+                    <canvas class="graph" baseChart style="display: block;width: 100%;height: 100%;"
+                            [datasets]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [colors]="lineChartColors"
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType"
+                            [plugins]="lineChartPlugins">
+                </canvas>
+            </div>-->
+    <div class="mapWrapper" [chart]="chart"></div>
+
+    <!-- map wrapper end -->
+
+
+    <!-- summary wrapper start -->
+    <div class="summaryWrapper">
+      <div class="summaryWrapperCont">
+
+        <div class="summaryInnerWrapper">
+          <div class="summaryInnerMain">
+            <h3>Course Sold</h3>
+
+            <!--            <span class="perCount">
+                +25%
+            </span>-->
+            <div class="summaryFooter">
+              <span class="Count">{{soldCount}}</span>
+              <!--<span class="text">Since last week</span>-->
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="summaryInnerWrapper">
+          <div class="summaryInnerMain">
+            <h3>Total Enrollments</h3>
+
+            <!--            <span class="perCount">
+                +27%
+            </span>-->
+            <div class="summaryFooter">
+              <span class="Count">{{totalEnroll}}</span>
+              <!--<span class="text">Since last week</span>-->
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="summaryInnerWrapper">
+          <div class="summaryInnerMain">
+            <h3>Total Amount</h3>
+
+            <!--            <span class="perCount red">
+                -9%
+            </span>-->
+            <div class="summaryFooter">
+              <span class="Count">{{totalAmount | currency:'INR':true:'1.0'}}</span>
+              <!--<span class="text">Since last week</span>-->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- summary wrapper end -->
+
+
+    <!-- table wrapper start -->
+    <!-- table wrapper start -->
+    <div class="tableWrapper">
+      <div class="empty_state_table" style="display:none;">
+        <span><img src="assets/images/course_icon/create_course.svg" alt=""></span>
+      </div>
+      <div class="tableFlow">
+        <table>
+
+          <thead>
+            <tr>
+              <th class="date" (click)="sortingHandler(1)">Date
+                <!-- <img src="assets/images/sort.svg" alt="" > -->
+                <span class="glyphicon glyphicon-chevron-up up"></span>
+                <span class="glyphicon glyphicon-chevron-down down"></span>
+              </th>
+              <th class="searchcrc">
+
+                <span class="input_wrapper">
+                  <span class="search_heading" *ngIf="searchonfocus">Enrollers</span>
+                  <span class="search_btn" [ngClass]="{ 'seachwidth' :
+                    widthset}">
+                    <button *ngIf="focussearchbtnhide" (click)="btnwidth()"><span
+                        class="glyphicon glyphicon-search"></span></button>
+                    <!-- <button *ngIf="searchText.length==0 || searchonfocus" (click)="btnwidth()"><span class="glyphicon glyphicon-search"></span></button> -->
+                    <!-- <button *ngIf="searchText.length!=0 && !searchonfocus" (click)="getCourseAnalyticsFlowFxn(2)"><span class="glyphicon glyphicon-search fetch_result" style="color:#f05050 !important"></span></button> -->
+                    <input type="search" placeholder="Search"
+                      [(ngModel)]="searchText" (keyup)="searchHandler($event)"
+                      (focusout)="focusOutFunction()"
+                      (focus)="focusInFunction();contentSearchStatusFxn(1)"
+                      (blur)="contentSearchStatusFxn(0)">
+                  </span>
+                  <!-- (focus)="focusFunction()" -->
+                  <!-- <input  type="search" name="" value="" placeholder="search">
+              <img src="./assets/images/svg-three/head/search-02.svg" alt=""> -->
+                </span>
+              </th>
+              <!-- <th class="search" style="display:none;"><input  type="text" id="searchContent" value="" placeholder="search" (focus)="contentSearchStatusFxn(1)" (blur)="contentSearchStatusFxn(0)"><img src="./assets/images/svg-three/head/search-02.svg" alt="" (click)="filterCourseData()">
+          </th> -->
+              <th class="courseName">Course</th>
+              <th class="ammout">Amount</th>
+              <th class="sort" (click)="sortingHandler(2)">
+                <!-- <img src="assets/images/sort.svg" alt=""> -->
+                <span class="glyphicon glyphicon-chevron-up up"></span>
+                <span class="glyphicon glyphicon-chevron-down down"></span>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let user of allEnrolledUser; let i= index">
+              <td>{{user.UPDATE_DATE_TIME | date :'dd MMM, yyyy'}}</td>
+              <td class="name"><div style="float:left" routerLink="/profile/{{user.USER_NAME}}">{{user.USER_FULL_NAME
+                  |trimData:25}}</div>
+                  <div>
+                    <div
+                      (click)="showInfoOf==user.USER_UUID + i?showInfoOf='':showInfoOf=user.USER_UUID + i;getEnrolledUserContactDetails(user,i)"
+                      [ngClass]="{'infoButton':true, activeInfo:showInfoOf==user.USER_UUID +i}">i
+                      <div class="infoCard"
+                        *ngIf="showInfoOf==user.USER_UUID + i">
+                        <div class="triangle-left"> </div>
+                        <div class="inner-triangle"> </div>
+  
+                        <div style="padding: 10px 5px 2px 5px;">Mob : {{user.contactDetails.mobile}}</div>
+  
+                        <div style="padding: 3px 5px 10px 5px;" >Email : <a  href="mailto:{{user.contactDetails.email}}">{{user.contactDetails.email}}</a></div>
+  
+                      </div>
+                    </div>
+  
+                  </div>
+  
+              </td>
+              <td>{{user.TITLE}}</td>
+              <td class="cost">
+                <span style="float:left;">{{user.COST |
+                  currency:'INR':true:'1.0'}}</span>
+
+                <span *ngIf="user.IS_INVOICE==true" class="dropdownMenuIcon">
+                  <img src="assets/images/svg-three/post_icon/report.svg"
+                    alt="">
+                  <div class="priceDetailList">
+                    <ul>
+                      <span class="triangle"></span>
+                      <span class="topTriangle"></span>
+
+                      <li>Maximum Retail Price <span class="cost">{{user.HOVER_DATA.DISCOUNT_COST}}</span></li>
+                      <li>Selling Price <span class="cost">{{user.HOVER_DATA.TOTAL_PAID_COST}}</span></li>
+                      <li class="discount">Discount <span class="cost">{{user.HOVER_DATA.COUPON_COST}}</span></li>
+                      <li class="total">Total <span class="cost">{{user.HOVER_DATA.TOTAL_PAID_COST}}</span></li>
+                    </ul>
+                    <div class="priceListFooter">
+                      <p>This student save {{user.HOVER_DATA.COUPON_COST}} on
+                        this course</p>
+                    </div>
+                  </div>
+                </span>
+
+              </td>
+              <td class="menu" (click)="showMenu(i)" (mouseleave)="hideList()">
+                <img src="assets/images/svg-three/post_icon/dot_menu.svg" alt=""
+                  style="transform: rotate(90deg);">
+                <div class="subMenu" *ngIf="showListMenu == i">
+                  <span routerLink="/profile/{{user.USER_NAME}}">View Profile</span>
+                  <span *ngIf="user.IS_INVOICE==true"
+                    routerLink="/payment/receipt/{{user.HOVER_DATA.TXID}}">View
+                    Invoice</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+    <div class="next_previous">
+      <!-- <span class="arrow_wrapper">
+      <button class="arrowleft" type="button" name="button" [ngClass]="{'disableButton' : isLeftBtnDisabled }" (click)="getCourseAnalyticsFlowFxn(0)"><span class="glyphicon glyphicon-arrow-left"></span></button>
+      <button class="arrowright" type="button" name="button" [ngClass]="{'disableButton' : isRightBtnDisabled }" (click)="getCourseAnalyticsFlowFxn(1)"><span class="glyphicon glyphicon-arrow-right" ></span></button>
+    </span> -->
+      <div class="paginationText">Showing {{startCount}} to {{endCount}} of
+        {{totalEnroll}} entries</div>
+
+      <div class="paginationWrapper">
+        <ul>
+          <li [ngClass]="{'disableButton' : isLeftBtnDisabled }"
+            (click)="getCourseAnalyticsFlowFxn(0)">Previous</li>
+          <li class="active" style="cursor: auto">{{paginationCount}}</li>
+          <!--<li>2</li>-->
+          <li [ngClass]="{'disableButton' : isRightBtnDisabled }"
+            (click)="getCourseAnalyticsFlowFxn(1)">Next</li>
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- table wrapper end -->
+
+  </div>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation"
+  (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

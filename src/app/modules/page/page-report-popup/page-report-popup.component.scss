@@ -1,0 +1,191 @@
+$backgroundgray : #e6e6e6;
+$themeblue : #F05050;
+$themegray : #f5f7fa;
+$textcolor : #2c2e2f;
+$textgrey : #8c8c8c;
+$maingreen: rgb(7,162,8);
+$stroke : #dfe0e8;
+// $stroke : #E9E9E9;
+$borderRadius: 5px;
+$inputTypeHeight: 35px;
+$inputTypeFont: 12px;
+$headerHeight: 60px;
+$headerLineHeight: $headerHeight - 5px;
+$mainboxShadow: 0 0 7px rgba(0,0,0,0.1);
+$dropdownwidth: 400px;
+$dropdwncontentwidth: $dropdownwidth - 100px;
+$ntfctnprofile: 40px;
+$inrprflimg : $ntfctnprofile + 8px;
+$PostPicture: 40px;
+$commentPicture: $PostPicture - 10px;
+$subcommentPicture: $commentPicture - 10px;
+$mainpostName: 14px;
+$maincommentName: $mainpostName - 2px;
+$darkthemestroke: $themeblue;
+$progressbarRed: #ed6568;
+$rightanswer : #5bbc5b;
+
+
+.reportspopup{
+  width: 300px !important;
+  height: 331px;
+  .popup_heading{
+    height: 40px;
+
+    line-height: 40px;
+
+    font-weight: 500;
+
+    text-align: left;
+
+    color: #2c2e2f;
+
+    font-size: 14px;
+
+    border-radius: 3px 3px 0px 0;
+
+    background-color: #f5f7fa;
+
+    font-weight: 500;
+    border-bottom:none !important;
+  }
+
+
+  .interesrsearch{
+    width: 100%;
+  }
+  .profiledetail{
+    width: 357px !important;
+  }
+  .post_outer{
+    box-shadow: none;
+
+    .post_profile{
+      padding: 10px 10px 0px 10px;
+      p{
+        margin-top: 10px;
+      }
+      button{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .report_popup{
+    border: none!important;
+    margin-bottom: 0px!important
+  }
+  .post_profileContent{
+    padding: 20px 0 !important;
+    height: 230px;
+    .report_ul{
+
+      .report_li{float: left;
+        width: 100%;
+        margin: 3px 0px;
+        .dis_inline{float: left;
+          display: inline-block;
+          height: 20px;
+          line-height: 20px;}
+          //                input{width: 10%;margin-top: 0px;}
+          //                span{width: 90%;font-size: 12px;}
+        }
+
+      }
+    }
+  }
+
+  .fieldlist {
+    margin: 0 0 -1em;
+    padding: 0;
+    float: left;
+    padding: 15px;
+    width: 100%;
+    li {
+      list-style: none;
+      padding-bottom: 10px;float: left;
+      width: 100%;
+
+      .k-radio, input.k-checkbox {
+        display: inline;
+        opacity: 0;
+        width: 0;
+        margin: 0;
+        -webkit-appearance: none;
+        overflow: hidden;
+        position: absolute;
+      }
+      .k-checkbox-label, .k-radio-label {
+        display: inline-block;
+        position: relative;
+        padding-left: 28.8px;
+        vertical-align: text-top;
+        line-height: 16px;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 0;
+      }
+      .k-radio-label{float: left;}
+
+      .k-checkbox-label, .k-radio-label {
+        line-height: 18px;
+        color: #2c2e2f;
+        font-size: 12px;margin-bottom: 0px;
+        font-weight: normal;
+      }
+      .k-radio-label:before {
+        border-color: #838383;
+        border-radius: 50%;
+        background-color: #fff;
+        border-width: 2px;
+      }
+      .k-radio-label:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border-style: solid;
+      }
+      .k-radio:checked + .k-radio-label:before, .k-radio:checked + .k-radio-label:hover:before {
+        border-color: #F05050;
+      }
+      .k-radio:checked + .k-radio-label:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+      }
+      .k-radio:checked + .k-radio-label:after {
+        top: 4px;
+        left: 4px;
+      }
+      // .k-radio:checked + .k-radio-label-other:after {
+      //     top: 5px;
+      //
+      // }
+      .k-radio:checked + .k-radio-label:after {
+        background-color: #F05050;
+        border-radius: 50%;
+      }
+    }
+  }
+  .footer_wrap_profile{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px !important;
+    background-color: #f5f7fa;
+    border-radius: 0 0 5px 5px;
+    button{
+      margin-bottom: 0 !important;
+    }
+  }
+  .btn_active_shdw{
+    &:active{
+      box-shadow: none !important;
+    }
+  }

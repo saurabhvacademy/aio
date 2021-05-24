@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.25" height="14.261" viewBox="0 0 18.25 14.261">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="Group_1385" transform="translate(-317.895 -152.541)">
+        <g id="Group_1134" transform="translate(320.338 153)">
+            <path id="Path_444" d="M127.8 93.3a3 3 0 1 1 3-3 3 3 0 0 1-3 3z" class="cls-1" transform="translate(-124.8 -87.3)"/>
+        </g>
+        <g id="Group_1135" transform="translate(317.895 160.171)">
+            <path id="Path_445" d="M74.2 256a5.809 5.809 0 0 1 5.708 5.892v.738H68.5v-.738A5.808 5.808 0 0 1 74.2 256z" class="cls-1" transform="translate(-68.5 -256)"/>
+        </g>
+        <g id="noun_Plus_1756290" transform="translate(327.777 152.791)">
+            <g id="Group_1384">
+                <path id="Path_1504" fill="#fff" fill-rule="evenodd" stroke="#f05050" stroke-width="0.5px" d="M4.059 0a.692.692 0 0 1 .687.687v2.684H7.43a.687.687 0 1 1 0 1.375H4.746V7.43a.687.687 0 1 1-1.375 0V4.746H.687a.687.687 0 1 1 0-1.375h2.684V.687A.692.692 0 0 1 4.059 0z"/>
+            </g>
+        </g>
+    </g>
+</svg>

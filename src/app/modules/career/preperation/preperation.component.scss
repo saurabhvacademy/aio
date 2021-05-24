@@ -1,0 +1,243 @@
+
+@import './../../../sass/abstracts/variables';
+@import './../../../sass/abstracts/fontfamily';
+$fontmontserrat: 'Montserrat';
+$SourceSansPro:  'Source Sans Pro';
+.bgblack{
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: #000;
+  position: absolute;
+  width: calc(100% - 50% - 371px);
+  z-index: 0;
+}
+.bgwhite{
+position: relative;
+}
+.pd80 {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+.imgRight {
+
+    z-index: 1;
+    position: relative;
+    img{
+      max-width: 100%;
+    }
+}
+
+.heading_bold{
+  font-family: $fontmontserrat;
+font-size: 36px;
+text-align: left;
+color: #000000;
+margin-bottom: 25px;
+font-weight: bold;
+}
+.course_left {
+   width: 45%;
+   label{
+font-size: 14px;
+font-weight: bold;
+margin-bottom:20px;
+color: #f05050;
+font-family: $fontmontserrat;
+   }
+}
+
+.buttonSec{
+   width: 100%;
+   float:left;
+   clear: both;
+  button{
+  width: 222px;
+height: 54px;
+border-radius: 36px;
+box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+background-color: #f05050;
+font-family: $fontmontserrat;
+font-size: 16px;
+font-weight: 600;
+color:#fff;
+border:1px solid #f05050;
+}
+}
+.buttonSecRes{display:none;}
+
+
+.downApp{
+  float: left;
+width: 100%;
+margin-top: 40px;
+span{
+  font-size: 16px;
+font-weight: bold;
+text-align: left;
+font-family: $fontmontserrat;
+color: #000000;
+}
+}
+.downloadApp{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 315px;
+  margin: 15px auto 10px 0;
+  a{
+    img{
+      width: 150px;
+    }
+  }
+}
+@media only screen and (max-width:1200px){
+  .imgRight {
+      width: 50%;
+  }
+  .bgblack {
+    width: calc(100% - 78% );
+}
+}
+@media only screen and (max-width:1024px){
+
+  .heading_bold {
+    font-size: 32px;
+}
+}
+@media only screen and (max-width:768px){
+
+
+
+  .pd80 {
+      padding: 40px 0px 40px 0px;
+  }
+  .heading_bold {
+    font-size: 26px;
+}
+.course_left, .imgRight, .buttonSec {
+    width: 100%;
+}
+.imgRight{
+  width: calc(100% + 30px);
+height: 180px;
+margin-top: 70px;
+margin-bottom: 110px;
+
+background-image: linear-gradient(to bottom, #2c2e2f, #1f2020);
+margin-left: -15px;
+margin-right: -15px;
+position: relative;
+img{
+    max-width: 100%;
+    position: absolute;
+    left: 50%;
+    width: 450px;
+    margin-left: -225px;
+    top: -84px;
+}
+}
+.bgblack {
+    display: none;
+}
+
+.buttonSec.buttonSecRes {
+  width: 290px;
+  float: none;
+  clear: both;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  .btneffect{
+    margin: 0 auto;
+  }
+  .downApp {
+    text-align: center;
+}
+.downloadApp{
+    width: 100%;
+    margin: 15px auto 10px auto;
+      img {
+    width: 140px;
+}
+}
+}
+  .buttonSec.buttonSecRes{display:flex;}
+  .buttonSec.buttonSecWeb{display:none;}
+}
+@media only screen and (max-width:540px){
+  .heading_bold {
+    font-size: 22px;
+}
+.course_feat_info{
+ p {
+    padding-right: 100px;
+}
+}
+.imgRight{
+height: 130px;
+img{
+    width: 360px;
+    margin-left: -180px;
+    top: -70px;
+}
+}
+}
+@media only screen and (max-width:480px){
+  .heading_bold {
+    font-size: 20px;
+    line-height:26px;
+    margin-bottom: 15px;
+}
+  .course_feat_info{
+    label {
+   margin-bottom: 10px;
+}
+   p {
+      font-size:14px;
+      line-height:20px;
+      padding-right: 0px;
+  }
+  }
+  .imgRight{
+    height: 130px;
+    margin-top: 40px;
+    margin-bottom: 65px;
+    img {
+    width: 330px;
+    margin-left: -165px;
+    top: -62px;
+}
+}
+  .buttonSec{
+        width: 280px;
+  button{
+    width: 192px;
+    height: 45px;
+    font-size: 14px;}
+
+.downApp {
+  margin-top: 20px;
+span {
+    font-size: 14px;
+}
+img {
+    width: 130px;
+}
+}
+}
+}
+@media only screen and (max-width:360px){
+  .imgRight{
+        height: 110px;
+        margin-top: 20px;
+        margin-bottom: 70px;
+        img {
+           width: 260px;
+           margin-left: -130px;
+           top: -47px;
+       }
+}
+}

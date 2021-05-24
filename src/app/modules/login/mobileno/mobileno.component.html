@@ -1,0 +1,76 @@
+<div
+  [ngClass]="{'countryListShow1': className =='loginPg','countryListShow2':className=='loginPgRes','countryListShow3':className=='pageAbout','countryListSetting':className=='pageSetting','countryListloginPopup':className=='loginPopup','countryListpayment':className=='paymentPopup','sociallogininput':className=='socialLogin','forgotPasswordinput':className=='forgotPassword'}"
+  class="mobileSelection">
+  <div *ngIf="showCountryCodeAndFlag" (click)="hideCountryList=!hideCountryList" class="countryShow" [ngClass]="{'countryShowHover': mobileNumber !=''}" [ngClass]="{'countryShowHover': countryCodeHighlight ==true}"  >
+    <div class="countryFlag"><img
+        src="{{'https://study247.s3.ap-south-1.amazonaws.com/assets/247-country-flags/'+countryCode+'.png'}}" /></div>
+    <div class="countryCode"><span>+{{countryIsdCode}}</span></div>
+    <div class="down-arrow" [ngClass]="{'up-arrow': !hideCountryList}"></div>
+  </div>
+  <input type="text" placeholder="{{placeholder}}" [(ngModel)]="mobileNumber" id="r_ph" required
+    (focus)="showCountryCodeAndFlag=true;" (keyup)="emitMobileNumber()" class="mobinput" [ngClass]="{ bgColor: activeInput != 4,
+    inputFilled: activeInput!=4 && mobileNumber && mobileNumber.length>0,
+    leftSpace:showCountryCodeAndFlag  && countryIsdCode.length==1,
+    leftSpace2:showCountryCodeAndFlag && countryIsdCode.length==2,
+    leftSpace3:showCountryCodeAndFlag && countryIsdCode.length==3 }" />
+
+
+  <div *ngIf="!hideCountryList" class="countryListShow" id='listOfAllCountries'>
+    <div class="countrySearch">
+      <input class="dataSearch" (keyup)="filterCountry(searchCountryString)" [(ngModel)]="searchCountryString"
+        type="text"  placeholder="Search Country" />
+      <span *ngIf="searchCountryString.length !='' " (click)="searchCountryString='';filterCountry(searchCountryString)" class="dataRefresh">
+        <img src="assets/images/svg/tagcross-gray.svg" />
+      </span>
+    </div>
+    <perfectscroll>
+      <div class="countryList" [perfectScrollbar]="config" style="position:relative;">
+        <div
+          (click)="countryId=country.COUNTRY_ID;countryCode=country.COUNTRY_SHORT_NAME;hideCountryList=true;countryIsdCode=country.COUNTRY_ID;countryCodeHighlight=true;emitMobileNumber()"
+          *ngFor="let country of filteredCountryList" class="listData">
+          <div class="countryFlag"><img
+              src="{{'https://study247.s3.ap-south-1.amazonaws.com/assets/247-country-flags/'+country.COUNTRY_SHORT_NAME+'.png'}}" />
+          </div>
+          <div class="countryCode"><span>(+{{country.COUNTRY_ID}}) {{country.COUNTRY_NAME}}</span></div>
+        </div>
+      </div>
+    </perfectscroll>
+  </div>
+
+
+  <div *ngIf="!hideCountryList" class="countryListShow">
+    <div class="countrySearch">
+      <input class="dataSearch" (keyup)="filterCountry(searchCountryString)" [(ngModel)]="searchCountryString"
+        type="text" style="border-left: 1px solid #e6e6e6 !important;" placeholder="Search Country" />
+      <span *ngIf="searchCountryString.length !='' " (click)="searchCountryString='';filterCountry(searchCountryString)" class="dataRefresh">
+        <img src="assets/images/svg/tagcross-gray.svg" />
+      </span>
+    </div>
+
+    <div class="countryList" [perfectScrollbar]="config" style="position:relative;">
+      <div
+        (click)="countryCode=country.COUNTRY_SHORT_NAME;hideCountryList=true;countryIsdCode=country.COUNTRY_CODE;countryCodeHighlight=true;emitMobileNumber()"
+        *ngFor="let country of filteredCountryList" class="listData">
+        <div class="countryFlag"><img
+            src="{{'https://study247.s3.ap-south-1.amazonaws.com/assets/247-country-flags/'+country.COUNTRY_SHORT_NAME+'.png'}}" />
+        </div>
+        <div class="countryCode" (click)="countryId=country.COUNTRY_ID;countryListUpdate()">
+          <span>(+{{country.COUNTRY_CODE}}) {{country.COUNTRY_NAME}}</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="tooltip_in top_in" *ngIf="(activeInput == 4) "
+  [ngClass]="{onmobtooltip: (onmobFocus == 2) ,error: errFieldCount == 4 }" style="top: -52px !important;">
+  <span class="left_logo infoIcon">
+  </span>
+  <p class="password-strength-text" *ngIf="(activeInput == 4 && errFieldCount != 4) ">
+    Required for OTP Verification.
+  </p>
+  <p class="password-strength-text" *ngIf="errFieldCount == 4">
+    {{ error }}
+  </p>
+</div>
+<!-- <span class="errorImg" *ngIf="errFieldCount == 4">
+</span> -->

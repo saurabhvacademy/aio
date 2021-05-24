@@ -1,0 +1,34 @@
+.page-mentor-widget .page-mentor-outter-wrap {
+  padding: 0 10px 10px;
+}
+
+.page-mentor-widget .page-mentor-outter-wrap .page-mentor-wrap .mentor-box {
+  float: left;
+  width: 28%;
+}
+
+.page-mentor-widget .page-mentor-outter-wrap .page-mentor-wrap .mentor-box:nth-child(2) {
+  margin: 0 8%;
+}
+
+.page-mentor-widget .page-mentor-outter-wrap .page-mentor-wrap .mentor-box figure {
+  border-radius: 50%;
+  height: 58px;
+  width: 58px;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid rgba(44, 46, 47, 0.7);
+  margin-bottom: 15px;
+}
+
+.page-mentor-widget .page-mentor-outter-wrap .page-mentor-wrap .mentor-box figure img {
+  max-width: 100%;
+}
+
+.page-mentor-widget .page-mentor-outter-wrap .page-mentor-wrap .mentor-box .grayinfo {
+  color: rgba(44, 46, 47, 0.6);
+  font-size: 12px;
+  line-height: 1;
+}
+/*# sourceMappingURL=pagementorwidget.component.css.map */

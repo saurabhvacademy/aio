@@ -1,0 +1,80 @@
+<!-- ==================================================  -->
+<!-- Course Progress Leftmenu start here  -->
+<!-- ==================================================  -->
+<div class="side_menu" (click)="closeMenuEmit()">
+    <div class="inner_lesson_menu" (click)="stopPropogation($event)">
+
+        <div class="menuHead">
+            <span (click)="goBackToCourse()">
+                <span class="backToCourse" >
+                    <img src="./assets/images/svg-three/course/course_creation/arrow.svg" alt="study24x7">
+                </span>
+                <h4 class="cursor-pointer">Back to Course</h4>
+            </span>
+            <span id="closeMenuEmit"  class="close_div" (click)="closeMenuEmit()">
+
+                <img  class="defaultt" src="./assets/images/svg-three/course/course_creation/arrow.svg" >
+                <img  class="hoverr" src="./assets/images/svg-three/course/course_creation/arrowblack.svg" >
+
+            </span>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="outer_lesson_wrapper" [perfectScrollbar]="config" style="position: relative;height: calc(100% - 50px);">
+            <div class="lesson_outr clearfix" *ngFor="let section of sectionArr; let i = index;">
+                 <div class="lesson_out_in clearfix">
+                    <!--<span>Lesson {{i+1}}:</span>-->
+                    <span>{{section.SECTION_TITLE}}</span>
+                </div>
+                <div class="course_index clearfix">
+                    <ul>
+                        <ng-container *ngFor="let content of section.SECTION_CONTENT_DATA; let j = index;">
+                            <li *ngIf="(content.CONTENT_TYPE == 7 && _constantService.getSessionDataBYKey('STREAM_FLAG') == 1) || content.CONTENT_TYPE != 7" (click)="UpdateSeenContent(content);" [ngClass]="{'cursor-remove':content.VISIBILITY ==1}">
+                                <span *ngIf="content.CONTENT_TYPE==1 || content.CONTENT_TYPE==4 || content.CONTENT_TYPE==5">
+                                    <img src="assets/images/svg-three/course/courseDetails/videoPlayIcon.svg" alt="study24x7"></span>
+                                <span *ngIf="content.CONTENT_TYPE == 2"><img src="assets/images/svg-three/course/courseDetails/documentIcon.svg" alt="study24x7"></span>
+                                <span *ngIf="content.CONTENT_TYPE == 7"><img src="assets/images/svg-three/course/courseDetails/videoLiveIcon.svg" alt="study24x7"></span>
+                                <span *ngIf="content.CONTENT_TYPE == 3 || content.CONTENT_TYPE == 6"><img src="assets/images/svg-three/course/courseDetails/gray_quiz.svg" alt="study24x7"></span>
+                                <span>&nbsp;</span>
+                                <span class="contetName">&nbsp;{{content.TITLE}}</span>
+
+                                <span style="cursor: default;" class="images lock verCenterAlign" *ngIf="content.VISIBILITY ==1">
+                                    <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg" alt="study24x7">
+                                </span>
+
+                                <span>
+                                    <input type="checkbox" id="payable1" class="payRadio" name="payradio" [checked]="content.SEEN">
+                                    <label class="checkbox_btn checkbt" for="payable1" style="pointer-events: none;">
+                                        <img class="checkboximg" src="assets/images/svg-three/course/courseDetails/documentReadIcon.svg">
+                                    </label>
+
+                                    <!-- <label class="bubble_empty" [ngClass]={'bubble_fill': content.SEEN  }>
+                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-white.svg">
+                                    </label> -->
+                                    <!-- <label class="bubble_empty bubble_fill" >
+                                        <img class="checkboximg" src="assets/images/svg-one/checkbox-white.svg">
+                                    </label> -->
+
+                                </span>
+                                <span class="contentDetail" *ngIf="content.CONTENT_TYPE == 7">{{content.DURATION}}</span>
+                                <span class="contentDetail" *ngIf="content.CONTENT_TYPE == 2">{{content.PAGES}} pages</span>
+                                <span class="contentDetail" *ngIf="content.CONTENT_TYPE == 3">{{content.QUESTION_COUNT}} Ques</span>
+                                <span class="contentDetail" *ngIf="content.CONTENT_TYPE == 6 && isEmbeddedActive" >1 Test</span>
+                                <span class="contentDetail" *ngIf="(content.CONTENT_TYPE == 1 || content.CONTENT_TYPE == 4 || content.CONTENT_TYPE== 5 ) && content.DURATION != null ">{{content.DURATION}} minutes</span>
+                            </li>
+                        </ng-container>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loader2 inner_lesson_menu"  *ngIf="preLoaderLeftPannel">
+    <img src="assets/images/24x7preloader.gif" style="width: 140px;" alt="study24x7" >
+</div>
+
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<!-- ==================================================  -->
+<!-- Course Progress Leftmenu end here  -->
+<!-- ==================================================  -->

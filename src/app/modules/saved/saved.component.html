@@ -1,0 +1,214 @@
+<div class="wrapper saved-post-page-wrapper user_saved_post">
+    <!-- <app-header *ngIf="showHeader"></app-header> -->
+    <div id="windiv">
+        <div class=" " *ngIf="!Savedfolder">
+            <div class="row" >
+                <!-- <div class="col-md-3 col-sm-4 left_stickytab" id="left-side-bar" style="padding-right:0;">
+                  <div class="rightmenu_fixed" id="someDivleft" [ngClass]="{'fixedleft': isScrolled1}">
+                    <app-leftmenu (hidePopup)="hidePageCreatePopup($event)" (showPopup)="displayPageCreatePopup($event)"  [leftSecWidth]="secWidth"></app-leftmenu>
+                  </div>
+                </div> -->
+            <div class="col-md-8 col-sm-8 center_feed" id="centersection">
+                    <div class="maindiv saved-post-main" *ngIf="folders === 0">
+                        <div class="mobileHeader  mainheading ">Recent Saved
+                          <div class="mobileBackButton" routerLink="/home">
+                            <img src="assets/images/svg-three/login_icon/left-arrow.svg" alt="">
+                          </div>
+                          <span class="savededit edit_delete_option savedpost_btn" (click)="savefolder_drpdown()">
+                              <span class="postright_btn postmenubtn savedrpdenbtn">
+                                  <img src="assets/images/svg-three/post_icon/filter.svg" class="postdropmenu defaultt">
+                                  <img src="assets/images/svg-three/post_icon/f05050/filter_red.svg" class="postdropmenu hoverr">
+                              </span>
+                              <div  class="saved_foldersave" *ngIf="savedfolder" (mouseleave)="focusOut();">
+                                  <div class="about_outer  " >
+                                      <h6 class="widgetheading">Folders </h6>
+                                      <ul  class="savedlist" style="position:relative;" [perfectScrollbar]="config">
+                                          <li [ngClass]= "{'active' : folders === 0 }" (click)="savedfolderClick(0);getRecentPostInSavedFolder();focusOut($event)" class="cursor-pointer">
+                                              <span class="spanfolder">Recent Saved
+                                              </span>
+                                          </li>
+                                          <li *ngFor="let saves of savedFolder;let i=index" [ngClass]= "{'active' : folders === saves.SAVED_FOLDER_ID }" id="saved_{{saves.SAVED_FOLDER_ID}}" (click)="savedfolderClick(saves.SAVED_FOLDER_ID);getFolderPost(saves.SAVED_FOLDER_ID,1,false,i);savedfolder=false">
+                                              <span class="spanfolder" >{{saves.FOLDER_NAME}}
+                                                  <!--                                     <span class="postcount">Posts 20</span>-->
+                                              </span>
+                                              <span class="interest_count" *ngIf="saves.TOTAL_POST_COUNT!=0" id="{{saves.SAVED_FOLDER_ID}}_count">{{saves.TOTAL_POST_COUNT}}</span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                          </span>
+                        </div>
+                        <div class="inner-main-div ">
+                                <div data-infinite-scroll
+                                     [infiniteScrollDistance]="1"
+                                     [infiniteScrollThrottle]="300"
+                                     [immediateCheck] = "true"
+                                     (scrolled)="onScrollDown()"
+                                     [scrollWindow]="true" >
+                                     <div #savedContainer ></div></div>
+                                <!-- wall post preloader start -->
+                                <div class="placeholde-wrapper emptystate" *ngIf="recentPostCount == 0 && !isEmptyState">
+                                    <div class="animated-background">
+                                        <div class="circle cir_animation animated-background"></div>
+                                        <div class="whitediv bottom11"></div>
+                                        <div class="whitediv bottom10"></div>
+                                        <div class="whitediv bottom9"></div>
+                                        <div class="whitediv bottom8"></div>
+                                        <div class="whitediv bottom7"></div>
+                                        <div class="whitediv bottom6"></div>
+                                        <div class="whitediv bottom5"></div>
+                                        <div class="whitediv bottom4"></div>
+                                        <div class="whitediv bottom3"></div>
+                                        <div class="whitediv bottom2"></div>
+                                        <div class="bottom1 whitediv "></div>
+                                    </div>
+                                </div>
+                                <!-- wall post preloader end -->
+                                <div class="emptystate col-md-12" *ngIf="isEmptyState" style="background-color: #fff;">
+                                    <div class="emptystate_inner">
+                                        <img class="emptyreview" src="assets/images/svg-three/empty_state/saved.svg">
+                                        <p>No post in saved folder</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="maindiv saved-post-main" *ngIf="folders != 0">
+                            <div class="mainheading mobileHeader" >{{savedFolderName}}
+                              <div class="mobileBackButton" (click)="savedfolderClick(0);getRecentPostInSavedFolder();">
+                                <img src="assets/images/svg-three/login_icon/left-arrow.svg" alt="">
+                              </div>
+                                <span #saveeditlist>
+                                    <span class="savededit edit_delete_option">
+                                        <span class="postright_btn postmenubtn savedrpdenbtn" (click)="savedropdown()" #postright>
+                                            <img src="assets/images/svg-three/post_icon/dot_menu.svg" class="postdropmenu defaultt">
+                                            <img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" class="postdropmenu hoverr">
+                                        </span>
+                                    </span>
+                                    <span class="drpdwn_post postdrop for-post drop_post drpdwn_edit" style="right:15px !important" *ngIf="save_drop_down" (mouseleave)="focusOut();">
+                                        <ul>
+                                            <li (click) = "editsavedfolder(savedFolderId,savedFolderName);">
+                                                <div class="width100"><span class='default' >
+                                                        <img src="assets/images/svg-three/profile_about/edit.svg" style="width:16px">
+                                                    </span><span class='hoverimg' >
+                                                        <img src="assets/images/svg-three/profile_about/f05050/edit.svg" style="width:16px" >
+                                                    </span>
+                                                    <div class="postdropdown_inner" style="width: 128px;">
+                                                        Edit
+                                                        <span class="time">
+                                                            You can edit your folder
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li (click) = "deletesavedfolder(savedFolderId);">
+                                                <div class="width100">
+                                                    <span class='default' >
+                                                        <img src="assets/images/svg/dustbindrop.svg">
+                                                    </span>
+                                                    <span class='hoverimg' >
+                                                        <img src="assets/images/svg/dustbindrophover.svg">
+                                                    </span>
+                                                    <div class="postdropdown_inner" style="width: 128px;">
+                                                        Delete
+                                                        <span class="time">
+                                                            You can delete your folder
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </span>
+                                <span class="savededit edit_delete_option savedpost_btn" (click)="savefolder_drpdown()">
+                                    <span class="postright_btn postmenubtn savedrpdenbtn">
+                                        <img src="assets/images/svg-three/post_icon/filter.svg" class="postdropmenu defaultt">
+                                        <img src="assets/images/svg-three/post_icon/f05050/filter_red.svg" class="postdropmenu hoverr">
+                                    </span>
+                                    <div  class="saved_foldersave" *ngIf="savedfolder" (mouseleave)="focusOut();">
+                                        <div class="about_outer  " >
+                                            <h6 class="widgetheading">Folders </h6>
+                                            <ul class="savedlist" style="position:relative;" [perfectScrollbar]="config">
+                                                <li [ngClass]= "{'active' : folders === 0 }" (click)="savedfolderClick(0);getRecentPostInSavedFolder();savedfolder=flase" class="cursor-pointer">
+                                                    <span class="spanfolder">Recent Saved
+                                                    </span>
+                                                </li>
+                                                <li *ngFor="let saves of savedFolder;let i=index" [ngClass]= "{'active' : folders === saves.SAVED_FOLDER_ID }" id="saved_{{saves.SAVED_FOLDER_ID}}" (click)="savedfolderClick(saves.SAVED_FOLDER_ID);getFolderPost(saves.SAVED_FOLDER_ID,1,false,i);">
+                                                    <span class="spanfolder" >{{saves.FOLDER_NAME}}
+                                                        <!--                                     <span class="postcount">Posts 20</span>-->
+                                                    </span>
+                                                    <span class="interest_count" *ngIf="saves.TOTAL_POST_COUNT!=0" id="{{saves.SAVED_FOLDER_ID}}_count">{{saves.TOTAL_POST_COUNT}}</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                </span>
+                            </div>
+                            <div class="inner-main-div" >
+                                <div data-infinite-scroll
+                                     [infiniteScrollDistance]="1"
+                                     [infiniteScrollThrottle]="300"
+                                     [immediateCheck] = "true"
+                                     (scrolled)="onScrollDown()"
+                                     [scrollWindow]="true">
+                                     <div #savedContainer></div>
+
+                                    <div class="emptystate col-md-12" *ngIf="FolderPresent==2" style="background-color: #fff;">
+                                        <div class="emptystate_inner">
+                                            <img src="assets/images/svg-three/empty_state/saved.svg" >
+                                            <p>No post in saved folder</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="col-md-4 col-sm-4 pdng_left right_stickytab" id="left_side">
+              <div class="rightmenu_fixed" id="someDiv" [ngClass]="{'fixedleft': isScrolled}">
+                <div class="about_outer  ">
+                    <h6 class="widgetheading">Folders </h6>
+                    <ul class="savedlist" style="position:relative;" [perfectScrollbar]="config">
+                        <li [ngClass]= "{'active' : folders === 0 }" (click)="savedfolderClick(0);getRecentPostInSavedFolder();" class="cursor-pointer">
+                            <span class="spanfolder">Recent Saved
+                            </span>
+                        </li>
+                        <li *ngFor="let saves of savedFolder;let i=index" [ngClass]= "{'active' : folders === saves.SAVED_FOLDER_ID }" id="saved_{{saves.SAVED_FOLDER_ID}}" (click)="savedfolderClick(saves.SAVED_FOLDER_ID);getFolderPost(saves.SAVED_FOLDER_ID,1,false,i);">
+                            <span class="spanfolder" >{{saves.FOLDER_NAME}}
+                                <!--                                     <span class="postcount">Posts 20</span>-->
+                            </span>
+                            <span class="interest_count" *ngIf="saves.TOTAL_POST_COUNT!=0" id="{{saves.SAVED_FOLDER_ID}}_count">{{saves.TOTAL_POST_COUNT}}</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <app-socialinvite (popupOverFlow)="popupOverflowStatus($event);"></app-socialinvite>
+                    <p class="footer_bottom" style="color:#9ba1ab;margin-top: 5px">
+                        <a routerLink="/privacy" target="_blank">Privacy Policy</a> <span> | </span>
+                        <a routerLink="/termandcondition" target="_blank">Terms of Use</a> <span> | </span>
+                        <a href="http://support.study24x7.com/" target="_blank">Support</a>
+                        <a >{{this._constantService.version}}</a>
+                    </p>
+                    <footer> © {{current_year}} @Edubabble Learning Pvt. Ltd.</footer>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="help-icon" routerLink="{{_constantService.askAssistantPath}}" (click)="_constantService.setSessionJsonPair('friend_user_id',2)">
+  <img src="./assets/images/svg-three/wall/help.svg" alt="study24x7">
+  <p>Need any help?</p>
+</div>
+<div *ngIf="isCratePagePopup">
+<app-createpage (hidecreatepagePopup)="hidePageCreatePopup($event)" ></app-createpage>
+</div>
+
+<div><app-savepopupdelete *ngIf="savedeleteshow" (deletefolderpara)="deletefolderhideparent($event)" [folderId]="currentSelectedFolder"></app-savepopupdelete></div>
+<div><app-savepopupedit *ngIf="savededitshow" (editfolderpara)="editfolderhideparent($event)" [folder_id]="selectedFolderObj"></app-savepopupedit></div>
+<div><app-createfolder *ngIf="createfoldershow" (createfolderpara)="createfolderhideparent($event)"></app-createfolder></div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event)" [dataObj]="dataConf"></app-confirmationpopup>
+<div *ngIf="coverAll" class="cover-all">
+
+</div>

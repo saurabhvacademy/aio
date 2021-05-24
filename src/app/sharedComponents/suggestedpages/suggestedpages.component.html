@@ -1,0 +1,27 @@
+<div class="widgetpage_outer" *ngIf="isPageuuid">
+    <h6 class="widgetheader">Related Pages
+    </h6>
+    <div class='pageinfo'>
+        <carousel>
+            <slide *ngFor="let imgId of pageSugg;let i= index" >
+                <img  (click)="routeToNewPage(imgId.ID)" class="S_page_img" src="{{imgId.PROFILE_PHOTO_PATH}}" style="display: block; width: 100%;cursor: pointer;" >
+                <div class="s_page_desp">
+                    <div class="s_page_desp_l">
+                        <p style="cursor: pointer;" (click)="routeToNewPage(imgId.ID)" class="desp_p_f" title="{{imgId.TITLE}}" >{{imgId.TITLE |trimData:17}} </p>
+                        <p class="desp_p_s "><span  class="follower_count">{{imgId.PAGE_FOLLOW_COUNT}}  followers</span></p>
+                    </div>
+                </div>
+                <button class="button24x7 whiteColorButton follwBtn" (click)="pageFollowUnFollow(imgId.PAGE_UUID,i) " *ngIf="imgId.IS_FOLLOWED==0 && withoutToken">Follow</button>
+                <button class="button24x7 whiteColorButton follwBtn" *ngIf="imgId.IS_FOLLOWED==1 && withoutToken">Following</button>
+
+                <button class="button24x7 whiteColorButton follwBtn" (click)="openLoginPopup()" *ngIf="!withoutToken">Follow</button>
+
+
+
+
+            </slide>
+        </carousel>
+    </div>
+</div>
+
+

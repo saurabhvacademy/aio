@@ -1,0 +1,76 @@
+
+<!-- conflict -->
+<div class='darkbackground' style="z-index:30"></div>
+<div class="col-md-9 col-sm-9 popupwrapper" style="z-index:100;">
+    <span class="close_div" (click)="popupCloseByCancel();">
+      <!-- end conflict -->
+        <img class="defaultt" src="assets/images/svg/tagcross.svg">
+        <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+    </span>
+    <div class="invitefriendwrapper" >
+        <div class="header">
+            <div class="header_down_div" style = ""></div>
+            <div class="header_img">
+                <img src="assets/images/svg-three/invitefriend.svg" alt="study24x7">
+            </div>
+            <div class="text_container">
+                <h3>Easily connect with your friends</h3>
+                <h6>Invite your friends to join this community, So they too can get benefits of this awesome community.</h6>
+            </div>
+        </div>
+        <div class="invite_gamil perfectscroll"  *ngIf="mediaTyp==1" [perfectScrollbar]="config" style="position:relative;    margin-top: 16px;" >
+
+          <div class="alertwrapper">
+              <div class="alertmessage" *ngIf="alert">
+                  <img src="assets/images/svg-three/login_icon/loginerror.svg" alt="study24x7" class="redcancel" >
+                  <span  class="close_err" (click)="hidealertmsg()">
+                    <img  class="default" src="assets/images/svg/tagcross.svg">
+                    <img  class="hover" src="assets/images/svg/tagcross-gray.svg">
+                  </span>
+                  {{alertMsg}}
+              </div>
+          </div>
+
+
+            <div  class="input_data input_dt">
+                <div class="row margintop " style="margin-left:0px;margin-right:0px;width: 100%;margin-top:20px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6 invite_input_cnt" *ngFor="let peoples of people;" >
+                         <div class="rightalert"> <input  (focus)="onFocus($event)" (focusout)="onFocusOut($event)"  placeholder="Enter email address" class="gray_rds invite_em" type="email" id="invt_{{peoples.USER_ID}}"></div>
+                    </div>
+                </div>
+                <div class="row margintop">
+                    <div class="col-md-12 col-sm-12">
+                        <span  class="addnewopt" (click)="addMore()">+ Add more</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="friendlistcontaier" [perfectScrollbar]="config" style="" *ngIf="mediaTyp!=1">
+            <div class="friendsprofile" *ngFor="let peoples of googlePlusCont;">
+                 <label class="mainlabel">
+                    <input class="checkboxhide" id="{{peoples.email}}" type="checkbox" value="{{peoples.email}}" (change)="addInviteEmail($event)">
+                    <label class="checkbox" for="{{peoples.email}}">
+                        <img src="assets/images/svg/white_checkbox.svg">
+                    </label>
+                    <label class="Userdetail" for="{{peoples.email}}">
+                        <span class="name">{{peoples.name}}</span>
+                        <span class="mail">{{peoples.email}}</span>
+                    </label>
+                </label>
+            </div>
+        </div>
+        <div class="invitationfooter">
+            <span class="invite_footer_heading">Invitation will be send on provided email addresses.</span>
+            <button class="button24x7 redColorButton fright" (click)="sendSocialInvite()" *ngIf="mediaTyp!=1">Invite All</button>
+            <button class="button24x7 redColorButton fright" (click)="sendInvite()" *ngIf="mediaTyp==1">Invite All</button>
+        </div>
+    </div>
+
+    <!-- <div class="emptystate" *ngIf = "suggestionPresent==true">
+      <div class="emptystate_inner">
+        <img src="assets/images/emptystates/svg/suggestion-widget-not-provided.svg">
+        <span>No connection suggestions</span>
+      </div>
+    </div> -->
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

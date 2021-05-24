@@ -1,0 +1,940 @@
+$textgrey : #8c8c8c;
+$textcolor : #2c2e2f;
+$backgroundgray : #e6e6e6;
+$themeRedcolor: #F05050;
+$themegray : #f5f7fa;
+$borderRadius: 3px;
+$theamGreen: #00bb24;
+$borderColor:#66a9d5;
+
+.container.main_body{
+  .payment_container{
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    border-radius:$borderRadius;
+    overflow: hidden;
+    // head css
+    .head{
+      float: left;
+      width: 100%;
+      background-color: #f5f7fa;
+      padding: 10px 20px;
+      h2{
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    // wallet class
+    .wallet{
+      float: left;
+      width: 100%;
+      padding: 15px 15px;
+      .heading{
+        color: #8c8c8c;
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .inner_wrapper{
+        float: left;
+        width: 100%;
+        border: 1px solid #66a9d5;
+        padding: 15px 15px;
+        border-radius: $borderRadius;
+        cursor: pointer;
+        margin-top: 15px;
+        position: relative;
+        .tik{
+          width: 20px;
+          height: 20px;
+          background-color:$themegray;
+          float: left;
+          border-radius: 100%;
+          padding: 2px 0px 0px 4px;
+          position: absolute;
+          left: 15px;
+          top: 15px;
+          .white{
+            display: none;
+            width: 10px;
+            position: relative;
+            left: 1px;
+            top: 3px;
+          }
+          .gray{
+            display: block;
+            width: 10px;
+            position: relative;
+            left: 1px;
+            top: 3px;
+          }
+        }
+        .textContainer{
+          margin-left: 0px;
+          width: 100%;
+          padding-left: 30px;
+          padding-right: 115px;
+          h3{
+            float: left;
+            width: 100%;
+            font-size: 14px;
+          }
+          h4.balance{
+            float: left;
+            font-size: 12px;
+            width: 100%;
+            color: #8c8c8c;
+            margin-top: 8px;
+            span{
+              color: #00bb24;
+              img{
+                width: 10px;
+                position: relative;
+                left: 3px;
+                top: -1px;
+              }
+            }
+          }
+        }
+
+        button{
+          background-color: #00bb2410;
+          border: 1px dashed #00bb24;
+          color: #00bb24;
+          font-weight: 500;
+          font-size: 12px;
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          display: none;
+          span{
+            float: left;
+            width: 15px;
+            height: 15px;
+            background-color: #00bb24;
+            border-radius: 100%;
+            padding: 3px 0px 0px 4px;
+            position: relative;
+            top: 9px;
+            margin-right: 8px;
+            img{
+              float: left;
+              width: 8px;
+            }
+          }
+        }
+      }
+
+      .onselect_inner_wrapper{
+        .tik{
+          background-color:$theamGreen;
+          .white{
+            display: block;
+
+          }
+          .gray{
+            display: none;
+          }
+        }
+        button{
+          display: block;
+        }
+
+      }
+    }
+
+
+    // payment option start
+    .paymentOption{
+      float: left;
+      width: 100%;
+      margin-bottom: 10px;
+      h3{
+        padding: 15px 15px 0px 15px;
+        font-size: 14px;
+      }
+      p{
+        padding: 7px 15px 0px 15px;
+        color: #8c8c8c;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+
+    .payment{
+      float: left;
+      width: 100%;
+      padding: 15px 30px;
+      margin-bottom: 0px;
+      cursor: pointer;
+      min-height: 89px;
+      border-bottom: 1px solid #f7f7f7;
+      position: relative;
+      .tik{
+        width: 20px;
+        height: 20px;
+        background-color: $themegray;
+        float: left;
+        border-radius: 100%;
+        padding: 2px 0px 0px 4px;
+        position: absolute;
+top: 15px;
+left: 30px;
+        .white{
+          width: 10px;
+          display: none;
+          position: relative;
+          top: 3px;
+          left: 1px;
+        }
+        .gray{
+          width: 10px;
+          display: block;
+          position: relative;
+          top: 3px;
+          left: 1px;
+        }
+      }
+      .textContainer{
+        float: left;
+        width: 100%;
+        margin-left: 0px;
+        padding-left: 30px;
+        padding-right: 78px;
+        h3{
+          float: left;
+          width: 100%;
+          font-size: 14px;
+        }
+        h4{
+          float: left;
+          font-size: 14px;
+          width: 100%;
+          color: #8c8c8c;
+          margin-top: 8px;
+          font-weight: 400;
+          line-height: 18px;
+
+          img{
+            width: 10px;
+            position: relative;
+            left: 3px;
+            top: -1px;
+          }
+        }
+        .discount{
+          color: #f05050;
+          position: relative;
+          .discounthover{
+            .termandcondition{
+              position: absolute;
+              width: 420px;
+              height: 250px;
+              background-color: #fff;
+              z-index: 1;
+              right: initial;
+              border: 1px solid #66a9d5;
+              display: none;
+              left: 20%;top: 124%;
+              .bluetriangle{
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                position: absolute;
+                border-bottom: 10px solid #66a9d5;
+                top: -10px;
+                left: 77px;
+              }
+              .graytriangle{
+              width: 0;
+              height: 0;
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              position: absolute;
+              border-bottom: 8px solid #fff;
+              top: -8px;
+              left: 79px;
+              }
+              .inner_wrapper{
+                width: 420px;
+                height: 250px;
+
+                .min_wrapper{
+                  width: 100%;
+                  float: left;
+                  padding: 15px;
+                  h6{
+                    float: left;
+                    width: 100%;
+                    font-size: 12px;
+                    padding-bottom: 10px;
+                  }
+                  p{
+                    float: left;
+                    width: 100%;
+                    color: #2c2e2f;
+                    font-size: 12px;
+                    line-height: 13px;
+                  }
+                  ul{
+                    float: left;
+                    width: 100%;
+                    list-style-type: none;
+                    li.ques{
+                      color: #2c2e2f;
+                      font-size: 12px;
+                      font-weight: 500;
+                      margin-top: 10px;
+                    }
+                    li{
+                      color: #2c2e2f;
+                      font-size: 12px;
+                    }
+                    .sublist{
+                      li{
+
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            &:hover .termandcondition{
+              display: block;
+            }
+
+          }
+        }
+      }
+      .imagecontainer{
+        float: right;
+        width: 80px;
+        margin-top: 0px;
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .paymentmethod:checked + .payment{
+      background-color: $themegray;
+    }
+    .paymentmethod:checked + .payment .tik{
+      background-color:$theamGreen;
+      .white{
+        display:block;
+      }
+      .gray{
+        width: 12px;
+        display:none;
+      }
+    }
+    // payment option end
+  }
+
+  // coupon start
+  .couponswrapper{
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+    .topHeader{
+      float: left;
+      width: 100%;
+      padding: 15px 15px 0px 15px;
+    h3{
+      padding: 0px 15px 5px 0px;
+      font-size: 14px;
+    }
+    p{
+      float: left;
+      width: 100%;
+      color: #8c8c8c;
+      font-weight: normal;
+    }
+    .apllyCoupon{
+      float: left;
+      width: 264px;
+      margin-top: 15px;
+      border-bottom: 1px solid #dfe0e8;
+      input{
+        float: left;
+        width: 188px;
+        border: none;
+        box-shadow: none;
+      }
+      button{
+        float: left;
+        background-color: #8c8c8c;
+        color: #fff;
+        height: 25px;
+        width: 70px;
+        padding: 0px;
+        font-size: 12px;
+        border-radius: 30px;
+        line-height: normal;
+        margin-top: 5px;
+      }
+    }
+    .errorCouponMess{
+      display: inline-block;
+      float: left;
+      line-height: 30px;
+      color: #f05050;
+      width: 100%;
+    }
+}
+    .offer{
+      float: left;
+      padding: 15px;
+      width: 100%;
+      border: 1px dashed #66a9d5;
+      margin-bottom: 0px;
+      cursor: pointer;position: relative;
+
+      .tik{
+        width: 20px;
+        height: 20px;
+        background-color:$themegray;
+        float: left;
+        border-radius: 100%;
+        padding: 2px 0px 0px 4px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        .white{
+          display: none;
+          width: 10px;
+          position: relative;
+          left: 1px;
+          top: 3px;
+        }
+        .gray{
+          display: block;
+          width: 10px;
+          position: relative;
+          left: 1px;
+          top: 3px;
+        }
+      }
+      p{
+        width: 100%;
+        padding: 3px 55px 3px 30px;
+        float: left;
+        color: #8c8c8c;
+        font-weight:500;
+        span{
+         color: #2c2e2f;
+         width: 135px;
+          float: left;
+        }
+      }
+
+      .remove{
+        float: right;
+        cursor: pointer;
+        color: #8c8c8c;
+        display:none;
+        margin-top: 4px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+      }
+
+    }
+    .courseOffer{
+      display: none;
+    }
+    .courseOffer:checked + .offer{
+      .tik{
+        background-color: $theamGreen;
+        .white{
+          display: block;
+        }
+        .gray{
+          display: none;
+
+        }
+      }
+      .remove{
+        display: block;
+      }
+    }
+  }
+
+
+  .paymentCard{
+    float: left;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    .cardImg{
+      float: left;
+      WIDTH: 100%;
+      height: 150px;
+      position:relative;
+      img{
+        width: 100%;
+        height: 100%;
+
+      }
+
+      .logo{
+        float: left;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.19);
+        position: absolute;
+        bottom: -33px;
+        z-index: 3;
+        // padding: 11px;
+        background-color: #fff;
+        left: 15px;
+        img{
+
+        }
+      }
+    }
+
+    .textwrapper{
+      float: left;
+      width: 100%;
+      margin-top: 40px;
+      padding: 0px 15px;
+      h3{
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        color: #2c2e2f;
+        padding: 2px 0px;
+        &:first-child{
+          padding-bottom: 0px;
+        }
+      }
+      h6{
+        float: left;
+        width: 100%;
+        color: #8c8c8c;
+        font-size: 12px;
+        padding: 10px 0px;
+        border-bottom: 1px solid #f7f7f7;
+      }
+      p{
+        float: left;
+        width: 100%;
+        padding: 10px 0px 0px 0px;
+        font-size: 12px;
+        color: #2c2e2f;
+        opacity: .9;
+        font-weight: 500;
+        span{
+          float: right;
+          width: auto;
+          color: #2c2e2f;
+          img{
+            width: 10px;
+            position: relative;
+            top: -1px;
+            left: -2px;
+          }
+        }
+      }
+      p.tax{
+        padding-top: 3px;
+      }
+      .coupondiscount{
+        color: $theamGreen;
+        .close{
+          float: left;
+          width: 15px;
+          height: 15px;
+          background-color: #000!important;
+          border-radius: 100%;
+          margin-left: 5px;
+
+          img{
+            width: 7px;
+            position: relative;
+            top: -5px;
+            left: 4px;
+
+          }
+        }
+      }
+      p.total{
+        border-top: 1px solid #f7f7f7;
+        margin-top: 10px;
+      }
+
+
+      .paybutton{
+        background-color: $theamGreen;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 30px;
+        width: 100%;
+        margin: 40px 0px 20px 0px;
+        height: 45px;
+
+      }
+    }
+
+
+
+  }
+
+}
+
+
+
+.couponWrapper{
+float: left;
+width: 100%;
+overflow: auto;
+height: 210px;
+padding: 0px 15px 0px 15px;
+margin-bottom: 15px;
+margin-top: 15px;
+}
+
+.deactivateButton{
+  opacity: .5;
+  pointer-events: none;
+}
+.couponInnerWrapper{
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
+  &:last-child{
+    margin-bottom: 0px;
+  }
+}
+//------------ ==========otp verification code start============ ----//
+.popup_background {
+    position: fixed;
+    background: rgba(0,0,0,.7);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    transition: all .2s ease;
+}
+.popup_main.PaymentOtpVer {
+    /* height: auto !important; */
+    bottom: auto;
+    right: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    z-index: 999;
+    transition: all .2s ease;
+    width: 420px !important;
+    height:385px;
+    border-radius: 5px;
+}
+.headData{height: auto;
+background-color: #fff;
+border-bottom: 0px solid #e9e9e9;
+font-size: 24px;
+padding:35px 40px 20px 40px;
+line-height: 20px;
+color: $textcolor;
+font-weight: 500 !important;
+.close_div{position: absolute;
+right: 0px;
+margin-right: 0px;
+top: 0px;
+.defaultt, .hoverr {
+    width: 15px !important;
+    top: 8px;
+}
+}
+}
+.popup_thanks{padding: 61px 40px 0px 40px;
+text-align: center;}
+.verification_popup{box-shadow: none !important;
+width: 100%;
+padding: 0px 40px 30px 40px;
+margin-bottom: 0px !important;}
+.VerifyMessage {
+  font-size: 14px;
+  text-align: left;
+  color: $textcolor;opacity: 0.8;
+
+}
+.mobileDetails{
+  width: 100%;position: relative;
+margin: 30px 0px 0px 0px;
+label {
+  margin-bottom: 10px;
+  font-weight: normal;
+  color: $textcolor;
+  font-size: 14px;
+
+}
+.invalidOtp{position: absolute;
+right: 0px;
+color: #f05050;
+width: 125px;
+height: 24px;
+border-radius: 3px;line-height: 26px;
+top: 0px;
+background-color: #ffded8;
+font-weight: 500;
+text-align: center;
+  .cross_close{
+    margin-left: 5px;
+    height: 10px;
+    display: inline-block;
+    margin-top: 8px;
+    float: right;
+    margin-right: 8px;
+    img{
+      width: 9px;
+      float:right;
+    }
+  }
+}
+.InputMobile{  width: 100%;
+  height: 46px;
+  border-radius: 3px;
+  box-shadow: 0 0 6px 0 rgba(44, 46, 47, 0.1);
+  border: solid 1px #0f98df;
+  background-color: #ffffff;
+  position: relative;
+  padding-left: 52px;
+.countryCode{
+    position: absolute;
+    left: 0;
+    width: 52px;
+    border-right: 1px solid #ccc;
+    margin: 0px;
+    text-align: center;
+    top: 8px;
+    bottom: 8px;
+    line-height: 29px;
+    font-size: 18px;}
+}
+.inputNumber{border: none;
+height: 100%;
+font-size: 18px;padding-left: 12px;
+letter-spacing: 0.35px;}
+
+.otpInfo{margin: 10px 0px 20px 0px;
+
+opacity: 0.8;}
+.InputMobileOtp{padding-left: 0px;padding-right: 85px;
+border: solid 0px #0f98df;margin-bottom: 40px;
+box-shadow: none;
+.otp_fill {
+  height: 40px;
+  border: none;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0 10px 0px 0px;
+  border-bottom: 2px solid #0f98df;
+  color: #000;
+  width: 36px;
+  padding: 0px 0px 5px;
+  line-height: 35px;
+  font-size: 20px;
+}
+.ResendOTP {
+  cursor:pointer;
+  font-size: 14px;
+  letter-spacing: normal;
+  position: absolute;bottom: 4px;
+  right: 0;
+  width: 85px;
+  text-align: right;
+  color: #0f98df;
+  &:hover{text-decoration: underline;}
+}
+
+}
+.verifiedOtp{text-align: center;
+  padding-left: 0px;
+  border: none;
+  box-shadow: none;
+  padding-right: 0px;
+  margin-bottom: 40px;
+  height: auto;}
+}
+.changeNumber{margin-top:40px;text-align:center;    font-size: 14px;
+p{  width: 100%;
+  opacity: 0.8;
+  text-align: center;margin-bottom: 8px;
+  color: rgba(44, 46, 47, 0.8);}
+  span{
+    width: 100%;
+    height: 14px;
+    color: #0f98df;
+    &:hover{text-decoration: underline;}
+  }
+}
+.paybutton{
+  background-color:#adaeaf;
+  color: #fff;
+font-size: 14px;
+font-weight: 500;
+border-radius: 30px;
+width: 100%;
+margin: 0px;
+height: 46px;
+border: 1px solid #adaeaf;
+}
+.paybutton.otpActive{background-color:#f05050;color:#fff;border: 1px solid #f05050;}
+.Login-box {
+  width: 420px;
+  height: 387px;
+  border-radius: 6px;
+  box-shadow: 1.7px 9.8px 20px 0 rgba(44, 46, 47, 0.12);
+  border: solid 1px #eaeaea;
+  background-color: #ffffff;
+}
+//------------ ==========otp verification code end============ ----//
+
+.payment_sec_right{padding-left:0px;float:right;}
+// ============responsive==============
+@media only screen and (max-width:991px){
+  .payment_sec_right, .payment_sec_left{width: 100%;
+   padding: 0px;}
+  .payment_sec_right{margin-top: 0px;float:left;margin-bottom:15px;}
+}
+@media only screen and (max-width:480px){
+  .container.main_body {
+    .couponswrapper {
+      .offer{
+        p{ padding-top:0px;
+              span{
+              width: 100%;}
+         }
+        }
+      }
+    }
+    .couponWrapper{  max-height: 150px;}
+}
+//-----------css for otp verification popup start----->
+@media only screen and (max-width:420px){
+.popup_main.PaymentOtpVer{
+  display: block;
+  width: 96% !important;
+  margin: 0px 2%;
+  left: 48%;
+}
+.headData {
+    font-size: 22px;
+    padding: 30px 20px 25px 20px;
+}
+.verification_popup {
+    padding: 0px 20px 20px 20px;}
+    .mobileDetails {
+    margin: 25px 0px 0px 0px;
+
+}
+.mobileDetails{
+   .InputMobileOtp {
+    margin-bottom: 25px;
+    .otp_fill {
+    width: 30px;
+    padding: 0px;}
+   }
+  }
+  .changeNumber {
+    margin-top: 30px;
+}
+.popup_thanks {
+    padding: 45px 30px 15px 30px;
+    text-align: center;
+}
+}
+
+//-----------css for otp verification popup end----->
+@media only screen and (max-width:360px){
+  .container.main_body {
+    .couponswrapper {
+      .offer{
+        p{ padding-top:0px;
+              span{
+              width: 100%;}
+         }
+        }
+      }
+      .payment_container{
+        .wallet{
+         .onselect_inner_wrapper{
+           .textContainer{  padding-right: 0px;}
+           button{
+            position: relative;
+            float: left;
+            margin: 0px 10px 15px 45px;
+       }
+    }
+  }
+        .payment{
+          .textContainer {
+          width: 100%;padding-right: 0px;
+         h4{margin-top:10px}
+        }
+        .imagecontainer{
+          width: 60px;
+          top: 8px;}
+        }
+}
+}
+}
+.redeemed_btn{
+  line-height: 35px;
+  height:36px;
+}
+
+//=========================================//
+@media only screen and (max-width:991px){
+  .payment_sec_right{
+    margin-bottom: 10px;
+  }
+  .container.main_body .couponswrapper{
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width:600px){
+  .container.main_body{
+    margin-top:65px;
+  }
+}
+@media only screen and (max-width:360px){
+  .container.main_body .payment_container .wallet .inner_wrapper .textContainer{
+    padding-right: 0;
+    float: left;
+  }
+}
+
+
+.desableCouponButton{
+  pointer-events: none;
+  opacity: .5;
+}
+.redColorButton{
+  background-color: #f05050 !important;
+  color: #fff !important;
+  border: 1px solid #f05050 !important;
+}
+.InputMobile{
+  padding-left:0 !important;
+  .countryCode,.inputNumber{
+    display: none;
+  }
+}

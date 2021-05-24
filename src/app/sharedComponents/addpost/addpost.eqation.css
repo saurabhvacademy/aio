@@ -1,0 +1,84 @@
+/* ==========================================================================
+  Common variables
+  ========================================================================== */
+/**
+*
+* DO NOT use these variables directly in components.
+* Assign them to component specific variables
+*
+*/
+/* font-family */
+/* font-family*/
+/* Colors */
+/* Border radius */
+/* ==========================================================================
+  Browser support
+  ========================================================================== */
+/* ==========================================================================
+  Component specific variables
+  ========================================================================== */
+/* Typography
+   ========================================================================== */
+/* $baseFontFamily: Arial, sans-serif; */
+/* $baseSpacing: $baseLineHeight+em; */
+/* $baseTextColor: $black; */
+/* Type Color */
+/* $typeHighlight: $blue;
+$typeLowlight: $lightGrey; */
+/* Link
+   ========================================================================== */
+/* $linkColor: $blue;
+$linkHoverColor: $lightBlue; */
+/* Background
+   ========================================================================== */
+/* $bgBasic: #fff; */
+/* Box
+   ========================================================================== */
+/* Contour */
+/* $boxBasicBorderRadius: $borderRadiusDefault; */
+/* Box foot */
+/* $boxFootDivider: $blue; */
+/* Divider
+   ========================================================================== */
+/* $dividerColor: $blue; */
+/* List
+   ========================================================================== */
+/* $listInlineDividerBorder: $lightGrey;
+$listBorder: $lightGrey; */
+/* Table
+   ========================================================================== */
+/* $tableBorderColor: $blue; */
+/* Form
+   ========================================================================== */
+/* $labelLeftWidth: 30%;
+$formFieldBorder: 1px solid $grey;
+$placeholderText: $lightGrey; */
+/* Button
+   ========================================================================== */
+/* $btnDefaultBg: #ddd;
+$btnDefaultBorder: $lightGrey; */
+/* Template
+   ========================================================================== */
+/* $skipLinkBg: $black;
+$bodyBg: #fff;
+$pageWidth: 997px; */
+/* header */
+/* $headerBgStop1: #09456a;
+$headerBgStop2: #02587e;
+$contentBg: #fff;
+$contentWidth: 960px; */
+/* footer */
+/* $footerBorder: $lightGrey; */
+.editor_container.symbol-keyboard-wrap .symbol-wrap .symbol-btn {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(44, 46, 47, 0.15);
+  background-color: white;
+  background-image: url("../../../assets/images/svg-one/equation/12_12_1.png");
+  background-repeat: no-repeat;
+  background-position: -36px -36px;
+}
+/*# sourceMappingURL=addpost.eqation.css.map */

@@ -1,0 +1,98 @@
+._outer {
+  margin-bottom: 15px;
+}
+
+._right_rank_panel {
+  width: 100%;
+  float: left;
+}
+
+._right_rank_panel ._center_rank_panel {
+  width: 100%;
+  float: left;
+  padding-bottom: 6px;
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank {
+  position: relative;
+  padding: 7px 56px 8px 15px;
+  width: 100%;
+  float: left;
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank ._rank_point {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.9);
+  float: left;
+  padding-left: 25px;
+  margin-bottom: 5px;
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank ._rank_point span {
+  width: 16px;
+  height: 13px;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 1px;
+  background-image: url("./../../../../assets/images/pointicon.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank ._rank_point_no_img {
+  padding-left: 0px;
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank ._rank_heading {
+  width: 100%;
+  float: left;
+  opacity: 0.6;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4b4b4b;
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank ._rank_count {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: left;
+  color: #000000;
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank ._rank_count ._rank_span {
+  width: 12px;
+  height: 13px;
+  margin-left: 5px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank ._rank_count ._rank_img {
+  background-image: url("./../../../../assets/images/leaderboard/up-arrow.svg");
+}
+
+._right_rank_panel ._center_rank_panel ._point_option_rank ._rank_count ._rank_img_red {
+  background-image: url("./../../../../assets/images/leaderboard/down-arrow.svg");
+}
+
+._heading_panel {
+  padding-bottom: 8px;
+}
+/*# sourceMappingURL=rank-statistics.component.css.map */

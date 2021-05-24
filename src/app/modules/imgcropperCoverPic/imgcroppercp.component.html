@@ -1,0 +1,43 @@
+
+<!-- imgcropper popup -->
+<div class='darkbackground'></div>
+<div class='addpost_outer relative popup-open-wrapper'>
+    <!-- <div class='darkbackground-close' (click)="hidecreatepagePopup();"></div> -->
+    <div class='darkbackground-close'></div>
+
+    <div class='container popup-container' style="position:relative;">
+        <div  class="popup-inner-wrap popup-open-inner-wrap claim_mail_wrap" >
+            <div class="toolbar addpost_hdng tlbar error_main_heading">Change your cover image
+                <!-- <img src="assets/images/svg/tagcross.svg" style="float: right;margin: 17px 0;cursor: pointer;"> -->
+                <span class="close_div" (click)="opencover()">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+
+            </div>
+
+            <div class="middle_wrapperr">
+                <!-- empty state -->
+                <div  *ngIf="!data2.image" class="empty-state">
+                    <img src="./assets/images/svg-three/uploadimage.svg" alt="study24x7">
+                </div> 
+                <!-- end empty state -->
+                <img-cropper #cropper [image]="data2" [settings]="cropperSettings2"></img-cropper>
+                <!--              <span class="result rounded" *ngIf="data2.image" >
+                                  <img [src]="data2.image" [width]="cropperSettings2.croppedWidth" [height]="cropperSettings2.croppedHeight">
+                              </span>-->
+            </div>
+            <div class="claim_footerr">
+                <div class="file-upload-img">
+                    <input id="cvrUpload" type="file" (change)="fileChangeListener($event)">
+                    <label for="cvrUpload">Upload</label>
+                </div>
+                <button class="btn btn-primary claim_btn" (click)="uploadPic()">Apply</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<!-- end imgcropper popup -->

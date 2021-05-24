@@ -1,0 +1,288 @@
+
+<div class="coursepage_outer" data-infinite-scroll
+[infiniteScrollDistance]="4"
+(scrolled)="onScrollDown()" [scrollWindow]="true" *ngIf="fromLiveCompnent">
+
+  <div class="secHead previous_classes">
+    <span class="up_heading"> Previous Classes </span>
+    <!-- <span class="down_heading">All your missed live classes at one place</span> -->
+    <span *ngIf="fromLiveCompnent" class="allShow"
+      (click)="showAllPreviousClasses()">View All</span>
+  </div>
+  <div class="courseCard">
+    <div class="course_div course_student_veiw">
+      <div class="mobileviercard" *ngIf="dismissPopup">
+        <div class="leftside" >
+          <p class="mainheading">We have brought all your
+            missed classes together</p>
+          <span class="contentcardhead">Contains recorded live classes</span>
+          <span style="cursor: pointer;" (click)="dismissPopUp()"class="dismis_red">DISMISS</span>
+        </div>
+        <div class="rightside">
+          <img src="assets/images/previousclass.png" alt="">
+        </div>
+      </div>
+      <div class="course_item col-md-4 col-sm-6 col-xs-6 previous_classes"
+        *ngFor="let previousClass of previousClasses;let i = index">
+        <div  >
+          <div class="profilethumb_wrapper_mobile">
+            <span (click)="redirectTo('page', previousClass)" class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH">
+              <img alt="study24x7"
+              src="{{previousClass.PAGE_PROFILE_PHOTO_PATH
+                +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
+            </span>
+            <span (click)="redirectTo('page', previousClass)" class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH==null">
+              <img alt="study24x7"
+              src="{{_constantService.defaultImgPath}}">
+            </span>
+            <span (click)="redirectTo('page', previousClass)" title="{{previousClass.PAGE_TITLE}}" href="" class="pagename">{{postData.decodeURIPostData(previousClass.PAGE_TITLE)}}
+            </span>
+            <span class="content_detail"> {{previousClass.PAGE_FOLLOW_COUNT}} followers</span>
+            <!-- <div class="shareBtn"><span class="rmenu"><img
+                  src="assets/images/svg-three/live-wall/shareicon.svg" alt=""
+                  class="_savecoursepost"></span></div> -->
+          </div>
+          <div class="course_item card_pevious">
+            <div class="course_cont">
+              <div class="course_img_div" *ngIf="previousClass.CONTENT_TYPE==1">
+     <!-- <div (click)="playerClicked(previousClass)" style="min-height: 150px;" *ngIf="view==i && !timerStop && previousClass.CONTENT_TYPE==1" id="{{'player'+previousClass.CONTENT_UUID}}"></div> -->
+     <div *ngIf="view==i && !timerStop && previousClass.CONTENT_TYPE==1" (click)="playerClicked(previousClass)"><div  style="min-height: 150px;"  id="{{'player'+previousClass.CONTENT_UUID}}"></div></div>
+
+     <div *ngIf="previousClass.CONTENT_TYPE==4 && view==i" >
+
+      <iframe class="videoPlayerYTube"  [src]="iframeSource | safe" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+
+                      </div>
+     <div class="vodMainSec controlMsg" *ngIf="timerStop && view==i">
+      <app-msg-after-sample [content]=previousClass ></app-msg-after-sample>
+      </div>
+
+                <img (click)="play(previousClass,i)" *ngIf="view!=i"
+                  class="course_img"
+                  src="{{previousClass.COURSE_THUMBNAIL_PATH}}" />
+                <!-- <div class="course_live_status">
+                  LIVE NOW
+                </div> -->
+                <div *ngIf="view!=i"  (click)="play(previousClass,i)" class="img_layer">
+                  <div class="videoLayer">
+                    <img src="assets/images/svg-three/live-wall/playicon.svg">
+                  </div>
+                </div>
+                <div class="total_time">
+                  {{previousClass.DURATION}}                </div>
+              </div>
+
+              <div class="course_img_div" *ngIf="previousClass.CONTENT_TYPE==4">
+     <!-- <div (click)="playerClicked(previousClass)" style="min-height: 150px;" *ngIf="view==i && !timerStop && previousClass.CONTENT_TYPE==1" id="{{'player'+previousClass.CONTENT_UUID}}"></div> -->
+     <div *ngIf="view==i && !timerStop && previousClass.CONTENT_TYPE==1" (click)="playerClicked(previousClass)"><div  style="min-height: 150px;"  id="{{'player'+previousClass.CONTENT_UUID}}"></div></div>
+
+     <div *ngIf="previousClass.CONTENT_TYPE==4 && view==i" >
+
+      <iframe class="videoPlayer" style="width: 100%;height: 400px;"  [src]="iframeSource | safe" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+
+                      </div>
+
+     <div class="vodMainSec controlMsg" *ngIf="timerStop && view==i">
+      <app-msg-after-sample [content]=previousClass ></app-msg-after-sample>
+      </div>
+                <img (click)="play(previousClass,i)" *ngIf="view!=i"
+                  class="course_img"
+                  src="{{previousClass.path}}"
+                  />
+                <!-- <div class="course_live_status">
+                  LIVE NOW
+                </div> -->
+                <div *ngIf="view!=i" class="img_layer" (click)="play(previousClass,i)">
+                  <div class="videoLayer">
+                    <img src="assets/images/svg-three/live-wall/playicon.svg">
+                  </div>
+                </div>
+                <div class="total_time">
+                  {{previousClass.DURATION}}                </div>
+              </div>
+
+              <div class="course_details">
+                <div class="profilethumb_wrapper">
+                  <span class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH">
+                    <img alt="study24x7" src="{{previousClass.PAGE_PROFILE_PHOTO_PATH
+                      +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
+                  </span>
+                  <span class="image"
+                    *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH==null">
+                    <img alt="study24x7"
+                      src="{{_constantService.defaultImgPath}}">
+                  </span>
+                  <span style="cursor: default;" class="pagename" title="{{postData.decodeURIPostData(previousClass.STREAM_TITLE)}}" href="">{{postData.decodeURIPostData(previousClass.STREAM_TITLE)}}</span>
+                  <span (click)="redirectTo('course',previousClass)"  class="content_detail">{{postData.decodeURIPostData(previousClass.COURSE_TITLE)}}</span>
+                  <div (click)="redirectTo('course',previousClass)"  class="mobile_right_arrow">
+                    <img src="assets/images/svg-three/left_menu/arrow_right.svg"
+                      alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- for previous class main page -->
+<!-- <app-mnavbar
+  (showMobileMenu)="displayMobileMenu()"
+  (hideMenu)="hideMobileMenu()" *ngIf="!fromLiveCompnent && t"></app-mnavbar> -->
+<!-- <div class="wrapper wrapper_responsive" > -->
+  <!-- <app-header *ngIf="t"></app-header> -->
+  <!-- <app-loginheader *ngIf="!t"></app-loginheader> -->
+<!--
+  <div class="sidemenu" [ngClass]="{ openfilter: isMobileMenue }">
+    <div *ngIf="isMobileMenue">
+      <div class="menuslidedarkbg" (click)="leftSidemenu()"></div>
+      <app-mmenu *ngIf="t" class="cntrMmenu"></app-mmenu>
+    </div>
+  </div> -->
+  <!-- <div id="windiv">
+    <div class="container main_body" style="margin: 0;">
+      <div class="row"> -->
+        <!-- <div
+          class="col-md-3 leftFilter left_stickytab"
+          id="sideThreeCol"
+          style="padding-right: 0;">
+          <div class="rightmenu_fixed" id="leftsectionfixed" [ngClass]="{'fixedleft': isScrolled}">
+            <app-leftmenu *ngIf="t" (hidePopup)="hidePageCreatePopup($event)" (showPopup)="displayPageCreatePopup($event)"  [leftSecWidth]="secWidth"></app-leftmenu>
+          </div>
+        </div> -->
+        <div [ngClass]="{'col-md-12':true,'col-md-12':!t,'center_feed':true}"  id="centersection" *ngIf="!fromLiveCompnent">
+
+          <div class="coursepage_outer" data-infinite-scroll
+          [infiniteScrollDistance]="4"
+          (scrolled)="onScrollDown()" [scrollWindow]="true">
+
+          <div  class="secHead previous_classes">
+            <span  class="up_heading"> Previous Classes </span>
+            <!-- <span class="down_heading">All your missed live classes at one place</span> -->
+            <span *ngIf="fromLiveCompnent"  class="allShow" (click)="routeToPreviousClasses()">View All</span>
+          </div>
+              <div class="courseCard" >
+                <div class="course_div course_student_veiw" >
+
+                  <div  class="course_item col-md-4 col-sm-6 col-xs-6 previous_classes"  *ngFor="let previousClass of previousClasses;let i=index;">
+              <div >
+            <div class="profilethumb_wrapper_mobile">
+              <span class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH">
+                <img alt="study24x7"
+                src="{{previousClass.PAGE_PROFILE_PHOTO_PATH
+                  +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
+              </span>
+              <span class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH==null">
+                <img alt="study24x7"
+                src="{{_constantService.defaultImgPath}}">
+              </span>
+              <span title="{{postData.decodeURIPostData(previousClass.PAGE_TITLE)}}" href="" class="pagename">{{postData.decodeURIPostData(previousClass.PAGE_TITLE)}} </span>
+              <span class="content_detail"> {{previousClass.PAGE_FOLLOW_COUNT}} followers</span>
+              <!-- <div class="shareBtn"><span class="rmenu"><img src="assets/images/svg-three/live-wall/shareicon.svg" alt="" class="_savecoursepost"></span></div> -->
+            </div>
+                      <div class="course_item card_pevious ">
+                        <div class="course_cont">
+                          <div class="course_img_div" *ngIf="previousClass.CONTENT_TYPE==1">
+     <!-- <div (click)="playerClicked(previousClass)" style="min-height: 150px;" *ngIf="view==i && !timerStop && previousClass.CONTENT_TYPE==1" id="{{'player'+previousClass.CONTENT_UUID}}"></div> -->
+     <div *ngIf="view==i && !timerStop && previousClass.CONTENT_TYPE==1" (click)="playerClicked(previousClass)"><div  style="min-height: 150px;"  id="{{'player'+previousClass.CONTENT_UUID}}"></div></div>
+
+     <div *ngIf="previousClass.CONTENT_TYPE==4 && view==i" >
+
+      <iframe class="videoPlayer" style="width: 100%;height: 400px;"  [src]="iframeSource | safe" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+
+                      </div>
+     <div class="vodMainSec controlMsg" *ngIf="timerStop && view==i">
+      <app-msg-after-sample [content]=previousClass ></app-msg-after-sample>
+      </div>
+                            <img (click)="play(previousClass,i)" *ngIf="view!=i"
+                              class="course_img"
+                              src="{{previousClass.COURSE_THUMBNAIL_PATH}}"/>
+                            <!-- <div class="course_live_status">
+                              LIVE NOW
+                            </div> -->
+                            <div *ngIf="view!=i" (click)="play(previousClass,i)" class="img_layer">
+                              <div class="videoLayer" >
+                                <img src="assets/images/svg-three/live-wall/playicon.svg">
+                              </div>
+                            </div>
+                            <div class="total_time">
+                              {{previousClass.DURATION}}
+                           </div>
+                          </div>
+
+                          <div class="course_img_div" *ngIf="previousClass.CONTENT_TYPE==4">
+     <!-- <div *ngIf="view==i && !timerStop && previousClass.CONTENT_TYPE==1" (click)="playerClicked(previousClass)"><div  style="min-height: 150px;"  id="{{'player'+previousClass.CONTENT_UUID}}"></div></div> -->
+     <div *ngIf="view==i && !timerStop && previousClass.CONTENT_TYPE==1" (click)="playerClicked(previousClass)"><div  style="min-height: 150px;"  id="{{'player'+previousClass.CONTENT_UUID}}"></div></div>
+
+     <div *ngIf="previousClass.CONTENT_TYPE==4 && view==i" >
+
+      <iframe class="videoPlayer" style="width: 100%;height: 400px;"  [src]="iframeSource | safe" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+
+                      </div>
+     <div class="vodMainSec controlMsg" *ngIf="timerStop && view==i">
+      <app-msg-after-sample [content]=previousClass ></app-msg-after-sample>
+      </div>
+                            <img (click)="play(previousClass,i)" *ngIf="view!=i"
+                              class="course_img"
+                              src="{{previousClass.path}}"
+                              />
+                            <!-- <div class="course_live_status">
+                              LIVE NOW
+                            </div> -->
+                            <div *ngIf="view!=i" (click)="play(previousClass,i)" class="img_layer">
+                              <div class="videoLayer"  >
+                                <img src="assets/images/svg-three/live-wall/playicon.svg">
+                              </div>
+                            </div>
+                            <div class="total_time">
+                              {{previousClass.DURATION}}</div>
+                          </div>
+
+                          <div class="course_details">
+                            <div class="profilethumb_wrapper">
+                              <span  class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH">
+                                <img alt="study24x7" src="{{previousClass.PAGE_PROFILE_PHOTO_PATH +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
+                              </span>
+                              <span  class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH==null">
+                                <img alt="study24x7" src="{{_constantService.defaultImgPath}}">
+                              </span>
+                                <span style="cursor: default;" class="pagename" title="{{postData.decodeURIPostData(previousClass.STREAM_TITLE)}}"  href="">{{postData.decodeURIPostData(previousClass.STREAM_TITLE)}}</span>
+                                <span (click)="redirectTo('course',previousClass)" class="content_detail">{{postData.decodeURIPostData(previousClass.COURSE_TITLE)}}</span>
+                                <div  (click)="redirectTo('course',previousClass)" class="mobile_right_arrow">
+                                    <img src="assets/images/svg-three/left_menu/arrow_right.svg" alt="">
+                                </div>
+                              </div>
+
+                          </div>
+                        </div>
+
+
+
+
+
+                </div>
+                </div>
+              </div>
+              </div>
+
+          </div>
+          </div>
+        </div>
+      <!-- </div>
+    </div>
+  </div>
+</div> -->
+
+<app-vod-player (emitter)="playPreviousClass=false" [content]=playerContent *ngIf="playPreviousClass && !mobileView"></app-vod-player>

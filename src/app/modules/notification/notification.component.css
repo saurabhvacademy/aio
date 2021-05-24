@@ -1,0 +1,176 @@
+.people_list_noti li:first-child {
+  padding-top: 15px;
+}
+
+.Notificationlist_name {
+  color: #F05050;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.listcross {
+  float: right;
+  display: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+li:hover .listcross {
+  display: block;
+}
+
+.rightmenu_fixed {
+  float: left;
+  width: 278px;
+}
+
+.rightmenu_fixed.fixedleft {
+  position: fixed;
+  width: 278px;
+  float: left;
+}
+
+.pdng_left {
+  padding-left: 0;
+}
+
+.pdng_right {
+  padding-right: 0;
+}
+
+.maindiv.saved-post-main {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.maindiv.saved-post-main {
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.maindiv.saved-post-main .mainheading {
+  padding: 10px 15px;
+  background-color: #f5f7fa;
+  line-height: 1;
+  -moz-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.maindiv.saved-post-main .mainheading .savededit {
+  float: right;
+  margin-right: 15px;
+}
+
+.maindiv.saved-post-main .mainheading .savededit .folderremove {
+  cursor: pointer;
+}
+
+.maindiv.saved-post-main .inner-main-div {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.people_list {
+  padding: 0 !important;
+}
+
+.notification-wrap .people_list .profileimg_know {
+  margin-right: 10px;
+}
+
+.notification-wrap .Experiance_list ul {
+  padding-left: 0px;
+}
+
+.notification-wrap .Experiance_list ul li {
+  margin-top: 15px;
+}
+
+.notification-wrap .Experiance_list ul li .listcross {
+  padding-top: 0;
+}
+
+.notification-wrap .Experiance_list ul li .profilename {
+  font-size: 14px;
+}
+
+.notification-wrap .Experiance_list ul li .profilename .Notificationlist_name {
+  font-size: 14px;
+}
+
+.people_list.Experiance_list li .prfl_detail {
+  margin-left: 0 !important;
+  display: inline-block;
+  width: 80%;
+}
+
+.people_list.Experiance_list li .profilename {
+  font-weight: normal;
+  font-size: 12px;
+  height: auto !important;
+}
+
+.people_list.Experiance_list li .profilename.head {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ntfi_pro_detail {
+  cursor: context-menu;
+}
+
+@media screen and (max-width: 600px) {
+  /* .container.main_body{
+    margin-top:0;
+  } */
+  .maindiv {
+    border-radius: 0 !important;
+  }
+  .maindiv .mainheading {
+    border-radius: 0 !important;
+  }
+  .notification-wrap .Experiance_list li {
+    position: relative;
+  }
+  .notification-wrap .Experiance_list li .profileimg_know {
+    position: absolute;
+    top: 0px;
+    left: 0;
+  }
+  .notification-wrap .Experiance_list li .ntfi_pro_detail {
+    width: 100%;
+    padding-left: 55px;
+  }
+  .notification-wrap .Experiance_list li .ntfi_pro_detail .profilename {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 991.5px) and (min-width: 768px) {
+  .right_stickytab {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991.5px) {
+  .maindiv.saved-post-main.notification-wrap {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .maindiv.saved-post-main.notification-wrap {
+    margin-bottom: 55px;
+  }
+}
+
+/* @media only screen and (max-width:600px){
+  .container.main_body{
+    margin-top:66px;
+  } */
+/*# sourceMappingURL=notification.component.css.map */

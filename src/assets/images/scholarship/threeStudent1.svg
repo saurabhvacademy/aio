@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="339.5" height="82.5" viewBox="0 0 339.5 82.5">
+    <defs>
+        <filter id="Top" width="83.5" height="53.5" x="0" y="20" filterUnits="userSpaceOnUse">
+            <feOffset dx="5" dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation=".5"/>
+            <feFlood flood-color="#e63636"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Students" width="196.5" height="53.5" x="143" y="23" filterUnits="userSpaceOnUse">
+            <feOffset dx="5" dy="3"/>
+            <feGaussianBlur result="blur-2" stdDeviation=".5"/>
+            <feFlood flood-color="#e63636"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="_3" width="45.5" height="82.5" x="90" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dx="5" dy="3"/>
+            <feGaussianBlur result="blur-3" stdDeviation=".5"/>
+            <feFlood flood-color="#e63636"/>
+            <feComposite in2="blur-3" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-1{fill:#fff;font-family:Montserrat-Bold,Montserrat;font-weight:700;font-size:40px}
+        </style>
+    </defs>
+    <g id="Group_761">
+        <g filter="url(#Top)" transform="translate(-219 -3033) translate(219 3033)">
+            <text id="Top-2" class="cls-1" transform="translate(0 59)">
+                <tspan x="0" y="0">Top</tspan>
+            </text>
+        </g>
+        <g filter="url(#Students)" transform="translate(-219 -3033) translate(219 3033)">
+            <text id="Students-2" class="cls-1" transform="translate(143 62)">
+                <tspan x="0" y="0">Students</tspan>
+            </text>
+        </g>
+        <g filter="url(#_3)" transform="translate(-219 -3033) translate(219 3033)">
+            <text id="_3-2" fill="#fff" font-family="Montserrat-Bold, Montserrat" font-size="64px" font-weight="700" transform="translate(91 62)">
+                <tspan x="0" y="0">3</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

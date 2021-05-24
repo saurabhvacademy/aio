@@ -1,0 +1,39 @@
+._mypoint_container { width: 100%; float: left; overflow: hidden; }
+
+._mypoint_container ._totalpoints { width: 100%; float: left; padding: 25px; }
+
+._mypoint_container ._totalpoints ._show_point { font-size: 28px; font-weight: 600; line-height: 1.29; color: #262626; position: relative; padding-left: 35px; }
+
+._mypoint_container ._totalpoints ._show_point ._pfimg { position: absolute; width: 24px; height: 24px; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); background-color: #ffffff; left: 0; top: 6px; border-radius: 50%; }
+
+._mypoint_container ._totalpoints ._show_point ._pfimg img { width: 100%; float: left; }
+
+._mypoint_container ._totalpoints p { font-size: 16px; font-weight: normal; line-height: 1.25; color: #262626; }
+
+._mypoint_container ._filter_points { width: 100%; float: left; background-color: rgba(223, 229, 235, 0.2); overflow: hidden; }
+
+._mypoint_container ._filter_points ._filtertabs { width: 100%; float: left; padding: 15px 24px; border-top: 1px solid #dfe5eb; }
+
+._mypoint_container ._filter_points ._filtertabs ul { width: 100%; float: left; }
+
+._mypoint_container ._filter_points ._filtertabs ul ._tabs { height: 34px; border-radius: 18px; border: solid 0.5px #dcdcdc; background-color: rgba(255, 255, 255, 0.7); font-size: 14px; font-weight: 600; line-height: 0.86; color: rgba(0, 0, 0, 0.9); display: inline-block; float: left; padding: 0 15px; margin-right: 10px; line-height: 32px; cursor: pointer; }
+
+.activebtn { background-color: #f05050 !important; color: #ffffff !important; border: solid 0.5px #f05050 !important; transition: .1s ease-in; }
+
+.filter_section { width: 100%; float: left; background-color: #ffffff; }
+
+._strip_filter { width: 100%; float: left; }
+
+._strip_filter:first-child ._date_time { padding-top: 6px; }
+
+._strip_filter ._date_time { opacity: 0.8; font-size: 14px; font-weight: 600; line-height: 1; color: #058daa; display: block; padding: 15px 15px 6px 28px; background-color: rgba(223, 229, 235, 0.2); }
+
+._strip_filter ul { width: 100%; float: left; box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.15); padding: 0 10px; }
+
+._strip_filter ul li { display: block; padding: 15px 72px 15px 50px; background: #fff; border-top: 1px solid #dfe5eb; position: relative; font-size: 16px; line-height: 0.88; color: rgba(0, 0, 0, 0.9); display: inline-flex; width: 100%; align-items: center; }
+
+._strip_filter ul li:first-child { border-top: none; }
+
+._strip_filter ul li ._earn_fromimg { width: 16px; height: 20px; position: absolute; left: 23px; background-image: url("./../../../../assets/images/docc.svg"); background-repeat: no-repeat; background-size: 100% 100%; background-position: center; }
+
+._strip_filter ul li ._earn_pts { font-size: 14px; font-weight: 600; line-height: 1; letter-spacing: normal; color: #009c05; position: absolute; right: 15px; }

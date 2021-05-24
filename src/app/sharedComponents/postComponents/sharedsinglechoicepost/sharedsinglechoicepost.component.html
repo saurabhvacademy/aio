@@ -1,0 +1,568 @@
+<div class='post_outer shared-post shared_single_choicepost'>
+    <div class='post_profile postshared_profile'>
+        <!-- <span class="post_profilepic"><img src="{{profile_pic_path}}" routerLink='/profile/{{user_name}}' (error)="updateSourcePic($event)"></span> -->
+        <span class="post_profilepic shared-icon"><img src="assets/images/svg-three/post_icon/share.svg"></span>
+        <div class="profiledetail">
+            <div *ngIf="!isPagePost">
+                <span title="{{full_name}}" class='name cursor-pointer' routerLink='/profile/{{user_name}}'>{{full_name |trimData:17}}</span> shared post from <span class='name post-owner cursor-pointer' routerLink='/profile/{{sharedPostUser_UserName}}'>{{sharedPostUser_fullName|trimData:17}}</span>
+                <div>
+                    <span *ngIf="arr.VISIBILITY ==3">
+                        <span class="follwer_count cursor-pointer"  routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                        <span class="dote" ><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                        <span class="previcy_icon"><img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                    </span>
+                    <span class="follwer_count cursor-pointer" *ngIf="arr.VISIBILITY !=3" routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                    <span class="dote" *ngIf="arr.VISIBILITY !=3"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                    <span class="previcy_icon connectionWidth" *ngIf="arr.VISIBILITY ==2"><img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7"></span>
+                    <span class="previcy_icon" *ngIf="arr.VISIBILITY ==1"><img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7"></span>
+                </div>
+            </div>
+            <div *ngIf="isPagePost">
+                <div>
+                    <div><span title="{{full_name}}" class='name cursor-pointer' routerLink='/profile/{{user_name}}'>{{full_name |trimData:17}}</span> shared post from <span class='name post-owner cursor-pointer' routerLink='/page/{{pg_id}}'>{{title |trimData:17}}</span></div>
+                    <div class="follwer_count">
+                        <span *ngIf="arr.VISIBILITY ==3">
+                            <span class="follwer_count cursor-pointer"  routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                            <span class="dote" ><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                            <span class="previcy_icon"><img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                        </span>
+                        <span class="follwer_count cursor-pointer" *ngIf="arr.VISIBILITY !=3" routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                        <span class="dote" *ngIf="arr.VISIBILITY !=3"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                        <span class="previcy_icon connectionWidth" *ngIf="arr.VISIBILITY ==2"><img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7"></span>
+                        <span class="previcy_icon" *ngIf="arr.VISIBILITY ==1"><img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class='leftmenudrop'>
+
+            <span class="postright_btn postmenubtn" (click)="postdropdown()" #postright><img src="assets/images/svg-three/post_icon/dot_menu.svg" class="postdropmenu defaultt"><img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" class="postdropmenu hoverr"></span>
+            <span title="Save" class="postbookmarkbtn postright_btn" [ngClass]="{ activesaved : saveCondition}"
+                  (click)="savedpost();">
+                  <img src="assets/images/svg-three/left_menu/bookmark.svg" class="defaultt">
+                <img src="assets/images/svg-three/post_icon/f05050/bookmark_fill.svg" class="bookmarked">
+                <img class="hoverr" src="assets/images/svg-three/left_menu/f05050/bookmark.svg">
+            </span>
+            <span class="drpdwn_post postdrop for-post drop_post" *ngIf="postmenu">
+                <!-- <ul (mouseleave)="this.postmenu = !this.postmenu"> -->
+                <ul>
+                    <li *ngIf="!arr['IS_PAGEFEED'] && isPagePost && arr['IS_ADMIN']!=1 && hideBtn==false"  (click)="follow()" class="follw_btn_inn"><div class="width100"><span class='default' ><img src="assets/images/svg-three/profile_about/edit.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/profile_about/f05050/edit.svg"></span> <div class="postdropdown_inner">Follow<span class="time">You can follow this page</span></div></div></li>
+                    <li *ngIf="!arr['IS_PAGEFEED'] &&  !profileQuestion && hideBtn" (click)= "unfollow()"><div class="width100"><span class='default' ><img src="assets/images/svg-three/profile_about/edit.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/profile_about/f05050/edit.svg"></span> <div class="postdropdown_inner">Unfollow<span class="time">You can unfollow this page</span></div></div></li>
+                    <li *ngIf="profileQuestion" (click)= "editPost()"><div class="width100"><span class='default' ><img src="assets/images/svg-three/profile_about/edit.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/profile_about/f05050/edit.svg"></span> <div class="postdropdown_inner">Edit<span class="time">You can edit your post</span></div></div></li>
+                    <li *ngIf="!profileQuestion" (click)="reprts(1)"><div class="width100"><span class='default' ><img src="assets/images/svg-three/post_icon/report.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/post_icon/f05050/report.svg"></span> <div class="postdropdown_inner">Report<span class="time">Mark as offensive </span></div></div></li>
+                    <li (click)="postdata.copyPostURL(postPublicShareLinkCopy);postmenu=false;"><div class="width100"><span class='default' ><img src="assets/images/svg-three/copyicon.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/f05050/copyicon.svg"></span> <div class="postdropdown_inner">Get a link<span class="time">Click to copy </span></div></div></li>
+                    <li *ngIf="profileQuestion" (click)="DeletePostCnf();"> <div class="width100"><span class='default' ><img src="assets/images/svg/dustbindrop.svg"></span><span class='hoverimg' ><img src="assets/images/svg/dustbindrophover.svg"></span> <div class="postdropdown_inner">Delete<span class="time">You can delete your post</span></div></div></li>
+                </ul>
+            </span>
+        </span>
+        <p  class="posttext posttextauto shared-post-text" *ngIf="DataView" [innerHTML]="post_data|trimData"></p><a *ngIf="DataView" class="continue-reading"(click)="DataView=!DataView">See more</a>
+        <p  class="posttext posttextauto shared-post-text" *ngIf="!DataView" [innerHTML]="post_data"></p>
+    </div>
+    <div class="outer-shared-post-blocks-wrap">
+        <div class="shared-post-blocks-wrap">
+            <div class='post_profile'>
+
+                <!-- <br> -->
+                <span *ngIf="!isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{sharedPostUser_ProfilePicPath}}" alt="study24x7 {{sharedPostUser_fullName |trimData:30}}" (error)="updateSourcePic($event)" routerLink='/profile/{{sharedPostUser_UserName}}'></span>
+                    <div class="profiledetail">
+                        <span class='name cursor-pointer' routerLink='/profile/{{sharedPostUser_UserName}}'>{{sharedPostUser_fullName |trimData:30}}</span>
+                        <div>
+                            <span *ngIf="arr.SHARED_POST_DATA.VISIBILITY ==3">
+                                <span class="follwer_count cursor-pointer"  routerLink="/post/{{arr.SHARED_POST_DATA.USER_POST_ID}}">{{sharedPostTime}}</span>
+                                <span class="dote" ><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                                <span class="previcy_icon"><img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                            </span>
+                            <span class="follwer_count cursor-pointer" *ngIf="arr.SHARED_POST_DATA.VISIBILITY !=3" routerLink="/post/{{arr.SHARED_POST_DATA.USER_POST_ID}}">{{sharedPostTime}}</span>
+                            <span class="dote" *ngIf="arr.SHARED_POST_DATA.VISIBILITY !=3"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                            <span class="previcy_icon connectionWidth" *ngIf="arr.SHARED_POST_DATA.VISIBILITY ==2"><img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7"></span>
+                            <span class="previcy_icon" *ngIf="arr.SHARED_POST_DATA.VISIBILITY ==1"><img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7"></span>
+                        </div>
+                    </div></span>
+                <span *ngIf="isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="{{altName}}" (error)="updateSourcePic($event)" routerLink='/page/{{pg_id}}'></span>
+                    <div class="profiledetail">
+                        <span class='name cursor-pointer' routerLink='/page/{{pg_id}}'>{{title |trimData:30}}</span>
+                        <span class="follwer_count">{{arr['SHARED_POST_DATA']['PAGE_FOLLOW_COUNT']}} followers</span>
+                        <span class="follow_dote"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                        <span *ngIf="arr.SHARED_POST_DATA.VISIBILITY ==3">
+                            <span class="follwer_count cursor-pointer"  routerLink="/post/{{arr.SHARED_POST_DATA.USER_POST_ID}}">{{sharedPostTime}}</span>
+                            <span class="dote" ><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                            <span class="previcy_icon"><img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                        </span>
+                        <span class="follwer_count cursor-pointer" *ngIf="arr.SHARED_POST_DATA.VISIBILITY !=3" routerLink="/post/{{arr.SHARED_POST_DATA.USER_POST_ID}}">{{sharedPostTime}}</span>
+                        <span class="dote" *ngIf="arr.SHARED_POST_DATA.VISIBILITY !=3"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                        <span class="previcy_icon connectionWidth" *ngIf="arr.SHARED_POST_DATA.VISIBILITY ==2"><img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7"></span>
+                        <span class="previcy_icon" *ngIf="arr.SHARED_POST_DATA.VISIBILITY ==1"><img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7"></span>
+                        <button *ngIf="!arr['IS_PAGEFEED'] && isPagePost && arr['SHARED_POST_DATA']['IS_ADMIN']!=1 && hideBtn==false" type="button" name="button" class="follow_container follw_btn" (click)="follow()" [ngClass]="{'following_container':followme,'cursolnone':followme}" style="position:absolute;">
+                            <span class="follow">
+                                Follow
+                            </span>
+                            <span class="following cursolnone">
+                                <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+                                Following
+                            </span>
+                        </button>
+                    </div></span>
+            </div>
+            <div class='post_profileContent'><div class='postmain_container'>
+
+                    <p id="{{post_id}}_quesText" [innerHTML] = "sharedPost_data"></p>
+                    <div class="multiple_c_p_imgcontainer1" *ngIf="questionImg!=''">
+                        <img (click)="postimageshow($event)" _ngcontent-c6="" src="{{questionImg}}" alt="{{altName}}">
+                    </div>
+
+                </div>
+                <div class="post_options" *ngIf="arr.MY_PROFILE==false">
+                    <label class='radiobtn_outer f-child crs_auto' *ngIf="resultDeclared==false" (click)='enable()'>
+                        <input type="radio" class="Radio" id='{{post_id}}_option1' name='{{post_id}}_mainoption' value="A">
+                        <label class="radio_btn" for="{{post_id}}_option1"></label>
+                        <b> A </b>
+                        <div class="inr_content" [ngClass]="{'cursolnone':responseStatus == 1}">
+                            <p  id="{{post_id}}_opt1_Text" [innerHTML]="option1"></p>
+                            <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                <img (click)="postimageshow($event)" src="{{option1Img}}" alt="{{altName}}">
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class='radiobtn_outer crs_auto' *ngIf="resultDeclared==false" (click)='enable()'>
+                        <input type="radio" class="Radio" id='{{post_id}}_option2' name='{{post_id}}_mainoption' value="B">
+                        <label class="radio_btn" for="{{post_id}}_option2"></label>
+                        <b> B </b>
+                        <div class="inr_content" [ngClass]="{'cursolnone':responseStatus == 1}">
+                            <p  id="{{post_id}}_opt2_Text" [innerHTML]="option2"></p>
+                            <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                <img (click)="postimageshow($event)" src="{{option2Img}}" alt="{{altName}}">
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer crs_auto' *ngIf="(option3!='' || option3Img!='') && resultDeclared==false" (click)='enable()'>
+                           <input type="radio" class="Radio" id='{{post_id}}_option3' name='{{post_id}}_mainoption' value="C">
+                        <label class="radio_btn" for="{{post_id}}_option3"></label>
+                        <b> C </b>
+                        <div class="inr_content" [ngClass]="{'cursolnone':responseStatus == 1}">
+                            <p  id="{{post_id}}_opt3_Text" [innerHTML]="option3"></p>
+                            <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                <img (click)="postimageshow($event)" src="{{option3Img}}" alt="{{altName}}">
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer crs_auto' *ngIf="(option4!='' || option4Img!='') && resultDeclared==false" (click)='enable()'>
+                           <input type="radio" class="Radio" id='{{post_id}}_option4' name='{{post_id}}_mainoption' value="D">
+                        <label class="radio_btn" for="{{post_id}}_option4"></label>
+                        <b> D </b>
+                        <div class="inr_content" [ngClass]="{'cursolnone':responseStatus == 1}">
+                            <p  id="{{post_id}}_opt4_Text" [innerHTML]="option4"></p>
+                            <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''" >
+                                <img (click)="postimageshow($event)" src="{{option4Img}}" alt="{{altName}}">
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer crs_auto' *ngIf="(option5!='' || option5Img!='') && resultDeclared==false" (click)='enable()'>
+                           <input type="radio" class="Radio" id='{{post_id}}_option5' name='{{post_id}}_mainoption' value="E">
+                        <label class="radio_btn" for="{{post_id}}_option5"></label>
+                        <b> E </b>
+                        <div class="inr_content" [ngClass]="{'cursolnone':responseStatus == 1}">
+                            <p  id="{{post_id}}_opt5_Text" [innerHTML]="option5"></p>
+                            <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                <img v src="{{option5Img}}" alt="{{altName}}">
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer crs_auto' *ngIf="(option6!='' || option6Img!='') && resultDeclared==false" (click)='enable()'>
+                           <input type="radio" class="Radio" id='{{post_id}}_option6' name='{{post_id}}_mainoption' value="F">
+                        <label class="radio_btn" for="{{post_id}}_option6"></label>
+                        <b> F </b>
+                        <div class="inr_content" [ngClass]="{'cursolnone':responseStatus == 1}">
+                            <p  id="{{post_id}}_opt6_Text" [innerHTML]="option6"></p>
+                            <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                <img (click)="postimageshow($event)" src="{{option6Img}}" alt="{{altName}}">
+                            </div>
+                        </div>
+                    </label>
+                    <!-- -------------------result declared--------------------- -->
+                    <label class='radiobtn_outer f-child ' *ngIf="resultDeclared" [ngClass]="{'wall-result':resultDeclared}">
+                        <div class="questionResultt" id="{{post_id}}_opt1">
+                            <span class="questionResultt_percent"><b>A</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt1_Text" [innerHTML]="option1"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option1Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer ' *ngIf="resultDeclared" [ngClass]="{'wall-result':resultDeclared}">
+                        <div class="questionResultt" id="{{post_id}}_opt2">
+                            <span class="questionResultt_percent"><b>B</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt2_Text" [innerHTML]="option2"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option2Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer ' *ngIf="(option3!='' || option3Img!='') &&  resultDeclared" [ngClass]="{'wall-result':resultDeclared}">
+                           <div class="questionResultt" id="{{post_id}}_opt3">
+                            <span class="questionResultt_percent"><b>C</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt3_Text" [innerHTML]="option3"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option3Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer ' *ngIf="(option4!='' || option4Img!='') &&  resultDeclared" [ngClass]="{'wall-result':resultDeclared}">
+                           <div class="questionResultt" id="{{post_id}}_opt4">
+                            <span class="questionResultt_percent"><b>D</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt4_Text" [innerHTML]="option4"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option4Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer ' *ngIf="(option5!='' || option5Img!='') &&  resultDeclared" [ngClass]="{'wall-result':resultDeclared}">
+                           <div class="questionResultt" id="{{post_id}}_opt5">
+                            <span class="questionResultt_percent"><b>E</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt5_Text" [innerHTML]="option5"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option5Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer ' *ngIf="(option6!='' || option6Img!='') &&  resultDeclared" [ngClass]="{'wall-result':resultDeclared}">
+                           <div class="questionResultt" id="{{post_id}}_opt6">
+                            <span class="questionResultt_percent"><b>F</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt6_Text" [innerHTML]="option6"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option6Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="admin-question-post-result adminSolutionAdding clearfix" *ngIf="my_profile">
+                        <div class="total-resp-wrap sol_hint_right">
+                            <span>Total Responses:&nbsp;<strong>{{responseCount}}</strong></span>
+                            <div class="hint-div" *ngIf="arr.SHARED_POST_DATA.SOLUTION || (arr.SHARED_POST_DATA
+                            .SOL_MEDIA && (arr.SHARED_POST_DATA
+                            .SOL_MEDIA.fnm||arr.SHARED_POST_DATA
+                            .SOL_MEDIA.fpath))">
+                             <span class="hint-icon" [ngClass]="{'hint-active':postSolHint==true}" (click)="showSolHint()">
+                               <img src=" assets/images/svg-three/post_icon/solution_hint.svg" title="Hint or Solution" class="hoverr">
+                             </span>
+                             </div>
+                        </div>
+                        <div class="options-analysis-wrap sol_hint_left clearfix">
+                            <div class="analysis-option-box" *ngIf="option1!=''  || option1Img!=''">
+                                 <span><strong class="q-no">A</strong>&nbsp;<strong>{{opt1Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option2!=''  || option2Img!=''">
+                                 <span><strong class="q-no">B</strong>&nbsp;<strong>{{opt2Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option3!='' || option3Img!=''">
+                                 <span><strong class="q-no">C</strong>&nbsp;<strong>{{opt3Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option4!='' || option4Img!=''">
+                                 <span><strong class="q-no">D</strong>&nbsp;<strong>{{opt4Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option5!='' || option5Img!=''">
+                                 <span><strong class="q-no">E</strong>&nbsp;<strong>{{opt5Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option6!='' || option6Img!=''">
+                                 <span><strong class="q-no">F</strong>&nbsp;<strong>{{opt6Percentile}}%</strong></span>
+                            </div>
+                        </div>
+                        <div class="showHint" *ngIf="postSolHint">
+                          <app-post-solution-hint  (imgShow)="postimageshow($event)" [postDataSol]="solutionData"></app-post-solution-hint>
+                        </div>
+                    </div>
+                    <div class="questionpost_button clearfix"*ngIf="resultDeclared==false && !my_profile">
+
+                        <button class="button24x7 redColorButton fright" [disabled]="showPreloader && timerOn" *ngIf="responseStatus==0" (click)='puResponseOnQuestion()' id="{{post_id}}_submit" value="" [ngClass]="{'postButtonEnable':enable_button, 'postDesable':!enable_button}">
+                                <span class="text" *ngIf="showText">
+                                Submit
+                            </span>
+                            <span class="preloder"  *ngIf="showPreloader">
+                                <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" >
+                            </span>
+                        </button>
+
+                        <div class="timeremaining" *ngIf="questionTime!=0">
+                            <span class="time-left-icon-wrap"><img src="assets/images/svg/time-left.svg"></span>
+                            <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                        </div>
+                    </div>
+                    <!-- <div class="resultinfo" *ngIf="my_profile">Correct Answer: {{questionAns[0]}}</div> -->
+                    <div *ngIf="resultDeclared" class="result-wrapper single-response clearfix" [ngClass]="{'show-result':resultDeclared}">
+
+
+                        <div class="box-one result-box sol_hint_right">
+                            <div class="resultinfo youranswer not-attempt" *ngIf="resultDeclared && responseStatus==0"> Not Attempted</div>
+                            <div class="resultinfo youranswer" *ngIf="resultDeclared && responseStatus==1 && myResponseStatus==0"><span class="ttl">My Response</span> <span class="bg-circle red">{{myResponse[0]}}</span></div>
+                            <div class="resultinfo" *ngIf="resultDeclared && responseStatus==1 && myResponseStatus==1"><span class="ttl">My Response</span> <span class="bg-circle">{{myResponse[0]}}</span></div>
+                            <div class="hint-div" *ngIf="arr.SHARED_POST_DATA.SOLUTION || (arr.SHARED_POST_DATA
+                            .SOL_MEDIA && (arr.SHARED_POST_DATA
+                            .SOL_MEDIA.fnm||arr.SHARED_POST_DATA
+                            .SOL_MEDIA.fpath))">
+                             <span class="hint-icon" [ngClass]="{'hint-active':postSolHint==true}" (click)="showSolHint()">
+                               <img src=" assets/images/svg-three/post_icon/solution_hint.svg" title="Hint or Solution" class="hoverr">
+                             </span>
+                             </div>
+                        </div>
+                        <!--                        <div class="box-two result-box">
+                                                     <div class="resultinfo" *ngIf="my_profile"><span class="ttl">Correct Answer:&nbsp;</span><span class="bg-circle">{{questionAns[0]}}</span></div>
+                                                    <div class="resultinfo" *ngIf="resultDeclared"><span class="ttl">Correct Answer:&nbsp;</span> <span class="bg-circle">{{questionAns[0]}}</span></div>
+                                                </div>-->
+                        <div class="box-three result-box sol_hint_left clearfix">
+                            <div class="resultinfo clearfix" *ngIf="resultDeclared" ><img class="icon_result_show icon_result_red" src="assets/images/svg-three/post_icon/up-arrow-red.svg" alt="study24x7"><span class="response-count">{{incorrectResponseCount}}</span> </div>
+                            <div class="resultinfo clearfix" *ngIf="resultDeclared" ><img class="icon_result_show " src="assets/images/svg-three/post_icon/up-arrow-green.svg" alt="study24x7"><span class="response-count">{{correctResponseCount}}</span> </div>
+                            <!-- <div class="resultinfo title">Total Responses</div> -->
+                        </div>
+                        <div class="showHint" *ngIf="postSolHint">
+                          <app-post-solution-hint  (imgShow)="postimageshow($event)" [postDataSol]="solutionData"></app-post-solution-hint>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div *ngIf="arr.MY_PROFILE">
+                    <label class='radiobtn_outer f-child cursolnone' *ngIf="my_profile" [ngClass]="{'wall-result profile-result':my_profile}">
+                           <div class="questionResultt" id="{{post_id}}_opt1">
+                            <!--<span class="questionResultt_percent"><b>{{opt1Percentile}}% {{opt1RespCount}}</b></span>-->
+                            <span class="questionResultt_percent"><b>A</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt1_Text" [innerHTML]="option1"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option1Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer cursolnone' *ngIf="my_profile" [ngClass]="{'wall-result profile-result':my_profile}">
+                           <div class="questionResultt" id="{{post_id}}_opt2">
+                            <!--<span class="questionResultt_percent"><b>{{opt2Percentile}}% {{opt2RespCount}}</b></span>-->
+                            <span class="questionResultt_percent"><b>B</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt2_Text" [innerHTML]="option2"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option2Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer cursolnone' *ngIf="(option3!='' || option3Img!='') && my_profile" [ngClass]="{'wall-result profile-result':my_profile}">
+                           <div class="questionResultt" id="{{post_id}}_opt3">
+                            <!--                     <span class="questionResultt_percent"><b>{{opt3Percentile}}% {{opt3RespCount}}</b></span> -->
+                            <span class="questionResultt_percent"><b>C</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt3_Text" [innerHTML]="option3"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option3Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer cursolnone' *ngIf="(option4!='' || option4Img!='') && my_profile" [ngClass]="{'wall-result profile-result':my_profile}">
+                           <div class="questionResultt" id="{{post_id}}_opt4">
+                            <!--                     <span class="questionResultt_percent"><b>{{opt4Percentile}}% {{opt4RespCount}}</b></span> -->
+                            <span class="questionResultt_percent"><b>D</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt4_Text" [innerHTML]="option4"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option4Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer cursolnone' *ngIf="(option5!='' || option5Img!='') && my_profile" [ngClass]="{'wall-result profile-result':my_profile}">
+                           <div class="questionResultt" id="{{post_id}}_opt5">
+                            <!-- <span class="questionResultt_percent"><b>{{opt5Percentile}}% {{opt5RespCount}}</b></span> -->
+                            <span class="questionResultt_percent"><b>E</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt5_Text" [innerHTML]="option5"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option5Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class='radiobtn_outer cursolnone' *ngIf="(option6!='' || option6Img!='') && my_profile" [ngClass]="{'wall-result profile-result':my_profile}">
+                           <div class="questionResultt" id="{{post_id}}_opt6">
+                            <!-- <span class="questionResultt_percent"><b>{{opt6Percentile}}% {{opt6RespCount}}</b></span> -->
+                            <span class="questionResultt_percent"><b>F</b></span>
+                            <div class="inr_content">
+                                <p  id="{{post_id}}_opt6_Text" [innerHTML]="option6"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                    <img (click)="postimageshow($event)" src="{{option6Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="admin-question-post-result adminSolutionAdding clearfix" *ngIf="my_profile">
+                        <div class="total-resp-wrap sol_hint_right">
+                            <span>Total Responses:&nbsp;<strong>{{responseCount}}</strong></span>
+                            <div class="hint-div" *ngIf="arr.SHARED_POST_DATA.SOLUTION || (arr.SHARED_POST_DATA
+                            .SOL_MEDIA && (arr.SHARED_POST_DATA
+                            .SOL_MEDIA.fnm||arr.SHARED_POST_DATA
+                            .SOL_MEDIA.fpath))">
+                             <span class="hint-icon" [ngClass]="{'hint-active':postSolHint==true}" (click)="showSolHint()">
+                               <img src=" assets/images/svg-three/post_icon/solution_hint.svg" title="Hint or Solution" class="hoverr">
+                             </span>
+                             </div>
+                        </div>
+
+                        <div class="options-analysis-wrap sol_hint_left clearfix">
+                            <div class="analysis-option-box">
+                                <span><strong class="q-no ">A</strong>&nbsp;<strong>{{opt1Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" >
+                                <span><strong class="q-no ">B</strong>&nbsp;<strong>{{opt2Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option3!='' || option3Img!=''">
+                                 <span><strong class="q-no">C</strong>&nbsp;<strong>{{opt3Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option4!='' || option4Img!=''">
+                                 <span><strong class="q-no">D</strong>&nbsp;<strong>{{opt4Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option5!='' || option5Img!=''">
+                                 <span><strong class="q-no">E</strong>&nbsp;<strong>{{opt5Percentile}}%</strong></span>
+                            </div>
+                            <div class="analysis-option-box" *ngIf="option6!='' || option6Img!=''">
+                                 <span><strong class="q-no">F</strong>&nbsp;<strong>{{opt6Percentile}}%</strong></span>
+                            </div>
+                        </div>
+                        <div class="showHint" *ngIf="postSolHint">
+                          <app-post-solution-hint  (imgShow)="postimageshow($event)" [postDataSol]="solutionData"></app-post-solution-hint>
+                        </div>
+                    </div>
+                </div>
+                <div class="posttagdiv">
+                    <span class="tags" *ngFor="let tags of tagsArr" [id]='tags'>{{interestObj[tags]}}</span>
+                    <span class="tags wallintereswrapper" *ngIf="showIntArr" id="{{post_id}}_interestpos">
+                        <span style="position:relative;top: -3px;" >...</span>
+                        <div class="wallinterestlist" id="{{post_id}}_shftToLeft">
+                            <div class="arrow-up" id="{{post_id}}_shiftArrowLeft"></div>
+                            <ul [perfectScrollbar]="config">
+                                <li *ngFor="let tag of ltIntShow" [id]='tag'>
+                                    {{interestObj[tag]}}
+                            </li>
+                        </ul>
+                    </div>
+                </span>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="post-footer-btn-outer-wrap">
+    <div class='post_footer post-footer-btn-wrap clearfix'>
+        <span class='post_footeroption dropdown-ppl-list-wrap' [ngClass]="{ clicked : importantCondition}" >
+              <!-- <span class='glyphicon glyphicon-thumbs-up'></span> 10K Imp -->
+              <span >	<span class="default" (click)="important()"><img src="assets/images/svg-three/post_icon/imp1.svg" class="defaultimp defaultt "><img src="assets/images/svg-three/post_icon/f05050/imp2.svg" class="activeimp" ><img src="assets/images/svg-three/post_icon/f05050/imp1.svg" class="hoverr"></span>  <span (click)="important()">Important</span><span (click)="impLikeShareFn()" class="count-sq" *ngIf="like!=0"> {{like}} </span></span>
+
+            <!-- ======================== -->
+            <app-likeshareviewall (closeViewAllThread)="CloseViewAll($event)" *ngIf="impLikeShareStatus" [data]="userLikeShareList"></app-likeshareviewall>
+            <!-- ========================== -->
+        </span>
+
+        <span class='post_footeroption'>
+            <span (click)="autoFocus()"><span class="default"><img class="defaultt" src="assets/images/svg-three/post_icon/comment.svg"><img class="hoverr" src="assets/images/svg-three/post_icon/f05050/comment.svg"></span>Comment</span><span id="{{post_id}}_comm_count"  routerLink="/post/{{arr.USER_POST_ID}}" class="count-sq" *ngIf="comment!=0" [innerHTML]="comment"></span>
+        </span>
+
+        <span class='post_footeroption dropdown-ppl-list-wrap share' >
+            <span>
+                <span #shareList>
+                    <span class='default' style="width:22px;">
+                        <img class="defaultt" src="assets/images/svg-three/post_icon/share.svg">
+                        <img class="hoverr" src="assets/images/svg-three/post_icon/f05050/share.svg">
+                    </span><span (click)="showSharePostList($event)">
+                        &nbsp;Share
+                    </span>
+                </span>
+                <span (click)="shareLikeShareFn()" class="count-sq" *ngIf="share!=0">
+                    {{share}}
+                </span>
+            </span>
+            <!-- ======================== -->
+            <app-likeshareviewall (closeViewAllThread)="CloseViewAll($event)" *ngIf="shareLikeShareStatus" [data]="userLikeShareList"></app-likeshareviewall>
+            <!-- ========================== -->
+
+
+
+
+            <ul *ngIf="isSharePostList" class="socialShareOnHover"  (mouseleave)="hideSocialList()" id="{{u_id}}_{{post_id}}_shareSShareList">
+
+
+                <li  (click)="openShareScreen()">
+                    <i>
+                        <span  style="float:left;  "><img src="assets/images/svg-three/post_icon/share.svg" alt=""></span>
+                        <span class="text">Share</span>
+                    </i>
+                </li>
+                <li><a [href]="socialFbShareUrl" target="_blank">  <span><img src="assets/images/svg-three/facebook.svg" alt=""></span> <span class="text">Facebook</span></a></li>
+                <li><a [href]="socialTelegramUrl" target="_blank">  <span><img src="assets/images/telegram.jpg" alt=""></span> <span class="text">Telegram</span> </a></li>
+                <li>
+                    <a [href]="socialWhatsappLink" target="_blank"> <span><img src="assets/images/svg-three/social_invite/whatsaap.svg" alt=""></span> <span class="text">Whatsapp</span> </a>
+                </li>
+                <li><a (click)="postdata.copyPostURL(postPublicShareLinkCopy);postmenu=false">  <span class="copyIcon"><img src="assets/images/svg-three/copyicon_white.svg" alt=""></span><span class="text">Copy Link</span> </a></li>
+                <!-- <li><a [href]="socialWhatsappLink" target="_blank">  <span><img src="assets/images/svg-three/whatsapp.png" alt=""></span> <span class="text">whatsapp</span></a></li>
+                <li><a [href]="socialTeitterShareUrl" target="_blank">  <span><img src="assets/images/svg-three/twiter.svg" alt=""></span> <span class="text">Twitter</span></a></li> -->
+
+            </ul>
+
+
+        </span>
+        <!--		<span class='post_footeroption'>
+                                <span class='default' ><img class="defaultt" src="assets/images/svg-three/left_menu/bookmark.svg"><img class="hoverr" src="assets/images/svg-three/left_menu/f05050/bookmark.svg"></span> Save</span>-->
+    </div>
+</div>
+
+<div class='comment_outer' >
+    <div class="writecomment clearfix main-comment" [ngClass]="{'comment-present':viewCommentList}">
+        <!--		<input type='text' placeholder="Write a comment...">-->
+        <figure class="comment-profile cursor-pointer">
+            <img src="{{userProfilePic}}" alt="{{'study24x7 ' +this._constantService.getSessionDataBYKey('full_name')}}" (error)="updateProfilePic($event)"></figure>
+        <div class='optionoutr' >
+            <!-- <input type="text"> -->
+            <div class="placeholdercolor"  contenteditable="true" ondrop="return false;" (paste)="postdata.onPaste($event)" (keydown.enter)="false" (focusout)="showPlaceHolder()"  (click)="hidePlaceHolder($event)" (keydown)="hidePlaceHolder($event);" (keyup)="addComment($event)"   id='{{u_id}}_{{post_id}}_comm' #commentPlaceHolder  (contextmenu)="autoFocus();postdata.onPaste($event)">
+                {{_constantService.commentPlaceHolder}}
+            </div>
+            <div class="upload-img-outer-wrp" *ngIf="showCommentImg==2">
+                <span class='uploaded_image' >
+                    <!-- <span class="removeimg" (click) = "showCommentImg=1;comment_image=null;uuid='';file_path='';"><img src='assets/images/svg/close.svg' ></span> -->
+                    <span class="hoverbg" ></span>
+                    <span class="file-preloder" style="margin-top: 0px;"><img style="width:40px" src="assets/images/svg/preloader-25.svg" *ngIf="showPreloader"></span>
+                    <!-- <span class="changeimg" (click)="change_Commentimage($event)" id="chng_{{u_id}}_{{post_id}}">Change</span> -->
+                    <span class="changeimg" (click) = "showCommentImg=1;comment_image=null;uuid='';file_path='';" id="chng_{{u_id}}_{{post_id}}">Cancel</span>
+                    <!--            <img src="{{option_image1_url}}"> -->
+                    <img (click)="postimageshow($event)" src="{{image_upload_url}}" alt="{{altName}}">
+                </span>
+            </div>
+            <label class="option_image" >
+                <input type="file" class="post_image" id="{{u_id}}_{{post_id}}_nci" (change)="addImageFile($event);" accept="image/*">
+                <label class="fileupload_image" for="{{u_id}}_{{post_id}}_nci"><img class="default" src="assets/images/svg-three/post_icon/img.svg" ><img class="on-hover" src="assets/images/svg-three/post_icon/f05050/img.svg" ></label>
+            </label>
+        </div>
+    </div>
+    <div class='comment_list' *ngIf="viewCommentList">
+        <div #container></div>
+    </div>
+    <a class="seemore" (click)="getComment()" *ngIf="commentPresent">See more comments</a>
+
+</div>
+
+</div>
+<div *ngIf="reportpopup" ><app-reports (closeReportPopup)="removePost($event);" [postId]="post_id" [postTyp]="3"></app-reports></div>
+<app-sharescreensinglechoicepost (closeShareScreenThread)="textPostEditClose($event)" *ngIf="edittextpost" [postdata]="arr"></app-sharescreensinglechoicepost>
+<div><app-sharescreensinglechoicepost (closeShareScreenThread)="sharetextpostparenthide($event)" *ngIf="sharetextpostviewsec" [postdata]="arr"></app-sharescreensinglechoicepost></div>
+<app-confirmationpopup *ngIf="ConfirmDelete" (closeComfirmPopupThread)="CloseDeleteConfirm($event);" [dataObj]="dataConf" [savedFolderId]="savedFolderId"></app-confirmationpopup>
+<div *ngIf="savepagepopup"><app-savedpopup (folder_id)="savedFolderId=$event"  (closeSavedPopup)="savepagepopup=$event;saveCondition=$event;" (savedStatus)="saveCondition=$event" [postData]='arr'></app-savedpopup></div>
+<!-- <app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);" [dataObj]="dataConf"></app-confirmationpopup> -->
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<app-imageview *ngIf="postimagediv=='2'" (closePopUp)="postImageHide($event)" [imageUrl]="oneViewPath" [ImageTyp]="picTyp"></app-imageview>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <linearGradient id="prefix__linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#29c980"/>
+            <stop offset="1" stop-color="#0baa61"/>
+        </linearGradient>
+        <style>
+            .prefix__cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__Group_598" data-name="Group 598" transform="translate(-13.333 -299)">
+        <rect id="prefix__Rectangle_151" width="18" height="18" data-name="Rectangle 151" rx="9" transform="translate(13.333 299)"/>
+        <g id="prefix__Group_514" data-name="Group 514" transform="translate(17.633 304.407)">
+            <path id="prefix__Path_219" d="M90.012 202.65a.825.825 0 0 1 0 1.145l-.639.639a.825.825 0 0 1-1.145 0l-2.8-2.819a.824.824 0 0 1 0-1.145l.639-.639a.825.825 0 0 1 1.145 0z" class="prefix__cls-2" data-name="Path 219" transform="translate(-85.2 -197.552)"/>
+            <path id="prefix__Path_220" d="M169.476 125.431a.824.824 0 0 1 1.145 0l.639.639a.824.824 0 0 1 0 1.145l-4.845 4.823a.825.825 0 0 1-1.145 0l-.639-.639a.825.825 0 0 1 0-1.145z" class="prefix__cls-2" data-name="Path 220" transform="translate(-162.22 -125.2)"/>
+        </g>
+    </g>
+</svg>

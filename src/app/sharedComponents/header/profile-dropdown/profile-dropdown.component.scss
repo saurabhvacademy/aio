@@ -1,0 +1,139 @@
+@import '../../../sass/abstracts/variables';
+.profileDropdown{
+
+}
+.droplist{
+  width: 210px;
+  max-height: 400px;
+  top: 32px ;
+  border-radius: 5px ;
+  border-color:rgba(44, 46, 47, 0.3) ;
+  box-shadow: 0 3px 8pxrgba(0, 0, 0, 0.3) ;
+  cursor: default;
+  background:#fff none repeat scroll 0 0;
+  border: 1px solid #dfe0e8;
+  position: absolute;
+  box-shadow: 0 6px 21px -6px rgba(0,0,0,.2) ;
+  border: 1px solid #dfe0e8 ;
+  top: 45px;
+  font-size:14px;
+  right: -6px;
+}
+.listdropdown{
+    position:relative;
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding:  5px;
+    border-bottom: 1px solid #dfe5eb;
+    li{
+    padding: 9px 10px 9px 47px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    &:hover{
+    background-color: rgba(#dfe5eb, 0.5);
+    border-radius: 3px;
+    }
+      p{ line-height: normal;}
+
+    }
+
+}
+
+.profileName{
+  padding: 15px 40px 15px 15px;
+text-align: left;
+position: relative;
+.profilediv{
+  max-width: 100%;
+/* display: inline-table; */
+  p{
+    color:rgba(0, 0, 0, 0.9);
+    cursor:pointer;
+  }
+  .name{line-height: 1.29;font-weight: 500;}
+  .nameprof{margin-top: 4px;font-weight: 300;line-height:normal;
+
+  }
+}
+}
+
+.profile_copy{
+  width: 18px;
+  height: 18px;
+  margin-right: 15px;
+  position: absolute;
+  top: 25px;cursor: pointer;
+  right: 0px;
+  background-size: 100% 100%;
+  line-height: 17px !important;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-image: url(../../../../assets/images/sprite/leftmenu.svg#copyiconprofile);}
+
+
+
+  .listdropdown{
+    li{
+      .default{
+        width: 18px;
+        height: 18px;
+        margin-right: 7px;
+        position: absolute;
+        left: 12px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+      }
+        .mypoint_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#mypoint);}
+        .shield_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#shield);}
+        .wallet_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#wallet);}
+        .activity_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#activitylog);}
+        .setting_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#setting);}
+        .logout1_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#logout);}
+        .contactus_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#contactus);}
+        .getapp_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#gettheapp);}
+        .contus_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#contactus);}
+        .arrowright{background-image: url(../../../../assets/images/sprite/leftmenu.svg#arrowright);}
+
+        &:hover{
+          .default{display: block;}
+          .mypoint_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#mypoint1);}
+          .shield_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#shield);}
+          .wallet_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#wallet1);}
+          .activity_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#activitylog1);}
+          .setting_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#setting1);}
+          .logout1_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#logout1);}
+          .getapp_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#gettheapp1);}
+          .contus_cnt{background-image: url(../../../../assets/images/sprite/leftmenu.svg#contactus1);}
+          .arrowright{background-image: url(../../../../assets/images/sprite/leftmenu.svg#arrowright);}
+        }
+
+      }
+    }
+    .dropownfooter{
+      width: 100%;
+      float: left;
+      padding: 8px 15px;
+      text-align: left;
+      font-size: 11px;color: #000000;
+      span{float: left;line-height: 1.27;
+      }
+      .policysec, .terms{cursor: pointer;
+      &:hover{text-decoration: underline;}
+      }
+      .dotseperator{
+        margin: 6px;
+        width: 3px;
+        height: 3px;
+        cursor: default;
+        background-color:#000;
+        display: inline-block;
+        border-radius: 100%;}
+
+    }

@@ -1,0 +1,1903 @@
+<div class="wrapper" *ngIf="!withoutToken">
+    <app-header></app-header>
+    <div id="windiv">
+        <div class="container main_body profile_body">
+            <div class='headerout header_profile_mobile'
+                *ngIf="course_details_toggle && detalsshowprofile_var!=8 && serviceResponse">
+                <div class="coverphoto prfmargintop" (mouseenter)="showdropdown();" (mouseleave)="hidedropdown();"
+                    #cvrdropdown>
+                    <div class="changeprofile coverprofile achangeprofile" *ngIf="user_type==1">
+                        <label id="cvrDropdwn" class="fileupload_image" (click)="showcoverdropdown();" #onlycvrdropdown>
+                            <img src="assets/images/svg-three/add_post/wall/add_cover_image.svg"><span>Update
+                                Cover</span>
+                        </label>
+                        <div class="cover_img_drpdown" *ngIf="coverdropdown" #menusectionarea>
+                            <div (click)="uploadcover()">
+                                <label class="fileupload_image border_bttm" for="pagecoverupload" *ngIf="user_type==1">
+                                    <img src="assets/images/svg-three/profile_icon/upload.svg"
+                                        class="default"><span>Upload Cover</span>
+                                    <img src="assets/images/svg-three/profile_icon/f05050/upload.svg" class="hoverr">
+                                </label>
+                            </div>
+                            <label class='fileupload_image' (click)="removeImageConfirm(1)" *ngIf="coverPic">
+                                <img id='cover' src="assets/images/svg-three/profile_icon/f05050/remove.svg"
+                                    class="removeimg hoverr">
+                                <img id='cover' src="assets/images/svg-three/profile_icon/remove.svg"
+                                    class="removeimg default">
+                                <span>Remove</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="overlay_gradient" (click)="postImageShow(2);"></div>
+                    <img src="assets/images/profile-banner.png" *ngIf="coverPicPath == null"
+                        alt="study24x7 {{pageTitle}}">
+                    <img src="{{coverPicPath}}" style="width:100%" *ngIf="coverPicPath != null"
+                        alt="study24x7 {{pageTitle}}">
+                    <span class="cover-pic-preloader" *ngIf="coverPicImgUpload">
+                        <img style="width:100px;margin-left: -50px;" src="assets/images/svg/preloader-25.svg">
+                    </span>
+
+                    <div class='profile_Detail remove_shadow'>
+                        <div class="profile_picture">
+                            <div class="whitebg"></div>
+                            <img src="{{profilePicPath}}" (click)="postImageShow(1);" alt="study24x7 {{pageTitle}}">
+
+                            <div class="changeprofile usruplimg" *ngIf="user_type==1">
+
+                                <div (click)="openprofilepopup()">
+                                    <label class="fileupload_image" for="profileload" *ngIf="user_type==1">
+                                        <img src="assets/images/svg/camera.svg">
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <label class='fileupload_image' (click)="removeImageConfirm(2)" *ngIf="profilePic">
+                                        <img id='profile' src="assets/images/svg/dustbindropwhite.svg">
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <span *ngIf="imageUploadpp" style="" class="profile-pic-preloader">
+                                <img style="width:70px;" src="assets/images/svg/preloader-25.svg">
+                            </span>
+
+                        </div>
+                        <div class='profile_name'><span
+                                title="{{pageTitle}}">{{pageTitle |trimData:false:false:false:true}}</span></div>
+                        <div class='profile_name' *ngIf="pageUrl!=''"><a href="http://{{pageUrl}}" rel={{pageUrlHref}}
+                                target="_blank">{{pageUrl}}</a></div>
+                    </div>
+
+                </div>
+                <div class="profile_bar page_profile_bar" [ngClass]="{'profile_menu_self' : user_type == 1}">
+                    <div class="page_details">
+                        <ul>
+                            <li (click)="showpagefollow();" style="cursor:pointer;" *ngIf="myProfile">
+                                <label>{{follow_count}}</label>
+                                <span>{{ follow_count > 1 ? "Followers" : " follower"}}</span>
+                                <!---*****add by vijay***********-->
+                            </li>
+                            <li *ngIf="!myProfile" style="cursor:default;">
+                                <label>{{follow_count}}</label>
+                                <span>{{ follow_count > 1 ? "Followers" : " follower"}}</span>
+                                <!-----***********add by vijay*******-->
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button *ngIf="user_type==1" class="graybutton profile_btn broadcastbtn fright"
+                        style="color: #000;right: 0px;" routerLink="/pageinbox/{{page_uuid}}">
+                        <img src="./assets/images/svg-three/inbox_icon/broadcast.svg" alt=""
+                            style="width: 15px;margin-right: 4px;">
+                        Broadcast
+                    </button>
+
+                    <span class="profile_right_icon " (click)="showBtnList()">
+                        <img class="postdropmenu defaultt" src="assets/images/svg-three/post_icon/dot_menu.svg">
+                    </span>
+                    <div class="page_bar_right show_btn_list_web">
+                        <span class="pagesetting"><img class="greyimg" src="assets/images/svg/setting.svg"><img
+                                class="hoverimg" src="assets/images/svg/setting-g.svg"></span>
+                        <button class="graybutton profile_btn" *ngIf="user_type==0"
+                            (click)="msgToPage();">Message</button>
+                        <button class="profile_btn button24x7 redColorButton unfollow_btn"
+                            *ngIf="user_type==0 && isfollowed==1" (click)="unfollowCnfPop()">Unfollow</button>
+                        <button class="graybutton profile_btn btn btn-primary follow"
+                            *ngIf="user_type==0 && isfollowed==0" (click)="pageFollowUnFollow(0)"
+                            style="padding:0px;margin-top:0px;">Follow</button>
+                    </div>
+                    <div class="page_bar_right show_btn_list_mobile" *ngIf="PageShowBtnListMobile">
+                        <span class="pagesetting"><img class="greyimg" src="assets/images/svg/setting.svg"><img
+                                class="hoverimg" src="assets/images/svg/setting-g.svg"></span>
+                                <div class="btntooltip  btntooltip-otherprofile">
+                                    <button class="btn-list " *ngIf="user_type==0" (click)="msgToPageRes();">
+                                        <img src="assets/images/svg-icon/messageicon-gray.svg">
+                                        <span class="infoDataText">
+                                            <span class="infoData infoData1">Send a message</span>
+                                            <span class="infoData infoData2">Start your chat</span>
+                                        </span>
+                                    </button>
+                                    <button class="btn-list " *ngIf="user_type==0 && isfollowed==1" (click)="unfollowCnfPop()">
+                                        <img src="assets/images/svg-icon/tickicon-gray.svg">
+
+                                        <span class="infoDataText">
+                                            <span class="infoData infoData1">Don't follow</span>
+                                            <span class="infoData infoData2">You can Unfollow the user</span>
+                                        </span>
+                                    </button>
+                                    <button class="btn-list " *ngIf="user_type==0 && isfollowed==0" (click)="pageFollowUnFollow(0)">
+                                          <img src="assets/images/svg-icon/addsign-gray.svg">
+
+                                        <span class="infoDataText">
+                                            <span class="infoData infoData1">Follow</span>
+                                            <span class="infoData infoData2">You can Follow the user</span>
+                                        </span>
+                                    </button>
+                                    </div>
+                        <!-- <ul>
+                            <li class="btn_list " *ngIf="user_type==0" (click)="msgToPageRes();">
+                              <button class="btn-list">
+                                <img class="nav_icon_default" src="assets/images/mobile_icon/message_gray.png">
+                                <span>Message
+                                    <label>You can message the user</label>
+                                </span>
+                                </button>
+                            </li>
+                            <li class="btn_list " *ngIf="user_type==0 && isfollowed==1" (click)="unfollowCnfPop()">
+                                <button class="btn-list">
+                                <img class="nav_icon_default" src="assets/images/mobile_icon/message_gray.png">
+                                <span>Unfollow
+                                    <label>You can Unfollow the user</label>
+                                </span>
+                                  </button>
+                            </li>
+                            <li class="btn_list " *ngIf="user_type==0 && isfollowed==0" (click)="pageFollowUnFollow(0)">
+                                <button class="btn-list">
+                                <img class="nav_icon_default" src="assets/images/mobile_icon/message_gray.png">
+                                <span>Follow
+                                    <label>You can Follow the user</label>
+                                </span>
+                                  </button>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <button class="graybutton profile_btn btn_claim" *ngIf="user_type==0 && claimPage"
+                        (click)="openchild()">Claim Page</button>
+                </div>
+            </div>
+
+            <div *ngIf="!serviceResponse" class="placeholde-wrapper right_reloader profilepreloadwrap "
+                style="height: 323px;">
+                <div class="animated-background rightloader profilepreload" style="">
+                    <div class="circle cir_animation animated-background" style=""></div>
+                    <div class="whitediv bottom11" style=""></div>
+                    <div class="whitediv bottom10" style="width:100%"></div>
+                    <div class="whitediv bottom9"></div>
+                    <div class="whitediv bottom9 left9"></div>
+                    <div class="whitediv bottom8" style="width:40%;"></div>
+                    <div class="whitediv bottom8 left8" style="width:40%;"></div>
+                    <div class="whitediv bottom5" style=""></div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row margintop">
+                <div class="col-md-3 pdng_right fleft left_stickytab" id="outerDiv">
+                    <div class="rightmenu_fixed" id="someDiv" [ngClass]="{'fixedleft': isScrolled}">
+                        <div class="leftmenulist" *ngIf="detalsshowprofile_var!= 8">
+                            <ul>
+                                <li [ngClass]="{'active' : pageprofiletab === 1 }"
+                                    (click)="pageprofiletabClick(1);removestricky();">
+                                    <span class='leftmenuicon'><img class="defaultt"
+                                            src="assets/images/svg-three/page_icon/earth.svg">
+                                        <img class="hover"
+                                            src="assets/images/svg-three/page_icon/f05050/earth.svg"></span> Latest
+                                    Feeds
+                                </li>
+
+
+
+                                <li [ngClass]="{'active' : pageprofiletab === 7 }"
+                                    (click)="pageprofiletabClick(7);removestricky();">
+                                    <span class='leftmenuicon'><img style="height:20px;" class="defaultt about_img" src="assets/images/article/articleicon.svg">
+                                        <img style="height:20px;" class="hover about_img" src="assets/images/article/articleiconred.svg"></span>Articles
+                                </li>
+
+
+
+
+                                <li [ngClass]="{'active' : pageprofiletab === 12 }"
+                                    (click)="pageprofiletabClick(12);removestricky();">
+                                    <span class='leftmenuicon'><img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/page_icon/question.svg">
+                                        <img style="height:20px;" class="hover about_img"
+                                            src="assets/images/svg-three/page_icon/f05050/question.svg">
+                                    </span>Question
+                                </li>
+                                <li [ngClass]="{'active' : pageprofiletab === 3 }"
+                                    (click)="pageprofiletabClick(3);removestricky();">
+                                    <span class='leftmenuicon'>
+                                        <img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/course/mycourse.svg">
+                                        <img style="height:20px;" class="hover about_img"
+                                            src="assets/images/svg-three/course/redmycourse.svg"></span>Course
+                                </li>
+                                <li [ngClass]="{'active' : pageprofiletab === 6 }"
+                                    (click)="pageprofiletabClick(6);removestricky();" *ngIf="user_type==1">
+                                    <span class='leftmenuicon'><img class="defaultt"
+                                            src="assets/images/svg-three/page_icon/notification.svg"><img class="hover"
+                                            src="assets/images/svg-three/page_icon/f05050/notification.svg"></span>Notification
+                                </li>
+                                <li [ngClass]="{'active' : pageprofiletab === 2 }"
+                                    (click)="pageprofiletabClick(2);removestricky();">
+                                    <span class='leftmenuicon'><img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/page_icon/about.svg">
+                                        <img style="height:20px;" class="hover about_img"
+                                            src="assets/images/svg-three/page_icon/f05050/about.svg"></span>About
+                                </li>
+                                <li *ngIf="user_type == 1" [ngClass]="{'active' : pageprofiletab === 15 }"
+                                    (click)="pageprofiletabClick(15);removestricky();">
+                                    <span class='leftmenuicon'>
+                                        <img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/course/anlytics.svg">
+                                        <img style="height:20px;" class="hover about_img"
+                                            src="assets/images/svg-three/course/red_anlytics.svg"></span> Analytics
+                                </li>
+                                <!-- <li *ngIf="user_type == 1" [ngClass]= "{'active' : pageprofiletab === 16 }" (click)="pageprofiletabClick(16);removestricky();">
+                        <span class='leftmenuicon'>
+                        <img style="height:20px;" class="defaultt about_img" src="assets/images/svg-three/course/anlytics.svg">
+                        <img style="height:20px;" class="hover about_img" src="assets/images/svg-three/course/red_anlytics.svg"></span>
+                        Mentor Approval
+                      </li> -->
+
+                                <li [ngClass]="{'active' : pageprofiletab === 4 }"
+                                    (click)="pageprofiletabClick(4);removestricky();">
+                                    <span class='leftmenuicon'><img class="defaultt"
+                                            src="assets/images/svg-three/page_icon/review.svg"><img class="hover"
+                                            src="assets/images/svg-three/page_icon/f05050/review.svg"></span>Review
+                                </li>
+
+                                <li [ngClass]="{'active' : pageprofiletab === 9 }"
+                                    (click)="pageprofiletabClick(9);removestricky();">
+                                    <span class='leftmenuicon'><img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/page_icon/photos.svg"><img style="height:20px;"
+                                            class="hover about_img"
+                                            src="assets/images/svg-three/page_icon/f05050/photos.svg"></span>Gallery
+                                </li>
+
+                            </ul>
+                            <div class="leftmenu-interest">
+                                <h6>Interests</h6>
+                                <div class="interest-sub" [ngClass]="{'moreintpage':showlesspageint}">
+                                    <span *ngFor="let tags of Arr" [id]='tags'>
+                                        {{interestObj[tags]}}
+                                    </span>
+                                    <span (click)='showmoreeditint()' style="cursor:pointer;"
+                                        *ngIf="showMore && showIntArr==false">more</span>
+                                    <div *ngIf="!showMore && showIntArr==false">
+                                        <span *ngFor="let tags of ltIntShow" [id]='tags'>
+                                            {{interestObj[tags]}}
+                                        </span>
+                                    </div>
+                                    <div class="showlessint" *ngIf="!showMore && showIntArr==false">
+                                        <span (click)='showmoreeditint()' style="cursor:pointer;">Show less</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="left_pageinfo">
+                            <app-page-info *ngIf="pageprofiletab === 2 && showChildNow"
+                                (pg_nameSet)="updatePgName($event)" (editPopsClose)="frmPgInfo($event)"
+                                [editPops]="editPops" [profilePicPath]="profilePicPath" [pageTitle]="pageTitle"
+                                [pagenm]="pagenm" [page_uuid]="page_uuid" [pagedata]="pagedata" [user_type]="user_type"
+                                [PageTitle]="PageTitle" [pg_name]="pagename" [user_type]="user_type"></app-page-info>
+                        </div>
+
+                        <div class="leftWidget" *ngIf="pageprofiletab != 9">
+                            <app-gallerywidget [pageId]="page_uuid" (pageGallery)="showGalley($event)">
+                            </app-gallerywidget>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 pdng_right left_stickytab" *ngIf="pageprofiletab === 8" id="outerDiv">
+                    <app-pageaboutwidget *ngIf="showChildNow" [pageid]="page_uuid" [pageName]="pagename"
+                        (changePageTab)="pageprofiletab=$event"></app-pageaboutwidget>
+                </div>
+
+
+                <div class="col-md-6 center_feed fleft sticky_nav top_navigation" id="stickheadcourse"
+                    [ngClass]="{'section_fixed': isScrolledstick}">
+                    <div class="post_outer navbottom">
+                        <div class="mobile_nav " [ngClass]="{'mblwidth': user_type != 1 }">
+                            <div class="main_nav">
+
+                                <div class="icon_sec " [ngClass]="{'navactive' : pageprofiletab === 1 }"
+                                    (click)="pageprofiletabClick(1);removestricky();">
+
+                                    <span class="glyphsSpriteHome">
+                                        <img class="nav_icon_default" src="assets/images/svg-three/page_icon/earth.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/earth.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Latest Feeds</span>
+
+                                </div>
+
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletab === 12 }"
+                                    (click)="pageprofiletabClick(12);removestricky();">
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default"
+                                            src="assets/images/svg-three/page_icon/question.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/question.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Question</span>
+
+                                </div>
+                                <div class="icon_sec " [ngClass]="{'navactive' : pageprofiletab === 3 }"
+                                    (click)="pageprofiletabClick(3);removestricky();">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default" src="assets/images/svg-three/course/mycourse.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/course/redmycourse.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Course</span>
+                                </div>
+
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletab === 6 }"
+                                    (click)="pageprofiletabClick(6);removestricky();" *ngIf="user_type==1">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default"
+                                            src="assets/images/svg-three/page_icon/notification.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/notification.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Notification</span>
+
+                                </div>
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletab === 2 }"
+                                    (click)="pageprofiletabClick(2);removestricky();">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default" src="assets/images/svg-three/page_icon/about.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/about.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">About</span>
+
+                                </div>
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletab === 15 }"
+                                    (click)="pageprofiletabClick(15);removestricky();" *ngIf="user_type==1">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default" src="assets/images/svg-three/course/anlytics.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/course/red_anlytics.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Analytics</span>
+
+                                </div>
+
+                                <!-- <div class="icon_sec" [ngClass]= "{'navactive' : pageprofiletab === 16 }" (click)="pageprofiletabClick(16);removestricky();">
+
+                      <span class="glyphsSpriteHome ">
+                      <img class="nav_icon_default" src="assets/images/svg-three/course/anlytics.svg">
+                      <img class="nav_icon_active" src="assets/images/svg-three/course/red_anlytics.svg">
+                    </span>
+                    <span class="glyphsSpriteHome icon_cont">Mentor Approval</span>
+
+                  </div> -->
+
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletab === 4 }"
+                                    (click)="pageprofiletabClick(4);removestricky();">
+
+                                    <span class="glyphsSpriteHome">
+                                        <img class="nav_icon_default"
+                                            src="assets/images/svg-three/page_icon/review.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/review.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Review</span>
+
+                                </div>
+
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletab === 9 }"
+                                    (click)="pageprofiletabClick(9);removestricky();">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default"
+                                            src="assets/images/svg-three/page_icon/photos.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/photos.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Gallery</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6  center_feed fleft" id="centersection" *ngIf="pageprofiletab === 1">
+                    <span *ngIf="user_type==1">
+                        <app-addpost *ngIf="showChildNow" (hideScroll)="overFlowStatus($event)" (postId)="postId=$event"
+                            [ltPgPostInt]="ltPgPostInt" [pageId]="page_uuid" [pageInterest]="pageInterest">
+                        </app-addpost>
+                    </span>
+                    <!-- newpage welcome            -->
+                    <!-- <div class="newpage-alertbox" > -->
+                    <div class="newpage-alertbox" *ngIf="newpagewelcome && user_type==1">
+                        <span class="close_newpage close_div" *ngIf="newpagewelcome" (click)="closenewpage()">
+                            <img class="defaultt" src="assets/images/svg/tagcross-wh.svg">
+                            <img class="hoverr" src="assets/images/svg/tagcross-wh.svg">
+                        </span>
+                        <div class="newpage_innerleft">
+                            <p>Welcome to Your</p>
+                            <p>New Page</p>
+                            <p>Now, You will be contributing to make 24x7 a better place, quickly fill up your
+                                information and step further. Thank you!</p>
+                        </div>
+                        <div class="newpage_innerright">
+                            <img src="assets/images/svg-three/new-page.svg" alt="">
+                        </div>
+
+                    </div>
+                    <!-- end newpage welcome -->
+
+                    <div class="col-md-6 center_feed fleft courseSliderWrapper">
+                        <app-courseslider [pageId]="page_uuid" *ngIf="user_type != 1" [cardPagePic]="profilePicPath"
+                            [cardpagTitle]="pageTitle"></app-courseslider>
+
+                    </div>
+
+
+
+                    <!-- page tips -->
+                    <div class="page_tips" *ngIf="user_type==1 && newPage && pageprofiletab != 7">
+                        <h6 class="widgetheading top_heading">Page Tips </h6>
+                        <div *ngIf="noprofile" class="page_tips_inner">
+                            <span class="close_newpage close_div" (click)="tipClose(3)">
+                                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                                <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                            </span>
+                            <div class="inner_left"><img src="assets/images/svg-three/uploadprofile.svg" alt=""></div>
+                            <div class="inner_right">
+                                <p class="headng_1">Profile Photo</p>
+                                <p class="headng_2">Upload your unique profile image, so your followers can instantly
+                                    recognize you.</p>
+                                <button (click)="openprofilepopup()"
+                                    class="whiteColorButton button24x7 fleft">Upload</button>&zwnj;&zwnj;
+                            </div>
+                        </div>
+                        <div *ngIf="nocover" class="page_tips_inner">
+                            <span class="close_newpage close_div" (click)="tipClose(1)">
+                                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                                <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                            </span>
+                            <div class="inner_left"><img src="assets/images/svg-three/uploaduserpic.svg" alt=""
+                                    style="margin:0px;"></div>
+                            <div class="inner_right">
+                                <p class="headng_1">Cover Photo</p>
+                                <p class="headng_2">Upload your unique cover image, so your followers can instantly
+                                    recognize you.</p>
+                                <button (click)="cvrUpdTip($event)"
+                                    class="whiteColorButton button24x7 fleft">Upload</button>
+                            </div>
+                        </div>
+                        <div *ngIf="noname" class="page_tips_inner" style="border-radius: 0 0 5px 5px;">
+                            <span class="close_newpage close_div" (click)="tipClose(2);">
+                                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                                <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                            </span>
+                            <div class="inner_left"><img src="assets/images/svg-three/pagecreate.svg" alt=""></div>
+                            <div class="inner_right">
+                                <p class="headng_1">Create a page name</p>
+                                <p class="headng_2">Decide a name for your page, so your followers can easily find you.
+                                    Your username should match the name of your page as much as possible.</p>
+                                <button type="button" name="button" class="whiteColorButton button24x7 fleft"
+                                    (click)="createNameTip(2);removestricky()">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page tips -->
+                    <!-- New page message responsive -->
+                    <div class="page_tips completepagebio" *ngIf="user_type==1 && noprofile" >
+
+                        <div  class="page_tips_inner">
+                            <span class="close_newpage close_div" (click)="tipClose(3)">
+                                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                                <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                            </span>
+
+                            <div class="inner_right">
+                                <p class="headng_1">Welcome to your new page</p>
+                                <p class="headng_2">Tell us about this page, fill your page bio</p>
+                                <button (click)="pageAboutBio()"
+                                    class="whiteColorButton whiteColorredborder button24x7 ">Complete Page Bio</button>&zwnj;&zwnj;
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- New page message responsive end  -->
+                    <!-- create course responsive in latest feed -->
+                    <div class="page_tips completepagebio courseresponsiveMob" *ngIf="user_type==1 && createCourse && pageCourseCount==0" >
+
+                        <div  class="page_tips_inner" >
+                            <span class="close_newpage close_div" (click)="tipClose('createCourse')">
+                                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                                <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                            </span>
+
+                            <div class="inner_right">
+                              <div class="innerLeft">
+                                <p class="headng_1">Create your first Course</p>
+                                <!-- <p class="headng_2">Tell us about this page, fill your page bio</p> -->
+                                <div class="exploreData">
+                                <ul>
+      													 <li><span></span> Earn by selling courses </li>
+      													 <li><span></span> Create Free and Paid Courses </li>
+      													 <li><span></span> Take adaptive Live Classes </li>
+													      </ul>
+                                </div>
+                                <div class="btnSec">
+												          	<!-- <a class="redBtn" href="https://www.youtube.com/embed/6yc3z1qV_4U" target="_blank"><span class="videoIcon"></span>Create Course</a> -->
+												          	<a class="redBtn" routerLink="/addcourse">Create Course</a>
+												          	<a class="whiteBtn" href="https://docs.google.com/spreadsheets/d/1FHO36YZsPGZgCwcOl487QRlEqque6a5HFz6Y1VQd8-s/edit#gid=1410320636" target="_blank"><span class="articleIcon"></span></a>
+	                             </div>
+
+                            </div>
+                            <div class="innerRight"></div>
+
+
+                              </div>
+
+                        </div>
+                         <!-- <div class="goforweb"><span>Now Create Course from mobile is live</span></div> -->
+
+                    </div>
+                    <!-- end create course responsive in latest feed -->
+
+                    <!-- photos section -->
+                    <div class="photos-wrapper" *ngIf="user_type==1">
+                        <h6 class="widgetheading top_heading">Gallery</h6>
+                        <div class="center-wrapper" (click)="pageprofiletab=9;removestricky();">
+                            <div class="photos-leftinner">
+                                <span><img src="assets/images/svg-three/emptyimage.svg" alt=""></span>
+                                <span>Create Gallery</span>
+                                <span>Have your own page drive,<br>to save useful media items</span>
+                            </div>
+                            <div class="photos-rightinner">
+                                <div class="imgg-outer">
+                                    <div class="imgg-inner" *ngIf="gallery.length<1">
+                                        <img class="empty_pic" src="assets/images/svg-three/img1.svg" alt="">
+                                    </div>
+                                    <div class="imgg-inner innerimg_container" *ngIf="gallery.length>=1"
+                                        [ngStyle]="{'background-image': getUrl(0)}">
+                                    </div>
+                                </div>
+                                <div class="imgg-outer">
+                                    <div class="imgg-inner" *ngIf="gallery.length<2">
+                                        <img class="empty_pic" src="assets/images/svg-three/img2.svg" alt="">
+                                    </div>
+                                    <div class="imgg-inner innerimg_container" *ngIf="gallery.length>=2"
+                                        [ngStyle]="{'background-image': getUrl(1)}">
+                                    </div>
+                                </div>
+                                <div class="imgg-outer-grid">
+                                    <div class="imgg-inner" *ngIf="gallery.length<3">
+                                        <img class="empty_pic" src="assets/images/svg-three/img3.svg" alt="">
+                                    </div>
+                                    <div class="imgg-inner innerimg_container" *ngIf="gallery.length>=3"
+                                        [ngStyle]="{'background-image': getUrl(2)}">
+                                    </div>
+                                </div>
+                                <div class="imgg-outer-grid">
+                                    <div class="imgg-inner" *ngIf="gallery.length<4">
+                                        <img class="empty_pic" src="assets/images/svg-three/img4.svg" alt="">
+                                    </div>
+                                    <div class="imgg-inner innerimg_container" *ngIf="gallery.length>=4"
+                                        [ngStyle]="{'background-image': getUrl(3)}">
+                                    </div>
+                                </div>
+                                <div class="imgg-outer-grid">
+                                    <div class="imgg-inner" *ngIf="gallery.length<5">
+                                        <img class="empty_pic" src="assets/images/svg-three/img5.svg" alt="">
+                                    </div>
+                                    <div class="imgg-inner innerimg_container" *ngIf="gallery.length>=5"
+                                        [ngStyle]="{'background-image': getUrl(4)}">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                    <div class="photos-rightinner" *ngIf="gallery.length!=0" (click)="pageprofiletab=9;removestricky();">
+                    <ng-container *ngFor="let imgsmllv of gallery; let i = index">
+                    <div class="imgg-outer" *ngIf="i<2">
+                    <div class="imgg-inner">
+                    <img class="main_pic" src="{{imgsmllv.FILE_PATH}}profile/{{imgsmllv.PAGE_GALLERY_UUID}}.png" alt="">
+                  </div>
+                  <div class="imgg-inner inner-image" style="background-image:url({{imgsmllv.FILE_PATH}}profile/{{imgsmllv.PAGE_GALLERY_UUID}}.png)"></div>
+                </div>
+              </ng-container>
+
+              <ng-container *ngFor="let imgsml of gallery;let j = index" >
+              <div class="imgg-outer-grid"  *ngIf="j>=2 && j<5" >
+              <div class="imgg-inner" >
+              <img class="main_pic" src="{{imgsml.FILE_PATH}}profile/{{imgsml.PAGE_GALLERY_UUID}}.png" alt="">
+            </div>
+            <div class="imgg-inner inner-image" style="background-image:url({{imgsml.FILE_PATH}}profile/{{imgsml.PAGE_GALLERY_UUID}}.png)"></div>
+          </div>
+        </ng-container>
+      </div>-->
+                        </div>
+                        <p>(Formats like jpg, jpeg, png are supported, with maximum file size of 10MB)</p>
+                    </div>
+                    <div class="reviewdiv">
+                        <app-reviewswidget
+                            *ngIf="(pageprofiletab === 4 || pageprofiletab === 1) && showBlankRating == false"
+                            [pageId]="pageUuid"></app-reviewswidget>
+                    </div>
+
+                    <div class="page_pgot_gallery" *ngIf="user_type==0 && gallery.length!=0">
+                        <h6 class="head">Gallery</h6>
+
+                        <div class="img_wrapper">
+                            <div class="leftwrapper innerimg_container" (click)="showimggllypopup()"
+                                [ngStyle]="{'background-image': getUrl(0)}">
+                                <!-- <img src="{{gallery[0].FILE_PATH}}profile/{{gallery[0].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                            </div>
+                            <div class="rightwrapper">
+                                <div class="ryttopwrapper">
+                                    <div class="innerimg_container" style="margin-right: 5px;"
+                                        (click)="showimggllypopup()" *ngIf="gallery.length>=2"
+                                        [ngStyle]="{'background-image': getUrl(1)}">
+                                        <!-- <img src="{{gallery[1].FILE_PATH}}profile/{{gallery[1].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                    <div class="innerimg_container" (click)="showimggllypopup()"
+                                        *ngIf="gallery.length>=3" [ngStyle]="{'background-image': getUrl(2)}">
+                                        <!-- <img src="{{gallery[2].FILE_PATH}}profile/{{gallery[2].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                </div>
+                                <div class="rytbttmwrapper">
+                                    <div class="innerimg_container" (click)="showimggllypopup()"
+                                        *ngIf="gallery.length>=4" [ngStyle]="{'background-image': getUrl(3)}">
+                                        <!-- <img src="{{gallery[3].FILE_PATH}}profile/{{gallery[3].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                    <div class="innerimg_container" (click)="showimggllypopup()"
+                                        *ngIf="gallery.length>=5" style="margin: 0px 5px;"
+                                        [ngStyle]="{'background-image': getUrl(4)}">
+                                        <!-- <img src="{{gallery[4].FILE_PATH}}profile/{{gallery[4].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                    <div class="innerimg_container" (click)="showimggllypopup()"
+                                        *ngIf="gallery.length>=6" [ngStyle]="{'background-image': getUrl(5)}">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagefooter" (click)="pageprofiletabClick(9)"><span>See All</span></div>
+                    </div>
+                    <!-- <app-invitefriends *ngIf="showChildNow && ((follow_count<100 && showWidget) || (follow_count<100 && user_type==1 && showWidget))" [pageId]="page_uuid" (showWidget)="showWidget=$event"></app-invitefriends> -->
+                    <!-- <app-reviewslist *ngIf="showChildNow" [pageId]='page_uuid' (reviewStatus)="reviewUpdate($event)" (changeTab)="pageprofiletab=$event" [user_type]="user_type" [pageRating]="pageRating" [reviwed]="isreviewed"></app-reviewslist> -->
+                    <div class="course_create_desktopview" *ngIf="user_type==1 && pageprofiletab != 7 ">
+                        <div class="page_tips completepagebio courseresponsiveMob coursedesk" style="display:block !important;" *ngIf="pageCourseCount==0">
+                            <div  class="page_tips_inner" >
+                                <div class="inner_right">
+                                  <div class="innerLeft">
+                                    <p class="headng_1">Create your first Course</p>
+                                    <p class="headng_2">Compile your study content and provide awesome study materials as an educator.</p>
+                                    <div class="exploreData exploreData1">
+                                    <ul>
+                                     <li><span></span> Earn by selling courses </li>
+                                     <li><span></span> Free and Paid Courses </li>
+                                    </ul>
+                                    </div>
+                                    <div class="exploreData exploreData2">
+                                    <ul>
+                                     <li><span></span> Take Live Classes </li>
+                                     <li><span></span> Get Branding Assistance </li>
+                                    </ul>
+                                    </div>
+                                    <div class="btnSec">
+                                        <a class="redBtncreate" routerLink="/addcourse">Create Course</a>
+                                        <a class="whiteBtn" href="https://www.youtube.com/embed/6yc3z1qV_4U" target="_blank"><span class="iconredplay"></span></a>
+                                        <a class="whiteBtn" href="https://docs.google.com/spreadsheets/d/1FHO36YZsPGZgCwcOl487QRlEqque6a5HFz6Y1VQd8-s/edit#gid=1410320636" target="_blank"><span class="articleIcon"></span></a>
+                                   </div>
+                                </div>
+                                <div class="innerRight_desk"></div>
+                                  </div>
+                            </div>
+                             <!-- <div class="goforweb"><span>Now Create Course from mobile is live</span></div> -->
+                        </div>
+                        <div class="page_tips completepagebio courseresponsiveMob coursedesk create_new_course" style="display:block !important;" *ngIf="pageCourseCount>0">
+                            <div  class="page_tips_inner" >
+                                <div class="inner_right">
+                                  <div class="innerLeft">
+                                    <p class="headng_1"><span><img style="height: 100px;"  src="assets/images/course_icon/create_course.svg"></span> Create a New Course</p>
+                                    <p class="headng_2">Compile your study content and provide awesome study materials as an educator.</p>
+                                    <div class="btnSec">
+                                        <!-- <a class="redBtn" href="https://www.youtube.com/embed/6yc3z1qV_4U" target="_blank"><span class="videoIcon"></span>Create Course</a> -->
+                                      <a class="whiteBtn" href="https://www.youtube.com/embed/6yc3z1qV_4U" target="_blank"><span class="iconredplay"></span></a>
+                                        <a class="whiteBtn" href="https://docs.google.com/spreadsheets/d/1FHO36YZsPGZgCwcOl487QRlEqque6a5HFz6Y1VQd8-s/edit#gid=1410320636" target="_blank"><span class="articleIcon"></span></a>
+                                        <a class="redBtncreate" routerLink="/addcourse">Create Course</a>
+
+                                   </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <app-pagefeeds id="show-child-now" *ngIf="showChildNow" (postIdDlt)="postIdDlt($event)"
+                        [pageId]='page_uuid' [postId]="postId" [user_type]="user_type"></app-pagefeeds>
+
+                </div>
+
+
+
+                <div class="col-md-6  fleft center_feed" id="centersection" *ngIf="pageprofiletab == 2">
+                    <app-pageabout *ngIf="showChildNow" [pagedata]="pagedata" (sessionLogout)="sessionExpire($event)"
+                        (changeInterest)="changeInterest($event)" (changeData)=changeAbout($event)
+                        (PageTitle)="check($event)"></app-pageabout>
+                    <app-page-info class="pageinfo" *ngIf="pageprofiletab === 2 && showChildNow"
+                        (pg_nameSet)="updatePgName($event)" (editPopsClose)="frmPgInfo($event)" [user_type]="user_type"
+                        [pg_name]="pagename" [editPops]="editPops" [profilePicPath]="profilePicPath"
+                        [pageTitle]="pageTitle" [pagenm]="pagenm" [page_uuid]="pageId" [pagedata]="pagedata"
+                        [PageTitle]="PageTitle"></app-page-info>
+
+                </div>
+                <div class="col-md-6   fleft center_feed" id="centersection" *ngIf="pageprofiletab === 4">
+                  <app-reviewswidget class="__for_mobile"
+                      *ngIf="(pageprofiletab === 4 || pageprofiletab === 1) && showBlankRating == false"
+                      [pageId]="pageUuid" [forRouting]="sendForReviewRating"></app-reviewswidget>
+                    <app-pagereviews *ngIf="showChildNow" [user_type]="user_type" [pageId]='page_uuid'
+                        [reviewed]="isreviewed" (isReviewed)="reviewStatus($event)"></app-pagereviews>
+                </div>
+
+                <div class="col-md-6  center_feed" id="centersection" *ngIf="pageprofiletab === 10">
+                    <app-pagefeeds *ngIf="showChildNow" [pageId]='page_uuid' [postId]="postId" [user_type]="user_type"
+                        [postSearch]="postSearch" [postFilter]="postSearchTyp"></app-pagefeeds>
+                </div>
+                <div class="col-md-6  center_feed" id="centersection" *ngIf="pageprofiletab === 11">
+                    <app-pagefeeds *ngIf="showChildNow" [pageId]='page_uuid' [postId]="postId" [user_type]="user_type"
+                        [postSearch]="postSearch" [postFilter]="postSearchTyp"></app-pagefeeds>
+                </div>
+                <div class="col-md-6  center_feed" id="centersection" *ngIf="pageprofiletab === 12">
+                    <app-pagefeeds *ngIf="showChildNow" [pageId]='page_uuid' [postId]="postId" [user_type]="user_type"
+                        [postSearch]="postSearch" [postFilter]="postSearchTyp"></app-pagefeeds>
+                </div>
+                <div class="col-md-6  center_feed" id="centersection" *ngIf="pageprofiletab === 13">
+                    <app-pagefeeds *ngIf="showChildNow" [pageId]='page_uuid' [postId]="postId" [user_type]="user_type"
+                        [postSearch]="postSearch" [postFilter]="postSearchTyp"></app-pagefeeds>
+                </div>
+                <div id="article-page-feed" class="col-md-6  center_feed" id="centersection"
+                    *ngIf="pageprofiletab === 7">
+                    <app-pagefeeds *ngIf="showChildNow" [pageId]='page_uuid' [postId]="postId" [user_type]="user_type"
+                        [postSearch]="postSearch" [postFilter]="7"></app-pagefeeds>
+                </div>
+                <div class="col-md-6  center_feed" id="centersection" *ngIf="pageprofiletab === 6">
+                    <app-pagenotification *ngIf="showChildNow" [pageId]="page_uuid"></app-pagenotification>
+                </div>
+
+
+                <div class="col-md-6  fleft center_feed" id="centersection" *ngIf="pageprofiletab === 20 && myProfile"
+                    data-infinite-scroll [infiniteScrollDistance]="10" (scrolled)="onScrollDown()"
+                    [scrollWindow]="true">
+                    <div class="pagefollow" *ngIf="myProfile">
+                        <div class="header">
+                            <h3>Page Follow</h3>
+                        </div>
+                        <ul>
+                            <li *ngFor="let follower of followers;let i= index" id="fwr_{{follower.USER_ID}}">
+                                <div class="profileImg">
+                                    <img src='{{follower.PROFILE_PHOTO_PATH}}'
+                                        routerLink="/profile/{{follower.USER_NAME}}" (error)="updateSourcePic($event)">
+                                </div>
+                                <div class="text">
+                                    <h3><a routerLink="/profile/{{follower.USER_NAME}}" class="Notificationlist_name"
+                                            title='{{ follower.FULL_NAME }}'>{{follower.FULL_NAME |trimData:false:false:false:false:false:true}}</a>
+                                    </h3>
+                                    <p>
+                                        Active {{follower.LAST_ACTIVE_TIME}}
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <!----------------------------- done by vijay-------------------->
+                        <div class="emptystate col-md-12" *ngIf="isEmptyState" style="background-color: #fff;">
+                            <div class="emptystate_inner">
+                                <img class="emptyreview" src="assets/images/svg-three/empty_state/saved.svg">
+                                <p>No Followers</p>
+                            </div>
+                        </div>
+                        <!-----------------------------end by vijay----------------------->
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-3 col-sm-3 pdng_left fff right_stickytab" id="outerDiv" *ngIf="pageprofiletab != 15 && pageprofiletab != 9">
+
+                    <div class="rightmenu_fixed" id="someDivright" [ngClass]="{'fixedleft': isScrolledright}">
+                        <app-sildecoursewidget
+                            *ngIf=" pageprofiletab!=9 && pageprofiletab!=3 &&  pageprofiletab !=15 && pageprofiletab != 16 && showWidget && user_type != 1"
+                            [pageId]="page_uuid" [cardPagePic]="profilePicPath" [cardpagTitle]="pageTitle">
+                        </app-sildecoursewidget>
+                        <!-- <app-upcominglivestreams *ngIf="showChildNow && pageprofiletab === 1 && user_type == 1"></app-upcominglivestreams> -->
+                        <app-page-info *ngIf="pageprofiletab === 2" (pg_nameSet)="updatePgName($event)"
+                            (editPopsClose)="frmPgInfo($event)" [editPops]="editPops" [profilePicPath]="profilePicPath"
+                            [pageTitle]="pageTitle" [pg_name]="pagename" [page_uuid]="pageId" [pagedata]="pagedata"
+                            [PageTitle]="PageTitle" [pagenm]="pagenm"></app-page-info>
+                        <app-createcoursewidget></app-createcoursewidget>
+                        <app-pageaboutwidget *ngIf="showChildNow && pageprofiletab === 1 && user_type == 1"
+                            [pageid]="page_uuid" [pageName]="pagename" (changePageTab)="aboutWidgetObj($event)">
+                        </app-pageaboutwidget>
+                        <app-invitefriendwidget
+                            *ngIf="isInvitePresent  && showChildNow && ( pageprofiletab!=9 && pageprofiletab!=3 &&  pageprofiletab !=15 && pageprofiletab != 16 && showWidget) || (pageprofiletab != 1 && pageprofiletab!=9 && pageprofiletab!=3 && user_type==1 &&  pageprofiletab !=15 && pageprofiletab != 16  && showWidget)"
+                            [pageId]="page_uuid" (userPresenceStatus)="isInvitePresent = $event">
+                        </app-invitefriendwidget>
+                        <!-- <app-invitewidget
+                            *ngIf="showChildNow && (pageprofiletab === 1 && showWidget) || (pageprofiletab === 1 && user_type==1  && showWidget) "
+                            [pageId]="page_uuid"></app-invitewidget> -->
+                        <app-reviewswidget
+                            *ngIf="(pageprofiletab === 4 || pageprofiletab === 1) && showBlankRating == false"
+                            [pageId]="pageUuid" [forRouting]="sendForReviewRating"></app-reviewswidget>
+                        <app-reviewsratings *ngIf="pageprofiletab === 1 && showBlankRating == true"
+                            (reviewTab)="check1($event)"></app-reviewsratings>
+                        <app-suggestedpages *ngIf="pageprofiletab === 1 && getSuggestion" [interest]="interest">
+                        </app-suggestedpages>
+                        <app-suggestedpages *ngIf="pageprofiletab === 12" [interest]="interest"></app-suggestedpages>
+                        <p *ngIf="pageprofiletab != 9  && pageprofiletab!=3 && pageprofiletab != 15 && pageprofiletab != 16"
+                            class="footer_bottom" style="color:#9ba1ab;">
+                            <a routerLink="/privacy" target="_blank">Privacy Policy</a> <span> | </span>
+                            <a routerLink="/termandcondition" target="_blank">Terms of Use <span> | </span></a>
+                            <a href="http://support.study24x7.com/" target="_blank">Support</a>
+                            <a>{{this._constantService.version}}</a>
+                        </p>
+                        <footer
+                            *ngIf="pageprofiletab != 9 && pageprofiletab != 3 && pageprofiletab != 15 && pageprofiletab != 16"
+                            class="footer_bottom"> © {{current_year}} @Edubabble Learning Pvt. Ltd. </footer>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-sm-9 center_feed" id="centersection" style="float:right;">
+                    <app-mentormanager *ngIf="showChildNow && pageprofiletab === 16" [pageUid]="setPageUid">
+                    </app-mentormanager>
+                    <app-analytics *ngIf="pageprofiletab === 15 && showChildNow && user_type == 1"
+                        [pageUuid]="page_uuid"></app-analytics>
+                    <app-photo *ngIf="showChildNow && pageprofiletab === 9" [pageId]="page_uuid"
+                        [user_type]="user_type"></app-photo>
+                    <app-courses *ngIf="showChildNow && pageprofiletab === 3" [pageId]="page_uuid"
+                        [pageTitle]="pageTitle" [user_type]="user_type" [profilePicPath]="profilePicPath"></app-courses>
+                    <div class="footer_bottom" style="color:#9ba1ab;margin-top: 15px;float:left;">
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- more interest popup start -->
+        <div *ngIf="moreinterestpopup">
+            <div class='darkbackground' click="hidemoreeditint()"></div>
+            <div class='addpost_outer relative popup-open-wrapper'>
+                <div class='darkbackground-close'></div>
+                <div class='container popup-container' style="position:relative;">
+                    <div class="popup-inner-wrap popup-open-inner-wrap">
+                        <div class="topheadsavpop">
+                            <div class="toolbar addpost_hdng tlbar" style="min-height: 40px;">
+                                <span class="close_div" (click)="hidemoreeditint()">
+                                    <img class="defaultt" src="assets/images/svg/tagcross.svg"
+                                        style="float: right;margin: 17px 0;cursor: pointer;">
+                                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg"
+                                        style="float: right;margin: 17px 0;cursor: pointer;">
+                                    <!-- <p>Just Select a Page type to get started</p> -->
+                                </span>
+                            </div>
+                            <div class="alertwrapper">
+                                <div class="alertmessage" *ngIf="alert">
+                                    <img src="assets/images/svg-three/redcancel.svg" alt="" class="redcancel"
+                                        (click)="hidealertmsg()"> {{alertMsg}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="create_page_outer create_page_interest"
+                            style="position:relative;padding-top: 0px!important;">
+                            <div class="interest-page-wrapper">
+                                <div class="interestpopup">
+                                    <div class="interest-title">
+                                        <h2>Select Interest.</h2>
+                                        <span class="editbtnintrest" (click)="editinterest()">
+                                            <img class="defaultt" src="assets/images/svg-three/profile_about/edit.svg">
+                                            <img class="hoverr"
+                                                src="assets/images/svg-three/profile_about/f05050/edit.svg">
+                                        </span>
+                                    </div>
+                                    <div class="interest_content">
+                                        <div class="interestlist_outer" style="max-height:500px;">
+                                            <ul class='interestlist clearfix' *ngIf="editInterest">
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc1'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc2'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc2">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc3'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc3">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc4'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc4">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc5'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc5">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc6'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc6">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc7'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);"
+                                                            checked>
+                                                        <label class="interestboxinr clearfix" for="abc7">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc8'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc8">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc9'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc9">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc10'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc10">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc11'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc11">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc12'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc12">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc13'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc13">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <input name="interest_checkbox" type='checkbox'
+                                                            class="interestcheckbox" value="{{interest.INTEREST_ID}}"
+                                                            id='abc14'
+                                                            (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                        <label class="interestboxinr clearfix" for="abc14">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="img-warp-redicon"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/redicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class='interestlist clearfix' *ngIf="!editInterest">
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="interest-inner-wrap">
+                                                        <label class="interestboxinr clearfix" for="abc1">
+                                                            <span class="interestboxmain"></span>
+                                                            <span class="img-warp"
+                                                                style='background-size:cover;background-repeat:no-repeat; background-position:center center;'>
+                                                                <img src="./assets/images/interest/greyicon/1.svg">
+                                                            </span>
+                                                            <span class="Interest_Name">CBSE XI MATHS</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="interest-popupfooter">
+                                        <button class='btn btn-primary'>Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- more interest popup end -->
+
+        <!--photo popup start-->
+        <div class="popup" *ngIf="showopagephotopopup">
+            <div class="popup_background" (click)="hideimggllypopup()"></div>
+            <div class=" abt_exp_popup">
+                <div class="popup_heading close_parent " style="background:#fff;">
+                    <span class="close_div" (click)="hideimggllypopup()">
+                        <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                        <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                    </span>
+                </div>
+
+
+                <div class="inner-wrap">
+                    <div class="col-md-12 col-sm-12 post-wrap fleft" style="padding:0px;">
+                        <div class="">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-type="multi"
+                                data-interval="false" id="myCarousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <ng-container *ngFor="let imgId of gallery;let i= index">
+                                        <li data-target="#myCarousel" [attr.data-slide-to]="i"
+                                            ngClass="i ==currentImage ? 'active' : ''"></li>
+                                    </ng-container>
+                                </ol>
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner active">
+                                    <div class="carousel-item" *ngFor="let imgPath of gallery; let k = index"
+                                        [ngClass]="k == currentImage ? 'item active' : 'item'">
+                                        <img src="{{imgPath.FILE_PATH}}profile/{{imgPath.PAGE_GALLERY_UUID}}.png">
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer col-md-12 fleft">
+                        Updated: 19th Oct, 2018
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- photo popup end -->
+    </div>
+</div>
+<app-imgcropper *ngIf="showpopup" (coverobj)="opencover($event)"></app-imgcropper>
+<app-imgcropperprofile *ngIf="dataopen" (popupobj)="profilepopup($event)"></app-imgcropperprofile>
+<app-claimpage *ngIf="datatext" [page_id]="page_uuid" (demobj)="diman($event)"></app-claimpage>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf">
+</app-confirmationpopup>
+<app-confirmationpopup *ngIf="confirmUnfollow" (closeComfirmPopupThread)="unfollowCnfClose($event);"
+    [dataObj]="dataConf"></app-confirmationpopup>
+<app-imageview *ngIf="show_imageview" (closePopUp)="postImageHide($event)" [imageUrl]="orgImagePath" [ImageTyp]="picTyp"
+    [userType]="userTyp"></app-imageview>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- other page profile view start -->
+<div class="wrapper is_publicviewpage" *ngIf="withoutToken">
+    <!-- header start -->
+    <app-loginpopup *ngIf="openLoginPopup" [usrData]="usrData" (closePopup)="closeLoginPopUp($event)"
+        [isError]="isError" [errorText]="errorText" [type]="openLoginPopupType"></app-loginpopup>
+    <!--    <header class="login_Header" >
+  <div class="container head_container" >
+  <a href="./assets/images/svg-three/Logo.png">
+  <img src="./assets/images/svg-three/Logo.png" class='logo' style="width: 150px;">
+  <img src="./assets/images/svg-three/mlogo.png" class='mlogo' >
+</a>
+<div class="head-login-cntnar">
+header email field
+<div class="login-field lgn-e-input">
+<input id="tokenless_UC" type="text"  name="l_e" placeholder="Email or Mobile" [(ngModel)]="userCred">
+</div>
+header email field End
+header password field
+<div class="login-field lgn-p-input">
+<input id="tokenless_PWD" type="Password"  class="" required  placeholder="Password" [(ngModel)]="userPwd">
+<a href='javascript:void(0);'  class='head_login_frgtpassword login_frgtpassword' (click)="openLoginPopupType=3;loginpopupopen()" >Forgot Password?</a>
+</div>
+header password field End
+header login button
+<button  [disabled]="showPreloader===true"  class='login-button login_btn registrationbtn' (click)="publicLogin()" >
+<span class="text" >Log In </span>
+</button>
+header login button End
+header new registration button
+<button class="reg-button"  style="background-color:#f05050;color:#fff;" (click)="openLoginPopupType=2;loginpopupopen();">Sign Up</button>
+header new registration button end
+</div>
+</div>
+</header>-->
+
+    <app-loginheader></app-loginheader>
+
+    <div id="windiv">
+        <div class="container main_body profile_body" style="margin-top:56px;">
+            <div class='headerout header_profile_mobile' *ngIf="course_details_toggle && detalsshowprofile_var!=8">
+                <div class="coverphoto prfmargintop">
+                    <div class="overlay_gradient"></div>
+                    <img src="assets/images/profile-banner.png" *ngIf="coverPicPath == null"
+                        alt="study24x7 {{pageTitle}}">
+                    <img src="{{coverPicPath}}" style="width:100%" *ngIf="coverPicPath != null"
+                        alt="study24x7 {{pageTitle}}">
+                    <span class="cover-pic-preloader" *ngIf="coverPicImgUpload"><img style=""
+                            src="assets/images/svg/preloader-25.svg"></span>
+                    <div class='profile_Detail remove_shadow'>
+                        <div class="profile_picture">
+                            <div class="whitebg"></div>
+
+                            <img src="{{profilePicPath}}">
+
+                            <span *ngIf="coverPicImgUpload" style="" class="profile-pic-preloader">
+                                <img style="" src="assets/images/svg/preloader-25.svg">
+                            </span>
+                        </div>
+
+                        <div class='profile_name'>{{pageTitle}}</div>
+                        <div class='profile_name' *ngIf="pageUrl!=''">
+                            <a target="_blank" rel={{pageUrlHref}}>{{pageUrl}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile_bar page_profile_bar">
+                    <div class="page_details">
+                        <ul>
+                            <li>
+                                <label>{{follow_count}}</label>
+                                <span> {{ follow_count > 1 ? "Followers" : " follower"}}</span>
+                                <!---********add by vijay*******-->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="page_bar_right">
+                        <span class="pagesetting"><img class="greyimg" src="assets/images/svg/setting.svg"><img
+                                class="hoverimg" src="assets/images/svg/setting-g.svg"></span>
+                        <button class="graybutton profile_btn" *ngIf="user_type==0"
+                            (click)="msgToPage();">Message</button>
+                        <button class="graybutton profile_btn" *ngIf="user_type==0 && isfollowed==1"
+                            (click)="unfollowCnfPop()">Unfollow</button>
+                        <button class="graybutton profile_btn btn btn-primary follow"
+                            *ngIf="user_type==0 && isfollowed==0" (click)="pageFollowUnFollow(0)"
+                            style="padding:0px;margin-top:0px;">Follow</button>
+                    </div>
+                    <button class="graybutton profile_btn btn_claim" *ngIf="user_type==0 && claimPage"
+                        (click)="openchild()">Claim Page</button>
+                </div>
+            </div>
+            <div class="row margintop">
+
+                <div class="col-md-3 pdng_right fleft left_stickytab" id="outerDiv" (click)="savePublicPostUrlFxn()">
+                    <div class="rightmenu_fixed" id="someDiv" [ngClass]="{'fixedleft': isScrolled}">
+                        <div class="leftmenulist" *ngIf="detalsshowprofile_var!= 8">
+                            <ul>
+                                <li [ngClass]="{'active' : pageprofiletabWithoutToken === 1 }"
+                                    (click)="pageProfiletabWithoutTokenClick(1);">
+                                    <span class='leftmenuicon'><img class="defaultt"
+                                            src="assets/images/svg-three/page_icon/earth.svg">
+                                        <img class="hover"
+                                            src="assets/images/svg-three/page_icon/f05050/earth.svg"></span> Latest
+                                    Feeds
+                                </li>
+                                <li [ngClass]="{'active' : pageprofiletabWithoutToken === 7 }"
+                                    (click)="pageProfiletabWithoutTokenClick(7);">
+                                    <span class='leftmenuicon'>
+                                            <img style="height:20px;" class="defaultt about_img" src="assets/images/article/articleicon.svg">
+                                            <img style="height:20px;" class="hover about_img" src="assets/images/article/articleiconred.svg"></span>Articles
+                                </li>
+                                <li [ngClass]="{'active' : pageprofiletabWithoutToken === 12 }"
+                                    (click)="pageProfiletabWithoutTokenClick(12);">
+                                    <span class='leftmenuicon'><img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/page_icon/question.svg"><img
+                                            style="height:20px;" class="hover about_img"
+                                            src="assets/images/svg-three/page_icon/f05050/question.svg"></span>Question
+                                </li>
+                                <li [ngClass]="{'active' : pageprofiletabWithoutToken === 3}"
+                                    (click)="pageProfiletabWithoutTokenClick(3);">
+                                    <span class='leftmenuicon'><img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/course/mycourse.svg"><img style="height:20px;"
+                                            class="hover about_img"
+                                            src="assets/images/svg-three/course/redmycourse.svg"></span>Course</li>
+                                <li [ngClass]="{'active' : pageprofiletabWithoutToken === 2 }"
+                                    (click)="pageProfiletabWithoutTokenClick(2);">
+                                    <span class='leftmenuicon'><img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/page_icon/about.svg"><img style="height:20px;"
+                                            class="hover about_img"
+                                            src="assets/images/svg-three/page_icon/f05050/about.svg"></span>About</li>
+                                <li [ngClass]="{'active' : pageprofiletabWithoutToken === 5 }"
+                                    (click)="pageProfiletabWithoutTokenClick(5);">
+                                    <span class='leftmenuicon'><img class="defaultt"
+                                            src="assets/images/svg-three/page_icon/review.svg"><img class="hover"
+                                            src="assets/images/svg-three/page_icon/f05050/review.svg"></span> Review
+                                </li>
+
+                                <li [ngClass]="{'active' : pageprofiletabWithoutToken === 6 }"
+                                    (click)="pageProfiletabWithoutTokenClick(6);">
+                                    <span class='leftmenuicon'><img style="height:20px;" class="defaultt about_img"
+                                            src="assets/images/svg-three/page_icon/photos.svg"><img style="height:20px;"
+                                            class="hover about_img"
+                                            src="assets/images/svg-three/page_icon/f05050/photos.svg"></span>Gallery
+                                </li>
+
+                            </ul>
+
+                            <div class="leftmenu-interest">
+                                <h6>Interests</h6>
+                                <div class="interest-sub" [ngClass]="{'moreintpage':showlesspageint}">
+                                    <span *ngFor="let tags of pageInterest">
+                                        {{tags.INTEREST_NAME}}
+                                    </span>
+                                    <span  *ngIf="!showMore && withoutToken==true">...</span>
+                                    <span style="cursor:pointer;" *ngIf="!showMore && withoutToken==false">...</span>
+
+                                    <div *ngIf="showMore && showIntArr==false">
+                                        <span *ngFor="let tags of ltIntShow" [id]='tags'>
+                                            {{interestObj[tags]}}
+                                        </span>
+                                    </div>
+                                    <div class="showlessint" *ngIf="showMore && showIntArr==false">
+                                        <span (click)='showmoreeditint()' style="cursor:pointer;">Show less</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 center_feed fleft sticky_nav top_navigation nottokenpage" id="stickheadcourse"
+                    [ngClass]="{'section_fixed': isScrolledstick}">
+                    <div class="post_outer navbottom">
+                        <div class="mobile_nav ">
+                            <div class="main_nav">
+
+                                <div class="icon_sec " [ngClass]="{'navactive' : pageprofiletabWithoutToken === 1 }"
+                                    (click)="pageProfiletabWithoutTokenClick(1);removestricky();">
+
+                                    <span class="glyphsSpriteHome">
+                                        <img class="nav_icon_default" src="assets/images/svg-three/page_icon/earth.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/earth.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Latest Feeds</span>
+
+                                </div>
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletabWithoutToken === 12 }"
+                                    (click)="pageProfiletabWithoutTokenClick(12);removestricky();">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default"
+                                            src="assets/images/svg-three/page_icon/question.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/question.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Question</span>
+
+                                </div>
+                                <div class="icon_sec " [ngClass]="{'navactive' : pageprofiletabWithoutToken === 3 }"
+                                    (click)="pageProfiletabWithoutTokenClick(3);removestricky();">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default" src="assets/images/svg-three/course/mycourse.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/course/redmycourse.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Course</span>
+                                </div>
+
+                                <!-- <div class="icon_sec" [ngClass]= "{'' : pageprofiletab === 6 }" (click)="pageprofiletabClick(6);removestricky();">
+
+                    <span class="glyphsSpriteHome " (click)="loginpopupopen()">
+                      <img class="nav_icon_default" src="assets/images/svg-three/page_icon/notification.svg">
+                      <img class="nav_icon_active" src="assets/images/svg-three/page_icon/f05050/notification.svg">
+                    </span>
+                    <span class="glyphsSpriteHome icon_cont">Notification</span>
+
+                  </div> -->
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletabWithoutToken === 2 }"
+                                    (click)="pageProfiletabWithoutTokenClick(2);removestricky();">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default" src="assets/images/svg-three/page_icon/about.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/about.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">About</span>
+
+                                </div>
+                                <!-- <div class="icon_sec" [ngClass]= "{'navactive' : pageprofiletab === 15 }" (click)="pageprofiletabClick(15);removestricky();">
+
+                  <span class="glyphsSpriteHome ">
+                  <img class="nav_icon_default" src="assets/images/svg-three/page_icon/about.svg">
+                  <img class="nav_icon_active" src="assets/images/svg-three/page_icon/f05050/about.svg">
+                </span>
+                <span class="glyphsSpriteHome icon_cont">Analytics</span>
+
+              </div> -->
+
+
+
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletabWithoutToken === 5 }"
+                                    (click)="pageProfiletabWithoutTokenClick(5);removestricky();">
+
+                                    <span class="glyphsSpriteHome">
+                                        <img class="nav_icon_default"
+                                            src="assets/images/svg-three/page_icon/review.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/review.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Review</span>
+
+                                </div>
+
+                                <div class="icon_sec" [ngClass]="{'navactive' : pageprofiletabWithoutToken === 6 }"
+                                    (click)="pageProfiletabWithoutTokenClick(6);removestricky();">
+
+                                    <span class="glyphsSpriteHome ">
+                                        <img class="nav_icon_default"
+                                            src="assets/images/svg-three/page_icon/photos.svg">
+                                        <img class="nav_icon_active"
+                                            src="assets/images/svg-three/page_icon/f05050/photos.svg">
+                                    </span>
+                                    <span class="glyphsSpriteHome icon_cont">Gallery</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-md-6 center_feed fleft" *ngIf="pageprofiletabWithoutToken == 1">
+
+                    <div class="page_pgot_gallery mobile_none" *ngIf="gallery.length!=0"
+                        (click)="openLoginPopupType=1;loginpopupopen()">
+                        <h6 class="head">Gallery</h6>
+                        <div class="img_wrapper">
+                            <div class="leftwrapper innerimg_container" [ngStyle]="{'background-image': getUrl(0)}">
+                                <!-- <img src="{{gallery[0].FILE_PATH}}profile/{{gallery[0].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                            </div>
+                            <div class="rightwrapper">
+                                <div class="ryttopwrapper">
+                                    <div class="innerimg_container" style="margin-right: 5px;" *ngIf="gallery.length>=2"
+                                        [ngStyle]="{'background-image': getUrl(1)}">
+                                        <!-- <img src="{{gallery[1].FILE_PATH}}profile/{{gallery[1].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                    <div class="innerimg_container" *ngIf="gallery.length>=3"
+                                        [ngStyle]="{'background-image': getUrl(2)}">
+                                        <!-- <img src="{{gallery[2].FILE_PATH}}profile/{{gallery[2].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                </div>
+                                <div class="rytbttmwrapper">
+                                    <div class="innerimg_container" *ngIf="gallery.length>=4"
+                                        [ngStyle]="{'background-image': getUrl(3)}">
+                                        <!-- <img src="{{gallery[3].FILE_PATH}}profile/{{gallery[3].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                    <div class="innerimg_container" *ngIf="gallery.length>=5" style="margin: 0px 5px;"
+                                        [ngStyle]="{'background-image': getUrl(4)}">
+                                        <!-- <img src="{{gallery[4].FILE_PATH}}profile/{{gallery[4].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                    <div class="innerimg_container" *ngIf="gallery.length>=6"
+                                        [ngStyle]="{'background-image': getUrl(5)}">
+                                        <!-- <img src="{{gallery[5].FILE_PATH}}profile/{{gallery[5].PAGE_GALLERY_UUID}}.png" alt=""> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagefooter"><span>See All</span></div>
+                    </div>
+
+                    <div class="col-md-6 center_feed fleft courseSliderWrapper">
+                        <app-courseslider [pageId]="page_uuid" [cardPagePic]="coverPicPath" [cardpagTitle]="pageTitle">
+                        </app-courseslider>
+                    </div>
+                    <app-pagefeeds [pageUuid]="page_uuid" [user_type]="user_type"></app-pagefeeds>
+                </div>
+
+                <div class="col-md-3 col-sm-3 pdng_left right_stickytab" id="outerDiv"
+                    *ngIf=" pageprofiletabWithoutToken == 1">
+                    <div class="rightmenu_fixed" id="someDivright" [ngClass]="{'fixedleft': isScrolledright}">
+                        <app-sildecoursewidget
+                            *ngIf=" pageprofiletab!=9 && pageprofiletab!=3 &&  pageprofiletab !=15 && pageprofiletab != 16"
+                            [pageId]="page_uuid" [cardPagePic]="profilePicPath" [cardpagTitle]="pageTitle">
+                        </app-sildecoursewidget>
+                        <app-pageaboutwidget *ngIf="showChildNow" [pageid]="page_uuid"
+                            (click)="openLoginPopupType=1;loginpopupopen()" [publicView]="withoutToken"
+                            [pageName]="pagename" (changePageTab)="aboutWidgetObj($event)"></app-pageaboutwidget>
+                        <app-reviewswidget *ngIf="showChildNow" [pageId]="page_uuid"
+                            (click)="openLoginPopupType=1;loginpopupopen()"></app-reviewswidget>
+                        <p *ngIf="pageprofiletab != 9" class="footer_bottom" style="color:#9ba1ab;">
+                            <a routerLink="/privacy" target="_blank"> Privacy Policy <span> | </span> </a>
+                            <a routerLink="/termandcondition" target="_blank">Terms & Conditions <span> | </span></a>
+                            <a href="http://support.study24x7.com/" target="_blank">Support</a>
+                        </p>
+                        <footer *ngIf="pageprofiletab != 9" class="footer_bottom"> © 2020 @Edubabble Learning Pvt. Ltd.
+                        </footer>
+                    </div>
+                </div>
+                <!--    <div class="col-md-9" style="float:right">
+      <app-photo [pageId]="pageId" [user_type]="user_type"></app-photo>
+      <div class="footer_bottom" style="color:#9ba1ab;margin-top: 15px;float:left;">
+    </div>
+  </div>-->
+
+                <div class="col-md-9 center_feed fleft" *ngIf="pageprofiletabWithoutToken == 3">
+                    <app-courses [pageTitle]="pageTitle" [user_type]="user_type" [profilePicPath]="profilePicPath">
+                    </app-courses>
+                </div>
+
+                <div class="col-md-6 center_feed fleft" *ngIf="pageprofiletabWithoutToken == 5">
+                     <app-reviewswidget class="__for_mobile" *ngIf="pageprofiletabWithoutToken == 5" [pageId]="page_uuid"
+                      (click)="openLoginPopupType=1;loginpopupopen()"></app-reviewswidget>
+                    <app-pagereviews *ngIf="showChildNow" [withoutToken]="withoutToken" [user_type]="user_type"
+                        [pageId]='page_uuid' [reviewed]="false" (isReviewed)="0"></app-pagereviews>
+                </div>
+
+                <div class="col-md-6 center_feed fleft" *ngIf="pageprofiletabWithoutToken == 7">
+                    <app-pagefeeds [pageUuid]="page_uuid" [user_type]="user_type"></app-pagefeeds>
+                </div>
+
+
+                <div class="col-md-6 center_feed fleft" *ngIf="pageprofiletabWithoutToken == 12">
+                    <app-pagefeeds [pageUuid]="page_uuid" [user_type]="user_type"></app-pagefeeds>
+                </div>
+
+
+                <div class="col-md-6  fleft center_feed" id="centersection" *ngIf="pageprofiletabWithoutToken == 2">
+                    <app-pageabout *ngIf="showChildNow" [withoutToken]="withoutToken" [pagedata]="pagedata">
+                    </app-pageabout>
+                    <app-page-info class="page__info" *ngIf="pageprofiletabWithoutToken ===  2" [pg_name]="pagename"
+                        [profilePicPath]="profilePicPath" [pageTitle]="pageTitle" [pagenm]="pagenm" [page_uuid]="pageId"
+                        [pagedata]="pagedata" [PageTitle]="PageTitle"></app-page-info>
+                </div>
+
+
+                <div class="col-md-3 col-sm-3 pdng_left right_stickytab" id="outerDiv"
+                    *ngIf="pageprofiletabWithoutToken === 12 || pageprofiletabWithoutToken === 2 || pageprofiletabWithoutToken === 5">
+
+
+
+                    <app-suggestedpages *ngIf="pageprofiletabWithoutToken === 12" [pageUuid]="page_uuid">
+                    </app-suggestedpages>
+
+                    <app-page-info *ngIf="pageprofiletabWithoutToken ===  2" [pg_name]="pagename"
+                        [profilePicPath]="profilePicPath" [pageTitle]="pageTitle" [pagenm]="pagenm" [page_uuid]="pageId"
+                        [pagedata]="pagedata" [PageTitle]="PageTitle"></app-page-info>
+
+                    <app-reviewswidget *ngIf="pageprofiletabWithoutToken == 5" [pageId]="page_uuid"
+                        (click)="openLoginPopupType=1;loginpopupopen()"></app-reviewswidget>
+                </div>
+
+
+
+                <div class="col-md-9 center_feed fleft" *ngIf="pageprofiletabWithoutToken == 6">
+
+                    <app-photo *ngIf="showChildNow " [pageId]="page_uuid" [withouttoken]="withoutToken"
+                        [user_type]="user_type"></app-photo>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- other page profile view end -->
+
+
+
+
+
+<div class="help-icon" (click)="clickOnAssist()">
+    <img src="./assets/images/svg-three/wall/help.svg" alt="">
+    <p>Need any help?</p>
+</div>

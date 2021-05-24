@@ -1,0 +1,771 @@
+<div class="_header"  *ngIf="!isLoggedIn" style="display:none;">
+   <div id="headerwidth">
+      <div class="_wrapper centeralignment" >
+
+         <!-- new header -->
+         <div class="hm-pg-header-left" >
+            <span routerLink='/homelogo' class="header-logo-image">
+            <img  src="https://img1.study24x7.com/assets/images/svg-three/Logo.png" class="fill_logo">
+         </span>
+            <app-interests-dropdown class="showInterestDropdownResponsiveView" *ngIf=!showInterestDropdownResponsiveView></app-interests-dropdown>
+         </div>
+         <!-- end header -->
+         <div class="_header_menu_wrapper mobileview">
+            <img
+               src="https://uatimg1.study24x7.com/assets/images/marketPlaceImages/menue.jpg"
+               (click)="openNav()">
+         </div>
+     <div class="right_items_btn"  >
+       <div *ngIf="!isLoggedIn" class="_button_wraqpper" id="buttonWeb" style="margin-left: 15px;padding: 0;">
+        <button  (click)="logincloseright=true; openLoginPopupType=2;;openLoginPopup=true;" id="registerNowWeb">Sign Up</button>
+       </div>
+         <button *ngIf="!isLoggedIn" class="btn btn-link from_head_login"
+         (click)="logincloseright= true;openLoginPopupType= 1;openLoginPopup=true;"
+         id="registerNowWeb">Log in
+        </button>
+        <!-- <button *ngIf="isLoggedIn" class="btn btn-link from_head_login"
+         (click)="logout()" id="registerNowWeb">Log out
+        </button> -->
+      </div>
+
+      </div>
+   </div>
+</div>
+<app-header [hideInterestDropdown]=false *ngIf="isLoggedIn"> </app-header>
+  <app-loginheader [hideInterestDropdown]=false *ngIf="!isLoggedIn"></app-loginheader>
+<!-- header end -->
+<!--	left_mobile_menu -->
+<div id="fulloverlay" class="js-side-nav-overlay side-nav-overlay"
+(click)="openNav()" [ngClass]="{'show': opennavleft }">
+</div>
+<div id="mySidenav" class="sidenav" [ngClass]="{'sidenavwidth': opennavleft }">
+   <div class="market_accordian">
+      <div *ngFor="let category of interests;let i=
+         index">
+         <button class="accordion">
+            {{category.CATEGORY_NAME}}
+         </button>
+         <div class="panel" style="">
+            <div class="col-data">
+               <ul>
+                  <li
+                  (click)="routTo(interest.INTEREST_NAME_ALIAS)"
+                  *ngFor="let interest of
+                  category.INTERESTS">
+                  <span class="crs-list-txt">
+                     {{interest.INTEREST_NAME}}
+                    </span>
+                 </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- end left_mobile_menu -->
+<div class="marketplace_wrapper">
+   <div class="home-banner banner-detail">
+      <div class="middle_wrapper _wrapper">
+         <div class="hdng_sctn_left">
+            <h1 class="txt_hdnghome">
+               {{bannerHeading}}
+            </h1>
+            <span class="new-seeker">
+               {{bannerContent}}
+           </span>
+            <button (click)="logincloseright=true;openLoginPopupType=2;openLoginPopup=true;"
+            class="home_register" *ngIf="!isLoggedIn">
+            Register Now
+           </button>
+         </div>
+      </div>
+   </div>
+   <div class="_wrapper topwrapper marketplace">
+      <!--     ------------- new --------------->
+      <!-- <div class="_button_wraqpper btnTopWrapp">
+         <p>
+            india's first education Social Network
+           </p>
+         <button *ngIf="!isLoggedIn && isWebView">
+            Register Now
+           </button>
+      </div> -->
+      <!--	---------------end new----------->
+      <h2 class="_related_article_headline">
+         Related Articles
+        </h2>
+      <div class="_center_related_article">
+         <!--           new div add-->
+         <div class="centerwrapp">
+            <div (click)="routToArticle(article)" class="center_top_"
+            *ngFor="let article of leftRelatedArticles; let i= index">
+            <div *ngIf="i==0" class="_center_related_inner_article">
+               <div class="_center_related_image">
+                  <img src="{{article.ARTICLE_COVER_URL}}" alt="" class="images">
+                  <div class="_shareLink">
+                     <img src="./images/share.png" alt="">
+                  </div>
+               </div>
+               <div class="_center_related_content">
+                  <h3>
+                     {{postDataService.decodeURIPostData(article.ARTICLE_TITLE)}}
+                    </h3>
+                  <p>
+                     Published on {{article.ADD_DATE_TIME
+                     |date}}
+                  </p>
+               </div>
+            </div>
+            <div *ngIf="i>0" class="_left_related_inner_article">
+               <div class="_article_image">
+                  <img
+                     src="{{article.ARTICLE_COVER_URL}}"
+                     alt="" class="images">
+               </div>
+               <p>
+                  {{postDataService.decodeURIPostData(article.ARTICLE_TITLE)}}
+               </p>
+               <span class="_right_related_date">Published on
+               {{article.ADD_DATE_TIME
+               |date}}</span>
+            </div>
+         </div>
+
+      </div>
+      <!--    end new div-->
+   </div>
+   <div class="_left_related_article">
+      <!--		new div add -->
+      <div class="dataFlow">
+         <div class="blockwrap">
+            <div *ngFor="let article
+               of centerRelatedArticles;let j=index">
+               <div *ngIf="j<4" class="_left_related_inner_article"
+               (click)="routToArticle(article)">
+               <div class="_article_image">
+                  <img
+                     src="{{article.ARTICLE_COVER_URL}}"
+                     alt="" class="images">
+               </div>
+               <p>
+                  {{postDataService.decodeURIPostData(article.ARTICLE_TITLE)}}
+               </p>
+               <span class="_right_related_date">Published on
+               {{article.ADD_DATE_TIME
+               |date}}</span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="_right_related_article">
+   <ul>
+      <li class="_right_related_article_heading">Trending in
+         Education
+      </li>
+      <li (click)="routToArticle(article)" *ngFor="let article of
+      rightRelatedArticles" class="_right_related_list">
+      <div class="_right_related_inner_list">
+         <h3 class="_right_related_list_content">
+            {{postDataService.decodeURIPostData(article.ARTICLE_TITLE)}}
+         </h3>
+         <span class="_right_related_date">
+            Published on {{article.ADD_DATE_TIME | date}}
+           </span>
+      </div>
+      </li>
+   </ul>
+</div>
+
+<!---------- new mobileRes------->
+<div class="secHead secHeadSecond slide-list__heading_head
+   head_wrapper">
+   Popular Courses
+</div>
+<div class="courseCard slider_section popular_courses_wrap">
+   <div class="course_div course_student_veiw" id="mixedSlider">
+      <ngx-slick-carousel
+      class="carousel carousel_card_scroll MS-content"
+      #slickModal1="slick-carousel"
+      [config]="slideConfig"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event, 'popularSlick')"
+      (beforeChange)="beforeChange($event)">
+      <div ngxSlickItem class="slide"
+      (click)="routToCourse(course)" *ngFor="let course of
+      popularCourses">
+      <div class="course_item course_item_slider">
+         <div class="item" [ngClass]="{'activecourrse':
+            coursecardzoom == 1 }">
+            <div class="class1">
+               <div class="imgTitle"
+                  style="background-image:
+                  url({{course.COURSE_COVER_PHOTO_PATH}});">
+                  <span class="courseType bestseller">
+                     Bestseller
+                    </span>
+               </div>
+               <div class="courseCont">
+                  <p class="courseName">{{postDataService.decodeURIPostData(course.COURSE_TITLE)}}
+                    </p>
+                  <div class="courseInfo">
+                     <span class="courseLevel">
+                        {{course.levelName}}
+                       </span>
+                     <span class="dot"></span>
+                     <span class="courseLang">
+                        {{course.LANGUAGE_NAME}}
+                       </span>
+                  </div>
+                  <!--               new add-->
+                  <div class="courseAuth course_by">
+                     <span class="courseLevel">
+                        By:
+                       </span>
+                     <span class="AuthorName">
+                        {{postDataService.decodeURIPostData(course.PAGE_TITLE)}}
+                       </span>
+                  </div>
+                  <!--               end new add-->
+
+                  <div class="courseBottom">
+                     <div class="rating">
+                        <span class="startimg"><img
+                           src="https://img1.study24x7.com/assets/images/marketPlaceImages/starcomplete.svg"></span>
+                        <span class="startval">
+                           {{course.COURSE_RATING}}
+                          </span>
+                     </div>
+                     <div class="CoursePrice"
+                        *ngIf="course.COURSE_PRICE[0]">
+                        <div class="fullPrice">
+                           <span class="rupee"><img
+                              src="https://img1.study24x7.com/assets/images/marketPlaceImages/rupee1.png"></span>
+                           <span class="fullval">
+                              {{course.COURSE_PRICE[0].DISCOUNT_COST}}
+                             </span>
+                        </div>
+                        <div class="discPrice">
+                           <span class="discPer">
+                              {{course.courseDiscount}} off
+                             </span>
+                           <span
+                              class="fullpricecut">
+                           <span class="rupee">
+                              <img src="https://img1.study24x7.com/assets/images/marketPlaceImages/rupee1.png"></span>
+                           <span
+                              class="cutval">
+                              {{course.COURSE_PRICE[0].COST|number}}
+                             </span>
+                           <span
+                              class="fullcul">&nbsp;</span>
+                           </span>
+                        </div>
+
+                     </div>
+                     <dist class="CoursePrice"
+                     *ngIf="!course.COURSE_PRICE[0]">
+                        <span
+                           class="cutval" style="float: right;">
+                           FREE
+                          </span>
+
+                     </dist>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </ngx-slick-carousel>
+</div>
+</div>
+<!-- featured courses start -->
+<div class="secHead slide-list__heading_head head_wrapper">
+   Featured Courses
+</div>
+<div class="topSecMain slider_section featured_courses_wrap">
+   <ngx-slick-carousel
+   class="carousel feature_course_card"
+   #slickModal="slick-carousel"
+   [config]="slideConfigFeaturedCourses"
+   (init)="slickInit($event)"
+   (breakpoint)="breakpoint($event)"
+   (afterChange)="afterChange($event, 'featuredSlick')"
+   (beforeChange)="beforeChange($event)">
+   <div
+      ngxSlickItem
+      *ngFor="let course of featuredCourses; let i= index;"
+      class="slide">
+      <div class="courseslide">
+         <div (click)="routToCourse(course)" class="imgLeft">
+            <img
+               src="{{course.COURSE_COVER_PHOTO_PATH}}"
+               alt="">
+            <span class="leftTop bestseller singleseller">
+               BESTSELLER
+              </span>
+         </div>
+         <div class="dataRight">
+            <div (click)="routToCourse(course)">
+               <span class="headingMn twolinecont">
+                  {{postDataService.decodeURIPostData(course.COURSE_TITLE)}}
+               </span>
+               <span class="dWnhead twolinecont">
+                  By {{postDataService.decodeURIPostData(course.PAGE_TITLE)}}
+                 </span>
+               <span class="dtcontr">
+               <span class="dotLft">
+                  {{course.levelName}}
+                 </span>
+               <span class="dot"></span>
+               <span class="aftdot">
+                  {{course.LANGUAGE_NAME}}
+                 </span>
+               </span>
+               <div class="curcContent" style="justify-content: center;">
+                  {{postDataService.decodeURIPostData(course.DESCRIPTION)+'' | trimData:250}}
+               </div>
+            </div>
+            <span class="leftmenuicons" (click)="savepopup(course,i)">
+            <!-- <span class="rmenu">
+               <img  src="https://img1.study24x7.com/assets/images/marketPlaceImages/vector-smart-object-2-copy-4@2x.png"
+               alt="" class="_savecoursepost">
+              </span> -->
+            <!-- <span class="rmenu">
+               <img src="https://img1.study24x7.com/assets/images/marketPlaceImages/share.png"
+               alt="">
+              </span>-->
+            </span>
+            <span (click)="routToCourse(course)"
+            class="amntcourse"
+            *ngIf="course.COURSE_PRICE[0]">
+            <span class="courserate">
+               <img src="https://img1.study24x7.com/assets/images/marketPlaceImages/rupe.svg" alt="">
+               {{course.COURSE_PRICE[0].DISCOUNT_COST}}
+              </span>
+            <span class="discount">
+            <span class="offrate">
+               <del>
+                  <img
+               src="https://img1.study24x7.com/assets/images/marketPlaceImages/rupe.svg"
+               alt="">
+               {{course.COURSE_PRICE[0].COST|number}}
+              </del>
+           </span>
+            <span class="offfprc">
+               {{course.courseDiscount}}% off</span>
+            </span>
+            </span>
+            <span class="amntcourse"    *ngIf="!course.COURSE_PRICE[0]">
+               <span class="courserate">
+                  FREE
+                 </span>
+
+            </span>
+            <span class="leftdown">
+               <img
+               src="https://img1.study24x7.com/assets/images/marketPlaceImages/star-filled.svg"
+               alt="">
+               {{course.COURSE_RATING}}
+              </span>
+         </div>
+      </div>
+   </div>
+</ngx-slick-carousel>
+</div>
+<!-- end featured courses -->
+<!-- popular pages -->
+<div class="secHead slide-list__heading_head head_wrapper">
+   Popular Pages
+</div>
+<div class="courseCard slider_section">
+   <div class="course_div course_student_veiw">
+      <ngx-slick-carousel
+      class="carousel carousel_card_scroll"
+      #slickModal2="slick-carousel"
+      [config]="slideConfig"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event, 'popularPagesSlick')"
+      (beforeChange)="beforeChange($event)">
+      <div  ngxSlickItem  *ngFor="let page of popularPages;"
+      class="slide">
+      <div
+         class="course_item col-md-4 col-sm-6 col-xs-6"
+         style="max-width: 100%; width: 100%;">
+         <div class="_popularpagesSliderWeapper">
+            <div class="_popular_page_card">
+               <div style="cursor: pointer;" (click)="routToPage(page)" class="_pagecard_img_wrapper">
+                  <img
+                     src="{{page.COVER_PHOTO_PATH}}">
+                  <div class="_profile_wrapper">
+                     <img
+                        src="{{page.PROFILE_PHOTO_PATH}}">
+                  </div>
+               </div>
+               <h4 (click)="routToPage(page)" style="cursor: pointer;">
+                  {{postDataService.decodeURIPostData(page.TITLE)|trimData:30}}
+                 </h4>
+               <p  (click)="routToPage(page)" class="_follower_Count lotoFont">
+                  {{page.PAGE_FOLLOW_COUNT}} followers
+               </p>
+               <p style="cursor: pointer;" (click)="routToPage(page)" class="_popular_page_dis lotoFont">
+                   {{(page.DESCRIPTION?page.DESCRIPTION:' ') | trimData:100}}
+               </p>
+               <button (click)="setCokie();isLoggedIn==true?routToPage(page):openLoginPopup=true;">
+                  <img
+                  src="https://img1.study24x7.com/assets/images/marketPlaceImages/vector-smart-object@2x.png"
+                  alt="">
+                   Follow
+                 </button>
+            </div>
+         </div>
+      </div>
+   </div>
+   </ngx-slick-carousel>
+</div>
+</div>
+<!-- popular pages slider end -->
+<!-- popular pages end -->
+<div class="_collection_wrapper">
+   <div class="_collection_left_wrapper">
+      <h2>
+         Collection of Interactive
+         <br>
+         Questions to Answer
+      </h2>
+      <button (click)="isLoggedIn==true?routToQuestion('/home/questionforyou'):openLoginPopup=true">
+         2k+ Topic Related Questions
+        </button>
+   </div>
+   <!--------new ----------->
+   <P class="headingcollwrap">
+      Get free Questions and much more
+     </P>
+   <!--end new-->
+   <div class="_collection_right_wrapper">
+      <div class="_collection_right_inner_wrapper">
+         <div class="_collection_right_inner_image_wrapper oneimg">
+            <img
+               src="https://img1.study24x7.com/assets/images/marketPlaceImages/vector-smart-object-copy.png"
+               alt="" class="images">
+         </div>
+         <h3>
+            Ask Questions
+           </h3>
+         <p class="headingcoll">
+            Create and ask variety of unlimited questions.
+         </p>
+      </div>
+      <div class="_collection_right_inner_wrapper">
+         <div class="_collection_right_inner_image_wrapper
+            twoimg">
+            <img
+               src="https://img1.study24x7.com/assets/images/marketPlaceImages/vector-smart-object1.png"
+               alt="" class="images">
+         </div>
+         <h3>
+            Save Questions
+           </h3>
+         <p>
+            Save multiple questions to be answered later.
+           </p>
+      </div>
+      <div class="_collection_right_inner_wrapper">
+         <div class="_collection_right_inner_image_wrapper
+            threeimg">
+            <img
+               src="https://img1.study24x7.com/assets/images/marketPlaceImages/vector-smart-object2.png"
+               alt="" class="images">
+         </div>
+         <h3>
+            Answer Live
+           </h3>
+         <p>
+            Answer live timed questions along with others.
+           </p>
+      </div>
+      <div class="_collection_right_inner_wrapper">
+         <div class="_collection_right_inner_image_wrapper
+            fourimg">
+            <img
+               src="https://img1.study24x7.com/assets/images/marketPlaceImages/vector-smart-object.png"
+               alt="" class="images">
+         </div>
+         <h3>
+            Question Variety
+           </h3>
+         <p>
+            Thousands of questions for every interest!
+           </p>
+      </div>
+   </div>
+   <!------new --------->
+   <div class="_button_wraqpper">
+      <button (click)="logincloseright=true;openLoginPopupType=2;openLoginPopup=true;" *ngIf="!isLoggedIn">
+         Register Now
+        </button>
+   </div>
+   <!---------end new------->
+</div>
+<!--end new best selling-->
+<!-- best selling courses for mobile slider -->
+<div class="secHead slide-list__heading_head head_wrapper best_selling_wrap">
+   Best Selling Courses
+  </div>
+<div class="courseCard slider_section best_selling_wrap">
+   <div class="course_div course_student_veiw">
+      <ngx-slick-carousel
+      class="carousel carousel_card_scroll"
+      #slickModal3="slick-carousel"
+      [config]="slideConfigbestselling"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event,'slickModal3')"
+      (beforeChange)="beforeChange($event)">
+      <div ngxSlickItem class="slide" (click)="routToCourse(course)"
+      *ngFor="let course of bestSellingCoursesSlick;let i=index">
+      <div class="course_item" style="max-width: 100%; width:100%;">
+         <div class="cardview__bestsellingCourse">
+            <div class="bestsellingcrcs">
+               <div class="_best_selling_image">
+                  <img src="{{course.COURSE_COVER_PHOTO_PATH}}" alt="" class="images">
+               </div>
+               <div class="_best_selling_text_wrapper">
+                  <h3 class="_best_selling_heading">
+                     {{postDataService.decodeURIPostData(course.COURSE_TITLE)}}
+                    </h3>
+                  <p class="_best_selling_author">
+                     By
+                     <span>
+                        {{postDataService.decodeURIPostData(course.PAGE_TITLE)}}
+                       </span></p>
+                  <p class="_best_selling_discription">
+                     <span class="dote">
+                        {{course.levelName}} {{course.LANGUAGE_NAME}}
+                       </span>
+                  </p>
+                  <p class="_best_selling_text">
+                     {{postDataService.decodeURIPostData(course.DESCRIPTION)+''|trimData:200}}
+                  </p>
+               </div>
+               <div class="_best_selling_price_wrapper">
+                  <div class="_best_selling_rating_wrapper">
+                     <img src="./images/starcomplete.svg" alt="">
+                     <img src="./images/starcomplete.svg" alt="">
+                     <img src="./images/starcomplete.svg" alt="">
+                     <img src="./images/starcomplete.svg" alt="">
+                     <img src="./images/starcomplete.svg" alt="">
+                  </div>
+                  <p class="_best_selling_rating_count">
+                     {{course.COURSE_RATING}} ({{course.TOTAL_COURSE_RATING_COUNT}} Rating)
+                  </p>
+                    <p *ngIf="course.COURSE_PRICE[0]" class="_best_selling_price">
+                     {{course.COURSE_PRICE[0].COST|number}}
+                    </p>
+                  <p *ngIf="!course.COURSE_PRICE[0]" class="_best_selling_price _free_course">
+                     FREE
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </ngx-slick-carousel>
+</div>
+</div>
+<!-- end best selling courses for mobile slider -->
+</div>
+<div class="_best_selling_course_wrapper">
+   <div class="_best_selling_course_header">
+      <div class="_wrapper _footer_innerwrapper" style="height: 100%;">
+         <div class="_course_left_header">
+            <h2>
+               Best Selling Courses
+              </h2>
+            <p>
+               Popular on demand courses from various fields of interests
+            </p>
+         </div>
+         <div class="_course_right_header">
+            <ul>
+               <li (click)="showmenue()">
+                  Price
+                  <img src="https://img1.study24x7.com/assets/images/marketPlaceImages/arrow-down-sign-to-navigate.svg" alt="">
+                  <div class="_filtermenue" *ngIf="pricemenue">
+                     <div class="arrow-up"></div>
+                     <ul>
+                        <li (click)="getBestSellingCoursesWithPrice('1')">
+                           Paid
+                          </li>
+                        <li (click)="getBestSellingCoursesWithPrice('0')">
+                           Free
+                          </li>
+                        <li (click)="getBestSellingCoursesWithPrice('')">
+                           All
+                          </li>
+                     </ul>
+                  </div>
+               </li>
+
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="_wrapper">
+      <ul class="_best_selling_course_detail_wrapper_empty" *ngIf="bestSellingCourses==''">
+         <div style="padding: 20px;">
+            <div style="display: flex; flex-direction: row;justify-content: center;align-items: center;align-content: center;">
+             <img style="height: 150px;"  src="assets/images/course_icon/create_course.svg" />
+
+            </div>
+            <div style="text-align: center;">
+             We could not find courses matching your search criteria.
+            </div>
+
+           </div>
+      </ul>
+      <ul class="_best_selling_course_detail_wrapper"  *ngIf="bestSellingCourses!=''">
+         <li (click)="routToCourse(course)" *ngFor="let course of bestSellingCourses">
+         <a>
+            <div class="_best_selling_image">
+               <img src="{{course.COURSE_COVER_PHOTO_PATH}}"  alt="" class="images">
+            </div>
+            <div class="_best_selling_text_wrapper">
+               <h3 class="_best_selling_heading">
+                  {{postDataService.decodeURIPostData(course.COURSE_TITLE)}}
+                 </h3>
+               <p class="_best_selling_author">
+                  By
+                  <span>
+                     {{postDataService.decodeURIPostData(course.PAGE_TITLE)}}
+                    </span>
+                 </p>
+               <p class="_best_selling_discription">
+                  <span class="dote">
+                     {{course.LANGUAGE_NAME}}
+                    </span>
+                  {{course.levelName}}
+               </p>
+               <p class="_best_selling_text">
+                  {{postDataService.decodeURIPostData(course.DESCRIPTION)+''| trimData:150}}
+               </p>
+            </div>
+            <div class="_best_selling_price_wrapper">
+               <div class="_best_selling_rating_wrapper">
+                  <img src="./images/starcomplete.svg" alt="">
+                  <img src="./images/starcomplete.svg" alt="">
+                  <img src="./images/starcomplete.svg" alt="">
+                  <img src="./images/starcomplete.svg" alt="">
+                  <img src="./images/starcomplete.svg" alt="">
+               </div>
+               <p class="_best_selling_rating_count">
+                  {{course.COURSE_RATING}} ({{course.TOTAL_COURSE_RATING_COUNT}} Rating)
+               </p>
+               <p *ngIf="course.COURSE_PRICE[0]" class="_best_selling_price">
+                  {{course.COURSE_PRICE[0].COST|number}}
+                 </p>
+               <p *ngIf="!course.COURSE_PRICE[0]" class="_best_selling_price _free_course">
+                  FREE
+                 </p>
+            </div>
+         </a>
+         </li>
+         <div class="_best_selling_footer">
+            <!-- <span class="_best_selling_course_count">90 Courses</span> -->
+            <div class="_best_selling_pagination_wrapper">
+               <ul class="_best_selling_pagination">
+                  <li *ngIf="currentPage>1" (click)="previousPage()" class="_best_selling_pagination_arrow">
+                     <img   src="https://img1.study24x7.com/assets/images/marketPlaceImages/left-arrow.svg" alt="" />
+                  </li>
+                  <li class="_best_selling_pagination_count_wrapper">
+                     <div *ngFor="let pageNo of pageNoArra;let i=index">
+                        <span *ngIf="(currentPage<3 && i<5) || (i>=currentPage-3 && i<=currentPage+1)" (click)="goToPage(pageNo)"
+                        [ngClass]="{sellactive:pageNo.activated,_best_selling_pagination_count:true}">
+                        {{pageNo.value}}
+                        </span>
+                     </div>
+                  </li>
+                  <li *ngIf="currentPage<noOfPagesInBestSellingCourse" (click)="nextPage()"
+                     class="_best_selling_pagination_arrow">
+                     <img  src="https://img1.study24x7.com/assets/images/marketPlaceImages/right-arrow.svg"
+                        alt="" />
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </ul>
+   </div>
+</div>
+<div class="_trading_wrapper">
+   <div class="_wrapper">
+      <h2 class="_related_article_headline">
+         Trending in Education
+        </h2>
+        <div class="_trading_inner_wrapper" *ngIf="trendingInEducationArticles==''">
+            <div style="padding: 20px;">
+               <div style="display: flex; flex-direction: row;justify-content: center;align-items: center;align-content: center;">
+                <img style="height: 150px;"  src="assets/images/course_icon/create_course.svg" />
+
+               </div>
+               <div style="text-align: center;">
+                We could not find courses matching your search criteria.
+               </div>
+
+              </div>
+        </div>
+      <div class="_trading_inner_wrapper">
+         <div (click)="routToArticle(article)" class="_trading_list_container" *ngFor="let article of trendingInEducationArticles;let i= index">
+         <div style="background: url({{article.ARTICLE_COVER_URL}});"
+            class="_article_image background_image_set  _trading_list_color_container color1">
+            <!-- <img src="{{article.ARTICLE_COVER_URL}}"> -->
+         </div>
+         <p>
+            <a title="{{postDataService.decodeURIPostData(article.ARTICLE_TITLE)}}">
+            {{postDataService.decodeURIPostData(article.ARTICLE_TITLE)}}
+            </a>
+            <span class="_right_related_date">Published on {{article.ADD_DATE_TIME |date}}</span>
+         </p>
+      </div>
+   </div>
+</div>
+</div>
+<div class="_footer">
+   <div class="_wrapper _footer_innerwrapper">
+      <div class="_social_icon_wrapper">
+         <a href="https://www.linkedin.com/company/study24x7/"><img
+            src="https://img1.study24x7.com/assets/images/marketPlaceImages/linkdin.png"
+            alt="" class="linkdin"></a>
+         <a href="https://twitter.com/study24x7"> <img
+            src="https://img1.study24x7.com/assets/images/marketPlaceImages/twitter.png"
+            alt="" class="twitter"></a>
+         <a href="https://www.facebook.com/study24x7"> <img
+            src="https://img1.study24x7.com/assets/images/marketPlaceImages/fb.png"
+            alt="" class="fb"></a>
+         <a
+            href="https://www.youtube.com/channel/UC3HhY5Y1H2hAME9rfzFJAKg?view_as=subscriber">
+         <img
+            src="https://img1.study24x7.com/assets/images/marketPlaceImages/youtube.png"
+            alt="" class="youtube"></a>
+      </div>
+      <p>{{current_year}} @ Edubabble Learnings Pvt.Ltd.</p>
+   </div>
+</div>
+</div>
+<!-- left side nav -->
+
+
+<!-- end side nav -->
+<app-loginpopup *ngIf="openLoginPopup" (closePopup)="openLoginPopup=false" [usrData]="{}" [isError]="false"
+[errorText]="" [openLoginPopupType]="openLoginPopupType">
+</app-loginpopup>
+<div *ngIf="savepagepopup">
+    <app-savedpopup (folder_id)="savedFolderId=$event" (closeSavedPopup)="savepagepopup=$event;"
+   (savedStatus)="saveCondition=$event; updateSavedStatus($event);"
+   [postData]='courseSavedData'></app-savedpopup>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);"
+[dataObj]="dataConf">
+</app-confirmationpopup>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);"
+[dataObj]="dataConf">
+</app-confirmationpopup>

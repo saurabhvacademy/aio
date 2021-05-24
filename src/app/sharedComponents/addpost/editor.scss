@@ -1,0 +1,74 @@
+$backgroundgray : #e6e6e6;
+$themeblue : #F05050;
+$themegray : #f5f7fa;
+$textcolor : #2c2e2f;
+$textgrey : #8c8c8c;
+$maingreen: rgb(7,162,8);
+$stroke : #dfe0e8;
+// $stroke : #E9E9E9;
+$borderRadius: 5px;
+$inputTypeHeight: 35px;
+$inputTypeFont: 12px;
+$headerHeight: 60px;
+$headerLineHeight: $headerHeight - 5px;
+$mainboxShadow: 0 0 7px rgba(0,0,0,0.1);
+$dropdownwidth: 400px;
+$dropdwncontentwidth: $dropdownwidth - 100px;
+$ntfctnprofile: 40px;
+$inrprflimg : $ntfctnprofile + 8px;
+$PostPicture: 40px;
+$commentPicture: $PostPicture - 10px;
+$subcommentPicture: $commentPicture - 10px;
+$mainpostName: 16px;
+$maincommentName: $mainpostName - 2px;
+$darkthemestroke: $themeblue;
+$progressbarRed: #ed6568;
+$rightanswer : #5bbc5b;
+$themelighten : rgba(18, 188, 180, 0.2);
+$lightgray : #fafafa;
+$lightstroke: #f4f4f4;
+$lighttext: #8c8c8c;
+
+
+
+.toolbar{
+	    display: inline-block;
+    width: 100%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    background: $themegray;
+    height: $inputTypeHeight + 4px;
+    line-height: $inputTypeHeight + 4px;
+}
+
+.editorimages{
+display: inline-block;
+padding: 0px 5px;
+float: left;
+width: 30px;
+height: 30px;
+// border: 1px solid #ccc;
+text-align: center;
+line-height: 30px;
+margin: 2px;
+
+	img{
+		width: 12px;
+	}
+}
+.editor_container{
+	    display: inline-block;
+
+    width: 100%;
+    border-top: 1px solid $stroke;
+    background: $themegray;
+    border-radius: $borderRadius;
+
+     border-radius: 3px;
+     height: auto;
+     padding: 0px 0px 15px 0px;
+
+}
+.editorimages{
+	background:#fff;
+}

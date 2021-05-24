@@ -1,0 +1,145 @@
+<!-- <div class="popup" *ngIf="interestpopup">
+        <div class="popup_background" ></div>
+        <div class="popup_main interestpopup">
+                <div class="popup_heading">Interest
+                <div class="col-md-3 interesrsearch">
+                         <div class="input-group stylish-input-group">
+                                <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <input type="text" class="form-control"  placeholder="search" >
+
+                </div>
+                </div>
+        </div>
+                <div class='interest_popupheader'>
+
+                          <button class="btn-secondary drpdwn_btn" (click)="interestlist = !interestlist">All Interests <span class="glyphicon glyphicon-menu-down btn_dropdwn"></span>
+
+                                </button>
+                                <span class="drpdwn_post" *ngIf = "interestlist" >
+                                      <ul>
+                                        <li>SSC</li>
+                                        <li>Chemistry</li>
+                                        <li>Physics</li>
+                                      </ul>
+                                    </span>
+<!--<span class='tags'>Chemistry <img src="assets/images/svg/tagcross.svg"></span>- ->
+</div>
+<div class="interest_content" >
+<div class="interestlist_outer">
+
+        <ul class='interestlist'>
+                <li *ngFor = "let interest of objectKeys(interests);">
+                        <input name="interest_checkbox" type='checkbox' class="interestcheckbox" value="{{interest}}" id='{{interest}}' (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                        <label class="interestboxinr" for='{{interest}}'>
+                        <span class="interestboxmain"></span>
+                        <span class="glyphicon glyphicon-ok"></span>
+                                <img src="assets/images/interest3.jpg">
+
+                        </label>
+                        <span class="Interest_Name">{{interests[interest]}}</span>
+                </li>
+        </ul>
+
+</div>
+
+</div>
+<div class="popupfooter">
+<button (click)="updateUserInterest();"  class='btn btn-primary' >Next</button>
+</div>
+</div>
+</div> -->
+<!-- -========================================================================================= -->
+
+<div class="wrapper interest-page-wrapper after-register-interest-page-wrap">
+    <!-- ========================================================================= -->
+
+    <header class="header_background">
+        <div class="container main-header">
+            <div class="row">
+                <div class="col-md-9 col-sm-9 clearfix">
+                    <a routerLink='/home'><img src="assets/images/svg-three/Logo.png" class="logo_header"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================================================= -->
+    <div class="container main_body">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 center_feed">
+                <!-- new interest page -->
+                <div class="interest_outer_wrapper">
+                    <div class="heading_wrap">
+                        <div class="heading_left">
+                            <p>Select your interest's below to get relevant information.</p>
+                        </div>
+                        <div class="search_right">
+                        </div>
+                    </div>
+                    <div class="grid_accordian_outer_wrap">
+
+
+                        <div class="accordian_panel_wrapper"  *ngFor="let item of interests;let i=index">
+                            <!--<span class="interest_icon_left"><img src="./assets/images/interest/greyicon/8.svg" alt="study24x7"></span>-->
+                            <div class="interest_accordian_wrap">
+                                <div class="panel-group panel_group_wrap clearfix">
+                                    <div class="panel panel-default panel_dwrap">
+                                        <div (click)="item.show=!item.show" style="cursor: pointer;" class="clearfix panel-heading panel_in_heading active_icon" data-toggle="collapse" href="'#coll'+i" >
+                                            <span  class="panel-title pnl_title">
+                                                <span class="interest_headng">{{item.CATEGORY_NAME}}</span>
+                                                <!-- <span  class="icon_down glyphicon glyphicon-menu-down" ></span> -->
+                                                <span [ngClass]="{'icon_up glyphicon': true,'glyphicon-menu-up':item.show }" ></span>
+                                            </span>
+                                        </div>
+
+                                        <div id="{{'coll'+i}}" [ngClass]="{'panel-collapse':true, collapse:true, show:item.show }">
+                                            <div class="panel-body panel_body_wrap">
+
+                                                <div class="interestpopup">
+                                                    <div class="interest_content">
+                                                        <div class="interestlist_outer interestlist_outer_wrap">
+                                                            <ul class='interestlist clearfix'>
+                                                                <ng-container *ngFor = "let interest of item.INTERESTS;">
+                                                                    <li  class="interest_list_wrap">
+                                                                        <div class="interest-inner-wrap">
+                                                                            <input name="interest_checkbox" type='checkbox' class="interestcheckbox" value="{{interest.INTEREST_ID}}" id='{{interest.INTEREST_ID}}' (change)="checkboxupdate($event.target.getAttribute('value'),$event);">
+                                                                            <label class="interestboxinr clearfix" for='{{interest.INTEREST_ID}}'>
+                                                                                <span class="interestboxmain interestboxmain_wrap"></span>
+                                                                                <span class="Interest_Name Interest_name_wrap">{{interest.INTEREST_NAME}}</span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </li>
+                                                                </ng-container>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <div class="interest-popupfooter" style="float:left;width:100%;">
+                            <button (click)="updateUserInterest();"  class='btn btn-primary red_rds btn_dec fright' >Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

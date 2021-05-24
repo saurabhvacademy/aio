@@ -1,0 +1,24 @@
+<div class="login-main login-gm btneffect" id="googleBtnLogin"
+  [ngClass]="{'login-button':true, 'singlepostglogin': from =='single-post-view', 'prehubsGlogin  ': from =='prehub'}"
+  (click)="googleInit()">
+  <div class="social-icon gmail-icon" ></div>
+  <div class="button-text">
+    <span *ngIf="!loaderGoogle">{{buttonText}}</span>
+    <span *ngIf="loaderGoogle" class="preloder" >
+      <img src="./assets/images/svg/preloader-25.svg" alt="">
+    </span>
+  </div>
+      
+</div>
+<app-social-login-popups [type]="'g'" (socialLoginPopupMessage)="messageAction($event)">
+</app-social-login-popups>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf">
+</app-confirmationpopup>
+<div  id="g_id_onload"
+     data-client_id="820432769646-rvnalptiheclr2n3um6fevdcduill802.apps.googleusercontent.com"
+     data-auto_select="true"
+     data-callback="handleCredentialResponse"
+     >
+</div>
+<button id="callCheckSocialLogin" style="display: none;" (click)="callCheckSocialLogin($event)"></button>
+<!-- data-cancel_on_tap_outside="false" -->

@@ -1,0 +1,102 @@
+<div class="mainView" *ngIf="course_Instance" >
+   <div  data-infinite-scroll
+   [infiniteScrollDistance]="5"
+   (scrolled)="onScrollDown()"
+   [scrollWindow]="true">
+  <div class="itemList" *ngFor="let searchdata of search_Data">
+    <div class="courseImg">
+      <div *ngIf="searchdata.isNewCourse" class="freetrialWrapper"  >
+        New
+      </div>
+      <img src={{searchdata.COURSE_PHOTO_PATH}} style="width:100%;cursor: pointer;" routerLink="/course/{{searchdata.COURSE_URL}}">
+    </div>
+    <div class="courseDesp" >
+      <p routerLink="/course/{{searchdata.COURSE_URL}}" style="cursor: pointer;">{{searchdata.TITLE}}</p>
+      <label routerLink="/page/{{searchdata.PAGE_UUID}}" style="cursor: pointer;"><span>By</span>{{searchdata.PAGE_TITLE}}</label>
+    </div>
+  </div>
+   </div>
+  <div class="viewAll" *ngIf="concentration"  (click)="showAllConcentration(0)" style="cursor: pointer;">See all courses for <span>{{search_name}}</span></div>
+  </div>
+
+<div class="mainView mainFollow" *ngIf="page_Instance">
+  <div  data-infinite-scroll
+  [infiniteScrollDistance]="5"
+  (scrolled)="onScrollDown()"
+  [scrollWindow]="true">
+  <div class="itemList" *ngFor="let searchpage of search_page; let i = index">
+    <div class="courseImg"><img src={{searchpage.PAGE_PROFILE_PATH}}  (error)="updateSourcePicPage($event)" routerLink="/page/{{searchpage.PAGEUUID}}" style="cursor: pointer;"></div>
+    <div class="courseDesp">
+      <p routerLink="/page/{{searchpage.PAGE_NAME?searchpage.PAGE_NAME:searchpage.PAGEUUID}}"  style="cursor: pointer;">{{searchpage.TITLE}}</p>
+      <label>{{searchpage.COUNT}} Followers</label>
+    </div>
+    <div class="connection">
+      <button  class="button24x7 redColorButton fright postButtonEnable"  (click)="pageFollowUnFollow(searchpage.PAGEUUID,i)" *ngIf="searchpage.isFollowing == 0 && !searchpage.IS_ADMIN" >
+       <span class="text" style="cursor: pointer;">Follow</span>
+      </button>
+      <button  class="button24x7 redColorButton fright postButtonEnable"  [ngClass]="{'postButtonfollowing': searchpage.isFollowing ==1 }" *ngIf="searchpage.isFollowing ==1">
+        <span class="text" style="cursor: pointer;">Following</span>
+       </button>
+
+    </div>
+  </div>
+  </div>
+  <div class="viewAll dfds"  *ngIf="concentration" (click)="showAllConcentration(1)" style="cursor: pointer;">See all pages for <span>{{search_name}}</span></div>
+</div>
+
+<div class="mainView mainConnection" *ngIf="people_Instance" style="margin-bottom:15px;">
+    <div  data-infinite-scroll
+    [infiniteScrollDistance]="5"
+    (scrolled)="onScrollDown()"
+    [scrollWindow]="true">
+  <div class="itemList" *ngFor="let searchpeople of search_people; let i = index">
+    <div class="courseImg"><img src={{searchpeople.USER_PROFILE}} (error)="updateSourcePic($event)" routerLink="/profile/{{searchpeople.USERNAME}}" style="cursor: pointer;"></div>
+    <div class="courseDesp">
+      <p routerLink="/profile/{{searchpeople.USERNAME}}" style="cursor: pointer;">{{searchpeople.NAME}}</p>
+      <label >Active {{searchpeople.ACTIVE_TIME}}</label>
+    </div>
+    <div class="connection">
+      <button  class="button24x7 redColorButton fright postButtonEnable"  (click)="sendRequest($event,i)"  *ngIf="searchpeople.isFriend == null && searchpeople.isFriend != 3">
+       <span class="text" style="cursor: pointer;"> Connect </span>
+      </button>
+      <button  class="button24x7 whiteColorButton  fright"  (click)="cancelFrndReq($event,i)" *ngIf="searchpeople.isFriend == 0  && searchpeople.isFriend != 3">
+        <span class="text cancelReq" style="cursor: pointer;"> Cancel Request </span>
+       </button>
+       <button  class="button24x7 whiteColorButton  fright" (click)="sendToInbox(searchpeople)"  *ngIf="searchpeople.isFriend == 1  && searchpeople.isFriend != 3">
+        <span class="text cancelReq" style="cursor: pointer;"> Message </span>
+       </button>
+    </div>
+  </div>
+    </div>
+    <div class="viewAll" *ngIf="concentration" (click)="showAllConcentration(2)" style="cursor: pointer;">See all people for <span>{{search_name}}</span></div>
+</div>
+
+
+
+<div data-infinite-scroll
+[infiniteScrollDistance]="10"
+(scrolled)="onScrollDown()"
+[scrollWindow]="true" style="margin-top:15px;width:100%;float:left;">
+<div #container ></div>
+</div>
+<div class="viewAll seeAll" *ngIf="concentration && (postDataLength>0)" (click)="showAllConcentration(3)" style="cursor: pointer;">See all posts for <span>{{search_name}}</span></div>
+
+<div class="emptystate no_search" *ngIf="emptyStatepage">
+  <div class="emptystate_inner">
+      <img  src="./assets/images/emptystates/svg/no-search-found.svg">
+      <span *ngIf="view==1">No course found</span>
+      <span *ngIf="view==2">No page found</span>
+      <span *ngIf="view==3">No people found</span>
+      <span *ngIf="view==4">No post found</span>
+      <span *ngIf="view==5">No search found</span>
+
+  </div>
+</div>
+<app-loginpopup
+  *ngIf="openLoginPopup"
+  (closePopup)="closeLoginPopUp($event)"
+  [usrData]="courseData"
+  [isError]="isError"
+  [errorText]="errorText"
+  [type]="openLoginPopupType"
+></app-loginpopup>

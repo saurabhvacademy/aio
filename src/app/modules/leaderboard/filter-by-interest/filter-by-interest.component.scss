@@ -1,0 +1,41 @@
+@import "../../search/searchfilter/searchfilter.component.scss";
+.filterMain{
+  margin-bottom: 0px;
+}
+.filterInner {
+    padding: 0px 5px 5px 5px;
+    max-height: calc(100vh - 122px);
+    overflow: auto;
+
+}
+
+.headData {
+    padding: 15px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.mobotp {
+    padding: 5px 10px;
+    height: 36px;
+    line-height: 24px;
+    display: block;
+    border: solid 1px rgba(2, 191, 231, 0);
+    margin-bottom: 1px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    color:#000;
+    &:hover {
+        background-color: rgba(2, 191, 231, 0.03);
+        border: solid 1px rgba(2, 191, 231, 0.5);
+    }
+
+}
+.listItem {
+    padding: 8px 0px 15px 0px;
+}
+
+.selected {
+    background-color: rgba(2, 191, 231, 0.03);
+    border: solid 1px rgba(2, 191, 231, 0.5);
+}

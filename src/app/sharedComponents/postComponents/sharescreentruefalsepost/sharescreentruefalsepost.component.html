@@ -1,0 +1,129 @@
+<div class="popup" style="position:relative;">
+    <div class=" popup_background_view" >
+        <div class=" sharescreenpostview share-true-false-screen">
+            <div class="popup_heading">
+
+                <ul>
+                    <li (click)="showPost('1')" [ngClass]="{'active': shareLinkPost==1}">Share Post</li>
+                    <li (click)="showPost('2')"  [ngClass]="{'active': shareLinkPost==2}">Get a link</li>
+                </ul>
+
+                <span class="close_div" (click)="closeShareScreen()">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+            </div>
+            <div class="col-md-12 fleft">
+                <div class="row">
+                    <div class='post_outer'>
+
+                        <div class="shareLinkContainer" *ngIf="shareLinkPost==2">
+                            <div class="shareLink">
+                                <!-- <input style='pointer-events: none' id="copySharelinkID" [(ngModel)]="postPublicShareLink" /> -->
+                                <div style='pointer-events: none;word-break: break-word;'  [innerText]="postPublicShareLink"></div>
+                                <input readonly class="urlget" type="text"  id="copySharelinkID" [(ngModel)]="postPublicShareLink" />
+
+                                <span class="copyLinkButton" (click)="postData.copyToClipboard('copySharelinkID')"><img src="assets/images/svg-three/copyicon.svg" alt=""></span>
+                            </div>
+                            <div class="shareButtonWrapper">
+                              <!-- <span class="quora"><img src="assets/images/svg-three/quora.svg" alt=""></span> -->
+                              <a class="fb" [href]="socialFbShareUrl" target="_blank"><img src="assets/images/svg-three/facebook-logo.svg" alt=""></a>
+                              <a  class="linkedin" [href]="socialLinkedInShareUrl" target="_blank"><img src="assets/images/svg-three/linkedin-logo.svg" alt=""></a>
+                              <a  class="twitter" [href]="socialTeitterShareUrl" target="_blank"><img src="assets/images/svg-three/twitter.svg" alt=""></a>
+                              <a  class="twitter" [href]="socialTelegramUrl" target="_blank"><img src="assets/images/telegram.svg" alt=""></a>
+                            </div>
+                        </div>
+
+                        <input *ngIf="shareLinkPost==1" class='sharedatainput' placeholder="Discuss within your interest." [(ngModel)]="sharedPostText" contenteditable="true" ondrop="return false;"  id="shareText" (focus)="focusin()" (focusout)="checkData()" (paste)="pastedData($event)" style="font-size:16px;" >
+                            <!-- <span class="placeholder" id="post_placeholder" *ngIf="hidePlaceHolder" contenteditable="false">Discuss within your interest.</span> -->
+                            <!-- <span *ngIf="!hidePlaceHolder"> </span> -->
+                        <div class="profile-and-content">
+                            <div class='post_profile'>
+                                <span *ngIf="isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="study24x7 {{user_name |trimData:30}}" (error)="updateSourcePic($event)" (click)="routeToProfile('page')"></span>
+                                    <div class="profiledetail">
+                                        <div>
+                                            <span title="{{user_name}}" class='name cursor-pointer' (click)="routeToProfile('page')">{{user_name |trimData:30}}</span>
+                                        </div>
+                                        <div>
+                                            <span class="follwer_count">{{followerCount}} followers</span>
+                                            <span class="follow_dote"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                                            <span class="follwer_count" *ngIf="time!=0">{{time}}</span>
+                                        </div>
+                                    </div>
+                                </span>
+                                <span *ngIf="!isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="study24x7 {{full_name |trimData:30}}" (error)="updateSourcePic($event)" (click)="routeToProfile('user')"></span>
+                                    <div class="profiledetail">
+                                        <span title="{{full_name}}" class='name cursor-pointer' (click)="routeToProfile('user')">{{full_name |trimData:30}}</span>
+                                        <span class="follwer_count">{{time}}</span>
+                                    </div></span>
+                            </div>
+                            <div class='post_profileContent'>
+                                <div class='postmain_container'>
+                                    <!-- 		<div class="posttagdiv"><span class="tags" *ngFor="let tags of tagsArr" [id]='tags.INTEREST_ID'>{{tags.INTEREST_NAME}}</span></div> -->
+
+
+                                    <p id="{{post_id}}_quesText" [innerHTML]="post_data"></p>
+                                    <div class="multiple_c_p_imgcontainer1" *ngIf="questionImg!=''  && questionImg != null  && questionImg!= undefined  ">
+                                        <img _ngcontent-c6="" src="{{questionImg}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                                <div class="post_options">
+                                    <label class='radiobtn_outer crs_auto'>
+                                        <input type="radio" class="Radio" id='option1' name='mainoption' value="A" disabled>
+                                        <label class="radio_btn" for="option1"></label>
+                                        <b> A </b>
+                                        <span class="inr_content" id="">True</span>
+                                    </label>
+                                    <label class='radiobtn_outer crs_auto'>
+                                        <input type="radio" class="Radio" id='option2' name='mainoption' value="B" disabled>
+                                        <label class="radio_btn" for="{{post_id}}_option2"></label>
+                                        <b> B</b>
+                                        <span class="inr_content" id="">False</span>
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+                            <div class="posttagdiv">
+                                <span class="tags" *ngFor="let tags of tagsArr" [id]='tags'>{{interestObj[tags]}}</span>
+                                <span class="tags wallintereswrapper" *ngIf="showIntArr">
+                                    <span style="position:  relative;top: -3px;">...</span>
+                                    <div class="wallinterestlist">
+                                        <div class="arrow-up"></div>
+                                        <ul [perfectScrollbar]="config">
+                                            <li  *ngFor="let tag of ltIntShow" [id]='tag'>
+                                                {{interestObj[tag]}}
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class='postsave'>
+
+                          <button type="submit" class="button24x7 redColorButton fright" [disabled]="Preloader"  *ngIf="postdata['EDIT_POST']==false && shareLinkPost==1" (click)="sharePost()" >
+                            <span class="text" *ngIf="showText">Share</span>
+                            <span class="Preloader" *ngIf="Preloader">
+                              <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" >
+                            </span>
+                          </button>
+
+                          <button [disabled]="loader === true"  type="submit" class="button24x7 redColorButton fright"  *ngIf="postdata['EDIT_POST'] && shareLinkPost==1" (click)="sharePost()">
+                            <span class="text" *ngIf="showText">Update</span>
+                            <span class="loader" *ngIf="loader">
+                              <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" >
+                            </span>
+                          </button>
+
+                        <button  (click)="closeShareScreen();" class="whiteColorButton button24x7"   >Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);" [dataObj]="dataConf"></app-confirmationpopup>

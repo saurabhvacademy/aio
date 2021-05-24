@@ -1,0 +1,31 @@
+<div class="popup saved-popup-alert" >
+    <div class="popup_background popup_fixed_scroll" ></div>
+    <div class="popup_main savedpopup">
+        <div class="popup_heading">Change folder name
+           <span  class="close_div" (click)="editfolderhide()">
+             <img  class="defaultt" src="assets/images/svg/tagcross.svg">
+             <img  class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+           </span>
+        <div class="col-md-12">
+
+            <div class='post_outer post_outer_border_none'>
+                <div class='post_profile'>
+                    <div class="savedcont">
+                        <span class="collectionname" >Enter new folder name</span>
+                        <input class="editfolder"  placeholder="Enter folder name" id="title" maxlength="" [(ngModel)]="folder_name" type="text">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class='post_profile saved_post_profile'>
+            <button  type="submit" class="button24x7 redColorButton fright confrmBtn" (click)="editSavedFolder()">Confirm</button>
+            <button  type="submit" class="button24x7 whiteColorButton fleft" (click)="editfolderhide()">Cancel</button>
+        </div>
+
+    </div>
+
+</div>

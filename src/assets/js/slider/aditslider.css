@@ -1,0 +1,49 @@
+.home-featured-content__tab-contents {
+    padding: 0;
+}
+/*
+.trending-courses-slide-list .slide-list__header{
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    float: right;
+    position: absolute;
+    top: -50px;
+    right: 0;
+}*/
+.trending-courses-slide-list .slide-list__nav-button li-icon{
+    width: auto;
+opacity: unset;
+padding: 5px 12px 5px 10px;
+height: auto;
+line-height: 15px;
+}
+.slide-list__nav-button:disabled .slide-list__nav-icon{
+   opacity: unset;
+padding: 5px 10px;
+height: auto;
+line-height: 15px;
+}
+.slide-list__heading{
+    /* font-family: 'Poppins', sans-serif; */
+font-size: 24px !important;
+font-weight: 500 !important;
+line-height: 0.75 !important;
+letter-spacing: 0.24px;
+text-align: left;
+color:#2c2e2f !important;
+margin-top: 0;
+margin-bottom: 25px;
+}
+.slide-list .slide-list__header{
+    margin-bottom: 0;
+}
+.mini-card{
+    padding-bottom: 0 !important;
+    box-shadow: unset;
+}
+.trending-top-topic .trending-courses__slide-list-item{
+  width: 239px;
+    border-radius: 6px;
+overflow: hidden;
+}

@@ -1,0 +1,41 @@
+
+<div class="galleryWidgetWrapper" *ngIf="isShowWidget">
+   <h2 class="header">Gallery</h2>
+   <div class="imageContainerWrapper">
+    <!-- <ng-container  *ngFor="let item of fullPath; let i = index" > -->
+    <div class="gallery_wrapper">
+     <div class="imgWrapper" [ngStyle]="{'background-image': getUrl(0)}">
+
+     </div>
+     </div>
+           <div class="gallery_wrapper">
+     <div class="imgWrapper" [ngStyle]="{'background-image': getUrl(1)}">
+
+     </div>
+      </div>
+     <div class="gallery_wrapper">
+     <div class="imgWrapper" [ngStyle]="{'background-image': getUrl(2)}">
+
+     </div>
+      </div>
+     <div class="gallery_wrapper">
+     <div class="imgWrapper" [ngStyle]="{'background-image': getUrl(3)}">
+
+     </div>
+      </div>
+     <div class="gallery_wrapper">
+     <div class="imgWrapper" [ngStyle]="{'background-image': getUrl(4)}">
+
+     </div>
+      </div>
+     <div class="gallery_wrapper">
+     <div class="imgWrapper" [ngStyle]="{'background-image': getUrl(5)}">
+
+     </div>
+      </div>
+     <!-- </ng-container> -->
+   </div>
+   <h6 class="footer" (click)="showGallery()">See All
+     <!-- <span><img src="assets/images/svg-three/greater.svg" alt=""></span> -->
+   </h6>
+</div>

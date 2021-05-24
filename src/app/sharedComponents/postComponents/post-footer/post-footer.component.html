@@ -1,0 +1,160 @@
+<!-- =============================================================================== -->
+<!-- post footer start    -->
+<!-- =============================================================================== -->
+<div class="post-footer-btn-outer-wrap">
+  <div class='post-footer-btn-inner-wrap clearfix' [ngClass]="{'sharedPostooter' : footerData.arr.TYPE==4}">
+
+    <span class=" post_footeroption_btn" [ngClass]="{active:importantCondition}">
+      <span class="onhover post_footer_inner_btn_wrapper">
+        <span class="icon_wrapper" (click)="important()">
+          <img src="assets/images/svg-three/post_icon/imp1.svg" class="defaultt" >
+          <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" class="imp" >
+          <img src="assets/images/svg-three/post_icon/f05050/imp1.svg" class="hoverr">
+        </span>
+        <span class="post_footer_text_wrapper"  (click)="important()"> Important</span>
+      </span>
+      <span (click)="impLikeShareFn()" class="post_footer_count" *ngIf="like!=0 ">{{like}}</span>
+    </span>
+    <app-likeshareviewall (closeViewAllThread)="impLikeShareStatus = $event" *ngIf="impLikeShareStatus" [data]="userLikeShareList"></app-likeshareviewall>
+
+
+    <span class='post_footeroption_btn '>
+      <span (click)="autoFocus()" class="onhover post_footer_inner_btn_wrapper">
+        <span class="icon_wrapper">
+          <img class="defaultt" src="assets/images/svg-three/post_icon/comment.svg">
+          <img class="hoverr" src="assets/images/svg-three/post_icon/f05050/comment.svg">
+        </span>
+        <span  class="post_footer_text_wrapper">
+          Comment
+        </span>
+      </span>
+      <span id="{{footerData.post_id}}_comm_count"  routerLink="/post/{{footerData.arr.USER_POST_ID}}" class="post_footer_count" *ngIf="footerData.comment!=0" [innerHTML]="footerData.comment">
+      </span>
+    </span>
+
+    <span class='post_footeroption_btn share'>
+
+        <span class="onhover post_footer_inner_btn_wrapper" #shareList>
+          <span class="icon_wrapper">
+            <img class="defaultt" src="assets/images/svg-three/post_icon/share.svg">
+            <img class="hoverr" src="assets/images/svg-three/post_icon/f05050/share.svg">
+          </span>
+          <span class="post_footer_text_wrapper" (click)="showSharePostList($event)">
+            Share
+          </span>
+        </span>
+        <span (click)="shareCountWallFxn()" class="post_footer_count" *ngIf="footerData.share!=0">
+          {{footerData.share}}
+        </span>
+
+
+      <!-- ======================== -->
+      <app-likeshareviewall (closeViewAllThread)="CloseViewAll($event)" *ngIf="shareLikeShareStatus"  [data]="footerData.userLikeShareList"></app-likeshareviewall>
+      <!-- ========================== -->
+
+      <ul *ngIf="isSharePostList" class="socialShareWrapper"  (mouseleave)="hideSocialList()" id="{{footerData.u_id}}_{{footerData.post_id}}_textShareList">
+        <li  (click)="sharePostview()">
+          <a  target="_blank">
+            <span>
+              <img src="assets/images/svg-three/post_icon/share.svg" alt="">
+            </span>
+            <span class="text">Share</span>
+          </a>
+        </li>
+        <li>
+          <a [href]="footerData.socialFbShareUrl" target="_blank">
+            <span>
+              <img src="assets/images/svg-three/facebook.svg" alt="">
+            </span>
+            <span class="text">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a [href]="footerData.socialTelegramUrl" target="_blank">
+            <span>
+              <img src="assets/images/telegram.jpg" alt="">
+            </span>
+            <span class="text">Telegram</span>
+          </a>
+        </li>
+        <li>
+          <a [href]="footerData.socialWhatsappLink" target="_blank"> <span><img src="assets/images/svg-three/social_invite/whatsaap.svg" alt=""></span> <span class="text">Whatsapp</span> </a>
+      </li>
+        <li>
+          <a (click)="postdata.copyPostURL(postPublicShareLink);postmenu=false">
+            <span class="copyIcon">
+              <img src="assets/images/svg-three/copyicon_white.svg" alt="">
+            </span>
+            <span class="text">Copy Link</span>
+          </a>
+        </li>
+        <!-- <li>
+          <a [href]="socialWhatsappLink" target="_blank">
+            <span><img src="assets/images/svg-three/whatsapp.png" alt="">
+            </span>
+            <span class="text">whatsapp</span>
+          </a>
+        </li>
+        <li>
+          <a [href]="socialTeitterShareUrl" target="_blank">
+            <span>
+              <img src="assets/images/svg-three/twiter.svg" alt="">
+            </span>
+            <span class="text">Twitter</span>
+          </a>
+        </li> -->
+      </ul>
+    </span>
+  </div>
+</div>
+  <!-- =============================================================================== -->
+  <!-- post footer end    -->
+  <!-- =============================================================================== -->
+
+  <!-- ================================================================================ -->
+  <!-- comment wrapper start -->
+  <!-- ================================================================================ -->
+
+  <div class='comment_outer clearfix' >
+  <div class="writecomment clearfix main-comment" [ngClass]="{'comment-present':viewCommentList}" >
+
+    <figure class="comment-profile cursor-pointer">
+      <img src="{{profilePicPath}}" >
+    </figure>
+
+      <div class='commentBoxWrapper'>
+        <textarea  class="placeholdercolor"  ondrop="return false;"  (keyup)="addComment($event);" (keyup.delete)="addComment($event)"
+            id='{{u_id}}_{{post_id}}_comm' [(ngModel)]="commentData"
+          placeholder="{{footerData.commentPlaceHolder}}"></textarea>
+        <div class="upload-img-outer-wrp" *ngIf="showCommentImg==2">
+          <span class='uploaded_image' >
+            <span class="hoverbg" ></span>
+            <span class="file-preloder" style="margin-top: 0px;"><img style="width:40px" src="assets/images/svg/preloader-25.svg" *ngIf="showPreloader"></span>
+            <span class="changeimg" (click) = "showCommentImg=1;comment_image=null;uuid='';file_path='';"
+             id="chng_{{footerData.u_id}}_{{post_id}}">Cancel</span>
+            <img src="{{image_upload_url}}" alt="{{altName}}">
+          </span>
+        </div>
+        <div class="comment_image_upload_wrapper" >
+          <input type="file" class="post_image" id="{{footerData.u_id}}_{{footerData.post_id}}_nci" (change)="addImageFile($event);" accept="image/*">
+          <label class="onhover" for="{{u_id}}_{{post_id}}_nci">
+            <img class="defaultt" src="assets/images/svg-three/post_icon/img.svg" >
+            <img class="hoverr" src="assets/images/svg-three/post_icon/f05050/img.svg" >
+          </label>
+        </div>
+        </div>
+      </div>
+
+      <div class='comment_list ' *ngIf="viewCommentList" >
+        <div #container></div>
+      </div>
+      <a class="seemore" (click)="getComment();" *ngIf="commentPresent">See more comments</a>
+    </div>
+
+    <!-- ================================================================================ -->
+    <!-- comment wrapper start -->
+    <!-- ================================================================================ -->
+    <div><app-shared-post-screen [postdata]="sharePostData" *ngIf="sharetextpostviewsec" (sharescreentxtpostdiv)="sharetextpostparenthide($event)"></app-shared-post-screen>
+    </div>
+    <app-likeshareviewall (closeViewAllThread)="CloseViewAll($event)" *ngIf="shareLikeShareStatus"  [data]="userLikeShareList"></app-likeshareviewall>
+    <app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

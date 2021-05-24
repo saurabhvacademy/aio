@@ -1,0 +1,37 @@
+<div class="solutionHintSec" >
+   <div class="HeadingArea" (click)="AddSolution()" style="cursor: pointer;"> + Add Solution</div>
+  <div class="addoption_outr" *ngIf="aadSolOrNot">
+
+    <div class="right_part " >
+      <div class="optionoutr active_question"  >
+        <!-- <input type="text"> -->
+
+        <div class="option_input">
+        <textarea style="overflow: hidden; font-size: 14px; border: none; height:22px;position: relative; resize: none;"
+        id="solutionText" [(ngModel)]="solText"
+        (keyup)="emitSolutionText()"
+        ></textarea>
+          </div>
+        <span *ngIf="uploaded" class="uploaded_image" >
+          <span class="changeimg"
+             (click)="removeupld($event)" id="solattch" >Cancel</span>
+          <span  class="file-preloder" style="margin-top: 0px;"><img style="width:40px"
+              src="assets/images/svg/preloader-25.svg" *ngIf="uploading" /></span>
+          <img src="{{ imageUploadUrl }}" />
+        </span>
+        <label class="option_image" >
+          <input type="file" class="post_image" id="fileupload" (change)="addFile($event)"
+            [disabled]="stopUpload" />
+          <label class="fileupload_image" for="fileupload"><img class="default"
+              src="assets/images/svg-three/attachment.svg" /><img class="on-hover"
+              src="assets/images/svg-three/attachment_red.svg" /></label>
+        </label>
+      </div>
+    </div>
+    <span title="Remove solution" (click)=removeSolution($event)  class="removeimg remove-option"
+      style="position: absolute;width: 15px;float: left;" >
+      <!-- + Add New Option -->
+      <img src="./assets/images/svg-three/add_post/negative.svg" alt="study24x7" />
+     </span>
+  </div>
+</div>

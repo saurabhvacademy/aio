@@ -1,0 +1,72 @@
+<div class="peopleknow_outer ppl-you-may-know">
+  <h6 class="widgetheading head_n top_heading">Invite Friends </h6>
+  <!-- empty state -->
+  <div class="page-about">
+    <div class="page_widget_inner">
+      <span><img src="assets/images/svg-three/friends-01.svg" alt="study24x7"></span>
+      <span>Invite friends</span>
+      <span>Invite your friends to follow this page</span>
+    </div>
+    <button class="button24x7  whiteColorButton" (click)="openinvitefriend()">Invite</button>
+  </div>
+  <!-- end empty state -->
+</div>
+<!--  popup -->
+<div class='darkbackground' *ngIf="invitepopupshow"></div>
+<div class='addpost_outer relative popup-open-wrapper' *ngIf="invitepopupshow"  >
+  <!-- <div class='darkbackground-close' (click)="hidecreatepagePopup();"></div> -->
+  <div class='darkbackground-close'></div>
+  <div class='container popup-container' style="position:relative;">
+    <div  class="popup-inner-wrap popup-open-inner-wrap" style="height:auto !important; width:380px;" *ngIf="invitepopupshow" >
+      <div class="toolbar addpost_hdng tlbar error_main_heading">Invite Friends
+
+        <span class="close_div" (click)="close_popup()">
+          <img class="defaultt" src="assets/images/svg/tagcross.svg">
+          <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+        </span>
+      </div>
+      <div class="friend-invites">
+        <p>Inform your friends about this page, so they can be a part of it.</p>
+        <!--                <div class="friend-search frnd-srch">
+        <span class="search-btn-wrap">
+        <button class="btn-wrap">
+        <img alt="study24x7" src="./assets/images/svg-three/head/search-02.svg"></button>
+      </span>
+      <input type="text" class="friend-srch" placeholder="Search Friends">
+    </div>-->
+    <div class="select-all select-people"><span (click)="showselect()">{{show ? 'Select All' : 'Unselect All'}}</span></div>
+  </div>
+  <div class='people_list list_npeople list-nopeople' [perfectScrollbar]="config" style="position:relative;">
+    <ul >
+      <li *ngFor="let arr of inviteList">
+        <div class="profileimg_know" routerLink="/profile/{{arr.USER_NAME}}">
+          <img src='{{arr.PROFILE_PHOTO_PATH}}'>
+        </div>
+        <div class='prfl_detail profile-detl' >
+          <div class="profilename" title="{{arr.FULL_NAME}}"  routerLink="/profile/{{arr.USER_NAME}}">{{arr.FULL_NAME | trimData:17}}</div>
+          <div class="grayinfo info-id">{{arr.USER_NAME}}</div>
+          <!-- <a class="connictionlink">johndoe1@gmail.com</a> -->
+        </div>
+        <!-- <button class="btn-pagetips">Invite</button> -->
+        <span class="select-invite">
+          <input class="librarycheckbox" name="invtFrndWid" id="invtFrndWid_{{arr.USER_ID}}" type="checkbox" value="{{arr.USER_ID}}">
+          <label class="list_opt" for="invtFrndWid_{{arr.USER_ID}}">
+            <span class="checkbox_btn">
+              <img class="checkboximg" src="assets/images/svg-one/checkbox-white.svg">
+            </span>
+          </label>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="invitefriend-footer">
+    <button class="redColorButton button24x7 fright" (click)="sendInvite($event)">Send Invites</button>
+  </div>
+  <!-- <div class="error_footerr">
+  <button class="btn btn-primary btn_delete">Delete</button>
+  <button class="btn graybutton">Cancel</button>
+</div> -->
+</div>
+</div>
+</div>
+<!-- end  popup -->

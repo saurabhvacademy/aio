@@ -1,0 +1,309 @@
+.inviteimage {
+  display: inline-block;
+  width: 80px;
+  float: left;
+}
+
+.popup_main .people_list {
+  height: auto;
+  left: 0px;
+  top: 62px;
+}
+
+.invite-wrap .people_list {
+  height: auto;
+  overflow: initial;
+  padding-top: 10px;
+}
+
+.invite-wrap .people_list li {
+  border-bottom: none;
+}
+
+.invite-wrap .people_list li .title-caption-wrap {
+  float: left;
+  padding-left: 10px;
+  width: 75%;
+  cursor: pointer;
+}
+
+.invite-wrap .people_list li .title-caption-wrap h5 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #447bbe;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.invite-wrap .people_list li .title-caption-wrap span {
+  font-size: 11px;
+  color: #8c8c8c;
+  display: block;
+  line-height: 12px;
+}
+
+.invite-wrap .people_list li img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  float: left;
+  border-radius: 50%;
+}
+
+h6.widgetheading {
+  text-transform: uppercase;
+}
+
+.invite_container {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  float: left;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 15px;
+  padding: 20px 0px;
+}
+
+.invite_container .invite_container_inner {
+  width: 100%;
+  float: left;
+}
+
+.invite_container .image {
+  width: 160px;
+  background-color: #fff;
+  float: left;
+  clear: both;
+  display: block;
+  position: relative;
+  margin-left: 50%;
+  transform: translateX(-68px);
+  -webkit-transform: translateX(-68px);
+}
+
+.invite_container .image img {
+  width: 100%;
+}
+
+.invite_container .invite_text {
+  float: left;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.invite_container .invite_text h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 25px;
+}
+
+.invite_container .invite_text span {
+  font-size: 12px;
+  margin-top: 6px;
+  float: left;
+  width: 100%;
+  color: #8c8c8c;
+  line-height: 18px;
+}
+
+.invite_container .invite_text .errMessage {
+  position: absolute;
+  left: 20px;
+  bottom: -16px;
+  text-align: left;
+  color: #f05050;
+  right: 0px;
+  width: auto;
+}
+
+.invite_container .input_wrapper {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+}
+
+.invite_container .invite_input_field {
+  float: left;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #2c2e2f80;
+  position: relative;
+  background: #f4f4f4;
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
+  padding-right: 70px;
+}
+
+.invite_container .invite_input_field input {
+  border: none;
+  color: #000;
+  background: #f4f4f4;
+  height: 100%;
+  font-size: 12px;
+  padding-right: 3px;
+  width: 100%;
+  border-radius: 18px;
+  padding-left: 10px;
+}
+
+.invite_container .invite_input_field input:focus {
+  border: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.invite_container .invite_input_field button {
+  float: right;
+  border: none;
+  font-size: 14px;
+  background-color: #fff;
+  border-radius: 33px;
+  -ms-box-shadow: 0 1px 2px 0px rgba(44, 46, 47, 0.1);
+  -o-box-shadow: 0 1px 2px 0px rgba(44, 46, 47, 0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(44, 46, 47, 0.1);
+  box-shadow: 0 1px 2px 0px rgba(44, 46, 47, 0.1);
+  padding: 5px 0px;
+  width: 65px;
+  line-height: 22px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  height: 30px;
+}
+
+.invite_container .stock_container {
+  float: left;
+  width: 100%;
+  margin: 20px 0px;
+  font-size: 10px;
+  position: relative;
+  /* .stock{
+			width: 80px;
+			height: 1px;
+			background: #f7f7f7;
+			margin-top: 8px;
+		}
+		.left{
+			float: left;
+		}
+		.right{
+      float: right;
+		} */
+}
+
+.invite_container .stock_container .stock_full {
+  float: left;
+  width: 100%;
+  height: 1px;
+  background: #f7f7f7;
+  margin-top: 8px;
+}
+
+.invite_container .stock_container h4 {
+  font-size: 14px;
+  width: 110px;
+  float: left;
+  line-height: 18px;
+  color: #8c8c8c;
+  position: absolute;
+  left: 50%;
+  margin-left: -55px;
+  top: -1px;
+  background-color: #fff;
+}
+
+.invite_container .invite_footer {
+  float: left;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.invite_container .invite_footer .social_button {
+  width: 100%;
+  float: left;
+}
+
+.invite_container .invite_footer .social_button .innerbuttonwrapper {
+  width: 44px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px 0px #2c2e2f40 !important;
+  -ms-box-shadow: 0 2px 5px 0px rgba(44, 46, 47, 0.2);
+  -o-box-shadow: 0 2px 5px 0px rgba(44, 46, 47, 0.2);
+  -webkit-box-shadow: 0 2px 5px 0px rgba(44, 46, 47, 0.2);
+  box-shadow: 0 2px 5px 0px rgba(44, 46, 47, 0.2);
+  height: 44px;
+  cursor: pointer;
+  margin: auto;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.invite_container .invite_footer .social_button .innerbuttonwrapper img {
+  width: 70%;
+  margin: auto;
+}
+
+.invite_container .invite_footer .social_button span {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #8c8c8c;
+  margin-top: 10px;
+  float: left;
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .invite_container .image img {
+    width: 70%;
+  }
+  .invite_container .stock_container .stock {
+    width: 18%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .invite_container .invite_container_inner {
+    padding: 0px 15%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .invite_container .invite_container_inner {
+    padding: 0px 10%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .invite_container .invite_container_inner {
+    padding: 0px 15px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+  .invite_container .stock_container .stock {
+    width: 25%;
+  }
+}
+/*# sourceMappingURL=socialinvite.component.css.map */

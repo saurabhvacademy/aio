@@ -1,0 +1,231 @@
+<div class='post_outer attachment-post-comp'>
+    <div class='post_profile'  >
+        <div class="post-header-inner-wrap clearfix">
+            <span *ngIf="isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" (error)="updateSourcePic($event)" alt="{{user_name |trimData:30}}" routerLink="/page/{{pg_id}}"></span>
+                <div class="profiledetail">
+                    <span title="{{user_name}}" class='name cursor-pointer' routerLink='/page/{{pg_id}}' [ngClass]="{'removeCursor': arr['IS_PAGEFEED'] }">{{user_name |trimData:30}}</span>
+                    <span class="follwer_count">{{arr['PAGE_FOLLOW_COUNT']}} followers</span>
+                    <span class="follow_dote">
+                        <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+                    </span>
+                    <span *ngIf="arr.VISIBILITY ==3">
+                        <span class="follwer_count cursor-pointer"  routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                        <span class="dote" ><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                        <span class="previcy_icon"><img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                    </span>
+                    <span class="follwer_count cursor-pointer" *ngIf="arr.VISIBILITY !=3" routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                    <span class="dote" *ngIf="arr.VISIBILITY !=3"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                    <span class="previcy_icon connectionWidth" *ngIf="arr.VISIBILITY ==2"><img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7"></span>
+                    <span class="previcy_icon" *ngIf="arr.VISIBILITY ==1"><img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7"></span>
+                </div>
+            </span>
+            <span *ngIf="!isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{my_profile?userProfilePic:profile_pic_path}}" alt="study24x7 {{full_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/profile/{{user_name}}"></span>
+                <div class="profiledetail">
+                    <span title="{{full_name}}" class='name cursor-pointer' routerLink='/profile/{{user_name}}'>{{full_name |trimData:30}}</span>
+                    <div>
+                        <span *ngIf="arr.VISIBILITY ==3">
+                            <span class="follwer_count cursor-pointer"  routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                            <span class="dote" ><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                            <span class="previcy_icon"><img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                        </span>
+                        <span class="follwer_count cursor-pointer" *ngIf="arr.VISIBILITY !=3" routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                        <span class="dote" *ngIf="arr.VISIBILITY !=3"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                        <span class="previcy_icon connectionWidth" *ngIf="arr.VISIBILITY ==2"><img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7"></span>
+                        <span class="previcy_icon" *ngIf="arr.VISIBILITY ==1"><img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7"></span>
+                    </div>
+                </div></span>
+            <span style="float: right" class='leftmenudrop' #reportPopup>
+                <button *ngIf="!arr['IS_PAGEFEED'] && isPagePost && arr['IS_ADMIN']!=1 && hideBtn==false" type="button" name="button" class="follow_container follw_btn" (click)="follow()" [ngClass]="{'following_container':followme,'cursolnone':followme}">
+                    <span class="follow">
+                        Follow
+                    </span>
+                    <span class="following cursolnone">
+                        <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+                        Following
+                    </span>
+                </button>
+                <span class="postright_btn postmenubtn" (click)="postdropdown()"><img src="assets/images/svg-three/post_icon/dot_menu.svg" class="postdropmenu defaultt"><img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" class="postdropmenu hoverr"></span>
+                <span   class="postbookmarkbtn postright_btn" [ngClass]="{ activesaved : saveCondition}" (click)="savedpost();">
+                      <img src="assets/images/svg-three/left_menu/bookmark.svg" class="defaultt"><img src=" assets/images/svg-three/left_menu/f05050/bookmark.svg" title="save" class="hoverr"><img src="assets/images/svg-three/post_icon/f05050/bookmark_fill.svg" title="Saved" class="bookmarked">
+                </span>
+                <span class="drpdwn_post postdrop for-post drop_post" *ngIf="postmenu">
+                    <ul >
+                        <li *ngIf="!arr['IS_PAGEFEED'] && isPagePost && arr['IS_ADMIN']!=1 && hideBtn==false"  (click)="follow()" class="follw_btn_inn"><div class="width100"><span class='default' ><img src="assets/images/svg-three/profile_about/edit.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/profile_about/f05050/edit.svg"></span> <div class="postdropdown_inner">Follow<span class="time">You can follow this page</span></div></div></li>
+                        <li *ngIf="!arr['IS_PAGEFEED'] && !my_profile && hideBtn" (click)= "unfollow()"><div class="width100"><span class='default' ><img src="assets/images/svg-three/profile_about/edit.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/profile_about/f05050/edit.svg"></span> <div class="postdropdown_inner">Unfollow<span class="time">You can unfollow this page</span></div></div></li>
+                        <li *ngIf="my_profile" (click)="show=true"><div class="width100"><span class='default' ><img src="assets/images/svg-three/profile_about/edit.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/profile_about/f05050/edit.svg"></span> <div class="postdropdown_inner">Edit<span class="time">You can edit your post</span></div></div></li>
+                        <li *ngIf="!my_profile" (click)="reprts(1)"><div class="width100"><span class='default' ><img src="assets/images/svg-three/post_icon/report.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/post_icon/f05050/report.svg"></span> <div class="postdropdown_inner">Report<span class="time">Mark as offensive </span></div></div></li>
+                        <li (click)="postdata.copyPostURL(postPublicShareLink);postmenu=false"><div class="width100"><span class='default' ><img src="assets/images/svg-three/copyicon.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/f05050/copyicon.svg"></span> <div class="postdropdown_inner">Get a link<span class="time">Click to copy </span></div></div></li>
+                        <li *ngIf="my_profile" (click)="fileDeletePostCnf();"><div class="width100"><span class='default' ><img src="assets/images/svg/dustbindrop.svg"></span><span class='hoverimg' ><img src="assets/images/svg/dustbindrophover.svg"></span> <div class="postdropdown_inner">Delete<span class="time">You can delete your post</span></div></div></li>
+                    </ul>
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <div class='post_profileContent'>
+        <div class='postmain_container' *ngIf="post_data!=''">
+            <p class="posttext posttextauto" *ngIf="DataView" [innerHTML]="post_data|trimData"></p><a *ngIf="DataView" class="continue-reading"(click)="DataView=!DataView">See more</a>
+            <p class="posttext posttextauto" *ngIf="!DataView" [innerHTML]="post_data"></p><a *ngIf="seeLess && !DataView" class="continue-reading"(click)="DataView=!DataView">See less</a>
+        </div>
+      
+
+        <div class="attached-file-wrap clearfix">
+            <div class="attached-file-inner-wrap clearfix">
+
+                <!-- <div class="doc-img-wrap"><img src="assets/images/svg/{{file_type}}.svg"></div> -->
+                <div class="doc-img-wrap" (click)="openDocumentViewer()">
+                    <img src="assets/images/svg/{{file_type}}.svg " alt="study24x7"></div>
+                <div class="doc-detail-wrap clearfix">
+                    <div class="doc-detail-left-wrap">
+                        <div class="postfilenam" title="{{file_name}}" (click)="openDocumentViewer()">{{file_name |trimData:40}}</div>
+                        <!-- <p class="graytextpost">{{pages}} Pages</p> -->
+                        <span class="download-count"><span>{{download_Count}}</span> Downloads</span>
+                        <!--<span class="file-preview" (click)="openDocumentViewer()">View {{file_type | uppercase}}</span>-->
+                    </div>
+                    <div class="doc-detail-right-wrap">
+                        <span class="download_file" (click)="downloadCount(path);" >
+                            <a >
+                                <span class="hover1">  <img src="assets/images/svg/download-doc.svg" title="Download file"></span>
+                                <span class="defoult1"> <img src="assets/images/svg/download-doc-gray1.svg" title="Download file"></span>
+
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="posttagdiv">
+            <span class="tags" *ngFor="let tags of tagsArr" [id]='tags'>{{interestObj[tags]}}
+        </span>
+        <span class="tags wallintereswrapper" *ngIf="showIntArr" id="{{post_id}}_interestpos">
+            <span style="position:relative;top: -3px;" >...</span>
+            <div class="wallinterestlist" id="{{post_id}}_shftToLeft">
+                <div class="arrow-up" id="{{post_id}}_shiftArrowLeft"></div>
+                <ul [perfectScrollbar]="config">
+                    <li *ngFor="let tag of ltIntShow" [id]='tag'>
+                        {{interestObj[tag]}}
+                </li>
+            </ul>
+        </div>
+    </span>
+</div>
+
+</div>
+<div class="post-footer-btn-outer-wrap">
+    <!-- <div class='post_footer post_footer_bottom'> -->
+    <div class='post_footer post-footer-btn-wrap clearfix'>
+        <span class='post_footeroption dropdown-ppl-list-wrap ' [ngClass]="{ clicked : importantCondition}" >
+
+              <span><span class="default" (click)="important()"><img src="assets/images/svg-three/post_icon/imp1.svg" class="defaultimp defaultt "><img src="assets/images/svg-three/post_icon/f05050/imp2.svg" class="activeimp" ><img src="assets/images/svg-three/post_icon/f05050/imp1.svg" class="hoverr"></span> <span (click)="important()">Important</span><span (click)="impLikeShareFn()" class="count-sq" *ngIf="like!=0">{{like}}</span></span>
+
+            <!-- ======================== -->
+            <app-likeshareviewall (closeViewAllThread)="impLikeShareStatus = $event" *ngIf="impLikeShareStatus" [data]="userLikeShareList"></app-likeshareviewall>
+            <!-- ========================== -->
+
+
+
+
+        </span>
+
+        <span class='post_footeroption'>
+            <span (click)="autoFocus()"><span class="default"><img class="defaultt" src="assets/images/svg-three/post_icon/comment.svg"><img class="hoverr" src="assets/images/svg-three/post_icon/f05050/comment.svg"></span>Comment</span><span id="{{post_id}}_comm_count"  routerLink="/post/{{arr.USER_POST_ID}}" class="count-sq" *ngIf="comment!=0" [innerHTML]="comment"></span>
+        </span>
+
+
+        <span class='post_footeroption dropdown-ppl-list-wrap share'>
+            <span>
+                <span #shareList>
+                    <span class='default' style="width:22px;">
+                        <img class="defaultt" src="assets/images/svg-three/post_icon/share.svg">
+                        <img class="hoverr" src="assets/images/svg-three/post_icon/f05050/share.svg">
+                    </span><span (click)="showSharePostList($event)">
+                        &nbsp;Share
+                    </span>
+                </span>
+                <span (click)="shareLikeShareFn()" class="count-sq" *ngIf="share!=0">
+                    {{share}}
+                </span>
+            </span>
+            <!-- ======================== -->
+            <app-likeshareviewall (closeViewAllThread)="CloseViewAll($event)" *ngIf="shareLikeShareStatus" [data]="userLikeShareList"></app-likeshareviewall>
+            <!-- ========================== -->
+            <!--		<span class='post_footeroption'(click)="sharePost()">
+                                    <span class='default' ><img class="defaultt"src="assets/images/svg/share.svg"><img class="hoverr" src="assets/images/svg/share-g.svg"></span>Share-->
+
+            <ul *ngIf="isSharePostList" class="socialShareOnHover" (mouseleave)="showSharePostList($event)" (touchend)="hideSocialList()" id="{{u_id}}_{{post_id}}_fileShareList">
+
+                <li  (click)="sharefilePostscreen()">
+                    <i>
+                        <span  style="float:left;  "><img src="assets/images/svg-three/post_icon/share.svg" alt=""></span>
+                        <span class="text">Share</span>
+                    </i>
+                </li>
+                <li><a [href]="socialFbShareUrl" target="_blank">  <span><img src="assets/images/svg-three/facebook.svg" alt=""></span> <span class="text">Facebook</span></a></li>
+                <li><a [href]="socialTelegramUrl" target="_blank">  <span><img src="assets/images/telegram.jpg" alt=""></span> <span class="text">Telegram</span> </a></li>
+                <li>
+                    <a [href]="socialWhatsappLink" target="_blank"> <span><img src="assets/images/svg-three/social_invite/whatsaap.svg" alt=""></span> <span class="text">Whatsapp</span> </a>
+                </li>
+                <li><a (click)="postdata.copyPostURL(postPublicShareLink);postmenu=false">  <span class="copyIcon"><img src="assets/images/svg-three/copyicon_white.svg" alt=""></span><span class="text">Copy Link</span> </a></li>
+                <!-- <li><a [href]="socialWhatsappLink" target="_blank">  <span><img src="assets/images/svg-three/whatsapp.png" alt=""></span> <span class="text">whatsapp</span></a></li>
+                <li><a [href]="socialTeitterShareUrl" target="_blank">  <span><img src="assets/images/svg-three/twiter.svg" alt=""></span> <span class="text">Twitter</span></a></li> -->
+
+            </ul>
+
+
+
+        </span>
+        <!--		<span class='post_footeroption'(click)="sharePost()">
+                                <span class='default' ><img src="assets/images/svg/share.svg"></span>  5 Share
+                        </span>-->
+    </div>
+</div>
+<div class='comment_outer' >
+    <!-- <div class='comment_list'>
+        <div #container></div>
+    <!--<app-comment></app-comment>- ->
+
+
+</div> -->
+    <div class="writecomment clearfix main-comment" [ngClass]="{'comment-present':viewCommentList}">
+        <!--		<input type='text' placeholder="Write a comment...">-->
+        <figure class="comment-profile cursor-pointer">
+            <img src="{{userProfilePic}}" alt="study24x7 {{this._constantService.getSessionDataBYKey('full_name')}}" (error)="updateProfilePic($event)"></figure>
+        <div class='optionoutr' >
+            <!-- <input type="text"> -->
+            <div class="placeholdercolor" (keydown.enter)="false" contenteditable="true" (paste)="postdata.onPaste($event)" ondrop="return false;"  (focusout)="showPlaceHolder()"  (click)="hidePlaceHolder($event)" (keydown)="hidePlaceHolder($event);"  (keyup)="addComment($event)"   id='{{u_id}}_{{post_id}}_comm' #commentPlaceHolder  (contextmenu)="autoFocus();postdata.onPaste($event)">
+                {{_constantService.commentPlaceHolder}}
+            </div>
+            <div class="upload-img-outer-wrp" *ngIf="showCommentImg==2">
+                <span class='uploaded_image'>
+                    <span class="removeimg" (click) = "showCommentImg=1;comment_image=null;uuid='';file_path='';"><img src='assets/images/svg/close.svg' ></span>
+                    <span class="hoverbg" ></span>
+                    <span class="file-preloder" style="margin-top: 0px;"><img style="width:40px" src="assets/images/svg/preloader-25.svg" *ngIf="showPreloader"></span>
+                    <span class="changeimg" (click)="change_Commentimage($event)" id="chng_{{u_id}}_{{post_id}}">Change</span>
+                    <!--            <img src="{{option_image1_url}}"> -->
+                    <img src="{{image_upload_url}}" alt="study24x7">
+                </span>
+            </div>
+            <label class="option_image" >
+                <input type="file" class="post_image" id="{{u_id}}_{{post_id}}_nci" (change)="addImageFile($event);">
+                <label class="fileupload_image" for="{{u_id}}_{{post_id}}_nci"><img class="default" src="assets/images/svg-three/post_icon/img.svg" ><img class="on-hover" src="assets/images/svg-three/post_icon/f05050/img.svg" ></label>
+            </label>
+        </div>
+
+    </div>
+    <div class='comment_list' *ngIf="viewCommentList">
+        <div #container></div>
+    </div>
+    <a class="seemore" (click)="getComment()" *ngIf="commentPresent">See more comments</a>
+
+</div>
+</div>
+
+<div *ngIf="savepagepopup"><app-savedpopup (folder_id)="savedFolderId=$event" (closeSavedPopup)="savepagepopup=$event;saveCondition=$event;" (savedStatus)="saveCondition=$event" [postData]='arr'></app-savedpopup></div>
+<div *ngIf="reportpopup" ><app-reports (closeReportPopup)="removePost($event);" [postId]="post_id"></app-reports></div>
+<div><app-textpostedit (hideBox)="show=$event" *ngIf="show" [post_id]="editPostId"></app-textpostedit></div>
+<app-sharescreenfileattachment (sharefileattachmentpostscreendiv)="sharecount($event)" *ngIf="sharescreenfilesec" [postdata]="arr"></app-sharescreenfileattachment>
+<app-confirmationpopup *ngIf="fileConfirmDelete" (closeComfirmPopupThread)="fileCloseDeleteConfirm($event);" [dataObj]="dataConf" [savedFolderId]="savedFolderId"></app-confirmationpopup>
+<!--<app-documentviewer *ngIf="documentViewerStatus" (closeDocViewEvent)="closeDocView($event)"></app-documentviewer>-->
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

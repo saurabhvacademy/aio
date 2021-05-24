@@ -1,0 +1,159 @@
+/* ==========================================================================
+  Common variables
+  ========================================================================== */
+/**
+*
+* DO NOT use these variables directly in components.
+* Assign them to component specific variables
+*
+*/
+
+/* font-family */
+$fontmontserrat: 'Montserrat';
+$SourceSansPro:  'Source Sans Pro';
+/* font-family*/
+
+/* Colors */
+$backgroundgray :#e6ecf1;
+$themeblue : #F05050;
+$themegray : #f5f7fa;
+$textcolor : #2c2e2f;
+$textgrey : #8c8c8c;
+$maingreen: rgb(7,162,8);
+$stroke : #dfe0e8;
+$borderRadius: 5px;
+$inputTypeHeight: 35px;
+$inputTypeFont: 12px;
+$headerHeight: 60px;
+$headerLineHeight: $headerHeight - 5px;
+$mainboxShadow: 0 0 7px rgba(0,0,0,0.1);
+$dropdownwidth: 400px;
+$dropdwncontentwidth: $dropdownwidth - 100px;
+$ntfctnprofile: 40px;
+$inrprflimg : $ntfctnprofile + 8px;
+$PostPicture: 40px;
+$commentPicture: $PostPicture - 10px;
+$subcommentPicture: $commentPicture;
+$mainpostName: 16px;
+$maincommentName: $mainpostName - 2px;
+$darkthemestroke: $themeblue;
+$progressbarRed: #ed6568;
+$rightanswer : #5bbc5b;
+$themelighten : rgba($themeblue, 0.2);
+$lightgray : #fafafa;
+$lightstroke: #f4f4f4;
+$lighttext: #8c8c8c;
+$bgtheme:#e6ecf0;
+$borderColor:#dfe0e8;
+$strockchecked:#65BFA3;
+$btnRed:#ED6E71;
+$btnDarkGray:#545454;
+$bgWhite:#fff;
+$colorWhite:#fff;
+$borderWhite:#fff;
+$colorBlack:#000;
+$borderBlack:#000;
+$gray20:#333;
+$bggray20:#333;
+$gray80:#ccc;
+$bggray80:#ccc;
+$bordegray80:#ccc;
+$gray55:#8c8c8c;
+$colorfooter:#9ba1ab;
+$bgalert:#ffc3bf;
+$borderalert:#fff2f0;
+
+
+/* Border radius */
+$borderRadiusDefault: 6px;
+
+/* ==========================================================================
+  Browser support
+  ========================================================================== */
+$ie7: false;
+$ie8: false;
+
+/* ==========================================================================
+  Component specific variables
+  ========================================================================== */
+
+/* Typography
+   ========================================================================== */
+$baseFontSize: 14px;
+// When using baseFontSize variable, must use it with fontSize mixin
+/* $baseFontFamily: Arial, sans-serif; */
+$baseLineHeight: 1.5;
+$LineHeight18: 18px;
+$LineHeight20: 20px;
+$LineHeight22: 22px;
+$LineHeight24: 24px;
+$LineHeight26: 26px;
+
+
+//must be unitless
+/* $baseSpacing: $baseLineHeight+em; */
+//vertical spacing
+/* $baseTextColor: $black; */
+
+
+
+/* Type Color */
+/* $typeHighlight: $blue;
+$typeLowlight: $lightGrey; */
+
+
+
+/* Link
+   ========================================================================== */
+/* $linkColor: $blue;
+$linkHoverColor: $lightBlue; */
+
+/* Background
+   ========================================================================== */
+/* $bgBasic: #fff; */
+
+/* Box
+   ========================================================================== */
+/* Contour */
+/* $boxBasicBorderRadius: $borderRadiusDefault; */
+
+/* Box foot */
+/* $boxFootDivider: $blue; */
+
+/* Divider
+   ========================================================================== */
+/* $dividerColor: $blue; */
+
+/* List
+   ========================================================================== */
+/* $listInlineDividerBorder: $lightGrey;
+$listBorder: $lightGrey; */
+
+/* Table
+   ========================================================================== */
+/* $tableBorderColor: $blue; */
+
+/* Form
+   ========================================================================== */
+/* $labelLeftWidth: 30%;
+$formFieldBorder: 1px solid $grey;
+$placeholderText: $lightGrey; */
+
+/* Button
+   ========================================================================== */
+/* $btnDefaultBg: #ddd;
+$btnDefaultBorder: $lightGrey; */
+
+/* Template
+   ========================================================================== */
+/* $skipLinkBg: $black;
+$bodyBg: #fff;
+$pageWidth: 997px; */
+
+/* header */
+/* $headerBgStop1: #09456a;
+$headerBgStop2: #02587e;
+$contentBg: #fff;
+$contentWidth: 960px; */
+/* footer */
+/* $footerBorder: $lightGrey; */

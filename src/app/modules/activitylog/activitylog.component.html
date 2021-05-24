@@ -1,0 +1,81 @@
+
+<app-header (sessionLogout)="sessionExpire($event)"></app-header>
+<div id="windiv">
+<div class="container main_body">
+    <div class="row">
+        <div class="col-md-3 col-sm-4 left_stickytab" id="left-side-bar" style="padding-right:0">
+          <div class="rightmenu_fixed" id="someDivleft" [ngClass]="{'fixedleft': isScrolled1}">
+            <app-leftmenu (hidePopup)="hidePageCreatePopup($event)" (showPopup)="displayPageCreatePopup($event)" [leftSecWidth]="secWidth"></app-leftmenu>
+        </div>
+        </div>
+        <div class="col-md-6 center_feed">
+            <div class="maindiv saved-post-main notification-wrap">
+                <div class="mainheading" >
+                  <span class="mobileBackButton" routerLink="/home">
+                    <img src="assets/images/svg-three/login_icon/left-arrow.svg" alt="">
+                  </span>
+                  Activity Log
+                </div>
+                <div class="inner-main-div ">
+
+                    <div class="content">
+                        <div class='people_list Experiance_list people_list_noti' data-infinite-scroll
+                             [infiniteScrollDistance]="10"
+                             (scrolled)="onScrollDown()"
+                             [scrollWindow]="true">
+                             <ul >
+                                <li *ngFor="let notify of activitylog;let i=index;" (click)="goToPost(i)" >
+
+                                    <div class="profileimg_know">
+                                        <img _ngcontent-c1="" src="{{notify.PROFILE_PIC_PATH}}" (error)="updateProfilePic($event)" alt="study24x7">
+                                    </div>
+                                    <div class='prfl_detail ntfi_pro_detail'>
+                                        <div class="profilename cursolnoneactivity" [innerHTML]="notify.ACTIVITY"></div>
+                                        <div class="grayinfo noti-grayinfo">
+                                          <span class="nficon {{notify.CLASS}}  nf-ques"></span>{{notify.UPDATE_DATE_TIME}}
+                                        </div>
+                                    </div>
+                                    <!-- <span class='listcross' (click)="removenotify(i)"><img class="" src="assets/images/svg/tagcross.svg"></span> -->
+
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                        <!-- empty state of empty log -->
+                        <div class="emptystate empty_wrap" *ngIf="emptyLog">
+                          <div  class="emptystate_inner">
+                            <img  class="emptyimg emptyfeed" src="assets/images/svg-three/empty_state/activitylog.svg" style="width:200px!important">
+                                <p _ngcontent-c38="" style="padding:20px;">No activity to show</p>
+                          </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 rightpanel pdng_left right_stickytab" id="wall-sidebar-wrap">
+          <div class="rightmenu_fixed" id="someDiv" [ngClass]="{'fixedleft': isScrolled}">
+            <app-peopleyouknow (sessionLogout)="sessionExpire($event)"></app-peopleyouknow>
+            <!-- <app-connectionrequest (sessionLogout)="sessionExpire($event)"></app-connectionrequest> -->
+            <!-- <app-suggestpages></app-suggestpages> -->
+            <p style="color:#9ba1ab;margin-top: 5px">
+                        <a routerLink="/privacy" target="_blank">Privacy Policy . </a>
+                  <a routerLink="/termandcondition" target="_blank">Terms of Use .</a>
+                  <a >{{this._constantService.version}}</a>
+                    </p>
+                    <footer> © {{current_year}} @Edubabble Learning Pvt. Ltd. </footer>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div *ngIf="isCratePagePopup">
+<app-createpage (hidecreatepagePopup)="hidePageCreatePopup($event)" ></app-createpage>
+</div>
+<!--<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);" [dataObj]="dataConf"></app-confirmationpopup>-->
+ <app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.898" viewBox="0 0 18 11.898">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#4b4646}
+        </style>
+    </defs>
+    <g id="prefix__Group_689" data-name="Group 689" transform="translate(-1061 -536)" style="opacity:.8">
+        <g id="prefix__Group_684" data-name="Group 684" transform="translate(1068.169 536.153)">
+            <path id="prefix__Path_484" d="M1093.653 541.534h-7.475a1.68 1.68 0 01-1.678-1.678v-1.678a1.68 1.68 0 011.678-1.678h7.475a1.68 1.68 0 011.678 1.678v1.678a1.68 1.68 0 01-1.678 1.678zm-7.475-3.508a.153.153 0 00-.153.153v1.678a.153.153 0 00.153.153h7.475a.153.153 0 00.153-.153v-1.678a.153.153 0 00-.153-.153z" class="prefix__cls-2" data-name="Path 484" transform="translate(-1084.5 -536.5)"/>
+        </g>
+        <g id="prefix__Group_686" data-name="Group 686" transform="translate(1068.169 542.864)">
+            <g id="prefix__Group_685" data-name="Group 685">
+                <path id="prefix__Path_485" d="M1093.653 563.534h-7.475a1.68 1.68 0 01-1.678-1.678v-1.678a1.68 1.68 0 011.678-1.678h7.475a1.68 1.68 0 011.678 1.678v1.678a1.68 1.68 0 01-1.678 1.678zm-7.475-3.508a.153.153 0 00-.153.153v1.678a.153.153 0 00.153.153h7.475a.153.153 0 00.153-.153v-1.678a.153.153 0 00-.153-.153z" class="prefix__cls-2" data-name="Path 485" transform="translate(-1084.5 -558.5)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_687" data-name="Group 687" transform="translate(1061 536)">
+            <path id="prefix__Path_486" d="M1063.593 541.186a2.593 2.593 0 112.593-2.593 2.6 2.6 0 01-2.593 2.593zm0-3.661a1.068 1.068 0 101.068 1.068 1.069 1.069 0 00-1.068-1.068z" class="prefix__cls-2" data-name="Path 486" transform="translate(-1061 -536)"/>
+        </g>
+        <g id="prefix__Group_688" data-name="Group 688" transform="translate(1061 542.712)">
+            <path id="prefix__Path_487" d="M1063.593 563.186a2.593 2.593 0 112.593-2.593 2.6 2.6 0 01-2.593 2.593zm0-3.661a1.068 1.068 0 101.068 1.068 1.069 1.069 0 00-1.068-1.068z" class="prefix__cls-2" data-name="Path 487" transform="translate(-1061 -558)"/>
+        </g>
+    </g>
+</svg>

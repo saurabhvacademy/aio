@@ -1,0 +1,142 @@
+// .backdrop {
+//   position: fixed;
+//   width: 100vw;
+//   height: 100vh;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+//   opacity: 0.7;
+//   background-color: black;
+//   z-index: 99;
+// }
+//
+// .popup {
+//   position: fixed;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   top: 22%;
+//   left: 30%;
+//   right:30%;
+//   z-index: 100;
+//   border-radius: 3px;
+//   div {
+//     width: 100%;
+//   }
+//   .heading {
+//     color: black;
+//     font-weight: 500;
+//     padding: 15px 40px;
+//     font-size: 22px;
+//     background: white;
+//     text-align: center;
+//     border-bottom: solid 1px lightgray;
+//
+//     border-radius: 3px 3px 0 0;
+//     div {
+//       width: 100%;
+//     }
+//   }
+//   .fields {
+//     padding: 0 40px;
+//     display: flex;
+//     flex-direction: column;
+//     background-color: white;
+//     border-radius: 0 0 3px 3px;
+//     .input-field {
+//       margin: 10px 0 0 0;
+//       border-radius: 3px;
+//       input {
+//         border: solid 1px lightgray;
+//         border-radius: 3px;
+//         height: 100%;
+//         font-size: 16px;
+//         padding: 15px 4px;
+//       }
+//       div {
+//         text-align: right;
+//         margin: 10px 5px 0 0;
+//       }
+//     }
+//     .submit-button {
+//       border-radius: 3px;
+//       color: white;
+//       margin: 15px 0 0 0;
+//       height: 45px;
+//       font-weight: 500;
+//       button {
+//         width: 100%;
+//         border-radius: 4px;
+//         text-align: center;
+//         border-radius: 3px;
+//         background: #f05050;
+//         height: 100%;
+//         padding: 15px 0;
+//         opacity: 0.9;
+//         img {
+//           width: 100%;
+//           height: 45px;
+//         }
+//       }
+//       button:hover {
+//         opacity: 1;
+//       }
+//     }
+//
+//     .cancel-button {
+//       margin: 10px 0 0 0;
+//       padding: 10px 0;
+//       text-align: center;
+//       color: black;
+//       cursor: pointer;
+//       &:hover{
+//         color:#f05050
+//       }
+//     }
+//   }
+// }
+//
+// .popup-mobile-view{
+//   top:5%;
+//   left:5%;
+//   right:5%;
+// }
+//
+// .popup-small-heigt-screen{
+//   bottom:5%;
+//   top:5%;
+//   overflow: scroll;
+//   display: block;
+// }
+//
+// .edit{
+//   cursor: pointer;
+//   border: solid 1px gray;
+//   border-radius: 15px;
+//   padding: 0 3px;
+//   box-shadow: 0px 1px 3px 1px #00000020 !important;
+//   width: 15px;
+//   margin-right:2px;
+//   &:hover{
+//     color: blue;
+//   box-shadow: 0px 1px 3px 1px blue !important;
+//   border-color: blue;
+//
+//   }
+// }
+// .error-box {
+//   padding: 10px 5px;
+//   margin: 10px 0;
+//
+//   font-size: 14px;
+//   color: #f05050;
+//   border: solid 1px #f05050;
+//   background: #fedcdc;
+//   border-radius: 5px;
+//
+// }
+.otpControl .optCount, .otpControl .optResend, .otpControl .optverifyLater {
+    margin-left: 15px;
+}

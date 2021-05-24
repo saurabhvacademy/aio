@@ -1,0 +1,93 @@
+<app-mnavbar *ngIf="token"
+  (showMobileMenu)="displayMobileMenu()"
+  (hideMenu)="hideMobileMenu()"></app-mnavbar>
+<div class="wrapper wrapper_responsive">
+  <app-header *ngIf="token"></app-header>
+  <app-loginheader *ngIf="!token"></app-loginheader>
+
+  <div class="sidemenu" [ngClass]="{ openfilter: isMobileMenue }">
+    <div *ngIf="isMobileMenue">
+      <div class="menuslidedarkbg" (click)="leftSidemenu()"></div>
+      <app-mmenu *ngIf="token" class="cntrMmenu"></app-mmenu>
+    </div>
+  </div>
+  <div id="windiv">
+    <div class="container main_body">
+      <div class="row">
+        <div
+          class="col-md-3 leftFilter left_stickytab"
+          id="sideThreeCol"
+          style="padding-right: 0;">
+          <div class="rightmenu_fixed" id="leftsectionfixed" [ngClass]="{'fixedleft': isScrolled}">
+            <app-leftmenu *ngIf="token" (hidePopup)="false" (showPopup)="false"  [leftSecWidth]="0"></app-leftmenu>
+          </div>
+        </div>
+        <div class="col-md-9 center_feed" id="centersection">
+          <div class="coursepage_outer" data-infinite-scroll
+            [infiniteScrollDistance]="2"
+            (scrolled)="onScrollDown()" [scrollWindow]="true">
+            <div class="headindData">
+              <div class="back_arrow" (click)="routeToLiveClassPage()">
+                <img src="assets/images/svg-three/login_icon/left-arrow.svg"
+                  alt="">
+              </div>
+              <h3>Upcoming Live Classes</h3>
+              <!-- <span>Live classes going on today</span> -->
+            </div>
+            <div class="cardItemSec" *ngFor="let upComingClass of
+              upComingClasses">
+              <div  class="courseslide">
+                <div style="cursor: pointer;" (click)="redirectTo('course',upComingClass)" class="imgLeft" *ngIf="upComingClass.COVER_TYPE==1">
+                  <img alt="" src="{{upComingClass.COURSE_COVER_PHOTO_PATH}}">
+                </div>
+
+                <div style="cursor: pointer;" (click)="redirectTo('course',upComingClass)" class="imgLeft" *ngIf="upComingClass.COVER_TYPE==0">
+                  <img alt="" src="{{upComingClass.COURSE_COVER_PHOTO_PATH +
+                    'cover/' + upComingClass.COURSE_UUID + '_1235x330.png?v=' +
+                    upComingClass.IMG_UPD_DT}}">
+                </div>
+                <div class="dataRight">
+                  <!-- <span class="leftmenuicons">
+                    <span class="rmenu"><img
+                        src="assets/images/svg-three/live-wall/lockIcon.svg"
+                        alt="" class="_savecoursepost">
+                    </span>
+                  </span> -->
+                  <h4 class="headingMn twolimemsg">{{postData.decodeURIPostData(upComingClass.STREAM_TITLE)}} </h4>
+                  <p style="cursor: pointer;" (click)="redirectTo('course',upComingClass)" class="dWnhead twolimemsg">{{postData.decodeURIPostData(upComingClass.COURSE_TITLE)}}</p>
+        <div class="upcommingCardBottom">
+                    <div class="cardControlSec">
+                      <div class="cardPublishOn">
+                        Starting on <span>{{_constantService.getDateFromMilliseconds('DDD, dd mmmm', upComingClass.START_TIME)}}</span>
+                      </div>
+                      <div class="cardButtonSec">
+                        <div class="joinBtn">
+                          <button (click)="redirectTo('course',upComingClass)">Join Class</button>
+                        </div>
+                        <!-- <div class="shareBtn">
+            <span   class="rmenu"><img   src="assets/images/svg-three/live-wall/shareicon.svg" alt="" class="_savecoursepost">
+            </span>
+          </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="formobile_bottom">
+                  <div class="cardControlSec">
+                    <span class="cardPublishOn">
+                      Starting on <span>{{_constantService.getDateFromMilliseconds('DDD,
+                        dd mmmm', upComingClass.START_TIME)}}</span></span>
+                      <div class="joinBtn">
+                      <button class="btnUI" (click)="redirectTo('course',upComingClass)">Join Class</button>
+                       </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

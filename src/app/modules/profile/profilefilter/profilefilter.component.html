@@ -1,0 +1,75 @@
+<div class="peopleknow_outer filterprofile">
+  <h6 class="widgetheading top_heading">Filter</h6>
+  <div class="people_list">
+    <!-- <div class="post_profileContent"> -->
+    <div class="web_filter">
+      <ul class="report_ul fieldlist">
+        <li class="">
+          <span>
+            <label class='mainlabel'>
+              <input type='checkbox' class='checkboxhide' [(ngModel)]=checkBoxes.zero id="0"
+                (change)="addTyp($event,0)">
+              <label class="checkbox" for="search3">
+                <img src='assets/images/svg/white_checkbox.svg'>
+              </label>
+              All
+            </label>
+          </span>
+        </li>
+        <li>
+          <span>
+            <label class='mainlabel'>
+              <input type='checkbox' class='checkboxhide' [(ngModel)]=checkBoxes.one id="1" (change)="addTyp($event,1)">
+              <label class="checkbox" for="search3">
+                <img src='assets/images/svg/white_checkbox.svg'>
+              </label>
+              Text
+            </label>
+          </span>
+        </li>
+        <li>
+          <span>
+            <label class='mainlabel'>
+              <input type='checkbox' class='checkboxhide' [(ngModel)]=checkBoxes.two id="2" (change)="addTyp($event,2)">
+              <label class="checkbox" for="search3">
+                <img src='assets/images/svg/white_checkbox.svg'>
+              </label>
+              Attachment
+            </label>
+          </span>
+        </li>
+        <li>
+          <span>
+            <label class='mainlabel'>
+              <input type='checkbox' class='checkboxhide' [(ngModel)]=checkBoxes.three id="3"
+                (change)="addTyp($event,3)">
+              <label class="checkbox" for="search3">
+                <img src='assets/images/svg/white_checkbox.svg'>
+              </label>
+              Question
+            </label>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mview_filter" style="display:none;">
+      <div class="form-group">
+        <input type="checkbox" id="All">
+        <label for="All">All</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="Text">
+        <label for="Text">Text</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="Attachment">
+        <label for="Attachment">Attachment</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="Question">
+        <label for="Question">Question</label>
+      </div>
+    </div>
+  </div>
+</div>

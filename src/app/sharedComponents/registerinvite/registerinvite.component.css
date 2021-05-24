@@ -1,0 +1,15 @@
+.invite-after-reg-outer-wrap {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.invite-after-reg-outer-wrap .container {
+  padding-top: 180px;
+}
+
+.invite-after-reg-outer-wrap .invite-after-reg-wrap {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=registerinvite.component.css.map */

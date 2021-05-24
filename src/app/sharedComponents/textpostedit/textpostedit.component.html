@@ -1,0 +1,160 @@
+<div class='darkbackground'></div>
+<div class="popup-open-wrapper addpost_outer" >
+    <div class='darkbackground-close' (click)="hideEditBox();"></div>
+    <div class="container main_body">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="row">
+                    <div class='addpost_outer'>
+
+
+                        <div  class="popup_heading">
+                            <span >Edit </span>
+                            <span *ngIf="isQuestion!=1" >Post </span>
+                            <span *ngIf="isQuestion==1" >Interest </span>
+                            <span  class="close_div" (click)="hideEditBox();">
+                                <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                                <img  class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                            </span>
+                        </div>
+
+
+
+                        <div class='tabContentInner' >
+                            <div class="padding_textarea" style="padding-top:0px;">
+                                <div class="maintextarea_div" style="padding-top:0px;">
+                                    <div [ngStyle]="{'pointer-events': isQuestion == 1 ? 'none' : 'auto'}" class='StatusInfo' contenteditable="true" id="post_data" (keyup)="checkLink($event)"  [innerHTML]="post_text" (keydown)="keydown($event)" (paste)="postData.onPaste($event);" (contextmenu)="postData.onPaste($event);">
+
+                                    </div>
+                                    <div id="imageField" *ngIf="isQuestion==1">
+                                        <div class="post_upload" >
+                                            <span _ngcontent-c1="" class="uploaded_image">
+
+                                                <img _ngcontent-c1="" src="{{image_upload_url}}" id='post_image_attached'>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="status_link_pre">
+                                        <div class='post_profileContent'  *ngIf='linkPresent && linkPreview ==2 && show_image==1'>
+                                            <span class="removeimg" style="position: absolute;right: 12px;top: 17px;cursor:pointer;">
+                                                <img _ngcontent-c1="" src="assets/images/svg/tagcross.svg" (click)="removeShareLink()" style="width: 100%;">
+                                            </span>
+                                            <div class='postmain_container' >
+                                                <a class="sharedlink_post shareLinkPostParentcontiner" href="" target="_blank" style="float:left;">
+
+                                                    <div  class="linkImageaBackgroundImage" [ngStyle]="{'background-image': getUrl(linkImage)}" *ngIf="linkImage != '' ">
+
+                                                    </div>
+                                                    <!-- <img src="{{linkImage}}" class="shareImagepost borderRadius"> -->
+
+                                                    <div class="sharedlink_content shareTextpost" [ngClass]="{'shareTextFullWidthpost': linkImage == 0}">
+                                                        <h4 title="{{linkAttrTitle}}">{{linkTitle|trimData}}</h4>
+                                                        <p title="{{linkAttrDesc}}">{{linkDescription|trimData}}</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class='post_profileContent'  *ngIf='youtubeLinkPresent && linkPreview ==2 && show_image==1'>
+                                            <span class="removeimg" style="position: absolute;right: -12px;top: -13px;"><img _ngcontent-c1="" src="assets/images/svg/close.svg" (click)="removeShareLink()"></span>
+                                            <div class='postmain_container' >
+                                                <a class="sharedlink_post" href="{{youtubeLink}}" target="_blank">
+                                                    <img src="{{linkImage}}" >
+                                                    <div class="sharedlink_content">
+                                                        <h4 title="{{linkAttrTitle}}">{{linkTitle}}</h4>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class='post_profileContent'  *ngIf='vimeoLinkPresent && linkPreview ==2 && show_image==1'>
+                                            <span class="removeimg" style="position: absolute;right: -12px;top: -13px;"><img _ngcontent-c1="" src="assets/images/svg/close.svg" (click)="removeShareLink()"></span>
+                                            <div class='postmain_container' >
+                                                <a class="sharedlink_post" href="{{vimeoLink}}" target="_blank">
+                                                    <img src="{{linkImage}}" >
+                                                    <div class="sharedlink_content">
+                                                        <h4 title="{{linkAttrTitle}}">{{linkTitle}}</h4>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class='post_profileContent' style='width:100%' *ngIf='(linkPresent || youtubeLinkPresent || vimeoLinkPresent) && linkPreview ==1' >
+                                             <span align='center'>Fetching Preview</span>
+                                        </div>
+                                    </div>
+
+
+                                    <!--           <input type="file" class="post_image" id="edit_post_image" (change)="addImageFile($event)">
+                                              <label class="fileupload_image" for="edit_post_image"><img src="assets/images/svg-three/post_icon/img.svg" ></label>-->
+                                    <div id="imageField" *ngIf="isQuestion!=1">
+                                        <input type="file" class="post_image" id="edit_post_file" (change)="addFile($event)">
+                                        <label class="fileupload_image fileupload" style="margin-top: 2px;" for="edit_post_file" ><img src="assets/images/svg/attachment.svg" ></label>
+                                        <div class="post_upload" *ngIf="show_file==2">
+                                            <span _ngcontent-c1="" class="uploaded_image">
+                                                <span class="removeimg"><img _ngcontent-c1="" src="assets/images/svg/close.svg" (click) = "removeImg();"></span>
+                                                <span class="hoverbg"></span>
+                                                <div>
+                                                <input type="file" class="post_image" id="edit_post_file" (change)="addFile($event)">
+                                                <!-- <span  class="changeimg" *ngIf="showPreloader==false"></span> -->
+                                                <label class="changeimg"  for="edit_post_file" >Change</label>
+                                                </div>
+                                                <span class="file-preloder" style="margin-top: 0px;"><img style="width:40px" src="assets/images/svg/preloader-25.svg" *ngIf="showPreloader"></span>
+                                                <img  src="{{image_upload_url}}" id='post_image_attached'>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="addtags editposttag"  id="posttagsedit">
+                                        <span *ngIf="!hideAddIntrest" type="text" class='taginput'  id='tags' (click)="showtags()"  >
+                                            +interest
+                                            <span  class="drpdwn_post drpdwn_tag " style="display:none" id="interest_tags" >
+                                                <ul  (mouseleave)="closeInterest()">
+                                                    <ul [perfectScrollbar]="config" style="position: relative;" >
+                                                        <ng-container *ngFor="let tags of user_interest">
+
+                                                            <li  *ngIf="tags.STATUS" [id]='tags.INTEREST_ID' (click)="addTags(tags.INTEREST_ID,tags.INTEREST_NAME)">{{tags.INTEREST_NAME}}</li>
+                                                        </ng-container>
+                                                    </ul>
+                                                </ul>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class='input_part'>
+                            <div class="mainfileupldng">
+                                <div class="col-md-6 col-sm-6">
+
+                                </div>
+                                <div class="col-md-12 col-sm-12" style="padding:0px;" >
+
+
+                                    <button [disabled]="loader === true"  class="button24x7 redColorButton fright" style="padding:0;min-width:75px;" type="submit"  (click)="updatePost();">
+                                        <span class="text" *ngIf="showText">Update</span><span class="loader"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader">
+                                        </span></button>
+
+                                    <button [disabled]="loader === true"  class="button24x7 whiteColorButton fleft" (click)="hideEditBox();" > Cancel</button>
+
+
+
+                                    <!--                                    <button [disabled]="loader === true"  type="submit" class="confirm_btn popup_btn btn btn-primary"   (click)="updatePost();"  >
+                                                                            <span class="text" *ngIf="showText">Update</span><span class="loader"><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader">
+                                                                            </span></button>-->
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

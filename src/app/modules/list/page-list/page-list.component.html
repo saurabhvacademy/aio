@@ -1,0 +1,119 @@
+<!--<header class="login_Header" >-->
+<app-loginheader></app-loginheader>
+<!--    <div class="container head_container" style="top:0px;">
+<img src="./assets/images/svg-three/Logo.png" class='logo' style="width: 150px;">
+<div class="head-login-cntnar">
+
+header emali field
+<div class="login-field lgn-e-input">
+<input type="text"  name="l_e" placeholder="Email or Moblie">
+</div>
+header emali field End
+
+header password field
+<div class="login-field lgn-p-input">
+<input type="Password"  class="" required  placeholder="Password">
+<a href='javascript:void(0);'  class='head_login_frgtpassword login_frgtpassword'>Forgot Password?</a>
+</div>
+header password field End
+
+header login button
+<button  [disabled]="showPreloader===true"  class='login-button login_btn registrationbtn'>
+<span class="text">Log In </span>
+</button>
+header login button End
+
+header new registration button
+<button class="reg-button"  style="background-color:#f05050;color:#fff;">Sign Up</button>
+header new registration button end
+
+</div>
+</div>-->
+<!--</header>-->
+
+<div class="windiv">
+  <div class="container main_body">
+    <div class="innerwrapper">
+      <div class="head">
+        <h6>Browse Page</h6>
+        <p>Here you can find the complete list of pages on Study24x7.</p>
+
+        <div class="searchWarap">
+          <input type="text" placeholder="search for page" [(ngModel)]="queryString" (keyup)="onchangeData()"><button>search</button>
+        </div>
+
+        <div class="searchmenu">
+          <ul>
+            <li  *ngFor="let Alpabet of upper" [ngClass]="{borderBottom: Alpabet === searchChar}" (click)="getPublicPage(Alpabet,1)">{{ Alpabet}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="directoryWrapper">
+        <div class="directoryHead">
+          <h3>Pages directory results for {{searchChar}}</h3>
+        </div>
+        <div class="directoryList" *ngIf="pageList">
+          <ul>
+            <li *ngFor="let a of directoryArray | filterdata: queryData : 'TITLE' | slice:0:20  ;  let index = index"><a (click)="pageRedirect(a.PAGE_NAME)">{{a.TITLE}}</a></li>
+          </ul>
+
+
+          <ul >
+              <li *ngFor="let a of directoryArray | filterdata: queryData : 'TITLE' | slice:20:40  ; let index = index"><a (click)="pageRedirect(a.PAGE_NAME)">{{a.TITLE}}</a></li>
+          </ul>
+
+          <ul>
+            <li *ngFor="let a of directoryArray | filterdata: queryData : 'TITLE' | slice:40:60 ; let index = index"><a (click)="pageRedirect(a.PAGE_NAME)">{{a.TITLE | trimData : 30}}</a>
+            </li>
+          </ul>
+        </div>
+
+        <div *ngIf=!count style="float: left;width: 100%;text-align: center;font-weight: 500;font-size: 17px;padding: 23px;">
+          No Record Found!
+        </div>
+
+        <div *ngIf="(totalCount >60)" style="" class="paginationWrapper">
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="getPublicPage(searchChar,1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="getPublicPage(searchChar,pager.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page,'hidePagination':pager.currentPage != page}">
+              <a (click)="getPublicPage(searchChar,page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="getPublicPage(searchChar,pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="getPublicPage(searchChar,pager.totalPages)">Last</a>
+            </li>
+          </ul>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="directoryList" *ngIf="!pageList">
+          <div class="cardWrapper"  *ngFor="let person of people">
+            <div class="imageWrapper">
+              <img src="https://scontent.fdel19-1.fna.fbcdn.net/v/t1.0-1/c12.0.50.50a/p50x50/19113900_441790566178014_2323104399924641727_n.jpg?_nc_cat=108&_nc_ht=scontent.fdel19-1.fna&oh=634e744215e1fcfc997e1353039782d0&oe=5CC9440C" alt="study24x7">
+            </div>
+            <h3> <a (click)="pageRedirect(person.name)">{{ person.name }}</a></h3>
+            <h6>Individual</h6>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

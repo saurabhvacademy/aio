@@ -1,0 +1,125 @@
+<!-- ===================================================================== -->
+<!-- new search box start -->
+<!-- ===================================================================== -->
+<img style="width: 20px; padding-top: 13px; margin-left: 14px;" (click)="inFocus=true" *ngIf="isResponsive && !inFocus" src="./assets/images/svg-three/head/search-02.svg" alt="">
+
+<div *ngIf="(isResponsive && inFocus) || !isResponsive" [ngClass]="{newSearchBox:true, responsiveView:isResponsive && inFocus}" class="newSearchBox">
+
+    <ul  style="opacity: 1;" class="mainSearchUlWrapper" [ngClass]="{'addShadow' : searchTab == 1 || searchTab == 2 }">
+        <li class="searchInpulWrapper" *ngIf="searchUiType==1">
+           <div style="opacity: 1;">
+            <input type="search" placeholder="Search the network" (focus)="inFocus=true"
+                (keyup)="search($event)"  [(ngModel)]="searchInput" autocomplete="off">
+            <div >
+                <span  *ngIf="!inFocus" class="close__tag" >
+                  <img   style="width: 100% !important;height: 100% !important;float: left;position: unset !important;" src="https://img1.study24x7.com/assets/images/svg-three/login_icon/serach_right.svg" ></span>
+            </div>
+            <div  class="search_tag_main"*ngIf="inFocus" >
+                <span (click)="navToSearch()"  class="search_tag" >
+                  SEARCH</span>
+                </div>
+        </div>
+        </li>
+        <li class="searchInpulWrapper1" *ngIf="searchUiType==2">
+            <input type="search" placeholder="Search" (focusout)="searchout()"
+                (click)="recentSearchInput()" (keyup)="search($event)" (keyup.enter)="searchout()"
+                [(ngModel)]="searchInput" autocomplete="off">
+            <img src="./assets/images/svg-three/head/search-02.svg" alt="">
+            <span class="close__tag" (click)="emptysearch()" *ngIf="searchInput"><img
+                    src="assets/images/svg/tagcross-gray.svg" alt=""></span>
+        </li>
+        <!-- for recent -->
+        <li  class="searchListWrapper" [perfectScrollbar]="config"
+
+            *ngIf="searchTab == 1 && recentSearch.length != 0">
+            <ul class="searchList recent_search searchTreandingList">
+                <li *ngif=false class="searchInnerHead">Trending Searches </li>
+                <!-- <li *ngFor="let recentItems of getRecentvalues()"
+                    routerLink="/searchresult/all/{{recentItems}}" class="searchInnerList ">
+
+                    <span class="headIconWraper">
+                      <img class="recentImg" src="./assets/images/svg-three/head/recent.png" alt=""></span>
+                    <span class="searchInnerListImg"></span> {{recentItems | trimData:30}}</li> -->
+                <li class="searchInnerList ">
+
+                    <span class="headIconWraper">
+                      <img class="recentImg" src="./assets/images/svg-three/login_icon/Pathtreading.svg" alt="">
+                      <img class="recentImgRed" src="./assets/images/svg-three/login_icon/Pathtreading_red.svg" alt="">
+                    </span>
+                    <span class="searchInnerListImg"></span> ssc</li>
+                <li class="searchInnerList ">
+
+                    <span class="headIconWraper">
+                      <img class="recentImg" src="./assets/images/svg-three/login_icon/Pathtreading.svg" alt="">
+                      <img class="recentImgRed" src="./assets/images/svg-three/login_icon/Pathtreading_red.svg" alt="">
+                    </span>
+                    <span class="searchInnerListImg"></span> Sunil Sir IAS Coaching</li>
+                <li class="searchInnerList">
+
+                    <span class="headIconWraper ">
+                      <img class="recentImg" src="./assets/images/svg-three/login_icon/Pathtreading.svg" alt="">
+                      <img class="recentImgRed" src="./assets/images/svg-three/login_icon/Pathtreading_red.svg" alt="">
+                    </span>
+                    <span class="searchInnerListImg"></span> Topline Coaching</li>
+                <li class="searchInnerList">
+
+                    <span class="headIconWraper ">
+                      <img class="recentImg" src="./assets/images/svg-three/login_icon/Pathtreading.svg" alt="">
+                      <img class="recentImgRed" src="./assets/images/svg-three/login_icon/Pathtreading_red.svg" alt="">
+                    </span>
+                    <span class="searchInnerListImg"></span> SSC CGL English Course</li>
+                <li class="searchInnerList">
+
+                    <span class="headIconWraper ">
+                      <img class="recentImg" src="./assets/images/svg-three/login_icon/Pathtreading.svg" alt="">
+                      <img class="recentImgRed" src="./assets/images/svg-three/login_icon/Pathtreading_red.svg" alt="">
+                    </span>
+                    <span class="searchInnerListImg"></span> Biology Classes by Pooja Mam</li>
+            </ul>
+        </li>
+        <!-- end recent -->
+        <!-- data show in prefarence start -->
+        <li class="searchListWrapper" [perfectScrollbar]="config" *ngIf="searchTab == 2 && searchInput!='' ">
+
+            <ul class="searchList" *ngIf="searched_course.length !=0 ">
+                <li class="searchInnerHead"><span class="headIconWraper"
+                        style="background-image: url('left_menu.svg#allcourse');"></span>Courses
+                    <span class="searchListViewAll" (click)="seeall(0)">See All</span></li>
+                <li *ngFor="let course of searched_course" class="searchInnerList"
+                     (click)="routeTo('course',course)"><span
+                        class="searchInnerListImg"></span>{{course.COURSE_TITLE}}</li>
+            </ul>
+            <ul class="searchList" *ngIf="searched_page.length !=0 ">
+                <li class="searchInnerHead"><span class="headIconWraper"
+                        style="background-image: url('left_menu.svg#mypage');"></span>Pages <span
+                        class="searchListViewAll" (click)="seeall(1)">See All</span></li>
+                <li *ngFor="let page of searched_page" class="searchInnerList"   (click)="routeTo('page',page)"><span
+                        class="searchInnerListImg"></span>
+                    {{page.TITLE}}</li>
+            </ul>
+            <ul class="searchList" *ngIf="searched_user.length !=0 ">
+                <li class="searchInnerHead"><span class="headIconWraper" style="width: 14px;height: 14px;"><img
+                            class="recentImg" src="./assets/images/svg-three/head/Userstudy.svg" alt=""></span>People
+                    <span class="searchListViewAll" (click)="seeall(2)">See All</span></li>
+                <li *ngFor="let user of searched_user" class="searchInnerList"  (click)="routeTo('profile',user)">
+                    <span class="searchInnerListImg"></span> {{user.FULL_NAME}}</li>
+            </ul>
+            <ul *ngIf="emptystate">
+                <li>
+                    <div class="emptystate no_search newsearch">
+                        <div class="emptystate_inner ">
+                            <img class="emptyreview" src="assets/images/svg-three/empty_state/search.svg">
+                            <p>No result found</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <span class="viewAllSearchList" *ngIf="searchTab == 2 && searchInput!='' && emptystate == false"
+                routerLink="/searchresult/all/{{searchInput}}" (click)="searchFor()">
+                <p>Search for <span style="cursor:pointer !important;">{{searchInput}}</span></p>
+            </span>
+        </li>
+
+        <!-- data show in prefarence start -->
+    </ul>
+</div>

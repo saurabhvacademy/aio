@@ -1,0 +1,94 @@
+@import '../../../app/sass/abstracts/fontfamily';
+$fontmontserrat: 'Montserrat';
+$SourceSansPro:  'Source Sans Pro';
+.popupMain{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;top:0;bottom:0;left: 0;right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    height: 100vh;
+    }
+    .showMessage{
+      max-width: 600px;
+      position: fixed;
+      left: auto;
+      right: auto;
+      bottom: 0px;
+      max-height: 100%;
+    .imgSec{
+      float: left;
+      width: 100%;
+      img{
+        width:100%;
+      }
+    }
+    }
+    .contSec{
+      background-color: #fff;
+        background-color: #fff;
+        float: left;
+        width: 100%;
+        padding: 10px 30px 0px 30px;
+      .messageCont{
+        text-align: center;
+      }
+    }
+    .messageCont{
+      .messageHead{
+        font-size: 20px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.9);
+    padding: 0px 30px;
+    line-height: 28px;
+    font-family:$fontmontserrat;
+      }
+      .messagePara{
+        font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+      }
+    }
+    .updateSec{
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    float: left;
+      button{
+        width: 100%;
+    height: 48px;
+    padding: 15px 65px;
+    border-radius: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(240, 80, 80, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color:#fff;
+    font-size: 16px;
+
+    font-weight: 500;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05);
+        background-color: #f05050;
+        border: 1px solid #f05050;
+        cursor: pointer;
+      }
+    .skipmsg{
+      font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0px;
+    margin-top: 5px;
+    cursor: pointer;
+    }
+    }
+    @media only screen  and (max-width:600px){
+      .showMessage{
+          max-width: 100%;}
+    }
+    @media only screen  and (max-width:340px){
+      .contSec {
+          padding: 10px 15px 0px 15px;}
+    }

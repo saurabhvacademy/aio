@@ -1,0 +1,42 @@
+<div class="_earn_points_container _outer">
+  <div class="_point_heading">
+     <h2>How to earn instant points ?</h2>
+     <p>Earn points while learning and climb your way to the top of the leaderboard</p>
+  </div>
+  <div class="_center_one">
+    <div class="_point_detail">
+      <span class="_discritionImg tickicon"></span>
+      <p style="opacity: 0.4;"><span class="bold_earnpoint">+100</span> points on signup</p>
+      <p><span class="bold_earnpoint">+100</span> points on completing your bio  </p>
+      <span class="_btn_fill"><button class="_earnpoint btn" type="button" name="button" (click)="earnPointTabClick('bio')">Fill Bio</button></span>
+    </div>
+    <div class="_point_detail">
+      <span class="_discritionImg tickicon"></span>
+      <p>Get points on answering questions</p>
+      <p class="pointearn"><span class="_discritionImg happyicon"></span><span class="bold_earnpoint">+4</span> points on every right answer</p>
+      <p class="pointearn"><span class="_discritionImg sadicon"></span><span class="bold_earnpoint">-1</span> point if you get it wrong </p>
+      <span class="_btn_fill"><button class="_earnpoint btn" type="button" name="button"  (click)="earnPointTabClick('question')">Lets Answer</button></span>
+    </div>
+  </div>
+  <div class="_center_contribute">
+    <div class="gainPoint_heading">Contribute and gain points</div>
+    <div class="_pointContainer">
+    <div class="_point_detail">
+      <span class="_discritionImg tickicon"></span>
+      <p class="_contr_hding"> Get points on user engagement on your posts </p>
+      <p><span class="bold_earnpoint">+1</span>point on every <span class="bold_earnpoint">10</span>question responses</p>
+      <p><span class="bold_earnpoint">+1</span>point on every <span class="bold_earnpoint">10</span>marked important</p>
+      <p><span class="bold_earnpoint">+1</span>point on every <span class="bold_earnpoint">5</span>shares</p>
+      <p><span class="bold_earnpoint">+1</span>point on every <span class="bold_earnpoint">100</span>article views</p>
+      <span class="_btn_fill"><button class="_earnpoint btn" type="button" name="button" (click)="earnPointTabClick('sharePost')">Share a Post</button></span>
+    </div>
+    <div class="_point_detail">
+      <span class="_discritionImg flagicon"></span>
+      <p class="_contr_hding"><span class="bold_earnpoint">+50</span> points on creating a page.</p>
+      <p><span class="bold_earnpoint">+1</span>point per follower</p>
+      <span class="_btn_fill"><button class="_earnpoint btn" type="button" name="button" (click)="earnPointTabClick('createpage')" >Create Page</button></span>
+    </div>
+   </div>
+  </div>
+</div>
+<app-createpage *ngIf="datatext" (hidecreatepagePopup)="hidePageCreatePopup($event)"></app-createpage>

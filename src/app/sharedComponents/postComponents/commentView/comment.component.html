@@ -1,0 +1,109 @@
+<div class='post_profile comment-outer' [ngClass]="{'sub-commentss':subCommentStatus}">
+    <span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" routerLink="/profile/{{u_name}}" (error)="updateSourcePic($event)"></span>
+    <div class="profiledetail">
+        <div class="profiledetailin" (mouseleave)="mouseOutOfComment()">
+            <div class='profilecmntdetail' >
+                <div class="profilecmntdetail_sub_cnt">
+
+                    <div class="commenttext" [ngClass]="{'see_more_cmt_cnt':seemorecmt}">
+                        <li class="name cursor-pointer" routerLink="/profile/{{u_name}}" >{{full_name |trimData:17}} &nbsp;</li>
+                        <!-- see more comment  -->
+
+                        <span [innerHTML]="comment_data">
+                        </span>
+                        <p class="seemoresmt"  *ngIf="!seemorecmt"><span (click)="mycomment()" class="cursor-pointer">see more</span></p>
+                        <p class="seeless"  *ngIf="seemorecmt"><span (click)="mycommentless()" class="cursor-pointer">see less</span></p>
+                    </div>
+
+
+                    <figure *ngIf="image" class="comment-img" >
+                        <img (click)="postimageshow($event);" src="{{imagePath}}" >
+                    </figure>
+                </div>
+            </div>
+            <div class="commenticon">
+                <span class="del-arrow-cont cursor-pointer" (click)="commentEditPopup()" *ngIf="_constantService.getSessionDataBYKey('u_id')==u_id">
+                    <img src="./assets/images/svg-three/post_icon/dot_menu.svg" alt="study24x7">
+                </span>
+                <span class="drpdwn_post postdrop for-post" *ngIf="commentEditStatus">
+                    <ul >
+                        <li> <div class="width100">
+                                <span class='default' >
+                                    <img src="assets/images/svg/dustbindrop.svg">
+                                </span>
+                                <span class='hoverimg'  >
+                                    <img src="assets/images/svg/dustbindrop-green.svg">
+                                </span> <div class="postdropdown_inner" (click)="delete($event)">
+                                    Delete
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+                </span>
+
+            </div>
+            <div class="post_footer comment_footer c_reply">
+                <div class="impwrapper" [ngClass]="{ doubletik : importantCondition}">
+                     <span  class="default">
+                        <img  class="defaultimp defaultt " src="assets/images/svg-three/post_icon/imp1.svg">
+                        <img  class="activeimp" src="assets/images/svg-three/post_icon/f05050/imp2.svg">
+                        <img  class="hoverr" src="assets/images/svg-three/post_icon/f05050/imp1.svg">
+                    </span>
+                    <span class='post_footeroption like'  [ngClass]="{ clicked : importantCondition}" (click)="important()">
+
+                          <!--              <span class='glyphicon glyphicon-thumbs-up' autofocus="autofocus"></span>-->
+
+
+
+                          Imp<span *ngIf="like!=0 "> {{like}}</span>
+                    </span>
+                </div>
+                <!--<span *ngIf="replycount!=0 ">{{replycount}}</span>-->
+                <span class='post_footeroption' *ngIf="replycount!=0" (click)="getReplyonComment($event)" >Reply<span id='{{postId}}_count'> {{replycount}}</span></span>
+                <span class='post_footeroption rply' *ngIf="replycount==0" (click)="getReplyonComment($event)">Reply</span>
+                <span class='post_footeroption cmnt_time'>{{time}}</span>
+
+                <!--- reply code-->
+                <div class='comment_outer comment_outer_reply outer-wrap ' *ngIf="showAddReplyOnComment">
+                    <div class="writecomment writecommentinner">
+                        <div class="writecomment" autofocus="autofocus" >
+                            <div class="writecomment clearfix main-comment" [ngClass]="{'comment-present':viewCommentList}" >
+                                <div class='optionoutr' >
+                                    <div class="placeholdercolor"  contenteditable="true" ondrop="return false;" (paste)="postdata.onPaste($event)" (click)="autoFocus()" (focusout)="showPlaceHolder()" (keydown.enter)="addReplyOnComment($event)" (keydown)="autoFocus();"   id='{{postId}}_{{commentId}}_reply' (contextmenu)="autoFocus();postdata.onPaste($event)" >
+                                         {{_constantService.replyPlaceHolder}}
+                                </div>
+                                <div class="upload-img-outer-wrp" *ngIf="showCommentImg==2">
+                                    <span class='uploaded_image'>
+                                        <div class="upload-img-inner-wrap">
+                                            <!-- <span class="removeimg" (click) = "showCommentImg=1;comment_image=null;"><img src='assets/images/svg/close.svg' ></span> -->
+                                            <span class="hoverbg" ></span>
+                                            <span *ngIf="showPreloader" class="file-preloder" style="margin-top: 0px;"><img style="width:40px" src="assets/images/svg/preloader-25.svg" ></span>
+                                            <span class="changeimg" (click) = "showCommentImg=1;comment_image=null;file_path=''" id="chng_{{u_id}}_{{postId}}">Cancel</span>
+                                            <!-- <span class="changeimg" (click)="change_Commentimage($event)" id="chng_{{u_id}}_{{postId}}">Change</span> -->
+                                            <!-- <img src="{{option_image1_url}}">  -->
+                                            <!--<img src="{{image_upload_url}}">-->
+                                        </div>
+                                    </span>
+                                </div>
+<!--                                <label class="option_image amargin" >
+                                    <input type="file" class="post_image" id="{{u_id}}_{{postId}}_{{commentId}}_nci" (change)="addImageFile($event);" accept="image/*">
+                                    <label class="fileupload_image" for="{{u_id}}_{{postId}}_{{commentId}}_nci"><img class="default" src="assets/images/svg-three/post_icon/img.svg" ><img class="on-hover" src="assets/images/svg-three/post_icon/f05050/img.svg" ></label>
+                                </label>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='sub_Comment' *ngIf="subCommentStatus">
+                <div #container></div>
+            </div>
+            <a class="seemore" (click)="getReplyonComment(1)" *ngIf="replyOncommentPresent">See more replies</a>
+        </div>
+    </div>
+</div>
+</div>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<app-imageview *ngIf="postimagediv=='2'" (closePopUp)="postImageHide($event)" [imageUrl]="oneViewPath"></app-imageview>

@@ -1,0 +1,225 @@
+.container_top {
+  margin-top: 90px;
+}
+
+.container_top .contain_wrapper {
+  padding: 15px 30px;
+  height: auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.container_top .contain_wrapper .detail_cmp {
+  padding: 20px 0;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.container_top .contain_wrapper .detail_cmp span:first-child {
+  float: left;
+}
+
+.container_top .contain_wrapper .detail_cmp span:first-child h3 {
+  font-size: 18px;
+  color: #F05050;
+  margin-bottom: 5px;
+}
+
+.container_top .contain_wrapper .detail_cmp span:first-child p {
+  color: #2c2e2f;
+}
+
+.container_top .contain_wrapper .detail_cmp span:last-child {
+  float: right;
+}
+
+.container_top .contain_wrapper .detail_cmp span:last-child img {
+  width: 100px;
+}
+
+.ship_to {
+  padding: 15px;
+  color: #2c2e2f;
+}
+
+.ship_to .shipto_heading {
+  margin-bottom: 15px;
+}
+
+.ship_to span:nth-child(1), .ship_to span:nth-child(2) {
+  float: left;
+  width: 40%;
+  color: #F05050 !important;
+}
+
+.ship_to span:nth-child(3) {
+  float: left;
+  width: 20%;
+  color: #F05050;
+}
+
+.decription_wrapper .discription_heading {
+  padding: 15px;
+  background-color: #f5f7fa;
+  border-radius: 5px;
+}
+
+.decription_wrapper .discription_heading p span {
+  color: #2c2e2f;
+}
+
+.decription_wrapper .discription_heading p span:nth-child(1) {
+  float: left;
+}
+
+.decription_wrapper .discription_heading p span:nth-child(2), .decription_wrapper .discription_heading p span:nth-child(3), .decription_wrapper .discription_heading p span:nth-child(4) {
+  width: 12%;
+  float: right;
+}
+
+.discription_content {
+  padding: 15px;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.discription_content p span {
+  color: #2c2e2f;
+}
+
+.discription_content p span:nth-child(1) {
+  float: left;
+}
+
+.discription_content p span:nth-child(1) .certification_eco {
+  width: auto !important;
+  margin: 19px;
+}
+
+.discription_content p span:nth-child(2), .discription_content p span:nth-child(3), .discription_content p span:nth-child(4) {
+  width: 12%;
+  float: right;
+  margin: 19px 0;
+}
+
+.discription_content p span:nth-child(2) img, .discription_content p span:nth-child(3) img, .discription_content p span:nth-child(4) img {
+  width: 11px;
+  margin-top: -2px;
+}
+
+.decription_wrapper_total .discription_subtotal {
+  padding: 15px;
+}
+
+.decription_wrapper_total .discription_subtotal p {
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.decription_wrapper_total .discription_subtotal p span:first-child, .decription_wrapper_total .discription_subtotal p span:last-child {
+  width: 12%;
+  float: right;
+}
+
+.decription_wrapper_total .discription_subtotal p span:first-child img {
+  width: 11px;
+  margin-top: -2px;
+}
+
+.decription_wrapper_total .discription_heading_total {
+  padding: 15px;
+  background-color: #f5f7fa;
+  border-radius: 5px;
+}
+
+.decription_wrapper_total .discription_heading_total p {
+  font-weight: bold;
+}
+
+.decription_wrapper_total .discription_heading_total p span:first-child, .decription_wrapper_total .discription_heading_total p span:last-child {
+  width: 12%;
+  float: right;
+}
+
+.decription_wrapper_total .discription_heading_total p span:first-child img {
+  width: 11px;
+  margin-top: -2px;
+}
+
+.icon_wrapper {
+  padding-top: 35px;
+}
+
+.icon_wrapper .bottom_icon {
+  margin: auto;
+  width: 145px;
+  padding: 10px 0;
+}
+
+.icon_wrapper .bottom_icon span {
+  width: 51px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 9px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.icon_wrapper .bottom_icon span:hover {
+  border: 1px solid #F05050;
+}
+
+.icon_wrapper .bottom_icon span:hover .img_hover {
+  display: inline-block;
+}
+
+.icon_wrapper .bottom_icon span:hover img {
+  display: none;
+}
+
+.icon_wrapper .bottom_icon span .img_hover {
+  display: none;
+}
+
+.icon_wrapper .bottom_icon span img {
+  width: 20px;
+  height: 15px;
+  margin-top: -5px;
+}
+
+.error_main_heading {
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px !important;
+}
+
+.center_wrapperr {
+  padding: 20px;
+}
+
+.center_wrapperr p {
+  font-size: 14px;
+}
+
+.error_footerr {
+  background-color: #f5f7fa;
+  position: fixed;
+  width: 100%;
+  padding: 10px 15px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+.error_footerr .btn_delete {
+  margin-left: 10px;
+}
+
+.error_footerr button {
+  height: 35px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/*# sourceMappingURL=orderdetails.component.css.map */

@@ -1,0 +1,161 @@
+<div class="add_review_post post_outer">
+    <div class="addreview_hdng">Reviews</div>
+    <div class="post_profile">
+      <div class="topp_heading">
+        <p>Tell people what you think</p>
+      </div>
+        <div _ngcontent-c8="" class="post-header-inner-wrap clearfix">
+            <span _ngcontent-c8="" class="post_profilepic cursor-pointer"><img  tabindex="0" src="{{_constantService.getSessionDataBYKey('p_pic')}}" (error)="updateSourcePic($event)"></span>
+            <div  class="profiledetail">
+                <span  class="msg_rating" tabindex="0">{{_constantService.getSessionDataBYKey('full_name') |trimData:17}}</span>
+                <span  class="star-rating" >
+                    <div class="stars-rate" style="position:relative;">
+                        <input class="star star-5" id="star-5" type="radio" name="star" value='5.0'/>
+                        <label class="star star-5" for="star-5">
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                            <div class="rating-state5" >Excellent</div>
+                        </label>
+                        <input class="star star-4" id="star-4" type="radio" name="star" value='4.0'/>
+                        <label class="star star-4" for="star-4">
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                            <div class="rating-state4">Very good</div>
+                        </label>
+                        <input class="star star-3" id="star-3" type="radio" name="star" value='3.0'/>
+                        <label class="star star-3" for="star-3">
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                            <div class="rating-state3"> Good</div>
+                        </label>
+                        <input class="star star-2" id="star-2" type="radio" name="star" value='2.0'/>
+                        <label class="star star-2" for="star-2">
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                            <div class="rating-state2">Fair </div>
+                        </label>
+                        <input class="star star-1" id="star-1" type="radio" name="star" value='1.0'/>
+                        <label class="star star-1" for="star-1">
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                            <div class="rating-state1">Poor</div>
+                        </label>
+                    </div>
+                </span>
+
+                <!-- <span  class="star-rating">
+                    <div class="stars-rate" (click)="show_review_pop();">
+
+                        <input class="star star-5"  type="radio"  value="1"/>
+                        <label class="star star-5" >
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                        </label>
+                        <input class="star star-4"  type="radio"  value="2"/>
+                        <label class="star star-4" >
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                        </label>
+                        <input class="star star-3"  type="radio"  value="3"/>
+                        <label class="star star-3">
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                        </label>
+                        <input class="star star-2" type="radio" value="4"/>
+                        <label class="star star-2">
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                        </label>
+                        <input class="star star-1" type="radio" value="5"/>
+                        <label class="star star-1">
+                            <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                            <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                        </label>
+                    </div>
+                </span> -->
+            </div>
+            <div class="profile-and-content profile-text-container">
+                <div class='post_profile'>
+                    <textarea title="Tell people what you think about page." class="datainput_text"   placeholder="Tell people what you think about page." [(ngModel)]="revicedesc"></textarea>
+                </div>
+            </div>
+            <button type="button" name="button" class="whiteColorButton button24x7 fright" (click)="addPageRating()">Submit</button>
+        </div>
+    </div>
+
+
+</div>
+
+<!--  <div class="popup" style="position:relative;" *ngIf="review">-->
+<div class="popup" style="position:relative;" *ngIf="reviewinput">
+    <div class=" popup_background_view" >
+        <div class=" sharescreenpostview ">
+            <div class="popup_heading"><span >Review PageName</span>
+                <span class="close_div" (click)="hide_review_pop();">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+
+
+                    <div class='post_outer'>
+
+                        <div class='sharedatainput' >
+                            <span  class="post_profilepic cursor-pointer"><img  src="https://s3.ap-south-1.amazonaws.com/247-user/profile/{{_constantService.getSessionDataBYKey('u_id')}}_60x60.png" ></span>
+                            <span  class="star-rating" >
+                                <div class="stars-rate" style="position:relative;">
+                                    <input class="star star-5" id="star-5" type="radio" name="star" value='5.0'/>
+                                    <label class="star star-5" for="star-5">
+                                        <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                                        <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                                        <div class="rating-state5" >Excellent</div>
+                                    </label>
+                                    <input class="star star-4" id="star-4" type="radio" name="star" value='4.0'/>
+                                    <label class="star star-4" for="star-4">
+                                        <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                                        <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                                        <div class="rating-state4">Very good</div>
+                                    </label>
+                                    <input class="star star-3" id="star-3" type="radio" name="star" value='3.0'/>
+                                    <label class="star star-3" for="star-3">
+                                        <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                                        <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                                        <div class="rating-state3"> Good</div>
+                                    </label>
+                                    <input class="star star-2" id="star-2" type="radio" name="star" value='2.0'/>
+                                    <label class="star star-2" for="star-2">
+                                        <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                                        <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                                        <div class="rating-state2">Fair </div>
+                                    </label>
+                                    <input class="star star-1" id="star-1" type="radio" name="star" value='1.0'/>
+                                    <label class="star star-1" for="star-1">
+                                        <img class="star-rate" src="assets/images/svg-one/rate-gray.svg">
+                                        <img class="star-active" src="assets/images/svg-one/rate-active.svg">
+                                        <div class="rating-state1">Poor</div>
+                                    </label>
+                                </div>
+                            </span>
+                            <div class='sharedatainput sharedatainput1' contenteditable="true" id="reviewdata" (focus)="hidePlaceHolder=false" (focusout)="checkData()">
+                                <span class="placeholder" id="post_placeholder" *ngIf="hidePlaceHolder">Discuss within your interest.</span>
+                            </div>
+
+                        </div>
+                        <div class="profile-and-content">
+                            <div class='post_profile'>
+                                <textarea title="Tell people what you think about page." class="datainput_text"   placeholder="Tell people what you think about page." [(ngModel)]="revicedesc"></textarea>
+                            </div>
+
+                        </div>
+                        <div class='postsave'>
+                            <button  type="submit" class="button24x7 redColorButton fright"  (click)="addPageRating()">Post</button>
+                            <button  type="submit" class="button24x7 whiteColorButton fleft"  (click)="hide_review_pop();" >Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

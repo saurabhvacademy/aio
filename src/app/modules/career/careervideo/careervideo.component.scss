@@ -1,0 +1,241 @@
+@import './../../../sass/abstracts/variables';
+@import './../../../sass/abstracts/fontfamily';
+$fontmontserrat: 'Montserrat';
+$SourceSansPro:  'Source Sans Pro';
+.mainSec{
+  width:100%;
+  float: left;
+  background-color: #fff;
+  padding: 0px 0px;
+  margin-top: 40px;
+  .container{
+    padding: 0;
+    width: 100%;
+  }
+}
+.contWrapper{
+  width: 100%;
+  border-radius: 10px;
+background-color: #2c2e2f;
+padding: 15px;
+float: left;
+}
+.course_left {
+    float: right;
+    width: 49%;
+}
+.course_left_inner{padding: 10px 0px;}
+.imgRight.course_left{
+    float: left;
+    width: 48%;
+    text-align: right;
+    overflow: hidden;
+    border-radius: 5px;
+    img{width:100%;}
+    iframe{
+      width: 100%;
+    min-height: 300px;
+    float: left;
+    }
+}
+
+.heading_bold{
+  font-family: $fontmontserrat;
+font-size: 30px;
+color: #fff;
+font-weight: bold;
+padding-right: 55px;
+line-height: 38px;
+}
+.course_feat_info{
+p{
+font-size: 16px;
+margin: 25px 0px 40px;
+color: #fff;
+line-height: $LineHeight24;
+padding-right: 95px;
+}
+
+  ul{float: left;
+width: 100%;
+margin-top: 20px;
+    li{
+      padding: 0px 20px 15px 25px;
+      width: 100%;
+      float: left;
+      position: relative;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: $LineHeight22;
+      &::before{
+        content: "";
+          background-image:  url('./../../../../assets/images/career/white-tik.svg');
+          width: 15px;
+          height: 12px;
+          position: absolute;
+          left: 0;
+          top: 6px;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.vodMainSec{
+  z-index:5;position: fixed;
+  top: 13%;
+left: 50%;
+min-width: 50%;
+min-height: 400px;
+margin-left: -25%;
+background-color: #fff;
+
+
+.videoPlayerSec{float: left;
+width: 100%;
+height: 100%;
+position: absolute;}
+.videoPlayerYTube{
+  width: 100%;height: 100%;
+}
+
+.playerclose{
+  background-color: #767b7e;
+  position: absolute;
+right: 8px;
+top: 8px;
+width: 28px;
+height: 28px;
+z-index: 9;
+padding: 10px;
+border-radius: 100%;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+img{width:10px;}
+}
+
+
+}
+.watchVideo{
+  float: left;
+  width: 100%;
+  padding-left: 30px;
+  position: relative;
+  color: #fff;  font-family: $fontmontserrat;
+  font-size: 16px;
+  font-weight: 600;margin-top: 30px;
+  &:before{
+    content: '';
+    position: absolute;left: 0px;top: 0px;
+    width: 20px;height: 20px;
+    background-image: url('/assets/images/career/arrowIndication.svg');
+    background-repeat: no-repeat;
+}
+}
+@media only screen and (max-width:1024px){
+  .vodMainSec{
+  left: 50%;
+  min-width: 80%;
+  min-height: 400px;
+  margin-left: -40%;
+}
+}
+@media only screen and (max-width:768px){
+  .heading_bold {
+    font-size: 22px;
+    line-height: 28px;
+}
+.imgRight.course_left,  .course_left{
+    width: 100%;
+}
+.watchVideo{display: none;}
+.course_left_inner {
+  padding: 25px 0px 0px 0px;
+  float: left;
+}
+.imgRight.course_left iframe {
+    min-height: 395px;
+}
+.vodMainSec{
+left: 50%;
+min-width: 96%;
+min-height: 404px;
+margin-left: -48%;
+}
+
+}
+@media only screen and (max-width:640px){
+
+.vodMainSec{
+min-height: 348px;
+}
+.imgRight.course_left iframe {
+    min-height: 320px;
+}
+}
+@media only screen and (max-width:600px){
+
+.vodMainSec{
+min-height: 320px;
+}
+.imgRight.course_left iframe {
+    min-height: 305px;
+}
+}
+@media only screen and (max-width:540px){
+
+.vodMainSec{
+min-height: 288px;
+}
+.imgRight.course_left iframe {
+    min-height: 268px;
+}
+}
+@media only screen and (max-width:480px){
+  .heading_bold {
+    font-size: 18px;
+    line-height: $LineHeight24;
+    padding: 0px 0px 0px 0px;
+}
+.vodMainSec{
+min-height: 260px;
+}
+.imgRight.course_left iframe {
+    min-height: 230px;
+}
+.course_feat_info{
+  ul{
+    li{
+      font-size: 14px;
+      padding: 0px 0px 10px 25px;
+      line-height: $LineHeight20;
+
+    }
+  }
+
+
+}
+}
+@media only screen and (max-width:360px){
+
+.vodMainSec{
+min-height: 190px;
+}
+.imgRight.course_left iframe {
+    min-height: 164px;
+}
+}

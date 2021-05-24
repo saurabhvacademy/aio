@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,500,600,700&display=swap&subset=chinese-simplified");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+@import url(../../../app/sass/buttonhover.css);
+.font_sans_pro {
+  font-family: "Source Sans Pro";
+}
+
+.font_montserrat {
+  font-family: "Montserrat";
+}
+
+.font_noto_serif {
+  font-family: "Noto Serif SC", serif;
+}
+
+.font_roboto {
+  font-family: "Noto Serif SC", serif;
+}
+
+.btneffect:before,
+.btneffect:hover {
+  background: #e6e6e6 !important;
+}
+
+.modal-open .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-open .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  overflow: hidden;
+  outline: 0;
+  overflow-y: auto;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-open .modal .modal-dialog {
+  max-width: 780px;
+  margin: 10px auto;
+}
+
+.modal-open .modal .modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: transparent;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: .3rem;
+  outline: 0;
+}
+
+.modal-open .modal .modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0px;
+}
+
+.modal-open .modal .modal-body img {
+  width: 100%;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.modal-open .modal .modal-body .banner-web {
+  display: block;
+}
+
+.modal-open .modal .modal-body .banner-mobile {
+  display: none;
+}
+
+.modal-open .modal .closehomepop {
+  float: right;
+  position: absolute;
+  right: 22px;
+  top: 22px;
+}
+
+.modal-open .fade {
+  opacity: 0;
+  -webkit-transition: opacity .45s linear;
+  -o-transition: opacity .45s linear;
+  transition: opacity .45s linear;
+}
+
+.modal-open .fade .modal-dialog {
+  -webkit-transition: -webkit-transform .6s ease-out;
+  transition: -webkit-transform .6s ease-out;
+  -o-transition: -o-transform .6s ease-out;
+  transition: transform .6s ease-out;
+  transition: transform .6s ease-out,-webkit-transform .6s ease-out,-o-transform .6s ease-out;
+  -webkit-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.modal-open .show {
+  top: 80px;
+  opacity: 1;
+}
+
+.modal-open .show .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.popupBottom {
+  width: 100%;
+  float: left;
+  text-align: center;
+  height: 48px;
+  border-radius: 0px 0px 6px 6px;
+  background-color: #fff;
+}
+
+.popupBottom .redeemBtn, .popupBottom .activeCoupon {
+  color: #f05050;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.popupBottom .redeemBtn span, .popupBottom .activeCoupon span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.popupBottom .redeemBtn span img, .popupBottom .activeCoupon span img {
+  width: 100%;
+}
+
+.popupBottom .redeemBtn:hover {
+  color: #e11414;
+}
+
+.popupBottom .activeCoupon {
+  color: #46be8a;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-open .modal .modal-dialog {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .modal-open .modal .modal-dialog {
+    width: 96%;
+  }
+  .modal-open .modal .closehomepop {
+    right: 15px;
+    top: 15px;
+  }
+  .modal-open .modal .modal-body .banner-web {
+    display: none;
+  }
+  .modal-open .modal .modal-body .banner-mobile {
+    display: block;
+  }
+  .modal-open .popupBottom .redeemBtn, .modal-open .popupBottom .activeCoupon {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .modal-open .modal .modal-dialog {
+    max-width: 98%;
+  }
+}

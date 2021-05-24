@@ -1,0 +1,34 @@
+.profiledetailinr {
+  background-color: #f5f7fa;
+  width: auto;
+  display: inline-block;
+  float: left;
+  padding: 4px 10px 4px 7px;
+  border-radius: 14px;
+  max-width: 490px;
+  overflow: hidden;
+  height: auto;
+  position: relative;
+}
+
+.profiledetailinr .profilecmntdetail {
+  max-height: 105px;
+  overflow: hidden;
+  width: 100% !important;
+  position: relative;
+  max-width: 100% !important;
+}
+
+.profiledetailinr .profilecmntdetail .name {
+  width: auto;
+  display: inline-block;
+  margin-right: 9px;
+  margin-bottom: 0;
+  cursor: pointer !important;
+}
+
+.profiledetailinr .profilecmntdetail .show_comment {
+  display: inline;
+  float: none;
+}
+/*# sourceMappingURL=newreview-comment.component.css.map */

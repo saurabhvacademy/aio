@@ -1,0 +1,369 @@
+.twolimemsg {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  --max-line: 2;
+}
+
+.liveclassWrapper {
+  padding: 0px;
+}
+
+.liveclassWrapper .coursepage_outer {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 6px 0 var(--black-16);
+          box-shadow: 0 3px 6px 0 var(--black-16);
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.liveclassWrapper .coursepage_outer .course_item {
+  padding-left: 15px;
+  margin: 0 0 10px;
+  height: 340px;
+}
+
+.liveclassWrapper .coursepage_outer .upcoming_classes .up_heading {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.9);
+  display: block;
+}
+
+.liveclassWrapper .coursepage_outer .upcoming_classes .down_heading {
+  font-size: 16px;
+  line-height: 0.94;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.6);
+  display: block;
+  margin-top: 5px;
+}
+
+.liveclassWrapper .coursepage_outer .upcoming_classes .allShow {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  color: #0f98df;
+  top: -8;
+}
+
+.liveclassWrapper .coursepage_outer .secHead {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.liveclassWrapper .coursepage_outer .course_student_veiw {
+  padding-right: 0 !important;
+}
+
+.liveclassWrapper .coursepage_outer .upcoming_class_view .course_item {
+  height: auto !important;
+  margin: 0 0px 8px !important;
+}
+
+.liveclassWrapper .coursepage_outer_bottom {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  background-color: transparent;
+}
+
+.course_cont {
+  background: #ffffff;
+}
+
+.course_cont .course_img_div {
+  height: 150px !important;
+}
+
+.course_cont .course_img_div .course_live_status {
+  background-image: linear-gradient(102deg, #ee5151 5%, #e51919 94%);
+  height: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 3px 12px 3px 12px;
+  position: absolute;
+  bottom: -11px;
+  border-radius: 0 15px 15px 0;
+  line-height: 1.5;
+  left: 0;
+}
+
+.course_cont .course_details {
+  padding: 15px 15px 10px 15px !important;
+}
+
+.course_cont .course_details .course_name p {
+  font-size: 16px !important;
+  text-align: left !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.course_cont .course_details .course_name span {
+  font-size: 14px !important;
+  line-height: 1.07 !important;
+  text-align: left !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+  font-weight: normal;
+  margin-top: 6px;
+}
+
+.course_cont .course_details .profilethumb_wrapper {
+  padding: 15px 0px 15px 50px;
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.course_cont .course_details .profilethumb_wrapper .image {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  float: left;
+  overflow: hidden;
+  cursor: default !important;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  border: solid 1px #d9d9d9;
+}
+
+.course_cont .course_details .profilethumb_wrapper .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.course_cont .course_details .profilethumb_wrapper .pagename {
+  float: left;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 3px 0px;
+  text-align: left;
+  cursor: pointer;
+  color: #000000;
+  height: auto;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.course_cont .course_details .profilethumb_wrapper .content_detail {
+  width: 100%;
+  float: left;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  text-align: left;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.course_cont .course_details .profilethumb_wrapper .content_detail .time {
+  display: inline-block;
+  font-weight: 500;
+}
+
+.course_cont .course_details .join_class {
+  width: calc(100% - 30px);
+  height: 36px;
+  border-radius: 18px;
+  border: .5px solid #fff;
+  background-color: rgba(240, 80, 80, 0.1);
+  font-size: 14px;
+  color: #f05050;
+  position: absolute;
+  bottom: 28px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  line-height: 2;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.course_cont .course_details .join_class:hover {
+  border: solid 1px #f05050;
+  background-color: #f05050;
+  color: #fff;
+}
+
+.upcoming_class_wrapper {
+  padding: 10px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  width: 100%;
+  float: left;
+  border-radius: 7px;
+}
+
+.upcoming_class_wrapper .upcoming_wrapp {
+  width: 100%;
+  position: relative;
+  padding: 0 0 0 166px;
+  height: 78px;
+}
+
+.upcoming_class_wrapper .upcoming_wrapp .course_img_div {
+  width: 155px;
+  height: 78px;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.upcoming_class_wrapper .upcoming_wrapp .course_img_div img {
+  width: 100%;
+  height: 100%;
+}
+
+.upcoming_class_wrapper .upcoming_wrapp .upcoming_head {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: left;
+  color: #222222;
+}
+
+.upcoming_class_wrapper .upcoming_wrapp .upcoming_cont {
+  display: block;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 5px;
+}
+
+.upcoming_class_wrapper .join_btn_wrapp {
+  width: 100%;
+  float: left;
+  padding-top: 10px;
+}
+
+.upcoming_class_wrapper .join_btn_wrapp span.cont_ent {
+  font-size: 13px;
+  line-height: 1.15;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.9);
+  float: left;
+  padding: 10px 0;
+}
+
+.upcoming_class_wrapper .join_btn_wrapp span.cont_ent span {
+  font-weight: 500;
+}
+
+.upcoming_class_wrapper .join_btn_wrapp button {
+  width: 112px;
+  height: 36px;
+  border-radius: 18px;
+  border: solid 1px #ffbfbf;
+  background-color: rgba(240, 80, 80, 0.1);
+  font-size: 15px;
+  color: #f05050;
+  font-weight: 500;
+  line-height: 1;
+  float: right;
+}
+
+.upcoming_class_wrapper .join_btn_wrapp button:hover {
+  border: solid 1px #f05050;
+  background-color: #f05050;
+  color: #fff;
+}
+
+@media only screen and (max-width: 991px) {
+  .coursepage_outer {
+    background: #ffffff !important;
+  }
+  .secHead.upcoming_classes .down_heading {
+    display: none !important;
+  }
+  .secHead.upcoming_classes .allShow {
+    color: #909090 !important;
+  }
+  .liveclassWrapper .coursepage_outer {
+    margin-bottom: 10px;
+    border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .course_item {
+    height: 336px !important;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .upcoming_class_view .slide {
+    width: 100% !important;
+  }
+  .upcoming_class_view .course_item {
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+  }
+  .upcoming_class_view .course_item .upcoming_class_wrapper {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 0;
+    padding-bottom: 0 !important;
+    width: 100%;
+  }
+  .upcoming_class_view .course_item .upcoming_class_wrapper .join_btn_wrapp {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2c2e2f20;
+  }
+  .upcoming_class_view .course_item .upcoming_class_wrapper .join_btn_wrapp button {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .upcoming_class_view .course_item .upcoming_class_wrapper .upcoming_wrapp .upcoming_head {
+    font-size: 14px;
+  }
+  .liveclassWrapper .coursepage_outer {
+    padding-bottom: 0;
+  }
+  .liveclassWrapper .course_student_veiw .slide:last-child .upcoming_class_wrapper .join_btn_wrapp {
+    border-bottom: none;
+  }
+}
+
+.blink_me {
+  -webkit-animation: blinker 2s linear infinite;
+          animation: blinker 2s linear infinite;
+}
+
+@-webkit-keyframes blinker {
+  0% {
+    color: #f05050;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@keyframes blinker {
+  0% {
+    color: #f05050;
+  }
+  50% {
+    color: #fff;
+  }
+}
+/*# sourceMappingURL=live-classes.component.css.map */

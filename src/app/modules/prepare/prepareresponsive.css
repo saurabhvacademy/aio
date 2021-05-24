@@ -1,0 +1,736 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap");
+@media only screen and (max-width: 1200px) {
+  ._left_related_inner_article p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  ._center_related_article ._center_related_inner_article ._center_related_content p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    height: auto;
+  }
+  ._wrapper ._left_related_article {
+    width: calc(33.33% - 15px);
+  }
+  ._wrapper ._center_related_article {
+    width: 33.33%;
+  }
+  ._wrapper ._right_related_article {
+    width: calc(33.33% - 15px);
+  }
+  .marketplace_wrapper .home-banner .middle_wrapper .hdng_sctn_left {
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .marketplace_wrapper .home-banner {
+    background-position: center;
+  }
+  .marketplace_wrapper .home-banner .middle_wrapper .hdng_sctn_left {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+    padding-right: 0;
+    width: 100%;
+    float: none;
+  }
+  .marketplace_wrapper .home-banner .middle_wrapper .hdng_sctn_left .txt_hdnghome {
+    text-align: center;
+  }
+  .marketplace_wrapper .home-banner .middle_wrapper .hdng_sctn_left .new-seeker {
+    text-align: center;
+  }
+  .curcContent {
+    display: none;
+  }
+  ._best_selling_text_wrapper ._best_selling_text {
+    display: none;
+  }
+  ._best_selling_discription {
+    display: none;
+  }
+  ._best_selling_course_wrapper {
+    display: none;
+  }
+  ._right_related_article {
+    display: none;
+  }
+  ._trading_inner_wrapper ._trading_list_container {
+    margin-left: 0;
+  }
+  ._trading_list_container:nth-child(2n+1) {
+    margin-left: 0px !important;
+    width: 50% !important;
+  }
+  ._trading_list_container:nth-child(2n) {
+    width: calc(50% - 5%) !important;
+    margin-left: 15px !important;
+  }
+  ._trading_list_container:nth-child(3n+1) {
+    margin-left: 5%;
+  }
+  ._collection_wrapper {
+    padding: 25px;
+    margin-bottom: 0px !important;
+  }
+  ._collection_wrapper ._collection_left_wrapper {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  ._collection_wrapper ._collection_left_wrapper h2 {
+    text-align: center;
+  }
+  ._collection_wrapper ._collection_left_wrapper button {
+    margin-top: 15px;
+  }
+  ._collection_wrapper ._collection_right_wrapper {
+    width: 100%;
+  }
+  .headingMn {
+    width: 100%;
+    display: block;
+    padding-right: 82px;
+  }
+  .bestsellingcrcs {
+    float: left;
+    width: 100%;
+    height: 127px;
+    padding: 10px 0px 10px 113px;
+    border-bottom: 0;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  ._best_selling_image {
+    width: 103px;
+    height: 103px;
+    top: 12px;
+  }
+  ._best_selling_heading {
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: auto;
+  }
+  ._best_selling_price_wrapper {
+    width: auto;
+    position: absolute;
+    right: 3px;
+    text-align: right;
+    height: auto;
+    bottom: 15px;
+    float: left;
+  }
+  ._best_selling_price_wrapper ._best_selling_price {
+    font-size: 20px;
+  }
+  .cardview__bestsellingCourse {
+    padding-bottom: 0 !important;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+    height: 127px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #fff;
+    border-radius: 5px;
+    max-width: calc(100vw - 50px) !important;
+  }
+  .bestSelling__contentwrap.bestSelling__contentwrap {
+    min-height: 127px;
+    display: block;
+    margin-bottom: 15px;
+  }
+  ._left_related_article {
+    width: calc(50% - 15px) !important;
+    float: left;
+  }
+  ._center_related_article {
+    width: 50% !important;
+    float: left;
+  }
+  ._center_related_article ._center_related_inner_article ._center_related_content p {
+    -webkit-line-clamp: 2;
+  }
+  .bestSelling__contentwrap .tab__content-wrapper {
+    padding: 0 !important;
+  }
+  .bestSelling__contentwrap .slide-list {
+    padding-left: 0px;
+    padding-bottom: 2px;
+  }
+  .bestSelling__contentwrap .trending-courses-slide-list .slide-list__header {
+    margin-top: 58px;
+  }
+  #mixedSlider .MS-content .item {
+    width: 100% !important;
+    padding: 0 0 0 10px;
+  }
+  ._trading_wrapper ._related_article_headline {
+    margin-top: 15px !important;
+  }
+  .popular_courses_wrap .course_item {
+    padding: 0 5px 0px 0 !important;
+  }
+  .best_selling_wrap {
+    display: block;
+  }
+  ._trading_wrapper {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header-interest-dropdown {
+    display: none;
+  }
+  .marketplace_wrapper {
+    margin-top: 50px;
+  }
+  ._left_related_article ._left_related_inner_article:first-child {
+    border-radius: 6px 0px 0 0;
+  }
+  ._left_related_article ._left_related_inner_article:nth-child(2) {
+    border-radius: 0px 6px 0 0;
+  }
+  ._left_related_article ._left_related_inner_article:nth-child(3) {
+    border-radius: 0px 0px 0px 6px;
+  }
+  ._left_related_article ._left_related_inner_article:last-child {
+    border-radius: 0px 0px 6px 0px;
+  }
+  .hm-pg-header-left .header-logo-image {
+    width: 78px !important;
+    margin-left: 15px;
+  }
+  ._center_related_article ._left_related_inner_article {
+    width: 50%;
+  }
+  ._center_related_article ._left_related_inner_article:last-child {
+    border-radius: 0 0 6px 0 !important;
+  }
+  ._center_related_article ._left_related_inner_article:nth-last-child(2) {
+    border-radius: 0 6px 0 0 !important;
+  }
+  .MS-content .item:hover .class1 .courseAuth {
+    display: none;
+  }
+  .courseInfo {
+    margin-bottom: 0;
+  }
+  .course_by {
+    display: block !important;
+    float: left;
+  }
+  ._header {
+    height: 50px;
+  }
+  ._header ._button_wraqpper {
+    display: none;
+  }
+  .fixedMenue {
+    display: none;
+  }
+  ._header_menu_wrapper {
+    float: right;
+    display: block;
+  }
+  ._header_menu_wrapper p {
+    display: none;
+  }
+  ._header_menu_wrapper img {
+    top: 4px;
+  }
+  ._right_related_article {
+    display: none;
+  }
+  ._collection_left_wrapper {
+    display: none;
+  }
+  ._collection_wrapper {
+    margin-top: 30px;
+    padding: 20px 20px 10px;
+    width: calc(100% - 10px);
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  ._collection_wrapper ._collection_right_wrapper {
+    display: block;
+  }
+  ._collection_wrapper ._collection_right_wrapper ._collection_right_inner_wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    float: left;
+    padding-left: 63px;
+    margin-bottom: 20px;
+    min-height: 46px;
+  }
+  ._collection_wrapper ._collection_right_wrapper ._collection_right_inner_wrapper::before {
+    display: none;
+  }
+  ._collection_wrapper ._collection_right_wrapper ._collection_right_inner_wrapper h3 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+  ._collection_wrapper ._collection_right_wrapper ._collection_right_inner_wrapper p {
+    margin-top: 7px;
+    margin-bottom: 0px;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+  }
+  ._collection_wrapper ._collection_right_wrapper ._collection_right_inner_image_wrapper {
+    height: 63px;
+    position: absolute;
+    left: 0;
+    width: 43px !important;
+    height: auto !important;
+  }
+  ._collection_wrapper .headingcollwrap {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.38;
+    text-align: left;
+    color: #222222;
+    display: block;
+    margin-bottom: 30px;
+  }
+  ._collection_wrapper ._button_wraqpper {
+    background: transparent;
+  }
+  .container_wrap.singleSlide {
+    display: none;
+  }
+  .curcContent {
+    display: none;
+  }
+  ._best_selling_course_wrapper {
+    display: none;
+  }
+  ._header_menu_wrapper.webview {
+    display: none;
+  }
+  ._popular_page_card {
+    height: 255px;
+  }
+  ._popular_page_card ._popular_page_dis {
+    display: none;
+  }
+  ._popular_page_card button {
+    bottom: 20px;
+  }
+  ._header_menu_wrapper.mobileview {
+    display: block;
+    margin-top: 3px;
+  }
+  .container_wrap.featured_wrapperr {
+    display: block;
+  }
+  .trending-top-topic.FeatureCorcs {
+    display: block;
+  }
+  .topwrapper {
+    margin-top: 50px;
+    padding: 0 0 0 10px;
+  }
+  .topwrapper ._button_wraqpper {
+    display: block;
+  }
+  .homelogo {
+    position: relative;
+    left: 50%;
+    margin-left: -43px;
+  }
+  .homelogo ._logo {
+    width: 86px;
+    height: 24px;
+  }
+  .centeralignment {
+    padding: 8px 0;
+    display: block;
+  }
+  .btnTopWrapp {
+    width: auto !important;
+    margin-left: -10px;
+    margin-right: 0;
+  }
+  ._button_wraqpper {
+    display: table;
+    clear: both;
+    content: "";
+    width: 100%;
+    padding: 15px 10px 10px 10px;
+    text-align: center;
+    background: #fff;
+  }
+  ._button_wraqpper p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+    color: #2c2e2f;
+  }
+  ._button_wraqpper button {
+    width: 130px;
+    height: 38px;
+    border-radius: 21px;
+    -webkit-box-shadow: 0px 1px 2px 0 rgba(44, 46, 47, 0.2);
+            box-shadow: 0px 1px 2px 0 rgba(44, 46, 47, 0.2);
+    background-color: #f05050;
+    font-size: 14px;
+    line-height: 0.78;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+  ._related_article_headline {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 0.96;
+    text-align: left;
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+  ._popular_course_headline {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.13;
+    text-align: left;
+    color: #2c2e2f;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: none;
+  }
+  .courseheading h6 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.13;
+    color: #2c2e2f;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  .slide-list__heading {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.13;
+    color: #2c2e2f;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  ._wrapper_market {
+    margin-top: 0;
+  }
+  ._collection_right_wrapper {
+    width: 100% !important;
+  }
+  ._footer {
+    height: auto;
+  }
+  ._footer p {
+    width: 100%;
+    text-align: center;
+  }
+  ._footer_innerwrapper {
+    display: block;
+    padding: 15px;
+  }
+  ._footer_innerwrapper ._social_icon_wrapper {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .courseslide {
+    padding: 0;
+    position: relative;
+    border: 0;
+  }
+  .courseslide .imgLeft {
+    width: 100%;
+    float: left;
+    height: 127px;
+  }
+  .courseslide .imgLeft .leftTopsell {
+    left: 6px;
+    top: 6px;
+  }
+  .courseslide .imgLeft img {
+    border-radius: 3px 3px 0 0;
+  }
+  .courseslide .dataRight {
+    width: 100%;
+    float: left;
+    position: unset;
+    padding: 10px;
+  }
+  .amntcourse {
+    bottom: 10px;
+    right: 10px;
+    padding-right: 0;
+  }
+  .leftdown {
+    left: 10px;
+    bottom: 10px;
+  }
+  .leftmenuicons {
+    right: 6px;
+    top: 6px;
+  }
+  .headingMn {
+    font-size: 15px;
+    padding-right: 0;
+  }
+  .dataRight .dtcontr {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .dWnhead .byhead {
+    color: #333333;
+  }
+  ._left_related_article {
+    float: left;
+    width: 100% !important;
+    margin-left: 0px;
+  }
+  ._left_related_article ._left_related_inner_article {
+    width: calc(50% - 5px);
+    padding: 15px 10px 15px 170px;
+    height: 100px;
+  }
+  ._left_related_article ._left_related_inner_article p {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  ._left_related_article ._left_related_inner_article ._article_image {
+    width: 160px;
+    height: 70px;
+    left: 0px;
+    top: 15px;
+  }
+  .blockwrap {
+    width: 757px;
+    overflow: auto;
+  }
+  .dataFlow {
+    overflow: auto;
+    left: 10px;
+    right: 0;
+    z-index: -1;
+    -ms-overflow-style: none;
+  }
+  .dataFlow::-webkit-scrollbar {
+    display: none;
+  }
+  ._center_related_article {
+    width: 100% !important;
+    float: left;
+    margin-left: 0;
+    height: auto;
+    overflow: auto;
+    -ms-overflow-style: none;
+    margin-bottom: 10px;
+  }
+  ._center_related_article::-webkit-scrollbar {
+    display: none;
+  }
+  .centerwrapp {
+    width: 757px;
+  }
+  ._center_related_inner_article {
+    width: 445px;
+    margin-top: 0;
+    width: 50%;
+    border-radius: 6px 0px 0px 6px !important;
+    border: none;
+  }
+  ._center_related_inner_article:first-child {
+    width: calc(50% - 10px) !important;
+  }
+  ._left_related_inner_article:nth-child(2n) {
+    margin-right: 0px;
+    width: 50%;
+  }
+  ._trading_inner_wrapper {
+    padding-bottom: 0;
+  }
+  .trending-courses__slide-list-item {
+    margin-right: 10px !important;
+  }
+  .trending-videos__slide-list-item {
+    margin-right: 10px !important;
+  }
+  .fixedmenue {
+    top: 50px;
+  }
+  .courseName {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .MS-controls {
+    display: none !important;
+  }
+  .slide-list__header-nav.slide-list__header-nav--minimal {
+    display: none !important;
+    display: none !important;
+  }
+  .mixedSliderMain {
+    display: none;
+  }
+  .slide-list .slide-list__header .slide-list__heading {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.13 !important;
+    text-align: left !important;
+    color: #2c2e2f !important;
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+  }
+  .slide-list__header {
+    margin-top: 0px !important;
+  }
+  .home-featured-content__tab-contents .tab__content-wrapper {
+    padding: 0 !important;
+  }
+  .container_wrap.bestSelling__contentwrap .slide-list__heading {
+    margin-top: 15px !important;
+  }
+  .featured_courses_wrap .slick-slide {
+    padding-right: 10px;
+  }
+  .slide-list__heading_head {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.13 !important;
+    text-align: left !important;
+    color: #2c2e2f !important;
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+  }
+  .course_item {
+    padding: 0 10px 0px 0 !important;
+  }
+  ._center_related_article ._center_related_inner_article ._center_related_image {
+    height: 115px;
+  }
+  ._center_related_article ._center_related_content h3 {
+    font-size: 14px !important;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .login_header_ .close_login {
+    left: 20px;
+    top: 20px;
+  }
+  .main_wrapper .registrationWrapper {
+    display: unset !important;
+  }
+  .from_head_login {
+    height: 35px;
+  }
+  .txt_hdnghome {
+    font-size: 28px !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .blockwrap {
+    width: 676px !important;
+  }
+  .centerwrapp {
+    width: 676px !important;
+  }
+  ._center_related_article ._center_related_inner_article ._center_related_content h3 {
+    font-size: 14px;
+  }
+  ._center_related_article ._center_related_inner_article ._center_related_content p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  ._trading_inner_wrapper ._trading_list_container {
+    width: 100% !important;
+    cursor: pointer;
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 0px;
+    float: left;
+    margin-left: 0 !important;
+  }
+  ._trading_inner_wrapper ._trading_list_container p {
+    height: auto;
+  }
+  ._trading_inner_wrapper ._trading_list_container p a {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    position: relative;
+    padding-bottom: 0px;
+    height: auto;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  ._trading_inner_wrapper ._trading_list_container p a::before {
+    width: 100%;
+  }
+  ._trading_inner_wrapper ._trading_list_container:nth-last-child(2) p a::before {
+    width: 100%;
+  }
+  ._trading_inner_wrapper ._trading_list_container:nth-last-child(3) p a::before {
+    width: 100%;
+  }
+  ._trading_list_color_container {
+    display: none;
+  }
+  .sidefilter.openfilter {
+    width: 100%;
+  }
+  .main_wrapper .registrationWrapper {
+    max-width: 529px !important;
+    margin: auto !important;
+    float: none !important;
+    position: unset !important;
+  }
+  .main_wrapper .registrationWrapper .registrationWrapperscroll {
+    height: calc(100% - 72px) !important;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .main_wrapper .registrationWrapper .registrationWrapperscroll .registrationIneerscroll {
+    padding: 0 20px 20px !important;
+  }
+  .main_wrapper .registrationWrapper .registrationWrapperscroll .registrationIneerscroll .sociallogin.fbook, .main_wrapper .registrationWrapper .registrationWrapperscroll .registrationIneerscroll .sociallogin.google {
+    width: 48%;
+  }
+  .login_header_ {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=prepareresponsive.css.map */

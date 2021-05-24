@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19" height="24" viewBox="0 0 19 24">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__Group_833" data-name="Group 833" transform="translate(-91 -587)">
+        <g id="prefix__Group_832" data-name="Group 832" transform="translate(-1136 32.999)">
+            <path id="prefix__Path_17" d="M1246 558.587l-4.586-4.587H1233v18h13zm-5-2.172l2.586 2.586H1241zm3 13.585h-9v-14h4v5h5z" class="prefix__cls-1" data-name="Path 17"/>
+            <path id="prefix__Path_18" d="M1230 558v17h12v-2h-10v-15z" class="prefix__cls-1" data-name="Path 18"/>
+            <path id="prefix__Path_19" d="M1227 561v17h12v-2h-10v-15z" class="prefix__cls-1" data-name="Path 19"/>
+        </g>
+    </g>
+</svg>

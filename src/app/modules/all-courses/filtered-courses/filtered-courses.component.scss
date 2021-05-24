@@ -1,0 +1,122 @@
+.rating-mobile{display: none !important;}
+.course_item {
+  padding-left: 20px;
+  .course_details{
+    .course_name {
+      p{-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+max-height: 36px;}
+span{
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+    }
+  }
+}
+@media only screen and (max-width:480px){
+.course_card_filter{padding-right: 15px;
+  .course_item {width:100%;height: auto;margin: 0 0px 15px;float: left;padding-left: 15px;
+    .course_cont{
+      box-shadow: none;
+      border-radius: 0px;
+      border-bottom: 1px solid #e9e9e9;
+      .course_img_div {
+        width: 175px;height: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        border-radius: 0px 0px 0px 0px;
+        bottom: 15px;
+      .course_img {height: auto;
+      border-radius: 0px 0px 0px 0px;}
+     .course_banner, .img_layer{display: none;}
+    }
+    }
+    .course_details{height: 100px !important;
+      width: 100%;float: left;height: auto;
+      padding: 0px 0px 15px 190px;
+      .course_detail{display: none;}
+      .course_name{
+        span {
+    line-height: 15px;
+      }
+    }
+    }
+  }
+  .c_card_bottom {
+    width: auto;
+    text-align: right;
+    position: absolute;
+    left: auto;
+    right: 0px;
+    bottom: 15px;
+     .original-price {
+    font-size: 12px;
+
+}
+.sell-price{
+    font-size: 14px;
+}
+}
+.card-course-rating{display: none;}
+.card-course-rating.rating-mobile{display: block !important;
+     position: absolute;
+     bottom: 15px;
+      }
+}
+}
+@media only screen and (max-width:400px){
+.course_card_filter{
+.course_item {
+    height: auto !important;
+    .course_cont{
+       .course_img_div {
+    width: 160px;
+   }
+  }
+  .course_details{
+    height: 92px !important;
+    padding: 0px 0px 15px 170px;
+  }
+ }
+ .card-course-rating.rating-mobile {
+    margin-top: 12px;
+  }
+ }
+}
+@media only screen and (max-width:360px){
+.course_card_filter{padding-right: 10px;
+.course_item {padding-left: 10px;
+    height: auto !important;
+    .course_cont{
+       .course_img_div {
+    width: 140px;
+   }
+  }
+  .course_details{height: 82px !important;
+    padding: 0px 0px 15px 150px;
+  }
+ }
+ .card-course-rating.rating-mobile {
+    margin-top: 7px;
+  }
+ }
+ .course_item {
+   padding-left: 20px;
+   .course_details{
+     .course_name {
+       p{line-height: normal;}
+ span{
+margin-top: 0px;
+ }
+     }
+   }
+ }
+}

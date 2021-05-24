@@ -1,0 +1,95 @@
+
+<div class="popup" >
+    <div class="popup_background">
+
+        <!-- header start -->
+
+        <div class="img_view_header" style="position:fixed;z-index:1000;">
+
+            <span class="reportButton" (click)="showDropDownList()" *ngIf="!userType">
+                <img src="assets/images/svg-three/post_icon/white_report.svg" alt="study24x7">
+            </span>
+
+            <div class="dropDowImage" style="" [ngClass]="{'reportHeight':showlist}">
+                <ul class="report_ul fieldlist">
+                    <li *ngIf="hideoptioncontent" style="font-size:13px;color:#2c2e2f;">
+                        Do you want to report this image ?
+                    </li>
+                    <li *ngIf="hideoptioncontent">
+                        <input type="radio" name="radioreport" id="report1" class="k-radio"  value="1">
+                        <label class="k-radio-label" for="report1">Not according to interest</label></li>
+                    <li *ngIf="hideoptioncontent">
+                        <input type="radio" name="radioreport" id="report2" class="k-radio"  value="2">
+                        <label class="k-radio-label" for="report2">Incorrect Content</label>
+                    </li>
+                    <li *ngIf="hideoptioncontent">
+                        <input type="radio" name="radioreport" id="report3" class="k-radio"  value="3">
+                        <label class="k-radio-label" for="report3">Nudity</label>
+                    </li>
+                    <li *ngIf="hideoptioncontent">
+                        <input type="radio" name="radioreport" id="report4" class="k-radio"  value="4">
+                        <label class="k-radio-label" for="report4">Violence</label>
+                    </li>
+                    <li *ngIf="hideoptioncontent">
+                        <input type="radio" name="radioreport" id="report5" class="k-radio"  value="5">
+                        <label class="k-radio-label" for="report5">Spam</label>
+                    </li>
+                    <li style="padding-bottom: 5px;padding-top:5px;">
+                        <!-- <input type="radio" name="radioreport" id="report6" class="k-radio" (change)="otherReport($event);" (click)="hide_option()" value="6"> -->
+                        <label class="" for="report6" ><b>Other</b></label>
+
+                    </li>
+                    <li *ngIf="report_input_option">
+                        <span  class="other_option">
+                            <textarea style="resize:none; height:100px;padding:5px;" id="other" placeholder="Enter details here" [(ngModel)]="reportText" (focus)="unckecked()">
+                            </textarea>
+                        </span>
+                    </li>
+
+                </ul>
+                <div class='footer_wrap_profile'>
+                    <button  type="submit" class="btn btn-primary btn_sbmt btn_active_shdw" (click)="getpageReport();">Submit</button>
+                </div>
+            </div>
+
+
+            <span class="close_div" (click)="closePopup()">
+                <img class="defoult" src="assets/images/svg/addpost_tagcross.svg" alt="study24x7">
+                <img class="hover" src="assets/images/svg/addpost_tagcross-gray.svg" alt="study24x7">
+            </span>
+        </div>
+        <!-- header start end-->
+
+        <!-- <span class="cross-btn"> -->
+        <!-- <img src="assets/images/svg/tagcross.svg" class="unsaved" (click)="closePopup()"> -->
+        <!-- </span> -->
+
+
+        <!-- <div class="popup_main imageviewpopup">
+                <div class="image-top">
+                        <span style="float: right;cursor: pointer;position: absolute;right: 0;border: none;" class='leftmenudrop'>
+                        </span>
+                        <div class="image-first">
+                                <div class="main-div">
+                                        <div class='image-fixed'>
+                                                <div class='imgmain_container'>
+                                                        <div class='imgmain'>
+                                                                <div class='img-div'>
+                                                                        <img src="{{urlOrg}}">
+                                                                        <div class="imgfooter"></div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div> -->
+        <div class="background" (click)="closePopup()"></div>
+        <div class="img_view_wrapper" [perfectScrollbar]="config" style="position: relative;padding: 10px;">
+            <div class="inner_img_view_wrapper"  [ngClass]="{'imageheigth':height}" id="div_height" style="" (load)="image_view()">
+                <img src="{{urlOrg}}" [ngClass]="{'image_heigth': img_h, 'image_width': img_w}"  id="img_size"  (load)="image_view()">
+            </div>
+        </div>
+    </div>
+</div>

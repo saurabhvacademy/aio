@@ -1,0 +1,143 @@
+@import './../../../sass/abstracts/variables';
+@import './../../../sass/abstracts/fontfamily';
+$fontmontserrat: 'Montserrat';
+$SourceSansPro:  'Source Sans Pro';
+.asked_ques_program{
+  padding: 65px 0px 65px 0px;
+  .heading_bold{
+    text-align: center;
+    font-family: $fontmontserrat;
+    font-size: 36px;
+    color: #000000;
+    font-weight: bold;
+  }
+  background-color: #ffefef;
+  font-family:$fontmontserrat;
+  .inner_accordian {
+    max-width: 100%;}
+}
+.asked_question{
+ .inner_accordian {
+    max-height: 10000px;
+    min-height: auto;
+    .accordion{
+      font-size: 16px;
+      padding: 22px 60px 22px 25px;
+      position:relative;
+      // line-height:$LineHeight24;
+      font-family:$fontmontserrat;
+      &:after {
+          position: absolute;
+          right: 35px;
+          top: 25px;
+      }
+
+
+}
+    .accordion.active{
+border-bottom: 1px solid transparent;
+
+
+}
+.panel {background-color: #f5f7f9;
+border-radius: 0;
+  ul{padding:20px 10px 5px;
+   li {
+    // font-family: $fontmontserrat;
+    font-size:16px;
+    color: rgba(0,0,0,.9);
+    line-height:$LineHeight24;
+    font-weight: normal;
+    margin-bottom: 15px;
+    ul{
+      li{
+        color: rgba(0,0,0,.9);
+      }
+    }
+    .datalistw, .datalistn{
+      margin-top:10px;
+      li{
+        padding: 0px 0px;
+        margin-bottom: 10px;
+      }
+    }
+    .datalistw{
+      li{
+        list-style: outside upper-alpha;
+      }
+    }
+  .datalistn{
+      li{
+        list-style:outside decimal;
+       }
+      }
+     }
+   }
+  }
+ }
+}
+@media only screen and (max-width:1024px){
+  .asked_ques_program{
+  .heading_bold {
+
+      font-size: 32px;
+
+  }
+}
+
+}
+@media only screen and (max-width:768px){
+
+
+  .asked_ques_program{
+        padding: 40px 0px 40px 0px;
+  .heading_bold {
+
+      font-size: 26px;
+
+  }
+}
+  .asked_question{
+   .inner_accordian{
+    .accordion {
+    font-size: 16px;
+    padding: 25px 50px 25px 25px;
+    &:after {
+        right: 25px;
+        top: 25px;
+    }
+  }
+     .panel{
+
+     ul{padding: 15px 10px 15px;
+     li {
+    font-size: 14px;}
+  }
+ }
+
+  }
+}
+}
+@media only screen and (max-width:480px){
+  .asked_ques_program{
+  .heading_bold {
+
+      font-size: 20px;
+      line-height: 26px;
+
+  }
+}
+  .asked_question{
+   .inner_accordian{
+     margin-top: 25px;
+    .accordion {
+    font-size: 14px;
+    padding: 15px 50px 15px 15px;
+  }
+     .panel{
+           ul{padding: 12px 10px 12px;}
+
+ }
+  }
+}
+}

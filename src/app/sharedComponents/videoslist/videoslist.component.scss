@@ -1,0 +1,46 @@
+$themeblue : #F05050;
+$themegray : #f5f7fa;
+$textcolor : #2c2e2f;
+.video_post_outer{
+    .addreview_hdng{padding: 12px 10px;
+font-size: 16px;
+font-weight: 500;
+color: $textcolor;
+background-color: $themegray;
+ -webkit-border-radius: 5px 5px 0px 0px;
+ -moz-border-radius: 5px 5px 0px 0px;
+-ms-border-radius: 5px 5px 0px 0px;
+-o-border-radius: 5px 5px 0px 0px;
+border-radius: 5px 5px 0px 0px;
+}
+    .video_post{
+        
+    }
+    .video_post_in{
+        
+        img{max-width:100%;max-height: 100%;}
+        .first_post_v{float: left;margin-bottom: 5px;position:relative;
+                      width: 100%;height: 280px;overflow: hidden;
+            .play_icon{width: 55px;height: 55px;}
+        }
+
+        .sec_post_b{margin-bottom: 10px;width:49.3%;height: 230px;position:relative;overflow: hidden;
+            .play_icon{width: 40px;height: 40px;}
+        }
+        .sec_post_v{float:left;}
+        .third_post_v{float:right;}
+        a{
+            position: absolute;
+height: 100%;
+width: 100%;
+top: 0;cursor: pointer;
+left: 0;
+background-size: cover;
+        }
+        .play_icon{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+    }
+        .course_all_bt{width: 100%;
+background-color: #f7f8fa;
+padding: 10px 15px;
+float: left;border-radius: 0px 0px 5px 5px;text-align: center;}
+}

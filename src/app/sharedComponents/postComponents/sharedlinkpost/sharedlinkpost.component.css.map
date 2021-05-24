@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,AAAA,aAAa,CAAA;EACtB,KAAK,EAAE,IAAI;CACV",
+    "sources": [
+        "sharedlinkpost.component.scss"
+    ],
+    "names": [],
+    "file": "sharedlinkpost.component.css"
+}

@@ -1,0 +1,131 @@
+<div *ngIf="recentVisitorsData.RECENT_VISITORS_COUNT!='0'" class="visitor_widget">
+  <div class="dataListMain " style="padding: 0px;">
+    <div class="maindiv saved-post-main notification-wrap visitordata">
+      <div class="showInfo" (click)="showVisitorData();" [ngClass]="{showInfoActive: showDataList}">
+
+        <div class='headparainfo'>
+          <div class="visitorCount">
+            <div class="showprofileimg">
+              <span *ngIf="recentVisitorsData && recentVisitorsData.VISITORS.length>0">
+                <img
+                  src="{{recentVisitorsData.VISITORS[0].PROFILE_PHOTO_PATH +'profile/' + recentVisitorsData.VISITORS[0].USER_ID + '_60x60.png'}}"
+                  (error)="updateSimilarInterestVisitorProfilePic($event)" alt="">
+              </span>
+              <span *ngIf="recentVisitorsData && recentVisitorsData.VISITORS.length>1">
+                <img
+                  src="{{recentVisitorsData.VISITORS[1].PROFILE_PHOTO_PATH +'profile/' + recentVisitorsData.VISITORS[1].USER_ID + '_60x60.png'}}"
+                  (error)="updateSimilarInterestVisitorProfilePic($event)" alt="">
+              </span>
+              <span *ngIf="recentVisitorsData && recentVisitorsData.VISITORS.length>2">
+                <img
+                  src="{{recentVisitorsData.VISITORS[2].PROFILE_PHOTO_PATH +'profile/' + recentVisitorsData.VISITORS[2].USER_ID + '_60x60.png'}}"
+                  (error)="updateSimilarInterestVisitorProfilePic($event)" alt="">
+              </span>
+            </div>
+            <div class="showDataN">
+              <div class="countVisitor"><span class="count">{{headerLabel}}</span> </div>
+              <span *ngIf="recentVisitorsData.SIGN!='' " class="rank_span_cont rank_span"
+                [ngClass]="{'rank_span_cont0':recentVisitorsData.RECENT_VISITORS_COUNT==0,'rank_span_red':recentVisitorsData.PERCENT_SIGN=='-','rank_span': recentVisitorsData.PERCENT_SIGN=='+'  }">
+                {{recentVisitorsData.LAST_WEEK_VISITORS_COUNT}}</span>
+
+            </div>
+            <div class="listbelow">
+              <img src="assets/images/svg-icon/arrow-right-gray.svg" alt="">
+            </div>
+          </div>
+
+          <div class="linehr"></div>
+        </div>
+      </div>
+      <div *ngIf="showDataList">
+
+        <div class=" scrollSecHeight" [ngClass]="{'itemListCount2': similarInterestVisitorsData.VISITORS.length ==1 ,
+       'itemListCount1': recentVisitorsData.VISITORS.length== 1 && similarInterestVisitorsData.VISITORS.length ==0 ,
+       'itemListCount2': recentVisitorsData.VISITORS.length ==2 && similarInterestVisitorsData.VISITORS.length ==0
+       }">
+
+          <perfect-scrollbar [perfectScrollbar]="config" style="position: relative;">
+            <div class="inner-main-div ">
+
+              <div class="content">
+                <div class='people_list Experiance_list people_list_noti'>
+                  <div *ngIf="false" class="dataList">
+                    <p class='headparainfo'>Visitors with similar interests</p>
+                    <ul>
+                      <li *ngFor="let visitor of similarInterestVisitorsData.VISITORS; let i=index">
+                        <div routerLink="/profile/{{visitor.USER_NAME}}" class="profileimg_know">
+                          <!-- <img _ngcontent-c1="" src="{{notify.PROFILE_PHOTO_PATH}}"   > -->
+                          <img src="{{visitor.PROFILE_PHOTO_PATH +'profile/' +visitor.USER_ID + '_60x60.png'}}"
+                            (error)="updateSimilarInterestVisitorProfilePic($event)">
+                          <!-- <img *ngIf="!visitor.img" src="https://img1.study24x7.com/assets/images/defaultProfilePic.svg"> -->
+                        </div>
+                        <div class='prfl_detail ntfi_pro_detail'>
+                          <div title="{{visitor.FIRST_NAME+' '+visitor.LAST_NAME}}"
+                            routerLink="/profile/{{visitor.USER_NAME}}" class="profilename">{{visitor.FIRST_NAME+'
+                      '+visitor.LAST_NAME}}</div>
+                          <div class="grayinfo noti-grayinfo">
+                            <p class="typeVisitor" *ngIf="visitor.IS_TEACHER==0">Learner</p>
+                            <p class="typeVisitor" *ngIf="visitor.IS_TEACHER==2">Educator</p>
+                            <p class="typeVisitor" *ngIf="visitor.IS_TEACHER==3">Educator & Learner</p>
+                            <p>{{visitor.VIEWED_AT_TEXT}}</p>
+                          </div>
+                        </div>
+                        <div (click)="sendToInbox(visitor)" class="btnDiv">
+                          <button class="btn-round btnflex btn-round-gray btn-a ">
+                            <img class="icon-gray" src="assets/images/svg-icon/messageicon-gray.svg" alt="">
+                            <!-- <span class="btntext">Message</span> -->
+
+                          </button>
+
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+
+                  <div *ngIf="recentVisitorsData.VISITORS.length>0" class="dataList dataList1">
+                    <!-- <p class='headparainfo'>All Recent Visitors
+                    </p> -->
+                    <ul>
+                      <li *ngFor="let visitor of recentVisitorsData.VISITORS;let i = index">
+                        <div routerLink="/profile/{{visitor.USER_NAME}}" class="profileimg_know">
+                          <img src="{{visitor.PROFILE_PHOTO_PATH +'profile/' +visitor.USER_ID + '_60x60.png'}}"
+                            (error)="updateSimilarInterestVisitorProfilePic($event)">
+                        </div>
+                        <div class='prfl_detail ntfi_pro_detail'>
+                          <div title="{{visitor.FIRST_NAME+' '+visitor.LAST_NAME}}"
+                            routerLink="/profile/{{visitor.USER_NAME}}" class="profilename">{{visitor.FIRST_NAME+'
+                      '+visitor.LAST_NAME}}</div>
+                          <div class="grayinfo noti-grayinfo">
+                            <p class="typeVisitor" *ngIf="visitor.IS_TEACHER==0">Learner</p>
+                            <p class="typeVisitor" *ngIf="visitor.IS_TEACHER==2">Educator</p>
+                            <p class="typeVisitor" *ngIf="visitor.IS_TEACHER==3">Educator & Learner</p>
+                            <p>{{visitor.VIEWED_AT_TEXT}}</p>
+                          </div>
+                        </div>
+                        <div (click)="sendToInbox(visitor)" class="btnDiv">
+                          <button class="btn-round btnflex btn-round-gray btn-a ">
+                            <img class="icon-gray" src="assets/images/svg-icon/messageicon-gray.svg" alt="">
+                            <!-- <span class="btntext">Message</span> -->
+
+
+                          </button>
+
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </perfect-scrollbar>
+        </div>
+        <h6 routerLink="/visitors" class="footer_heading"> View all &nbsp;
+          <span> <img alt="study24x7" src="assets/images/svg-three/greater.svg" class="greater"></span>
+        </h6>
+      </div>
+    </div>
+
+  </div>

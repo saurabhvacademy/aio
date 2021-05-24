@@ -1,0 +1,265 @@
+.zero-padding {
+  padding: 0 !important;
+}
+
+.newSearchBox {
+  width: 330px;
+  background-color: #ffffff;
+  float: left;
+  position: relative;
+  padding-top: 3px;
+}
+
+.newSearchBox .addShadow {
+  -webkit-box-shadow: 0 0 8px 0 rgba(44, 46, 47, 0.18);
+          box-shadow: 0 0 8px 0 rgba(44, 46, 47, 0.18);
+}
+
+.newSearchBox .addShadow .searchInpulWrapper {
+  border-radius: 5px !important;
+}
+
+.newSearchBox ul.mainSearchUlWrapper {
+  border-radius: 5px;
+  position: absolute;
+  left: 15px;
+  background-color: #dfe5eb40;
+}
+
+.newSearchBox ul.mainSearchUlWrapper li.searchInpulWrapper {
+  border-radius: 5px 0px;
+  width: 330px;
+  line-height: 35px;
+}
+
+.newSearchBox ul.mainSearchUlWrapper li.searchInpulWrapper input {
+  border-radius: 5px;
+  border: solid 1px #bebebe;
+  background-color: rgba(223, 229, 235, 0.4);
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.29;
+  text-align: left;
+  border: none;
+  padding-left: 35px;
+  padding-right: 27px;
+  color: #2c2e2f;
+  border: solid 1px #bebebe40;
+}
+
+.newSearchBox ul.mainSearchUlWrapper li.searchInpulWrapper input:focus {
+  border: 1px solid #bebebe40;
+  background-color: #fff;
+}
+
+.newSearchBox ul.mainSearchUlWrapper li.searchInpulWrapper img {
+  position: absolute;
+  left: 10px;
+  top: 11px;
+  width: 15px;
+  height: 15px;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper {
+  float: left;
+  width: 100%;
+  max-height: 483px;
+  overflow: auto;
+  position: relative;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper ul.searchList {
+  position: static;
+  background-color: #fff;
+  float: left;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  border-top: 1px solid  #e1e1e1;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper ul.searchList:first-child {
+  border-top: 1px solid  #e1e1e1;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper ul.searchList li.searchInnerHead {
+  font-family: Roboto;
+  font-size: 13px;
+  padding: 15px 10px 10px 10px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2c2e2f;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper ul.searchList li.searchInnerHead .searchListViewAll {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #0f98df;
+  float: right;
+  cursor: pointer;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper ul.searchList li.searchInnerHead .searchListViewAll:hover {
+  text-decoration: underline;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper ul.searchList .searchInnerList {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.48;
+  letter-spacing: 0.14px;
+  text-align: left;
+  color: #2c2e2f;
+  float: left;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper ul.searchList .searchInnerList:hover {
+  border-radius: 5px;
+  background-color: rgba(223, 229, 235, 0.6);
+}
+
+.newSearchBox ul.mainSearchUlWrapper .searchListWrapper ul.searchList .searchInnerList:last-child {
+  margin-bottom: 10px;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .viewAllSearchList {
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+  float: left;
+  width: 100%;
+  padding: 0 10px 10px;
+  cursor: pointer;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .viewAllSearchList p {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #2c2e2f;
+  width: 307px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgba(223, 229, 235, 0.6);
+  text-align: center;
+  line-height: 36px;
+}
+
+.newSearchBox ul.mainSearchUlWrapper .viewAllSearchList p span {
+  color: #108ac7;
+}
+
+.newSearchBox .headIconWraper {
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+  background-size: 100% 100%;
+}
+
+.newSearchBox .headIconWraper img.recentImg {
+  width: 100%;
+  height: 100%;
+  margin-top: -4px;
+}
+
+.mainSearchUlWrapper .recent_search {
+  padding: 0px 10px !important;
+  border-radius: 0 0 5px 5px;
+}
+
+.addShadow input {
+  border-radius: 5px 5px 0 0;
+}
+
+.darkbackground.bgadd {
+  position: fixed;
+  z-index: 5 !important;
+  -webkit-animation: fadeIn 180ms ease-out 2s 1 normal forwards;
+          animation: fadeIn 180ms ease-out 2s 1 normal forwards;
+}
+
+@media only screen and (max-width: 1180px) {
+  .interest_search {
+    margin-left: 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .newSearchBox ul.mainSearchUlWrapper .searchListWrapper.searchListWrapperLogin {
+    position: absolute;
+    left: 3%;
+    width: calc(100% - 6%);
+    top: 45px;
+  }
+  .newSearchBox ul.mainSearchUlWrapper .searchListWrapper.searchListWrapperLogin ul.searchList:first-child {
+    border-top: none;
+  }
+  .newSearchBox {
+    position: unset;
+  }
+  .newSearchBox ul.mainSearchUlWrapper {
+    position: unset;
+  }
+  .newSearchBox {
+    width: 55%;
+  }
+  .newSearchBox ul.mainSearchUlWrapper li.searchInpulWrapper {
+    position: relative;
+    width: 100%;
+  }
+  .newSearchBox ul.mainSearchUlWrapper .viewAllSearchList p {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .newSearchBox {
+    width: 210px;
+  }
+  .newSearchBox ul.mainSearchUlWrapper li.searchInpulWrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .newSearchBox {
+    width: 160px;
+  }
+  .newSearchBox ul.mainSearchUlWrapper li.searchInpulWrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .newSearchBox {
+    width: 140px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .newSearchBox {
+    width: 120px;
+  }
+}
+/*# sourceMappingURL=headerSearch.component.css.map */

@@ -1,0 +1,347 @@
+.post_outer .comment_outer .post_profile {
+  padding: 15px 0 0;
+  margin-top: 15px;
+  border-top: 1px solid #dfe0e8;
+}
+
+.post_outer .comment_outer .post_profile .post_profilepic {
+  height: 30px;
+  width: 30px;
+}
+
+.post_outer .comment_outer .post_profile .name {
+  font-size: 12px;
+  margin-right: 10px;
+  display: inline-block;
+  float: left;
+  width: auto;
+  line-height: 16px;
+}
+
+.post_outer .comment_outer .post_profile .profiledetail {
+  line-height: 18px;
+  width: 515px;
+}
+
+.post_outer .comment_outer .post_profile .profilecmntdetail {
+  width: 90%;
+  float: left;
+  font-size: 12px;
+}
+
+.post_outer .comment_outer .post_profile .post_footer {
+  border: 0px;
+  padding: 8px 0;
+}
+
+.post_outer .comment_outer .post_profile .post_footer .glyphicon {
+  float: right;
+  margin-right: 5px;
+}
+
+.post_outer .comment_outer .post_profile .post_footer .glyphicon:before {
+  line-height: 12px;
+  font-size: 12px;
+}
+
+.post_outer .comment_outer .post_profile .post_footer .cmnt_time {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.post_outer .comment_outer .post_profile .post_footer .post_footeroption {
+  position: relative;
+}
+
+.post_outer .comment_outer .post_profile .sub_Comment {
+  display: inline-block;
+  width: 100%;
+}
+
+.post_outer .comment_outer .post_profile .sub_Comment .profiledetail {
+  line-height: 18px;
+  width: 474px;
+}
+
+.post_outer .comment_outer .post_profile .sub_Comment .profiledetail input {
+  width: 85%;
+}
+
+.post_outer .seemore {
+  cursor: pointer;
+}
+
+.post_outer .questionResult {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: auto;
+  margin-bottom: 0;
+  border: 1px solid #ed6568;
+  border-radius: 5px;
+  position: relative;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+}
+
+.post_outer .questionResult .questionResult_percent {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #f5f7fa;
+  width: 50px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  border-right: 1px solid #ed6568;
+}
+
+.post_outer .questionResult .questionResult_percent b {
+  display: inline-block;
+  width: 100%;
+}
+
+.post_outer .questionResult div {
+  display: table-cell;
+  padding: 15px;
+}
+
+.post_outer .rightanswer {
+  border: 1px solid #5bbc5b;
+}
+
+.post_outer .rightanswer .questionResult_percent {
+  background: #5bbc5b;
+  color: #fff;
+  border-right: 1px solid #5bbc5b;
+}
+
+.post_outer .wronganswer .questionResult_percent {
+  background: #ed6568;
+  color: #fff;
+}
+
+.post_outer .comment_outer_reply {
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+  float: left;
+}
+
+.post_outer .comment_outer_reply .writecomment {
+  margin-bottom: 0px !important;
+}
+
+.post_outer .comment_outer_reply .writecommentinner {
+  margin-top: 8px;
+}
+
+.postshared_profile {
+  background: #f5f7fa;
+}
+
+.postshared_profile .post_profilepic {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.postshared_profile .name {
+  width: auto !important;
+}
+
+.postshared_profile .profiledetail {
+  margin-top: 8px;
+}
+
+.radiobtn_outer b {
+  float: left;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.uploaded_file {
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #dfe0e8;
+  background: #f5f7fa;
+  margin-top: 15px;
+}
+
+.postfile_details {
+  display: inline-block;
+  width: 77%;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.postfilename {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.graytextpost {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.postfile_download {
+  background: #e6e6e6;
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  float: left;
+}
+
+.postfile_download {
+  font-size: 14px;
+}
+
+.postfile_download img {
+  margin-right: 10px;
+}
+
+.postfile_download span {
+  float: left;
+}
+
+.postfile_download span:last-child {
+  float: right;
+  margin-top: 10px;
+}
+
+.radiobtn_outer .Radio + .checkbox_btn {
+  float: left;
+  margin: 4px 10px 0 0;
+}
+
+.timeremaining {
+  float: right;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin-top: -4px;
+}
+
+.timeremaining div {
+  font-size: 10px;
+}
+
+.timeremaining span {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.activeimp {
+  display: none;
+}
+
+.clicked {
+  color: #F05050;
+}
+
+.clicked .activeimp {
+  display: inline-block;
+}
+
+.clicked .defaultimp {
+  display: none;
+}
+
+.post_options {
+  margin-top: 15px;
+}
+
+.post_outer:first-child {
+  margin-top: 0px;
+}
+
+.post_outer .comment_share_screen .post_profile .profiledetail {
+  width: 640px;
+}
+
+.post_outer .comment_share_screen .post_profile .profiledetail .profilecmntdetail {
+  width: 100%;
+  padding-right: 15px;
+}
+
+.post_outer .comment_share_screen .post_profile .profiledetailinr {
+  position: relative;
+}
+
+.post_outer .comment_share_screen .post_profile .profiledetailinr .commenticon {
+  position: absolute;
+  right: 0px;
+  top: 4px;
+}
+
+.post_outer .post_footer_top {
+  border: none;
+  width: auto;
+  float: right;
+  padding: 0px 0px;
+}
+
+.post_outer .post_footer_top .postmenubtn {
+  border-left: 1px solid #ccc;
+  border-radius: 3px 3px 3px 3px;
+  background-color: #f7f8fa;
+}
+
+.post_outer .post_footer_top .post_footeroption {
+  font-size: 12px;
+  margin-right: 10px;
+  line-height: 30px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.post_outer .post_footer_top .post_footeroption .default img {
+  width: 12px;
+  height: 12px;
+}
+
+.post_outer .post_footer_bottom {
+  border: none;
+  padding: 0px 15px 15px 15px;
+  background-color: white;
+  margin-bottom: 15px;
+  float: left;
+}
+
+.post_outer .post_footer_bottom .post_footeroption {
+  padding: 5px 10px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 12px;
+}
+
+.post_outer .post_footer_bottom .post_footeroption:hover {
+  -webkit-box-shadow: 0 0 2px rgba(18, 188, 180, 0.4);
+          box-shadow: 0 0 2px rgba(18, 188, 180, 0.4);
+  border: 1px solid rgba(18, 188, 180, 0.6);
+}
+
+.post_outer .post_footer_bottom .post_footeroption.clicked {
+  border: 1px solid rgba(18, 188, 180, 0.6);
+  color: #12bcb4;
+}
+
+.post_outer .comment_list_text .seemore {
+  width: 515px;
+  margin-left: 10px;
+  float: right;
+  border: 1px solid rgba(18, 188, 180, 0.3);
+  padding: 5px 0px;
+  color: #12bcb4;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+/*# sourceMappingURL=newsfeed.component.css.map */

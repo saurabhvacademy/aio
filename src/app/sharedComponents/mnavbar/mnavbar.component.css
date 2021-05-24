@@ -1,0 +1,167 @@
+.navbottom .mobile_nav div {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.navbottom .mobile_nav .main_nav {
+  background-color: #fff;
+  border: 0;
+  bottom: 0;
+  height: 58px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 10;
+  -webkit-box-shadow: 0px 2px 3px 1px #bababa;
+          box-shadow: 0px 2px 3px 1px #bababa;
+  -webkit-box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 -1px 2px 0 rgba(60, 64, 67, 0.3), 0 -1px 3px 1px rgba(60, 64, 67, 0.15);
+          box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 -1px 2px 0 rgba(60, 64, 67, 0.3), 0 -1px 3px 1px rgba(60, 64, 67, 0.15);
+  z-index: 5;
+  padding: 5px 0px 5px 0px;
+}
+
+.navbottom .mobile_nav .BvyAW {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+}
+
+.navbottom .mobile_nav .icon_sec {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.navbottom .mobile_nav .icon_sec .a_sec, .navbottom .mobile_nav .icon_sec .icon_sec {
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.navbottom .mobile_nav .icon_sec .glyphsSpriteHome {
+  margin-top: 2px;
+  opacity: 1;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+.navbottom .mobile_nav .icon_sec .glyphsSpriteHome img {
+  width: 22px;
+  margin: 0 auto;
+  opacity: 1;
+  height: 22px;
+}
+
+.navbottom .mobile_nav .icon_sec .glyphsSpriteHome .nav_icon_default {
+  display: block;
+}
+
+.navbottom .mobile_nav .icon_sec .glyphsSpriteHome .nav_icon_active {
+  display: none;
+}
+
+.navbottom .mobile_nav .icon_sec .icon_cont {
+  color: #2c2e2f;
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.navbottom .mobile_nav .icon_sec.navactive .glyphsSpriteHome .nav_icon_default {
+  display: none;
+}
+
+.navbottom .mobile_nav .icon_sec.navactive .glyphsSpriteHome .nav_icon_active {
+  display: block;
+}
+
+.navbottom .mobile_nav .icon_sec.navactive .icon_cont {
+  color: #F05050;
+}
+
+.navbottom {
+  display: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .navbottom {
+    display: block;
+    float: left;
+  }
+}
+
+.ripple_effect {
+  overflow: hidden;
+  position: relative;
+  outline: none;
+}
+
+.ripple_effect:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  border-radius: inherit;
+  opacity: 0;
+}
+
+.ripple_effect:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  -webkit-clip-path: circle(0px);
+          clip-path: circle(0px);
+  opacity: 0.1;
+  border-radius: 30px;
+}
+
+.ripple_effect_active:after {
+  -webkit-clip-path: circle(500px);
+          clip-path: circle(500px);
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out, -webkit-clip-path 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: opacity 0.4s ease-in-out, -webkit-clip-path 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: clip-path 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53), opacity 0.4s ease-in-out;
+  transition: clip-path 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53), opacity 0.4s ease-in-out, -webkit-clip-path 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  -webkit-transition-delay: -0.1s, 0.5s;
+          transition-delay: -0.1s, 0.5s;
+}
+/*# sourceMappingURL=mnavbar.component.css.map */

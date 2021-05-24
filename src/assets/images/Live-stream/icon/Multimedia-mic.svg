@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.5" height="20.156" viewBox="0 0 15.5 20.156">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__Multimedia" transform="translate(-888.718 -2197.366)">
+        <ellipse id="prefix__Ellipse_20" cx="4.243" cy="6.459" class="prefix__cls-1" data-name="Ellipse 20" rx="4.243" ry="6.459" transform="translate(892.233 2197.366)"/>
+        <path id="prefix__Path_493" d="M904.218 2214.6l-1.924-.24c-.42 3.362-2.674 5.531-5.74 5.531a5.692 5.692 0 0 1-5.917-5.2l-1.919.269a7.565 7.565 0 0 0 6.57 6.779v2.431h-.635c-.871 0-1.585.345-1.585.765s.713.764 1.585.764h3.628c.871 0 1.585-.344 1.585-.764s-.714-.765-1.585-.765h-.444v-2.445c3.399-.553 5.899-3.273 6.381-7.125z" class="prefix__cls-1" data-name="Path 493" transform="translate(0 -8.172)"/>
+    </g>
+</svg>

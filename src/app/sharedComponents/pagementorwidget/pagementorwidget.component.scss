@@ -1,0 +1,72 @@
+
+$backgroundgray : #e6e6e6;
+$themeblue : #F05050;
+$themegray : #f5f7fa;
+// $textcolor : #161v616;
+$textcolor : #2c2e2f;
+$textgrey : #8c8c8c;
+$maingreen: rgb(7,162,8);
+$stroke : #dfe0e8;
+// $stroke : #E9E9E9;
+$borderRadius: 5px;
+$inputTypeHeight: 35px;
+$inputTypeFont: 12px;
+$headerHeight: 60px;
+$headerLineHeight: $headerHeight - 5px;
+$mainboxShadow: 0 0 7px rgba(0,0,0,0.1);
+$dropdownwidth: 400px;
+$dropdwncontentwidth: $dropdownwidth - 100px;
+$ntfctnprofile: 40px;
+$inrprflimg : $ntfctnprofile + 8px;
+$PostPicture: 40px;
+$commentPicture: $PostPicture - 10px;
+$subcommentPicture: $commentPicture;
+$mainpostName: 16px;
+$maincommentName: $mainpostName - 2px;
+$darkthemestroke: $themeblue;
+$progressbarRed: #ed6568;
+$rightanswer : #5bbc5b;
+$themelighten : rgba($themeblue, 0.2);
+$lightgray : #fafafa;
+$lightstroke: #f4f4f4;
+$lighttext: #8c8c8c;
+$fontFamily : 'Lato', sans-serif;
+
+
+
+.page-mentor-widget{
+  .page-mentor-outter-wrap{
+    padding:0 10px 10px;
+  .page-mentor-wrap{
+    .mentor-box{
+      &:nth-child(2){
+        margin: 0 8%;
+      }
+      float:left;
+      width:28%;
+      figure{
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        height:58px;
+        width:58px;
+        overflow: hidden;
+        margin-right:auto;
+        margin-left:auto;
+        border:1px solid rgba($textcolor, 0.7);
+        margin-bottom:15px;
+        img{
+          max-width:100%;
+        }
+      }
+      .grayinfo{
+        color:rgba($textcolor,0.6);
+        font-size:12px;
+        line-height:1;
+      }
+    }
+  }
+}
+}

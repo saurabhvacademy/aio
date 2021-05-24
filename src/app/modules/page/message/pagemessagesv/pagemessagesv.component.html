@@ -1,0 +1,36 @@
+<!-- <div class="chatoutr chatoutrmine">
+    <div class="profileimg_know">
+        <img src='{{profile_pic}}' routerLink='/profile/{{u_name}}' (error)="updateProfilePic($event)">
+    </div>
+    <div class="mainmsgdiv">
+        <div>
+            <div class="chatmessage"  [innerHTML]="msg"> -->
+              <!-- <i title="Delete Message" class="delete-msg" (click)="delThisMsg();"><img src="assets/images/svg/dustbin.svg" alt="study24x7"></i> -->
+
+            <!-- </div>
+        </div>
+        <div class="chattime">{{time|timeformated}}</div>
+    </div>
+</div>
+<app-confirmationpopup *ngIf="sureToDelStatus" (closeComfirmPopupThread)="closeMe($event);"></app-confirmationpopup> -->
+<div class="chatoutr chatoutrmine">
+    <div style="cursor: pointer" class="profileimg_know masgprofilepic">
+         <img src='{{profile_pic}}' routerLink='/profile/{{u_name}}' (error)="updateProfilePic($event)">
+    </div>
+    <div class="mainmsgdiv">
+
+        <div>
+            <div class="chatmessage"  >
+              <p [innerHTML]="msg"></p>
+              <!-- <i title="Delete Message" class="delete-msg" (click)="delThisMsg();"><img src="assets/images/svg/dustbin.svg" alt="study24x7"></i> -->
+
+            </div>
+            <div class="chattime">
+              <!-- <span class="chatusername">{{name}}</span> -->
+              <span class="timeOfMessage">{{time|timeformated}}</span>
+            </div>
+        </div>
+        <!-- <div class="chattime">{{time|timeformated}}</div> -->
+    </div>
+</div>
+<app-confirmationpopup *ngIf="sureToDelStatus" (closeComfirmPopupThread)="closeMe($event);"></app-confirmationpopup>

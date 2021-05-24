@@ -1,0 +1,338 @@
+<div class=" mobile_menu ">
+    <div class="row">
+        <div class=" mmenu_wrapper">
+            <div class="main_wrpp_inner ">
+                <div class='profileouter'>
+                    <div class="top_main">
+                        <a class='profile' routerLink="/profile/{{uname}}">
+                            <img src="{{profilePicUrl}}">
+                        </a>
+                        <div class='basicdetails'>
+                            <p class="name cursor-pointer" routerLink="/profile/{{uname}}"> {{fullName}}</p>
+                            <p class="username editprofile cursor-pointer">{{uname}}</p>
+                        </div>
+                        <div (click)="hideMmenu()" class="list_right_icon"
+                            style="position: absolute;right: 0px;top: 10px;">
+                            <img src="assets/images/svg-three/left_menu/arrow_right.svg">
+                        </div>
+                    </div>
+                    <div class=" profile_desc">
+                        <div class='col-md-4 col-sm-4 lftconnection fleft'
+                            (click)="hideMmenu();routeTo('/profile/'+uname+'/#connection:connections')">
+                            <p class="count cnt_top">{{connections}}</p>
+                            <p class="countname"> Connections</p>
+                        </div>
+                        <div class='col-md-4 col-sm-4 middlefollowers fleft'
+                            (click)="hideMmenu();routeTo('/profile/'+uname+'/#connection:followers')"
+                            style="box-sizing: border-box;">
+                            <p class="count cnt_top">{{followers}}</p>
+                            <p class="countname">&nbsp;&nbsp;Followers</p>
+                        </div>
+                        <div class='col-md-4 col-sm-4 rightfollowing'
+                            (click)="hideMmenu();routeTo('/profile/'+uname+'/#connection:following')"
+                            style="box-sizing: border-box;">
+                            <p class="count cnt_top">{{followings}}</p>
+                            <p class="countname">Following</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="scrollSec">
+                    <div id="scrollSecInner" class="scrollSecInner">
+                        <div class="bs-example">
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="card1">
+                                    <div class="card-header card-header-cntr" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseOne">
+                                                <div class="mmenu_list_wrap">
+                                                    <div class="list_icon_wrrp">
+                                                        <span class="circle_wrap">
+                                                            <span class="circle_wrap">
+                                                                <span class="circle_icon"><img
+                                                                        src="assets/images/svg-three/left_menu/course.svg"
+                                                                        alt=""></span>
+                                                            </span>
+                                                            <span _ngcontent-c4=""
+                                                                class="leftmenuicon menuiconallcourse"></span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list_content">
+                                                        <div class="mmenu_option"><span>Course</span></div>
+                                                    </div>
+                                                    <div class="list_right_icon">
+                                                        <img src="assets/images/svg-three/left_menu/arrow_right.svg">
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="mmenu_list_wrap"
+                                                routerLink="/profile/{{uname}}/#Courses:mycourses"
+                                                (click)="hideMmenu()">
+
+                                                <div class="list_content">
+                                                    <div class="mmenu_option"><span> My Courses </span></div>
+                                                </div>
+
+                                            </div>
+                                            <div class="mmenu_list_wrap" routerLink="{{'/all-courses'}}"
+                                                (click)="hideMmenu()">
+
+                                                <div class="list_content">
+                                                    <div class="mmenu_option"><span>All Courses</span></div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card1">
+                                    <div class="card-header card-header-cntr" id="headingTwo">
+                                        <h2 class="mb-0">
+                                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseTwo">
+                                                <div class="mmenu_list_wrap">
+                                                    <div class="list_icon_wrrp">
+                                                        <span class="circle_wrap">
+                                                            <span class="circle_icon ">
+
+                                                                <img src="assets/images/svg-three/left_menu/my_pages-mmenu.svg"
+                                                                    alt="">
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list_content">
+                                                        <div class="mmenu_option"><span>Pages</span></div>
+                                                    </div>
+                                                    <div class="list_right_icon">
+                                                        <img src="assets/images/svg-three/left_menu/arrow_right.svg">
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+
+                                            <div class="mmenu_list_wrap" routerLink="/profile/{{uname}}/#Pages:mypages"
+                                                (click)="hideMmenu()">
+                                                <div class="list_content">
+                                                    <div class="mmenu_option"><span>My Pages</span></div>
+                                                </div>
+
+                                            </div>
+                                            <div class="mmenu_list_wrap" (click)="hideMmenu();showPageCreatePopup()">
+
+                                                <div class="list_content">
+                                                    <div class="mmenu_option"><span>Create Page</span></div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="main_wrpp">
+
+
+                            <div class="mmenu_list_wrap" (click)="articleFilter()" (click)="hideMmenu()">
+                                <div class="list_icon_wrrp">
+                                    <span class="circle_wrap">
+                                        <span class="circle_icon"><img src="assets/images/article/articleicon-mmenu.svg"
+                                                alt=""></span>
+                                    </span>
+                                </div>
+                                <div class="list_content">
+                                    <div class="mmenu_option"><span>Articles</span></div>
+                                </div>
+
+                            </div>
+                            <div class="mmenu_list_wrap" routerLink="/leaderboard">
+                                <div class="list_icon_wrrp">
+                                    <span class="circle_wrap">
+                                        <span class="circle_icon leaderboard">
+
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="list_content">
+                                    <div class="mmenu_option"><span>Leaderboard</span></div>
+                                </div>
+
+                            </div>
+
+                            <div class="mmenu_list_wrap" routerLink='/inbox'
+                                (click)="hideMmenu();_constantService.setSessionJsonPair('fom_res', 0)">
+                                <div class="list_icon_wrrp">
+                                    <span class="circle_wrap">
+                                        <span class="circle_icon"><img
+                                                src="./assets/images/svg-three/course/mycourse.svg" alt=""></span>
+                                    </span>
+                                </div>
+                                <div class="list_content">
+                                    <div class="mmenu_option"><span> Message </span></div>
+                                </div>
+
+                            </div>
+                            <div class="mmenu_list_wrap" (click)="routTo('interests');hideMmenu()">
+                                <div class="list_icon_wrrp">
+                                    <span class="circle_wrap">
+                                        <span class="circle_icon"><img
+                                                src="assets/images/svg-three/left_menu/interest.svg" alt=""></span>
+                                    </span>
+                                </div>
+                                <div class="list_content">
+                                    <div class="mmenu_option"><span>Interest</span></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="heading_strip">
+                            <p>Other</p>
+                        </div>
+
+                        <div class="main_wrpp">
+
+                            <div class="mmenu_list_wrap" routerLink="/wallet/#Wallet">
+                                <div class="list_icon_wrrp">
+                                    <span class="circle_wrap">
+                                        <span class="circle_icon"><img
+                                                src="./assets/images/svg-three/course/wallet-mmenu.svg" alt=""></span>
+                                    </span>
+                                </div>
+                                <div class="list_content">
+                                    <div class="mmenu_option"><span>Wallet</span></div>
+                                </div>
+
+                            </div>
+
+                            <div class="mmenu_list_wrap" (click)="routTo('saved');hideMmenu()">
+                                <div class="list_icon_wrrp">
+                                    <span class="circle_wrap">
+                                        <span class="circle_icon"><img src="assets/images/svg-three/left_menu/saved.svg"
+                                                alt=""></span>
+                                    </span>
+                                </div>
+                                <div class="list_content">
+                                    <div class="mmenu_option"><span>Saved</span></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="bs-example">
+
+                            <div class="accordion" id="accordionExample1">
+                                <div class="card1">
+                                    <div class="card-header card-header-cntr" id="headingOne1">
+                                        <h2 class="mb-0">
+                                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseOne1">
+                                                <div class="mmenu_list_wrap">
+                                                    <div class="list_icon_wrrp">
+                                                        <span class="circle_wrap">
+                                                            <span class="circle_wrap">
+                                                                <span class="circle_icon"><img
+                                                                        src="assets/images/svg-three/head/settings-mmenu.svg"
+                                                                        alt=""></span>
+                                                            </span>
+                                                            <span _ngcontent-c4=""
+                                                                class="leftmenuicon menuiconallcourse"></span>
+                                                        </span>
+                                                    </div>
+                                                    <div (click)="scrollToBottom('scrollSecInner')"
+                                                        class="list_content">
+                                                        <div class="mmenu_option"><span>Settings</span></div>
+                                                    </div>
+                                                    <div class="list_right_icon">
+                                                        <img src="assets/images/svg-three/left_menu/arrow_right.svg">
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseOne1" class="collapse" aria-labelledby="headingOne1"
+                                        data-parent="#accordionExample1">
+                                        <div class="card-body">
+                                            <div class="mmenu_list_wrap">
+
+                                                <div (click)="redirectTo(1)" class="list_content">
+                                                    <div class="mmenu_option"><span>Term of Use</span></div>
+                                                </div>
+
+                                            </div>
+                                            <div class="mmenu_list_wrap">
+
+                                                <div (click)="redirectTo(2)" class="list_content">
+                                                    <div class="mmenu_option"><span>privacy policy</span></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="mmenu_list_wrap" routerLink="/settings/#security">
+
+                                                <div class="list_content">
+                                                    <div class="mmenu_option"><span>Security</span></div>
+                                                </div>
+
+                                            </div>
+                                            <div class="mmenu_list_wrap" routerLink="/activitylog">
+
+                                                <div class="list_content">
+                                                    <div class="mmenu_option"><span>Activity Log</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="mmenu_list_wrap" (click)="logout()">
+
+                                                <div class="list_content">
+                                                    <div class="mmenu_option"><span>Logout</span></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main_wrpp">
+
+                        </div>
+
+                        <div class="main_wrpp">
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div (click)="routeToEducator('https://www.study24x7.com/utils/guide.html')" class="bottomfixed">
+                    <div class="educatorSec">
+                        <div class="educatordesp">
+                            <p>Be an Educator </p>
+                            <span>Follow steps to get started</span>
+                        </div>
+                        <span class="eductorDefautImg"></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

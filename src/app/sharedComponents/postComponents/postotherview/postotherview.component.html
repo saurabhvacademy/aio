@@ -1,0 +1,2185 @@
+<div class=" post_outer  ">
+    <div id="publicPostHeader" *ngIf="arr.TYPE!=4">
+        <!----post header start---->
+        <!-- <div class='post_profile'>
+            <div class="post-header-inner-wrap clearfix"> -->
+        <div class='postHeaderWrapper'>
+            <div class="postHeaderInnerWrapper clearfix"
+                [ngClass]="{'paddingRight': isPagePost, 'paddingRight0': !isPagePost   } ">
+
+                <div *ngIf="isPagePost">
+                    <span class="profileImage  " routerLink="/page/{{pg_id}}">
+                        <img src="{{profile_pic_path}}" alt="study24x7 {{user_name |trimData:30}}">
+                    </span>
+                    <!--click function add by vijay-->
+                    <div class="postHeaderDetailWrapper">
+                        <div class="postHeaderDetails">
+                            <div class="userName cursor-pointer " routerLink="/page/{{pg_id}}">{{user_name
+                                |trimData:30}}</div>
+                        </div>
+                        <div class="postOtherDetails">
+                            <span class="timeandFollow" routerLink="/page/{{pg_id}}">{{arr['PAGE_FOLLOW_COUNT']}}
+                                followers</span>
+                            <span class="dote">
+                                <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
+                                    alt="study24x7">
+                            </span>
+                            <span class="timeandFollow cursor-pointer textDecorationUnderline"
+                                routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                            <span class="dote">
+                                <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
+                                    alt="study24x7">
+                            </span>
+                            <span class="previcy_icon"><img title="Public"
+                                    src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="!isPagePost">
+                    <span class="profileImage" style="cursor:pointer" routerLink="/profile/{{arr.USER_NAME}}">
+                        <img src="{{profile_pic_path}}" alt="study24x7 {{full_name |trimData:30}}">
+                    </span>
+
+                    <div class="postHeaderDetailWrapper">
+                        <div class="postHeaderDetails">
+                            <div class='userName cursor-pointer ' routerLink="/profile/{{arr.USER_NAME}}">{{full_name
+                                |trimData:30}}</div>
+                        </div>
+                        <div class="postOtherDetails">
+                            <span class="timeandFollow cursor-pointer textDecorationUnderline"
+                                routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                            <span class="dote"><img
+                                    src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
+                                    alt="study24x7"></span>
+                            <span class="previcy_icon"><img title="Public"
+                                    src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class='leftmenuWrapper' #reportPopup>
+                    <button (click)="loginpopupFxn()" *ngIf="isPagePost" routerLink="/page/{{pg_id}}" type="button"
+                        name="button" class="follow_container follw_btn">
+                        <span class="follow">
+                            Follow
+                        </span>
+                    </button>
+                    <span class="saveButtonWrapper postRightButton onHoverShowAndHideIcon " (click)="loginpopupFxn()">
+                        <img src="assets/images/svg-three/left_menu/bookmark.svg" class="defaultt ">
+                        <img src=" assets/images/svg-three/left_menu/f05050/bookmark.svg" title="save" class="hoverr ">
+                    </span>
+                    <span class="menuButon postRightButton onHoverShowAndHideIcon" (click)="loginpopupFxn()">
+                        <img src="assets/images/svg-three/post_icon/dot_menu.svg" class="defaultt">
+                        <img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" class="hoverr">
+                    </span>
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- </div>
+        </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div *ngIf="arr.TYPE==2  && arr.FILE_TYPE!=1">
+            <!-- fileattachment post start -->
+            <div class='post_outer attachment-post-comp postotherview ' style="cursor:default"
+                (click)="savePublicPostUrlFxn()">
+
+                <div class='postmain_container' *ngIf="post_data!=''">
+                    <p class="posttext posttextauto" *ngIf="DataView" [innerHTML]="post_data|trimData"></p><a
+                        *ngIf="DataView" class="continue-reading">See more</a>
+                    <p class="posttext posttextauto" *ngIf="!DataView" [innerHTML]="post_data"></p>
+                </div>
+                <div (click)="loginpopupFxn()" class='post_profileContent'>
+                    <div class="attached-file-wrap clearfix">
+                        <div class="attached-file-inner-wrap clearfix">
+                            <div class="doc-img-wrap">
+                                <img src="assets/images/svg/{{file_type}}.svg " alt="{{altName}}">
+                            </div>
+                            <div class="doc-detail-wrap clearfix">
+                                <div class="doc-detail-left-wrap">
+                                    <div class="postfilenam">{{file_name|trimData:30}}</div>
+                                    <span class="download-count"><span
+                                            *ngIf="download_Count!=0">{{download_Count}}</span>
+                                        Downloads
+                                    </span>
+                                </div>
+                                <div class="doc-detail-right-wrap" (click)="loginpopupFxn()">
+                                    <span class="download_file">
+                                        <a>
+                                            <img src="assets/images/svg/download-doc.svg" title="Download file">
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- fileattachment post end -->
+        </div>
+
+        <!-- image post start  -->
+        <div *ngIf="arr.TYPE==2 && arr.FILE_TYPE==1">
+            <div class='post_outer img-post-comp postotherview ' style="cursor:default"
+                (click)="savePublicPostUrlFxn()">
+
+
+                <div class='post_profileContent'>
+                    <div class='postmain_container'>
+                        <p class="posttext posttextauto" *ngIf="DataView && post_data!=''"
+                            [innerHTML]="post_data|trimData" style="float: left;"></p><a *ngIf="DataView"
+                            class="continue-reading">See more</a>
+                        <p class="posttext posttextauto" *ngIf="!DataView && post_data!=''" [innerHTML]="post_data"
+                            style="float: left;"></p>
+                        <div class="imgpostimgcontainer" style="display: block;margin-top: 0;float: none;">
+                            <img src="{{image_path}}" class="imgpost_img" *ngIf="image_path!=''"
+                                alt="{{'study24x7 ' +altName}}">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- image post end -->
+
+
+        <!-- linkpost start -->
+        <div *ngIf="arr.TYPE==1 && (arr.SHARE_LINK_TITLE!='' && arr.SHARE_LINK_TITLE!=null)">
+            <div class='post_outer link-post-comp postotherview ' style="cursor:default"
+                (click)="savePublicPostUrlFxn()">
+
+                <div class='post_profileContent'>
+                    <div class='postmain_container'>
+                        <p class="posttext posttextauto" *ngIf="DataView && post_data!='' && !link_title"
+                            [innerHTML]="text|trimData"></p>
+                        <a *ngIf="DataView" class="continue-reading">See more</a>
+                        <p class="posttext posttextauto" *ngIf="!DataView && post_data!='' && !link_title"
+                            [innerHTML]="text">
+                        </p>
+
+
+                        <a class="sharedlink_post cursor-pointer shareLinkPostParentcontiner" *ngIf="innerPostTyp == 0">
+                            <div class="linkImageaBackgroundImage"
+                                [ngStyle]="{'background-image': getImgUrl(image_path)}" *ngIf="image_path !='' ">
+                            </div>
+                            <div class="sharedlink_content">
+                                <h4>{{link_title}}</h4>
+                                <p>{{link_description}}</p>
+                            </div>
+                        </a>
+
+                        <a (click)="publicViewArticle()"
+                            class="sharedlink_post cursor-pointer shareLinkPostParentcontiner PostViewArticle"
+                            *ngIf="innerPostTyp == 1">
+                            <div class="articleImage" *ngIf="image_path !='' ">
+                                <img src="{{image_path}}" alt="study24x7" #aritcleImage style="visibility:hidden;">
+                                <span
+                                    [ngClass]="{'img-auto': setArticleClass == 1, 'img-contain': setArticleClass == 2, 'img-100':setArticleClass == 3, 'img-cover': setArticleClass == 4}"
+                                    [ngStyle]="{'background-image': getImgUrl(image_path)}"></span>
+                            </div>
+
+                            <div class="article_content">
+                                <h4 [innerHTML]="link_title"></h4>
+                                <p [innerHTML]="link_description"></p>
+
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <!-- link post end -->
+        </div>
+
+
+        <!-- multiple-choice-post start -->
+        <div *ngIf="arr.TYPE==3 && arr.QUESTION_TYPE==2" class="outerMainPost">
+            <div class='post_outer multiple-choice-comp postotherview ' style="cursor:default"
+                (click)="savePublicPostUrlFxn()">
+
+                <div class='post_profileContent'>
+
+                    <div class='postmain_container'>
+                        <p [innerText]="post_data"></p>
+                        <div class="multiple_c_p_imgcontainer1" *ngIf="questionImg!=''">
+                            <img src="{{questionImg}}" alt="{{altName}}">
+                        </div>
+                    </div>
+
+                    <div class="post_options">
+                        <label class='radiobtn_outer f-child crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="resultDeclared==false && my_profile==false">
+                            <input type="checkbox" class='Radio' id='{{post_id}}_option1' value='A'
+                                (change)="checkboxupdate($event)">
+                            <label class="checkbox_btn" for="{{post_id}}_option1">
+                            </label>
+                            <b> A </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt1_Text" [innerHTML]="option1" *ngIf="option1!=''"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                    <img src="{{option1Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="resultDeclared==false && my_profile==false">
+                            <input type="checkbox" class='Radio' id='{{post_id}}_option2' value='B'
+                                (change)="checkboxupdate($event)">
+                            <label class="checkbox_btn" for='{{post_id}}_option2'>
+                            </label>
+                            <b> B </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt2_Text" [innerHTML]="option2" *ngIf="option2!=''"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                    <img src="{{option2Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="(option3!='' || option3Img!='') && resultDeclared==false && my_profile==false">
+                            <input type="checkbox" class='Radio' id='{{post_id}}_option3' value='C'
+                                (change)="checkboxupdate($event)">
+
+                            <label class="checkbox_btn" for='{{post_id}}_option3'>
+                            </label>
+                            <b> C </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt3_Text" [innerHTML]="option3" *ngIf="option3!=''"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                    <img src="{{option3Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="(option4!='' || option4Img!='') && resultDeclared==false && my_profile==false">
+                            <input type="checkbox" class='Radio' id='{{post_id}}_option4' value='D'
+                                (change)="checkboxupdate($event)">
+                            <label class="checkbox_btn" for='{{post_id}}_option4'>
+                            </label>
+                            <b> D </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt4_Text" [innerHTML]="option4" *ngIf="option4!=''"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                    <img src="{{option4Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="(option5!='' || option5Img!='') && resultDeclared==false && my_profile==false">
+                            <input type="checkbox" class='Radio' id='{{post_id}}_option5' value='E'
+                                (change)="checkboxupdate($event)">
+                            <label class="checkbox_btn" for='{{post_id}}_option5'>
+                            </label>
+                            <b> E </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt5_Text" [innerHTML]="option5" *ngIf="option5!=''"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                    <img src="{{option5Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="(option6!='' || option6Img!='') && resultDeclared==false && my_profile==false">
+                            <input type="checkbox" class='Radio' id='{{post_id}}_option6' value='F'
+                                (change)="checkboxupdate($event)">
+                            <label class="checkbox_btn" for='{{post_id}}_option6'>
+                            </label>
+                            <b> F </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt6_Text" [innerHTML]="option6" *ngIf="option6!=''"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                    <img src="{{option6Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+
+
+                        <!-- ============================= result without profile ============================================ -->
+
+                        <label class='radiobtn_outer f-child' *ngIf="resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt" id="{{post_id}}_opt1">
+                                <span class="questionResultt_percent"><b>A</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt1_Text" [innerHTML]="option1" *ngIf="option1!=''"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                        <img src="{{option1Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer ' *ngIf="resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt" id="{{post_id}}_opt2">
+                                <span class="questionResultt_percent"><b>B</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt2_Text" [innerHTML]="option2" *ngIf="option2!=''"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                        <img src="{{option2Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer ' *ngIf="(option3!='' || option3Img!='') && resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt" id="{{post_id}}_opt3">
+                                <span class="questionResultt_percent"><b>C</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt3_Text" [innerHTML]="option3" *ngIf="option3!=''"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                        <img src="{{option3Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer ' *ngIf="(option4!='' || option4Img!='') && resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt" id="{{post_id}}_opt4">
+                                <span class="questionResultt_percent"><b>D</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt4_Text" [innerHTML]="option4" *ngIf="option4!=''"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                        <img src="{{option4Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer' *ngIf="(option5!='' || option5Img!='') && resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt" id="{{post_id}}_opt5">
+                                <span class="questionResultt_percent"><b>E</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt5_Text" [innerHTML]="option5" *ngIf="option5!=''"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                        <img src="{{option5Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class='radiobtn_outer ' *ngIf="(option6!='' || option6Img!='') && resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt" id="{{post_id}}_opt6">
+                                <span class="questionResultt_percent"><b>F</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt6_Text" [innerHTML]="option6" *ngIf="option6!=''"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                        <img src="{{option6Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+
+                        <div class="admin-question-post-result clearfix" *ngIf="my_profile">
+                            <div class="total-resp-wrap">
+                                <span>Total
+                                    Responses:&nbsp;<strong>{{incorrectResponseCount+correctResponseCount}}</strong></span>
+                            </div>
+
+                            <div class="options-analysis-wrap clearfix">
+                                <div class="analysis-option-box" *ngIf="(option1!='' || option1Img!='')">
+                                    <span><strong
+                                            class="q-no">A</strong>&nbsp;<strong>{{opt1Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="(option2!='' || option2Img!='')">
+                                    <span><strong
+                                            class="q-no">B</strong>&nbsp;<strong>{{opt2Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="(option3!='' || option3Img!='')">
+                                    <span><strong
+                                            class="q-no">C</strong>&nbsp;<strong>{{opt3Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="(option4!='' || option4Img!='')">
+                                    <span><strong
+                                            class="q-no">D</strong>&nbsp;<strong>{{opt4Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="(option5!='' || option5Img!='')">
+                                    <span><strong
+                                            class="q-no">E</strong>&nbsp;<strong>{{opt5Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="(option6!='' || option6Img!='')">
+                                    <span><strong
+                                            class="q-no">F</strong>&nbsp;<strong>{{opt6Percentile}}%</strong></span>
+                                </div>
+                            </div>
+                            <div class="total-resp-wrap">
+                                <span>&nbsp;&nbsp;Correct Answer:&nbsp;<strong>{{correctAnswer}}</strong></span>
+                            </div>
+                        </div>
+
+                        <div class="questionpost_button clearfix" *ngIf="resultDeclared==false && !my_profile">
+                            <button (click)="submitMultipleResponse()" class="btn btn-primary desable red_rds"
+                                id="{{post_id}}_submit" value="" [ngClass]="{'aselesctopetion':enable_button}">
+                                <span class="text">Submit</span>
+                            </button>
+                            <div class="timeremaining" *ngIf="questionTime!=0">
+                                <span class="time-left-icon-wrap"><img src="assets/images/svg/time-left.svg"></span>
+                                <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                            </div>
+                        </div>
+                        <div class="questionpost_button clearfix" *ngIf=" my_profile && questionTime!=0">
+                            <div class="timeremaining" *ngIf="questionTime!=0">
+                                <span class="time-left-icon-wrap"><img src="assets/images/svg/time-left.svg"></span>
+                                <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                            </div>
+                        </div>
+                        <div *ngIf="resultDeclared" class="result-wrapper single-response clearfix"
+                            [ngClass]="{'show-result':resultDeclared && !my_profile}">
+                            <div class="box-one result-box result-box-attmt">
+
+                                <div class="resultinfo" *ngIf="resultDeclared"><span class="ttl tiitle-one">My Response
+                                        &nbsp;</span>
+                                    <div class="corrt_ans"> <span class="bg-circle"
+                                            *ngFor="let res of myResponse">{{res}}</span></div>
+                                </div>
+                            </div>
+
+                            <div class="box-three result-box clearfix">
+                                <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
+                                        src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                        class="response-count">{{arr.INCORRECT_RESPONSE_COUNT}}</span> </div>
+                                <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
+                                        src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                        class="response-count">{{arr.CORRECT_RESPONSE_COUNT}}</span> </div>
+                                <div class="resultinfo title" *ngIf="resultDeclared && !my_profile">Total Responses
+                                </div>
+                            </div>
+                            <button style="float:right" *ngIf="resultDeclared" (click)="routeToNextQuestion()"
+                                class="btn btn-primary desable red_rds" id="{{post_id}}_submit" value=""
+                                [ngClass]="{'aselesctopetion':enable_button}">
+                                <span class="text">Next</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- multiple-choice-post end -->
+
+
+        <!-- single chocie post start -->
+        <div *ngIf="arr.TYPE==3 && arr.QUESTION_TYPE==1">
+            <div class='post_outer single-choice-comp postotherview' style="cursor:default"
+                (click)="savePublicPostUrlFxn()">
+                <div class='post_profileContent'>
+                    <div class='postmain_container'>
+                        <p id="{{post_id}}_quesText" [innerHTML]="post_data"></p>
+                        <div class="multiple_c_p_imgcontainer1" *ngIf="questionImg!=''">
+                            <img _ngcontent-c6="" src="{{questionImg}}" alt="{{altName}}">
+                        </div>
+                    </div>
+                    <div class="post_options">
+                        <label (click)="enableSubmitButton()" class='radiobtn_outer f-child crs_auto'
+                            *ngIf="resultDeclared==false && !my_profile">
+                            <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio" id='{{post_id}}_option1'
+                                name='{{post_id}}_mainoption' value="A">
+                            <label class="radio_btn" for="{{post_id}}_option1"></label>
+                            <b> A </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt1_Text" [innerHTML]="option1"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                    <img _ngcontent-c6="" src="{{option1Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="resultDeclared==false && !my_profile">
+                            <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio" id='{{post_id}}_option2'
+                                name='{{post_id}}_mainoption' value="B">
+                            <label class="radio_btn" for="{{post_id}}_option2"></label>
+                            <b> B </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt2_Text" [innerHTML]="option2"></p>
+
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                    <img _ngcontent-c6="" src="{{option2Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="(option3!='' || option3Img!='') && resultDeclared==false && !my_profile">
+                            <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio" id='{{post_id}}_option3'
+                                name='{{post_id}}_mainoption' value="C">
+                            <label class="radio_btn" for="{{post_id}}_option3"></label>
+                            <b> C </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt3_Text" [innerHTML]="option3"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                    <img _ngcontent-c6="" src="{{option3Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="(option4!='' || option4Img!='') && resultDeclared==false && !my_profile">
+                            <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio" id='{{post_id}}_option4'
+                                name='{{post_id}}_mainoption' value="D">
+
+                            <label class="radio_btn" for="{{post_id}}_option4"></label>
+                            <b> D </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt4_Text" [innerHTML]="option4"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                    <img _ngcontent-c6="" src="{{option4Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="(option5!='' || option5Img!='') && resultDeclared==false && !my_profile">
+                            <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio" id='{{post_id}}_option5'
+                                name='{{post_id}}_mainoption' value="E">
+                            <label class="radio_btn" for="{{post_id}}_option5"></label>
+                            <b> E </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt5_Text" [innerHTML]="option5"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                    <img _ngcontent-c6="" src="{{option5Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer crs_auto' (click)="enableSubmitButton()"
+                            *ngIf="(option6!='' || option6Img!='') && resultDeclared==false && !my_profile">
+                            <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio" id='{{post_id}}_option6'
+                                name='{{post_id}}_mainoption' value="F">
+                            <label class="radio_btn" for="{{post_id}}_option6"></label>
+                            <b> F </b>
+                            <div class="inr_content">
+                                <p id="{{post_id}}_opt6_Text" [innerHTML]="option6"></p>
+                                <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                    <img _ngcontent-c6="" src="{{option6Img}}" alt="{{altName}}">
+                                </div>
+                            </div>
+                        </label>
+                        <!-- ================================result without profile========================================= -->
+                        <label class='radiobtn_outer f-child' *ngIf="resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt"
+                                [ngClass]="{wronganswer:arr.submittedAnswer=='A' && arr.ANSWER[0]!='A',rightanswer:arr.ANSWER[0]=='A'}"
+                                id="{{post_id}}_opt1">
+                                <span class="questionResultt_percent"><b>A</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt1_Text" [innerHTML]="option1"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                        <img src="{{option1Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </label>
+                        <label class='radiobtn_outer' *ngIf="resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt"
+                                [ngClass]="{wronganswer:arr.submittedAnswer=='B' && arr.ANSWER[0]!='B',rightanswer:arr.ANSWER[0]=='B'}"
+                                id="{{post_id}}_opt2">
+                                <span class="questionResultt_percent"><b>B</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt2_Text" [innerHTML]="option2"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                        <img src="{{option2Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer' *ngIf="(option3!='' || option3Img!='') && resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt"
+                                [ngClass]="{wronganswer:arr.submittedAnswer=='C' && arr.ANSWER[0]!='C',rightanswer:arr.ANSWER[0]=='C'}"
+                                id="{{post_id}}_opt3">
+                                <span class="questionResultt_percent"><b>C</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt3_Text" [innerHTML]="option3"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                        <img src="{{option3Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer' *ngIf="(option4!='' || option4Img!='') && resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt"
+                                [ngClass]="{wronganswer:arr.submittedAnswer=='D' && arr.ANSWER[0]!='D',rightanswer:arr.ANSWER[0]=='D'}"
+                                id="{{post_id}}_opt4">
+                                <span class="questionResultt_percent"><b>D</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt4_Text" [innerHTML]="option4"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                        <img src="{{option4Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer' *ngIf="(option5!='' || option5Img!='') && resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt"
+                                [ngClass]="{wronganswer:arr.submittedAnswer=='E' && arr.ANSWER[0]!='E',rightanswer:arr.ANSWER[0]=='E'}"
+                                id="{{post_id}}_opt5">
+                                <span class="questionResultt_percent"><b>E</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt5_Text" [innerHTML]="option5"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                        <img src="{{option5Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer' *ngIf="(option6!='' || option6Img!='') && resultDeclared"
+                            [ngClass]="{'wall-result':resultDeclared && my_profile==false}">
+                            <div class="questionResultt"
+                                [ngClass]="{wronganswer:arr.submittedAnswer=='F' && arr.ANSWER[0]!='F',rightanswer:arr.ANSWER[0]=='F'}"
+                                id="{{post_id}}_opt6">
+                                <span class="questionResultt_percent"><b>F</b></span>
+                                <div class="inr_content">
+                                    <p id="{{post_id}}_opt6_Text" [innerHTML]="option6"></p>
+                                    <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                        <img src="{{option6Img}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <div class="admin-question-post-result clearfix" *ngIf="my_profile">
+                            <div class="total-resp-wrap">
+                                <span>Total
+                                    Responses:&nbsp;<strong>{{incorrectResponseCount+correctResponseCount}}</strong></span>
+                            </div>
+
+                            <div class="options-analysis-wrap clearfix">
+                                <div class="analysis-option-box">
+                                    <span><strong
+                                            class="q-no ">A</strong>&nbsp;<strong>{{opt1Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box">
+                                    <span><strong
+                                            class="q-no ">B</strong>&nbsp;<strong>{{opt2Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="option3!='' || option3Img!=''">
+                                    <span><strong
+                                            class="q-no">C</strong>&nbsp;<strong>{{opt3Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="option4!='' || option4Img!=''">
+                                    <span><strong
+                                            class="q-no">D</strong>&nbsp;<strong>{{opt4Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="option5!='' || option5Img!=''">
+                                    <span><strong
+                                            class="q-no">E</strong>&nbsp;<strong>{{opt5Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box" *ngIf="option6!='' || option6Img!=''">
+                                    <span><strong
+                                            class="q-no">F</strong>&nbsp;<strong>{{opt6Percentile}}%</strong></span>
+                                </div>
+                            </div>
+                            <div class="total-resp-wrap">
+                                <span>&nbsp;&nbsp;Correct Answer:&nbsp;<strong>{{correctAnswer}}</strong></span>
+                            </div>
+                        </div>
+                        <div class="questionpost_button clearfix" *ngIf="resultDeclared==false && !my_profile ">
+                            <button (click)="submitResponse()" id="{{post_id}}_submit" value=""
+                                [ngClass]="{'btn':true,'btn-primary':true, 'red_rds':true, 'desable':true,'aselesctopetion':enable_button}">
+                                <span class="text">Submit</span>
+                            </button>
+
+                            <div class="timeremaining" *ngIf="questionTime!=0">
+                                <span class="time-left-icon-wrap"><img src="assets/images/svg/time-left.svg"></span>
+                                <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                            </div>
+                        </div>
+                        <div class="questionpost_button clearfix" *ngIf="my_profile && questionTime!=0">
+                            <div class="timeremaining" *ngIf="questionTime!=0">
+                                <span class="time-left-icon-wrap"><img src="assets/images/svg/time-left.svg"></span>
+                                <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                            </div>
+                        </div>
+                        <div *ngIf="resultDeclared" class="result-wrapper single-response clearfix"
+                            [ngClass]="{'show-result':resultDeclared && !my_profile }">
+                            <div class="box-one result-box">
+
+                                <div class="resultinfo" *ngIf="resultDeclared"><span class="ttl">My Response
+                                        &nbsp;</span>
+                                    <span class="bg-circle">{{arr.submittedAnswer}}</span>
+                                </div>
+                            </div>
+
+                            <div class="box-three result-box clearfix">
+                                <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
+                                        src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                        class="response-count">{{arr.INCORRECT_RESPONSE_COUNT}}</span> </div>
+                                <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
+                                        src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                        class="response-count">{{arr.CORRECT_RESPONSE_COUNT}}</span> </div>
+                                <div class="resultinfo title" *ngIf="resultDeclared && !my_profile">Total Responses
+                                </div>
+                            </div>
+                            <button style="float:right" *ngIf="resultDeclared" (click)="routeToNextQuestion()"
+                                class="btn btn-primary desable red_rds" id="{{post_id}}_submit" value=""
+                                [ngClass]="{'aselesctopetion':enable_button}">
+                                <span class="text">Next</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- single chocie post end -->
+        </div>
+
+        <!-- text post start -->
+        <div *ngIf="arr.TYPE==1 && !arr.SHARE_LINK_TITLE">
+            <div class='post_outer text-post-comp postotherview pointer' style="cursor:default"
+                (click)="savePublicPostUrlFxn()">
+
+
+                <div class='post_profileContent'>
+                    <div class='postmain_container'>
+                        <p class="posttext posttextauto" *ngIf="DataView" [innerHTML]="post_data|trimData"></p><a
+                            *ngIf="DataView" class="continue-reading">See more</a>
+                        <p class="posttext posttextauto" *ngIf="!DataView" [innerHTML]="post_data"></p>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- text post end -->
+        </div>
+
+
+        <!-- true false post start -->
+        <div *ngIf="arr.TYPE==3 && arr.QUESTION_TYPE==3">
+            <div class='post_outer true-false-comp postotherview    ' style="cursor:default"
+                (click)="savePublicPostUrlFxn()">
+
+
+                <div class='post_profileContent'>
+                    <div class='postmain_container'>
+
+
+                        <p id="{{post_id}}_quesText" [innerHTML]="post_data"></p>
+
+                        <div class="multiple_c_p_imgcontainer1" *ngIf="questionImg!=''">
+                            <img src="{{questionImg}}" alt="{{altName}}">
+                        </div>
+                    </div>
+                    <div class="post_options">
+                        <label (click)="enableSubmitButton()" class='radiobtn_outer f-child crs_auto'
+                            *ngIf="resultDeclared==false ">
+                            <input [(ngModel)]="arr.submittedAnswer" type="radio" class="Radio" id='{{post_id}}_option1'
+                                name='{{post_id}}_mainoption' value="A">
+                            <label class="radio_btn" for="{{post_id}}_option1"></label>
+                            <b> A</b>
+                            <span class="inr_content">True</span>
+                        </label>
+                        <label (click)="enableSubmitButton()" class='radiobtn_outer crs_auto'
+                            *ngIf="resultDeclared==false ">
+                            <input [(ngModel)]="arr.submittedAnswer" type="radio" class="Radio" id='{{post_id}}_option2'
+                                name='{{post_id}}_mainoption' value="B">
+                            <label class="radio_btn" for="{{post_id}}_option2"></label>
+                            <b>B</b>
+                            <span class="inr_content">False</span>
+                        </label>
+                        <!-- ===========================result without profile===================================== -->
+
+                        <label class='radiobtn_outer f-child' *ngIf="resultDeclared "
+                            [ngClass]="{'wall-result':resultDeclared }">
+                            <div class="questionResultt"
+                                [ngClass]="{wronganswer:arr.submittedAnswer=='A' && arr.ANSWER[0]!='A',rightanswer:arr.ANSWER[0]=='A'}"
+                                id="{{post_id}}_opt1">
+                                <span class="questionResultt_percent"><b>A</b></span>
+                                <div class="inr_content">True</div>
+                            </div>
+                        </label>
+                        <label class='radiobtn_outer' *ngIf="resultDeclared "
+                            [ngClass]="{'wall-result':resultDeclared }">
+                            <div class="questionResultt"
+                                [ngClass]="{wronganswer:arr.submittedAnswer=='B' && arr.ANSWER[0]!='B',rightanswer:arr.ANSWER[0]=='B'}"
+                                id="{{post_id}}_opt2">
+                                <span class="questionResultt_percent"><b>B</b></span>
+                                <div class="inr_content">False</div>
+                            </div>
+                        </label>
+
+                        <div class="admin-question-post-result clearfix" *ngIf="my_profile">
+                            <div class="total-resp-wrap">
+                                <span>Total
+                                    Responses:&nbsp;<strong>{{incorrectResponseCount+correctResponseCount}}</strong></span>
+                            </div>
+                            <div class="options-analysis-wrap clearfix">
+                                <div class="analysis-option-box">
+                                    <span><strong
+                                            class="q-no">A</strong>&nbsp;<strong>{{opt1Percentile}}%</strong></span>
+                                </div>
+                                <div class="analysis-option-box">
+                                    <span><strong
+                                            class="q-no">B</strong>&nbsp;<strong>{{opt2Percentile}}%</strong></span>
+                                </div>
+
+                            </div>
+                            <div class="total-resp-wrap">
+                                <span>&nbsp;&nbsp;Correct Answer:&nbsp;<strong>{{correctAnswer}}</strong></span>
+                            </div>
+                        </div>
+                        <div class="questionpost_button clearfix" *ngIf="resultDeclared==false && !my_profile">
+                            <button (click)="submitResponse()" class="btn btn-primary desable red_rds"
+                                id="{{post_id}}_submit" value="" [ngClass]="{'aselesctopetion':enable_button}">
+                                <span class="text">Submit</span>
+                            </button>
+
+                            <div class="timeremaining" *ngIf="questionTime!=0">
+                                <span class="time-left-icon-wrap"><img src="assets/images/svg/time-left.svg"></span>
+                                <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                            </div>
+                        </div>
+                        <div class="questionpost_button clearfix" *ngIf="my_profile && questionTime!=0">
+                            <div class="timeremaining" *ngIf="questionTime!=0">
+                                <span class="time-left-icon-wrap"><img src="assets/images/svg/time-left.svg"></span>
+                                <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="resultDeclared" class="result-wrapper single-response clearfix"
+                        [ngClass]="{'show-result':resultDeclared && !my_profile}">
+                        <div class="box-one result-box">
+
+                            <div class="resultinfo" *ngIf="resultDeclared">
+                                <span class="ttl">My Response &nbsp;</span> <span
+                                    class="bg-circle">{{arr.submittedAnswer}}</span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="box-three result-box clearfix">
+                            <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
+                                    src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                    class="response-count">{{arr.INCORRECT_RESPONSE_COUNT}}</span> </div>
+                            <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
+                                    src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                    class="response-count">{{arr.CORRECT_RESPONSE_COUNT}}</span> </div>
+                            <div class="resultinfo title" *ngIf="resultDeclared && !my_profile">Total Responses</div>
+                        </div>
+                        <button style="float:right" *ngIf="resultDeclared" (click)="routeToNextQuestion()"
+                            class="btn btn-primary desable red_rds" id="{{post_id}}_submit" value=""
+                            [ngClass]="{'aselesctopetion':enable_button}">
+                            <span class="text">Next</span>
+                        </button>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- true false post end -->
+
+        <!-- video post start  -->
+        <div *ngIf="arr.TYPE==6 || arr.TYPE==5" style="position:relative;">
+            <div class='post_outer img-post-comp video-post-comp postotherview pointer' style="cursor:default"
+                (click)="savePublicPostUrlFxn()">
+
+                <div class='post_profileContent'>
+                    <div class='postmain_container video-post-comp'>
+                        <span class="posttext posttextauto" [innerHTML]="post_data"></span>
+                        <a *ngIf="DataView" class="continue-reading">See more</a>
+                        <!--<p class="posttext posttextauto" *ngIf="!DataView" [innerHTML]="post_data"></p>-->
+                        <div style="position:relative;float:left;width:100%;height:100%">
+                            <!-- <img src="{{linkImage}}" alt="{{altName}}"> -->
+                            <iframe id="videoScreen_{{editPostId}}" [src]="videosrc| safe" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- video post end -->
+
+        <!--course-post start-->
+        <div class='post_outer postotherview text-post-comp' style="cursor:default" *ngIf="arr.TYPE==7"
+            (click)="savePublicPostUrlFxn()">
+            <div class="coursesDertailTop">
+                <div class="imgwrapper " [ngClass]="{'borderRadius':hideInDetail==true}"
+                    routerLink="/course/{{arr.COURSE_DETAIL.COURSE_URL}}">
+                    <img src="{{corsCoverPath}}" alt="{{altName}}">
+
+                    <div class="courseUserChip" *ngIf="enroledCount != 0 && enroledCount != null">
+                        <span class="enrolmmenticon"></span>
+                        <p>{{enroledCount}} {{enroledCount==1?'Learner':'Learners'}}</p>
+                    </div>
+
+                    <span class='leftmenudrop innerMenu' *ngIf="hideInDetail==true" #reportPopup>
+                        <span class="postright_btn postmenubtn" *ngIf="arr.IS_ADMIN ==0" (click)="postdropdown()"><img
+                                src="assets/images/svg-three/post_icon/dot_menu.svg" class="postdropmenu defaultt"><img
+                                src="assets/images/svg-three/post_icon/f05050/dot_menu.svg"
+                                class="postdropmenu hoverr"></span>
+                        <span class="postbookmarkbtn postright_btn" [ngClass]="{ activesaved : saveCondition}"
+                            (click)="savedpost();"><img src="assets/images/svg-three/left_menu/bookmark.svg"
+                                class="defaultt"><img src="assets/images/svg-three/left_menu/f05050/bookmark\.svg"
+                                class="hoverr"><img src="assets/images/svg-three/post_icon//bookmark_fill.svg"
+                                class="bookmarked"></span>
+
+                    </span>
+                </div>
+                <div class=" courseDesp">
+                    <div class="leftDetail">
+                        <h1 class="twoline_dot" title={{courseTitle}}><span (click)="routToCourseDetail(arr)"
+                                style="cursor: pointer;">{{ courseTitle | trimData: 70 }}</span></h1>
+                        <p>
+
+                            <span class="text">{{arr.COURSE_DETAIL.LEVEL}}</span>
+                            <span class="dote"></span>
+                            <span class="text">{{courseLanguage}}</span>
+                        </p>
+                    </div>
+                    <div class="rightDetail">
+                        <button id="enrollButton" class="btn-blush btnflex btn-blush-h btn-a btnrescntr f12"
+                            (click)="redirectTo('/course/'+ arr.COURSE_DETAIL.COURSE_URL)">
+                            VIEW COURSE
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!--course-post end-->
+        <div class="posttagdiv">
+            <span class="tags" *ngFor="let tags of tagsArr" [id]='tags.INTEREST_ID'>{{tags.INTEREST_NAME}}</span>
+            <span class="tags wallintereswrapper" *ngIf="showIntArr">
+                <span style="position:  relative;top: -3px;">...</span>
+                <div class="wallinterestlist">
+                    <div class="arrow-up"></div>
+                    <ul [perfectScrollbar]="config" style="position: relative;">
+                        <li *ngFor="let tag of ltIntShow" [id]='tag.INTEREST_ID'>{{tag.INTEREST_NAME}}</li>
+                    </ul>
+                </div>
+            </span>
+        </div>
+
+    </div>
+
+    <!--==========================SHARED POSTS START=====================================-->
+
+
+    <div *ngIf="arr.TYPE==4" id="sharedPublicViewPostHeader" class="outerMainShared">
+        <div class='postHeaderWrapper'>
+            <div class="postHeaderInnerWrapper clearfix sharedPostHeaderTop ">
+                <span class="profileImage sharedIconImage"><img
+                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/share.svg"></span>
+                <!-- click function add by vijay-->
+                <div class="postHeaderDetailWrapper sharedPostHeaderDetailWrapper">
+                    <div *ngIf="!isPagePost">
+                        <div class="postHeaderDetails">
+                            <span class='userName cursor-pointer' routerLink='/profile/{{user_name}}'>{{full_name
+                                |trimData:17}}</span> shared post from <span
+                                class='userName postOwnerName cursor-pointer'
+                                routerLink='/profile/{{sharedPostUser_UserName}}'>{{sharedPostUser_fullName
+                                |trimData:17}}</span>
+                        </div>
+
+                    </div>
+                    <div *ngIf="isPagePost">
+                        <div class="postHeaderDetails">
+                            <span class='userName cursor-pointer' routerLink='/profile/{{user_name}}'>{{full_name
+                                |trimData:17}}</span> shared post from <span
+                                class='userName postOwnerName cursor-pointer'
+                                routerLink='/page/{{pg_uuid}}/#latestfeed'>{{sharedPostUser_UserName
+                                |trimData:17}}</span>
+                        </div>
+
+                    </div>
+                    <div class="postOtherDetails">
+                        <span class="timeandFollow cursor-pointer textDecorationUnderline"
+                            routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
+                        <span class="dote"><img
+                                src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
+                                alt="study24x7"></span>
+                        <span class="previcy_icon"><img title="Public"
+                                src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                    </div>
+                </div>
+                <div class="leftmenuWrapper" (click)="loginpopupFxn()">
+                    <span class="menuButon postRightButton onHoverShowAndHideIcon" #postright>
+                        <img src="assets/images/svg-three/post_icon/dot_menu.svg" class="postdropmenu defaultt">
+                        <img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" class="postdropmenu hoverr">
+                    </span>
+                    <span class="saveButtonWrapper postRightButton onHoverShowAndHideIcon" (click)="savedpost();">
+                        <img src="assets/images/svg-three/left_menu/bookmark.svg" class="defaultt">
+                        <img src=" assets/images/svg-three/left_menu/f05050/bookmark.svg" title="save" class="hoverr">
+
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+
+        <span class="posttext posttextauto shared-post-text file_attachment_text">{{post_data}}
+        </span>
+        <div class="outer-origin-post">
+            <div class='postHeaderWrapper'>
+                <div class="postHeaderInnerWrapper clearfix"
+                    [ngClass]="{'sharedPostHeaderTop' : arr.TYPE!=4,   'paddingRight': isPagePost, 'paddingRight0': !isPagePost   } ">
+                    <div class="postHeaderDetailWrapper sharedPostHeaderDetailWrapper">
+                        <div *ngIf="!isPagePost">
+                            <span style="cursor: pointer;" class="profileImage" routerLink="/profile/{{arr.USER_NAME}}">
+                                <img src="{{sharedPostUser_ProfilePicPath}}" (error)="updateSourcePic($event)"
+                                    alt="study24x7 {{sharedPostUser_fullName |trimData:30}}">
+                            </span>
+                            <div class="postHeaderDetails">
+
+
+                                <div class='userName cursor-pointer' routerLink="/profile/{{arr.USER_NAME}}">
+                                    {{sharedPostUser_fullName |trimData:30}}</div>
+
+                            </div>
+                            <div class="postOtherDetails">
+                                <span class="timeandFollow cursor-pointer textDecorationUnderline"
+                                    routerLink="/post/{{arr.SHARED_POST_ID}}"
+                                    style="float:left">{{sharedPostTime}}</span>
+                                <span class="dote"><img
+                                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
+                                        alt="study24x7"></span>
+                                <span class="previcy_icon"><img title="Public"
+                                        src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                            </div>
+                        </div>
+                        <div *ngIf="isPagePost">
+                            <span class="profileImage cursor-pointer" routerLink="/page/{{pg_id}}">
+                                <img src="{{sharedPostUser_ProfilePicPath}}" alt="altName"
+                                    (error)="updateSourcePic($event)">
+                            </span>
+                            <div class="postHeaderDetails">
+
+                                <div class='userName cursor-pointer '>
+                                    {{postdata.decodeURIPostData(arr.SHARED_POST_DATA.TITLE)}}</div>
+                            </div>
+                            <div class="postOtherDetails">
+                                <span class="timeandFollow"
+                                    routerLink="/page/{{pg_id}}">{{arr['SHARED_POST_DATA']['PAGE_FOLLOW_COUNT']}}
+                                    followers</span>
+                                <span class="dote"><img
+                                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
+                                        alt="study24x7"></span>
+
+                                <span class="timeandFollow cursor-pointer textDecorationUnderline"
+                                    routerLink="/post/{{arr.SHARED_POST_ID}}">{{sharedPostTime}}</span>
+                                <span class="dote"><img
+                                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
+                                        alt="study24x7"></span>
+                                <span class="previcy_icon"><img title="Public"
+                                        src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+
+
+                            </div>
+                            <div class='leftmenuWrapper' #reportPopup>
+                                <button (click)="loginpopupFxn()" *ngIf="isPagePost" type="button" name="button"
+                                    class="follow_container">
+                                    <span class="follow">
+                                        Follow
+                                    </span>
+                                    <span class="following">
+                                        <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+                                        Following
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- shared course post start -->
+            <div class='post_outer postotherview text-post-comp' style="cursor:default" *ngIf="arr.TYPE==4 && arr.SHARED_POST_DATA.TYPE==7"
+            (click)="savePublicPostUrlFxn()">
+            <div class="coursesDertailTop">
+                <div class="imgwrapper " [ngClass]="{'borderRadius':hideInDetail==true}"
+                    routerLink="/course/{{arr.SHARED_POST_DATA.COURSE_DETAIL.COURSE_URL}}">
+                    <img src="{{corsCoverPath}}" alt="{{altName}}">
+
+                    <div class="courseUserChip" *ngIf="enroledCount != 0 && enroledCount != null">
+                        <span class="enrolmmenticon"></span>
+                        <p>{{enroledCount}} {{enroledCount==1?'Learner':'Learners'}}</p>
+                    </div>
+
+                    <span class='leftmenudrop innerMenu' *ngIf="hideInDetail==true" #reportPopup>
+                        <span class="postright_btn postmenubtn" *ngIf="arr.IS_ADMIN ==0" (click)="postdropdown()"><img
+                                src="assets/images/svg-three/post_icon/dot_menu.svg" class="postdropmenu defaultt"><img
+                                src="assets/images/svg-three/post_icon/f05050/dot_menu.svg"
+                                class="postdropmenu hoverr"></span>
+                        <span class="postbookmarkbtn postright_btn" [ngClass]="{ activesaved : saveCondition}"
+                            (click)="savedpost();"><img src="assets/images/svg-three/left_menu/bookmark.svg"
+                                class="defaultt"><img src="assets/images/svg-three/left_menu/f05050/bookmark\.svg"
+                                class="hoverr"><img src="assets/images/svg-three/post_icon//bookmark_fill.svg"
+                                class="bookmarked"></span>
+
+                    </span>
+                </div>
+                <div class=" courseDesp">
+                    <div class="leftDetail">
+                        <h1 class="twoline_dot" title={{courseTitle}}><span (click)="routToCourseDetail(arr)"
+                                style="cursor: pointer;">{{ courseTitle | trimData: 70 }}</span></h1>
+                        <p>
+
+                            <span class="text">{{getCourseLevelbyId(arr.SHARED_POST_DATA.COURSE_DETAIL.COURSE_LEVEL)}}</span>
+                            <span class="dote"></span>
+                            <span class="text">{{courseLanguage}}</span>
+                        </p>
+                    </div>
+                    <div class="rightDetail">
+                        <button id="enrollButton" class="btn-blush btnflex btn-blush-h btn-a btnrescntr f12"
+                            (click)="redirectTo('/course/'+ arr.SHARED_POST_DATA.COURSE_DETAIL.COURSE_URL)">
+                            VIEW COURSE
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+            <!-- shared course post end -->
+
+
+
+
+
+
+
+
+
+            <!-- Shared text post -->
+
+
+
+            <div *ngIf="arr.TYPE==4 && arr.SHARED_POST_DATA.TYPE == 2 && arr.SHARED_POST_DATA.FILE_TYPE!=1">
+                <div class='post_outer shared-attachment-post-comp shared-post postotherview     '
+                    style="cursor:default" (click)="savePublicPostUrlFxn()">
+
+
+                    <!--<p class="posttext posttextauto shared-post-text"></p>-->
+
+                    <div class="shared-post-blocks-wrap">
+                        <div class="shared-post-inner">
+
+                            <div class='post_profileContent'>
+                                <div class='postmain_container'>
+                                    <p class="posttext posttextauto" *ngIf="DataViewShared"></p>
+                                    <a *ngIf="DataViewShared" class="continue-reading">See more</a>
+                                    <p class="posttext posttextauto" *ngIf="DataViewShared"></p>
+                                </div>
+                                <div (click)="loginpopupFxn()" class="attached-file-wrap clearfix">
+                                    <div class="attached-file-inner-wrap clearfix">
+                                        <div class="doc-img-wrap">
+                                            <img src="assets/images/svg/{{file_type}}.svg">
+                                        </div>
+                                        <div class="doc-detail-wrap clearfix">
+                                            <div class="doc-detail-left-wrap">
+                                                <div class="postfilenam">{{file_name |trimData:40}}</div>
+                                                <span class="download-count">
+                                                    <span
+                                                        *ngIf="download_Count!=0">{{download_Count}}</span>Downloads</span>
+                                            </div>
+                                            <div class="doc-detail-right-wrap">
+                                                <span class="download_file">
+                                                    <a>
+                                                        <img src="assets/images/svg/download-doc.svg"
+                                                            title="Download file">
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- shared-attachment-post-comp-end -->
+            <!-- share img post start -->
+            <div *ngIf="arr.TYPE==4 && arr.SHARED_POST_DATA.TYPE==2 && arr.SHARED_POST_DATA.FILE_TYPE==1">
+                <div class='post_outer shared-img-post-comp shared-post postotherview     ' style="cursor:default"
+                    (click)="savePublicPostUrlFxn()">
+
+
+                    <p class="posttext posttextauto shared-post-text"></p>
+                    <div class="shared-post-blocks-wrap">
+                        <div class="shared-post-inner">
+
+                            <div class='post_profileContent'>
+                                <div class='postmain_container'>
+                                    <p class="posttext posttextauto">{{text}}
+                                    </p><a *ngIf="DataViewShared" class="continue-reading">See more</a>
+                                    <p class="posttext posttextauto"></p>
+                                    <img src="{{image_path}}" style="cursor:pointer;" *ngIf="image_path!=''"
+                                        alt="{{altName}}">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- share image post end -->
+            <!-- share link post start-->
+            <div
+                *ngIf="arr.TYPE==4 && arr.SHARED_POST_DATA.TYPE==1 && (arr.SHARED_POST_DATA.SHARE_LINK_TITLE!='' && arr.SHARED_POST_DATA.SHARE_LINK_TITLE!=null)">
+                <div class='post_outer shared-link-post-comp shared-post postotherview' style="cursor:default"
+                    (click)="savePublicPostUrlFxn()">
+
+                    <p class="posttext posttextauto shared-post-text"></p>
+                    <div class="shared-post-blocks-wrap">
+                        <div class="shared-post-inner">
+
+                            <div class='post_profileContent'>
+                                <div class='postmain_container'>
+                                    <p *ngIf="DataViewShared" class="posttext posttextauto"></p><a
+                                        *ngIf="DataViewShared" class="continue-reading">See
+                                        more</a>
+                                    <p class="posttext posttextauto"></p>
+                                    <a class="sharedlink_post cursor-pointer">
+                                        <img src="{{image_path}}" *ngIf="image_path!=''" alt="{{altName}}">
+                                        <div class="sharedlink_content">
+                                            <h4>{{link_title}}</h4>
+                                            <p>{{link_description}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- share link post end-->
+
+
+            <!-- shared-multiple-choice-post start -->
+            <div *ngIf="arr.TYPE==4 && arr.SHARED_POST_DATA.TYPE==3 && arr.SHARED_POST_DATA.QUESTION_TYPE==2">
+                <div class='post_outer shared-multiple-choice-post shared-post clearfix postotherview     '
+                    style="cursor:default" (click)="savePublicPostUrlFxn()">
+
+                    <p class="posttext posttextauto shared-post-text"></p>
+                    <div class="shared-post-blocks-wrap">
+                        <div class="shared-post-inner">
+
+                            <div class='post_profileContent'>
+                                <div class='postmain_container'>
+                                    <p id="{{post_id}}_quesText" [innerHTML]="sharedPost_data"
+                                        *ngIf="sharedPost_data!=''"></p>
+                                    <div class="multiple_c_p_imgcontainer1" *ngIf="questionImg!=''">
+                                        <img _ngcontent-c6="" src="{{questionImg}}" alt="{{altName}}">
+                                    </div>
+
+                                </div>
+                                <div class="post_options">
+                                    <label class='radiobtn_outer crs_auto' *ngIf="resultDeclared==false">
+                                        <input type="checkbox" class='Radio' id='{{post_id}}_option1' value='A'
+                                            (change)="enableSubmitButton();checkboxupdate($event)">
+                                        <label class="checkbox_btn" for='{{post_id}}_option1'>
+                                        </label>
+                                        <b> A </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt1_Text" [innerHTML]="option1" *ngIf="option1!=''"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                                <img src="{{option1Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label class='radiobtn_outer crs_auto' *ngIf="resultDeclared==false">
+                                        <input type="checkbox" class='Radio' id='{{post_id}}_option2' value='B'
+                                            (change)="enableSubmitButton();checkboxupdate($event)">
+                                        <label class="checkbox_btn" for='{{post_id}}_option2'>
+                                        </label>
+                                        <b> B </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt2_Text" [innerHTML]="option2" *ngIf="option2!=''"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                                <img src="{{option2Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer crs_auto'
+                                        *ngIf="(option3!='' || option3Img!='') &&  resultDeclared==false">
+                                        <input type="checkbox" class='Radio' id='{{post_id}}_option3' value='C'
+                                            (change)="enableSubmitButton();checkboxupdate($event)">
+                                        <label class="checkbox_btn" for='{{post_id}}_option3'>
+                                        </label>
+                                        <b> C </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt3_Text" [innerHTML]="option3" *ngIf="option3!=''"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                                <img src="{{option3Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer crs_auto'
+                                        *ngIf="(option4!='' || option4Img!='') &&  resultDeclared==false">
+                                        <input type="checkbox" class='Radio' id='{{post_id}}_option4' value='D'
+                                            (change)="enableSubmitButton;checkboxupdate($event)">
+                                        <label class="checkbox_btn" for='{{post_id}}_option4'>
+                                        </label>
+                                        <b> D </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt4_Text" [innerHTML]="option4" *ngIf="option4!=''"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                                <img src="{{option4Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer crs_auto'
+                                        *ngIf="(option5!='' || option5Img!='') && resultDeclared==false">
+                                        <input type="checkbox" class='Radio' id='{{post_id}}_option5' value='E'
+                                            (change)="enableSubmitButton();checkboxupdate($event)">
+                                        <label class="checkbox_btn" for='{{post_id}}_option5'>
+                                        </label>
+                                        <b> E </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt5_Text" [innerHTML]="option5" *ngIf="option5!=''"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                                <img src="{{option5Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer crs_auto'
+                                        *ngIf="(option6!='' || option6Img!='') && resultDeclared==false">
+                                        <input type="checkbox" class='Radio' id='{{post_id}}_option6' value='F'
+                                            (change)="enableSubmitButton();checkboxupdate($event)">
+                                        <label class="checkbox_btn" for='{{post_id}}_option6'>
+                                        </label>
+                                        <b> F </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt6_Text" [innerHTML]="option6" *ngIf="option6!=''"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                                <img src="{{option6Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <!-- ---------------- result declared ------------------ -->
+                                    <label class='radiobtn_outer f-child' *ngIf="resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt" id="{{post_id}}_opt1">
+                                            <span class="questionResultt_percent"><b>A</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt1_Text" [innerHTML]="option1" *ngIf="option1!=''">
+                                                </p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                                    <img src="{{option1Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer ' *ngIf="resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt" id="{{post_id}}_opt2">
+                                            <span class="questionResultt_percent"><b>B</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt2_Text" [innerHTML]="option2" *ngIf="option2!=''">
+                                                </p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                                    <img src="{{option2Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer '
+                                        *ngIf="(option3!='' || option3Img!='') &&  resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt" id="{{post_id}}_opt3">
+                                            <span class="questionResultt_percent"><b>C</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt3_Text" [innerHTML]="option3" *ngIf="option3!=''">
+                                                </p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                                    <img src="{{option3Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer '
+                                        *ngIf="(option4!='' || option4Img!='') &&  resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt" id="{{post_id}}_opt4">
+                                            <span class="questionResultt_percent"><b>D</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt4_Text" [innerHTML]="option4" *ngIf="option4!=''">
+                                                </p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                                    <img src="{{option4Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer'
+                                        *ngIf="(option5!='' || option5Img!='') && resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt" id="{{post_id}}_opt5">
+                                            <span class="questionResultt_percent"><b>E</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt5_Text" [innerHTML]="option5" *ngIf="option5!=''">
+                                                </p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                                    <img src="{{option5Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer '
+                                        *ngIf="(option6!='' || option6Img!='') && resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt" id="{{post_id}}_opt6">
+                                            <span class="questionResultt_percent"><b>F</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt6_Text" [innerHTML]="option6" *ngIf="option6!=''">
+                                                </p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                                    <img src="{{option6Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <div class="admin-question-post-result clearfix" *ngIf="my_profile">
+                                        <div class="total-resp-wrap">
+                                            <span>Total
+                                                Responses:&nbsp;<strong>{{incorrectResponseCount+correctResponseCount}}</strong></span>
+                                        </div>
+                                        <div class="options-analysis-wrap clearfix">
+                                            <div class="analysis-option-box" *ngIf="option1!='' || option1Img!=''">
+                                                <span><strong
+                                                        class="q-no">A</strong>&nbsp;<strong>{{opt1Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option2!='' || option2Img!=''">
+                                                <span><strong
+                                                        class="q-no">B</strong>&nbsp;<strong>{{opt2Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option3!='' || option3Img!=''">
+                                                <span><strong
+                                                        class="q-no">C</strong>&nbsp;<strong>{{opt3Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option4!='' || option4Img!=''">
+                                                <span><strong
+                                                        class="q-no">D</strong>&nbsp;<strong>{{opt4Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option5!='' || option5Img!=''">
+                                                <span><strong
+                                                        class="q-no">E</strong>&nbsp;<strong>{{opt5Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option6!='' || option6Img!=''">
+                                                <span><strong
+                                                        class="q-no">F</strong>&nbsp;<strong>{{opt6Percentile}}%</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="questionpost_button clearfix">
+                                        <button class="btn btn-primary desable red_rds"
+                                            (click)="submitSharedMultipleResponse()" id="{{post_id}}_submit" value=""
+                                            [ngClass]="{'aselesctopetion':enable_button}">
+                                            Submit
+                                        </button>
+
+                                        <div class="timeremaining" *ngIf="questionTime!=0">
+                                            <span class="time-left-icon-wrap"><img
+                                                    src="assets/images/svg/time-left.svg"></span>
+                                            <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="resultDeclared" class="result-wrapper single-response clearfix"
+                                        [ngClass]="{'show-result':resultDeclared && !my_profile}">
+                                        <div class="box-one result-box">
+
+                                            <div class="resultinfo" *ngIf="resultDeclared">
+                                                <span class="ttl">My Response &nbsp;</span> <span class="bg-circle"
+                                                    *ngFor="let res of myResponse">{{res}}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="box-three result-box clearfix">
+                                            <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
+                                                    src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                                    class="response-count">{{arr.SHARED_POST_DATA.INCORRECT_RESPONSE_COUNT}}</span>
+                                            </div>
+                                            <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
+                                                    src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                                    class="response-count">{{arr.SHARED_POST_DATA.CORRECT_RESPONSE_COUNT}}</span>
+                                            </div>
+                                            <div class="resultinfo title" *ngIf="resultDeclared && !my_profile">Total
+                                                Responses
+                                            </div>
+                                        </div>
+                                        <button style="float:right" *ngIf="resultDeclared"
+                                            (click)="routeToNextQuestion()" class="btn btn-primary desable red_rds"
+                                            id="{{post_id}}_submit" value=""
+                                            [ngClass]="{'aselesctopetion':enable_button}">
+                                            <span class="text">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- shared-multiple-choice-post end -->
+
+
+            <!-- share single choice post start  -->
+            <div *ngIf="arr.TYPE==4 && arr.SHARED_POST_DATA.TYPE==3 && arr.SHARED_POST_DATA.QUESTION_TYPE==1">
+                <div class='post_outer shared-post postotherview     ' style="cursor:default"
+                    (click)="savePublicPostUrlFxn()">
+                    <p class="posttext posttextauto shared-post-text"></p>
+                    <div class="shared-post-blocks-wrap">
+                        <div class="shared-post-inner">
+
+                            <div class='post_profileContent'>
+                                <div class='postmain_container'>
+
+                                    <p id="{{post_id}}_quesText" [innerHTML]="sharedPost_data"></p>
+                                    <div class="multiple_c_p_imgcontainer1" *ngIf="questionImg!=''">
+                                        <img _ngcontent-c6="" src="{{questionImg}}" alt="{{altName}}">
+                                    </div>
+
+                                </div>
+                                <div class="post_options">
+                                    <label (click)="enableSubmitButton()" class='radiobtn_outer f-child crs_auto'
+                                        *ngIf="resultDeclared==false">
+                                        <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio"
+                                            id='{{post_id}}_option1' name='{{post_id}}_mainoption' value="A">
+                                        <label class="radio_btn" for="{{post_id}}_option1"></label>
+                                        <b> A </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt1_Text" [innerHTML]="option1"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                                <img src="{{option1Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label (click)="enableSubmitButton()" class='radiobtn_outer crs_auto'
+                                        *ngIf="resultDeclared==false">
+                                        <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio"
+                                            id='{{post_id}}_option2' name='{{post_id}}_mainoption' value="B">
+                                        <label class="radio_btn" for="{{post_id}}_option2"></label>
+                                        <b> B </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt2_Text" [innerHTML]="option2"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                                <img src="{{option2Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label (click)="enableSubmitButton()" class='radiobtn_outer crs_auto'
+                                        *ngIf="(option3!='' || option3Img!='') && resultDeclared==false">
+                                        <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio"
+                                            id='{{post_id}}_option3' name='{{post_id}}_mainoption' value="C">
+                                        <label class="radio_btn" for="{{post_id}}_mainoption"></label>
+                                        <b> C </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt3_Text" [innerHTML]="option3"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                                <img src="{{option3Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label (click)="enableSubmitButton()" class='radiobtn_outer crs_auto'
+                                        *ngIf="(option4!='' || option4Img!='') && resultDeclared==false">
+                                        <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio"
+                                            id='{{post_id}}_option4' name='{{post_id}}_mainoption' value="D">
+                                        <label class="radio_btn" for="{{post_id}}_mainoption"></label>
+                                        <b> D </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt4_Text" [innerHTML]="option4"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                                <img src="{{option4Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label (click)="enableSubmitButton()" class='radiobtn_outer crs_auto'
+                                        *ngIf="(option5!='' || option5Img!='') && resultDeclared==false">
+                                        <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio"
+                                            id='{{post_id}}_option5' name='{{post_id}}_mainoption' value="E">
+                                        <label class="radio_btn" for="{{post_id}}_mainoption"></label>
+                                        <b> E</b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt5_Text" [innerHTML]="option5"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                                <img src="{{option5Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label (click)="enableSubmitButton()" class='radiobtn_outer crs_auto'
+                                        *ngIf="(option6!='' || option6Img!='') && resultDeclared==false">
+                                        <input type="radio" [(ngModel)]="arr.submittedAnswer" class="Radio"
+                                            id='{{post_id}}_option6' name='{{post_id}}_mainoption' value="F">
+                                        <label class="radio_btn" for="{{post_id}}_mainoption"></label>
+                                        <b> F </b>
+                                        <div class="inr_content">
+                                            <p id="{{post_id}}_opt6_Text" [innerHTML]="option6"></p>
+                                            <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                                <img src="{{option6Img}}" alt="{{altName}}">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <!-- -------------------result declared--------------------- -->
+                                    <label class='radiobtn_outer f-child' *ngIf="resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt"
+                                            [ngClass]="{wronganswer:arr.submittedAnswer=='A' && arr.SHARED_POST_DATA.ANSWER[0]!='A',rightanswer:arr.SHARED_POST_DATA.ANSWER[0]=='A'}"
+                                            id="{{post_id}}_opt1">
+                                            <span class="questionResultt_percent"><b>A</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt1_Text" [innerHTML]="option1"></p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option1Img!=''">
+                                                    <img src="{{option1Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer ' *ngIf="resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt"
+                                            [ngClass]="{wronganswer:arr.submittedAnswer=='B' && arr.SHARED_POST_DATA.ANSWER[0]!='B',rightanswer:arr.SHARED_POST_DATA.ANSWER[0]=='B'}"
+                                            id="{{post_id}}_opt2">
+                                            <span class="questionResultt_percent"><b>B</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt2_Text" [innerHTML]="option2"></p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option2Img!=''">
+                                                    <img src="{{option2Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer '
+                                        *ngIf="(option3!='' || option3Img!='') &&  resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt"
+                                            [ngClass]="{wronganswer:arr.submittedAnswer=='C' && arr.SHARED_POST_DATA.ANSWER[0]!='C',rightanswer:arr.SHARED_POST_DATA.ANSWER[0]=='C'}"
+                                            id="{{post_id}}_opt3">
+                                            <span class="questionResultt_percent"><b>C</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt3_Text" [innerHTML]="option3"></p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option3Img!=''">
+                                                    <img src="{{option3Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer '
+                                        *ngIf="(option4!='' || option4Img!='') &&  resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt"
+                                            [ngClass]="{wronganswer:arr.submittedAnswer=='D' && arr.SHARED_POST_DATA.ANSWER[0]!='D',rightanswer:arr.SHARED_POST_DATA.ANSWER[0]=='D'}"
+                                            id="{{post_id}}_opt4">
+                                            <span class="questionResultt_percent"><b>D</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt4_Text" [innerHTML]="option4"></p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option4Img!=''">
+                                                    <img src="{{option4Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer '
+                                        *ngIf="(option5!='' || option5Img!='') &&  resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt"
+                                            [ngClass]="{wronganswer:arr.submittedAnswer=='E' && arr.SHARED_POST_DATA.ANSWER[0]!='E',rightanswer:arr.SHARED_POST_DATA.ANSWER[0]=='E'}"
+                                            id="{{post_id}}_opt5">
+                                            <span class="questionResultt_percent"><b>E</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt5_Text" [innerHTML]="option5"></p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option5Img!=''">
+                                                    <img src="{{option5Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer '
+                                        *ngIf="(option6!='' || option6Img!='') &&  resultDeclared"
+                                        [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt"
+                                            [ngClass]="{wronganswer:arr.submittedAnswer=='F' && arr.SHARED_POST_DATA.ANSWER[0]!='F',rightanswer:arr.SHARED_POST_DATA.ANSWER[0]=='F'}"
+                                            id="{{post_id}}_opt6">
+                                            <span class="questionResultt_percent"><b>F</b></span>
+                                            <div class="inr_content">
+                                                <p id="{{post_id}}_opt6_Text" [innerHTML]="option6"></p>
+                                                <div class="multiple_c_p_imgcontainer" *ngIf="option6Img!=''">
+                                                    <img src="{{option6Img}}" alt="{{altName}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <div class="admin-question-post-result clearfix" *ngIf="my_profile">
+                                        <div class="total-resp-wrap">
+                                            <span>Total
+                                                Responses:&nbsp;<strong>{{incorrectResponseCount+correctResponseCount}}</strong></span>
+                                        </div>
+                                        <div class="options-analysis-wrap clearfix">
+                                            <div class="analysis-option-box" *ngIf="option1!=''  || option1Img!=''">
+                                                <span><strong
+                                                        class="q-no">A</strong>&nbsp;<strong>{{opt1Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option2!=''  || option2Img!=''">
+                                                <span><strong
+                                                        class="q-no">B</strong>&nbsp;<strong>{{opt2Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option3!='' || option3Img!=''">
+                                                <span><strong
+                                                        class="q-no">C</strong>&nbsp;<strong>{{opt3Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option4!='' || option4Img!=''">
+                                                <span><strong
+                                                        class="q-no">D</strong>&nbsp;<strong>{{opt4Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option5!='' || option5Img!=''">
+                                                <span><strong
+                                                        class="q-no">E</strong>&nbsp;<strong>{{opt5Percentile}}%</strong></span>
+                                            </div>
+                                            <div class="analysis-option-box" *ngIf="option6!='' || option6Img!=''">
+                                                <span><strong
+                                                        class="q-no">F</strong>&nbsp;<strong>{{opt6Percentile}}%</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="questionpost_button clearfix"
+                                        *ngIf="resultDeclared==false && !my_profile">
+                                        <button (click)="submitResponse()" class="btn btn-primary desable red_rds"
+                                            id="{{post_id}}_submit" value=""
+                                            [ngClass]="{'aselesctopetion':enable_button}">
+                                            Submit
+                                        </button>
+                                        <div class="timeremaining" *ngIf="questionTime!=0">
+                                            <span class="time-left-icon-wrap"><img
+                                                    src="assets/images/svg/time-left.svg"></span>
+                                            <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="resultDeclared" class="result-wrapper single-response clearfix"
+                                        [ngClass]="{'show-result':resultDeclared}">
+                                        <div class="box-one result-box">
+
+                                            <div class="resultinfo" *ngIf="resultDeclared"><span class="ttl">My
+                                                    Response:&nbsp;</span> <span
+                                                    class="bg-circle">{{arr.submittedAnswer}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="box-three result-box clearfix">
+                                            <div class="resultinfo clearfix" *ngIf="resultDeclared"><img
+                                                    src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                                    class="response-count">{{arr.SHARED_POST_DATA.INCORRECT_RESPONSE_COUNT}}</span>
+                                            </div>
+                                            <div class="resultinfo clearfix" *ngIf="resultDeclared"><img
+                                                    src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                                    class="response-count">{{arr.SHARED_POST_DATA.CORRECT_RESPONSE_COUNT}}</span>
+                                            </div>
+                                            <div class="resultinfo title">Total Responses</div>
+                                        </div>
+                                        <button style="float:right" *ngIf="resultDeclared"
+                                            (click)="routeToNextQuestion()" class="btn btn-primary desable red_rds"
+                                            value="" [ngClass]="{'aselesctopetion':enable_button}">
+                                            <span class="text">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- share single choice post  end  -->
+
+
+            <div *ngIf="arr.TYPE==4 && arr.SHARED_POST_DATA.TYPE==3 && arr.SHARED_POST_DATA.QUESTION_TYPE==3">
+                <!-- share true false post start   -->
+                <div class='post_outer shared-post postotherview     ' style="cursor:default"
+                    (click)="savePublicPostUrlFxn()">
+
+
+                    <p class="posttext posttextauto shared-post-text"></p>
+                    <div class="shared-post-blocks-wrap">
+                        <div class="shared-post-inner">
+
+                            <div class='post_profileContent'>
+                                <div class='postmain_container'>
+                                    <p id="{{post_id}}_quesText" [innerHTML]='sharedPost_data'></p>
+                                    <div class="multiple_c_p_imgcontainer1" *ngIf="questionImg!=''">
+                                        <img src="{{questionImg}}" alt="{{altName}}">
+                                    </div>
+                                </div>
+                                <div class="post_options">
+
+                                    <!-- result declared. -->
+                                    <label class='radiobtn_outer f-child' [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt"
+                                            [ngClass]="{wronganswer:arr.submittedAnswer=='A' && arr.SHARED_POST_DATA.ANSWER[0]!='A',rightanswer:arr.SHARED_POST_DATA.ANSWER[0]=='A'}"
+                                            id="{{post_id}}_opt1">
+
+                                            <b>A</b>
+                                            <div>True</div>
+                                        </div>
+                                    </label>
+                                    <label class='radiobtn_outer' [ngClass]="{'wall-result':resultDeclared}">
+                                        <div class="questionResultt"
+                                            [ngClass]="{wronganswer:arr.submittedAnswer=='B' && arr.SHARED_POST_DATA.ANSWER[0]!='B',rightanswer:arr.SHARED_POST_DATA.ANSWER[0]=='B'}"
+                                            id="{{post_id}}_opt2">
+
+                                            <b>B</b>
+                                            <div>False</div>
+                                        </div>
+                                    </label>
+                                    <div class="questionpost_button clearfix" *ngIf="resultDeclared==false">
+                                        <button class="btn btn-primary disable red_rds" (click)="submitResponse()"
+                                            value="">
+                                            <span>Submit</span>
+                                            <span class="preloder"><img src="./assets/images/svg/preloader-25.svg"
+                                                    alt="study24x7" *ngIf="showPreloader"></span></button>
+                                        <div class="timeremaining" *ngIf="questionTime!=0">
+                                            <span class="time-left-icon-wrap"><img
+                                                    src="assets/images/svg/time-left.svg"></span>
+                                            <span id="{{post_id}}_timer">{{hour}}:{{min}}:{{sec}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="resultDeclared" class="result-wrapper single-response clearfix"
+                                    [ngClass]="{'show-result':resultDeclared}">
+                                    <div class="box-one result-box">
+                                        <div class="resultinfo" *ngIf="resultDeclared"><span class="ttl">My
+                                                Response:&nbsp;</span>
+                                            <span class="bg-circle">{{arr.submittedAnswer}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="box-three result-box clearfix">
+                                        <div class="resultinfo clearfix" *ngIf="resultDeclared"><img
+                                                src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                                class="response-count">{{arr.SHARED_POST_DATA.INCORRECT_RESPONSE_COUNT}}</span>
+                                        </div>
+                                        <div class="resultinfo clearfix" *ngIf="resultDeclared"><img
+                                                src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                                class="response-count">{{arr.SHARED_POST_DATA.CORRECT_RESPONSE_COUNT}}</span>
+                                        </div>
+                                        <div class="resultinfo title">Total Responses</div>
+                                    </div>
+                                    <button style="float:right" *ngIf="resultDeclared" (click)="routeToNextQuestion()"
+                                        class="btn btn-primary desable red_rds" id="{{post_id}}_submit" value=""
+                                        [ngClass]="{'aselesctopetion':enable_button}">
+                                        <span class="text">Next</span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- share true false post end   -->
+            </div>
+
+
+
+            <!-- share video post start -->
+            <div *ngIf="arr.TYPE==4 && (arr.SHARED_POST_DATA.TYPE==5 || arr.SHARED_POST_DATA.TYPE==6)"
+                style="position:relative;">
+                <div class='post_outer shared-img-post-comp shared-post shared-video-post postotherview    '
+                    style="cursor:default" (click)="savePublicPostUrlFxn()">
+
+
+                    <p class="posttext posttextauto shared-post-text"></p>
+                    <div class="shared-post-blocks-wrap">
+                        <div class="shared-post-inner">
+                            <div class='post_profileContent'>
+                                <div class='postmain_container video-post-comp'>
+                                    <span *ngIf="DataViewShared"
+                                        class="posttext posttextauto shared-post-text file_attachment_text">{{text}}
+                                        <a class="continue-reading">See more</a>
+                                    </span>
+                                    <p class="posttext posttextauto"></p>
+                                    <div style="position:relative;width:100%;height:100%">
+                                        <!-- <img src="{{linkImage}}" alt="{{altName}}"> -->
+                                        <iframe id="videoScreen_{{editPostId}}" [src]="videosrc| safe" frameborder="0"
+                                            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- share video post end -->
+            </div>
+
+
+            <!-- share post view start -->
+            <!-- shared text post -->
+            <div (click)="savePublicPostUrlFxn()" class='post_outer shared-text-post-comp shared-post postotherview    '
+                style="cursor:default"
+                *ngIf="arr.TYPE==4 && arr.SHARED_POST_DATA.TYPE==1 && !arr.SHARED_POST_DATA.SHARE_LINK_TITLE">
+                <div class="shared-post-blocks-wrap" style="float:left">
+                    <div class="shared-post-inner">
+                        <span class="posttext posttextauto shared-post-text file_attachment_text"
+                            *ngIf="DataView && post_data!=''" [innerHTML]="text|trimData">
+                            <a *ngIf="DataView" class="continue-reading">See more</a>
+                        </span>
+
+                        <span class="posttext posttextauto shared-post-text" *ngIf="!DataView && post_data!=''"
+                            [innerHTML]="text"></span>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="posttagdiv">
+                <span class="tags" *ngFor="let tags of tagsArr" [id]='tags.INTEREST_ID'>{{tags.INTEREST_NAME}}</span>
+                <span class="tags wallintereswrapper" *ngIf="showIntArr">
+                    <span style="position:  relative;top: -3px;">...</span>
+                    <div class="wallinterestlist">
+                        <div class="arrow-up"></div>
+                        <ul [perfectScrollbar]="config" style="position: relative;">
+                            <li *ngFor="let tag of ltIntShow" [id]='tag.INTEREST_ID'>{{tag.INTEREST_NAME}}</li>
+                        </ul>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- share post view end -->
+
+
+    <div style="background:white" class="post-comment-view-otherView">
+
+        <div class="post-footer-btn-outer-wrap">
+            <div class='post_footer post-footer-btn-wrap clearfix' [ngClass]="{'sharedPostooter' : arr.TYPE==4}">
+                <span class='post_footeroption dropdown-ppl-list-wrap'>
+                    <span>
+                        <span class="default">
+                            <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/imp1.svg"
+                                class="defaultimp defaultt ">
+                            <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/f05050/imp2.svg"
+                                class="activeimp">
+                            <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/f05050/imp1.svg"
+                                class="hoverr">
+                        </span>
+                        <span (click)="loginpopupFxn()">Important</span>
+                        <span (click)="loginpopupFxn()" class="count-sq" *ngIf="like!=0">{{like}}</span>
+                    </span>
+                </span>
+
+                <span class='post_footeroption'>
+                    <span (click)="loginpopupFxn()">
+                        <span class="default">
+                            <img class="defaultt"
+                                src="https://img1.study24x7.com/assets/images/svg-three/post_icon/comment.svg">
+                            <img class="hoverr" src="assets/images/svg-three/post_icon/f05050/comment.svg">
+                        </span>Comment</span>
+                    <span id="{{post_id}}_comm_count" routerLink="/post/{{arr.USER_POST_ID}}" class="count-sq"
+                        *ngIf="comment!=0" [innerHTML]="comment">
+                    </span>
+                </span>
+                <span class='post_footeroption dropdown-ppl-list-wrap share'>
+                    <span>
+                        <span #shareList>
+                            <span class='default' style="width:22px;">
+                                <img class="defaultt"
+                                    src="https://img1.study24x7.com/assets/images/svg-three/post_icon/share.svg">
+                                <img class="hoverr"
+                                    src="https://img1.study24x7.com/assets/images/svg-three/post_icon/f05050/share.svg">
+                            </span><span (click)="showSharePostList($event)">
+                                &nbsp;Share
+                            </span>
+                        </span>
+                        <span (click)="loginpopupFxn()" class="count-sq" *ngIf="share!=0">
+                            {{share}}
+                        </span>
+                    </span>
+                    <ul *ngIf="isSharePostList" class="socialShareOnHover" (click)="hideSocialList();"
+                        (mouseleave)="hideSocialList()" id="{{u_id}}_{{post_id}}_shareTextShareList">
+                        <li (click)="loginpopupFxn()">
+                            <i>
+                                <span style="float:left;  "><img
+                                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/f05050/share.svg"
+                                        alt=""></span>
+                                <span class="text">Share</span>
+                            </i>
+                        </li>
+                        <li>
+                            <a [href]="socialFbShareUrl" target="_blank"> <span><img
+                                        src="assets/images/svg-three/facebook.svg" alt=""></span> <span
+                                    class="text">Facebook</span></a>
+                        </li>
+                        <li>
+                            <a [href]="socialTelegramUrl" target="_blank"> <span><img src="assets/images/telegram.jpg"
+                                        alt=""></span> <span class="text">Telegram</span> </a>
+                        </li>
+                        <li>
+                            <a [href]="socialWhatsappLink" target="_blank"> <span><img
+                                        src="assets/images/svg-three/social_invite/whatsaap.svg" alt=""></span> <span
+                                    class="text">Whatsapp</span> </a>
+                        </li>
+                        <li>
+                            <a (click)="postdata.copyPostURL(postPublicShareLink);postmenu=false"> <span
+                                    class="copyIcon"><img src="assets/images/svg-three/copyicon_white.svg"
+                                        alt=""></span><span class="text">Copy
+                                    Link</span> </a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+
+
+        <div class='comment_outer' (click)="loginpopupFxn()">
+            <div class="writecomment clearfix main-comment">
+                <figure class="comment-profile ">
+                    <img src="./assets/images/svg/empty-11.svg" alt="study24x7">
+                </figure>
+                <div class='optionoutr'>
+                    <div class="option_inputt setwdth placeholdercolor">
+                        Write a comment
+                    </div>
+                    <label class="option_image">
+                        <label class="fileupload_image ">
+                            <img class="default " src="assets/images/svg-three/post_icon/img.svg">
+                            <img class="on-hover " src="assets/images/svg-three/post_icon/img.svg">
+                        </label>
+                    </label>
+                </div>
+            </div>
+            <div *ngIf="arr.COMMENT>0" class="msgviewsectionfooter">
+                <div class=" post_profile comment-outer" *ngFor="let commentData of arr.COMMENT_DATA">
+                    <span class="post_profilepic cursor-pointer">
+                        <a href="http://study.dist/profile/{{commentData.USER_NAME}}">
+                            <img *ngIf="commentData.PROFILE_PHOTO_PATH"
+                                src="{{commentData.PROFILE_PHOTO_PATH +'profile/'+commentData.COMMENT_BY+'_30x30.png?v='+commentData.UPDATE_DATE_TIME}}">
+                                <img *ngIf="!commentData.PROFILE_PHOTO_PATH"
+                                src="{{_constantService.defaultImgPathForSuggestedConnections}}">
+                        </a>
+                    </span>
+
+                    <div class="profiledetail">
+                        <div class="profiledetailin">
+
+                            <div class="profilecmntdetail">
+                                <div class="profilecmntdetail_sub_cnt">
+                                    <div class="commenttext">
+                                        <li class="name cursor-pointer"
+                                            [routerLink]="['profile/'+commentData.USER_NAME]"
+                                            routerLinkActive="router-link-active">
+                                            {{full_name |trimData:17}} &nbsp;
+                                        </li>
+                                        <span
+                                            style="word-wrap: break-word;">{{postdata.decodeURIPostData(commentData.TEXT)}}
+                                        </span>
+                                    </div>
+                                    <div *ngIf="commentData.IMAGE_PATH !=null" class="comment-img">
+                                        <img
+                                            src="{{commentData.IMAGE_PATH+'img/'+commentData.UNIQUE_COMMENT_ATTACHMENT_ID+'.png'}}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="commenticon"></div>
+                            <div class="post_footer comment_footer c_reply">
+                                <div class="impwrapper">
+                                    <span class="default">
+                                        <img class="defaultimp defaultt "
+                                            src="/assets/images/svg-three/post_icon/imp1.svg">
+                                        <img src="assets/images/svg-three/post_icon/f05050/imp1.svg" class="hoverr">
+                                    </span>
+                                    <span class="post_footeroption like"> Imp
+
+                                        <span *ngIf="like!=0 "> {{like}}</span>
+                                    </span>
+                                </div>
+
+                                <span class="post_footeroption rply">Reply <span id='{{postId}}_count'
+                                        *ngIf="replycount!=0"> {{replycount}}</span>
+                                </span>
+                                <span class="post_footeroption cmnt_time">{{commentData.ADD_DATE_TIME| date:"d MMM yyyy
+                                    h:mm a"}}</span>
+
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-loginpopup *ngIf="openLoginPopup" [usrData]="usrData" [senderName]="senderName" (closePopup)="loginpopupFxn()"
+    [type]="openLoginPopupType"></app-loginpopup>

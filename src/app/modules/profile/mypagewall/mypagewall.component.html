@@ -1,0 +1,22 @@
+<div class="  my-pages-wall-outer-wrap">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="row">
+      <div class="head-tab-wrap">
+        <ul class="clearfix">
+          <li *ngIf="usrTyp==2" (click)="pageTabClick(3)" [ngClass]="{'active':pageTabContent == 3}"><span>Suggested Pages</span></li>
+          <li *ngIf="usrTyp!=2" (click)="pageTabClick(1)" [ngClass]="{'active':pageTabContent == 1}"><span>Pages</span></li>
+          <li *ngIf="usrTyp==2" (click)="pageTabClick(1)" [ngClass]="{'active':pageTabContent == 1}"><span>My Pages</span></li>
+          <li *ngIf="usrTyp==2" (click)="pageTabClick(2)" [ngClass]="{'active':pageTabContent == 2}"><span>Followed Pages</span></li>
+          <!--  <li (click)="pageTabClick(3)" [ngClass]="{'active':pageTabContent == 3}"><span>Invites</span></li>
+          <li (click)="pageTabClick(4)" [ngClass]="{'active':pageTabContent == 4}"><span>Suggestions</span></li>-->
+        </ul>
+      </div>
+      <div class="tab-content-wrap">
+        <!-- <app-invitepage *ngIf="pageTabContent == 3"></app-invitepage>-->
+        <app-likedpages *ngIf="pageTabContent == 2"></app-likedpages>
+        <app-mypages [userType]="usrTyp" [usrName]="usrName" *ngIf="pageTabContent == 1"></app-mypages>
+        <app-mysuggestedpages *ngIf="pageTabContent == 3"></app-mysuggestedpages>
+      </div>
+    </div>
+  </div>
+</div>

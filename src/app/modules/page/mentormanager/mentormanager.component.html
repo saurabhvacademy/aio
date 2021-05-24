@@ -1,0 +1,241 @@
+<div class="col-md-12 col-sm-12 course_wrapper" style="border-radius: 5px;">
+  <div class="row">
+    <!-- ================================================================================ -->
+    <!-- header Wrapper start -->
+    <!-- ================================================================================ -->
+    <div class="course_filter_top">
+      <!-- ================================================================================ -->
+      <!-- header  UI start -->
+      <!-- ================================================================================ -->
+      <div class="mainheading">Mentor Approvals</div>
+      <!-- ================================================================================ -->
+      <!-- header  UI end -->
+      <!-- ================================================================================ -->
+
+
+      <!-- ================================================================================ -->
+      <!-- header tab UI start -->
+      <!-- ================================================================================ -->
+      <div class="profile_bar course_bar" >
+        <ul class="profile_menu course_menu admin_menu" style="width:100%">
+          <li [ngClass]= "{'active' : livestreamTab == '0' }" (click)="livestreamTabUrlFxn(0)">All</li>
+          <li [ngClass]= "{'active' : livestreamTab == '1' }" (click)="livestreamTabUrlFxn(1)">Approved</li>
+          <li [ngClass]= "{'active' : livestreamTab == '2' }" (click)="livestreamTabUrlFxn(2)">Pending</li>
+        </ul>
+      </div>
+      <!-- ================================================================================ -->
+      <!--  header tab UI start -->
+      <!-- ================================================================================ -->
+
+      <!-- ================================================================================ -->
+      <!-- filter UI start -->
+      <!-- ================================================================================ -->
+      <ul class="course_fl">
+        <!-- <li class="course_filter livefilter">
+        <div class="course_search_sec fieldsection" [ngClass]="{'wallpostdrpdwn':walldropdown}"   (click)="showwalldropdown();" (mouseleave)="closewalldropdown()">
+        <div class="wll_img_pey_cont"   >
+        <span style="">{{visibilityText}}</span>
+      </div>
+
+      <span class="tab-article " >
+      <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+      <img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+    </span>
+
+    <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdown}" *ngIf="walldropdown" (click)="showwalldropdown();" (mouseleave)="closewalldropdown()">
+    <ul>
+    <li   (click)="changeVisibility(2)"> A-Z</li>
+    <li   (click)="changeVisibility(3)"> Z-A</li>
+  </ul>
+</div>
+</div>
+</li> -->
+<!--
+<li class="course_filter livefilter">
+<div class="course_search_sec fieldsection" [ngClass]="{'wallpostdrpdwn':walldrop}" (click)="showwalldrop();"  (mouseleave)="closewalldrop()">
+<div class="wll_img_pey_cont"   >
+<span style="">{{visibilityfilter}}</span>
+</div>
+<span class="tab-article " >
+<img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+<img src="assets/images/svg-three/add_post/f05050/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;">
+</span>
+<div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldrop}" *ngIf="walldrop" (click)="showwalldrop();" (mouseleave)="closewalldrop()">
+<ul>
+<li   (click)="changeVisibilitySort(3)"> All</li>
+<li   (click)="changeVisibilitySort(2)"> Free</li>
+<li   (click)="changeVisibilitySort(1)"> Paid</li>
+</ul>
+</div>
+</div>
+</li> -->
+</ul>
+<!-- ================================================================================ -->
+<!-- filter UI end       -->
+<!-- ================================================================================ -->
+</div>
+<!-- ================================================================================ -->
+<!-- header Wrapper end -->
+<!-- ================================================================================ -->
+
+
+
+<!-- ================================================================================ -->
+<!-- All invites    -->
+<!-- ================================================================================ -->
+<div class="coursepage_outer livesteam_card" *ngIf="mentorCourseList.length != 0 ">
+  <!-- <div class="course_div course_student_veiw">
+  <div  class="course_item col-md-4 col-sm-6 col-xs-6">
+  <div  class="course_cont" data-infinite-scroll
+  [infiniteScrollDistance]="5"
+  (scrolled)="onScrollDown()"
+  [scrollWindow]="true"> -->
+  <div>
+    <div *ngFor="let courseList of mentorCourseList; let i=index;">
+      <div class="livecard_wrapper">
+        <!-- <div class="course_heading_card">
+        course
+      </div> -->
+      <!-- <span class="invite_stream_heading_card"  (click)="showList(i)"> -->
+      <span class="invite_stream_heading_card">
+        {{courseList.COURSE_TITLE}}
+      </span>
+      <!-- <div class="invite_mentor">
+      <div class="live_profiledet_card">
+      <span class="live_imgprofile"><img src="{{classInvitation.PAGE_PROFILE_PHOTO_PATH}}" width="100" alt=""></span>
+      <span class="live_profilehead">{{classInvitation.PAGE_TITLE}}</span>
+    </div>
+  </div> -->
+<!-- <div class="invite_livestream_block_card" id="{{'listNumber'+i}}"> -->
+  <div class="invite_livestream_block_card" id="{{'listNumber'+i}}">
+    <ul>
+      <li *ngFor="let innerlist of courseList.mentorCourseInnerList; let j = index">
+        <div class="inviteLeft_card">
+          <div class="duration_card">
+            <span class="invite_stream_details">{{innerlist.SETDURATION}}</span>
+            <span class="invite_stream_details date_wrap">{{innerlist.SETDATE}}</span>
+          </div>
+          <span class="live_headingwrapp">{{innerlist.DESCRIPTION}}</span>
+          <span class="mentor_name">Mentor : {{innerlist.MENTOR_DATA.USER_FULL_NAME}}</span>
+
+
+          <span   class="stream_accepted"  [ngClass]="{'showStatus': statusbtn == i+j}" id="{{i+'_'+j}}">
+
+            <span class="wrapper_box wrap_top" (click)="statusButton(i,j)"  *ngIf="innerlist.STATUS == 1">
+              <span class="green_round">
+                <img src="assets/images/svg/white_checkbox.svg" alt="">
+                <!-- <div class="stock" *ngIf="showDropStatus">
+                </div> -->
+              </span>
+              Approval Accepted
+            </span>
+
+            <span class="wrapper_box wrap_top" (click)="statusButton(i,j)" *ngIf="innerlist.STATUS == 0 || innerlist.STATUS == 2">
+              <span class="green_round_pending">
+                <!-- <div class="stock" *ngIf="showDropStatus">
+                </div> -->
+              </span>
+              Approval Pending
+              <span class="arrow_right" *ngIf="innerlist.mentorStreamTrail.length != 0">&#10095;</span>
+            </span>
+
+            <div  *ngFor="let streamDetail of innerlist.mentorStreamTrail">
+              <span class="wrapper_box wrap_gray" *ngIf="streamDetail.STATUS == 0 || streamDetail.STATUS == 1">
+                <span class="green_round_pending">
+                  <!-- <div  class="stock"></div> -->
+                </span>
+                Assigned mentor {{streamDetail.USER_FULL_NAME}} for {{streamDetail.STREAM_DATE}} {{innerlist.SETDURATION}}
+              </span>
+              <span class="wrapper_box wrap_gray red_reason" *ngIf="streamDetail.STATUS == 2">
+                <span class="green_round_pending"></span>
+                Rejected by {{streamDetail.USER_FULL_NAME}}
+                <span class="reject_reason" *ngIf="streamDetail.TEXT != ''">
+                  Reason: {{streamDetail.TEXT}}
+                </span>
+              </span>
+            </div>
+          </span>
+        </div>
+
+        <div class="live_livementordetail">
+
+          <div class="three_dot">
+            <div class="invite_liveblock_up">
+              <span class="invite_doticon">
+                <img (click)="showdrop(i,j);"  class="postdropmenu defaultt" src="assets/images/svg-three/post_icon/dot_menu.svg" name="menuIcon" #dropDownButton  >
+              </span>
+              <span class="box_dropdown hide" id="{{i+'-'+j }}" #dropDownList name="liveStreamDropdown">
+                <div class="box">
+                  <!-- <span >Change Mentor</span > -->
+                  <!-- <span class="request" (click)=" showCourse(courseList.COURSE_UUID)">View Course</span> -->
+                    <span class="" (click)=" showCourse(courseList.COURSE_UUID)">View Course</span>
+                </div>
+              </span>
+            </div>
+          </div>
+
+          <div class="live_time_wrapper">
+            <!-- ================================================================================ -->
+            <!-- live stream timer  UI start     -->
+            <!-- ================================================================================ -->
+            <!-- <span class="live_button" *ngIf="liveStreamFooter == 1 || liveStreamFooter == 2"> -->
+            <span class="live_button">
+              <span class="live_timewrap">
+                <span class="live_digitwrapp">{{innerlist.timer.day}}</span>
+                <span class="live_wordwrapp">Days</span>
+              </span>
+              <span class="live_timewrap">
+                <span class="live_digitwrapp">{{innerlist.timer.hr}}</span>
+                <span class="live_wordwrapp">Hrs</span>
+              </span>
+              <span class="live_timewrap">
+                <span class="live_digitwrapp">{{innerlist.timer.min}}</span>
+                <span class="live_wordwrapp">Mins</span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!-- ================================================================================ -->
+<!-- All invites end    -->
+<!-- ================================================================================ -->
+</div>
+</div>
+
+
+<!-- =============================================================================   -->
+<!-- empty state all course start  -->
+<!-- ==============================================================================  -->
+<div class="emptystate" style="height:425px;" *ngIf="mentorCourseList.length == 0 && !startLoader2">
+  <div class="emptystate_inner">
+    <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+    <p class="mainheading" style="padding-top:0px;">No Course found</p>
+    <p class="subHeading">Seems there is no course here<br>
+      try another course here
+    </p>
+  </div>
+</div>
+<!-- =============================================================================   -->
+<!-- empty state all course end  -->
+<!-- ==============================================================================  -->
+
+
+
+<!-- =============================================================================   -->
+<!-- preloder for all course start  -->
+<!-- ==============================================================================  -->
+<div class="loader2" *ngIf="startLoader2">
+  <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+</div>
+<!-- =============================================================================   -->
+<!-- preloder for all course end  -->
+<!-- ==============================================================================  -->

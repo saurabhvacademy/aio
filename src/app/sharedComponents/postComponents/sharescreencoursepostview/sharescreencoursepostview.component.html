@@ -1,0 +1,449 @@
+<div class="popup" style="position:relative;">
+    <div class=" popup_background_view">
+        <div class=" sharescreenpostview share-image-post-screen share-video-post-screen">
+            <div class="popup_heading">
+
+
+                <ul>
+                    <li (click)="showPost('1')" [ngClass]="{'active': shareLinkPost==1}">
+                        <span *ngIf="postdata['EDIT_POST']==false">Share Course</span>
+                        <span *ngIf="postdata['EDIT_POST']">Edit Share Post</span>
+                    </li>
+                    <li (click)="showPost('2')" [ngClass]="{'active': shareLinkPost==2}">Get a link</li>
+                </ul>
+
+
+
+                <span class="close_div" (click)="sharecourseviewhide()">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+            </div>
+            <div class="col-md-12 fleft">
+                <div class="row ">
+                    <div class='post_outer'>
+
+                        <div class="shareLinkContainer" *ngIf="shareLinkPost==2">
+                            <div class="shareLink">
+                                <!-- <input style='pointer-events: none' id="copySharelinkID" [(ngModel)]="postPublicShareLink" /> -->
+                                <input readonly class="urlget" id="copySharelinkID" [(ngModel)]="postPublicShareLink" />
+                                <div style='pointer-events: none;word-break: break-word;'  [innerText]="postPublicShareLink"></div>
+                                <span class="copyLinkButton" (click)="_postData.copyToClipboard('copySharelinkID')"><img src="assets/images/svg-three/copyicon.svg" alt=""></span>
+                            </div>
+                            <div class="shareButtonWrapper">
+                                <!-- <span class="quora"><img src="assets/images/svg-three/quora.svg" alt=""></span> -->
+                                <a class="fb" [href]="socialFbShareUrl" target="_blank"><img
+                                        src="assets/images/svg-three/facebook-logo.svg" alt=""></a>
+                                <a class="linkedin" [href]="socialLinkedInShareUrl" target="_blank"><img
+                                        src="assets/images/svg-three/linkedin-logo.svg" alt=""></a>
+                                <a class="twitter" [href]="socialTeitterShareUrl" target="_blank"><img
+                                        src="assets/images/svg-three/twitter.svg" alt=""></a>
+                                <a class="twitter" [href]="socialTelegramUrl" target="_blank"><img
+                                        src="assets/images/telegram.svg" alt=""></a>
+                            </div>
+                        </div>
+
+
+                        <div class='sharedatainput' (focusout)="checkData()" *ngIf="shareLinkPost==1">
+                            <input class='sharedatainput' placeholder="Discuss within your interest."
+                                [(ngModel)]="sharedPostText" contenteditable="true" id="shareText"
+                                (focus)="onFocusInput()" (focusout)="checkData()" (paste)="pastedData($event)"
+                                style="font-size:16px;">
+                            <!-- <span class="placeholder" id="post_placeholder" *ngIf="hidePlaceHolder">
+                                    Discuss within your interest.
+                                </span> -->
+                        </div>
+                        <div class="profile-and-content">
+                            <div class='post_profile'>
+                                <span>
+                                    <span class="post_profilepic cursor-pointer">
+                                        <img src="{{profile_pic_path}}" alt="study24x7 {{user_name |trimData:30}}"
+                                            routerLink="/page/{{pg_uuid}}">
+                                    </span>
+                                    <div class="profiledetail">
+                                        <div>
+                                            <span title="{{user_name}}" class='name cursor-pointer'
+                                                routerLink='/page/{{pg_uuid}}'>
+                                                {{user_name}}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="follwer_count">
+                                                {{followerCount}} followers
+                                            </span>
+                                            <span class="follow_dote">
+                                                <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+                                            </span>
+                                            <span class="follwer_count">
+                                                {{time}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+
+                            <div class='post_profileContent'>
+                                <div class='postmain_container video-post-comp course'>
+                                    <!--                                    <p class="posttext posttextauto"  [innerHTML]="postdata|trimData">
+
+                                                                        </p>
+                                                                        <a *ngIf="DataView" class="continue-reading" (click)="DataView=!DataView">
+                                                                          See more</a>
+                                                                        <p class="posttext posttextauto" *ngIf="!DataView" [innerHTML]="postdata|trimData">
+                                    </p>-->
+
+
+
+
+                                    <div class="coursesDertailTop">
+                                        <div style="cursor: default ;" class="imgwrapper">
+                                            <img src="{{courseCoverPhoto}}"
+                                                alt="study24x7 {{courseTitle |trimData:50}}">
+                                        </div>
+                                        <div class=" courseDesp">
+                                            <div class="leftDetail">
+                                                <h1 class="twoline_dot" title={{courseTitle}}><span
+                                                        style="cursor: default;">{{ courseTitle}}</span></h1>
+                                                <p>
+
+                                                    <span class="text">{{courseLevel}}</span>
+                                                    <span class="dote"></span>
+                                                    <span class="text">{{courseLanguage}}</span>
+                                                </p>
+                                            </div>
+                                            <div class="rightDetail">
+                                                <button id="enrollButton" (click)="openCourseDetailWindow()"
+                                                    class="btn-blush btnflex btn-blush-h btn-a btnrescntr f12">
+                                                    VIEW COURSE
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="false" class="coursesDertailBottom">
+
+                                            <div class="leftDetail">
+                                                <h1>{{courseTitle |trimData:50}}</h1>
+                                                <p>
+                                                    <span class="text">Validity {{validity}}</span>
+                                                    <span class="dote"><img
+                                                            src="assets/images/svg-three/post_icon/dote1.svg"
+                                                            alt="study24x7"></span>
+                                                    <span class="text">{{courseLevel}}</span>
+                                                    <span class="dote"><img
+                                                            src="assets/images/svg-three/post_icon/dote1.svg"
+                                                            alt="study24x7"></span>
+                                                    <span class="text">{{courseLanguage}}</span>
+                                                </p>
+                                                <div class="star">
+                                                    <div class="star_wrapper">
+                                                        <label class="Pagerating" *ngIf="courseRating==0.0">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==0.5">
+                                                            <img class="star-half-svg"
+                                                                src="assets/images/course_icon/star-half-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==1.0">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==1.5">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-half-svg"
+                                                                src="assets/images/course_icon/star-half-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==2.0">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==2.5">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-half-svg"
+                                                                src="assets/images/course_icon/star-half-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==3.0">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==3.5">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-half-svg"
+                                                                src="assets/images/course_icon/star-half-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==4.0">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-blank-svg"
+                                                                src="assets/images/svg-one/icons8-star-filled-filled_white.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==4.5">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-half-svg"
+                                                                src="assets/images/course_icon/star-half-filled.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                        <label class="Pagerating" *ngIf="courseRating==5.0">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                            <img class="star-fill-svg"
+                                                                src="assets/images/course_icon/star-filled.svg"
+                                                                alt="study24x7">
+                                                        </label>
+                                                    </div>
+                                                    <span class="rating">{{courseRating}}</span>
+                                                    <span class="number">({{courseTotalRating}})</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="rightDetail" *ngIf="courseType!=0">
+
+                                                <div class="pricingWrapper centerAlign" *ngIf="isEnrolled == false">
+
+                                                    <span class="discountPriceIcon">
+                                                        {{coursePrice | currency:'INR':true:'2.0'}}
+                                                        <span class="stock"></span>
+                                                    </span>
+
+                                                    <span class="priceIcon">
+                                                        {{courseDiscountedPrice | currency:'INR':true:'2.0'}}
+                                                    </span>
+
+                                                </div>
+
+
+                                                <span class="centerAlign">
+
+                                                    <span *ngIf="isTrialBased == 1">
+                                                        <button class="byuNowbtn"
+                                                            *ngIf="isAdmin=='0' && isEnrolled == false && isSubscribed == 0">
+                                                            Start free trial
+                                                            <span class="rightArrowBtn"><img
+                                                                    src="assets/images/svg-three/course/courseDetails/btnwhiteArrow.svg"></span>
+                                                        </button>
+                                                        <button class="byuNowbtn"
+                                                            *ngIf="isAdmin=='0' && isEnrolled == false && isSubscribed != 0">
+                                                            BUY COURSE
+                                                            <span class="rightArrowBtn"><img
+                                                                    src="assets/images/svg-three/course/courseDetails/btnwhiteArrow.svg"></span>
+                                                        </button>
+                                                    </span>
+
+                                                    <span *ngIf="isTrialBased==0">
+                                                        <button class="byuNowbtn"
+                                                            *ngIf="isAdmin=='0' && isEnrolled == false ">
+                                                            BUY COURSE
+                                                            <span class="rightArrowBtn"><img
+                                                                    src="assets/images/svg-three/course/courseDetails/btnwhiteArrow.svg"></span>
+                                                        </button>
+                                                    </span>
+
+
+                                                    <button class="enroll deEnroll buttonMarginTop enrollnew"
+                                                        *ngIf="isAdmin=='0' && isEnrolled == true">
+                                                        Enrolled
+                                                        <span class="rightArrowBtn"><img
+                                                                src="assets/images/svg-three/course/courseDetails/enrollnowtick.png"></span>
+                                                    </button>
+
+                                                </span>
+
+                                            </div>
+
+                                            <div class="rightDetail" *ngIf="courseType== 0">
+                                                <span class="priceIcon freeCourse" *ngIf="isEnrolled == false">
+                                                    FREE
+                                                </span>
+
+                                                <button class="byuNowbtn enrollNowbtn"
+                                                    *ngIf="isAdmin=='0'&& isEnrolled == false">
+                                                    Enroll Now
+                                                    <span class="rightArrowBtn"><img
+                                                            src="assets/images/svg-three/course/courseDetails/btnwhiteArrow.svg"></span>
+                                                </button>
+
+                                                <button class="enroll deEnroll buttonMarginTop enrollnew"
+                                                    *ngIf="isAdmin=='0' && isEnrolled==true ">
+                                                    Enrolled
+                                                    <span class="rightArrowBtn"><img
+                                                            src="assets/images/svg-three/course/courseDetails/enrollnowtick.png"></span>
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="posttagdiv">
+                                    <span class="tags" *ngFor="let tags of tagsArr"
+                                        [id]='tags'>{{interestObj[tags]}}</span>
+                                    <span class="tags wallintereswrapper" *ngIf="showIntArr">
+                                        <span style="position:  relative;top: -3px;">...</span>
+                                        <div class="wallinterestlist">
+                                            <div class="arrow-up"></div>
+                                            <ul [perfectScrollbar]="config">
+                                                <li *ngFor="let tag of ltIntShow" [id]='tag'>
+                                                    {{interestObj[tag]}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='postsave'>
+                            <button type="submit" class="confirm_btn popup_btn btn btn-primary red_rds"
+                                (click)="sharePost()" *ngIf="postdata['EDIT_POST']==false && shareLinkPost==1">
+                                <span class="text" *ngIf="showText">Share</span>
+                                <span class="preloder"><img src="./assets/images/svg/preloader-25.svg" alt="study24x7"
+                                        *ngIf="showPreloader"></span>
+                            </button>
+                            <button [disabled]="loader === true" type="submit"
+                                class="confirm_btn popup_btn btn btn-primary gray_rds"
+                                *ngIf="postdata['EDIT_POST'] && shareLinkPost==1" (click)="sharePost()">
+                                <span class="text" *ngIf="showText">Update</span><span class="loader"><img
+                                        src="./assets/images/svg/preloader-25.svg" alt="study24x7"
+                                        *ngIf="loader"></span></button>
+                            <button type="submit" class="cancel_btn popup_btn gray_rds"
+                                (click)="sharecourseviewhide()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

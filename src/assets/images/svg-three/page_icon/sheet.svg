@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13.579" height="18.749" viewBox="0 0 13.579 18.749">
+    <g id="prefix__sheet" transform="translate(-70.589)">
+        <path id="prefix__Path_310" d="M84.168 5.135v12.406a1.208 1.208 0 0 1-1.208 1.208H71.8a1.208 1.208 0 0 1-1.208-1.208V1.208A1.208 1.208 0 0 1 71.8 0h7.236z" data-name="Path 310" style="fill:#28b446"/>
+        <path id="prefix__Path_311" d="M320.31 120.593l4.435 1.827v-1.72l-2.514-.742z" data-name="Path 311" transform="translate(-240.576 -115.569)" style="fill:#219b38"/>
+        <path id="prefix__Path_312" d="M306.312 5.135h-3.927a1.208 1.208 0 0 1-1.208-1.208V0z" data-name="Path 312" transform="translate(-222.144)" style="fill:#6ace7c"/>
+        <path id="prefix__Path_313" d="M170.667 254.946h-5.941a.386.386 0 0 0-.386.386v5.168a.386.386 0 0 0 .386.386h5.941a.386.386 0 0 0 .386-.386v-5.169a.386.386 0 0 0-.386-.385zm-5.555 2.48h2.2v.98h-2.2zm2.971 0h2.2v.98h-2.2zm2.2-.772h-2.2v-.937h2.2v.937zm-2.971-.937v.937h-2.2v-.937zm-2.2 3.461h2.2v.937h-2.2zm2.971.937v-.937h2.2v.937z" data-name="Path 313" transform="translate(-90.318 -245.61)" style="fill:#fff"/>
+    </g>
+</svg>

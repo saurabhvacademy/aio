@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28.141" height="37.996" viewBox="0 0 28.141 37.996">
+    <defs>
+        <style>
+            .cls-2{fill:#96abbc}
+        </style>
+    </defs>
+    <g id="padlock" transform="translate(-66.4)">
+        <path id="Path_397" fill="#a7b7c6" d="M129.124 0a10.17 10.17 0 0 0-10.17 10.17v5.365h4.595v-5.479a5.575 5.575 0 0 1 5.575-5.575 5.575 5.575 0 0 1 5.575 5.575v5.479h4.595V10.17A10.17 10.17 0 0 0 129.124 0z" data-name="Path 397" transform="translate(-48.654)"/>
+        <g id="Group_726" data-name="Group 726" transform="translate(70.3 2.633)">
+            <path id="Rectangle_245" d="M0 0H4.595V1.848H0z" class="cls-2" data-name="Rectangle 245" transform="translate(0 11.203)"/>
+            <path id="Rectangle_246" d="M0 0H4.595V1.848H0z" class="cls-2" data-name="Rectangle 246" transform="translate(15.746 11.203)"/>
+            <path id="Path_398" d="M192.023 41.05a5.575 5.575 0 1 0-11.151 0v1.85a5.575 5.575 0 1 1 11.151 0z" class="cls-2" data-name="Path 398" transform="translate(-176.277 -35.475)"/>
+        </g>
+        <path id="Path_399" fill="#f05050" d="M92.043 231.8H68.9a2.5 2.5 0 0 1-2.5-2.5v-17.464a2.5 2.5 0 0 1 2.5-2.5h23.143a2.5 2.5 0 0 1 2.5 2.5V229.3a2.5 2.5 0 0 1-2.5 2.5z" data-name="Path 399" transform="translate(0 -193.804)"/>
+        <path id="Path_400" fill="#d54343" d="M363.321 209.339h-3.9a2.5 2.5 0 0 1 2.5 2.5V229.3a2.5 2.5 0 0 1-2.5 2.5h3.9a2.5 2.5 0 0 0 2.5-2.5v-17.464a2.5 2.5 0 0 0-2.5-2.497z" data-name="Path 400" transform="translate(-271.278 -193.804)"/>
+        <circle id="Ellipse_10" cx="7.508" cy="7.508" r="7.508" fill="#fff" data-name="Ellipse 10" opacity="0.3" transform="translate(72.962 19.258)"/>
+        <path id="Path_401" fill="#fff" d="M240.31 312.682a1.258 1.258 0 0 1-1.258-1.258v-6.006a1.258 1.258 0 0 1 1.258-1.258 1.258 1.258 0 0 1 1.258 1.258v6.006a1.258 1.258 0 0 1-1.258 1.258z" data-name="Path 401" transform="translate(-159.839 -281.588)"/>
+    </g>
+</svg>

@@ -1,0 +1,1925 @@
+
+
+<app-header (sessionLogout)="sessionExpire($event)"></app-header>
+<div class="testpopup">
+    <div class="test_wrapper test_wrapper container main_body inbox-wrapper solution_wrapper">
+        <!-- ==================================================  -->
+        <!-- Course Progress Leftmenu start here  -->
+        <!-- ==================================================  -->
+<!--        <div class="side_menu" *ngIf="popupToggle">
+            <div class="inner_lesson_menu">
+                <span  class="close_div">
+                    <img  class="defaultt" src="assets/images/svg/tagcross.svg" (click)="popupToggleOpen()">
+                    <img  class="hoverr" src="assets/images/svg/tagcross-gray.svg" (click)="popupToggleOpen()">
+                </span>
+                <div class="clearfix"></div>
+                <div class="outer_lesson_wrapper" [perfectScrollbar]="config">
+                    <div class="lesson_outr clearfix" *ngFor="let section of sectionArr; let i = index;">
+                         <div class="lesson_out_in clearfix">
+                            <span>Lesson {{i+1}}:</span>
+                            <span>{{section.SECTION_TITLE}}</span>
+                        </div>
+                        <div class="course_index clearfix">
+                            <ul *ngFor="let content of section.SECTION_CONTENT_DATA; let j = index;">
+                                <li (click)="goToCourseContent(content.CONTENT_TYPE,content.CONTENT_UUID)">
+                                    <span *ngIf="content.CONTENT_TYPE==1 || content.CONTENT_TYPE==4 || content.CONTENT_TYPE==5"><img src="assets/images/svg-three/course/course_creation/gray_video.svg" alt="study24x7"></span>
+                                    <span *ngIf="content.CONTENT_TYPE == 2"><img src="assets/images/svg-three/course/course_creation/gray_document.svg" alt="study24x7"></span>
+                                    <span *ngIf="content.CONTENT_TYPE == 3"><img src="assets/images/svg-three/course/course_creation/gray_quiz.svg" alt="study24x7"></span>
+                                     <span>{{j+1}}&nbsp;:</span>
+                                    <span class="contetName">&nbsp;{{content.TITLE}}</span>
+                                    <span>
+                                        <input type="checkbox" id="payable1" class="payRadio" name="payradio" [checked]="content.SEEN">
+                                        <label class="checkbox_btn checkbt" for="payable1">
+                                            <img class="checkboximg" src="assets/images/svg-one/checkbox-white.svg">
+                                        </label>
+                                    </span>
+                                    <span  class="contentDetail">12 pages</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <div  style="position: fixed;left: 0;right: 0;width: 100%;height: 100%;">
+        <div class="leftMenu"  [ngClass]="{'leftMenuActive':popupToggle, 'leftMenuActiveMob':popupToggleMob}"  >
+            <app-courseleftmenu [contentId]="contentId" (closeMenu)="popupToggleOpen()"></app-courseleftmenu>
+        </div>
+        <!-- ==================================================  -->
+        <!-- Course Progress Leftmenu end here  -->
+        <!-- ==================================================  -->
+ <div class="innerwrapper" [ngClass]="{'innerwrapperActive':popupToggle, 'innerwrapperActiveMob':popupToggleMob}">
+      <div class="web_view_test" *ngIf=" MobileViewTest">
+        <div class="topstrip solutionTopstrip">
+            <div class="t_left">
+                <span class="test_name">{{testName}}</span>
+                <div class="toggle_grid" (click)="showMenu()" ><img src="assets/images/svg/menu-caret.svg" alt="study24x7" ></div>
+                <div class="select_lang" >
+                    <!--<span (click)="show_lang_list()" class="drop_lang">Language <span  class="glyphicon glyphicon glyphicon-triangle-bottom" style="font-size:9px;"></span></span>-->
+                    <span class="drop_val">{{visibleLang}}</span>
+                    <span class="list_of_lang" *ngIf="lang_list">
+                        <ul>
+                            <ng-container  *ngFor = "let language of languageArr; let i = index;">
+                                <li *ngIf="!language.VISIBILITY" (click)="changeVisibilityLang(language.LANG_ID, 1);">{{language.LANGUAGE}}</li>
+                            </ng-container>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+            <!--            <div class="t_right">
+                            <div class="select_lang pause_test" >
+                                <span class="test_stop_resume">
+                                    <img class="" src="assets/images/svg/pause-inside-a-circle_b.svg">
+                                    <img src="assets/images/svg/play-inside-a-circle_b.svg" style="display:none;">
+                                </span>
+                                <div class="time_remain">
+                                    <span  class="drop_lang">Pause Test</span>
+                                    <span class="drop_val">00 : 60 : 43</span>
+                                </div>
+                            </div>
+                            <div class=" submittest" (click)="test_detials_data();">
+                                <span class="submit_btn">Submit Test</span>
+                            </div>
+                        </div>-->
+        </div>
+        <div class="wrapper_middle mainmiddle">
+            <div class="middlestrip">
+                <div class="m_left">
+                    <div class="leftmain">
+                        <div class="quehdng">
+                            <span id="question_ssc" class="quehdnglft">Q .</span>
+                            <span class="quehdnglft questionCount">{{activeQuestion}}</span>
+                            <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldropdownTopic}">
+                                <div class="wll_img_pey_cont"   >
+                                    <span class="topic_span"style="">{{visibleSubject}}</span>
+                                </div>
+                                <span class="tab-article opt_select" >
+                                    <!-- <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                                    <img src="assets/images/svg-three/add_post/hover/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;"> -->
+                                    <span class="downicon glyphicon glyphicon-triangle-bottom"></span>
+                                </span>
+                                <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdownTopic}" *ngIf="walldropdownTopic">
+                                    <ul>
+                                        <ng-container  *ngFor = "let subject of subjectArr; let i = index;">
+                                            <li *ngIf="!subject.VISIBILITY" (click)="changeVisibilitySubject(subject.KEY, 1);">{{subject.SUB}}</li>
+                                        </ng-container>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <span class="selectbox_ques">
+                              <select class="questions">
+                                <option value="1">NOMANCLATURE PRACTICE</option>
+                                <option value="2">NOMANCLATURE PRACTICE</option>
+                              </select>
+                              <span  class="validation cursor-pointer" title="">
+                                <img  src="assets/images/svg/error.svg">
+                              </span>
+                              <span class="glyphicon glyphicon-triangle-bottom selectdrop"></span>
+                            </span> -->
+                            <!--<span class="help_icon"> <span class="report">! &nbsp;REPORT</span></span>-->
+                            <span class="help_icon_help" *ngIf="isHintProvided">
+                                <span  class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="study24x7"> &nbsp;HINT</span>
+                                <span class="hint_dsgn" *ngIf="answerhint">
+                                  <span class="close_div" (click)="hintfun()">
+                                      <img class="default" src="assets/images/svg/tagcross-wh.svg">
+                                  </span>
+                                    <div style="min-height: 50px;max-height: 200px;position:relative;width: 100%;padding-right: 10px;" [perfectScrollbar]="config">
+                                    <span class="hint_wrapper"  style="position: relative;display:block;">
+
+                                        <p [innerHTML]="hintText | safe : true"></p>
+                                        <p *ngIf="showHintImg"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
+                                    </span>
+                                      </div>
+                                </span>
+                            </span>
+                            <span class="quehdngryt">
+                                <span class="markdef" style="display:none;">Question Time. <span class="green blue" ></span></span>
+                                <span class="markdef"><span >Maximum Marks: </span> <span class="green" >{{rytMarks}}</span></span>
+                                <span class="markdef markdef_br" >&nbsp;</span>
+                                <span class="markdef"><span >Negative Marks: </span> <span class="green red" >{{negMarks}}</span></span>
+
+                            </span>
+                            <!-- <span class="help_icon">!</span> -->
+                            <!-- <span class="review_icon">
+                              <img class="defaultt" src="assets/images/svg/eye.svg" >
+                                <img class="hoverr" src="assets/images/svg/eye-theme.svg" >
+                            </span> -->
+                        </div>
+                        <div id="mainQnDiv">
+                            <!--  Normal Question Div Start    -->
+                            <div id="questionDivMain" class="nano questionoutr has-scrollbar " >
+                                <div class="nano-content" tabindex="0">
+                                    <div class="questioninr questioninr_solution" id="questionContainer"  [perfectScrollbar]="config" style="position: relative;display:block;" >
+
+                                        <div class="Essay_input_show" *ngIf="isEssayAssociated">
+                                            <ul class="para_head">
+                                                <li>Essay Paragraph</li>
+                                            </ul>
+                                            <div class="para_head_cont">
+                                                <p [innerHTML]="essayText | safe : true"></p>
+                                            </div>
+                                        </div>
+                                        <div class="Ques_show" *ngIf="quesTyp != 6">
+                                            <ul class="para_head para_head_sec" *ngIf="isEssayAssociated">
+                                                <li>Question</li>
+                                            </ul>
+                                            <div class="para_head_cont">
+                                                <p [innerHTML]="questionText | safe : true"></p>
+                                                <p *ngIf="quesImage"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p>
+                                            </div>
+                                        </div>
+                                        <div class="QuesTypeNote">
+                                            <span class="ques_note_para">Note : </span><span>{{quesTypName}}</span>
+                                        </div>
+
+                                        <!--Single choice Question Answer Start ----->
+                                        <div class="optninr opt_ans"  *ngIf="quesTyp == 1">
+
+                                            <label id="option001" class="option" name="mcqLabel">
+                                                <div class="optncrcl"><span class="optnvalue">A</span></div>
+                                                <div class="optncntnt">
+                                                    <p [innerHTML]="opt1_text | safe : true"></p>
+                                                    <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+
+                                                                <p [innerHTML] = "solutionText | safe : true" *ngIf="showSolImg"><img style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer == 'a' && !marksAwardedA" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse == 'a' && !marksAwardedA" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwardedA" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <label id="option002" class="option" name="mcqLabel">
+                                                <div class="optncrcl"><span class="optnvalue">B</span></div>
+                                                <div class="optncntnt">
+                                                    <p [innerHTML]="opt2_text | safe : true"></p>
+                                                    <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+
+                                                                <p [innerHTML] =  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer == 'b' && !marksAwardedB" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse == 'b' && !marksAwardedB" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwardedB" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <label id="option003" class="option" name="mcqLabel">
+                                                <div class="optncrcl"><span class="optnvalue">C</span></div>
+                                                <div class="optncntnt">
+                                                    <p [innerHTML]="opt3_text | safe : true"></p>
+                                                    <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+
+                                                                <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer == 'c' && !marksAwardedC" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse == 'c' && !marksAwardedC" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwardedC" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <label id="option004" class="option"  name="mcqLabel">
+                                                <div class="optncrcl"><span class="optnvalue">D</span></div>
+                                                <div class="optncntnt">
+                                                    <p [innerHTML]="opt4_text | safe : true"></p>
+                                                    <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+
+                                                                <p [innerHTML] = "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer == 'd' && !marksAwardedD" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse == 'd' && !marksAwardedD" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwardedD" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <div *ngIf="newOptionAdded > 0">
+                                                <label id="option005" class="option"  name="mcqLabel">
+                                                    <div class="optncrcl"><span class="optnvalue">E</span></div>
+                                                    <div class="optncntnt">
+                                                        <p [innerHTML]="opt5_text | safe : true"></p>
+                                                        <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                        <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                            <div class="que_solution_solv">
+                                                                <div class="solution_hding">Solution</div>
+                                                                <div class="solution_cntnt">
+
+                                                                    <p [innerHTML] =  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span *ngIf="correctAnswer == 'e' && !marksAwardedE" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                    <span *ngIf="userResponse == 'e' && !marksAwardedE" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                    <span *ngIf="marksAwardedE" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                                </label>
+                                            </div>
+
+                                            <div *ngIf="newOptionAdded > 1">
+                                                <label id="option006" class="option"  name="mcqLabel">
+                                                    <div class="optncrcl"><span class="optnvalue">F</span></div>
+                                                    <div class="optncntnt">
+                                                        <p [innerHTML]="opt6_text | safe : true"></p>
+                                                        <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                        <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                            <div class="que_solution_solv">
+                                                                <div class="solution_hding">Solution</div>
+                                                                <div class="solution_cntnt">
+
+                                                                    <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span *ngIf="correctAnswer == 'f' && !marksAwardedF" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                    <span *ngIf="userResponse == 'f' && !marksAwardedF" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                    <span *ngIf="marksAwardedF" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!--Single choice Question Answer end ----->
+
+                                        <!--Multiple choice Question Answer start ----->
+                                        <div class="optninr opt_ans"  *ngIf="quesTyp == 2">
+
+                                            <label id='option001' class="option" >
+                                                <div class="optncrcl"><span class="optnvalue">A</span></div>
+                                                <div class="optncntnt">
+                                                    <p [innerHTML]="opt1_text | safe : true"></p>
+                                                    <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+
+                                                                <p [innerHTML]=  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer.match('a') && !marksAwardedA" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse.match('a') && !marksAwardedA" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwardedA" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <label id='option002' class="option" >
+                                                <div class="optncrcl"><span class="optnvalue">B</span></div>
+                                                <div class="optncntnt">
+                                                    <p [innerHTML]="opt2_text | safe : true"></p>
+                                                    <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+
+                                                                <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer.match('b') && !marksAwardedB" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse.match('b') && !marksAwardedB" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwardedB" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <label id='option003' class="option" >
+                                                <div class="optncrcl"><span class="optnvalue">C</span></div>
+                                                <div class="optncntnt">
+                                                   <p [innerHTML]="opt3_text | safe : true"></p>
+                                                    <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+
+                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer.match('c') && !marksAwardedC" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse.match('c') && !marksAwardedC" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwardedC" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <label id='option004' class="option"  >
+                                                <div class="optncrcl"><span class="optnvalue">D</span></div>
+                                                <div class="optncntnt">
+                                                    <p [innerHTML]="opt4_text | safe : true"></p>
+                                                    <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+
+                                                                <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer.match('d') && !marksAwardedD" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse.match('d') && !marksAwardedD" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwardedD" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <div *ngIf="newOptionAdded > 0">
+                                                <label id='option005' class="option" >
+                                                    <div class="optncrcl"><span class="optnvalue">E</span></div>
+                                                    <div class="optncntnt">
+                                                        <p [innerHTML]="opt5_text | safe : true"></p>
+                                                        <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                        <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                            <div class="que_solution_solv">
+                                                                <div class="solution_hding">Solution</div>
+                                                                <div class="solution_cntnt">
+
+                                                                    <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span *ngIf="correctAnswer.match('e') && !marksAwardedE" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                    <span *ngIf="userResponse.match('e') && !marksAwardedE" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                    <span *ngIf="marksAwardedE" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                                </label>
+                                            </div>
+
+                                            <div *ngIf="newOptionAdded > 1">
+                                                <label id='option006' class="option">
+                                                    <div class="optncrcl"><span class="optnvalue">F</span></div>
+                                                    <div class="optncntnt">
+                                                       <p [innerHTML]="opt6_text | safe : true"></p>
+                                                        <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                        <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                            <div class="que_solution_solv">
+                                                                <div class="solution_hding">Solution</div>
+                                                                <div class="solution_cntnt">
+
+                                                                    <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span *ngIf="correctAnswer.match('f') && !marksAwardedF" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                    <span *ngIf="userResponse.match('f') && !marksAwardedF" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                    <span *ngIf="marksAwardedF" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <!--Multiple choice Question Answer end ----->
+
+                                        <!--True&false Question Answer Start ----->
+                                        <div class="optninr opt_ans t_f_answer"  *ngIf="quesTyp == 3">
+                                            <label class="option" [ngClass]="{'yrAnswer': userResponse=='a', 'crAnswer': correctAnswer=='a'}" >
+                                                <!--<div class="optncrcl"><span class="optnvalue">True</span></div>-->
+                                                <div class="optncntnt">True
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld && correctAnswer == 'a'">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+                                                                <!--{{solutionText}}-->
+
+                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer == 'a' && !marksAwarded" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse == 'a' && !marksAwarded" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwarded && userResponse=='a'" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+
+                                            <label class="option" [ngClass]="{'yrAnswer': userResponse=='b', 'crAnswer': correctAnswer=='b'}" >
+                                                <!--<div class="optncrcl"><span class="optnvalue">True</span></div>-->
+                                                <div class="optncntnt">False
+                                                    <div class="solutin_div" *ngIf="isSolutionPresentOld && correctAnswer == 'b'">
+                                                        <div class="que_solution_solv">
+                                                            <div class="solution_hding">Solution</div>
+                                                            <div class="solution_cntnt">
+                                                                <!--{{solutionText}}-->
+
+                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="correctAnswer == 'b' && !marksAwarded" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                <span *ngIf="userResponse == 'b' && !marksAwarded" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                <span *ngIf="marksAwarded && userResponse=='b'" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                            </label>
+                                        </div>
+                                        <!--True&false Question Answer end ----->
+
+                                        <!--Userfollowing choice Question Answer start ----->
+
+                                        <div class="optninr mtchmtrx-opt opt_anss" *ngIf="quesTyp == 4 || quesTyp == 5">
+
+                                            <div  class="dragdrop">
+                                                <label class="option radio-sctns" for="mcqSingle10">
+                                                    <div class="optncrcl"><span class="optnvalue">A</span></div>
+                                                    <div class="optncntnt">
+
+                                                        <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                    </div>
+                                                    <div class="que_result">
+                                                        <span class="quesresult_right r_ques s_ques">
+                                                            <span class="optncrcls"><span id="correctAP" class="optnvalues">P</span></span>
+                                                            <span class="optncrcls"><span id="correctAQ" class="optnvalues">Q</span></span>
+                                                            <span class="optncrcls"><span id="correctAR" class="optnvalues">R</span></span>
+                                                            <span class="optncrcls"><span id="correctAS" class="optnvalues">S</span></span>
+                                                            <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctAT" class="optnvalues">T</span></span>
+                                                            <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctAU" class="optnvalues">U</span></span>
+                                                            <span *ngIf="!marksAwardedA" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Correct answer</span>
+
+                                                            <span *ngIf="marksAwardedA" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                        <span *ngIf="!marksAwardedA" class="quesresult_your y_ques z_ques">
+                                                            <span  class="optncrcls"><span id="responseAP" class="optnvalues">P</span></span>
+                                                            <span  class="optncrcls"><span id="responseAQ" class="optnvalues">Q</span></span>
+                                                            <span  class="optncrcls"><span id="responseAR" class="optnvalues">R</span></span>
+                                                            <span  class="optncrcls"><span id="responseAS" class="optnvalues">S</span></span>
+                                                            <span  *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseAT" class="optnvalues">T</span></span>
+                                                            <span  *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseAU" class="optnvalues">U</span></span>
+                                                            <span class="a_ns"><span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                    </div>
+                                                </label>
+
+                                                <div class="choice_answer">
+                                                    <div  class="addoption_list border_dashed vertical_middle">
+                                                        <span  class="Ques_left_part ">
+                                                            <span  class="optnvalue userfollowing">P</span>
+                                                        </span>
+                                                        <div  class="Ques_right_part ">
+                                                            <div  class="optionoutr">
+                                                                <div class="optncntnt">
+                                                                    <!--{{opt7_text}}-->
+
+                                                                    <p  [innerHTML]="opt7_text | safe : true" ><img *ngIf="optImg7" alt="study24x7" src="{{option_image7_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div  class="dragdrop">
+                                                <label class="option radio-sctns" for="mcqSingle10">
+                                                    <div class="optncrcl"><span class="optnvalue">B</span></div>
+                                                    <div class="optncntnt">{{opt2_text}}
+                                                        <p *ngIf="optImg2"><img alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                    </div>
+                                                    <div class="que_result">
+                                                        <span class="quesresult_right r_ques s_ques">
+                                                            <span  class="optncrcls"><span id="correctBP" class="optnvalues">P</span></span>
+                                                            <span  class="optncrcls"><span id="correctBQ" class="optnvalues">Q</span></span>
+                                                            <span  class="optncrcls"><span id="correctBR" class="optnvalues">R</span></span>
+                                                            <span  class="optncrcls"><span id="correctBS" class="optnvalues">S</span></span>
+                                                            <span  *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctBT" class="optnvalues">T</span></span>
+                                                            <span  *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctBU" class="optnvalues">U</span></span>
+                                                            <span *ngIf="!marksAwardedB" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Correct answer</span>
+
+                                                            <span *ngIf="marksAwardedB" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                        <span *ngIf="!marksAwardedB" class="quesresult_your y_ques z_ques">
+                                                            <span  class="optncrcls"><span id="responseBP" class="optnvalues">P</span></span>
+                                                            <span  class="optncrcls"><span id="responseBQ" class="optnvalues">Q</span></span>
+                                                            <span  class="optncrcls"><span id="responseBR" class="optnvalues">R</span></span>
+                                                            <span  class="optncrcls"><span id="responseBS" class="optnvalues">S</span></span>
+                                                            <span  *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseBT" class="optnvalues">T</span></span>
+                                                            <span  *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseBU" class="optnvalues">U</span></span>
+                                                            <span class="a_ns"><span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                    </div>
+                                                </label>
+
+                                                <div class="choice_answer">
+                                                    <div  class="addoption_list border_dashed vertical_middle">
+                                                        <span  class="Ques_left_part ">
+                                                            <span  class="optnvalue userfollowing">Q</span>
+                                                        </span>
+                                                        <div  class="Ques_right_part ">
+                                                            <div  class="optionoutr">
+                                                                <div class="optncntnt">
+
+
+                                                                    <p  [innerHTML]="opt8_text | safe : true" ><img *ngIf="optImg8" alt="study24x7" src="{{option_image8_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div  class="dragdrop">
+                                                <label class="option radio-sctns" for="mcqSingle10">
+                                                    <div class="optncrcl"><span class="optnvalue">C</span></div>
+                                                    <div class="optncntnt">
+
+                                                        <!--{{opt3_text}}-->
+                                                        <p   [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                    </div>
+                                                    <div class="que_result">
+                                                        <span class="quesresult_right r_ques s_ques">
+                                                            <span class="optncrcls"><span id="correctCP" class="optnvalues">P</span></span>
+                                                            <span class="optncrcls"><span id="correctCQ" class="optnvalues">Q</span></span>
+                                                            <span class="optncrcls"><span id="correctCR" class="optnvalues">R</span></span>
+                                                            <span class="optncrcls"><span id="correctCS" class="optnvalues">S</span></span>
+                                                            <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctCT" class="optnvalues">T</span></span>
+                                                            <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctCU" class="optnvalues">U</span></span>
+                                                            <span *ngIf="!marksAwardedC"  class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Correct answer</span>
+
+                                                            <span *ngIf="marksAwardedC" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                        <span *ngIf="!marksAwardedC" class="quesresult_your y_ques z_ques">
+                                                            <span class="optncrcls"><span id="responseCP" class="optnvalues">P</span></span>
+                                                            <span class="optncrcls"><span id="responseCQ" class="optnvalues">Q</span></span>
+                                                            <span class="optncrcls"><span id="responseCR" class="optnvalues">R</span></span>
+                                                            <span class="optncrcls"><span id="responseCS" class="optnvalues">S</span></span>
+                                                            <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseCT"  class="optnvalues">T</span></span>
+                                                            <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseCU" class="optnvalues">U</span></span>
+                                                            <span class="a_ns"><span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                    </div>
+                                                </label>
+
+                                                <div class="choice_answer">
+                                                    <div  class="addoption_list border_dashed vertical_middle">
+                                                        <span  class="Ques_left_part ">
+                                                            <span  class="optnvalue userfollowing">P</span>
+                                                        </span>
+                                                        <div  class="Ques_right_part ">
+                                                            <div  class="optionoutr">
+                                                                <div class="optncntnt">
+                                                                    <!--{{opt9_text}}-->
+
+                                                                    <p [innerHTML]="opt9_text | safe : true" ><img *ngIf="optImg9" alt="study24x7" src="{{option_image9_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div  class="dragdrop">
+                                                <label class="option radio-sctns" for="mcqSingle10">
+                                                    <div class="optncrcl"><span class="optnvalue">D</span></div>
+                                                    <div class="optncntnt">{{opt4_text}}
+                                                        <p *ngIf="optImg4"><img alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                    </div>
+                                                    <div class="que_result">
+                                                        <span class="quesresult_right r_ques s_ques">
+                                                            <span class="optncrcls"><span id="correctDP" class="optnvalues">P</span></span>
+                                                            <span class="optncrcls"><span id="correctDQ" class="optnvalues">Q</span></span>
+                                                            <span class="optncrcls"><span id="correctDR" class="optnvalues">R</span></span>
+                                                            <span class="optncrcls"><span id="correctDS" class="optnvalues">S</span></span>
+                                                            <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctDT" class="optnvalues">T</span></span>
+                                                            <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctDU" class="optnvalues">U</span></span>
+                                                            <span *ngIf="!marksAwardedD" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Correct answer</span>
+
+                                                            <span *ngIf="marksAwardedD" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                        <span *ngIf="!marksAwardedD" class="quesresult_your y_ques z_ques">
+                                                            <span class="optncrcls"><span id="responseDP" class="optnvalues">P</span></span>
+                                                            <span class="optncrcls"><span id="responseDQ" class="optnvalues">Q</span></span>
+                                                            <span class="optncrcls"><span id="responseDR" class="optnvalues">R</span></span>
+                                                            <span class="optncrcls"><span id="responseDS" class="optnvalues">S</span></span>
+                                                            <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseDT" class="optnvalues">T</span></span>
+                                                            <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseDU" class="optnvalues">U</span></span>
+                                                            <span class="a_ns"><span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                    </div>
+                                                </label>
+
+                                                <div class="choice_answer">
+                                                    <div  class="addoption_list border_dashed vertical_middle">
+                                                        <span  class="Ques_left_part ">
+                                                            <span  class="optnvalue userfollowing">S</span>
+                                                        </span>
+                                                        <div  class="Ques_right_part ">
+                                                            <div  class="optionoutr">
+                                                                <div class="optncntnt">
+                                                                    <!--{{opt10_text}}-->
+
+                                                                    <p  [innerHTML]="opt10_text | safe : true" ><img *ngIf="optImg10" alt="study24x7" src="{{option_image10_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div  *ngIf="newOptionAdded > 0" class="dragdrop">
+                                                <label class="option radio-sctns" for="mcqSingle10">
+                                                    <div class="optncrcl"><span class="optnvalue">E</span></div>
+                                                    <div class="optncntnt">{{opt5_text}}
+                                                        <p *ngIf="optImg5"><img alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                    </div>
+                                                    <div class="que_result">
+                                                        <span class="quesresult_right r_ques s_ques">
+                                                            <span class="optncrcls"><span id="correctEP" class="optnvalues">P</span></span>
+                                                            <span class="optncrcls"><span id="correctEQ" class="optnvalues">Q</span></span>
+                                                            <span class="optncrcls"><span id="correctER" class="optnvalues">R</span></span>
+                                                            <span class="optncrcls"><span id="correctES" class="optnvalues">S</span></span>
+                                                            <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctET" class="optnvalues">T</span></span>
+                                                            <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctEU" class="optnvalues">U</span></span>
+                                                            <span *ngIf="!marksAwardedE" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Correct answer</span>
+
+                                                            <span *ngIf="marksAwardedE" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                        <span *ngIf="!marksAwardedE" class="quesresult_your y_ques z_ques">
+                                                            <span class="optncrcls"><span id="responseEP" class="optnvalues">P</span></span>
+                                                            <span class="optncrcls"><span id="responseEQ" class="optnvalues">Q</span></span>
+                                                            <span class="optncrcls"><span id="responseER" class="optnvalues">R</span></span>
+                                                            <span class="optncrcls"><span id="responseES" class="optnvalues">S</span></span>
+                                                            <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseET" class="optnvalues">T</span></span>
+                                                            <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseEU" class="optnvalues">U</span></span>
+                                                            <span class="a_ns"><span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                    </div>
+                                                </label>
+
+                                                <div class="choice_answer">
+                                                    <div  class="addoption_list border_dashed vertical_middle">
+                                                        <span  class="Ques_left_part ">
+                                                            <span  class="optnvalue userfollowing">T</span>
+                                                        </span>
+                                                        <div  class="Ques_right_part ">
+                                                            <div  class="optionoutr">
+                                                                <div class="optncntnt">
+                                                                    <!--{{opt11_text}}-->
+
+                                                                    <p  [innerHTML]="opt11_text | safe : true" ><img *ngIf="optImg11" alt="study24x7" src="{{option_image11_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div *ngIf="newOptionAdded > 1" class="dragdrop">
+                                                <label class="option radio-sctns" for="mcqSingle10">
+                                                    <div class="optncrcl"><span class="optnvalue">F</span></div>
+                                                    <div class="optncntnt">
+
+                                                        <!--{{opt6_text}}-->
+                                                        <p   [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                    </div>
+                                                    <div class="que_result">
+                                                        <span class="quesresult_right r_ques s_ques">
+                                                            <span id="answer001" class="optncrcls"><span id="correctFP" class="optnvalues">P</span></span>
+                                                            <span id="answer002" class="optncrcls"><span id="correctFQ" class="optnvalues">Q</span></span>
+                                                            <span id="answer003" class="optncrcls"><span id="correctFR" class="optnvalues">R</span></span>
+                                                            <span id="answer004"class="optncrcls"><span id="correctFS" class="optnvalues">S</span></span>
+                                                            <span id="answer005" *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctFT" class="optnvalues">T</span></span>
+                                                            <span id="answer006" *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctFU" class="optnvalues">U</span></span>
+                                                            <span *ngIf="!marksAwardedF" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Correct answer</span>
+
+                                                            <span *ngIf="marksAwardedF" class="a_ns_r">
+                                                                <span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                        <span *ngIf="!marksAwardedF" class="quesresult_your y_ques z_ques">
+                                                            <span id="response001" class="optncrcls"><span id="responseFP" class="optnvalues">P</span></span>
+                                                            <span id="response002" class="optncrcls"><span id="responseFQ" class="optnvalues">Q</span></span>
+                                                            <span id="response003" class="optncrcls"><span id="responseFR" class="optnvalues">R</span></span>
+                                                            <span id="response004" class="optncrcls"><span id="responseFS" class="optnvalues">S</span></span>
+                                                            <span id="response005" *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseFT" class="optnvalues">T</span></span>
+                                                            <span id="response006" *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseFU" class="optnvalues">U</span></span>
+                                                            <span class="a_ns"><span class="check_rnd">
+                                                                    <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                </span>Your answer</span>
+                                                        </span>
+                                                    </div>
+                                                </label>
+
+                                                <div class="choice_answer">
+                                                    <div  class="addoption_list border_dashed vertical_middle">
+                                                        <span  class="Ques_left_part ">
+                                                            <span  class="optnvalue userfollowing">U</span>
+                                                        </span>
+                                                        <div  class="Ques_right_part ">
+                                                            <div  class="optionoutr">
+                                                                <div class="optncntnt">
+                                                                    <!--{{opt12_text}}-->
+
+                                                                    <p  [innerHTML]="opt12_text | safe : true" ><img *ngIf="optImg12" alt="study24x7" src="{{option_image12_url}}" ></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="que_solution" *ngIf="isSolutionPresentOld">
+                                                <div class="solution_hding">Solution</div>
+                                                <div class="solution_cntnt">
+                                                    <!--{{solutionText}}-->
+
+                                                    <p   [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="que_solution" *ngIf="isSolutionPresent">
+                                                <div class="solution_hding">Solution</div>
+                                                <div class="solution_cntnt">
+                                                    <!--{{solutionText}}-->
+
+                                                    <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                </div>
+                                        </div>
+
+                                        <!--Userfollowing choice  Question Answer end ----->
+
+                                        <!--matchmatrix choice Question Answer start ----->
+
+                                        <!--matchmatrix choice  Question Answer end ----->
+                                    </div>
+
+                                    <!-- Fill in the blank type Question Start--->
+                                    <div class="questioninr"  *ngIf="quesTyp == 6">
+                                        <div class="Ques_show">
+                                            <div class="Essay_input_show">
+                                                <div class="para_head_cont">
+                                                    <p>Lorem Ipsum is simply dummy text of <span class="testright_ans">metocondria</span> the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                        <br>
+                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard <span class="testwrong_ans">photosynthesis</span> dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                    </p>
+                                                    <!-- <p><img alt="study24x7" src="https://s3-ap-southeast-1.amazonaws.com/gw-thinksaas-deploy/9/questionImage/que-12-06-2018-102829.png"></p> -->
+                                                </div>
+                                                <div class="que_result">
+                                                    <span class="quesresult_your y_ques">
+                                                        photosynthesis
+                                                        <span class="a_ns"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your answer</span>
+                                                    </span>
+                                                    <span class="quesresult_right r_ques">
+                                                        mitocondria
+                                                        <span class="a_ns_r"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct answer</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Fill in the blank type Question end--->
+                                </div>
+
+                            </div>
+
+                            <!--  Normal Question Div End    -->
+                        </div>
+
+                        <div class="footrlft">
+                            <a *ngIf="!hideSkipBtn" (click)="setQuestionData(activeQuestion)" id="previousID"  class="ques_skip test_cntr_btn cancel_btn popup_btn" href="javascript:void(0);" >Skip</a>
+                            <a id="previousID1"  class="ques_back" href="javascript:void(0);">
+                                <span class="angle1"></span></a>
+                            <a *ngIf="!hideSkipBtn" (click)="setQuestionData(activeQuestion)" id="nextID" class="save_next test_cntr_btn" href="javascript:void(0);" ><span id="savennext_ssc">Next</span></a>
+                            <a *ngIf="!hideBackBtn" (click)="setQuestionData(activeQuesIndex -1)" id="nextID" class="back_btn test_cntr_btn" href="javascript:void(0);" ><span id="savennext_ssc">
+                                    <img class="defaultt" src="assets/images/svg/left-arrow-gray.svg" >
+                                    <img class="hoverr" src="assets/images/svg/left-arrow-theme.svg" >
+                                </span></a>
+                        </div>
+
+                        <div class="rightpart m_right" id="rightpart" >
+                            <div class="grayscale"></div>
+                            <div id="about" class="nano rightmain rightmain_test has-scrollbar solutionRightmain">
+                                <div class="quehead">
+                                    <p class="ques_pallet">Total Question
+                                        <span><img   src="assets/images/svg/grid-toggle.svg" (click)="toggle_ques_pallet();"></span></p>
+                                </div>
+                                <div class="nano-content nano-content-right" tabindex="0">
+                                    <div class="Ques_section"  [perfectScrollbar]="config" style="position: relative;">
+                                        <!--============================  question pallet list ======================-->
+                                        <div class="question_pallet_list" *ngIf="ques_pallet_list">
+                                            <ul>
+                                                <ng-container *ngFor="let question of activeLangQuesArr; let i = index">
+                                                    <li (click)="setQuestionData(i)" class="question_list" >
+                                                        <span class="ques_no_list">{{i+1}}</span>
+                                                        <span class="crcl_list crcl_list0" [ngClass]="{'right_ans':question.STATUS == 'R', 'wrong_ans':question.STATUS == 'W', 'left_ques':question.STATUS == 'L'}"></span>
+                                                        <p [innerHTML]="question.STATIC_TEXT | safe : true"></p>
+                                                    </li>
+                                                </ng-container>
+                                            </ul>
+                                        </div>
+                                        <!--============================  question pallet list ======================-->
+
+                                        <!--============================  question pallet grid ======================-->
+                                        <div *ngFor="let subject of subjectArr; let i = index">
+                                            <div class="grid_view" *ngIf="ques_pallet_grid">
+                                                <div class="clearfix panel-heading panel_in_heading active_icon" data-toggle="collapse" (click)="hidePalletList(i)" >
+                                                    <span class="panel-title pnl_title">
+                                                        <span class="interest_headng">{{subject.SUB}}</span>
+                                                        <span class="icon_up glyphicon glyphicon-menu-down"   [ngClass]="{'rotateArrow': arrowDirection}"></span>
+                                                        <span class=" icon_down glyphicon glyphicon-menu-up"></span>
+                                                    </span>
+                                                </div>
+
+                                                <div  id="{{'col' +i}}"  class="panel-collapse collapse show">
+                                                    <div id="{{'col2' +i}}" class="panel-body panel_body_wrap">
+                                                        <ul>
+                                                            <ng-container *ngFor="let question of activeLangQuesArr; let i = index">
+                                                                <li *ngIf="(subject.KEY == question.SUB_ID)" (click)="setQuestionData(i)" class="questionnumb" [ngClass]="{'right_ans':question.STATUS == 'R', 'wrong_ans':question.STATUS == 'W', 'left_ques':question.STATUS == 'L'}">
+                                                                    <span >{{i + 1}}</span>
+                                                                </li>
+                                                            </ng-container>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--============================  question pallet grid ======================-->
+                                    </div>
+
+                                </div>
+                                <div class="nano-pane" style="display: none;"><div class="nano-slider" style="height: 20px; transform: translate(0px, 0px);"></div></div></div>
+                            <div class="submit">
+                                <ul>
+                                    <!-- <li><span class="crcl"></span><span id="attempted_ssc">Attempted</span></li> -->
+                                    <li><span class="crcl right_ans"></span><span id="review_ssc">Right Answer</span></li>
+                                    <li><span class="crcl  wrong_ans"></span><span id="unattempted_ssc">Wrong Answer</span></li>
+                                    <li><span class="crcl  left_ques"></span><span id="skip_ssc">Skip</span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="mobile_view_test" *ngIf="!MobileViewTest">
+          <div class="topstrip solutionTopstrip">
+              <div class="t_left">
+                  <span class="test_name">{{testName}}</span>
+                  <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="study24x7"  ></div>
+                  <div class="select_lang" >
+<!--                      <span (click)="show_lang_list()" class="drop_lang">Language <span  class="glyphicon glyphicon glyphicon-triangle-bottom" style="font-size:9px;"></span></span>-->
+                      <span class="drop_val">{{visibleLang}}</span>
+                      <span class="list_of_lang" *ngIf="lang_list">
+                          <ul>
+                              <ng-container  *ngFor = "let language of languageArr; let i = index;">
+                                  <li *ngIf="!language.VISIBILITY" (click)="changeVisibilityLang(language.LANG_ID, 1);">{{language.LANGUAGE}}</li>
+                              </ng-container>
+                          </ul>
+                      </span>
+                  </div>
+              </div>
+              <!--            <div class="t_right">
+                              <div class="select_lang pause_test" >
+                                  <span class="test_stop_resume">
+                                      <img class="" src="assets/images/svg/pause-inside-a-circle_b.svg">
+                                      <img src="assets/images/svg/play-inside-a-circle_b.svg" style="display:none;">
+                                  </span>
+                                  <div class="time_remain">
+                                      <span  class="drop_lang">Pause Test</span>
+                                      <span class="drop_val">00 : 60 : 43</span>
+                                  </div>
+                              </div>
+                              <div class=" submittest" (click)="test_detials_data();">
+                                  <span class="submit_btn">Submit Test</span>
+                              </div>
+                          </div>-->
+          </div>
+          <div class="topstrip topicStrip">
+            <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':walldropdownTopic}">
+                <div class="wll_img_pey_cont"   >
+                    <span class="topic_span"style="">{{visibleSubject}}</span>
+                </div>
+                <span class="tab-article opt_select" >
+                    <!-- <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+                    <img src="assets/images/svg-three/add_post/hover/downarrow.svg"  class="hoverr" style="top: 0px;width:10px !important;"> -->
+                    <span class="downicon glyphicon glyphicon-triangle-bottom"></span>
+                </span>
+                <div class="walldropdencnt wallprydeopcnt" [ngClass]="{'wallprydeopcnt':walldropdownTopic}" *ngIf="walldropdownTopic">
+                    <ul>
+                        <ng-container  *ngFor = "let subject of subjectArr; let i = index;">
+                            <li *ngIf="!subject.VISIBILITY" (click)="changeVisibilitySubject(subject.KEY, 1);">{{subject.SUB}}</li>
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="togQuesPannel" (click)="ShowQuesPalletMob();">
+              <a  class="a_sec">
+                <span  aria-label="Menu" class="glyphsSpriteHome ">
+                  <img *ngIf="!ToggleQuesPalletMob" class="nav_icon_default"  src="assets/images/mobile_icon/side_menu_gray.png">
+                  <img class="nav_icon_active" style="width:24px;" *ngIf="ToggleQuesPalletMob" src="assets/images/mobile_icon/search_cncl_black.png">
+              </span>
+              </a>
+            </div> -->
+          </div>
+          <div class="wrapper_middle mainmiddle">
+            <div  class="darkbackground-close" *ngIf="ToggleQuesPalletMob" (click)="hideQuesList();"><span class="bgCross"><img src="assets/images/svg/tagcross-wh.svg" alt=""></span></div>
+              <div class="middlestrip">
+                  <div class="m_left">
+                      <div class="leftmain">
+                          <div class="quehdng">
+                              <span id="question_ssc" class="quehdnglft">Q .</span>
+                              <span class="quehdnglft questionCount">{{activeQuestion}}</span>
+
+                              <!-- <span class="selectbox_ques">
+                                <select class="questions">
+                                  <option value="1">NOMANCLATURE PRACTICE</option>
+                                  <option value="2">NOMANCLATURE PRACTICE</option>
+                                </select>
+                                <span  class="validation cursor-pointer" title="">
+                                  <img  src="assets/images/svg/error.svg">
+                                </span>
+                                <span class="glyphicon glyphicon-triangle-bottom selectdrop"></span>
+                              </span> -->
+                              <!--<span class="help_icon"> <span class="report">! &nbsp;REPORT</span></span>-->
+                              <div class="togQuesPannel" (click)="ShowQuesPalletMob();">
+                                <a  class="a_sec">
+                                  <span  aria-label="Menu" class="glyphsSpriteHome ">
+                                    <img *ngIf="!ToggleQuesPalletMob" class="nav_icon_default"  src="assets/images/mobile_icon/side_menu_gray.png">
+                                    <img class="nav_icon_active" style="width:24px;" *ngIf="ToggleQuesPalletMob" src="assets/images/mobile_icon/search_cncl_black.png">
+                                </span>
+                                </a>
+                              </div>
+                              <span class="help_icon_help" *ngIf="isHintProvided">
+                                  <span  class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="study24x7"> <span>&nbsp;HINT</span></span>
+                                  <span class="hint_dsgn" *ngIf="answerhint">
+                                    <span class="close_div" (click)="hintfun()">
+                                        <img class="default" src="assets/images/svg/tagcross-wh.svg">
+                                    </span>
+                                    <div style="min-height: 50px;max-height: 200px;position:relative;width: 100%;padding-right: 10px;" [perfectScrollbar]="config">
+                                      <span class="hint_wrapper"  style="position: relative;display:block;">
+
+
+                                          <p [innerHTML]="hintText | safe : true"></p>
+                                          <p *ngIf="showHintImg"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
+                                      </span>
+                                      </div>
+                                  </span>
+                              </span>
+
+                              <span class="quehdngryt">
+                                  <span class="markdef" style="display:none;">Question Time. <span class="green blue" ></span></span>
+                                  <span class="markdef"><span >Max Marks: </span> <span class="green" >{{rytMarks}}</span></span>
+                                  <span class="markdef markdef_br" >&nbsp;</span>
+                                  <span class="markdef"><span >Neg Marks: </span> <span class="green red" >{{negMarks}}</span></span>
+
+                              </span>
+                              <!-- <span class="help_icon">!</span> -->
+                              <!-- <span class="review_icon">
+                                <img class="defaultt" src="assets/images/svg/eye.svg" >
+                                  <img class="hoverr" src="assets/images/svg/eye-theme.svg" >
+                              </span> -->
+                          </div>
+                          <div id="mainQnDiv">
+                              <!--  Normal Question Div Start    -->
+                              <div id="questionDivMain" class="nano questionoutr has-scrollbar " >
+                                  <div class="nano-content" tabindex="0">
+                                      <div class="questioninr questioninr_solution"  [perfectScrollbar]="config" style="position: relative;display:block;" >
+
+                                          <div class="Essay_input_show" *ngIf="isEssayAssociated">
+                                              <ul class="para_head">
+                                                  <li>Essay Paragraph</li>
+                                              </ul>
+                                              <div class="para_head_cont">
+                                                  <p [innerHTML]="essayText | safe : true"></p>
+                                              </div>
+                                          </div>
+                                          <div class="Ques_show" *ngIf="quesTyp != 6">
+                                              <ul class="para_head para_head_sec" *ngIf="isEssayAssociated">
+                                                  <li>Question</li>
+                                              </ul>
+                                              <div class="para_head_cont">
+                                                  <p [innerHTML]="questionText | safe : true"></p>
+                                                  <p *ngIf="quesImage"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p>
+                                              </div>
+                                          </div>
+                                          <div class="QuesTypeNote">
+                                              <span class="ques_note_para">Note : </span><span>{{quesTypName}}</span>
+                                          </div>
+
+                                          <!--Single choice Question Answer Start ----->
+                                          <div class="optninr opt_ans"  *ngIf="quesTyp == 1">
+
+                                              <label id="option001" class="option" name="mcqLabel">
+                                                  <div class="optncrcl"><span class="optnvalue">A</span></div>
+                                                  <div class="optncntnt">
+                                                      <!--{{opt1_text}}-->
+                                                      <p  [innerHTML]="opt1_text | safe : true" ><img style="margin-top: 5px;" *ngIf="optImg1" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+                                                                  <!--{{solutionText}}-->
+
+                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer == 'a' && !marksAwardedA" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse == 'a' && !marksAwardedA" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwardedA" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <label id="option002" class="option" name="mcqLabel">
+                                                  <div class="optncrcl"><span class="optnvalue">B</span></div>
+                                                  <div class="optncntnt">
+                                                      <!--{{opt2_text}}-->
+
+                                                      <p  [innerHTML]="opt2_text | safe : true" ><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" *ngIf="optImg2" ></p>
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+
+                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer == 'b' && !marksAwardedB" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse == 'b' && !marksAwardedB" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwardedB" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <label id="option003" class="option" name="mcqLabel">
+                                                  <div class="optncrcl"><span class="optnvalue">C</span></div>
+                                                  <div class="optncntnt">
+                                                      <!--{{opt3_text}}-->
+
+                                                      <p [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer == 'c' && !marksAwardedC" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse == 'c' && !marksAwardedC" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwardedC" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <label id="option004" class="option"  name="mcqLabel">
+                                                  <div class="optncrcl"><span class="optnvalue">D</span></div>
+                                                  <div class="optncntnt">
+                                                      <!--{{opt4_text}}-->
+
+
+                                                      <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer == 'd' && !marksAwardedD" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse == 'd' && !marksAwardedD" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwardedD" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <div *ngIf="newOptionAdded > 0">
+                                                  <label id="option005" class="option"  name="mcqLabel">
+                                                      <div class="optncrcl"><span class="optnvalue">E</span></div>
+                                                      <div class="optncntnt">
+                                                          <!--{{opt5_text}}-->
+
+                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                          <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                              <div class="que_solution_solv">
+                                                                  <div class="solution_hding">Solution</div>
+                                                                  <div class="solution_cntnt">
+                                                                      <!--{{solutionText}}-->
+
+                                                                      <p [innerHTML]="solutionText | safe : true"><img  *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <span *ngIf="correctAnswer == 'e' && !marksAwardedE" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                      <span *ngIf="userResponse == 'e' && !marksAwardedE" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                      <span *ngIf="marksAwardedE" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                                  </label>
+                                              </div>
+
+                                              <div *ngIf="newOptionAdded > 1">
+                                                  <label id="option006" class="option"  name="mcqLabel">
+                                                      <div class="optncrcl"><span class="optnvalue">F</span></div>
+                                                      <div class="optncntnt">
+                                                          <!--{{opt6_text}}-->
+
+                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                          <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                              <div class="que_solution_solv">
+                                                                  <div class="solution_hding">Solution</div>
+                                                                  <div class="solution_cntnt">
+
+                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <span *ngIf="correctAnswer == 'f' && !marksAwardedF" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                      <span *ngIf="userResponse == 'f' && !marksAwardedF" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                      <span *ngIf="marksAwardedF" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                                  </label>
+                                              </div>
+                                          </div>
+                                          <!--Single choice Question Answer end ----->
+
+                                          <!--Multiple choice Question Answer start ----->
+                                          <div class="optninr opt_ans"  *ngIf="quesTyp == 2">
+
+                                              <label id='option001' class="option" >
+                                                  <div class="optncrcl"><span class="optnvalue">A</span></div>
+                                                  <div class="optncntnt">
+                                                      <!--{{opt1_text}}-->
+
+                                                      <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+                                                                  <!--{{solutionText}}-->
+
+                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer.match('a') && !marksAwardedA" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse.match('a') && !marksAwardedA" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwardedA" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <label id='option002' class="option" >
+                                                  <div class="optncrcl"><span class="optnvalue">B</span></div>
+                                                  <div class="optncntnt">
+                                                      <!--{{opt2_text}}-->
+
+                                                      <p [innerHTML]="opt2_text | safe : true" ><img *ngIf="optImg2" style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+
+                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer.match('b') && !marksAwardedB" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse.match('b') && !marksAwardedB" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwardedB" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <label id='option003' class="option" >
+                                                  <div class="optncrcl"><span class="optnvalue">C</span></div>
+                                                  <div class="optncntnt">
+                                                      <!--{{opt3_text}}-->
+
+                                                      <p  [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+
+                                                                  <p  [innerHTML]="solutionText | safe : true"><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer.match('c') && !marksAwardedC" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse.match('c') && !marksAwardedC" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwardedC" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <label id='option004' class="option"  >
+                                                  <div class="optncrcl"><span class="optnvalue">D</span></div>
+                                                  <div class="optncntnt">
+                                                      <!--{{opt4_text}}-->
+
+                                                      <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+                                                                  <!--{{solutionText}}-->
+
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer.match('d') && !marksAwardedD" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse.match('d') && !marksAwardedD" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwardedD" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <div *ngIf="newOptionAdded > 0">
+                                                  <label id='option005' class="option" >
+                                                      <div class="optncrcl"><span class="optnvalue">E</span></div>
+                                                      <div class="optncntnt">
+                                                          <!--{{opt5_text}}-->
+
+                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                          <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                              <div class="que_solution_solv">
+                                                                  <div class="solution_hding">Solution</div>
+                                                                  <div class="solution_cntnt">
+                                                                      <!--{{solutionText}}-->
+
+
+                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <span *ngIf="correctAnswer.match('e') && !marksAwardedE" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                      <span *ngIf="userResponse.match('e') && !marksAwardedE" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                      <span *ngIf="marksAwardedE" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                                  </label>
+                                              </div>
+
+                                              <div *ngIf="newOptionAdded > 1">
+                                                  <label id='option006' class="option">
+                                                      <div class="optncrcl"><span class="optnvalue">F</span></div>
+                                                      <div class="optncntnt">
+                                                          <!--{{opt6_text}}-->
+
+                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                          <div class="solutin_div" *ngIf="isSolutionPresentOld">
+                                                              <div class="que_solution_solv">
+                                                                  <div class="solution_hding">Solution</div>
+                                                                  <div class="solution_cntnt">
+
+                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <span *ngIf="correctAnswer.match('f') && !marksAwardedF" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                      <span *ngIf="userResponse.match('f') && !marksAwardedF" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                      <span *ngIf="marksAwardedF" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                                  </label>
+                                              </div>
+
+                                          </div>
+                                          <!--Multiple choice Question Answer end ----->
+
+                                          <!--True&false Question Answer Start ----->
+                                          <div class="optninr opt_ans t_f_answer"  *ngIf="quesTyp == 3">
+                                              <label class="option" [ngClass]="{'yrAnswer': userResponse=='a', 'crAnswer': correctAnswer=='a'}" >
+                                                  <!--<div class="optncrcl"><span class="optnvalue">True</span></div>-->
+                                                  <div class="optncntnt">True
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld && correctAnswer == 'a'">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer == 'a' && !marksAwarded" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse == 'a' && !marksAwarded" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwarded && userResponse=='a'" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+
+                                              <label class="option" [ngClass]="{'yrAnswer': userResponse=='b', 'crAnswer': correctAnswer=='b'}" >
+                                                  <!--<div class="optncrcl"><span class="optnvalue">True</span></div>-->
+                                                  <div class="optncntnt">False
+                                                      <div class="solutin_div" *ngIf="isSolutionPresentOld && correctAnswer == 'b'">
+                                                          <div class="que_solution_solv">
+                                                              <div class="solution_hding">Solution</div>
+                                                              <div class="solution_cntnt">
+
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <span *ngIf="correctAnswer == 'b' && !marksAwarded" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct Answer</span>
+                                                  <span *ngIf="userResponse == 'b' && !marksAwarded" class="solAnsType solAnsTypeWorng"><span class="check_rnd"><img  class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your Answer</span>
+                                                  <span *ngIf="marksAwarded && userResponse=='b'" class="solAnsType solAnsTypeCorrect"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Your Answer</span>
+                                              </label>
+                                          </div>
+                                          <!--True&false Question Answer end ----->
+
+                                          <!--Userfollowing choice Question Answer start ----->
+
+                                          <div class="optninr mtchmtrx-opt opt_anss" *ngIf="quesTyp == 4 || quesTyp == 5">
+
+                                              <div  class="dragdrop">
+                                                  <label class="option radio-sctns" for="mcqSingle10">
+                                                      <div class="optncrcl"><span class="optnvalue">A</span></div>
+                                                      <div class="optncntnt">
+                                                          <!--{{opt1_text}}-->
+
+                                                          <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                      </div>
+                                                      <div class="que_result">
+                                                          <span class="quesresult_right r_ques s_ques">
+                                                              <span class="optncrcls"><span id="correctAP" class="optnvalues">P</span></span>
+                                                              <span class="optncrcls"><span id="correctAQ" class="optnvalues">Q</span></span>
+                                                              <span class="optncrcls"><span id="correctAR" class="optnvalues">R</span></span>
+                                                              <span class="optncrcls"><span id="correctAS" class="optnvalues">S</span></span>
+                                                              <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctAT" class="optnvalues">T</span></span>
+                                                              <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctAU" class="optnvalues">U</span></span>
+                                                              <span *ngIf="!marksAwardedA" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Correct answer</span>
+
+                                                              <span *ngIf="marksAwardedA" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                          <span *ngIf="!marksAwardedA" class="quesresult_your y_ques z_ques">
+                                                              <span  class="optncrcls"><span id="responseAP" class="optnvalues">P</span></span>
+                                                              <span  class="optncrcls"><span id="responseAQ" class="optnvalues">Q</span></span>
+                                                              <span  class="optncrcls"><span id="responseAR" class="optnvalues">R</span></span>
+                                                              <span  class="optncrcls"><span id="responseAS" class="optnvalues">S</span></span>
+                                                              <span  *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseAT" class="optnvalues">T</span></span>
+                                                              <span  *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseAU" class="optnvalues">U</span></span>
+                                                              <span class="a_ns"><span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                      </div>
+                                                  </label>
+
+                                                  <div class="choice_answer">
+                                                      <div  class="addoption_list border_dashed vertical_middle">
+                                                          <span  class="Ques_left_part ">
+                                                              <span  class="optnvalue userfollowing">P</span>
+                                                          </span>
+                                                          <div  class="Ques_right_part ">
+                                                              <div  class="optionoutr">
+                                                                  <div class="optncntnt">
+                                                                      <!--{{opt7_text}}-->
+
+                                                                      <p [innerHTML]="opt7_text | safe : true"><img *ngIf="optImg7" alt="study24x7" src="{{option_image7_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div  class="dragdrop">
+                                                  <label class="option radio-sctns" for="mcqSingle10">
+                                                      <div class="optncrcl"><span class="optnvalue">B</span></div>
+                                                      <div class="optncntnt">
+                                                          <!--{{opt2_text}}-->
+
+                                                          <p  [innerHTML]="opt2_text | safe : true" ><img *ngIf="optImg2" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                      </div>
+                                                      <div class="que_result">
+                                                          <span class="quesresult_right r_ques s_ques">
+                                                              <span  class="optncrcls"><span id="correctBP" class="optnvalues">P</span></span>
+                                                              <span  class="optncrcls"><span id="correctBQ" class="optnvalues">Q</span></span>
+                                                              <span  class="optncrcls"><span id="correctBR" class="optnvalues">R</span></span>
+                                                              <span  class="optncrcls"><span id="correctBS" class="optnvalues">S</span></span>
+                                                              <span  *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctBT" class="optnvalues">T</span></span>
+                                                              <span  *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctBU" class="optnvalues">U</span></span>
+                                                              <span *ngIf="!marksAwardedB" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Correct answer</span>
+
+                                                              <span *ngIf="marksAwardedB" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                          <span *ngIf="!marksAwardedB" class="quesresult_your y_ques z_ques">
+                                                              <span  class="optncrcls"><span id="responseBP" class="optnvalues">P</span></span>
+                                                              <span  class="optncrcls"><span id="responseBQ" class="optnvalues">Q</span></span>
+                                                              <span  class="optncrcls"><span id="responseBR" class="optnvalues">R</span></span>
+                                                              <span  class="optncrcls"><span id="responseBS" class="optnvalues">S</span></span>
+                                                              <span  *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseBT" class="optnvalues">T</span></span>
+                                                              <span  *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseBU" class="optnvalues">U</span></span>
+                                                              <span class="a_ns"><span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                      </div>
+                                                  </label>
+
+                                                  <div class="choice_answer">
+                                                      <div  class="addoption_list border_dashed vertical_middle">
+                                                          <span  class="Ques_left_part ">
+                                                              <span  class="optnvalue userfollowing">Q</span>
+                                                          </span>
+                                                          <div  class="Ques_right_part ">
+                                                              <div  class="optionoutr">
+                                                                  <div class="optncntnt">
+                                                                      <!--{{opt8_text}}-->
+
+                                                                      <p [innerHTML]="opt8_text | safe : true" ><img *ngIf="optImg8" alt="study24x7" src="{{option_image8_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div  class="dragdrop">
+                                                  <label class="option radio-sctns" for="mcqSingle10">
+                                                      <div class="optncrcl"><span class="optnvalue">C</span></div>
+                                                      <div class="optncntnt">
+                                                          <!--{{opt3_text}}-->
+
+                                                          <p [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                      </div>
+                                                      <div class="que_result">
+                                                          <span class="quesresult_right r_ques s_ques">
+                                                              <span class="optncrcls"><span id="correctCP" class="optnvalues">P</span></span>
+                                                              <span class="optncrcls"><span id="correctCQ" class="optnvalues">Q</span></span>
+                                                              <span class="optncrcls"><span id="correctCR" class="optnvalues">R</span></span>
+                                                              <span class="optncrcls"><span id="correctCS" class="optnvalues">S</span></span>
+                                                              <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctCT" class="optnvalues">T</span></span>
+                                                              <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctCU" class="optnvalues">U</span></span>
+                                                              <span *ngIf="!marksAwardedC"  class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Correct answer</span>
+
+                                                              <span *ngIf="marksAwardedC" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                          <span *ngIf="!marksAwardedC" class="quesresult_your y_ques z_ques">
+                                                              <span class="optncrcls"><span id="responseCP" class="optnvalues">P</span></span>
+                                                              <span class="optncrcls"><span id="responseCQ" class="optnvalues">Q</span></span>
+                                                              <span class="optncrcls"><span id="responseCR" class="optnvalues">R</span></span>
+                                                              <span class="optncrcls"><span id="responseCS" class="optnvalues">S</span></span>
+                                                              <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseCT"  class="optnvalues">T</span></span>
+                                                              <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseCU" class="optnvalues">U</span></span>
+                                                              <span class="a_ns"><span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                      </div>
+                                                  </label>
+
+                                                  <div class="choice_answer">
+                                                      <div  class="addoption_list border_dashed vertical_middle">
+                                                          <span  class="Ques_left_part ">
+                                                              <span  class="optnvalue userfollowing">P</span>
+                                                          </span>
+                                                          <div  class="Ques_right_part ">
+                                                              <div  class="optionoutr">
+                                                                  <div class="optncntnt">
+                                                                      <!--{{opt9_text}}-->
+
+                                                                      <p [innerHTML]="opt9_text | safe : true" ><img *ngIf="optImg9" alt="study24x7" src="{{option_image9_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div  class="dragdrop">
+                                                  <label class="option radio-sctns" for="mcqSingle10">
+                                                      <div class="optncrcl"><span class="optnvalue">D</span></div>
+                                                      <div class="optncntnt">
+                                                          <!--{{opt4_text}}-->
+
+                                                          <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                      </div>
+                                                      <div class="que_result">
+                                                          <span class="quesresult_right r_ques s_ques">
+                                                              <span class="optncrcls"><span id="correctDP" class="optnvalues">P</span></span>
+                                                              <span class="optncrcls"><span id="correctDQ" class="optnvalues">Q</span></span>
+                                                              <span class="optncrcls"><span id="correctDR" class="optnvalues">R</span></span>
+                                                              <span class="optncrcls"><span id="correctDS" class="optnvalues">S</span></span>
+                                                              <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctDT" class="optnvalues">T</span></span>
+                                                              <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctDU" class="optnvalues">U</span></span>
+                                                              <span *ngIf="!marksAwardedD" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Correct answer</span>
+
+                                                              <span *ngIf="marksAwardedD" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                          <span *ngIf="!marksAwardedD" class="quesresult_your y_ques z_ques">
+                                                              <span class="optncrcls"><span id="responseDP" class="optnvalues">P</span></span>
+                                                              <span class="optncrcls"><span id="responseDQ" class="optnvalues">Q</span></span>
+                                                              <span class="optncrcls"><span id="responseDR" class="optnvalues">R</span></span>
+                                                              <span class="optncrcls"><span id="responseDS" class="optnvalues">S</span></span>
+                                                              <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseDT" class="optnvalues">T</span></span>
+                                                              <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseDU" class="optnvalues">U</span></span>
+                                                              <span class="a_ns"><span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                      </div>
+                                                  </label>
+
+                                                  <div class="choice_answer">
+                                                      <div  class="addoption_list border_dashed vertical_middle">
+                                                          <span  class="Ques_left_part ">
+                                                              <span  class="optnvalue userfollowing">S</span>
+                                                          </span>
+                                                          <div  class="Ques_right_part ">
+                                                              <div  class="optionoutr">
+                                                                  <div class="optncntnt">
+
+                                                                      <p [innerHTML]="opt10_text | safe : true" ><img *ngIf="optImg10" alt="study24x7" src="{{option_image10_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div  *ngIf="newOptionAdded > 0" class="dragdrop">
+                                                  <label class="option radio-sctns" for="mcqSingle10">
+                                                      <div class="optncrcl"><span class="optnvalue">E</span></div>
+                                                      <div class="optncntnt">
+                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                      </div>
+                                                      <div class="que_result">
+                                                          <span class="quesresult_right r_ques s_ques">
+                                                              <span class="optncrcls"><span id="correctEP" class="optnvalues">P</span></span>
+                                                              <span class="optncrcls"><span id="correctEQ" class="optnvalues">Q</span></span>
+                                                              <span class="optncrcls"><span id="correctER" class="optnvalues">R</span></span>
+                                                              <span class="optncrcls"><span id="correctES" class="optnvalues">S</span></span>
+                                                              <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctET" class="optnvalues">T</span></span>
+                                                              <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctEU" class="optnvalues">U</span></span>
+                                                              <span *ngIf="!marksAwardedE" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Correct answer</span>
+
+                                                              <span *ngIf="marksAwardedE" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                          <span *ngIf="!marksAwardedE" class="quesresult_your y_ques z_ques">
+                                                              <span class="optncrcls"><span id="responseEP" class="optnvalues">P</span></span>
+                                                              <span class="optncrcls"><span id="responseEQ" class="optnvalues">Q</span></span>
+                                                              <span class="optncrcls"><span id="responseER" class="optnvalues">R</span></span>
+                                                              <span class="optncrcls"><span id="responseES" class="optnvalues">S</span></span>
+                                                              <span *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseET" class="optnvalues">T</span></span>
+                                                              <span *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseEU" class="optnvalues">U</span></span>
+                                                              <span class="a_ns"><span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                      </div>
+                                                  </label>
+
+                                                  <div class="choice_answer">
+                                                      <div  class="addoption_list border_dashed vertical_middle">
+                                                          <span  class="Ques_left_part ">
+                                                              <span  class="optnvalue userfollowing">T</span>
+                                                          </span>
+                                                          <div  class="Ques_right_part ">
+                                                              <div  class="optionoutr">
+                                                                  <div class="optncntnt">
+
+                                                                      <p [innerHTML]="opt11_text | safe : true" ><img *ngIf="optImg11" alt="study24x7" src="{{option_image11_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div *ngIf="newOptionAdded > 1" class="dragdrop">
+                                                  <label class="option radio-sctns" for="mcqSingle10">
+                                                      <div class="optncrcl"><span class="optnvalue">F</span></div>
+                                                      <div class="optncntnt">
+                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                      </div>
+                                                      <div class="que_result">
+                                                          <span class="quesresult_right r_ques s_ques">
+                                                              <span id="answer001" class="optncrcls"><span id="correctFP" class="optnvalues">P</span></span>
+                                                              <span id="answer002" class="optncrcls"><span id="correctFQ" class="optnvalues">Q</span></span>
+                                                              <span id="answer003" class="optncrcls"><span id="correctFR" class="optnvalues">R</span></span>
+                                                              <span id="answer004"class="optncrcls"><span id="correctFS" class="optnvalues">S</span></span>
+                                                              <span id="answer005" *ngIf="newOptionAdded > 0" class="optncrcls"><span id="correctFT" class="optnvalues">T</span></span>
+                                                              <span id="answer006" *ngIf="newOptionAdded > 1" class="optncrcls"><span id="correctFU" class="optnvalues">U</span></span>
+                                                              <span *ngIf="!marksAwardedF" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Correct answer</span>
+
+                                                              <span *ngIf="marksAwardedF" class="a_ns_r">
+                                                                  <span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                          <span *ngIf="!marksAwardedF" class="quesresult_your y_ques z_ques">
+                                                              <span id="response001" class="optncrcls"><span id="responseFP" class="optnvalues">P</span></span>
+                                                              <span id="response002" class="optncrcls"><span id="responseFQ" class="optnvalues">Q</span></span>
+                                                              <span id="response003" class="optncrcls"><span id="responseFR" class="optnvalues">R</span></span>
+                                                              <span id="response004" class="optncrcls"><span id="responseFS" class="optnvalues">S</span></span>
+                                                              <span id="response005" *ngIf="newOptionAdded > 0" class="optncrcls"><span id="responseFT" class="optnvalues">T</span></span>
+                                                              <span id="response006" *ngIf="newOptionAdded > 1" class="optncrcls"><span id="responseFU" class="optnvalues">U</span></span>
+                                                              <span class="a_ns"><span class="check_rnd">
+                                                                      <img class="checkboximg" src="assets/images/svg/tagcross-red.svg">
+                                                                  </span>Your answer</span>
+                                                          </span>
+                                                      </div>
+                                                  </label>
+
+                                                  <div class="choice_answer">
+                                                      <div  class="addoption_list border_dashed vertical_middle">
+                                                          <span  class="Ques_left_part ">
+                                                              <span  class="optnvalue userfollowing">U</span>
+                                                          </span>
+                                                          <div  class="Ques_right_part ">
+                                                              <div  class="optionoutr">
+                                                                  <div class="optncntnt">
+
+                                                                      <p [innerHTML]="opt12_text | safe : true" ><img *ngIf="optImg12" alt="study24x7" src="{{option_image12_url}}" ></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="que_solution" *ngIf="isSolutionPresentOld">
+                                                  <div class="solution_hding">Solution</div>
+                                                  <div class="solution_cntnt">
+                                                      <!--{{solutionText}}-->
+
+                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="que_solution" *ngIf="isSolutionPresent">
+                                                  <div class="solution_hding">Solution</div>
+                                                  <div class="solution_cntnt">
+
+                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                  </div>
+                                          </div>
+
+                                          <!--Userfollowing choice  Question Answer end ----->
+
+                                          <!--matchmatrix choice Question Answer start ----->
+
+                                          <!--matchmatrix choice  Question Answer end ----->
+                                      </div>
+
+                                      <!-- Fill in the blank type Question Start--->
+                                      <div class="questioninr"  *ngIf="quesTyp == 6">
+                                          <div class="Ques_show">
+                                              <div class="Essay_input_show">
+                                                  <div class="para_head_cont">
+                                                      <p>Lorem Ipsum is simply dummy text of <span class="testright_ans">metocondria</span> the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                          <br>
+                                                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard <span class="testwrong_ans">photosynthesis</span> dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                      </p>
+                                                      <!-- <p><img alt="study24x7" src="https://s3-ap-southeast-1.amazonaws.com/gw-thinksaas-deploy/9/questionImage/que-12-06-2018-102829.png"></p> -->
+                                                  </div>
+                                                  <div class="que_result">
+                                                      <span class="quesresult_your y_ques">
+                                                          photosynthesis
+                                                          <span class="a_ns"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg/tagcross-red.svg"></span>Your answer</span>
+                                                      </span>
+                                                      <span class="quesresult_right r_ques">
+                                                          mitocondria
+                                                          <span class="a_ns_r"><span class="check_rnd"><img class="checkboximg" src="assets/images/svg-one/checkbox-green.svg"></span>Correct answer</span>
+                                                      </span>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <!-- Fill in the blank type Question end--->
+                                  </div>
+
+                              </div>
+
+                              <!--  Normal Question Div End    -->
+                          </div>
+
+                          <!-- <div class="footrlft">
+                              <a *ngIf="!hideSkipBtn" (click)="setQuestionData(activeQuestion)" id="previousID"  class="ques_skip test_cntr_btn cancel_btn popup_btn" href="javascript:void(0);" >Skip</a>
+                              <a id="previousID1"  class="ques_back" href="javascript:void(0);">
+                                  <span class="angle1"></span></a>
+                              <a *ngIf="!hideSkipBtn" (click)="setQuestionData(activeQuestion)" id="nextID" class="save_next test_cntr_btn" href="javascript:void(0);" ><span id="savennext_ssc">Next</span></a>
+                              <a *ngIf="!hideBackBtn" (click)="setQuestionData(activeQuesIndex -1)" id="nextID" class="back_btn test_cntr_btn" href="javascript:void(0);" ><span id="savennext_ssc">
+                                      <img class="defaultt" src="assets/images/svg/left-arrow-gray.svg" >
+                                      <img class="hoverr" src="assets/images/svg/left-arrow-theme.svg" >
+                                  </span></a>
+                          </div> -->
+                          <div class="footrlft ">
+                            <div class="back_ques_btn">
+                              <a  *ngIf="!hideBackBtn" (click)="setQuestionData(activeQuesIndex -1)" id="nextID" class="back_btn_mob test_cntr_btn" href="javascript:void(0);" >
+
+                                <span id="savennext_ssc">
+                              <!-- <a *ngIf="!hideBackBtn" id="nextID" class="back_btn test_cntr_btn" href="javascript:void(0);"  (click)="putResponseFxn(activeQuesIndex, quesTyp, 2, activeQuesIndex -1)"><span id="savennext_ssc"> -->
+                               Previous
+                              </span>
+                            </a>
+                            </div>
+                              <!-- <div class="back_ques_btn mark_for_rev">
+                              <span class="review_icon" [ngClass]="{'review-active': activeLangQuesArr[activeQuesIndex]=='R'}" (click)="markAsReview(activeQuesIndex);">
+                                    <img class="defaultt" src="assets/images/svg/eye.svg" >
+                                  <img class="hoverr" src="assets/images/svg/eye-theme.svg" >
+                              </span>
+                              </div> -->
+                              <div class="back_ques_btn save_next_btn" style="float: right !important;">
+                              <a *ngIf="!hideSkipBtn" (click)="setQuestionData(activeQuestion)" id="nextID" class="save_next test_cntr_btn" href="javascript:void(0);">
+                                <span id="savennext_ssc"> Next</span>
+                              </a>
+                              </div>
+                          </div>
+                          <div class="rightpart m_right rightmain" id="rightpart" *ngIf="ToggleQuesPalletMob">
+                              <div class="grayscale"></div>
+                              <div id="about" class="nano  rightmain_test has-scrollbar solutionRightmain">
+                                  <div class="quehead">
+                                      <p class="ques_pallet">Total Question
+                                          <span><img   src="assets/images/svg/grid-toggle.svg" (click)="toggle_ques_pallet();"></span></p>
+                                  </div>
+                                  <div class="nano-content nano-content-right" tabindex="0">
+                                      <div class="Ques_section"  [perfectScrollbar]="config" style="position: relative;">
+                                          <!--============================  question pallet list ======================-->
+                                          <div class="question_pallet_list" *ngIf="ques_pallet_list">
+                                              <ul>
+                                                  <ng-container *ngFor="let question of activeLangQuesArr; let i = index">
+                                                      <li (click)="setQuestionData(i)" class="question_list" >
+                                                          <span class="ques_no_list">{{i+1}}</span>
+                                                          <span class="crcl_list crcl_list0" [ngClass]="{'right_ans':question.STATUS == 'R', 'wrong_ans':question.STATUS == 'W', 'left_ques':question.STATUS == 'L'}"></span>
+                                                          <p [innerHTML]="question.STATIC_TEXT | safe : true"></p>
+                                                      </li>
+                                                  </ng-container>
+                                              </ul>
+                                          </div>
+                                          <!--============================  question pallet list ======================-->
+
+                                          <!--============================  question pallet grid ======================-->
+                                          <div *ngFor="let subject of subjectArr; let i = index">
+                                              <div class="grid_view" *ngIf="ques_pallet_grid">
+                                                  <div class="clearfix panel-heading panel_in_heading active_icon" data-toggle="collapse" href="#col1" >
+                                                      <span class="panel-title pnl_title">
+                                                          <span class="interest_headng">{{subject.SUB}}</span>
+                                                          <span class="icon_up glyphicon glyphicon-menu-down" ></span>
+                                                          <span class=" icon_down glyphicon glyphicon-menu-up"></span>
+                                                      </span>
+                                                  </div>
+
+                                                  <div id="col1" class="panel-collapse collapse show">
+                                                      <div class="panel-body panel_body_wrap">
+                                                          <ul>
+                                                              <ng-container *ngFor="let question of activeLangQuesArr; let i = index">
+                                                                  <li *ngIf="(subject.KEY == question.SUB_ID)" (click)="setQuestionData(i)" class="questionnumb" [ngClass]="{'right_ans':question.STATUS == 'R', 'wrong_ans':question.STATUS == 'W', 'left_ques':question.STATUS == 'L'}">
+                                                                      <span >{{i + 1}}</span>
+                                                                  </li>
+                                                              </ng-container>
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <!--============================  question pallet grid ======================-->
+                                      </div>
+
+                                  </div>
+                                  <div class="nano-pane" style="display: none;"><div class="nano-slider" style="height: 20px; transform: translate(0px, 0px);"></div></div></div>
+                              <div class="submit">
+                                  <ul>
+                                      <!-- <li><span class="crcl"></span><span id="attempted_ssc">Attempted</span></li> -->
+                                      <li><span class="crcl right_ans"></span><span id="review_ssc">Right Answer</span></li>
+                                      <li><span class="crcl  wrong_ans"></span><span id="unattempted_ssc">Wrong Answer</span></li>
+                                      <li><span class="crcl  left_ques"></span><span id="skip_ssc">Skip</span></li>
+                                  </ul>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          </div>
+    </div>
+
+</div>

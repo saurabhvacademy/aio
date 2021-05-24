@@ -1,0 +1,58 @@
+<div class="topperMain">
+  <div class="showData" *ngIf="top3Leaders.length>=3">
+    <div class="itemData ">
+      <div class="proImg" style="margin-top: 15px; cursor: pointer;">
+        <img *ngIf="top3Leaders[1].PROFILE_PHOTO_PATH!=null"
+          src="{{top3Leaders[1].PROFILE_PHOTO_PATH}}" (click)="_commonMethodsService.openLeaderProfile(top3Leaders[1])">
+          <!-- <img *ngIf="top3Leaders[1].PROFILE_PHOTO_PATH==null"
+          src="https://img1.study24x7.com/assets/images/defaultProfilePic.svg" (click)="_commonMethodsService.openLeaderProfile(top3Leaders[1])"> -->
+        <span class="topperIcon topperIcon2"></span>
+      </div>
+      <div class="stuInfo">
+        <p style="display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 37px;
+        cursor: pointer;
+        overflow: hidden;" (click)="_commonMethodsService.openLeaderProfile(top3Leaders[1])">{{top3Leaders[1].firstName}}<br>{{top3Leaders[1].secondName}}</p>
+        <button (click)="_commonMethodsService.openLeaderProfile(top3Leaders[1])" type="button" name="button">{{top3Leaders[1].CURRENT_POINT}} Pts.</button>
+      </div>
+    </div>
+    <div class="itemData itemData1">
+      <div class="proImg" >
+        <img *ngIf="top3Leaders[0].PROFILE_PHOTO_PATH!=null"
+          src="{{top3Leaders[0].PROFILE_PHOTO_PATH}}" (click)="_commonMethodsService.openLeaderProfile(top3Leaders[0])" >
+         
+          <span class="topperIcon topperIcon1"></span>
+      </div>
+      <div class="stuInfo">
+        <p style="display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 37px;
+        cursor: pointer;
+        overflow: hidden;" (click)="_commonMethodsService.openLeaderProfile(top3Leaders[0])" >{{top3Leaders[0].firstName}}<br>{{top3Leaders[0].secondName}}</p>
+        <button (click)="_commonMethodsService.openLeaderProfile(top3Leaders[0])" type="button" name="button">{{top3Leaders[0].CURRENT_POINT}} Pts.
+          <span class="rank1Shield"></span></button>
+      </div>
+    </div>
+    <div class="itemData ">
+      <div class="proImg" style="margin-top: 15px; cursor: pointer;">
+        <img *ngIf="top3Leaders[2].PROFILE_PHOTO_PATH!=null"
+          src="{{top3Leaders[2].PROFILE_PHOTO_PATH}}" (click)="_commonMethodsService.openLeaderProfile(top3Leaders[2])">
+        
+        <span class="topperIcon topperIcon3"></span>
+      </div>
+      <div class="stuInfo">
+        <p style="display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 37px;
+        cursor: pointer;
+        overflow: hidden;" (click)="_commonMethodsService.openLeaderProfile(top3Leaders[2])">{{top3Leaders[2].firstName}}<br>{{top3Leaders[2].secondName}}</p>
+        <button (click)="_commonMethodsService.openLeaderProfile(top3Leaders[2])" type="button" name="button">{{top3Leaders[2].CURRENT_POINT}} Pts.</button>
+      </div>
+    </div>
+
+  </div>
+</div>

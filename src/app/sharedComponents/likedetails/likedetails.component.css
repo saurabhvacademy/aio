@@ -1,0 +1,25 @@
+.likedetailspopup .peopleknow_outer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 3px;
+}
+
+.likedetailspopup .peopleknow_outer .people_list {
+  display: inline-block;
+  width: 100%;
+  padding: 0 15px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 330px;
+}
+
+.likedetailspopup .peopleknow_outer .people_list li:first-child {
+  padding-top: 7px;
+}
+
+.likedetailspopup .peopleknow_outer .people_list li {
+  padding: 10px 0;
+}
+/*# sourceMappingURL=likedetails.component.css.map */

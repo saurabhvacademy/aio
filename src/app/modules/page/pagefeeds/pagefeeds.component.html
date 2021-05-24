@@ -1,0 +1,17 @@
+<div data-infinite-scroll [infiniteScrollDistance]="5" [infiniteScrollThrottle]="300" [immediateCheck]="true" (scrolled)="onScrollDown()" [scrollWindow]="true" *ngIf="postPresent">
+    <!--<div *ngIf="preloader_top"><img src="assets/images/svg/preloader.svg"></div>-->
+    <div #container></div>
+    <!--<div *ngIf="preloader_bot"><img src="assets/images/svg/preloader.svg"></div>-->
+</div>
+<div class="emptystate empty_wrap" *ngIf="postPresent==false && loadPageFeeds == false ">
+    <div class="emptystate_inner">
+        <img class="emptyimg emptyfeed" src="assets/images/svg-three/post_icon/no_post.svg" style="width:150px!important">
+        <p style="padding:20px;">No posts to show</p>
+    </div>
+</div>
+<div class="loader2" *ngIf="loadPageFeeds">
+    <img src="assets/images/24x7preloader.gif" alt="study24x7">
+</div>
+
+
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

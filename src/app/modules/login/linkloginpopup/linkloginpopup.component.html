@@ -1,0 +1,30 @@
+<div class="popup-inner-wrap" *ngIf="showloginpopup">
+  <!-- login up start -->
+  <div class="signupwrapper" *ngIf="login_container ">
+    <div class="head">
+      <!-- <span  class="login_close" (click)="hidepopup();">
+        <img  class="default" src="assets/images/svg-three/login_icon/tagcross.svg">
+        <img  class="hover" src="assets/images/svg-three/login_icon/tagcross.svg">
+      </span> -->
+      <div class="logocontainer">
+        <img src="assets/images/svg-three/Logo.png" alt="study24x7">
+      </div>
+    </div>
+    <div class="feldContainer" *ngIf="forgotpassword==0">
+      <h3>Want to know more about Allomora ?</h3>
+      <div class="inputfiled">
+        <input type="text" placeholder="Email or Mobile">
+      </div>
+      <div class="inputfiled">
+        <input type="text" placeholder="Password">
+      </div>
+      <span><a href='javascript:void(0);'>Forgot password ?</a></span>
+      <button class="loginbtn">Log in</button>
+    </div>
+
+    <div class="footer">
+      <span>New to Study24x7 ?</span>
+      <button type="button" name="button">Sign Up</button>
+    </div>
+  </div>
+</div>

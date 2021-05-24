@@ -1,0 +1,81 @@
+<div class="post_outer navbottom ">
+  <nav class="mobile_nav">
+    <div class="main_nav">
+      <div class="BvyAW">
+        <div class="icon_sec ripple_effect" [routerLinkActive]="'navactive ripple_effect_active'"  routerLink="/home"
+          (click)="hideMmenu()">
+          <a class="a_sec" >
+            <span class="glyphsSpriteHome" aria-label="Home">
+              <img class="nav_icon_default" src="assets/images/mobile_icon/home_gray.png">
+              <img class="nav_icon_active" src="assets/images/mobile_icon/home_red.png">
+            </span>
+            <span class="glyphsSpriteHome icon_cont" aria-label="Home">
+              Home
+            </span>
+
+          </a>
+        </div>
+
+        <div class="icon_sec ripple_effect"  [routerLinkActive]="'navactive ripple_effect_active'"  routerLink="/home/questionforyou"
+           (click)="hideMmenu()">
+          <a class="a_sec" >
+            <span class="glyphsSpriteHome " aria-label="Connection">
+              <img class="nav_icon_default" src="assets/images/svg-three/add_post/wall/question_gray.png" alt="">
+              <img class="nav_icon_active" src="assets/images/svg-three/add_post/wall/question_red.png" alt="">
+            </span>
+            <span class="glyphsSpriteHome icon_cont" aria-label="Home">
+              Questions
+            </span>
+          </a>
+        </div>
+
+
+
+
+        <div class="icon_sec ripple_effect" role="menuitem" tabindex="0" (click)="hideMmenu()" routerLink="/all-courses"
+          [routerLinkActive]="'navactive ripple_effect_active'">
+          <a class="a_sec">
+            <span class="glyphsSpriteHome " aria-label="Message">
+              <img class="nav_icon_default" src="assets/images/svg-three/add_post/wall/course_gray.png">
+              <img class="nav_icon_active" src="assets/images/svg-three/add_post/wall/coursered.png">
+            </span>
+            <span class="glyphsSpriteHome icon_cont">
+              Courses
+            </span>
+          </a>
+        </div>
+
+
+        <div class="icon_sec ripple_effect" style="" [routerLinkActive]="'navactive ripple_effect_active'"
+          routerLink="/home/live-classes" (click)="hideMmenu();">
+          <a class="a_sec ">
+            <span class="glyphsSpriteHome " aria-label="Live Classes">
+              <img class="nav_icon_default" style="height: 15px;margin-bottom: 6px;"
+                src="assets/images/svg-three/add_post/wall/livewall.png">
+              <img class="nav_icon_active" style="height: 15px;margin-bottom: 6px;"
+                src="assets/images/svg-three/add_post/wall/livewallred.png">
+            </span>
+            <span class="glyphsSpriteHome icon_cont">
+              Live Classes
+            </span>
+          </a>
+        </div>
+
+        <div class="icon_sec ripple_effect" [ngClass]="{'navactive': isActiveMenu}" (click)="showMobileMmenu()">
+          <a class="a_sec">
+            <span class="glyphsSpriteHome " aria-label="Menu">
+              <img class="nav_icon_default" src="assets/images/mobile_icon/side_menu_gray.png">
+              <img class="nav_icon_active" src="assets/images/mobile_icon/icon.png">
+            </span>
+            <span class="glyphsSpriteHome icon_cont">
+              Menu
+            </span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+</div>
+<app-createpage *ngIf="datatext" (showPopup)="showPageCreatePopup($event)"></app-createpage>

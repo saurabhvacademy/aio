@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__Group_586" width="12.536" height="17.236" data-name="Group 586" viewBox="0 0 12.536 17.236" style="background-color: #fff;">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#363636}
+        </style>
+    </defs>
+    <path id="prefix__Path_83" d="M1132 555v17.236h12.536v-13.643l-3.593-3.593zm8.618 1.891l2.026 2.026h-2.026zm2.35 13.778h-9.4v-14.1h5.484v3.917h3.917z" data-name="Path 83" transform="translate(-1132 -555)" style="fill:#282828"/>
+    <path id="prefix__Rectangle_104" d="M0 0H6V1H0z" class="prefix__cls-2" data-name="Rectangle 104" transform="translate(2.944 7.903)"/>
+    <path id="prefix__Rectangle_105" d="M0 0H5V1H0z" class="prefix__cls-2" data-name="Rectangle 105" transform="translate(2.944 9.903)"/>
+</svg>

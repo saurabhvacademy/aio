@@ -1,0 +1,7 @@
+<svg id="Layer_107" data-name="Layer 107" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16.8">
+  <title>timer</title>
+  <g>
+    <path d="M10,18.4A7,7,0,0,0,14.73,6.26L16.1,4.89l-1-1L13.61,5.42a6.8,6.8,0,0,0-2.91-1V3h1.42V1.6H7.94V3H9.3V4.44a7,7,0,0,0,.7,14ZM10,5.8a5.61,5.61,0,1,1-5.61,5.6A5.61,5.61,0,0,1,10,5.8Z" transform="translate(-3 -1.6)" style="fill: #383838"/>
+    <path d="M10,12.8a1,1,0,0,0,1.05-1.05A1,1,0,0,0,10.7,11V7.28H9.3V11a1,1,0,0,0-.35.77A1,1,0,0,0,10,12.8Z" transform="translate(-3 -1.6)" style="fill: #383838"/>
+  </g>
+</svg>

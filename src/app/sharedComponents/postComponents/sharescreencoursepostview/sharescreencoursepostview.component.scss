@@ -1,0 +1,502 @@
+// .coursesDertailTop{
+//   float: left;
+//   width: 100%;
+//   background-color: #fff;
+//   overflow: hidden;
+//   .imgwrapper{
+//     float: left;
+//     width: 100%;
+//     height: 260px;
+//     img{
+//       width: 100%;
+//       height: 100%;
+//     }
+//   }
+//   .coursesDertailBottom{
+//     background-color: #e8ecf1;
+//     float: left;
+//     width: 100%;
+//     padding: 10px;
+//     .leftDetail{
+//       float: left;
+//       width: 70%;
+//       h1{
+//         float: left;
+//         width: 100%;
+//         font-size: 16px;
+//         color: #2c2e2f;
+//         padding: 0px 0px 5px 0px;
+//       }
+//       p{
+//         color: #8c8c8c;
+//         font-weight: 500;
+//         font-size: 14px;
+//         float: left;
+//         width: 100%;
+//         line-height: initial;
+//         .text{
+//           float: left;
+//           font-size: 12px;
+//
+//         }
+//         .dote{
+//           float: left;
+//           width: 3px;
+//
+//           img{
+//             width: 100%;
+//             height: 100%;
+//             margin-top: 9px;
+//           }
+//
+//           &:nth-child(2n+2){
+//             margin:0px 5px;
+//           }
+//
+//         }
+//
+//       }
+//
+//
+//
+//
+//       .star{
+//         float: left;
+//         width: 100%;
+//         float: left;
+//         .star_wrapper {
+//           float: left;
+//           margin-right: 5px;
+//           label{
+//             margin-right: 5px;
+//             width: 12px;
+//             height: 9px;
+//             margin-bottom: 0px;
+//           }
+//           label.fill{
+//
+//
+//             .star-fill-svg{
+//               display: block;
+//             }
+//             .star-half-svg{
+//               display: none;
+//             }
+//             .star-blank-svg{
+//               display: none;
+//             }
+//           }
+//           label.half_fill{
+//
+//             .star-fill-svg{
+//               display: none;
+//             }
+//             .star-half-svg{
+//               display: none;
+//             }
+//             .star-blank-svg{
+//               display:block;
+//             }
+//           }
+//           label.blank{
+//
+//             .star-fill-svg{
+//               display: none;
+//             }
+//             .star-half-svg{
+//               display: none;
+//             }
+//             .star-blank-svg{
+//               display: block;
+//             }
+//           }
+//         }
+//         .Pagerating{
+//           margin-right: 5px;
+//           width: 101px !important;
+//           height: 9px;
+//           margin-bottom: 0px;
+//           margin-top: 0px;
+//           img{
+//             width: 20px;
+//             height: 14px;
+//             float: left;
+//                 margin-top: 0px;
+//           }
+//         }
+//         .rating{
+//           float: left;
+//           font-size: 12px;
+//           margin-right: 5px;
+//           color: #f05050;
+//           font-weight: 500;
+//           padding-top: 2px;
+//         }
+//         .number{
+//           float: left;
+//           font-size: 12px;
+//           color: #8c8c8c;
+//           padding-top: 2px;
+//         }
+//       }
+//     }
+//     .rightDetail{
+//       float: right;
+//       width: 21%;
+//       .price{
+//
+//       }
+//       .priceIcon{
+//         float: left;
+//         font-size: 16px;
+//         line-height: 22px;
+//         color: #f05050;
+//         margin-left: 0px;
+//         img{
+//           width: 13px;
+//           margin-right: 1px;
+//           position: relative;
+//               top: 4px;
+//           float: left;
+//               margin-top: 0px;
+//         }
+//       }
+//       .discountPriceIcon{
+//         float: left;
+//         font-size: 14px;
+//         line-height: 20px;
+//         color: #8c8c8c;
+//         margin-left: 7px;
+//         line-height: 20px;
+//         position: relative;
+//
+//         img{
+//           width: 12px;
+//           margin-right: 1px;
+//           float: left;
+//               margin-top: 0px;
+//               top: 4px;
+// position: relative;
+//         }
+//         .stock{
+//           position: absolute;
+//           top: 10px;
+//           width: 100%;
+//           height: 1px;
+//           color: #2c2e2f;
+//           background-color: #8c8c8c;
+//         }
+//       }
+//       button{
+//         float: left;
+//         background: transparent;
+//         width: 101px;
+//         border: 1px solid #2c2e2f20;
+//         border-radius: 3px;
+//         font-size: 14px;
+//         margin-top: 6px;
+//
+//       }
+//     }
+//
+//   }
+//   .courseComment{
+//     float: left;
+//     width: 100%;
+//     background-color: #fff;
+//     box-sizing: border-box;
+//     padding: 15px 30px;
+//
+//     .imp{
+//       display: inline-block;
+//       float: left;
+//       cursor: pointer;
+//       .tik{
+//         margin-right: 5px;
+//         .defoult{
+//           width: 18px;
+//         }
+//         .hover{
+//           display: none;
+//           width: 18px;
+//
+//         }
+//         .active{
+//           display: none;
+//           width: 18px;
+//         }
+//       }
+//       .text{
+//         position: relative;
+//         margin-right: 15px;
+//         font-weight: 500;
+//         font-size: 14px;
+//         cursor: pointer;
+//         color: #8c8c8c;
+//
+//
+//       }
+//       .count{
+//         font-weight: 500;
+//         font-size: 14px;
+//         cursor: pointer;
+//         color: #8c8c8c;
+//         position: relative;
+//         &:before{
+//           content: "";
+//           background-color: #8c8c8c;
+//           width: 1px;
+//           height: 10px;
+//           position: absolute;
+//           margin: 3px 0px 0px 7px;
+//         }
+//       }
+//       &:hover{
+//         .tik{
+//           .defoult{
+//             display: none;
+//           }
+//           .hover{
+//             display:inline-block;
+//           }
+//         }
+//         .text{
+//           color: #f05050;
+//         }
+//         .count{
+//           color: #f05050;
+//         }
+//       }
+//     }
+//     .rytimp{
+//       .tik{
+//         .defoult{
+//           display: none;
+//         }
+//         .hover{
+//           display: none;
+//
+//         }
+//         .active{
+//           display:inline-block;
+//         }
+//       }
+//       .text{
+//         color: #f05050;
+//       }
+//       .count{
+//         color: #f05050;
+//       }
+//       &:hover{
+//         .tik{
+//           .hover{
+//             display: none;
+//           }
+//         }
+//       }
+//     }
+//
+//     .comment{
+//       display: inline-block;
+//       float: left;
+//       margin-left: 18%;
+//       cursor: pointer;
+//       .comment_icon{
+//         margin-right: 5px;
+//         .defoult{
+//           width: 18px;
+//         }
+//         .hover{
+//           display: none;
+//           width: 18px;
+//         }
+//       }
+//       .text{
+//         position: relative;
+//         margin-right: 15px;
+//         font-weight: 500;
+//         font-size: 14px;
+//         cursor: pointer;
+//         color: #8c8c8c;
+//
+//         &:after{
+//           content: "";
+//           background-color: #8c8c8c;
+//           width: 1px;
+//           height: 10px;
+//           position: absolute;
+//           margin: 3px 0px 0px 7px;
+//         }
+//       }
+//
+//       .count{
+//         font-weight: 500;
+//         font-size: 14px;
+//         cursor: pointer;
+//         color: #8c8c8c;
+//       }
+//
+//       &:hover{
+//         .comment_icon{
+//           .defoult{
+//             display: none;
+//           }
+//           .hover{
+//             display:inline-block;
+//           }
+//         }
+//         .text{
+//           color: #f05050;
+//         }
+//         .count{
+//           color: #f05050;
+//         }
+//       }
+//     }
+//
+//     .share{
+//       display: inline-block;
+//       float: right;
+//       cursor: pointer;
+//
+//       .shreIcon{
+//         margin-right: 5px;
+//         .defoult{
+//           width: 18px;
+//
+//         }
+//         .hover{
+//           display: none;
+//           width: 18px;
+//         }
+//
+//       }
+//       .text{
+//         position: relative;
+//         margin-right: 15px;
+//         font-weight: 500;
+//         font-size: 14px;
+//         cursor: pointer;
+//         color: #8c8c8c;
+//
+//         &:after{
+//           content: "";
+//           background-color: #8c8c8c;
+//           width: 1px;
+//           height: 10px;
+//           position: absolute;
+//           margin: 3px 0px 0px 7px;
+//         }
+//       }
+//       .count{
+//         font-weight: 500;
+//         font-size: 14px;
+//         cursor: pointer;
+//         color: #8c8c8c;
+//       }
+//       &:hover{
+//         .shreIcon{
+//           .defoult{
+//             display: none;
+//           }
+//           .hover{
+//             display:inline-block;
+//           }
+//         }
+//         .text{
+//           color: #f05050;
+//         }
+//         .count{
+//           color: #f05050;
+//         }
+//       }
+//
+//     }
+//   }
+// }
+//
+.postmain_container.video-post-comp.course{
+  padding-left: 0px!important;
+}
+
+
+.coursesDertailTop {
+  overflow: hidden;
+  .coursesDertailBottom {
+    .leftDetail{
+      p{
+        line-height: normal;
+        float: left;
+        width: 100%;
+        .dote{
+          img{
+            margin-top: 0px;
+          }
+        }
+      }
+      .star {
+            line-height: normal;
+        .Pagerating{
+          img {
+            height: 14px;
+            float: left;
+            margin-top: 0px;
+          }
+        }
+        .rating, .number{
+          position: relative;
+          // top: 3px;
+        }
+      }
+    }
+    .rightDetail{
+      .priceIcon{
+        img{
+          float: left;
+          margin-top: 5px;
+        }
+      }
+      .enroll{
+        background: #00bb24;
+        color: #fff;
+        padding: 0px;
+            font-size: 14px;
+       img{
+          width: 13px;
+          margin-right: 3px;
+          position: relative;
+          float: left;
+          left: 15px;
+          top: -4px;
+       }
+      }
+      .discountPriceIcon{
+        padding-top: 1px;
+        img{
+          float: left;
+          margin-top: 3px;
+
+        }
+      }
+    }
+  }
+}
+.freeCourse{
+  float: left;
+  width: 100%;
+  text-align: center;
+  padding-right: 10%;
+  font-size: 16px;
+}
+.pricingWrapper{
+  display:flex;justify-content:center;  padding-right: 0px;
+}
+.coursesDertailBottom{
+  margin-bottom: 0px!important;
+}
+
+  .centerAlign{
+      display:flex;justify-content:center;
+      float: left;
+width: 100%;
+  }

@@ -1,0 +1,517 @@
+$themeblue: #f05050;
+$textcolor: #2c2e2f;
+$textgrey: #8c8c8c;
+$maingreen: rgb(7, 162, 8);
+$stroke: #dfe0e8;
+$borderRadius: 5px;
+$ntfctnprofile: 40px;
+$inrprflimg : $ntfctnprofile + 8px;
+$PostPicture: 40px;
+$commentPicture: $PostPicture - 10px;
+$subcommentPicture: $commentPicture - 10px;
+.postotherview {
+  * {
+    // cursor: context-menu !important;
+  }
+   .profileImage.sharedIconImage {
+      width: 22px !important;
+      height: 22px !important;
+      border: none !important;
+      border-radius: 0;
+      overflow: initial;
+  }
+  //sprite css starts
+  .post_outer .post_profile .profiledetail .follow_dote img {
+    width: 3px !important;
+    height: 3px !important;
+    position: relative;
+    top: 1px;
+  }
+  //sprite css end
+  .doticon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#dot);
+    background-size: 100% 100%;
+    width: 3px;
+    height: 3px;
+    float: left;
+    margin: 6px 0px;
+  }
+  .publicposticon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#globe-icon);
+    background-size: 100% 100%;
+    height: 10px;
+    width: 10px;
+    float: left;
+    margin: 3px 0px;
+  }
+  .threedoticon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#threedot);
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+    float: left;
+    margin: 2px 0px;
+    transform: rotate(90deg);
+  }
+  .bookmarkicon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#bookmark);
+    background-size: 100% 100%;
+    height: 16px;
+    width: 16px;
+    float: left;
+    margin: 4px 7px;
+  }
+  .enrolmmenticon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#whiteenrollments);
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+    float: left;
+    margin: opx 5px 0px 0px;
+  }
+  .staricon {
+    height: 11px;
+    float: left;
+    background-size: 100% 100%;
+    height: 11px;
+    width: 11px;
+    margin: 0px 2px 0px 0px;
+  }
+  .startwhiteicon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#star-white);
+  }
+  .starthalffilledicon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#star-half-filled);
+  }
+  .starfilledicon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#star-filled);
+  }
+  .postFootericon {
+    max-width: 21px;
+    margin-top: -1px;
+    margin-right: 5px;
+    float: left;
+    background-size: 100% 100%;
+    width: 17px !important;
+    height: 17px !important;
+  }
+  .impicon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#gray-tik);
+    height: 13px !important;
+    width: 13px !important;
+    margin-top: 2px;
+  }
+  .commenticon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#comment);
+  }
+  .shareicon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#share);
+  }
+  .uploadicon {
+    background-image: url(./../../../../assets/images/sprite/loginpage.svg#img-atachment);
+    float: left;
+    background-size: 100% 100%;
+    margin: 6.5px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  // margin-bottom: 15px;
+  .post-footer-btn-outer-wrap {
+    .post-footer-btn-wrap {
+      .post_footeroption {
+        span.default {
+          width: 22px;
+        }
+        span {
+          display: flex;
+          align-items: center;
+        }
+        // cursor: context-menu !important;
+        /* span{
+          &:hover{
+            color: #8c8c8c !important;
+            cursor: context-menu;
+          }
+        } */
+        .count-sq {
+          color: #8c8c8c !important;
+        }
+      }
+    }
+  }
+}
+
+.post_outer {
+  .post_profile {
+    .profiledetail {
+      .name {
+        // cursor: context-menu;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.cursolnone {
+  // cursor: context-menu !important;
+}
+
+.postotherview {
+  .shared-post-blocks-wrap {
+    width: 100% !important;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    margin: 0px 0px;
+    border: 0px solid rgba(204, 204, 204, 0.7);
+    .shared-post-inner {
+      float: left;
+      width: 100%;
+      border-radius: $borderRadius;
+      border: 1px solid rgba(204, 204, 204, 0.7);
+      .post_profile {
+        .profiledetail {
+          .time {
+            display: inline-block;
+            margin-top: 7px;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// .postotherview{
+//   .post-footer-btn-outer-wrap{
+//     .post_footer.post-footer-btn-wrap {
+//       .post_footeroption{
+//         padding-left: 40px !important;
+//       }
+//     }
+//   }
+// }
+.posttext.posttextauto.shared-post-text {
+  padding: 0px 10px 10px 10px !important;
+}
+
+.video-post-comp,
+.shared-video-post {
+  .postmain_container.video-post-comp {
+    cursor: pointer;
+    .youtube_btn {
+      position: absolute;
+      top: 0px;
+      left: 5px;
+      bottom: 0px;
+      right: 0px;
+      margin: auto;
+      width: 92px;
+      height: 97px;
+    }
+    .youtube_btn2 {
+      display: block;
+    }
+    .youtube_btn1 {
+      display: none;
+    }
+    &:hover .youtube_btn2 {
+      display: none;
+    }
+    &:hover .youtube_btn1 {
+      display: block;
+    }
+  }
+}
+.continue-reading {
+  color: $themeblue;
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+  border-top: none;
+  padding: 0px 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.posttext.posttextauto.shared-post-text.file_attachment_text {
+  line-height: 24px;
+}
+.post_outer.attachment-post-comp.postotherview {
+  .postmain_container {
+    .posttext.posttextauto {
+      padding: 10px;
+    }
+  }
+}
+.post_outer {
+  border-radius: $borderRadius !important;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+.posttagdiv{
+  padding:10px;
+  margin-left: 0;
+}
+.multiple-choice-comp {
+  .radiobtn_outer.crs_auto {
+    &:hover .checkbox_btn {
+      background-color: #e1e8ee;
+    }
+    .checkbox_btn {
+      border: none;
+      border-bottom: 1px solid #f7f7f7;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border-radius: 0;
+      margin-top: 0;
+    }
+  }
+}
+.shared-post.postotherview {
+  .follow_container {
+    position: absolute;
+  }
+}
+/* .post_outer.text-post-comp{
+cursor: pointer!important;
+}
+
+.post-footer-btn-outer-wrap .post-footer-btn-wrap .post_footeroption > span:hover {
+    color: #8c8c8c!important;
+}
+.post-footer-btn-outer-wrap .post-footer-btn-wrap .post_footeroption > span .count-sq:hover {
+    color: #8c8c8c!important;
+} */
+// @media only screen and (max-width: 1024px) and (min-width: 900px) {
+//   .post_outer.postotherview {
+//     .post_profile {
+//       .post-header-inner-wrap {
+//         .profiledetail {
+//           width: 45% !important;
+//         }
+//       }
+//     }
+//   }
+// }
+.outerMainShared{
+   .postshared_profile{
+    .post_profilepic {
+    width: 22px;
+    height: 22px;
+    overflow: inherit;
+      border: none !important;
+}
+.profiledetail{
+  margin-top: 0px;
+.dote{
+  width: 3px;
+height: 3px;
+float: left;
+margin: 5px;
+}
+}
+
+  }
+
+}
+.outerMainPost{
+
+}
+
+.msgviewsectionfooter{
+  width: calc(100% + 20px);
+    float: left;
+    margin-left: -10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 0px 10px 10px;
+    background-color: #f5f7fa;
+    .post_profile {
+      .post_profilepic{
+        height:	$commentPicture !important;
+        width:	$commentPicture !important;
+      }
+      .name{
+        // font-size: $commentName;
+        // margin-right: 10px;
+        // display: inline-block;
+        // float: left;
+        text-decoration: none !important;
+        width: auto;
+        line-height: 16px;
+      }
+      .profiledetail{
+        line-height: 18px;
+        // width: 515px;
+      }
+      .profilecmntdetail{
+        width: 90%;
+        float: left;
+        font-size: 14px;
+      }
+}
+}
+
+@media only screen and (max-width: 480px) {
+  .postotherview {
+    .post-footer-btn-outer-wrap {
+      .post_footer.post-footer-btn-wrap {
+        .post_footeroption {
+          padding-left: 0px !important;
+          font-size: 12px;
+          text-align: center;
+          &:first-child,
+          &:last-child {
+            text-align: center;
+          }
+          span.default {
+            width: 18px;
+            img {
+              max-width: 16px;
+              margin-top: -2px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 640px) {
+  .align_m {
+    button {
+      background: #2c2e2f !important;
+      color: #fff;
+    }
+  }
+}
+@media only screen and (max-width: 420px) {
+}
+.post-comment-view-otherView{
+  .comment_outer{
+    // .post_profile{
+    //   width: calc(100% + 20px);
+    //   margin-left: -10px;
+    //   margin-top: 10px;
+    //   border-radius: 0 0 5px 5px;
+    //   margin-bottom: 10px;
+    // }
+  }
+  .posttagdiv{
+    margin-left:0;
+  }
+}
+.shareProfiletime{
+  width:80%;
+  float: left;
+  margin-left:10px;
+}
+.post_profile{
+  .msgviewsection{
+    width: 100%;
+    float:left;
+    margin-bottom: 10px;
+  }
+}
+.post_profilepic.shared-icon{
+  width: 22px;
+    height: 22px;
+    border: none !important;
+    border-radius: 0;
+    overflow: initial;
+    float: left;
+    // margin-top: 5px;
+}
+.post_profile.postshared_profile, .post_profile {
+  .profiledetail,.shareProfiletime{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 0;
+    .name{
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      color: #2c2e2f;
+    }
+    .follwer_count{
+      display: block;
+      // padding-top: 5px;
+      float: left;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(44, 46, 47, 0.6);
+    }
+  }
+}
+.outer-origin-post{
+  float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid rgba(204, 204, 204, 0.7);
+    border-radius: 5px;
+    .post_outer{
+      box-shadow:none !important;
+      .shared-post-blocks-wrap{
+        padding: 0;
+        border: none;
+        .shared-post-inner{
+          border: none;
+        }
+      }
+    }
+}
+.post_outer.shared-post.postotherview{
+  .questionResultt {
+    width: 100%;
+    position: relative;
+    padding-left: 30px;
+    b{
+      left: 0;
+    }
+  }
+}
+
+@media only screen and (max-width:600px){
+    .post_profile.postshared_profile{
+      .post_profilepic{
+           position: absolute;
+      }
+      .profiledetail{
+        padding-left: 30px;
+        padding-right: 70px;
+        width: 100%;
+        margin-left: 0;
+      }
+      .leftmenudrop{
+        float: right;
+        position: absolute;
+        right: 10px;
+      }
+    }
+    .post_profile{
+      .post_profilepic{
+           position: absolute;
+           left:10px;
+           top: 12px;
+      }
+      .profiledetail{
+        margin-left: 40px;
+        width: calc(100% - 40px);
+      }
+      .shareProfiletime{
+          margin-left: 40px;
+      }
+    }
+    .msgviewsection{
+      position: relative;
+      .post_profilepic {
+         left: 0px;
+         top: 0px;
+      }
+
+    }
+}

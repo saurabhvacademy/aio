@@ -1,0 +1,219 @@
+<div class="col-md-12 col-sm-12 course_wrapper course_page_list" *ngIf="nonDraftCourseLength">
+ <div class="row">
+
+    <div class="course_filter_top top-view" >
+
+<img src="assets/images/pagecourselist.png"> Courses
+     </div>
+     <div  class="coursepage_outer" *ngIf="uType == 1">
+         <div class="course_div">
+             <div class="course_item" *ngFor="let cors of coursePack">
+                 <div class="course_cont">
+                   <div class="course_img_div" >
+                    <img class="course_img" src="{{cors.COURSE_COVER_PHOTO_PATH}}">
+                       <div class="img_layer">
+                        <div class="course_author">
+                                    <span  class="post_profilepic"><img  src="{{cors.PAGE_PROFILE_PHOTO_PATH}}"></span>
+                                    <p class="author_name">{{cors.PAGE_NAME}} </p>
+                                    <p class="author_name author_desp">{{cors.PAGE_NAME}}</p>
+                        </div>                     
+                      </div>
+                   </div>
+                <div class="course_details">
+                    <div class="course_name">
+                        <p>{{cors.TITLE}}</p>
+                        <span *ngIf="cors.PUBLISH_DATE_TIME !=null" class="">Published on {{cors.PUBLISH_DATE_TIME}}</span>
+                        <span *ngIf="cors.PUBLISH_DATE_TIME ==null">Created on {{cors.ADD_DATE_TIME}}</span>
+                    </div>
+                    <div class="admin_course aadmin_course" style="">
+                                <div class="admin_course_status aadmin_course_status" style="">
+                                    <span class="price" style="">Price</span>
+                                    <span class="enroll" style="">Enrolled</span>
+                                    <span class="status" style="">Status</span>
+                                </div>
+                                <div class="admin_course_status adm-crc aadmin_course_status" style="">
+                                    <span class="free" style="">{{cors.COST|number}}</span>
+                                    <span class="aprice" style="">{{cors.TOTAL_ENROLLED_USER}}</span>
+                                    <span *ngIf="cors.STATUS != 'Published'"><button class="btn crc-btn draft" >{{cors.STATUS}}</button></span>
+                                    <span *ngIf="cors.STATUS == 'Published'"><button class="btn crc-btn acrc-btn" >{{cors.STATUS}}</button></span>
+                                </div>
+                                <div class="clearfix"></div>
+                    </div>
+
+                  </div>
+                 </div>
+             </div>
+         </div>
+
+    </div>
+ 
+     <div  class="coursepage_outer" *ngIf="uType == 0">
+         <div class="course_div">
+             <div class="course_item" *ngFor="let cors of coursePack">
+                 <div class="course_cont">
+                   <div class="course_img_div" >
+                    <img class="course_img" src="{{cors.COURSE_COVER_PHOTO_PATH}}">
+                       <div class="img_layer">
+                        <div class="course_author">
+                                    <span  class="post_profilepic"><img  src="{{cors.PAGE_PROFILE_PHOTO_PATH}}"></span>
+                                    <p class="author_name">{{cors.PAGE_TITLE}} </p>
+                                    <p class="author_name author_desp">{{cors.PAGE_NAME}}</p>
+                        </div>                     
+                      </div>
+                   </div>
+                <div class="course_details">
+                    <div class="course_name">
+                        <p>{{cors.COURSE_TITLE}}</p>
+                        <span *ngIf="cors.PUBLISH_DATE_TIME !=null" class="">Published on {{cors.PUBLISH_DATE_TIME}}</span>
+                        <span *ngIf="cors.PUBLISH_DATE_TIME ==null">Created on {{cors.ADD_DATE_TIME}}</span>
+                    </div>
+
+                    <div class="enroll_course course_name">
+                                <p>Recently Enrolled<span  class="course_type" ><img  src="assets/images/svg-one/rupee-redc.svg" *ngIf="hideCose==false"><del>{{cors.COST|number}}</del></span></p>
+                                <span class="c_l_people" *ngIf="notshowImage">
+                                    <img class="f_people" src={{cors.ENROLLED1}}>
+                                    <img class="s_people" src={{cors.ENROLLED2}}>
+                                    <label>{{cors.TOTAL_ENROLLED_USER}}</label>
+                                </span>
+                                <span class="course-rupes"><img  src="assets/images/svg-one/rupee.svg"  >{{cors.DISCOUNT_COST}}</span>
+                    </div>
+                  </div>
+                 </div>
+             </div>
+         </div>
+
+    </div>
+
+<!--             <div class="course_item">
+                 <div class="course_cont">
+                   <div class="course_img_div" >
+                    <img class="course_img" src="assets/images/course/course1.jpg">
+                       <div class="img_layer">
+                            <span >  <img class="" src="assets/images/svg/bookmarkred.svg"></span> 
+                           <div class="course_author">
+                               <span  class="post_profilepic"><img  src="assets/images/profile3.jpg"></span>
+                               <p class="author_name">Made Easy </p>
+                               <p class="author_name author_desp">India's Best Institute for IES, GATE & PSUst </p>
+                           </div>
+                       </div>
+                   </div>
+                <div class="course_details">
+                    <div class="course_name">
+                        <p>Certification Economist</p>
+                        <span>Published on 24 Aug 2017</span>
+                    </div>
+                   <div class="star_rating course_name">
+                   <div class="stars">
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star " ></label>
+
+                   </div>
+                      <span>4<label>(2400)</label></span>
+                                 <span class="course_type"><img src="assets/images/svg-one/rupee.svg" > 700</span>
+                    </div> 
+                    <div class="enroll_course course_name">
+                        <p>Recentally Enrolled<span  class="course_type"><img  src="assets/images/svg-one/rupee-redc.svg"> <del>2320</del></span></p>
+                        <span class="c_l_people">
+                           <img class="f_people" src="assets/images/profile15.jpg" title="Jahanvi" />
+                           <img class="s_people" src="assets/images/profile8.jpg" title="Vinay">
+                            <label>+ 11k</label>
+                        </span>
+                        <span class="course-rupes"><img  src="assets/images/svg-one/rupee.svg"> 770</span>
+                    </div>
+                  </div>
+                 </div>
+             </div>
+             <div class="course_item">
+                 <div class="course_cont">
+                   <div class="course_img_div" >
+                    <img class="course_img" src="assets/images/course/course1.jpg">
+                       <div class="img_layer">
+                            <span >  <img class="" src="assets/images/svg/bookmarkred.svg"></span> 
+                           <div class="course_author">
+                               <span  class="post_profilepic"><img  src="assets/images/profile3.jpg"></span>
+                               <p class="author_name">Made Easy </p>
+                               <p class="author_name author_desp">India's Best Institute for IES, GATE & PSUs</p>
+                           </div>
+                       </div>
+                   </div>
+                <div class="course_details">
+                    <div class="course_name">
+                        <p>Certification Economist</p>
+                        <span>Published on 24 Aug 2017</span>
+                    </div>
+                   <div class="star_rating course_name">
+                   <div class="stars">
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star " ></label>
+
+                   </div>
+                      <span>4<label>(2400)</label></span>
+                                 <span class="course_type"><img src="assets/images/svg-one/rupee.svg" > 700</span>
+                    </div> 
+                    <div class="enroll_course course_name">
+                        <p>Recentally Enrolled<span  class="course_type"><img  src="assets/images/svg-one/rupee-redc.svg"> <del>2320</del></span></p>
+                        <span class="c_l_people">
+                           <img class="f_people" src="assets/images/profile15.jpg" title="Jahanvi" />
+                           <img class="s_people" src="assets/images/profile8.jpg" title="Vinay">
+                            <label>+ 11k</label>
+                        </span>
+                        <span class="course-rupes"><img  src="assets/images/svg-one/rupee.svg"> 770</span>
+                    </div>
+                  </div>
+                 </div>
+             </div>
+             <div class="course_item">
+                 <div class="course_cont">
+                   <div class="course_img_div" >
+                    <img class="course_img" src="assets/images/course/course1.jpg">
+                       <div class="img_layer">
+                            <span >  <img class="" src="assets/images/svg/bookmarkred.svg"></span> 
+                           <div class="course_author">
+                               <span  class="post_profilepic"><img  src="assets/images/profile3.jpg"></span>
+                               <p class="author_name">Made Easy</p>
+                               <p class="author_name author_desp">India's Best Institute for IES, GATE & PSUs</p>
+                           </div>
+                       </div>
+                   </div>
+                <div class="course_details">
+                    <div class="course_name">
+                        <p>Certification Economist</p>
+                        <span>Published on 24 Aug 2017</span>
+                    </div>
+                   <div class="star_rating course_name">
+                   <div class="stars">
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star fill" ></label>
+                    <label class="star " ></label>
+
+                   </div>
+                      <span>4<label>(2400)</label></span>
+                                 <span class="course_type"> Free</span>
+                    </div> 
+                    <div class="enroll_course course_name">
+                        <p>Recentally Enrolled<span  class="course_type"><img  src="assets/images/svg-one/rupee-redc.svg"> <del>2320</del></span></p>
+                        <span class="c_l_people">
+                           <img class="f_people" src="assets/images/profile15.jpg" title="Jahanvi" />
+                           <img class="s_people" src="assets/images/profile8.jpg" title="Vinay">
+                            <label>+ 11k</label>
+                        </span>
+                        <span class="course-rupes"><img  src="assets/images/svg-one/rupee.svg">770</span>
+                    </div>
+                  </div>
+                 </div>
+             </div>-->
+        <div class="course_all_bt ">
+
+            <span *ngIf="seeAll" (click)="allCoursesTab($event)">See All</span>
+     </div>
+
+</div>
+</div>

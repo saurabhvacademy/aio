@@ -1,0 +1,23 @@
+<svg id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 71.86 47.26">
+  <defs>
+    <linearGradient id="linear-gradient" x1="775.73" y1="-1829.47" x2="805.72" y2="-1846.79" gradientTransform="matrix(0.7, 0.71, 0.71, -0.7, 800.73, -1821.24)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f05252"/>
+      <stop offset="0.29" stop-color="#ec5051"/>
+      <stop offset="0.57" stop-color="#e04c4c"/>
+      <stop offset="0.86" stop-color="#cc4445"/>
+      <stop offset="1" stop-color="#bf3f40"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="781.96" y1="-1836.99" x2="811.96" y2="-1854.31" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="789.28" y1="-1844.28" x2="819.28" y2="-1861.6" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>library</title>
+  <g style="opacity: 0.6000000000000001">
+    <path d="M23.8,16.37,74.4,17a1.42,1.42,0,0,1,1.27,2.21l-16.74,23A3.56,3.56,0,0,1,56,43.58L8.56,43c-2.65,0-4.26-2.49-2.88-4.38L20.87,17.73A3.54,3.54,0,0,1,23.8,16.37Z" transform="translate(-4.07 -16.37)" style="fill: url(#linear-gradient)"/>
+    <g style="opacity: 0.4">
+      <path d="M22.8,26.09l50.59.64A1.43,1.43,0,0,1,74.66,29l-16.74,23A3.59,3.59,0,0,1,55,53.3L7.55,52.69c-2.65,0-4.26-2.49-2.88-4.38L19.86,27.44A3.58,3.58,0,0,1,22.8,26.09Z" transform="translate(-4.07 -16.37)" style="opacity: 0.8;fill: url(#linear-gradient-2)"/>
+    </g>
+    <g style="opacity: 0.30000000000000004">
+      <path d="M22.7,36.42l50.6.65a1.42,1.42,0,0,1,1.26,2.21l-16.74,23a3.53,3.53,0,0,1-2.93,1.36L7.45,63c-2.64,0-4.25-2.49-2.87-4.38L19.77,37.78A3.54,3.54,0,0,1,22.7,36.42Z" transform="translate(-4.07 -16.37)" style="opacity: 0.7000000000000001;fill: url(#linear-gradient-3)"/>
+    </g>
+  </g>
+</svg>

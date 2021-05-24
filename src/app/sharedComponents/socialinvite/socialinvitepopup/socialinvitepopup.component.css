@@ -1,0 +1,128 @@
+.addpost-outer-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popup-open-wrapper.addpost_outer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  overflow-y: scroll;
+}
+
+.popup-open-wrapper.addpost_outer .darkbackground-close {
+  z-index: 3;
+}
+
+.popup-open-wrapper.addpost_outer .invite-popup-inner-wrap {
+  width: 50.8%;
+  position: absolute;
+  left: 50.8%;
+  z-index: 4;
+  top: 12vh;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.popup-open-wrapper.addpost_outer .popup-open-inner-wrap {
+  width: 50.8%;
+  background-color: white;
+  height: auto;
+  top: 70px;
+  left: 50.8%;
+  position: absolute;
+  z-index: 4;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.popup-open-wrapper.addpost_outer .darkbackground-close {
+  position: fixed;
+  height: 100%;
+  width: 98.5%;
+  top: 0;
+  right: 1.5%;
+}
+
+.invite-success-popup-wrapper {
+  position: fixed;
+  width: 100%;
+  max-width: 400px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 20;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.invite-success-popup-wrapper h4 {
+  border-bottom: 1px solid #dfe0e8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.invite-success-popup-wrapper p {
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.invite-success-popup-wrapper .bttn-wrap {
+  border-top: 1px solid #dfe0e8;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.invite-success-popup-wrapper .bttn-wrap .success-popup {
+  float: none;
+  display: inline-block;
+}
+
+.invite-popup-inner-wrap {
+  width: 100% !important;
+}
+
+@media screen and (max-width: 991px) {
+  .popup-open-wrapper.addpost_outer .invite-popup-inner-wrap {
+    left: 50%;
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .addpost_outer.relative.popup-open-wrapper .container {
+    position: static !important;
+  }
+  .popup-open-wrapper.addpost_outer .darkbackground-close {
+    z-index: 3;
+  }
+  .popup-open-wrapper.addpost_outer .invite-popup-inner-wrap {
+    left: 50%;
+    top: 20px;
+  }
+  .popup-open-wrapper.addpost_outer .darkbackground-close {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0%;
+  }
+  .popup-open-wrapper.addpost_outer .invite-popup-inner-wrap {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 4;
+    top: 0;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    bottom: 0px;
+  }
+}
+/*# sourceMappingURL=socialinvitepopup.component.css.map */

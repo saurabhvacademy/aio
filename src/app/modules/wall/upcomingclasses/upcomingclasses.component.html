@@ -1,0 +1,117 @@
+<div
+  *ngIf="!isResponsive &&
+  isClasspresent &&
+  _constantService.getSessionDataBYKey('STREAM_FLAG') == 1"class="peopleknow_outer
+  ppl-you-may-know livestreamswrapper">
+  <!-- <div> -->
+  <h6 class="widgetheading head_n top_heading">
+    Upcoming Classes<a class="head_n view_n"></a>
+  </h6>
+  <perfect-scrollbar
+    class="people_list list_npeople invite_livestreams"
+    [perfectScrollbar]="config"
+    style="position: relative;">
+    <div class="invite_livestream_block" *ngFor="let sData of upcomingStreams">
+      <div class="invite_liveblock_up">
+        <span class="invite_stream_details">
+          <img
+            class="defaultt"
+            src="assets/images/svg-three/page_icon/iconwall.svg"
+            />
+          <!-- 3PM - 5PM. 12FEB,19 -->
+          {{ sData.START_TIME | date: "shortTime" }}&nbsp;-&nbsp;{{
+          sData.END_TIME | date: "shortTime"
+          }}.&nbsp;{{ sData.START_TIME | date: "d MMM" }}
+        </span>
+        <span class="invite_stream_heading">
+          course : {{ sData.COURSE_TITLE }}
+        </span>
+        
+      </div>
+      <div class="live_livementordetail">
+        <span class="live_headingwrapp">{{ sData.STREAM_DESCRIPTION }}</span>
+        <div class="live_profiledet">
+          <span
+            class="live_imgprofile"
+            (click)="page_Route(sData)"
+            style="cursor: pointer;"><img src="{{ sData.PAGE_PROFILE_PHOTO_PATH
+              }}" alt=""
+              /></span>
+          <span
+            class="live_profilehead"
+            (click)="page_Route(sData)"
+            style="cursor: pointer;">{{ sData.PAGE_TITLE }}</span>
+          <!-- <span class="live_profilestatus">Approval Pending</span> -->
+        </div>
+        <div class="live_time_wrapper">
+          <span class="live_button" *ngIf="sData.isRunning != 1">
+            <span class="live_timewrap">
+              <span class="live_digitwrapp">{{ sData.hoursLeft }}</span>
+              <span class="live_wordwrapp">Hrs</span>
+            </span>
+            <span class="live_timewrap">
+              <span class="live_digitwrapp">{{ sData.minuteLeft }}</span>
+              <span class="live_wordwrapp">Mins</span>
+            </span>
+            <span class="live_timewrap">
+              <span class="live_digitwrapp">{{ sData.secondLeft }}</span>
+              <span class="live_wordwrapp">Secs</span>
+            </span>
+          </span>
+          <button
+            class="button24x7 whiteColorButton fright streambutton
+            disableButton"
+            style="background: #ccc !important; cursor: inherit;"
+            *ngIf="sData.isRunning != 1">
+            Join Stream
+          </button>
+          <button
+            class="button24x7 whiteColorButton fright streambutton"
+            routerLink="/livestream/{{ sData.CONTENT_UUID }}"
+            *ngIf="sData.isRunning == 1">
+            Join Stream
+          </button>
+         
+        </div>
+      </div>
+    </div>
+   
+  </perfect-scrollbar>
+
+  
+</div>
+
+
+<div *ngIf="isResponsive && runningStream && showStreamCardForResponsive">
+  <div class="center_feed">
+    <div class="inner_wrap_responsive">
+      <div class="inner_wrap" >
+        <span class="close_div" (click)="closeCard(i)">
+          <img src="assets/images/svg/tagcross.svg" class="defaultt" />
+          <img src="assets/images/svg/tagcross-gray.svg" class="hoverr" />
+        </span>
+        <div (click)="routeTo('/livestream/'+ runningStream.CONTENT_UUID,i)"
+         >
+
+          <div class="img_wrap">
+            <img
+              src="{{runningStream.PAGE_PROFILE_PHOTO_PATH}}"
+              />
+
+          </div>
+          <div class="content__wrapp">
+            <div class="liveclassName">
+              {{runningStream.LIVE_STREAM_TITLE}}
+            </div>
+            <div class="live_name_">
+              By: {{runningStream.PAGE_TITLE}}
+            </div>
+          </div>
+          <span class="live__">{{ runningStream.START_TIME | date: "shortTime"
+            }}&nbsp;-&nbsp;{{
+              runningStream.START_TIME+(runningStream.DURATION*60*1000) | date: "shortTime"
+            }}</span>
+        </div>
+      </div></div>
+  </div>
+</div>

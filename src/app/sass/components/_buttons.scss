@@ -1,0 +1,44 @@
+
+/**
+* @desc         Base button styles.
+* @name         Button
+* @author
+* @tested
+* @requires
+*/
+
+//Resets button style
+button {
+  background: none;
+  border: 0;
+}
+.btnDefault {
+  border: 1px solid $btnDefaultBorder;
+  background: $btnDefaultBg;
+  border-radius: 3px;
+}
+/* Base button */
+.btn {
+  padding: .5em 1em;
+  margin: 0;
+  display: inline-block;
+  font-weight: normal;
+  @include fontSize(13px);
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  text-align: center;
+}
+
+@mixin ooButtonLink {
+  .btnLink {
+    color: $linkColor;
+    border: 1px solid transparent;
+
+    &:hover,
+    &:focus {
+      color: $linkHoverColor;
+    }
+  }
+}

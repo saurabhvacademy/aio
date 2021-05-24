@@ -1,0 +1,17 @@
+<svg id="friend_request_accepted" data-name="friend request accepted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #2c2e2f;
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="9" cy="5" r="3"/>
+  <path class="cls-2" d="M1,17s-0.062-6.969,8-7,8,7,8,7H1Z"/>
+</svg>

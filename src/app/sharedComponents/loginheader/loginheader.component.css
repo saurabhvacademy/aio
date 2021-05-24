@@ -1,0 +1,612 @@
+.loginheadersearch {
+  width: 330px;
+  background-color: #fff;
+  float: left;
+  position: relative;
+  padding: 0px 0px 0px 15px;
+  margin-top: -3px;
+}
+
+.loginheadersearch ul.mainSearchUlWrapper {
+  border-radius: 5px;
+  position: absolute;
+  left: 15px;
+  background-color: rgba(223, 229, 235, 0.25);
+}
+
+.login_Header {
+  position: fixed;
+  top: 0px;
+  z-index: 4;
+  background: #fff;
+  width: 100%;
+  height: auto;
+  line-height: 72px;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}
+
+.login_Header .head_container {
+  line-height: 0px;
+  padding: 10px 0px;
+  position: relative;
+  padding-right: 10px;
+}
+
+.login_Header .head_container .head-login-cntnar {
+  padding-right: 5px;
+  float: right;
+}
+
+.login_Header .head_container .head-login-cntnar .login-field {
+  width: 200px;
+  float: left;
+  position: relative;
+}
+
+.login_Header .head_container .head-login-cntnar .login-field input {
+  border-radius: 3px;
+  height: 34px;
+  font-size: 12px;
+}
+
+.login_Header .head_container .head-login-cntnar .lgn-e-input input {
+  height: 34px;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.login_Header .head_container .head-login-cntnar .lgn-e-input input:focus {
+  border: 1px solid #dfe0e8 !important;
+}
+
+.login_Header .head_container .head-login-cntnar .lgn-p-input {
+  width: 200px;
+  float: left;
+  margin-left: 10px;
+}
+
+.login_Header .head_container .head-login-cntnar .lgn-p-input input {
+  height: 34px;
+  padding-left: 10px;
+}
+
+.login_Header .head_container .head-login-cntnar .lgn-p-input .head_login_frgtpassword {
+  position: absolute;
+  top: 46px;
+  right: 4px;
+  text-align: right;
+  color: #000;
+  font-size: 11px;
+  opacity: .7;
+}
+
+.login_Header .head_container .head-login-cntnar .lgn-p-input a:hover {
+  text-decoration: underline !important;
+  opacity: 1;
+  color: #f05050;
+}
+
+.login_Header .head_container .head-login-cntnar .login-button {
+  background-color: #333;
+  width: 90px;
+  float: left;
+  margin: 0px;
+  color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #000 !important;
+  margin-left: 10px;
+  height: 34px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  border: none;
+}
+
+.login_Header .head_container .head-login-cntnar .login-button .text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login_Header .head_container .head-login-cntnar .reg-button {
+  width: 144px;
+  float: right;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #f05050;
+  color: #f05050;
+  font-size: 14px;
+  font-weight: 500;
+  height: 34px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  float: left;
+  margin-left: 20px;
+  float: right;
+  width: 90px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  float: left;
+}
+
+.login_Header .head_container .head-login-cntnar .reg-button:hover {
+  background-color: #F26F6F !important;
+  color: #fff;
+}
+
+.login_Header .head_container .loginforres {
+  display: none;
+}
+
+.login_Header .head_container .head_login_stock {
+  width: 1px;
+  background-color: #00000010;
+  float: right;
+  position: absolute;
+  right: 183px;
+  height: 32px;
+  top: 32px;
+  opacity: .5;
+  margin-left: 10%;
+}
+
+.login_Header .head_container .search {
+  position: relative;
+  border-radius: 37px;
+  float: left;
+  margin-left: 3%;
+}
+
+.login_Header .head_container .search button {
+  border-radius: 37px;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+}
+
+.login_Header .head_container .search button img {
+  height: 15px;
+  position: relative;
+  left: -5px;
+}
+
+.login_Header .head_container .search input {
+  width: 300px;
+  border-radius: 15px;
+  background-color: #e8ecf190;
+  padding-left: 32px;
+  padding-right: 30px;
+  opacity: 0.7 !important;
+  font-size: 14px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.login_Header .login_Header .head_container .mlogo {
+  width: 22px;
+}
+
+.login_Header .logo {
+  width: 120px;
+  float: left;
+  margin-top: -1px;
+}
+
+.comp_logo {
+  float: left;
+}
+
+.homelogo {
+  width: 228px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  top: -11px;
+}
+
+.homelogo img {
+  width: 228px;
+  height: 118px;
+}
+
+.withoutloginint {
+  margin-top: -2px;
+  float: left;
+  margin-left: 80px;
+}
+
+.right_menu {
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin: 8px 5px 0 10px;
+  padding: 2px;
+  display: none;
+}
+
+.right_menu span {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.right_menu span img {
+  width: 100%;
+  height: 100%;
+}
+
+.hamburgerIcon {
+  position: relative;
+  z-index: 1;
+  top: 12px;
+  right: 0;
+  float: right;
+  margin-left: 15px;
+  display: none;
+  cursor: pointer;
+}
+
+.hamburgerIcon span {
+  height: 3px;
+  width: 20px;
+  background-color: black;
+  display: block;
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.hamburgerIcon span:nth-of-type(2) {
+  margin: 3px 0px 3px 0px;
+}
+
+.activeMenu.hamburgerIcon span:nth-of-type(1) {
+  -webkit-transform: translate(0px, 6px) rotate(-45deg);
+          transform: translate(0px, 6px) rotate(-45deg);
+  background-color: black;
+}
+
+.activeMenu.hamburgerIcon span:nth-of-type(3) {
+  -webkit-transform: translate(0px, -6px) rotate(45deg);
+          transform: translate(0px, -6px) rotate(45deg);
+  background-color: black;
+}
+
+.activeMenu.hamburgerIcon span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.serachResponsiveView {
+  top: 54px;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 54px);
+  z-index: 9;
+  overflow: auto;
+  display: none;
+}
+
+.serachResponsiveView .Interestaccordian {
+  position: relative;
+  margin-top: 15px;
+  float: left;
+  width: 100%;
+}
+
+.serachResponsiveView .side-nav-overlay {
+  background: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  top: 85px;
+}
+
+.serachResponsiveView .responsiveDataShow {
+  float: left;
+  width: 100%;
+  max-width: 100%;
+  background: #fff !important;
+  position: relative;
+}
+
+.serachResponsiveView .responsiveDataShow .login_right {
+  padding-top: 0px;
+  max-width: 500px;
+  margin: auto;
+  float: none;
+}
+
+.serachResponsiveView .responsiveDataShow .login_right .login_outr {
+  padding-top: 0px;
+  display: inline-block;
+  float: right;
+  border-radius: 5px;
+  background: #fff;
+  width: 100%;
+}
+
+.serachResponsiveView .search_Data {
+  width: calc(100% - 15px);
+  float: left;
+}
+
+.serachResponsiveView .login_inr {
+  padding: 0px 25px 10px;
+  float: left;
+  width: 100%;
+}
+
+.responsiveDataShow {
+  width: 100%;
+}
+
+.search_Data {
+  height: 56px;
+  width: 370px;
+  margin-top: 20px;
+}
+
+.market_accordian .accordion {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: transparent;
+  border: none;
+  padding: 15px 0px;
+  position: relative;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.market_accordian .accordion .downarrow {
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: 22px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.market_accordian .accordion.activeAccordian {
+  border-bottom: 0px solid #eaeaea;
+}
+
+.market_accordian .accordion.activeAccordian .downarrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.market_accordian .panel_Data {
+  float: left;
+  width: 100%;
+  text-align: left;
+  padding: 5px 15px 10px 12px;
+  border-bottom: 1px solid #ccc;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: relative;
+  margin-bottom: 0px;
+  display: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.market_accordian .panel_Data:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 20px;
+  width: 2px;
+  background-color: #eaeaea;
+  left: 0px;
+}
+
+.market_accordian .panel_Data .col-data {
+  width: 100%;
+}
+
+.market_accordian .panel_Data .col-data ul li {
+  padding-bottom: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.market_accordian .panel_Data .col-data ul li:hover .crs-list-txt {
+  margin-left: 3px;
+  color: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.market_accordian .activePanel_Data.panel_Data {
+  display: block;
+}
+
+.interest-dropdown {
+  margin-top: -3px;
+}
+
+/*search responsive end*/
+@media only screen and (max-width: 1300px) {
+  .head-login-cntnar .lgn-e-input {
+    width: 155px;
+  }
+  .head-login-cntnar .lgn-e-input input {
+    height: 35px;
+  }
+  .head-login-cntnar .lgn-e-input input:focus {
+    border: 1px solid #dfe0e8 !important;
+  }
+  .head-login-cntnar .lgn-p-input {
+    width: 155px;
+  }
+  .head-login-cntnar .lgn-p-input input {
+    height: 35px;
+  }
+  .head-login-cntnar .login_btn {
+    height: 35px;
+  }
+  .head-login-cntnar .reg-button {
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .loginheadersearch {
+    padding: 0px 0px 0px 80px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .login_Header .head_container {
+    padding: 10px 10px 10px 0px;
+  }
+  .login_Header .head_container .mlogo {
+    display: block;
+    width: 22px;
+    float: left;
+  }
+  .login_Header .head_container .logo {
+    width: 100px !important;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+  .head-login-cntnar {
+    width: auto !important;
+    float: right !important;
+    margin-top: 0px;
+  }
+  .head-login-cntnar .login-field.lgn-e-input {
+    display: none;
+  }
+  .head-login-cntnar .loginforWeb {
+    display: none;
+  }
+  .head-login-cntnar .loginforres {
+    display: block !important;
+  }
+  .head-login-cntnar .login-field.lgn-p-input {
+    display: none;
+  }
+  .homelogo {
+    width: 168px;
+    height: 82px;
+    top: 2px;
+  }
+  .homelogo img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .hamburgerIcon {
+    display: block;
+  }
+  .interest-dropdown {
+    display: none;
+  }
+  .zero-padding {
+    display: none;
+  }
+  .serachResponsiveView {
+    display: block;
+  }
+  .right_menu {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .login_Header .head_container .search input {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .loginheadersearch {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .login_Header .head_container .search {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .homelogo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .login_Header .head_container .head-login-cntnar .login-button {
+    width: 75px;
+  }
+  .login_Header .head_container .head-login-cntnar .login-button .text {
+    font-size: 12px;
+  }
+  .login_Header .head_container .head-login-cntnar .reg-button {
+    width: 80px;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .zero-padding {
+    display: none;
+  }
+  .login_Header {
+    height: 57px;
+  }
+  .container.main_body.profile_body {
+    margin-top: 67px !important;
+  }
+  .head-login-cntnar {
+    margin-top: 2px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .homelogo {
+    width: 120px;
+    height: 70px;
+    top: 8px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .logo {
+    width: 85px !important;
+  }
+  .login_Header .head_container .head-login-cntnar .login-button {
+    width: 60px;
+    margin-left: 0;
+  }
+  .login_Header .head_container .head-login-cntnar .reg-button {
+    width: 62px;
+  }
+}
+/*# sourceMappingURL=loginheader.component.css.map */

@@ -1,0 +1,129 @@
+<div class="col-md-12  mainphotocnt" style="padding-left: 0px;">
+    <div class="head">
+        <h2>Gallery</h2>
+    </div>
+    <div class="photoinnercont" data-infinite-scroll
+         [infiniteScrollDistance]="1"
+         (scrolled)="onScrollDownn()"
+         [scrollWindow]="true">
+         <!--        <div class="innerhead">
+                     <h3>Photo update by Allomora</h3>
+                     <div class="sortlistmainwrapper"  #sortlistcover>
+                         <div class="sortmenu" (click)="showsortlist();">Sort by
+                             <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                         </div>
+                         <div class="sortphotolist" *ngIf="sortlist">
+                             <ul>
+                                  <li>Name</li>
+                                 <li>File Size</li>
+                                 <li>Upload Date</li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>-->
+         <div class="col-md-3 col-sm-4 col-xs-6 img_center"  *ngIf="user_type==1 && !emptyGallery && !withouttoken">
+            <div class="imgcont">
+                <div class="mainimg mainimg1 uploadimage">
+                    <img class="uploadimg" src="assets/images/svg-three/emptyimage.svg" alt="study24x7">
+                    <input type="file" name="" value=" " id="photo" accept="image/*" (change)="uploadImage($event)">
+                    <label   name="button" class="imguploadbutton" for="photo"><span *ngIf="!showPreloader">Upload Image</span>
+                        <span class="preloder"><img src="./assets/images/svg/preloader-25.svg"
+                            alt="" *ngIf="showPreloader" /></span>
+                    </label>
+                    
+                    <label for="photo" class="photobutton"></label>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="imgcont" (click)="show_img_popup(j);" *ngFor="let img of gallery;let j=index" > -->
+        <div *ngFor="let img of gallery;let j=index" class=" col-md-3 col-sm-4 col-xs-6 img_center" >
+            <div  class="mainimg imgcont innerimg_container" (click)="show_img_popup(j);" [ngStyle]="{'background-image': getUrl(j)}">
+              <div class="mainimg">
+                    <!-- <p>{{ayush}}</p> -->
+                    <!-- <img src="{{img.FILE_PATH}}profile/{{img.PAGE_GALLERY_UUID}}.png" alt="study24x7"> -->
+                    <span class="delete_img" *ngIf="user_type==1" (click)="removeImage(img.PAGE_GALLERY_UUID,j)"><img src="assets/images/svg/dustbindropwhite.svg"></span>
+                    <div class="onhover">
+                        <div class="blackshadow"></div>
+                        <!-- <span class="delete_img" *ngIf="user_type==1" (click)="removeImage(img.PAGE_GALLERY_UUID,j)"><img src="assets/images/svg/dustbindropwhite.svg"></span> -->
+                        <!--                    <div class="imgname">
+                                                <h3>Backterium Microscopic<br>view</h3>
+                                            </div>-->
+                        <div class="date">
+                            {{img.ADD_DATE_TIME}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--    </div>-->
+        <div  class="emptystate empty_wrap"  *ngIf="emptyGallery && loadGallery==false ">
+            <div  class="emptystate_inner" style="height: 255px;">
+                <img class="emptyimg emptyfeed" src="assets/images/svg-three/empty_state/gallery.svg" style="width:100px!important">
+                <p  class="emptystates_heading1">Gallery is currently empty</p>
+                <p class="emptystates_heading2" *ngIf="user_type==1 ">Uploaded images will be displayed on your page wall</p>
+                <div class="imgcont" *ngIf="user_type==1 ">
+                    <div class="mainimg mainimg1 uploadimage">
+                        <input *ngIf="!showPreloader" type="file" name="" value=" " id="photo" accept="image/*" (change)="uploadImage($event)">
+                        <label *ngIf="!showPreloader"   name="button" class="imguploadbutton" for="photo"><span >Upload Image</span>
+                            
+                        </label>
+                        <img *ngIf="showPreloader" style="height:60px;" src="./assets/images/svg/preloader-25.svg"
+                                alt=""/>
+                        <label for="photo" class="photobutton"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loader2" *ngIf="loadGallery">
+            <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+        </div>
+
+    </div>
+
+    <!-----  photo popup start ----->
+    <div class="popup" *ngIf="showopup">
+        <div class="popup_background" (click)="hide_img_popup()"></div>
+        <div class=" abt_exp_popup">
+            <div class="popup_heading close_parent " style="background:#fff;">
+                <!--Backterium Microscopic view-->
+                <span class="close_div" (click)="hide_img_popup()">
+                    <img class="defaultt" src="assets/images/svg/tagcross.svg">
+                    <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
+                </span>
+            </div>
+
+
+            <div class="inner-wrap">
+                <div class="col-md-12 post-wrap" style="padding:0px;">
+                    <div class="">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="false" id="myCarousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators" >
+                                <ng-container *ngFor="let imgId of gallery;let i= index">
+                                    <li data-target="#myCarousel"  [attr.data-slide-to]="i" ngClass="i ==currentImage ? 'active' : ''" ></li>
+                                </ng-container>
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner active">
+                                <div class="carousel-item" *ngFor="let imgPath of gallery; let k = index" [ngClass]="k == currentImage ? 'item active' : 'item'">
+                                     <img src="{{imgPath.FILE_PATH}}profile/{{imgPath.PAGE_GALLERY_UUID}}.png" >
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-confirmationpopup *ngIf="alert" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="alertMsg"></app-confirmationpopup>
+    <!-- photo popup end -->

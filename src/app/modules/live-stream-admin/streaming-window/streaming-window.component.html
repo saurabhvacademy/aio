@@ -1,0 +1,211 @@
+
+<div class="main_wrapper">
+  <div class="showframelive" *ngIf="streamButton=='Stop'">
+    <img src="assets/images/Live-stream/liveicon-gif.gif" class="layouticon" />
+  </div>
+<div class="toprightsec" [ngClass]="{'topfixedbtn':layout == 'WCBottomLeft'}">
+
+    <button *ngIf="streamButton=='Publish Stream'"  (click)="startMentorStream()">{{streamButton}}</button>
+    <button *ngIf="streamButton=='Stop'" (click)="startMentorStream()">{{streamButton}}</button>
+    <button  *ngIf="streamButton=='Go Live'" (click)="startMentorStream()">{{streamButton}}</button>
+    <div class="course_search_sec video_link_sec" [ngClass]="{'wallpostdrpdwn':layoutvideodrop}"  >
+    <!-- <div class="course_search_sec vudeo_link_sec" [ngClass]="{'wallpostdrpdwn':layoutvideodrop}" (click)="showvideodrop();" (mouseleave)="closevideoDrop()"> -->
+        <span (click)="showvideodrop();">
+        <div class="wll_img_pey_cont"   >
+            <span >
+              <img style="margin: 4px 6px;" src="assets/images/Live-stream/icon/youtube.svg" class="layouticon layouticon-gray" />
+              <img style="margin: 4px 6px;" src="assets/images/Live-stream/icon/youtube-red.svg" class=" layouticon layouticon-red" />
+            </span>
+        </div>
+        <!-- <span class="tab-article " >
+            <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+
+        </span> -->
+        </span>
+        <div class="walldropdencnt " [ngClass]="{'wallprydeopcnt':layoutvideodrop}" *ngIf="layoutvideodrop" >
+         <div class="videolink">
+           <p>Paste youtube video url</p>
+           <div>
+             <input [(ngModel)]="vidUrl" type="text" name="" value="">
+           </div>
+
+           <button style="margin-right: 0;" class="playBtn" *ngIf="vidUrl!=''" (click)="startVideo(true)" type="button" name="button">
+             <img   src="assets/images/Live-stream/icon/play-icon.svg">
+            <span> Play</span>
+           </button>
+           <button style="margin-right: 0;" disabled="true" class="playBtn" *ngIf="vidUrl==''" (click)="startVideo(true)" type="button" name="button">
+            <img   src="assets/images/Live-stream/icon/play-icon.svg">
+           <span> Play</span>
+          </button>
+
+           <button style="" class="stopBtn" *ngIf="!canvasOn" (click)="startVideo(false)" type="button" name="button">
+
+             <span>Canvas</span></button>
+         </div>
+        </div>
+
+
+
+  </div>
+
+
+    <div class="course_search_sec" [ngClass]="{'wallpostdrpdwn':layoutdrop}" >
+        <div class="wll_img_pey_cont" (mouseover)="showwalldrop();"  >
+            <span style=""><img src="{{layoutImageUrl}}" class="layouticon" /></span>
+            <span class="tab-article " >
+                <img src="assets/images/svg-three/add_post/downarrow.svg" class="defaultt" style="width:10px !important;">
+
+            </span>
+        </div>
+
+        <div  (mouseleave)="showwalldrop();" class="walldropdencnt " [ngClass]="{'wallprydeopcnt':layoutdrop}" *ngIf="layoutdrop">
+            <ul>
+                <!-- <li   (click)="changeVisibilitySort('WCBottomLeft','assets/images/Live-stream/icon/layout-1.svg')"> <img src="assets/images/Live-stream/icon/layout-1.svg"  class="layouticon" ></li> -->
+                <li   (click)="changeVisibilitySort('WCTopRight','assets/images/Live-stream/icon/layout-2.svg')"> <img src="assets/images/Live-stream/icon/layout-2.svg"  class="layouticon" ></li>
+                <!-- <li   (click)="changeVisibilitySort('WCFullScreen','assets/images/Live-stream/icon/layout-3.svg')"> <img src="assets/images/Live-stream/icon/layout-3.svg"  class="layouticon" ></li> -->
+                <li   (click)="changeVisibilitySort('WCFullScreen','assets/images/Live-stream/icon/layout-4.svg')"> <img src="assets/images/Live-stream/icon/layout-4.svg"  class="layouticon" ></li>
+            </ul>
+        </div>
+    </div>
+
+  </div>
+<div class="inner_wrapper" >
+
+    <div class="canvasarea leftsec" [ngClass]="{'canvasareafull':layout == 'WCBottomLeft' }">
+        <div class="canvasinner"  >
+            <iframe id="iframeVideo" class="callcanvas"  src="assets/static-pages/widget.html">  </iframe>
+          </div>
+    </div>
+
+    <div class="chatarea rightsec" [ngClass]="{'rightareanull':layout == 'WCBottomLeft', 'chatshow':toggleChatActive}">
+      <div class="innerright">
+        <div  class="stream_video_sec" style="background:black;margin-bottom: 15px;" [ngClass]="{'video_left_bottom':layout == 'WCBottomLeft' , 'video_full_view': layout=='WCFullScreen' }">
+            <video style="width: 1px; margin: 0 ; " id="localVideo" autoplay="" muted=""></video>
+            <!-- <video style="background: black;" *ngIf="playWebcam"  class="videocntrl"  [width]="320" [height]="240"></ngx-camera> -->
+                <div style="position: relative;height:100%;width:100%;" id="app">
+                    <div><video *ngIf="playWebcam" #video id="video"  style="
+                        position: absolute;
+                        top: -17px;
+                        width: 100%;
+                        height: 100%;
+                    " autoplay></video>
+                    </div>
+                    <div class="videoCnrlIcon">
+                      <div (click)="onOffMic()" class="miccntr">
+                         <img class="micActive" *ngIf="micOn"   src="assets/images/Live-stream/icon/Multimedia-mic.svg">
+                         <img  class="micNotActive" *ngIf="!micOn" src="assets/images/Live-stream/icon/Multimedia-mic-cut.svg">
+
+                         <!-- <img   src="assets/images/Live-stream/icon/Multimedia-mic-cut.svg"> -->
+                      </div>
+                      <div class="videocntr" (click)="webcamOnOff()">
+                        <img class="videoActive" *ngIf="playWebcam"  src="assets/images/Live-stream/icon/Multimedia-video.svg">
+                        <img  class="videoNotActive" *ngIf="!playWebcam" src="assets/images/Live-stream/icon/Multimedia-video-cut.svg">
+                        <!-- <img   src="assets/images/Live-stream/icon/Multimedia-video-cut.svg"> -->
+                      </div>
+                    </div>
+                </div>
+            <!-- <div style="height: 200px;width: 275px;background: black;" *ngIf="!playWebcam"></div> -->
+
+        </div>
+        <div class="stream_chat_sec"  [ngClass]="{'fullHeightChat':layout=='WCFullScreen','stream_chat_float':layout == 'WCBottomLeft'||layout == 'WCFullScreen'}">
+            <!--chating widget-->
+            <div class="middle_sec_right " *ngIf="true" >
+                <div class="stram_video_main">
+
+                    <div class="live_chating_sec" >
+                        <div class="live_stream_msg">
+
+
+
+                            <div class="msg_chat_sec" *ngIf="true">
+                                <div class="msg_chat_cont">
+                                    <div class="msg_chat_show">
+                                        <perfect-scrollbar class="msg_chat_inner" #scrolltobottom
+                                            [perfectScrollbar]="config">
+                                            <div style="  position: absolute;  top: 50%;  left: 50%;  margin-left: -72px;  height: 150px;  opacity: .6;  margin-top: -75px;" *ngIf="chatList.length == 0" >
+                                                <img alt=""  style="  width: 142px;  text-align: center;  margin: 0 auto;"
+                                                    src="./assets/images/emptystates/png-empty-state.png">
+                                            </div>
+                                            <div *ngFor="let chat of chatList; let index = index;">
+                                                <div class="chatoutr chatoutrmine"
+                                                    *ngIf="chat.sender.userId == _constantService.getSessionDataBYKey('u_id')
+                                                    || chat.sender.userId == _constantService.getSessionDataBYKey('u_id')+'_1'
+                                                    ">
+                                                    <div class="profileimg_know masgprofilepic">
+                                                        <img title="{{chat.sender.fullName}}" tabindex="0"
+
+                                                            src={{createProfilePic(chat.sender.userId,chat.sender.profilePic)}}>
+                                                    </div>
+                                                    <div class="mainmsgdiv">
+                                                        <div>
+                                                            <div class="chatmessage">
+                                                                <p>{{chat.message}}</p>
+                                                                <span class="indivisualName">{{chat.sender.fullName}}</span>
+                                                            </div>
+                                                            <div class="chattime" style="">
+                                                                <span
+                                                                    class="timeOfMessage">{{postdata.getPostDateTime(chat.timeStamp)}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="chatoutr"
+                                                    *ngIf="chat.sender.userId != _constantService.getSessionDataBYKey('u_id')
+                                                    && chat.sender.userId != _constantService.getSessionDataBYKey('u_id')+'_1'">
+                                                    <div class="profileimg_know masgprofilepic">
+                                                        <img title="{{chat.sender.fullName}}"
+                                                            src={{createProfilePic(chat.sender.userId,chat.sender.profilePic)}}>
+                                                    </div>
+                                                    <div class="mainmsgdiv">
+                                                        <div>
+                                                            <div class="chatmessage">
+                                                                <p>{{chat.message}}</p>
+                                                                <span class="indivisualName"> {{chat.sender.fullName}}</span>
+                                                            </div>
+                                                            <div class="chattime" style="">
+                                                                <span
+                                                                    class="timeOfMessage">{{postdata.getPostDateTime(chat.timeStamp)}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </perfect-scrollbar>
+                                    </div>
+                                    <div class="msg_chat_send">
+                                        <div class="msg_outer">
+                                            <div class="msg_out_cont" [perfectScrollbar]="config">
+                                                <div
+                                                    class="placeholdercolor   Editableplaceholder" id="writemsg"
+                                                    ondrop="return false;" contenteditable="true"></div>
+
+                                            </div>
+                                            <span class=" msgsendiconwrapper" (click)="sendMsg()">
+                                              <div class="cntrsend"><img alt=""
+                                                    src="./assets/images/svg-three/inbox_icon/send.svg"></div></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="" *ngIf=""></div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--chating widget-->
+
+            </div>
+        </div>
+        <div class="chattooltip" (click)="toggleChatClick();" [ngClass]="{'chattooltipshow':layout == 'WCBottomLeft' , 'chattooltipactive':toggleChatActive}" *ngIf="layout == 'WCBottomLeft' ">
+            <span>
+                <img class="defaulttshow"  src="assets/images/Live-stream/chat-icon-wh.svg">
+            </span>
+        </div>
+        </div>
+    </div>
+
+</div>
+</div>

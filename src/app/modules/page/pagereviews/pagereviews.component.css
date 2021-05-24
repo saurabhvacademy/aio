@@ -1,0 +1,71 @@
+.post_outer {
+  border: 0px solid rgba(44, 46, 47, 0.2);
+}
+
+.post_outer .post_profile {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.post_outer .post_profile .profiledetail .rating-span {
+  float: left;
+  line-height: 1;
+  height: 15px;
+}
+
+.rating-span {
+  float: left;
+  line-height: 1;
+}
+
+.rating-span .page_star {
+  display: inline-block;
+  padding-left: 2px;
+  margin-top: 0px;
+  cursor: auto;
+}
+
+.rating-span .page_star .stars {
+  padding-left: 5px;
+  float: left;
+}
+
+.rating-span .page_star label.star {
+  float: left;
+  padding: 0px;
+  font-size: 14px;
+  color: #444;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  margin: 0px 3px 0px 0px;
+}
+
+.rating-span .page_star label.star img {
+  width: 13px;
+}
+
+.rating-span .page_star label.starcount {
+  margin-left: 3px;
+  margin-top: 0px;
+}
+
+.rating-span .page_star:before {
+  content: ".";
+  width: 1px;
+  margin: 0px 0px;
+  line-height: 1;
+  float: left;
+  font-weight: 500;
+}
+
+.post-footer-btn-wrap {
+  float: left !important;
+}
+
+.show_comment {
+  float: left;
+  width: 100%;
+}
+/*# sourceMappingURL=pagereviews.component.css.map */

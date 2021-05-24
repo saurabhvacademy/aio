@@ -1,0 +1,221 @@
+<div class="darkbackground"></div>
+<div class="addpost_outer relative popup-open-wrapper">
+  <div class="darkbackground-close"></div>
+  <div class="container popup-container" style="position: relative;">
+    <div class="popup-inner-wrap popup-open-inner-wrap">
+      <div class="topheadsavpop">
+        <div class="toolbar addpost_hdng tlbar">
+          Create a Page
+          <span class="close_div" (click)="hidePagePopup()">
+            <img
+              class="defaultt"
+              src="assets/images/svg/tagcross.svg"
+              style="float: right; margin: 17px 0; cursor: pointer;"
+            />
+            <img
+              class="hoverr"
+              src="assets/images/svg/tagcross-gray.svg"
+              style="float: right; margin: 17px 0; cursor: pointer;"
+            />
+            <!-- <p>Just Select a Page type to get started</p> -->
+          </span>
+        </div>
+        <div class="alertwrapper">
+          <div class="alertmessage" *ngIf="alert">
+            <img
+              src="assets/images/svg-three/login_icon/loginerror.svg"
+              alt="study24x7"
+              class="redcancel"
+            />
+            <span class="close_err" (click)="hidealertmsg()">
+              <img class="default" src="assets/images/svg/tagcross.svg" />
+              <img class="hover" src="assets/images/svg/tagcross-gray.svg" />
+            </span>
+            {{ alertMsg }}
+          </div>
+        </div>
+      </div>
+      <div class="create_page_outer" *ngIf="step1_createpage">
+        <p class="create_heading">Just select a page type to get started.</p>
+        <div
+          class="left_type_c_p"
+          [ngClass]="{ active: show_page_type === 1 }"
+          (click)="createpageClick(1)"
+          style="margin-left: 30px;"
+        >
+          <div class="page_type">
+            <span class="default_imgg"
+              ><img
+                class="img_wth"
+                src="assets/images/svg/createpagecollege.svg"
+            /></span>
+            <span class="active_imgg"
+              ><img
+                class="img_wth"
+                src="assets/images/svg/createpagecollege.svg"
+            /></span>
+            <p class="title_institute">Organization</p>
+          </div>
+        </div>
+        <div
+          class="left_type_c_p right_type_c_p"
+          [ngClass]="{ active: show_page_type === 2 }"
+          (click)="createpageClick(2)"
+          style="margin-right: 30px;"
+        >
+          <div class="page_type">
+            <span class="default_imgg"
+              ><img src="assets/images/svg/createpageteacher.svg"
+            /></span>
+            <span class="active_imgg"
+              ><img src="assets/images/svg/createpageteacher.svg"
+            /></span>
+            <p>Individual</p>
+          </div>
+        </div>
+
+        <div
+          class="course_reg_field"
+          *ngIf="show_page_type === 1 || show_page_type === 2"
+        >
+          <div class="input_data input_dt">
+            <label class="label_lab"
+              >Provide a suitable <strong>title</strong> for your page.</label
+            >
+            <input
+              title="No special characters & minimum 5 characters"
+              type="text"
+              placeholder="Page Title"
+              [(ngModel)]="pageTitle"
+            />
+          </div>
+          <div class="input_data input_dt">
+            <label class="label_lab"
+              >Provide a suitable <strong>Name</strong> for your page.</label
+            >
+            <div class="right_wrapp">
+              <div  class="input_wrapper">
+                <div  class="input-cont-wrap">
+                  <div  class="input_inner_wrapper">
+                    <span class="checkk">
+                      <input
+                        type="text"
+                        id="pagename"
+                        name="nameabc"
+                        placeholder="Page name"
+                        maxlength="50"
+                        class="pagenamefield ng-untouched ng-pristine ng-valid"
+                        [(ngModel)]="pageName"
+                        (input)=checkPageName()
+                    /></span>
+                    <p class="length_char" [ngStyle]="{color: (pageName.length>50?'red':'black')}" >{{pageName.length}}/50 </p>
+                  </div>
+                </div>
+                <div  class="pagename-heading">
+
+                  <p  class="msgalert" [ngStyle]="{color: (pageNameAvailable==1)?'green':'red'}">{{checkPageNameRsponseMessage}} </p>
+                  <p class="pageurl">Your page URL <br>https://www.study24x7.com/page/<span  [ngStyle]="{color: (pageNameAvailable==1)?'green':'red'}">{{pageName}}</span> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input_data footer" style="margin-bottom: 0px;">
+            <button [disabled]="!(pageNameAvailable==1)"
+              class="button24x7 redColorButton fright buttonPadding20"
+              (click)="select_pageinterest()"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+        <!-- <div class="course_reg_field" *ngIf="show_page_type === 2">
+                    <div class="input_data input_dt">
+                        <label class="label_lab">Provide a suitable title for your page.</label>
+                        <input type="text" placeholder="Page title" [(ngModel)]="pageTitle">
+                    </div>
+                    <div class="input_data input_dt">
+                        <label class="label_lab">Provide a suitable <strong>Name</strong> for your page.</label>
+                        <input title="" type="text" placeholder="Page Name" [(ngModel)]="pageName">
+                    </div>
+
+                    <div class="input_data footer" style="margin-bottom:0px;">
+                        <button class="button24x7 redColorButton fright buttonPadding20" (click)="select_pageinterest();">Next</button>
+                    </div>
+
+                </div> -->
+      </div>
+
+      <div
+        class="create_page_outer create_page_interest"
+        *ngIf="step2_createpage"
+      >
+        <div class="interest-page-wrapper">
+          <div class="interestpopup">
+            <div class="interest-title">
+              <!-- <h2>Showing interests in Featured sorted by popularity.</h2> -->
+              <h2>Select Interest.</h2>
+            </div>
+            <div class="interest_content">
+              <div class="interestlist_outer">
+                <ul class="interestlist clearfix">
+                  <li *ngFor="let interest of interests">
+                    <div class="interest-inner-wrap">
+                      <input
+                        name="interest_checkbox"
+                        type="checkbox"
+                        class="interestcheckbox"
+                        value="{{ interest.INTEREST_ID }}"
+                        id="{{ interest.INTEREST_ID }}_study24x7"
+                        (click)="
+                          checkboxupdate(
+                            $event.target.getAttribute('value'),
+                            $event
+                          )
+                        "
+                      />
+                      <label
+                        class="interestboxinr clearfix"
+                        for="{{ interest.INTEREST_ID }}_study24x7"
+                      >
+                        <span class="interestboxmain"></span>
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <span class="Interest_Name">{{
+                          interest.INTEREST_NAME
+                        }}</span>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="interest-popupfooter footer">
+            <button
+              [disabled]="preloader"
+              (click)="createPage()"
+              class="button24x7 redColorButton fright buttonPadding20"
+            >
+              <span *ngIf="!preloader">
+                Next
+              </span>
+              <span class="preloder">
+                <img
+                  src="./assets/images/svg/preloader-25.svg"
+                  alt="study24x7"
+                  *ngIf="preloader"
+                />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>
+<app-confirmationpopup
+  *ngIf="openConfirmation"
+  (closeComfirmPopupThread)="closeConfirmation($event)"
+  [dataObj]="dataConf"
+></app-confirmationpopup>

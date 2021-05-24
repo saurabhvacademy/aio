@@ -1,0 +1,26 @@
+.listing-sec {
+  max-height: calc(100vh - 285px);
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 992px) {
+  .listing-sec {
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+    overflow: hidden;
+  }
+  .listing-sec {
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+    margin-bottom: 15px;
+  }
+  .right_stickytab {
+    display: block !important;
+  }
+  .wrapper.not_publicview #wvidiv {
+    margin-bottom: 70px;
+  }
+}
+/*# sourceMappingURL=leaderboard.component.css.map */

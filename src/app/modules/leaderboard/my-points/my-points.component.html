@@ -1,0 +1,31 @@
+<div class="mypointmain mobile_res">
+    <div class="headingDiv">
+      <h2>My Points
+      <span><span class="_pfimg ">
+              <span class=" pointIcon"></span>
+            </span>{{currentPoint}} pts.</span>
+    </h2>
+    </div>
+    <div *ngFor="let history of usePointHistory" class="rankListingMian" [perfectScrollbar]="config" style="position: relative;">
+        <div *ngFor="let userRewardData of history.USER_REWARD_DATA" class="rankListing">
+            <div class="rankListingRow">
+                <div class="profileImgSec">
+
+                    <span class="profileImg"><img src=""></span>
+                </div>
+                <div class="myRank">
+                    <p>{{userRewardData.TITLE}}</p>
+                    <!-- <span>on {{history.DATE| date :'dd MMM, yyyy'}}</span> -->
+                </div>
+                <span [ngClass]="{'pointNo':true,'red_font': !(userRewardData.POINTS>=0) }" >{{userRewardData.POINTS>0?'+':''}}{{userRewardData.POINTS}}</span>
+            </div>
+        </div>
+
+
+    </div>
+    <h6 routerLink="/pointsystem"  class="footer_heading" tabindex="0">
+       View all &nbsp; <span >
+         <img  alt="study24x7" class="greater" src="assets/images/svg-three/greater.svg">
+       </span>
+    </h6>
+</div>

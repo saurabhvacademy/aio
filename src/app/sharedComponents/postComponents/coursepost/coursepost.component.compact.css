@@ -1,0 +1,170 @@
+.dflex, .courseDesp { display: flex; align-items: center; justify-content: center; }
+
+.courseDesp { background-color: rgba(223, 229, 235, 0.2); float: left; width: 100%; padding: 10px 150px 10px 15px; position: relative; border-radius: 0px 0px; }
+
+.courseDesp .leftDetail { float: left; width: 100%; }
+
+.courseDesp .leftDetail h1 { float: left; width: 100%; font-size: 16px; color: rgba(0, 0, 0, 0.9); padding: 0px; word-break: break-all; cursor: pointer; margin-bottom: 3px; }
+
+.courseDesp .leftDetail p { color: rgba(0, 0, 0, 0.6); font-weight: normal; font-size: 14px; float: left; cursor: default; }
+
+.courseDesp .leftDetail p .text { float: left; font-size: 14px; line-height: 18px; }
+
+.courseDesp .leftDetail p .dote { width: 4px; float: left; height: 4px; margin: 6px 5px; border-radius: 100% 100%; background-color: rgba(0, 0, 0, 0.6); }
+
+.courseDesp .rightDetail { position: absolute; right: 15px; }
+
+.coursesDertailTop { float: left; width: 100%; background-color: #fff; }
+
+.coursesDertailTop .imgwrapper { float: left; width: 100%; max-height: 265px; cursor: pointer; position: relative; }
+
+.coursesDertailTop .imgwrapper img { width: 100%; height: 100%; margin-top: 0px; max-height: 265px; }
+
+.coursesDertailTop .coursesDertailBottom { background-color: #fff; float: left; width: 100%; padding: 15px; position: relative; border-radius: 0px 0px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail { float: left; width: 70%; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail h1 { float: left; width: 100%; font-size: 16px; color: #2c2e2f; padding: 0px 0px 10px 0px; word-break: break-all; cursor: pointer; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail p { color: #2c2e2f; font-weight: normal; font-size: 14px; opacity: .7; float: left; cursor: default; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail p .text { float: left; font-size: 14px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail p .dote { width: 3px; float: left; height: 3px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail p .dote img { width: 100%; float: left; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail p .dote:nth-child(2n+2) { margin: 6px 5px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star { float: left; width: 100%; float: left; margin-top: 10px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper { float: left; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label { margin-right: 5px; width: 12px; height: 9px; margin-bottom: 0px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.fill .star-fill-svg { display: block; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.fill .star-half-svg { display: none; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.fill .star-blank-svg { display: none; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.half_fill .star-fill-svg { display: none; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.half_fill .star-half-svg { display: none; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.half_fill .star-blank-svg { display: block; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.blank .star-fill-svg { display: none; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.blank .star-half-svg { display: none; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .star_wrapper label.blank .star-blank-svg { display: block; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .Pagerating { margin-right: 5px; width: 85px !important; height: auto !important; margin-bottom: 0px; float: left; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .Pagerating img { height: 14px; float: left; margin: 0px 2px 0px 0px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .Pagerating img:last-child { margin: 0px 0px 0px 0px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .rating { float: left; font-size: 12px; margin-right: 5px; color: #1c1c1c; font-weight: 500; position: relative; top: -1px; }
+
+.coursesDertailTop .coursesDertailBottom .leftDetail .star .number { float: left; font-size: 12px; color: #1c1c1c; font-weight: 500; position: relative; top: -1px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail { float: right; width: 25%; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .priceIcon { float: left; font-size: 16px; line-height: 22px; color: #000; margin-left: 0px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .priceIcon img { width: 12px; margin-right: 1px; position: relative; top: -1px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .enroll { padding: 0; font-size: 14px; top: 0; border-radius: 3px; background-color: #0ec631 !important; color: #fff; min-width: 85px !important; float: right; margin-right: 0px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .enroll img { width: 13px; margin-right: 3px; position: relative; top: 10px !important; float: left; left: 16px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .enrollnew { background-color: transparent !important; color: #1c1c1c; min-width: 85px !important; float: none; margin-right: 0px; box-shadow: none !important; font-size: 16px; padding-left: 19px; position: relative; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .enrollnew .rightArrowBtn { position: absolute; left: 0px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .enrollnew .rightArrowBtn img { width: 18px; margin-right: 3px; position: relative; top: 0px !important; float: left; left: 0px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .removeMarginLeft { margin-right: 0px !important; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .discountPriceIcon { float: left; font-size: 14px; line-height: 20px; color: rgba(0, 0, 0, 0.7); margin-right: 7px; line-height: 20px; position: relative; padding-top: 1px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .discountPriceIcon img { width: 12px; margin-right: 1px; position: relative; top: -1px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .discountPriceIcon .stock { position: absolute; top: 10px; width: 100%; height: 1px; left: 0px; color: rgba(0, 0, 0, 0.7); background-color: rgba(0, 0, 0, 0.7); }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail button { color: #fff; min-width: 110px !important; height: 32px; border-radius: 16px; box-shadow: 0 1px 4.9px 0.1px rgba(51, 51, 51, 0.3); background-color: #f05050 !important; border: none; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .byuNowbtn { border-radius: 20px; border: none; margin-top: 10px; width: 128px; height: 37px; position: relative; padding-right: 20px; line-height: 36px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .byuNowbtn .rightArrowBtn { position: absolute; right: 15px; width: 6px; height: 6px; top: 13px; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .byuNowbtn .rightArrowBtn img { width: 100%; float: left; }
+
+.coursesDertailTop .coursesDertailBottom .rightDetail .enrollNowbtn { width: 115px; }
+
+.coursesDertailTop .post_profileContent { float: left; width: 100%; margin-top: 0px !important; }
+
+.coursesDertailTop .post_profileContent .postmain_container { float: left; width: 100%; }
+
+.coursesDertailTop .post_profileContent .postmain_container .posttagdiv { padding-top: 0px !important; }
+
+.innerMenu { float: right; position: absolute; right: 15px; top: 15px; }
+
+.innerMenu .postright_btn.postmenubtn { background-color: transparent; border: none; background-color: #fff; border-radius: 50%; width: 30px; height: 30px; }
+
+.innerMenu .postbookmarkbtn.postright_btn { padding-top: 1px; padding-left: 0px; }
+
+.freeCourse { float: left; width: 100%; text-align: center; font-size: 16px; }
+
+.centerAlign { display: flex; justify-content: center; float: left; width: 100%; }
+
+.buttonMarginTop { margin-top: 12px !important; }
+
+.enrollnew { margin-top: 20px !important; }
+
+.borderRadius { border-radius: 5px; overflow: hidden; }
+
+@media only screen and (max-width: 1060px) and (min-width: 992px) { .coursesDertailTop .coursesDertailBottom .rightDetail { width: 25%; } }
+
+@media only screen and (max-width: 767px) { .coursesDertailTop { border-radius: 0px; } }
+
+@media only screen and (max-width: 600px) { .coursesDertailTop .imgwrapper { border-radius: 0 !important; }
+  .courseDesp { padding: 10px 125px 10px 10px; border: 1px solid rgba(0, 0, 0, 0.1); }
+  .courseDesp .rightDetail { right: 10px; } }
+
+@media only screen and (max-width: 499px) { .coursesDertailTop .coursesDertailBottom .leftDetail { width: 100%; float: left; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail { width: 100%; float: left; border-top: 1px solid #f5f5f5; padding-top: 10px; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail .freeCourse { width: auto; float: left; line-height: 35px; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail .pricingWrapper { width: auto; float: left !important; padding: 6px 0; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail button { float: right; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail .centerAlign { padding: 0px 0; float: right; width: auto; height: 45px; align-items: center; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail .centerAlign button { float: right; width: auto; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail .centerAlign .byuNowbtn { width: 130px; margin-top: 1px; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail .centerAlign .enrollNowbtn { width: 115px; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail .centerAlign.centerAlignEnrolled { width: 100%; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail .centerAlign.centerAlignEnrolled .buttonMarginTop { margin-top: 0px !important; } }
+
+.CourseDetailWrapper .post-footer-btn-outer-wrap .post_footer.post-footer-btn-wrap { border-top: none !important; }
+
+.shared-post-blocks-wrap .coursesDertailTop { border-radius: 5px !important; overflow: hidden; }
+
+.post_outer { width: 100%; float: left; }
+
+@media only screen and (max-width: 500px) { .coursesDertailTop .coursesDertailBottom .rightDetail button { background-color: #fff; }
+  .coursesDertailTop .coursesDertailBottom { background-color: #e8ecf180; }
+  .coursesDertailTop .coursesDertailBottom .leftDetail h1 { padding: 0px 0px 10px 0px; }
+  .coursesDertailTop .coursesDertailBottom .rightDetail { border-top: 1px solid #99999960; margin-top: 5px; }
+  .buttonMarginTop { margin-top: 5px !important; }
+  .enrollnew { margin-top: 0px !important; } }
+
+.courseUserChip { width: auto; height: 30px; opacity: 0.8; border-radius: 3px; background-color: #000000; position: absolute; right: 15px; bottom: 15px; display: flex; align-items: center; padding: 0px 10px; }
+
+.courseUserChip img { width: 22px !important; height: 22px !important; margin-right: 5px; }
+
+.courseUserChip p { font-size: 12px; font-weight: 500; color: #ffffff; }
+
+.removeMargin { margin-right: 0px !important; }
+
+@media only screen and (max-width: 600px) { .post_outer.text-post-comp { margin-bottom: 10px; } }

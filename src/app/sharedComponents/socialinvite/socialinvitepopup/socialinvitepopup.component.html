@@ -1,0 +1,18 @@
+<div class='darkbackground'></div>
+<div class='addpost_outer relative popup-open-wrapper'>
+<div class='darkbackground-close' (click)="hideInvitePopup();"></div>
+    <div class='container popup-container' style="position:relative;">
+
+    <div *ngIf="showInnerPopupWrap" class="invite-popup-inner-wrap">
+        <app-invitepeople [mediaTyp]="mediaName" (popupCloseByCancelThread)="closeByCancel($event)" (successPopupShowThread)="successPopupShow($event);"></app-invitepeople>
+
+</div>
+<div *ngIf="successPopupStatus" class="invite-success-popup-wrapper text-center">
+  <h4>Invite Successfull</h4>
+  <p></p>
+  <div class="bttn-wrap text-center">
+  <button class="confirm_btn popup_btn btn btn-primary success-popup" (click)="successPopupFnClose()">Done</button>
+  </div>
+</div>
+    </div>
+  </div>

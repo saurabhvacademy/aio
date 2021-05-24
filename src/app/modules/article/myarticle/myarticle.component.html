@@ -1,0 +1,91 @@
+<app-header></app-header>
+<div class="wrapper">
+    <div class="myarticles-container" style="" data-infinite-scroll [infiniteScrollDistance]="2" data-infinite-scroll (scrolled)="onScrollDown()" [scrollWindow]="true">
+
+        <div class="innerWrapper container " id="wrapper">
+            <div class="topHeader">
+                <h2>My Articles</h2>
+                <button routerLink="/article">Create Article</button>
+            </div>
+
+            <ul>
+                <li [ngClass]="{ active: isPublish }" routerLink="/article/myarticle/publish" routerLinkActive="active">
+                    Published <span *ngIf="publishcount != 0"> {{ publishcount }} </span>
+                </li>
+                <li routerLink="/article/myarticle/draft" routerLinkActive="active">
+                    {{ draftcount == 1 ? "Draft" : "Drafts" }}
+                    <span *ngIf="draftcount != 0">{{ draftcount }}</span>
+                </li>
+                <li class="search" style="">
+
+
+                    <input type="search" placeholder="Search" [(ngModel)]="searchArticleText" (keyup.enter)="searchArticle(selectedIndex)" id="inputBox" (keyup)="searchArticle(selectedIndex)" />
+                    <img src="assets/images/svg-three/head/search-02.svg" (click)="searchArticle(selectedIndex)" alt="" />
+                    <span *ngIf="searchArticleText" (click)="crossSearch(selectedIndex)" class="close__tag"><img alt="" src="assets/images/svg/tagcross-gray.svg"></span>
+                </li>
+            </ul>
+            <div class="articleWrapper">
+                <div class="articleInnerWrapper" *ngFor="let item of articaleData; let i = index" id="{{ i }}" (mouseleave)="hide(item.ARTICLE_UUID, i)">
+                    <div *ngIf="isPublish" (click)="redirectPublishArticle(item.ARTICLE_ID, item.ARTICLE_URL)">
+                        <h3 style="cursor:pointer" class="heading">
+                            {{ item.ARTICLE_TITLE | trimData: 50 }}
+                        </h3>
+                        <p style="cursor:pointer" class="description">
+                            {{ item.ARTICLE_INNER_TEXT | trimData: 120 }}
+                        </p>
+                    </div>
+
+                    <div *ngIf="!isPublish" (click)="onEdit(item.ARTICLE_ID)">
+                        <h3 style="cursor:pointer" [ngClass]="{
+              'heading':true,
+              'no-description':!item.ARTICLE_TITLE}">
+                            {{ (item.ARTICLE_TITLE?item.ARTICLE_TITLE:"No title yet.") | trimData: 50 }}
+
+                        </h3>
+                        <p style="cursor:pointer" [ngClass]="{
+              'description':true,
+              'no-description':!item.ARTICLE_INNER_TEXT}">
+                            {{ item.ARTICLE_INNER_TEXT?item.ARTICLE_INNER_TEXT:"No description yet." | trimData: 120 }}
+
+                        </p>
+                    </div>
+
+                    <p class="time">
+                        Last edited {{ item.ADD_DATE_TIME }} {{ item.ADD_DATE_TIME != "Just Now" ? "ago" : "" }}
+                    </p>
+
+                    <ul class="menu hide" id="{{ item.ARTICLE_UUID }}" (mouseleave)="showMenue(item.ARTICLE_UUID, i)">
+                        <li (click)="
+                redirectPublishArticle(item.ARTICLE_ID, item.ARTICLE_URL)
+              " *ngIf="isPublish">
+                            View
+                        </li>
+                        <li (click)="onEdit(item.ARTICLE_ID)">Edit</li>
+                        <li (click)="delArticle($event, item.ARTICLE_UUID, i)">Delete</li>
+                    </ul>
+                    <span class="tripleDeleteDot" (click)="showMenue(item.ARTICLE_UUID, i)">
+            <img src="assets/images/svg-three/post_icon/dot_menu.svg" alt="" />
+          </span>
+                </div>
+
+                <div class="emptyStateWrapper" *ngIf="isEmptyState">
+                    <div class="emptyStateInnerWrapper" *ngIf="isPublish">
+                        <div class="emptyStateCircle">
+                            <img src="assets/images/svg-three/article/emptystate1.svg" alt="" />
+                        </div>
+                        <p class="emprtyStateText">
+                            Enlighten your followers, publish an article
+                        </p>
+                    </div>
+
+                    <div class="emptyStateInnerWrapper" *ngIf="isDraft">
+                        <div class="emptyStateCircle">
+                            <img src="assets/images/svg-three/article/emptystate2.svg" alt="" />
+                        </div>
+                        <p class="emprtyStateText">You have no saved drafts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

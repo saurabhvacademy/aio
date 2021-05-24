@@ -1,0 +1,138 @@
+<div class="widgetpage_outer review_sec" *ngIf="hidereviewWidget" (click)="savePublicPostUrlFxn()">
+  <h6 class="widgetheading rev_head">
+    Ratings </h6>
+  <div style="cursor: default" class='pageinfo pageinfo-wrap'>
+    <carousel>
+      <slide>
+        <div claas="rwviewwrapper" style="float: left;background-color: #fff;color: #000;text-align:center;width:100%;">
+          <div class="review_num"><span class="review_num_left">{{avgRating}}<br><span class="review-outof">out of 5</span></span>
+            <span class="review_num_right">
+              <span>{{totalRating}} Ratings</span>
+              <div class="star_rating course_name">
+                <div class="stars">
+                  <label *ngIf="avgRating == 0.5" class="Pagerating" >
+                    <img class="star-half-svg" src="assets/images/svg-one/icons8-star-half-empty-filled.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                  </label>
+                  <label *ngIf="avgRating == 1.0" class="Pagerating">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                  </label>
+                  <label *ngIf="avgRating == 2.0" class="Pagerating"  >
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                  </label>
+                  <label *ngIf="avgRating == 3.0" class="Pagerating">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+
+                  </label>
+                  <label *ngIf="avgRating == 4.0" class="Pagerating">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                  </label>
+                  <label *ngIf="avgRating == 5.0" class="Pagerating">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                  </label>
+                  <label *ngIf="avgRating == 1.5" class="Pagerating">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-half-svg" src="assets/images/svg-one/icons8-star-half-empty-filled.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                  </label>
+                  <label *ngIf="avgRating == 2.5" class="Pagerating">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-half-svg" src="assets/images/svg-one/icons8-star-half-empty-filled.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+                  </label>
+                  <label *ngIf="avgRating == 3.5" class="Pagerating">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-half-svg" src="assets/images/svg-one/icons8-star-half-empty-filled.svg">
+                    <img class="star-blank-svg" src="assets/images/svg-one/icons8-star-pokemon.svg">
+
+                  </label>
+                  <label *ngIf="avgRating == '4.5'" class="Pagerating">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-fill-svg" src="assets/images/svg-one/icons8-star-filled-filled.svg">
+                    <img class="star-half-svg" src="assets/images/svg-one/icons8-star-half-empty-filled.svg">
+                  </label>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div class="line_bar_div">
+            <div class="star_num">5 <img src="assets/images/svg-one/icons8-star-filled-filled-gray.svg" alt="study24x7"></div>
+            <div class="line_bar">
+              <div class="line-wrapper">
+                <div class="skills html" [style.width.%]="star5ratingwidth">&nbsp;</div>
+              </div>
+            </div>
+            <div [ngClass]="(star5rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{star5rating}}</div>
+          </div>
+          <div class="line_bar_div">
+            <div class="star_num">4 <img src="assets/images/svg-one/icons8-star-filled-filled-gray.svg" alt="study24x7"></div>
+            <div class="line_bar">
+              <div class="line-wrapper">
+                <div class="skills html" [style.width.%]="star4ratingwidth">&nbsp;</div>
+              </div>
+            </div>
+            <div [ngClass]="(star4rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{star4rating}}</div>
+          </div>
+          <div class="line_bar_div">
+            <div class="star_num">3 <img src="assets/images/svg-one/icons8-star-filled-filled-gray.svg" alt="study24x7"></div>
+            <div class="line_bar">
+              <div class="line-wrapper">
+                <div class="skills html" [style.width.%]="star3ratingwidth">&nbsp;</div>
+              </div>
+            </div>
+            <div [ngClass]="(star3rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{star3rating}}</div>
+          </div>
+          <div class="line_bar_div">
+            <div class="star_num">2 <img src="assets/images/svg-one/icons8-star-filled-filled-gray.svg" alt="study24x7"></div>
+            <div class="line_bar">
+              <div class="line-wrapper">
+                <div class="skills html" [style.width.%]="star2ratingwidth">&nbsp;</div>
+              </div>
+            </div>
+            <div [ngClass]="(star2rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{star2rating}}</div>
+          </div>
+          <div class="line_bar_div">
+            <div class="star_num">1 <img src="assets/images/svg-one/icons8-star-filled-filled-gray.svg" alt="study24x7"></div>
+            <div class="line_bar">
+              <div class="line-wrapper">
+                <div class="skills html" [style.width.%]="star1ratingwidth">&nbsp;</div>
+              </div>
+            </div>
+            <div [ngClass]="(star1rating==0)?'star_num count_review count_review_p':'star_num count_review'">{{star1rating}}</div>
+          </div>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>

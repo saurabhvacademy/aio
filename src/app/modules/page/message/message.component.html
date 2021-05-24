@@ -1,0 +1,906 @@
+<app-header (sessionLogout)="sessionExpire($event)">
+</app-header>
+<div class="backtopagebtn" style="" routerLink="/page/{{pageId}}">
+    <div class="inner_container">
+        <img src="assets/images/svg-three/message/arrow.svg" alt="" style="">
+        <div class="text">Back to Page</div>
+    </div>
+</div>
+<!-- web view above 768  start here---->
+<div class="container main_body inbox-wrapper" *ngIf="!hidewebview">
+
+    <div class="" style="float:left;width:100%;height:100%;">
+        <div class="message_full_sec display-flex">
+            <div class='col-md-3 col-sm-4' style="padding-right:0px;padding-left: 0;overflow:hidden;height:100%;">
+                <div class="leftmessagemenucnt" [ngClass]="{'broadcastcnt': inboxswitch}">
+                    <div class="leftmessagemenu lftmentbroadcast">
+                        <div class="btnoutr">
+                            <h6 class="widgetheading msghead">
+                                <b>Inbox</b>
+                                <!--<span class="unreadmsgcunt">3</span>-->
+                            </h6>
+                            <!-- <button class="btn btn-primary Composebtn" (click)='activemessage(2)'><img alt="" class="defaultt" src="assets/images/svg/cross-sign-white.svg" style="width:10px;"> New Conversation</button> -->
+                            <!--                                <div class="butnanimationcnt ">
+                                <button class="" (click)='activemessage(2)' style="height:19px;">
+                                    <img class="defaultt" src='assets/images/svg-three/inbox_icon/compose.svg'>
+                                     <img class="hoverr" src='assets/images/svg-three/inbox_icon/f05050/compose.svg'>
+                                </button>
+                                <div class="butnanimation"></div>
+                                </div>-->
+                        </div>
+                        <!-- search bar code -->
+                        <!--            <div class="btnoutr btnoutr2">
+
+                            <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                            <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                            <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                            <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                          </div>-->
+                        <div class="inboxlist ">
+                            <!--<h6 class="widgetheading">Showing 5 of 100</h6>-->
+
+                            <div class="people_list inboxlistinr" style="" data-infinite-scroll [infiniteScrollDistance]="10" (scrolled)="onScrollDown()" [scrollWindow]="false">
+                                <ul>
+                                    <!-- <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'u')" id="i"> -->
+
+                                    <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'d')" [ngClass]="{'active-chat-user': i == trailIndex}" id="{{trail.MESSAGE_TRAIL_ID}}">
+                                        <!-- <button class="composebtn btn_composer lftmsgbtn" style="height:19px;">
+                                                <img  class="defaultt" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                                <img  class="hoverr" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                           </button> -->
+
+                                        <div style="cursor: default !important" class="profileimg_know">
+                                            <img src="{{trail.PROFILE_PHOTO_PATH}}" (error)="updateProfilePic($event)">
+                                        </div>
+                                        <div class="prfl_detail">
+                                            <div class="profilename" title='{{trail.USER_FULL_NAME}}'>{{trail.USER_FULL_NAME|trimData:17}} </div>
+
+                                            <div class="grayinfo " *ngIf="trail.STATUS==0 && _constantService.getSessionDataBYKey('u_id')!=trail.FIRST_USER" style="color:black" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:150"></div>
+                                            <div class="grayinfo lftmsg fontsize" *ngIf="trail.STATUS==0 && _constantService.getSessionDataBYKey('u_id')==trail.FIRST_USER" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:16">
+                                            </div>
+
+                                            <div class="grayinfo fontsize" *ngIf="trail.STATUS==1" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:16"></div>
+                                        </div>
+                                        <span class="mess_time_left" style="float:right">{{trail.UPDATE_DATE_TIME|timeformated}}</span>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+                        <div class="comp_btn_container">
+
+                            <img src="../assets/images/svg/messages.svg" alt="">
+
+                            <button class="comp_msg_button">Compose your message</button>
+                        </div>
+
+                        <div class="broadcast_butn ">
+
+                            <button (click)="sitchtomsg(1);">
+                                <img src="./assets/images/svg-three/inbox_icon/broadcast.svg" alt="">
+                                <span>
+                                    Switch to broadcast
+                                </span>
+
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                    <div class="leftmessagemenu rytmentbroadcast">
+                        <div class="btnoutr">
+                            <h6 class="widgetheading msghead">
+                                <b>Broadcast</b>
+                            </h6>
+                            <!-- <button class="btn btn-primary Composebtn" (click)='activemessage(2)'><img alt="" class="defaultt" src="assets/images/svg/cross-sign-white.svg" style="width:10px;"> New Conversation</button> -->
+                            <!--                             <div class="butnanimationcnt ">
+                            <button class="" (click)='activemessage(2)' style="height:19px;">
+                                <img class="defaultt" src='assets/images/svg-three/inbox_icon/compose.svg'>
+                                <img class="hoverr" src='assets/images/svg-three/inbox_icon/f05050/compose.svg'>
+                            </button>
+                            <div class="butnanimation"></div>
+                          </div>-->
+                            <!-- <div class="inboxbtnwrapper">
+                                <button type="button" name="button" class="pageinboxbackbt">
+                                    <img src="assets/images/svg-three/inbox_icon/back.svg" alt="">
+                                </button>
+                                <span class="inboxbtnanimatoion"></span>
+                            </div> -->
+                        </div>
+
+                        <!-- search bar code -->
+                        <!--            <div class="btnoutr btnoutr2">
+
+                        <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                        <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                        <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                        <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                      </div>-->
+                        <div class="inboxlist ">
+                            <!--<h6 class="widgetheading">Showing 5 of 100</h6>-->
+                            <div class="people_list inboxlistinr" [perfectScrollbar]="config" style="position: relative;" data-infinite-scroll [infiniteScrollDistance]="10" (scrolled)="onScrollDown()" [scrollWindow]="false">
+                                <ul>
+                                    <!-- <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'u')" id="i"> -->
+                                    <li *ngFor="let trail of broadcasts;let i = index" (click)="getBroadcastedMsg(i)" [ngClass]="{'active-chat-user': i == broadcastIndex}" id="{{trail.MESSAGE_TRAIL_ID}}">
+                                        <!-- <button class="composebtn btn_composer lftmsgbtn" style="height:19px;">
+                                            <img  class="defaultt" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                            <img  class="hoverr" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                       </button> -->
+
+                                        <div class="profileimg_know">
+                                            <img src="{{trail.PROFILE_PHOTO_PATH}}" (error)="updateProfilePic($event)">
+                                        </div>
+                                        <div class="prfl_detail">
+                                            <div class="profilename" title='{{trail.TITLE}}'>{{trail.PAGE_TITLE |trimData:17}}</div>
+
+                                            <div class="grayinfo " title="{{trail.MESSAGE}}" [innerHTML]="trail.TEXT|trimData:150"></div>
+                                            <!--                  <div class="grayinfo lftmsg fontsize"  title="{{trail.TEXT}}" [innerHTML]="trail.TEXT|trimData:false:true">
+                                                              </div>
+
+                                                              <div class="grayinfo fontsize" title="{{trail.TEXT}}" [innerHTML]="trail.TEXT|trimData:false:true" ></div>-->
+                                        </div>
+                                        <span class="mess_time_left" style="float:right">{{trail.ADD_DATE_TIME|timeformated}}</span>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+                        <div class="comp_btn_container">
+
+                            <img src="../assets/images/svg/messages.svg" alt="">
+
+                            <button class="comp_msg_button">Compose your message</button>
+                        </div>
+
+                        <div class="broadcast_butn ">
+
+                            <button (click)="sitchtomsg(2);">
+                                <img src="./assets/images/svg-three/inbox_icon/inbox.svg" alt="">
+                                <span>
+                                    Switch to inbox
+                                </span>
+
+                            </button>
+                        </div>
+                    </div>
+                    <div class="leftmessagemenu lftmentbroadcast">
+                        <div class="btnoutr">
+                            <h6 class="widgetheading msghead">
+                                <b>Inbox</b>
+                                <!--<span class="unreadmsgcunt">3</span>-->
+                            </h6>
+                            <!-- <button class="btn btn-primary Composebtn" (click)='activemessage(2)'><img alt="" class="defaultt" src="assets/images/svg/cross-sign-white.svg" style="width:10px;"> New Conversation</button> -->
+                            <!--                                <div class="butnanimationcnt ">
+                            <button class="" (click)='activemessage(2)' style="height:19px;">
+                                <img class="defaultt" src='assets/images/svg-three/inbox_icon/compose.svg'>
+                                 <img class="hoverr" src='assets/images/svg-three/inbox_icon/f05050/compose.svg'>
+                            </button>
+                            <div class="butnanimation"></div>
+                            </div>-->
+                        </div>
+                        <!-- search bar code -->
+                        <!--            <div class="btnoutr btnoutr2">
+
+                        <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                        <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                        <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                        <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                      </div>-->
+                        <div class="inboxlist ">
+                            <!--<h6 class="widgetheading">Showing 5 of 100</h6>-->
+
+                            <div class="people_list inboxlistinr" [perfectScrollbar]="config" style="position: relative;" data-infinite-scroll [infiniteScrollDistance]="10" (scrolled)="onScrollDown()" [scrollWindow]="false">
+                                <ul>
+                                    <!-- <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'u')" id="i"> -->
+
+                                    <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'d')" [ngClass]="{'active-chat-user': i == trailIndex}" id="{{trail.MESSAGE_TRAIL_ID}}">
+                                        <!-- <button class="composebtn btn_composer lftmsgbtn" style="height:19px;">
+                                            <img  class="defaultt" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                            <img  class="hoverr" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                       </button> -->
+
+                                        <div class="profileimg_know">
+                                            <img src="{{trail.PROFILE_PHOTO_PATH}}" (error)="updateProfilePic($event)">
+                                        </div>
+                                        <div class="prfl_detail">
+                                            <div class="profilename" title='{{trail.USER_FULL_NAME}}'>{{trail.USER_FULL_NAME |trimData:17}} </div>
+
+                                            <div class="grayinfo " *ngIf="trail.STATUS==0 && _constantService.getSessionDataBYKey('u_id')!=trail.FIRST_USER" style="color:black" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:150"></div>
+                                            <div class="grayinfo lftmsg fontsize" *ngIf="trail.STATUS==0 && _constantService.getSessionDataBYKey('u_id')==trail.FIRST_USER" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:16">
+                                            </div>
+
+                                            <div class="grayinfo fontsize" *ngIf="trail.STATUS==1" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:16"></div>
+                                        </div>
+                                        <span class="mess_time_left" style="float:right">{{trail.UPDATE_DATE_TIME|timeformated}}</span>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+                        <div class="comp_btn_container">
+
+                            <img src="../assets/images/svg/messages.svg" alt="">
+
+                            <button class="comp_msg_button">Compose your message</button>
+                        </div>
+
+                        <div class="broadcast_butn ">
+
+                            <button (click)="sitchtomsg(1);">
+                            <img src="./assets/images/svg-three/inbox_icon/broadcast.svg" alt="">
+                            <span>
+                                Switch to broadcast
+                            </span>
+
+                        </button>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+            <div class="col-md-9 col-sm-8" style="padding-right:0px;padding-left: 0;height:100%;">
+                <div class="composemessage chat_outr" *ngIf='activemessagetype === 1'>
+                    <div class='people_list chatheading' style="height: auto;overflow: visible;" *ngIf="!inboxswitch">
+                        <ul>
+                            <li *ngIf="showdelbtn" style="float: left;width: 100%;">
+                                <div class="profileimg_know">
+                                    <img src='{{profile_pic}}' style="cursor: pointer;" routerLink='/profile/{{userName}}' (error)="updateProfilePic($event)">
+                                </div>
+                                <div class='prfl_detail'>
+                                    <div class="profilename " title="{{name}}" routerLink='/profile/{{userName}}'>{{name}}</div>
+                                    <!-- <span class="grayinfo">{{lstAct}}</span> -->
+                                    <!--<div class="grayinfo">offline</div>-->
+                                </div>
+                                <!-- <i class="delete-msg" (click)="delThisConversation();"><img src="assets/images/svg/dustbin.svg" alt=""></i> -->
+                                <!--                                <div #delmsglist>
+                                    <button class="delete-msg cancel_btn popup_btn cancel-popup btn_composer" (click)="showdelmsglist();">
+                                        <img class="defaultt" src='assets/images/svg-three/inbox_icon/menu.svg'>
+                                        <img class="hoverr" src='assets/images/svg-three/inbox_icon/menu.svg'>
+                                    </button>
+                                    <div  class="deletmsglist" (click)="delThisConversation();" *ngIf="shoedelmsglist">
+                                         <span  class="default">
+                                            <img  src="assets/images/svg/dustbindrop.svg">
+                                        </span>
+                                         <span  class="hoverimg">
+                                            <img  src="assets/images/svg/dustbindrop-green.svg">
+                                        </span>
+                                        <div  class="postdropdown_inner">Delete Conversation
+                                             <span _ngcontent-c34="" class="time">You can delete your post</span>
+                                        </div>
+                                    </div>
+                                </div>-->
+                            </li>
+                            <!--                            <li *ngIf="showdelbtn" >
+                                <div class="profileimg_know">
+                                    <img src='{{profile_pic}}'  (error)="updateProfilePic($event)" >
+                                </div>
+                                <div class='prfl_detail'>
+                                    <div class="profilename" title="{{name}}" >{{name}}</div>
+                                    <span class="grayinfo"></span>
+                                    <div class="grayinfo">offline</div>
+                                </div>
+                            </li>-->
+                        </ul>
+                    </div>
+                    <div #scrollTo class="mainchatbox" id="messageView" [perfectScrollbar]="config" style="position: relative;" infiniteScroll [infiniteScrollUpDistance]="80" (scrolledUp)="onScrollUp()" [scrollWindow]="false">
+                        <div class="message_container_show" #container></div>
+
+                        <!-- <div class="emptystate">
+                            <div class="emptystate_inner">
+                                <img src="assets/images/svg-three/empty_state/message.svg" style="width:80px;">
+                                <p>No new message</p>
+                              </div>
+                        </div> -->
+                    </div>
+                    <div class="main-message">
+                        <div class="inrfooter chat_send_wrap">
+                            <div class="StatusInfomessage">
+                                <textarea class="StatusInfo message" id="msg_text" placeholder="Type something to send ..." [(ngModel)]="msg_text" (ngModelChange)="msgNotEmpty($event)" (keydown)="check($event);" (keydown.backspace)="dele($event);" (keydown.enter)="onEnter($event);"></textarea>
+                            </div>
+                            <button class="btn btn-primary send_chat desable" (click)="sendMsgFunc(f_id,trail_id)" id="sendBtn">
+                                <span class="text sendiconwrapper" *ngIf="!loader">
+                                    <img class="sendMsgicon" src="./assets/images/svg-three/inbox_icon/send_icon.svg" alt="">
+                                </span>
+                                <span class="text sendiconwrapper" *ngIf="loader">
+                                    <img class="sendMsgicon" src="./assets/images/svg-three/inbox_icon/f05050/send_icon.svg" alt="">
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- empty state of empty log -->
+
+
+
+
+                </div>
+
+
+
+                <div class="composemessage" *ngIf='activemessagetype === 2'>
+                    <!--              <div class='reciverlist'>
+                                    <span class="col-md-1" style="margin-top: 2px;font-weight:500;">To: </span>
+                                    <div class='col-md-10 tag_message'>
+                                       user pic
+                                       <div class="searchuserpic">
+                                        <img src="https://s3.ap-south-1.amazonaws.com/247-user-test/development/2.0.0.7/profile/62_60x60.png" alt="">
+                                      </div>
+                                      <span class="tags" *ngIf="showUser">
+                                        {{userName}}
+                                        <img src="assets/images/svg/close.svg" (click)="showUser=false">
+                                      </span>
+                                      <input id="searchInput" type="text" placeholder="Type your connection name" class="messagercvr_inpt" (keyup)=searchUser($event); [(ngModel)]="searchData">
+                                      <div class="comboboxouter" #inbox>
+                                        <div tabindex="-1" class="comboboxmessage"  *ngIf="filtermsgcomboshow">
+                                          <ul class="frnd_list">
+                                            <span *ngIf="noResult==false">
+                                              <li *ngFor="let user of searchedUser;let i = index" (click)="addUser(i)">
+
+                                                <div class="profileimg_know">
+                                                  <img  src="{{user.PROFILE_PHOTO_PATH}}">
+                                                </div>
+                                                <div class="prfl_detail">
+                                                  <div class="profilename">
+                                                    <a class="Notificationlist_name"  >{{user.USER_FULL_NAME}}</a></div>
+                                                    <div class="grayinfo">{{user.USER_NAME}}</div>
+                                                  </div>
+                                                </li></span>
+                                                <li class="clearfix" *ngIf="noResult==true" class="emptystate">
+                                                  <div class="emptystate_inner">
+                                                    <img src="./assets/images/emptystates/svg/no-search-found.svg"><span>No result found</span>
+                                                  </div>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>-->
+                    <div class="main-message composemainmessage" *ngIf="inboxswitch || !emptyStateInbox">
+                        <div class="inrfooter chat_wrap">
+                            <div class="StatusInfomessage">
+                                <textarea class="StatusInfo message" id="new_msg" placeholder="Type something to send....." [(ngModel)]="msg_text" (ngModelChange)="msgNotEmptyTwo($event)" (keydown)="checkk($event);" (keydown.backspace)="del($event);" (keydown.enter)="onEnter($event);"></textarea>
+                            </div>
+
+                            <div class="send-msg-btn">
+                                <!--                                            <button [disabled]="loader === true"  class="btn btn-primary " (click)="sendMsg(f_id,trail_id)" [disabled]="imDisabled"><span class="text" *ngIf="showText">Send</span><span class="preloder"  >
+                                <img src="./assets/images/svg/preloader-25.svg" alt="" *ngIf="loader"></span></button>-->
+                                <!--                        <button class="btn btn-primary" (click)="sendMsg(friendId,0)" [disabled]="imDisabledTwo">Send</button>-->
+                                <button class="btn btn-primary sendchat2 desable" (click)="sendMsgFunc(friendId,0)" id="sndBtn">
+                                    <span class="text sendiconwrapper" >
+                                        <img class="sendMsgicon send_iconmsg" src="./assets/images/svg-three/inbox_icon/send_icon.svg" alt="">
+                                    </span>
+<!--                                    <span class="preloder">
+                                        <img src="./assets/images/svg/preloader-25.svg" alt="" *ngIf="loader">
+                                    </span>-->
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- empty state of empty log -->
+                    <div class="emptystate empty_wrap" style="height: 75%;" *ngIf="emptyStateInbox && !inboxswitch">
+                        <div class="emptystate_inner">
+                            <img class="emptyimg emptyfeed" src="assets/images/svg-three/empty_state/broadcast.svg" style="width:200px!important">
+                            <p _ngcontent-c38="" style="padding:20px;">No message to show</p>
+                        </div>
+                    </div>
+                    <div class="emptystate empty_wrap" style="height: 75%;" *ngIf="emptyStateBroad && inboxswitch">
+                        <div class="emptystate_inner">
+                            <img class="emptyimg emptyfeed" src="assets/images/svg-three/empty_state/broadcast.svg" style="width:200px!important">
+                            <p _ngcontent-c38="" style="padding:20px;">No broadcast message to show</p>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---- web view above 768  end here---->
+
+
+
+
+
+
+
+
+
+<!---mobile view start here---->
+<div class="container main_body inbox-wrapper mobile_inbox-wrapper mes_main_mview" *ngIf="hidewebview">
+    <!-- <div class="backtopagebtn" style="" routerLink="/page/{{pageId}}">
+          <div class="inner_container">
+            <img src="assets/images/svg-three/message/arrow.svg" alt="" style="">
+             <div class="text">Back to Page</div>
+          </div>
+        </div> -->
+    <div class="mes_outer_main">
+        <div class="mes_outer_inner">
+
+            <div class=" center_feed">
+                <div class="message_full_sec display-flex">
+                    <div class='col-md-3 col-sm-4 broadcast_left_mob' style="padding-right:0px;padding-left: 0;overflow:hidden;height:100%;" *ngIf="disableRightPanel">
+                        <div class="leftmessagemenucnt" [ngClass]="{'broadcastcnt': inboxswitch}">
+                            <div class="leftmessagemenu lftmentbroadcast">
+                                <div class="btnoutr">
+                                    <span class="back_msg icon-back" routerLink="/page/{{pageId}}">
+                                <img   src="assets/images/svg-three/login_icon/left-arrow.svg" />
+                              </span>
+                                    <h6 class="widgetheading msghead">
+                                        <b>Inbox</b>
+                                        <!--<span class="unreadmsgcunt">3</span>-->
+                                    </h6>
+                                    <div class="broadcast_butn ">
+
+                                        <button (click)="sitchtomsg(1);">
+                                        <img src="./assets/images/svg-three/inbox_icon/broadcast.svg" alt="">
+                                        <span>
+                                            Broadcast
+                                        </span>
+
+                                    </button>
+                                    </div>
+                                    <!-- <button class="btn btn-primary Composebtn" (click)='activemessage(2)'><img alt="" class="defaultt" src="assets/images/svg/cross-sign-white.svg" style="width:10px;"> New Conversation</button> -->
+                                    <!--                                <div class="butnanimationcnt ">
+                                <button class="" (click)='activemessage(2)' style="height:19px;">
+                                    <img class="defaultt" src='assets/images/svg-three/inbox_icon/compose.svg'>
+                                     <img class="hoverr" src='assets/images/svg-three/inbox_icon/f05050/compose.svg'>
+                                </button>
+                                <div class="butnanimation"></div>
+                                </div>-->
+                                </div>
+                                <!-- search bar code -->
+                                <!--            <div class="btnoutr btnoutr2">
+
+                            <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                            <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                            <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                            <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                          </div>-->
+                                <div class="inboxlist ">
+                                    <!--<h6 class="widgetheading">Showing 5 of 100</h6>-->
+
+                                    <div class="people_list inboxlistinr" style="" data-infinite-scroll [infiniteScrollDistance]="10" (scrolled)="onScrollDown()" [scrollWindow]="false">
+                                        <ul>
+                                            <!-- <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'u')" id="i"> -->
+
+                                            <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'d')" [ngClass]="{'active-chat-user': i == trailIndex}" id="{{trail.MESSAGE_TRAIL_ID}}">
+                                                <!-- <button class="composebtn btn_composer lftmsgbtn" style="height:19px;">
+                                                <img  class="defaultt" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                                <img  class="hoverr" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                           </button> -->
+
+                                                <div class="profileimg_know">
+                                                    <img src="{{trail.PROFILE_PHOTO_PATH}}" (error)="updateProfilePic($event)">
+                                                </div>
+                                                <div class="prfl_detail">
+                                                    <div class="profilename" title='{{trail.USER_FULL_NAME}}'>{{trail.USER_FULL_NAME|trimData:17}} </div>
+
+                                                    <div class="grayinfo " *ngIf="trail.STATUS==0 && _constantService.getSessionDataBYKey('u_id')!=trail.FIRST_USER" style="color:black" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:150"></div>
+                                                    <div class="grayinfo lftmsg fontsize" *ngIf="trail.STATUS==0 && _constantService.getSessionDataBYKey('u_id')==trail.FIRST_USER" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:16">
+                                                    </div>
+
+                                                    <div class="grayinfo fontsize" *ngIf="trail.STATUS==1" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:16"></div>
+                                                </div>
+                                                <span class="mess_time_left" style="float:right">{{trail.UPDATE_DATE_TIME|timeformated}}</span>
+
+
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="comp_btn_container">
+
+                                    <img src="../assets/images/svg/messages.svg" alt="">
+
+                                    <button class="comp_msg_button">Compose your message</button>
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="leftmessagemenu rytmentbroadcast">
+                                <div class="btnoutr">
+                                    <span class="back_msg icon-back" routerLink="/page/{{pageId}}">
+                            <img   src="assets/images/svg-three/login_icon/left-arrow.svg" />
+                          </span>
+                                    <h6 class="widgetheading msghead">
+                                        <b>Broadcast</b>
+                                    </h6>
+                                    <div class="broadcast_butn ">
+
+                                        <button (click)="sitchtomsg(2);">
+                                    <img src="./assets/images/svg-three/inbox_icon/inbox.svg" alt="">
+                                    <span>
+                                        Inbox
+                                    </span>
+
+                                </button>
+                                    </div>
+                                    <!-- <button class="btn btn-primary Composebtn" (click)='activemessage(2)'><img alt="" class="defaultt" src="assets/images/svg/cross-sign-white.svg" style="width:10px;"> New Conversation</button> -->
+                                    <!--                             <div class="butnanimationcnt ">
+                            <button class="" (click)='activemessage(2)' style="height:19px;">
+                                <img class="defaultt" src='assets/images/svg-three/inbox_icon/compose.svg'>
+                                <img class="hoverr" src='assets/images/svg-three/inbox_icon/f05050/compose.svg'>
+                            </button>
+                            <div class="butnanimation"></div>
+                          </div>-->
+                                    <!-- <div class="inboxbtnwrapper">
+                                <button type="button" name="button" class="pageinboxbackbt">
+                                    <img src="assets/images/svg-three/inbox_icon/back.svg" alt="">
+                                </button>
+                                <span class="inboxbtnanimatoion"></span>
+                            </div> -->
+                                </div>
+
+                                <!-- search bar code -->
+                                <!--            <div class="btnoutr btnoutr2">
+
+                        <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                        <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                        <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                        <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                      </div>-->
+                                <div class="inboxlist ">
+                                    <!--<h6 class="widgetheading">Showing 5 of 100</h6>-->
+                                    <div class="people_list inboxlistinr" [perfectScrollbar]="config" style="position: relative;" data-infinite-scroll [infiniteScrollDistance]="10" (scrolled)="onScrollDown()" [scrollWindow]="false">
+                                        <ul>
+                                            <!-- <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'u')" id="i"> -->
+                                            <li *ngFor="let trail of broadcasts;let i = index" (click)="getBroadcastedMsg(i)" [ngClass]="{'active-chat-user': i == broadcastIndex}" id="{{trail.MESSAGE_TRAIL_ID}}">
+                                                <!-- <button class="composebtn btn_composer lftmsgbtn" style="height:19px;">
+                                            <img  class="defaultt" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                            <img  class="hoverr" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                       </button> -->
+
+                                                <div class="profileimg_know">
+                                                    <img src="{{trail.PROFILE_PHOTO_PATH}}" (error)="updateProfilePic($event)">
+                                                </div>
+                                                <div class="prfl_detail">
+                                                    <div class="profilename" title='{{trail.TITLE}}'>{{trail.PAGE_TITLE |trimData:17}}</div>
+
+                                                    <div class="grayinfo " title="{{trail.MESSAGE}}" [innerHTML]="trail.TEXT|trimData:150"></div>
+                                                    <!--                  <div class="grayinfo lftmsg fontsize"  title="{{trail.TEXT}}" [innerHTML]="trail.TEXT|trimData:false:true">
+                                                              </div>
+
+                                                              <div class="grayinfo fontsize" title="{{trail.TEXT}}" [innerHTML]="trail.TEXT|trimData:false:true" ></div>-->
+                                                </div>
+                                                <span class="mess_time_left" style="float:right">{{trail.ADD_DATE_TIME|timeformated}}</span>
+
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="mob_broadcast_msg" (click)="BroudcastMsgMobile();">
+                                        <button class="broad_btn">
+                                <img  class="defaultt" src="assets/images/svg-three/inbox_icon/fff/compose.svg">
+                              </button>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="comp_btn_container">
+
+                                    <img src="../assets/images/svg/messages.svg" alt="">
+
+                                    <button class="comp_msg_button">Compose your message</button>
+                                </div>
+
+
+                            </div>
+                            <div class="leftmessagemenu lftmentbroadcast">
+                                <div class="btnoutr">
+                                    <h6 class="widgetheading msghead">
+                                        <b>Inbox</b>
+                                        <!--<span class="unreadmsgcunt">3</span>-->
+                                    </h6>
+                                    <!-- <button class="btn btn-primary Composebtn" (click)='activemessage(2)'><img alt="" class="defaultt" src="assets/images/svg/cross-sign-white.svg" style="width:10px;"> New Conversation</button> -->
+                                    <!--                                <div class="butnanimationcnt ">
+                            <button class="" (click)='activemessage(2)' style="height:19px;">
+                                <img class="defaultt" src='assets/images/svg-three/inbox_icon/compose.svg'>
+                                 <img class="hoverr" src='assets/images/svg-three/inbox_icon/f05050/compose.svg'>
+                            </button>
+                            <div class="butnanimation"></div>
+                            </div>-->
+                                </div>
+                                <!-- search bar code -->
+                                <!--            <div class="btnoutr btnoutr2">
+
+                        <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                        <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                        <span class="searchiconsmall"><img src='assets/images/svg/search.svg'></span>
+                        <input type='text' (keyup)="searchUser($event)" class="searchicon" placeholder="Search mail and people" [ngClass]="{'active': searchButtonStatus}" [autofocus]="searchButtonStatus">
+
+                      </div>-->
+                                <div class="inboxlist ">
+                                    <!--<h6 class="widgetheading">Showing 5 of 100</h6>-->
+
+                                    <div class="people_list inboxlistinr" [perfectScrollbar]="config" style="position: relative;" data-infinite-scroll [infiniteScrollDistance]="10" (scrolled)="onScrollDown()" [scrollWindow]="false">
+                                        <ul>
+                                            <!-- <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'u')" id="i"> -->
+
+                                            <li *ngFor="let trail of trails;let i = index" (click)="getAllRecievedMsg(i,0,'d')" [ngClass]="{'active-chat-user': i == trailIndex}" id="{{trail.MESSAGE_TRAIL_ID}}">
+                                                <!-- <button class="composebtn btn_composer lftmsgbtn" style="height:19px;">
+                                            <img  class="defaultt" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                            <img  class="hoverr" src="assets/images/svg-three/inbox_icon/menu.svg">
+                                       </button> -->
+
+                                                <div class="profileimg_know">
+                                                    <img src="{{trail.PROFILE_PHOTO_PATH}}" (error)="updateProfilePic($event)">
+                                                </div>
+                                                <div class="prfl_detail">
+                                                    <div class="profilename" title='{{trail.USER_FULL_NAME}}'>{{trail.USER_FULL_NAME |trimData:17}} </div>
+
+                                                    <div class="grayinfo " *ngIf="trail.STATUS==0 && _constantService.getSessionDataBYKey('u_id')!=trail.FIRST_USER" style="color:black" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:150"></div>
+                                                    <div class="grayinfo lftmsg fontsize" *ngIf="trail.STATUS==0 && _constantService.getSessionDataBYKey('u_id')==trail.FIRST_USER" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:16">
+                                                    </div>
+
+                                                    <div class="grayinfo fontsize" *ngIf="trail.STATUS==1" title="{{trail.MESSAGE}}" [innerHTML]="trail.MESSAGE|trimData:16"></div>
+                                                </div>
+                                                <span class="mess_time_left" style="float:right">{{trail.UPDATE_DATE_TIME|timeformated}}</span>
+
+
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="comp_btn_container">
+
+                                    <img src="../assets/images/svg/messages.svg" alt="">
+
+                                    <button class="comp_msg_button">Compose your message</button>
+                                </div>
+
+                                <div class="broadcast_butn ">
+
+                                    <button (click)="sitchtomsg(1);">
+                            <img src="./assets/images/svg-three/inbox_icon/broadcast.svg" alt="">
+                            <span>
+                                Switch to broadcast
+                            </span>
+
+                        </button>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="col-md-9 col-sm-8 broadcast_right_mob" style="padding-right:0px;padding-left: 0;height:100%;" *ngIf="!disableRightPanel">
+                        <div class="composemessage chat_outr" *ngIf='activemessagetype === 1'>
+                            <div class='people_list chatheading' style="height: auto;overflow: visible;" *ngIf="!inboxswitch">
+                                <span (click)="backtoMessage()" class="back_msg icon-back" style=" ">
+                        <img   src="assets/images/svg-three/login_icon/left-arrow.svg" />
+                      </span>
+                                <ul>
+                                    <li *ngIf="showdelbtn" style="float: left;width: 100%;">
+                                        <div class="profileimg_know">
+                                            <img src='{{profile_pic}}' routerLink='/profile/{{userName}}' (error)="updateProfilePic($event)">
+                                        </div>
+                                        <div class='prfl_detail'>
+                                            <div class="profilename " title="{{name}}" routerLink='/profile/{{userName}}'>{{name}}</div>
+                                            <!-- <span class="grayinfo">{{lstAct}}</span> -->
+                                            <!--<div class="grayinfo">offline</div>-->
+                                        </div>
+                                        <!-- <i class="delete-msg" (click)="delThisConversation();"><img src="assets/images/svg/dustbin.svg" alt=""></i> -->
+                                        <!--                                <div #delmsglist>
+                                    <button class="delete-msg cancel_btn popup_btn cancel-popup btn_composer" (click)="showdelmsglist();">
+                                        <img class="defaultt" src='assets/images/svg-three/inbox_icon/menu.svg'>
+                                        <img class="hoverr" src='assets/images/svg-three/inbox_icon/menu.svg'>
+                                    </button>
+                                    <div  class="deletmsglist" (click)="delThisConversation();" *ngIf="shoedelmsglist">
+                                         <span  class="default">
+                                            <img  src="assets/images/svg/dustbindrop.svg">
+                                        </span>
+                                         <span  class="hoverimg">
+                                            <img  src="assets/images/svg/dustbindrop-green.svg">
+                                        </span>
+                                        <div  class="postdropdown_inner">Delete Conversation
+                                             <span _ngcontent-c34="" class="time">You can delete your post</span>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                    </li>
+                                    <!--                            <li *ngIf="showdelbtn" >
+                                <div class="profileimg_know">
+                                    <img src='{{profile_pic}}'  (error)="updateProfilePic($event)" >
+                                </div>
+                                <div class='prfl_detail'>
+                                    <div class="profilename" title="{{name}}" >{{name}}</div>
+                                    <span class="grayinfo"></span>
+                                    <div class="grayinfo">offline</div>
+                                </div>
+                            </li>-->
+                                </ul>
+                            </div>
+                            <div class="people_list chatheading" style="height: auto;overflow: visible;" style="height: auto;overflow: visible;" *ngIf="inboxswitch">
+                                <span (click)="backtoMessage()" class="back_msg icon-back" style=" ">
+                        <img  src="assets/images/svg-three/login_icon/left-arrow.svg">
+                      </span>
+                                <p style="float: left;display: inline-block;font-size: 14px;line-height: 30px;font-weight: 500;">Broadcast</p>
+                            </div>
+                            <div #scrollTo class="mainchatbox" id="messageView" [perfectScrollbar]="config" style="position: relative;" infiniteScroll [infiniteScrollUpDistance]="80" (scrolledUp)="onScrollUp()" [scrollWindow]="false">
+                                <div class="message_container_show" #container></div>
+
+                                <!-- <div class="emptystate">
+                            <div class="emptystate_inner">
+                                <img src="assets/images/svg-three/empty_state/message.svg" style="width:80px;">
+                                <p>No new message</p>
+                              </div>
+                        </div> -->
+                            </div>
+                            <div class="main-message">
+                                <div class="inrfooter chat_send_wrap">
+                                    <div class="StatusInfomessage">
+                                        <textarea class="StatusInfo message" id="msg_text" placeholder="Type something to send ..." [(ngModel)]="msg_text" (ngModelChange)="msgNotEmpty($event)" (keydown)="check($event);" (keydown.backspace)="dele($event);" (keydown.enter)="onEnter($event);"></textarea>
+                                    </div>
+                                    <button class="btn btn-primary send_chat desable" (click)="sendMsgFunc(f_id,trail_id)" id="sendBtn">
+                                <span class="text sendiconwrapper" *ngIf="!loader">
+                                    <img class="sendMsgicon" src="./assets/images/svg-three/inbox_icon/send_icon.svg" alt="">
+                                </span>
+                                <span class="text sendiconwrapper" *ngIf="loader">
+                                    <img class="sendMsgicon" src="./assets/images/svg-three/inbox_icon/f05050/send_icon.svg" alt="">
+                                </span>
+                            </button>
+                                </div>
+                            </div>
+
+                            <!-- empty state of empty log -->
+
+
+
+
+                        </div>
+
+
+
+                        <div class="composemessage" *ngIf='activemessagetype === 2'>
+
+                            <!--              <div class='reciverlist'>
+                                    <span class="col-md-1" style="margin-top: 2px;font-weight:500;">To: </span>
+                                    <div class='col-md-10 tag_message'>
+                                       user pic
+                                       <div class="searchuserpic">
+                                        <img src="https://s3.ap-south-1.amazonaws.com/247-user-test/development/2.0.0.7/profile/62_60x60.png" alt="">
+                                      </div>
+                                      <span class="tags" *ngIf="showUser">
+                                        {{userName}}
+                                        <img src="assets/images/svg/close.svg" (click)="showUser=false">
+                                      </span>
+                                      <input id="searchInput" type="text" placeholder="Type your connection name" class="messagercvr_inpt" (keyup)=searchUser($event); [(ngModel)]="searchData">
+                                      <div class="comboboxouter" #inbox>
+                                        <div tabindex="-1" class="comboboxmessage"  *ngIf="filtermsgcomboshow">
+                                          <ul class="frnd_list">
+                                            <span *ngIf="noResult==false">
+                                              <li *ngFor="let user of searchedUser;let i = index" (click)="addUser(i)">
+
+                                                <div class="profileimg_know">
+                                                  <img  src="{{user.PROFILE_PHOTO_PATH}}">
+                                                </div>
+                                                <div class="prfl_detail">
+                                                  <div class="profilename">
+                                                    <a class="Notificationlist_name"  >{{user.USER_FULL_NAME}}</a></div>
+                                                    <div class="grayinfo">{{user.USER_NAME}}</div>
+                                                  </div>
+                                                </li></span>
+                                                <li class="clearfix" *ngIf="noResult==true" class="emptystate">
+                                                  <div class="emptystate_inner">
+                                                    <img src="./assets/images/emptystates/svg/no-search-found.svg"><span>No result found</span>
+                                                  </div>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>-->
+
+                            <div class="main-message composemainmessage" *ngIf="inboxswitch || !emptyStateInbox">
+                                <div class="inrfooter chat_wrap">
+                                    <div class="StatusInfomessage">
+                                        <textarea class="StatusInfo message" id="new_msg" placeholder="Type something to send....." [(ngModel)]="msg_text" (ngModelChange)="msgNotEmptyTwo($event)" (keydown)="checkk($event);" (keydown.backspace)="del($event);" (keydown.enter)="onEnter($event);"></textarea>
+                                    </div>
+
+                                    <div class="send-msg-btn">
+                                        <!--                                            <button [disabled]="loader === true"  class="btn btn-primary " (click)="sendMsg(f_id,trail_id)" [disabled]="imDisabled"><span class="text" *ngIf="showText">Send</span><span class="preloder"  >
+                                <img src="./assets/images/svg/preloader-25.svg" alt="" *ngIf="loader"></span></button>-->
+                                        <!--                        <button class="btn btn-primary" (click)="sendMsg(friendId,0)" [disabled]="imDisabledTwo">Send</button>-->
+                                        <button class="btn btn-primary sendchat2 desable" (click)="sendMsgFunc(friendId,0)" id="sndBtn">
+                                    <span class="text sendiconwrapper" >
+                                        <img class="sendMsgicon send_iconmsg" src="./assets/images/svg-three/inbox_icon/send_icon.svg" alt="">
+                                    </span>
+<!--                                    <span class="preloder">
+                                        <img src="./assets/images/svg/preloader-25.svg" alt="" *ngIf="loader">
+                                    </span>-->
+                                </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- empty state of empty log -->
+                            <div class="emptystate empty_wrap" style="height: 75%;" *ngIf="emptyStateInbox && !inboxswitch">
+                                <div class="people_list chatheading" style="height: auto;overflow: visible;" style="height: auto;overflow: visible;" *ngIf="inboxswitch">
+                                    <span (click)="backtoMessage()" class="back_msg icon-back" style=" ">
+                          <img  src="assets/images/svg-three/login_icon/left-arrow.svg">
+                        </span>
+                                </div>
+                                <div class="emptystate_inner">
+                                    <img class="emptyimg emptyfeed" src="assets/images/svg-three/empty_state/broadcast.svg" style="width:200px!important">
+                                    <p _ngcontent-c38="" style="padding:20px;">No message to show</p>
+                                </div>
+                            </div>
+                            <div class="emptystate empty_wrap" style="height: 75%;" *ngIf="emptyStateBroad && inboxswitch">
+                                <div class="people_list chatheading" style="height: auto;overflow: visible;" style="height: auto;overflow: visible;" *ngIf="inboxswitch">
+                                    <span (click)="backtoMessage()" class="back_msg icon-back" style=" ">
+                          <img  src="assets/images/svg-three/login_icon/left-arrow.svg">
+                        </span>
+                                </div>
+                                <div class="emptystate_inner">
+                                    <img class="emptyimg emptyfeed" src="assets/images/svg-three/empty_state/broadcast.svg" style="width:200px!important">
+                                    <p _ngcontent-c38="" style="padding:20px;">No broadcast message to show</p>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- mobile view end here-->
+<!--<app-confirmationpopup *ngIf="sureToDelStatus" (closeComfirmPopupThread)="closeMeCon($event);" [dataObj]="confPopUpObj"></app-confirmationpopup>-->
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

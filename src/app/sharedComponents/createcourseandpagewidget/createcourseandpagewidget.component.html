@@ -1,0 +1,69 @@
+<div class="wrapper">
+    <div class="innerWrapper">
+
+        <div class="contentWrapper">
+            <h3>Create Course on your Page</h3>
+
+            <div class="innerContentWrapper">
+                <!--this ul show only when  when user have not any page -->
+
+                <ul *ngIf="!isPagePresent">
+                    <li>
+                        <span class="tik"><img src="./assets/images/svg-three/course/course_creation/whitecheckbox.svg" alt=""></span> Own a Page on Study24x7
+                    </li>
+                    <li>
+                        <span class="tik"><img src="./assets/images/svg-three/course/course_creation/whitecheckbox.svg" alt=""></span> Be a Mentor for your Students
+                    </li>
+                    <li>
+                        <span class="tik"><img src="./assets/images/svg-three/course/course_creation/whitecheckbox.svg" alt=""></span> Create & Sell Courses
+                    </li>
+                    <li>
+                        <span class="tik"><img src="./assets/images/svg-three/course/course_creation/whitecheckbox.svg" alt=""></span> Promote your Brand
+                    </li>
+                    <li class="buttonWrapper" style="text-align:center;">
+                        <button style="float:none;" class="button24x7 redColorButton" type="button" name="button" (click)="createpageopenpopup()">Let's Create a Page</button>
+                    </li>
+                </ul>
+
+                <!--this ul show only when  when user have many page -->
+
+                <ul *ngIf="isPagePresent">
+                    <li>
+                        <span class="tik"><img src="./assets/images/svg-three/course/course_creation/whitecheckbox.svg" alt=""></span> Create & Sell Course
+                    </li>
+                    <li>
+                        <span class="tik"> <img src="./assets/images/svg-three/course/course_creation/whitecheckbox.svg" alt=""></span> Promote your Brand
+                    </li>
+
+                    <li class="search " [ngClass]="{'openDropDown': isShowList ,'border-red': selectedPageIndex==-1}" (click)="showDropDown()">
+                        {{selectedPage}}
+                        <span class="glyphicon glyphicon-menu-down downArrow"></span>
+                        <span class="lisoutertWrapper" *ngIf="isShowList">
+                            <span class="listInnerWrapper" [perfectScrollbar]="config" style="position: relative;" data-infinite-scroll
+                                  [infiniteScrollDistance]="2"
+                                  [immediateCheck] = "true"
+                                  (scrolled)="onScrollDown()"
+                                  [scrollWindow]="true" >
+                                  <ul>
+                                    <li *ngFor="let page of pageList; let i = index" (click)="pageSelectionFxn(i)">{{page.TITLE}}</li>
+                                </ul>
+                            </span>
+                        </span>
+                    </li>
+
+                    <li class="buttonWrapper center">
+                        <button type="button" name="button" (click)="createCourseHandler()" class="button24x7 redColorButton">Create Course</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="imageWrapper">
+            <img src="./assets/images/svg-three/course/course_creation/createcoureseandwidget.svg" alt="">
+        </div>
+    </div>
+</div>
+<div *ngIf="createpagePopupShow">
+    <app-createpage (closePopupcreatepage)="closeCreatePagePopup($event)"></app-createpage>
+</div>

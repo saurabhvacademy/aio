@@ -1,0 +1,317 @@
+<div class="__wrapper" style="position: relative;">
+
+  <!--header start-->
+  <div class="mainWrapper ">
+    <div class="header_wrapper">
+      <div class="inner_Header_wrap">
+        <div class="_header_logo" (click)="redirectTo('teacher', '0')">
+          <img src="assets/images/mentor_images/mentorlogo.png" alt="">
+        </div>
+
+        <div class="registerfree">
+          <div class="contect_mentor">
+
+
+            <p class="classUsIcon" style="padding-left: 0px;">Email us at</p>
+            <div class="contNo">
+              <span class="stdCode"> {{officialEmail}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--header end-->
+  <div class="mainWrapper ">
+    <div class="contentSec">
+      <div class="innerContentSec">
+        <div class="productInfo">
+          <div class="productDesp">
+            <h1 class="">Hurry! Register with us now to create your first course!</h1>
+            <p class="">Hundreds of teachers have benefitted from our live class solutions, don't sit back join today.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="form-wrapper-main" *ngIf=showForm>
+        <div class="form-wrapper">
+          <form action="" class="form">
+            <div [ngClass]="{'form-group': true,'focused':fullName!='' }">
+              <label class="form-label" for="fullName">Full name</label>
+              <input id="fullName" [(ngModel)]=fullName class="form-input" type="text" name="fullName" />
+            </div>
+            <div [ngClass]="{'form-group': true,'focused':contactNumber!='' }">
+              <label class="form-label" for="contNo">Contact Number</label>
+              <input [(ngModel)]=contactNumber id="contNo" class="form-input" name="contNo" type="text" />
+            </div>
+            <div [ngClass]="{'form-group': true,'focused':emailAddress!='' }">
+              <label class="form-label" for="email">Email Address</label>
+              <input [(ngModel)]=emailAddress id="email" class="form-input" name="email" type="text" />
+            </div>
+            <div [ngClass]="{'form-group': true,'focused':organization!='' }">
+              <label class="form-label" for="orgName">Organisation name (if any)</label>
+              <input [(ngModel)]=organization id="orgName" class="form-input" name="orgName" type="text" />
+            </div>
+            <div [ngClass]="{'form-group': true,'form-bottom':true,'focused':contactNumber!='' }">
+              <p *ngIf=isDataNotCorrect class="error">{{errorMessage}}</p>
+              <button (click)=validateAndSendData() class="btnBlack" type="button" name="button">Next</button>
+            </div>
+          </form>
+        </div>
+        <div class="resBg"></div>
+      </div>
+
+
+      <div class="form-wrapper-main" *ngIf=showQuestions>
+        <div class="form-wrapper">
+          <div class="questions">
+            <div class="question">
+              <label class="" for="fullName">Area of interest</label>
+              <div id="areaOfInterest" class="answers answerList ">
+
+                <ng-select placeholder="Select areas of interest" [items]="options1"
+                  (close)="addClass('areaOfInterest','area-of-interest')"
+                  (open)="removeClass('areaOfInterest','area-of-interest')" [multiple]="true" [(ngModel)]=interests>
+                </ng-select>
+
+              </div>
+
+
+            </div>
+
+            <div class="question">
+              <label class="" for="fullName">Current Profession</label>
+              <div class="answers" class="answerList">
+
+                <ng-select placeholder="Select your current profession" [items]="options2" [(ngModel)]=profession>
+                </ng-select>
+
+              </div>
+
+            </div>
+
+            <div class="question">
+              <label class="" for="fullName">Online Teaching Experience</label>
+              <div class="answers" class="answerList">
+                <ng-select placeholder="Select online teaching experience" [items]="options3" [(ngModel)]=experience>
+                </ng-select>
+
+              </div>
+
+            </div>
+
+
+            <div class="question">
+              <label class="" for="fullName" (click)=openAnswers(1)>Targeted Learners</label>
+              <div class="answers" class="answerList">
+                <ng-select placeholder="Select range of target learners" class="lastSelectBox" [items]="options4"
+                  [(ngModel)]=learners>
+                </ng-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group form-bottom form-bottom-back">
+            <p *ngIf=isDataNotCorrect class="error">{{errorMessage}}</p>
+            <button (click)="back()" class="btnBlack previousBtn" type="button" style="float:left;"
+              name="button">Back</button>
+            <button (click)=submitAnswer() class="btnBlack" type="button" name="button">Next</button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-wrapper-main" *ngIf=showAddressForm>
+        <div class="form-wrapper">
+          <div class="questions">
+            <div class="question">
+              <label class="" for="country">Country</label>
+              <div class="answers" class="answerList">
+
+                <ng-select [items]="countries" placeholder="Select country" bindLabel="value" bindValue="value"
+                  [(ngModel)]=country>
+                </ng-select>
+
+              </div>
+
+
+            </div>
+
+            <div class="question">
+              <label class="" for="state">State</label>
+              <div class="answers" class="answerList">
+
+                <ng-select placeholder="Select state" [items]="states" bindLabel="STATE_NAME" bindValue="STATE_NAME"
+                  (change)="getCities()" [(ngModel)]=state>
+                </ng-select>
+
+              </div>
+
+            </div>
+
+            <div class="question">
+              <label class="" for="fullName">City</label>
+              <div class="answers" class="answerList">
+                <ng-select placeholder="Select city" [items]="cities" bindLabel="CITY_NAME" bindValue="CITY_NAME"
+                  [(ngModel)]=city>
+                </ng-select>
+
+              </div>
+
+            </div>
+            <div title="Maximum 150 characters" class="question">
+              <label>Remarks <span
+                  style="font-size: 10px;">{{(remarks.length>150)?'      Remove atleast '+ (remarks.length-150)+' character':'      '+(150-remarks.length)+' characters left'}}
+                </span></label>
+              <textarea class="text-box" type="text" [(ngModel)]=remarks></textarea>
+            </div>
+
+          </div>
+
+          <div class="form-group form-bottom form-bottom-back">
+            <p *ngIf=isDataNotCorrect class="error">{{errorMessage}}</p>
+            <button (click)="back()" class="btnBlack previousBtn" type="button" style="float:left;"
+              name="button">Back</button>
+            <button (click)=submitData() class="btnBlack" type="button" name="button">Submit</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="thanksSec-main" *ngIf="showThankyou" >
+
+          <div class="thanksSec">
+            <h2>Thanks for contacting us !</h2>
+            <p class="reachUsInfo">You can also reach us on</p>
+            <p class="mailid">{{officialEmail}}</p>
+            <p class="contactNo" style="float: left;width: 100%;margin-top: 30px;">
+              <a  href="https://www.study24x7.com/article/553/how-to-create-your-first-course-on-study24x7">Start creating your first course<span  class="rightArrowBtn">
+              <img  src="assets/images/svg-three/course/courseDetails/btnwhiteArrow.svg"></span>
+            </a>
+          </p>
+          </div>
+
+        <div class="resBg"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec">
+
+
+
+    <div class="mainWrapper ">
+      <div class="contentSec">
+        <div class="innerContentSec">
+          <div class="productFeature">
+            <div class="productFeatInner">
+              <p class="featureDesp">
+                <span class="iconSec icon1"></span>
+                Deliver unlimited live classes, accompanied with features like video on demand and group chat
+              </p>
+              <p class="featureDesp">
+                <span class="iconSec icon2"></span>
+                No setup cost, you saved some money straight up !
+              </p>
+              <p class="featureDesp">
+                <span class="iconSec icon3"></span>
+                Create a full fledged course containing variety of study materials and sit back and relax .
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </section>
+  <div class=" registerfreeMob">
+    <div class="contect_mentor">
+
+      <p class="classUsIcon">Email us at</p>
+      <div class="contNo">
+        <span class="stdCode">{{officialEmail}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class='darkbackground' *ngIf="false"></div>
+  <div class=' popup-open-wrapper' *ngIf="false">
+
+    <div class=' popup-container' style="position:relative;">
+      <div class="popup-inner-wrap popup-open-inner-wrap">
+        <div class="topheadsavpop">
+          <div class="toolbar addpost_hdng tlbar">Register Now
+            <span (click)="cancelRegistrationForm()" class="close_div">
+              <img class="defaultt" src="assets/images/svg/tagcross.svg">
+              <img class="hoverr" src="assets/images/svg/tagcross-gray.svg"></span>
+
+          </div>
+          <div class="alertwrapper" *ngIf="showError">
+            <div class="alertmessage">
+              <img src="assets/images/svg-three/login_icon/loginerror.svg" alt="study24x7" class="redcancel">
+              <span class="close_err" (click)="hidealertmsg()">
+                <img class="default" src="assets/images/svg/tagcross.svg">
+                <img class="hover" src="assets/images/svg/tagcross-gray.svg">
+              </span> {{errorMsg}}
+
+            </div>
+          </div>
+          <!-- <div *ngIf="showError && missing=='none'" class="question"><button style="width: max-content;float: left; color:blue;background-color: white; " (click)="redirectTo('home','forgotPassword')">Forgot Password</button>
+            <button style="width: max-content;float:right; color:blue;background-color: white;">Login</button>
+          </div> -->
+          <div class="course_reg_field">
+            <div class="input_data input_dt ">
+              <label class="label_lab question">Gender </label>
+              <select title="Select gender" placeholder="Select gender" [(ngModel)]="gender" style="color: black;">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+              </select>
+            </div>
+            <div class="input_data input_dt">
+              <label class="label_lab question">Password</label>
+              <input title="No special characters & minimum 5 characters" type="password" placeholder="Password"
+                [(ngModel)]="password">
+            </div>
+            <div class="input_data input_dt input_dt_last">
+              <label class="label_lab question">Date of Birth </label>
+              <div class="gray_rds dob-input" style="">
+                <ng-select class="dob-ng-select" style="width: 30%;" (change)="setDobInputOptions('year')"
+                  placeholder="year" [items]="years" [(ngModel)]=doby></ng-select>
+                <ng-select class="dob-ng-select" style="width: 26%;" placeholder="Month"
+                  (change)="setDobInputOptions('month')" bindLabel="name" bindValue="val" [items]="months"
+                  [(ngModel)]=dobm></ng-select>
+                <ng-select class="dob-ng-select" style="width: 26%;" placeholder="Date" [items]="daysInMonth"
+                  [(ngModel)]=dobd></ng-select>
+              </div>
+
+              <span class="validation"><img src="assets/images/svg/error.svg"></span>
+            </div>
+            <p class="question">
+              By Registering, you agree to our
+              <span><a routerLink="privacy" routerLinkActive="active" target="_blank"
+                  style="color: rgb(86, 142, 248);cursor: pointer;">Privacy
+                  Policy</a></span> and
+              <span><a routerLink="termandcondition" routerLinkActive="active" target="_blank"
+                  style="color: rgb(86, 142, 248);cursor: pointer;">Terms</a></span> of use.
+            </p>
+
+            <div class="input_data footer" style="margin-bottom:0px;">
+              <button class="btnBlack btnBlackpopup" (click)="register();">Register Now</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

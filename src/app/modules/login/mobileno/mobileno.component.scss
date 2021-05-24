@@ -1,0 +1,288 @@
+.mobileSelection {
+  position: relative;
+  float: left;
+  width:100%;
+  .countryShow {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    right: auto;
+    bottom:5px;
+    display: flex;
+    height: auto;
+    justify-content: left;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    &:hover,
+    &:active {
+      background-color: #dfe5eb;
+    }
+  }
+  .countryShow.countryShowActive {
+        background-color: #dfe5eb;
+  }
+  .down-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #555;
+  }
+  .down-arrow.up-arrow {
+    border-top: 0px solid #555;
+    border-bottom: 4px solid #555;
+  }
+  .countryFlag {
+    width: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    img {
+      width: 18px;
+    }
+
+  }
+  .countryCode {
+    display: flex;
+    /* margin-left: 5px; */
+    opacity: 0.5;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  .leftSpace {
+    padding-left: 46px !important;
+    /* padding-right: 5px !important; */
+  }
+  .leftSpace2 {
+    padding-left: 54px !important;
+  }
+  .leftSpace3 {
+    padding-left: 62px !important;
+  }
+  .leftSpace4 {
+    padding-left: 96px !important;
+  }
+  .countryListShow {
+    float: left;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 0;
+    position: absolute;
+    background: #fff;
+    z-index: 11;
+    max-height: 200px;
+    overflow: hidden;
+    box-sizing: border-box;
+    left: 0;
+    top: 45px;
+    width: 250px;
+    padding: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  }
+  .mobinput {
+    height: 42px;
+    width: 100%;
+    color: #2e2c2f;
+    padding: 10px 15px;
+    line-height: 42px;
+    border-radius: 5px !important;
+    cursor: text;
+    transition: all 0.1s linear;
+    font-size: 14px;
+    background-color: rgba(223, 229, 235, 0.3);
+    border: 1px solid #dfe0e8 !important;
+    box-shadow: none;
+  }
+  .countrySearch {
+    float: left;
+    width: 100%;
+    position: relative;
+    input {
+      height: 32px;
+      width: 100%;
+    }
+    .dataSearch {
+      height: 32px !important;
+      width: 100%;
+      font-size: 12px !important;
+      padding-left: 10px !important;
+      border: solid 1px rgba(44, 46, 47, 0.2);
+       border-radius: 5px;
+      &:focus {
+        color: #2e2c2f;
+        /* border-left: 1px solid #e6e6e6 !important; */
+      }
+    }
+    .dataRefresh {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      height: 100%;
+      width: 20px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      cursor: pointer;
+      img {
+        width: 10px;
+      }
+    }
+  }
+  .countryList {
+    float: left;
+    width: 100%;
+    max-height: 145px;
+    position: relative;
+    margin-top: 10px;
+    .listData {
+      float: left;
+      padding: 2px 0px;
+      width: 100%;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(223, 229, 235, 0.6);
+      }
+    }
+  }
+
+  /* input {
+    padding-left: 75px !important;
+  } */
+}
+
+.mobileSelection.countryListShow1, .mobileSelection.countryListShow2 {
+  .countryShow {
+    /* top: 7px; */
+    .countryFlag {
+      display: none;
+    }
+  }
+
+}
+.mobileSelection.countryListShow3 {
+  .countryShow {
+    /* top: 4px; */
+    .countryFlag {
+      display: none;
+    }
+  }
+  input {
+    background: none;
+    border-radius: 0 !important;
+    height: 35px;
+    /* padding-left: 58px !important; */
+    line-height: 0;
+  }
+  .countryList {
+    max-height: 88px;
+}
+}
+.mobileSelection.countryListSetting {
+  .countryShow {
+    /* top: 4px; */
+    .countryFlag {
+      display: none;
+    }
+  }
+  input {
+    height: 35px;
+    /* padding-left: 58px !important; */
+  }
+  .countryListShow {
+    top: 40px;
+    width: 100%;
+  }
+}
+.mobileSelection.countryListloginPopup {
+  .countryShow {
+    .countryFlag {
+      display: none;
+    }
+  }
+  input {
+    height: 38px;
+    /* padding-left: 58px !important; */
+  }
+}
+.mobileSelection.countryListpayment {
+  .countryShow {
+    /* top: 7px; */
+    .countryFlag {
+      display: none;
+    }
+  }
+  input.mobinput {
+    border: none !important;
+    background: none;
+    /* padding-left: 58px !important; */
+  }
+  .countryListShow {
+    width: 100%;
+  }
+}
+.mobileSelection.sociallogininput {
+  margin-bottom: 20px;
+  .countryShow {
+    /* top: 7px; */
+    .countryFlag {
+      display: none;
+    }
+  }
+  input.mobinput {
+    /* padding-left: 58px !important; */
+  }
+  .countryListShow {
+    width: 100%;
+  }
+}
+.mobileSelection.forgotPasswordinput {
+  margin-bottom: 15px;
+  .countryShow {
+    /* top: 9px; */
+    .countryFlag {
+      display: none;
+    }
+  }
+
+  input.mobinput {
+    /* padding-left: 58px !important; */
+    height: 45px;
+    &::-webkit-input-placeholder {
+      font-size: 16px;
+    }
+    &:-ms-input-placeholder {
+      font-size: 16px;
+    }
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+  .countryListShow {
+    width: 100%;
+  }
+}
+.countryShowHover{
+  background-color: #dfe5eb;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .mobileSelection.countryListShow3 {
+    .countryList {
+      max-height: 145px;
+  }
+  }
+}

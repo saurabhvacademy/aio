@@ -1,0 +1,62 @@
+.popupwrapper .invitefriendwrapper .header .header_img {
+  margin-top: 10px;
+  margin-left: -15px;
+}
+
+.popupwrapper .invitefriendwrapper .invitationfooter .invite_send_btn {
+  border: 0px solid #2c2e2f !important;
+}
+
+.alertmessage {
+  font-size: 13px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 0px;
+  margin-bottom: 0px;
+  list-style: none;
+  padding: 15px 15px 15px 64px;
+  position: relative;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.5;
+  border: 1px solid #f05050;
+  background-color: #fff2f0;
+  width: 100%;
+}
+
+.alertmessage .redcancel {
+  position: absolute;
+  width: 24px;
+  left: 21px;
+  top: 12.5px;
+  cursor: pointer;
+}
+
+.close_err {
+  position: absolute;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.close_err .default {
+  display: block;
+  width: 100%;
+}
+
+.close_err .hover {
+  display: none;
+  width: 100%;
+}
+
+.close_err:hover .default {
+  display: none;
+}
+
+.close_err:hover .hover {
+  display: block;
+}
+/*# sourceMappingURL=newinvitepeople.component.css.map */

@@ -1,0 +1,60 @@
+<div class="connectionrequest_outer">
+     <h6 class="widgetheading connection_out top_heading">Connection Requests 
+       <!-- <a class="head_n" routerLink="/profile/{{connections.USER_NAME}}/#connection:request" (click)="changeTab()" *ngIf="showif ==1"></a> -->
+    </h6>
+
+    <div class='people_list'  *ngIf="showif ==1" >
+        <ul>
+            <li *ngFor="let connections of connectionRec;let i=index" id="connReq_{{connections.USER_ID}}">
+
+                <div class="profileimg_know">
+                    <img class="cursor-pointer" src='{{connections.PROFILE_PHOTO_PATH}}' routerLink="/profile/{{connections.USER_NAME}}" (error)="updateSourcePic($event)">
+                </div>
+                <div class='prfl_detail'>
+                    <div class="profilename">
+                        <a routerLink="/profile/{{connections.USER_NAME}}" title="{{connections.FULL_NAME}}" class="Notificationlist_name">{{connections.FULL_NAME |trimData:17}}</a></div>
+                    <div class="grayinfo">{{connections.USER_NAME}}</div>
+                </div>
+                <div class='friendbtn'>
+                    <button class="graybutton" (click)="updateConnreqReject($event,i)" id='{{connections.USER_ID}}'>
+                      <span class="glyphicon cancel ">
+                          <img src="./assets/images/svg-three/cancel.svg" alt="study24x7">
+                      </span>
+                    </button>
+                    <button class="graybutton" style="margin-right:8px;" (click)="updateConnreqAccpt($event,i)" id='{{connections.USER_ID}}'>
+                      <span class="glyphicon  ryt">
+                        <img src="./assets/images/svg-three/tick.svg" alt="study24x7">
+                      </span>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--
+                    <div class="emptystate" *ngIf="showif ==2">
+                    <img src="assets/images/emptystates/Empty state for connection widget not provided.png">No Connection Reqeust
+
+            </div>
+    -->
+    <h6 routerLink="/profile/{{connections.USER_NAME}}/#connection:request" (click)="changeTab()" *ngIf="showif ==1" class="footer_heading">
+      <span *ngIf="showif !=2">View all  &nbsp;
+        <span>
+          <img class="greater" src="assets/images/svg-three/greater.svg" alt="study24x7">
+        </span>
+      </span>
+    </h6>
+
+    <div class="emptystate" *ngIf="showif ==2">
+
+        <div class="emptystate_inner">
+            <img class="img_width" src="assets/images/svg-three/friends-01.svg" style="width:100px !important">
+            <p>No new request</p>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+ <app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

@@ -1,0 +1,200 @@
+<div class="post_outer text-post-comp">
+  <div class="post_profile">
+    <div class="post-header-inner-wrap clearfix">
+      <span *ngIf="viewType == 1">
+        <span class="post_profilepic cursor-pointer">
+          <img src="{{ page_Cover }}" alt="study24x7" routerLink="/page/{{ pg_uuid }}" />
+        </span>
+        <div class="profiledetail">
+          <span
+            title="{{ pageName }}"
+            class="name cursor-pointer"
+            routerLink="/page/{{ pg_uuid }}"
+            >{{ pageName }}</span
+          >
+          <span class="follwer_count">{{ pageFllw }} followers</span>
+          <span class="follow_dote">
+            <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7" />
+          </span>
+          <span>
+            <span class="follwer_count cursor-pointer" routerLink="/post/{{ postId }}">{{ pageTime }}</span>
+            <span class="dote">
+              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7" />
+            </span>
+            <span class="previcy_icon">
+              <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7" />
+            </span>
+          </span>
+        </div>
+      </span>
+
+      <span *ngIf="viewType == 0">
+        <span class="post_profilepic cursor-pointer">
+          <img src="{{ USER_PROFILE }}" alt="study24x7" routerLink="/profile/{{ postData.USER_NAME }}" />
+        </span>
+        <div class="profiledetail">
+          <span title="{{ userName }}" class="name cursor-pointer" routerLink="/profile/{{ postData.USER_NAME }}">{{ userName }}</span>
+          <div>
+            <span>
+              <span class="follwer_count cursor-pointer"
+                routerLink="/post/{{ postId }}">{{ postData.ADD_DATE_TIME }}</span>
+              <span class="dote">
+                <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7" />
+              </span>
+              <span class="previcy_icon">
+                <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7" />
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+
+      <span class="leftmenudrop" #reportPopup>
+        <button name="button" class="follow_container follw_btn" (click)="follow()" *ngIf="viewType == 1 && !hideBtn"
+          [ngClass]="{ following_container: followme, cursolnone: followme }">
+          <span class="follow">
+            Follow
+          </span>
+          <span class="following cursolnone">
+            <img src="assets/images/svg/white_checkbox.svg" alt="study24x7" />
+            Following
+          </span>
+        </button>
+        <!-- <button  *ngIf="!arr['IS_PAGEFEED'] && isPagePost && arr['IS_ADMIN']!=1 && hideBtn==false" name="button" class="follow_container follw_btn" (click)="follow()" [ngClass]="{'following_container':followme,'cursolnone':followme}">
+            <span class="follow">
+                Follow
+            </span>
+            <span class="following cursolnone">
+                <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+                Following
+            </span>
+        </button> -->
+
+        <span class="postright_btn postmenubtn" (click)="postdropdown()">
+          <img src="assets/images/svg-three/post_icon/dot_menu.svg" class="postdropmenu defaultt" />
+          <img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" class="postdropmenu hoverr" />
+        </span>
+        <!-- <span class="drpdwn_post postdrop for-post drop_post"  (mouseleave)="this.postmenu = !this.postmenu"></span> -->
+
+        <span   (click)="getOrgDataAndSave()" class="postbookmarkbtn postright_btn"
+          [ngClass]="{ activesaved: saveCondition }">
+          <img src="assets/images/svg-three/left_menu/bookmark.svg" class="defaultt" />
+          <img src=" assets/images/svg-three/left_menu/f05050/bookmark.svg" title="save" class="hoverr" />
+          <img src="assets/images/svg-three/post_icon/f05050/bookmark_fill.svg" title="Saved" class="bookmarked" />
+        </span>
+
+        <span class="drpdwn_post postdrop for-post drop_post" *ngIf="postmenu"
+          (mouseleave)="this.postmenu = !this.postmenu">
+          <ul>
+            <!-- <li></li> -->
+
+            <!--<li *ngIf="my_profile && arr.IS_QUESTION == 1" (click)= "editPost()"><div class="width100"><span class='default' ><img src="assets/images/svg-three/profile_about/edit.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/profile_about/f05050/edit.svg"></span> <div class="postdropdown_inner">Edit Interest<span class="time">You can edit your post interest</span></div></div></li>-->
+            <!-- <li *ngIf="my_profile && postData.IS_QUESTION != 1" (click)= "editPost()"><div class="width100"><span class='default' ><img src="assets/images/svg-three/profile_about/edit.svg"></span><span class='hoverimg' ><img src="assets/images/svg-three/profile_about/f05050/edit.svg"></span> <div class="postdropdown_inner">Edit<span class="time">You can edit your post</span></div></div></li> -->
+            <!-- <li *ngIf="postData['MY_PROFILE'] && !qustnTyp" (click)="editPost()"> -->
+              <!-- <div class="width100">
+                <span class="default"
+                  ><img
+                    src="assets/images/svg-three/profile_about/edit.svg"/></span
+                ><span class="hoverimg"
+                  ><img
+                    src="assets/images/svg-three/profile_about/f05050/edit.svg"
+                /></span>
+                <div class="postdropdown_inner">
+                  Edit<span class="time">You can edit your post</span>
+                </div>
+              </div> -->
+            <!-- </li> -->
+
+            <li *ngIf="
+                !postData['IS_PAGEFEED'] &&
+                isPagePost &&
+                postData['IS_ADMIN'] != 1 &&
+                hideBtn == false
+              " (click)="follow()" class="follw_btn_inn">
+              <div class="width100">
+                <span class="default"><img src="assets/images/svg-three/profile_about/edit.svg" /></span><span
+                  class="hoverimg"><img src="assets/images/svg-three/profile_about/f05050/edit.svg" /></span>
+                <div class="postdropdown_inner">
+                  Follow<span class="time">You can follow this page</span>
+                </div>
+              </div>
+            </li>
+            <li *ngIf="!postData['IS_PAGEFEED'] && !my_profile && hideBtn" (click)="unfollow()">
+              <div class="width100">
+                <span class="default"><img src="assets/images/svg-three/profile_about/edit.svg" /></span><span
+                  class="hoverimg"><img src="assets/images/svg-three/profile_about/f05050/edit.svg" /></span>
+                <div class="postdropdown_inner">
+                  Unfollow<span class="time">You can unfollow this page</span>
+                </div>
+              </div>
+            </li>
+            <!-- <li *ngIf="my_profile && !other_profile" (click)= "show=true;"><div class="width100"><span class='default' ><img src="assets/images/svg/dropedit.svg"></span><span class='hoverimg' ><img src="assets/images/svg/dropedithover.svg"></span> <div class="postdropdown_inner">Edit<span class="time">You can edit your post</span></div></div></li> -->
+            <li *ngIf="!my_profile" (click)="reprts(1)">
+              <div class="width100">
+                <span class="default"><img src="assets/images/svg-three/post_icon/report.svg" /></span><span
+                  class="hoverimg"><img src="assets/images/svg-three/post_icon/f05050/report.svg" /></span>
+                <div class="postdropdown_inner">
+                  Report<span class="time">Mark as offensive </span>
+                </div>
+              </div>
+            </li>
+            <li (click)="_postData.copyPostURL(postPublicShareLink)">
+              <div class="width100">
+                <span class="default"><img src="assets/images/svg-three/copyicon.svg" /></span><span
+                  class="hoverimg"><img src="assets/images/svg-three/f05050/copyicon.svg" /></span>
+                <div class="postdropdown_inner">
+                  Get a link<span class="time">Click to copy </span>
+                </div>
+              </div>
+            </li>
+            <li *ngIf="my_profile" (click)="DeletePostCnf()">
+              <div class="width100">
+                <span class="default"><img src="assets/images/svg/dustbindrop.svg" /></span><span class="hoverimg"><img
+                    src="assets/images/svg/dustbindrop-green.svg" /></span>
+                <div class="postdropdown_inner">
+                  Delete<span class="time">You can delete your post</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <div class="post_profileContent">
+    <div class="postmain_container">
+      <!-- <p class="posttext posttextauto">
+        {{Text}}
+      </p> -->
+      <p class="posttext posttextauto" style="word-wrap:break-word !important;" *ngIf="DataView"
+        [innerHTML]="post_data | trimData"></p>
+      <a *ngIf="DataView" class="continue-reading" (click)="DataView = !DataView">See more</a>
+      <p class="posttext posttextauto" *ngIf="!DataView" [innerHTML]="post_data"></p>
+      <a *ngIf="seeLess && !DataView" class="continue-reading" (click)="DataView = !DataView">See less</a>
+      <div *ngIf="qustnTyp" class="attemptque">
+        <button class="button24x7 redColorButton postButtonEnable" (click)="attemptQustn()">
+          <span class="text" style="cursor: pointer;">Attempt Question</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-savedpopup *ngIf="savepagepopup" (folder_id)="savedFolderId = $event"
+  (closeSavedPopup)="savepagepopup = $event; saveCondition = $event" (savedStatus)="saveCondition = $event"
+  [postData]="orgPostData"></app-savedpopup>
+<div *ngIf="reportpopup">
+  <app-reports (closeReportPopup)="removePost($event)" [postId]="postId"></app-reports>
+</div>
+<!-- <div><app-textpostedit (hideBox)="textPostEditClose($event);" *ngIf="edittextpost" [post_id]="editPostId"></app-textpostedit></div> -->
+<app-confirmationpopup *ngIf="ConfirmDelete" (closeComfirmPopupThread)="CloseDeleteConfirm($event);" [dataObj]="dataConf" [savedFolderId]="savedFolderId"></app-confirmationpopup>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);" [dataObj]="dataConf" [savedFolderId]="savedFolderId"></app-confirmationpopup>
+<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>
+<app-loginpopup
+  *ngIf="openLoginPopup"
+  (closePopup)="closeLoginPopUp($event)"
+  [usrData]="courseData"
+  [isError]="isError"
+  [errorText]="errorText"
+  [type]="openLoginPopupType"
+></app-loginpopup>
