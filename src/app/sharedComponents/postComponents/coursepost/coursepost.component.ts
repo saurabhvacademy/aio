@@ -275,7 +275,7 @@ export class CoursepostComponent implements OnInit, AfterViewInit {
         this.time = this.arr['ADD_DATE_TIME'];
         this.post_id = this.arr['USER_POST_ID'];
 
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         if (this.arr['PAGE_NAME'] != '' && this.arr['PAGE_NAME'] != null) {
             this.pg_id = this.arr['PAGE_NAME'];
 

@@ -238,7 +238,7 @@ export class SharedcoursepostComponent implements OnInit, AfterViewInit {
             this.pagTyp = this.arr['SHARED_POST_DATA']['PAGE_TYPE'];
             this.full_name = this.arr['USER_FULL_NAME'];
             this.time = this.arr['ADD_DATE_TIME'];
-            this.altName = 'study24x7 ' + this.arr['KEYWORDS'];
+            this.altName = 'aio ' + this.arr['KEYWORDS'];
             if (this.arr['TEXT']) {
                 this.post_data = this.postdata.decodeURIPostData(this.arr['TEXT']);
                 this.post_data = this.postdata.linkActivate(this.post_data);

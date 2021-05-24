@@ -526,7 +526,7 @@ export class PaymentpageComponent implements OnInit, DoCheck {
     makePayment() {
         if (!this.gatewaySelected && this.paymentmodeRequired) {
             this.dataConf['type'] = 2;
-            this.dataConf['msg'] = "study24x7";
+            this.dataConf['msg'] = "aio";
             this.dataConf['error_msg'] = "Please select payment gateway.";
             this.openConfirmation = true;
             return false;

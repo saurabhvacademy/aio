@@ -68,7 +68,7 @@ export class SharescreentruefalsepostComponent implements OnInit, AfterViewInit 
         this.postType = this.postdata['TYPE'];
         this.setInterestObj();
         this.tagsArr = this.postdata['INTERESTS'];
-        this.altName = "study24x7 " + this.postdata['KEYWORDS'];
+        this.altName = "aio " + this.postdata['KEYWORDS'];
         if (this.postType == 4) {
              this.postPublicShareLink = this._constantService.staticPostShareLink + this.postdata.SHARED_POST_DATA.URL;
             this.postTyp = this.postdata['SHARED_POST_DATA']['TYPE'];

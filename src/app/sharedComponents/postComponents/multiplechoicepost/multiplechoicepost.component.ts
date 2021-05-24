@@ -254,7 +254,7 @@ export class MultiplechoicepostComponent implements OnInit {
         this.post_redis_key = this.arr['POST_KEY'];
         this.u_id = this.arr['USER_ID'];
         this.editPostId = this.u_id + ":" + this.post_id + ":3";
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
 
         this.responseStatus = this.arr['RESPONSE_STATUS'];
         if (this.arr['USER_RESPONSE'] != null) {

@@ -28,7 +28,7 @@
             <ul class='about_list'>
                 <li *ngIf="eduView==1 && aboutArr['profile_view']==2" class="edu">
                     <!----<span class='glyphicon glyphicon-pencil'></span>---->
-                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="aio"></span>
                     Add your education
                     <a class="addlocicon">
                         <span class="check check_edit_wrap" *ngIf="profile"> <img src="assets/images/svg-three/profile_about/edit.svg" (click)="goToAboutUs()" class="cursor-pointer"></span>
@@ -37,13 +37,13 @@
 
                 <li *ngIf="eduView==3" >
                     <!-- <span class='glyphicon glyphicon-pencil'></span> -->
-                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="aio"></span>
                     Student at <a >Kurukshetra University</a>
                 </li>
 
                 <li *ngIf="eduView==2 && aboutArr['user_edu']['COURSE'] && aboutArr['user_edu']['INSTITUTE']" class="edu">
                     <!-- <span class='glyphicon glyphicon-book'> -->
-                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="aio"></span>
 
                      <span *ngIf="aboutArr['user_edu']['COURSE']">Studied {{postDataService.decodeURIPostData(aboutArr['user_edu']['COURSE'])}}</span> 
                     <a *ngIf="aboutArr['user_edu']['INSTITUTE']"> at {{postDataService.decodeURIPostData(aboutArr['user_edu']['INSTITUTE'])}}
@@ -52,7 +52,7 @@
                 </li>
 
                 <li *ngIf="expView==1 && aboutArr['profile_view']==2" class="edu">
-                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>Add your experience
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="aio"></span>Add your experience
                     <a class="addlocicon">
                         <span class="check check_edit_wrap" *ngIf="profile">
                             <img src="assets/images/svg-three/profile_about/edit.svg"  (click)="goToAboutUs()" class="cursor-pointer" ></span>
@@ -60,14 +60,14 @@
                 </li>
                 <li *ngIf="expView==3">
                     <!-- <span class='glyphicon glyphicon-book'></span> -->
-                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="aio"></span>
 
                     Studied Btech at
                     <a >Delhi University
                     </a>
                 </li>
                 <li *ngIf="expView==2 && aboutArr['user_exp']['POSITION'] && aboutArr['user_exp']['ORGANIZATION']" class="edu">
-                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="study24x7"></span>
+                    <span class="lives_icon"><img src="assets/images/svg-three/study.svg" alt="aio"></span>
                     <span *ngIf="aboutArr['user_exp']['POSITION']">{{aboutArr['user_exp']['POSITION']}}</span> 
                     <a *ngIf="aboutArr['user_exp']['ORGANIZATION']"> at {{aboutArr['user_exp']['ORGANIZATION']}}
                         <span class="check check_edit_wrap" *ngIf="profile">
@@ -75,7 +75,7 @@
                 </li>
                 <!--                <li *ngIf="cityView==2" class="edu">
                                      <span class='glyphicon glyphicon-home'></span>
-                                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="study24x7"></span>
+                                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="aio"></span>
                                           Lives in <a >
                                         {{aboutArr['city']}}
                                         <span *ngIf="emptystate">,
@@ -87,7 +87,7 @@
 
                 <li class="edu" *ngIf="!profile && aboutArr['state']!= ''"  >
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/city2.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/city2.svg" alt="aio">
                     </span>
                      Lives in
                     <a><span *ngIf="aboutArr['city']!=null">
@@ -100,7 +100,7 @@
 
                 <li *ngIf="aboutArr['state']!= '' && profile" class="edu">
 
-                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="study24x7"></span>
+                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="aio"></span>
                     <span *ngIf="aboutArr['city'] !=''">Lives in {{aboutArr['city']+ ' ,'}}</span>       <!-------------add by vijay------------>
                     <span *ngIf="emptystate">  {{aboutArr['state']}}</span>
                     <p *ngIf="!emptystate">Add your state</p>
@@ -110,7 +110,7 @@
                     </a>
                 </li>
                 <li *ngIf="aboutArr['city'] =='' && profile" class="edu">
-                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="study24x7"></span>Add your city
+                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="aio"></span>Add your city
                     <a >
                         <span class="check check_edit_wrap" *ngIf="profile"><img src="assets/images/svg-three/profile_about/edit.svg" style="" routerLink="/settings" class="cursor-pointer">
                         </span></a>
@@ -175,7 +175,7 @@
             <ul class='about_list'>
                 <li *ngIf="eduView==1 && aboutArr['profile_view']==2" class="edu">
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/study.svg" alt="aio">
                     </span>
                     Add your education
                     <a class="addlocicon">
@@ -184,7 +184,7 @@
 
                 <li *ngIf="eduView==3" >
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/study.svg" alt="aio">
                     </span>
                     Student at <a >Kurukshetra University
                     </a>
@@ -192,7 +192,7 @@
 
                 <li *ngIf="eduView==2" class="edu">
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/study.svg" alt="aio">
                     </span>
                     Studied {{postDataService.decodeURIPostData(aboutArr['user_edu']['COURSE'])}} at
                     <a>{{postDataService.decodeURIPostData(aboutArr['user_edu']['INSTITUTE'])}}
@@ -201,7 +201,7 @@
 
                 <li *ngIf="expView==1 && aboutArr['profile_view']==2" class="edu">
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/study.svg" alt="aio">
                     </span>
                     Add your experience
                     <a class="addlocicon">
@@ -209,7 +209,7 @@
                 </li>
                 <li *ngIf="expView==3">
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/study.svg" alt="aio">
                     </span>
                     Studied Btech at
                     <a>Delhi University
@@ -217,7 +217,7 @@
                 </li>
                 <li *ngIf="expView==2" class="edu">
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/study.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/study.svg" alt="aio">
                     </span>
                     {{postDataService.decodeURIPostData(aboutArr['user_exp']['POSITION'])}} at
                     <a>{{postDataService.decodeURIPostData(aboutArr['user_exp']['ORGANIZATION'])}}
@@ -225,7 +225,7 @@
                 </li>
                 <li *ngIf="cityView==2" class="edu">
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/city2.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/city2.svg" alt="aio">
                     </span>
                     Lives in
                     <a>
@@ -236,12 +236,12 @@
                     </a>
                 </li>
                 <li *ngIf="cityView==1 && aboutArr['profile_view']==2" class="edu">
-                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="study24x7"></span>
+                    <span class="lives_icon"><img src="assets/images/svg-three/city2.svg" alt="aio"></span>
                     Add your state
                 </li>
                 <li *ngIf="stateView==1 && aboutArr['profile_view']==2" class="edu">
                     <span class="lives_icon">
-                        <img src="assets/images/svg-three/city2.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/city2.svg" alt="aio">
                     </span>
                     Add your city
                     <a>

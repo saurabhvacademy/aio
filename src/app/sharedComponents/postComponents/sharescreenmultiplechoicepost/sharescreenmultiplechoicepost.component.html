@@ -43,19 +43,19 @@
 
                         <div class="profile-and-content">
                             <div class='post_profile'>
-                                <span *ngIf="isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="study24x7 {{user_name |trimData:30}}" (error)="updateSourcePic($event)" (click)="routeToProfile('page')"></span>
+                                <span *ngIf="isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="aio {{user_name |trimData:30}}" (error)="updateSourcePic($event)" (click)="routeToProfile('page')"></span>
                                     <div class="profiledetail">
                                         <div>
                                             <span title="{{user_name}}" class='name cursor-pointer'  (click)="routeToProfile('page')">{{user_name |trimData:30}}</span>
                                         </div>
                                         <div>
                                             <span class="follwer_count">{{followerCount}} followers</span>
-                                            <span class="follow_dote"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                                            <span class="follow_dote"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio"></span>
                                             <span class="follwer_count cursor-pointer" *ngIf="postdata.VISIBILITY ==3" routerLink="/post/{{postdata.USER_POST_ID}}">{{time}}</span>
                                             <span class="follwer_count cursor-pointer" *ngIf="postdata.VISIBILITY !=3" routerLink="/post/{{postdata.USER_POST_ID}}">{{time}}</span>
                                         </div>
                                     </div></span>
-                                <span *ngIf="!isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="study24x7 {{full_name |trimData:30}}" (error)="updateSourcePic($event)"  (click)="routeToProfile('user')"></span>
+                                <span *ngIf="!isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="aio {{full_name |trimData:30}}" (error)="updateSourcePic($event)"  (click)="routeToProfile('user')"></span>
                                     <div class="profiledetail">
                                         <span title="{{full_name}}" class='name cursor-pointer'  (click)="routeToProfile('user')">{{full_name |trimData:30}}</span>
                                         <div>
@@ -184,7 +184,7 @@
                                   Share
                                 </span>
                             <span class="loader" *ngIf="loader" >
-                              <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" >
+                              <img src="./assets/images/svg/preloader-25.svg" alt="aio" >
                             </span>
                           </button>
 
@@ -193,7 +193,7 @@
                               Update
                             </span>
                             <span class="loader" *ngIf="loader">
-                              <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" >
+                              <img src="./assets/images/svg/preloader-25.svg" alt="aio" >
                             </span>
                           </button>
 

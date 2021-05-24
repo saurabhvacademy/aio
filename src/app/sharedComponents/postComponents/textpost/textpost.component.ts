@@ -267,7 +267,7 @@ export class TextpostComponent implements OnInit, AfterViewInit {
             this.full_name = this.arr['FIRST_NAME'] + " " + this.arr['LAST_NAME'];
             this.time = this.arr['ADD_DATE_TIME'];
 
-            this.altName = "study24x7 " + this.arr['KEYWORDS'];
+            this.altName = "aio " + this.arr['KEYWORDS'];
             //this.post_data = this.post_data.replace(/  /g, " &#160;");
             if (this.arr['PAGE_UUID'] != '' && this.arr['PAGE_UUID'] != null) {
                 this.pg_uuid = this.arr['PAGE_UUID'];
@@ -319,7 +319,7 @@ export class TextpostComponent implements OnInit, AfterViewInit {
             this.full_name = this.arr['USER_FULL_NAME'];
             this.time = this.arr['ADD_DATE_TIME'];
 
-            this.altName = "study24x7 " + this.arr['KEYWORDS'];
+            this.altName = "aio " + this.arr['KEYWORDS'];
             //this.post_data = this.post_data.replace(/ /g, "&#160;");
             if (this.arr['PAGE_UUID'] != '' && this.arr['PAGE_UUID'] != null) {
                 this.pg_uuid = this.arr['PAGE_UUID'];

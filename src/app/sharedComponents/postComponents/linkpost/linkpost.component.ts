@@ -225,7 +225,7 @@ this.setInterestObj();
                 this.image_path = this.arr['SHARE_LINK_IMAGE'];
             }
         }
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         if (this.arr['TEXT']) {
             this.DataView = true;
             this.post_data = this.post.decodeURIPostData(this.arr['TEXT']);

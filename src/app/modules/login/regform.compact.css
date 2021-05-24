@@ -52,7 +52,7 @@
 
 .arrowrightwhite { background-image: url(./../../../assets/images/sprite/loginpage.svg#white-arrow); background-size: 100% 100%; width: 11px; height: 11px; -webkit-transform: rotate(-180deg); transform: rotate(-180deg); display: inline-block; transform: rotate(-180deg); }
 
-.fbicon { background-image: url(https://img1.study24x7.com/assets/images/login/fabebook-blue.svg); background-size: 100% 100%; width: 16px; float: left; height: 16px; margin-right: 5px; margin-top: 1px; }
+.fbicon { background-image: url(https://img1.aio.com/assets/images/login/fabebook-blue.svg); background-size: 100% 100%; width: 16px; float: left; height: 16px; margin-right: 5px; margin-top: 1px; }
 
 .googleicon { background-image: url(./../../../assets/images/sprite/loginpage.svg#googleicon); background-size: 100% 100%; float: left; width: 19px; height: 19px; margin-right: 5px; }
 

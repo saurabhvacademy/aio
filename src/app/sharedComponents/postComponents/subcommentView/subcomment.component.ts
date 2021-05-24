@@ -62,7 +62,7 @@ export class SubcommentComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         this.full_name = this.arr['USER_FULL_NAME'];
         this.u_name = this.arr['USER_NAME'];
         this.parentId = this.arr['PARENT_ID'];

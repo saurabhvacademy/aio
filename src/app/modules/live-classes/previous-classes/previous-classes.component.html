@@ -27,12 +27,12 @@
         <div  >
           <div class="profilethumb_wrapper_mobile">
             <span (click)="redirectTo('page', previousClass)" class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH">
-              <img alt="study24x7"
+              <img alt="aio"
               src="{{previousClass.PAGE_PROFILE_PHOTO_PATH
                 +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
             </span>
             <span (click)="redirectTo('page', previousClass)" class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH==null">
-              <img alt="study24x7"
+              <img alt="aio"
               src="{{_constantService.defaultImgPath}}">
             </span>
             <span (click)="redirectTo('page', previousClass)" title="{{previousClass.PAGE_TITLE}}" href="" class="pagename">{{postData.decodeURIPostData(previousClass.PAGE_TITLE)}}
@@ -108,12 +108,12 @@
               <div class="course_details">
                 <div class="profilethumb_wrapper">
                   <span class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH">
-                    <img alt="study24x7" src="{{previousClass.PAGE_PROFILE_PHOTO_PATH
+                    <img alt="aio" src="{{previousClass.PAGE_PROFILE_PHOTO_PATH
                       +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
                   </span>
                   <span class="image"
                     *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH==null">
-                    <img alt="study24x7"
+                    <img alt="aio"
                       src="{{_constantService.defaultImgPath}}">
                   </span>
                   <span style="cursor: default;" class="pagename" title="{{postData.decodeURIPostData(previousClass.STREAM_TITLE)}}" href="">{{postData.decodeURIPostData(previousClass.STREAM_TITLE)}}</span>
@@ -176,12 +176,12 @@
               <div >
             <div class="profilethumb_wrapper_mobile">
               <span class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH">
-                <img alt="study24x7"
+                <img alt="aio"
                 src="{{previousClass.PAGE_PROFILE_PHOTO_PATH
                   +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
               </span>
               <span class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH==null">
-                <img alt="study24x7"
+                <img alt="aio"
                 src="{{_constantService.defaultImgPath}}">
               </span>
               <span title="{{postData.decodeURIPostData(previousClass.PAGE_TITLE)}}" href="" class="pagename">{{postData.decodeURIPostData(previousClass.PAGE_TITLE)}} </span>
@@ -253,10 +253,10 @@
                           <div class="course_details">
                             <div class="profilethumb_wrapper">
                               <span  class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH">
-                                <img alt="study24x7" src="{{previousClass.PAGE_PROFILE_PHOTO_PATH +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
+                                <img alt="aio" src="{{previousClass.PAGE_PROFILE_PHOTO_PATH +'profile/'+previousClass.PAGE_UUID+'_120x120.png'}}">
                               </span>
                               <span  class="image" *ngIf="previousClass.PAGE_PROFILE_PHOTO_PATH==null">
-                                <img alt="study24x7" src="{{_constantService.defaultImgPath}}">
+                                <img alt="aio" src="{{_constantService.defaultImgPath}}">
                               </span>
                                 <span style="cursor: default;" class="pagename" title="{{postData.decodeURIPostData(previousClass.STREAM_TITLE)}}"  href="">{{postData.decodeURIPostData(previousClass.STREAM_TITLE)}}</span>
                                 <span (click)="redirectTo('course',previousClass)" class="content_detail">{{postData.decodeURIPostData(previousClass.COURSE_TITLE)}}</span>

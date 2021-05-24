@@ -195,7 +195,7 @@ export class VideopostComponent implements OnInit, AfterViewInit {
             this.socialLinkedInShareUrl = "https://www.linkedin.com/sharing/share-offsite/?url=" + this.postPublicShareLink;
             this.socialTelegramUrl = "https://telegram.me/share/url?url=" + this.postPublicShareLink;
             this.socialWhatsappLink = "https://api.whatsapp.com/send?text=" + this.postPublicShareLink;
-            this.altName = "study24x7 " + this.arr['KEYWORDS'];
+            this.altName = "aio " + this.arr['KEYWORDS'];
             this.full_name = this.arr['FIRST_NAME'] + " " + this.arr['LAST_NAME'];
             this.post_id = this.arr['USER_POST_ID'];
             this.u_id = this.arr['USER_ID'];
@@ -250,7 +250,7 @@ export class VideopostComponent implements OnInit, AfterViewInit {
             this.socialTelegramUrl = "https://telegram.me/share/url?url=" + this.postPublicShareLink;
             this.socialWhatsappLink = "https://api.whatsapp.com/send?text=" + this.postPublicShareLink;
 
-            this.altName = "study24x7 " + this.arr['KEYWORDS'];
+            this.altName = "aio " + this.arr['KEYWORDS'];
             this.setInterestObj();
             if (this.arr['INTERESTS'].length > 4) {
                 for (var i = 0; i < 4; i++) {

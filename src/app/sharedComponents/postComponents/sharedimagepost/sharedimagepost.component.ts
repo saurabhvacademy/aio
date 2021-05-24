@@ -209,7 +209,7 @@ export class SharedimagepostComponent implements OnInit {
         } else {
             this.tagsArr = this.arr['INTERESTS'];
         }
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         if (this.arr['INTERESTS'].length > 4) {
             this.showIntArr = true;
             for (var i = 0; i < this.arr['INTERESTS'].length; i++) {

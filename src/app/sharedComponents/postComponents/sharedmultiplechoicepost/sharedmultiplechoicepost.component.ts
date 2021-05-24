@@ -263,7 +263,7 @@ export class SharedmultiplechoicepostComponent implements OnInit {
         this.u_id = this.arr['USER_ID'];
         this.post_id = this.arr['USER_POST_ID'];
         this.time = this.arr['ADD_DATE_TIME'];
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         if (this.arr['INTERESTS'] != undefined) {
             if (this.arr['INTERESTS'].length > 4) {
                 for (var i = 0; i < 4; i++) {

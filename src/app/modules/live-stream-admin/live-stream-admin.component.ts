@@ -125,11 +125,11 @@ export class LiveStreamAdminComponent implements OnInit {
         // var scriptRecordRtc = document.createElement("script");
         // var scriptVideoConfig = document.createElement("script");
 
-        // scriptAdapterLatest.src = "https://js.study24x7.com/assets/js/stream/adapter-latest.js";
-        // scriptWebrtcAdapter.src="https://js.study24x7.com/assets/js/stream/webrtc_adaptor.js";
-        // scriptScreenCapturing.src="https://js.study24x7.com/assets/js/stream/Screen-Capturing.js";
-        // scriptRecordRtc.src="https://js.study24x7.com/assets/js/stream/recordrtc.js";
-        // scriptVideoConfig.src="https://js.study24x7.com/assets/js/stream/videoconfig.js";
+        // scriptAdapterLatest.src = "https://js.aio.com/assets/js/stream/adapter-latest.js";
+        // scriptWebrtcAdapter.src="https://js.aio.com/assets/js/stream/webrtc_adaptor.js";
+        // scriptScreenCapturing.src="https://js.aio.com/assets/js/stream/Screen-Capturing.js";
+        // scriptRecordRtc.src="https://js.aio.com/assets/js/stream/recordrtc.js";
+        // scriptVideoConfig.src="https://js.aio.com/assets/js/stream/videoconfig.js";
         // document.getElementsByTagName("body")[0].appendChild(scriptAdapterLatest);
         // document.getElementsByTagName("body")[0].appendChild(scriptWebrtcAdapter);
         // document.getElementsByTagName("body")[0].appendChild(scriptScreenCapturing);
@@ -374,7 +374,7 @@ export class LiveStreamAdminComponent implements OnInit {
                     }
                 });
 
-                // this.http.request(`https://media.study24x7.net:5443/WebRTCAppEE/rest/broadcast/getToken?id=${this.streamURL}&expireDate=${this.expireTime}&type=publish`).subscribe((data) => {
+                // this.http.request(`https://media.aio.net:5443/WebRTCAppEE/rest/broadcast/getToken?id=${this.streamURL}&expireDate=${this.expireTime}&type=publish`).subscribe((data) => {
                 // //this.http.request(`https://test.hellouser.co.in:5443/WebRTCAppEE/rest/broadcast/getToken?id=${this.streamURL}&expireDate=${this.expireTime}&type=publish`).subscribe((data) => {
                 //     let responseData:any = data;
                 //     if (responseData && responseData.tokenId) {
@@ -383,7 +383,7 @@ export class LiveStreamAdminComponent implements OnInit {
                 //         let streamToken = {
                 //             'token':this.obsTokenId,
                 //             'streamID': this.streamURL,
-                //             'streamName': 'study24x7'
+                //             'streamName': 'aio'
                 //         }
                 //         getDataForStream(streamToken);
                 //         console.log("token geerated");
@@ -472,7 +472,7 @@ export class LiveStreamAdminComponent implements OnInit {
             });
 
 
-            //         this.http.request(`https://media.study24x7.net:5443/WebRTCAppEE/rest/broadcast/get?id=${this.streamURL}`).subscribe((data) => {
+            //         this.http.request(`https://media.aio.net:5443/WebRTCAppEE/rest/broadcast/get?id=${this.streamURL}`).subscribe((data) => {
             //    // this.http.request(`https://test.hellouser.co.in:5443/WebRTCAppEE/rest/broadcast/get?id=${this.streamURL}`).subscribe((data) => {
             //         let responseData:any = data;
             //         console.log(responseData);

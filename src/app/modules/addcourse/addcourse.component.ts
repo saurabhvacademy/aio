@@ -522,7 +522,7 @@ export class AddcourseComponent implements OnInit, AfterViewInit {
 
         var tooltip = this.quillEditor.theme.tooltip;
         var input = tooltip.root.querySelector('input[data-link]');
-        input.dataset.link = 'www.study24x7.com';
+        input.dataset.link = 'www.aio.com';
 
 
 
@@ -6673,7 +6673,7 @@ export class AddcourseComponent implements OnInit, AfterViewInit {
       //check for rejected content
       if (this.courseContentRejected) {
         this.dataConf["type"] = 2;
-        this.dataConf["msg"] = "study24x7";
+        this.dataConf["msg"] = "aio";
         this.dataConf["error_msg"] =
           "You must resolve all rejected contents to proceed further.";
         this.openConfirmation = true;
@@ -6681,14 +6681,14 @@ export class AddcourseComponent implements OnInit, AfterViewInit {
       }
       if (this.testPending) {
         this.dataConf["type"] = 2;
-        this.dataConf["msg"] = "study24x7";
+        this.dataConf["msg"] = "aio";
         this.dataConf["error_msg"] = "You must submit quiz to proceed further";
         this.openConfirmation = true;
         return false;
       }
       if (this.isLiveStreamFree && this.coursePackageType != 1) {
         this.dataConf["type"] = 2;
-        this.dataConf["msg"] = "study24x7";
+        this.dataConf["msg"] = "aio";
         this.dataConf["error_msg"] = "Please select the valid package type";
         this.openConfirmation = true;
         return false;
@@ -6700,7 +6700,7 @@ export class AddcourseComponent implements OnInit, AfterViewInit {
         this.coursePackageType == 2
       ) {
         this.dataConf["type"] = 2;
-        this.dataConf["msg"] = "study24x7";
+        this.dataConf["msg"] = "aio";
         this.dataConf["error_msg"] = "Please select the valid package type";
         this.openConfirmation = true;
         return false;
@@ -6721,7 +6721,7 @@ export class AddcourseComponent implements OnInit, AfterViewInit {
 
         if (!flag) {
           this.dataConf["type"] = 2;
-          this.dataConf["msg"] = "study24x7";
+          this.dataConf["msg"] = "aio";
           this.dataConf["error_msg"] =
             "You have chosen Free Trial for this course. Please provide atleast one trial content.";
           this.openConfirmation = true;

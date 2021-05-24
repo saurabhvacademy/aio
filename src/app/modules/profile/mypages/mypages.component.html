@@ -8,7 +8,7 @@
        <div *ngIf="userType==2" class="col-sm-4 col-md-4 col-lg-3 col-xs-6 mview_m mview_mleft" style="padding-right:0">
         <div  class="creat-page-box-wrap">
             <div class="img_cont cont_imgg">
-                <img src="./assets/images/svg-three/page_icon/createpage.svg" class="cursor-pointer" alt="study24x7" (click)="createnewpage()">
+                <img src="./assets/images/svg-three/page_icon/createpage.svg" class="cursor-pointer" alt="aio" (click)="createnewpage()">
             </div>
             <div class="btn_cont">
                 <button type="button" class="btn red_rds createpage" (click)="createnewpage()">Create Page</button>
@@ -20,7 +20,7 @@
                 <div class="page-box-inner-wrap">
                     <div class="image-wrap cursor-pointer">
 
-                        <!-- <span class="delMenu" (click)="pageDeleteMenu($event,i);toggleDelelte()" [attr.id]="i" *ngIf="userType==2"><img src="assets/images/svg-three/inbox_icon/menu.svg" alt="study24x7"></span>
+                        <!-- <span class="delMenu" (click)="pageDeleteMenu($event,i);toggleDelelte()" [attr.id]="i" *ngIf="userType==2"><img src="assets/images/svg-three/inbox_icon/menu.svg" alt="aio"></span>
                         <div  class="deletmsglist" class="pageDelete" *ngIf="list.delOpen==true && hideDelete" (click)="pageDeletePopup()" >
                             <span class="icon">
                                 <img  class="defoult" src="assets/images/svg/dustbindrop.svg">
@@ -56,7 +56,7 @@
     </div>
 </div>
 <div class="loader2" *ngIf="startLoader">
-    <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+    <img src="assets/images/24x7preloader.gif" alt="aio" >
 </div>
 
 <app-createpage *ngIf="datatext" (hidecreatepagePopup)="hidePageCreatePopup($event)"></app-createpage>
@@ -83,7 +83,7 @@
 
             <div class="alertwrapper" *ngIf="wrongPass">
                     <div class="alertmessage">
-                        <img src="assets/images/svg-three/login_icon/loginerror.svg" alt="study24x7" class="redcancel" >
+                        <img src="assets/images/svg-three/login_icon/loginerror.svg" alt="aio" class="redcancel" >
 <!--                        <span  class="close_err" (click)="hidealertmsg()">
                           <img  class="default" src="assets/images/svg/tagcross.svg">
                           <img  class="hover" src="assets/images/svg/tagcross-gray.svg">
@@ -98,7 +98,7 @@
 
             <div class="popupinnerwrapper">
                 <div class="profileImg">
-                    <img src="{{User_Pp}}" alt="study24x7">
+                    <img src="{{User_Pp}}" alt="aio">
                 </div>
                 <div class="text">
                     <h3><a href="">{{User_fullname}}</a></h3>

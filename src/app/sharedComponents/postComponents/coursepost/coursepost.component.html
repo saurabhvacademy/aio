@@ -2,20 +2,20 @@
   <div class="post_profile" *ngIf="hideInDetail == false">
     <div class="post-header-inner-wrap clearfix">
       <span><span class="post_profilepic cursor-pointer"><img src="{{ profile_pic_path }}"
-            alt="study24x7 {{ pageTitle | trimData: 30 }}" routerLink="/page/{{ pg_id }}" /></span>
+            alt="aio {{ pageTitle | trimData: 30 }}" routerLink="/page/{{ pg_id }}" /></span>
         <div class="profiledetail">
           <span title="{{ pageTitle }}" class="name cursor-pointer" routerLink="/page/{{ pg_id }}"
             [ngClass]="{ removeCursor: arr['IS_PAGEFEED'] }">{{ pageTitle | trimData: 30 }}</span>
 
           <span class="follwer_count">{{ arr["PAGE_FOLLOW_COUNT"] }} followers</span>
           <span class="follow_dote">
-            <img src="assets/images/svg-three/post_icon/dote1-black.svg" alt="study24x7" />
+            <img src="assets/images/svg-three/post_icon/dote1-black.svg" alt="aio" />
           </span>
           <span>
             <span class="follwer_count cursor-pointer" routerLink="/post/{{ arr.USER_POST_ID }}">{{ time }}</span>
-            <span class="dote"><img src="assets/images/svg-three/post_icon/dote1-black.svg" alt="study24x7" /></span>
+            <span class="dote"><img src="assets/images/svg-three/post_icon/dote1-black.svg" alt="aio" /></span>
             <span class="previcy_icon"><img title="Public" src="assets/images/svg-three/add_post/wall/public.svg"
-                alt="study24x7" /></span>
+                alt="aio" /></span>
           </span>
         </div>
       </span>
@@ -26,7 +26,7 @@
                 Follow
                 </span>
             <span class="following cursolnone">
-                <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+                <img src="assets/images/svg/white_checkbox.svg" alt="aio">
                 Following
                 </span>
             </button> ------>
@@ -140,89 +140,89 @@
           <span class="text">Validity {{ validity }} </span>
           <!--                    <span class="text" *ngIf="showDays && showUnlimited==false">Validity {{validity}} Days</span>
                                         <span class="text" *ngIf="showUnlimited">Validity Unlimited</span>-->
-          <span class="dote"><img src="assets/images/svg-three/post_icon/dote1-black.svg" alt="study24x7" /></span>
+          <span class="dote"><img src="assets/images/svg-three/post_icon/dote1-black.svg" alt="aio" /></span>
           <span class="text">{{ arr.COURSE_DETAIL.LEVEL }}</span>
-          <span class="dote"><img src="assets/images/svg-three/post_icon/dote1-black.svg" alt="study24x7" /></span>
+          <span class="dote"><img src="assets/images/svg-three/post_icon/dote1-black.svg" alt="aio" /></span>
           <span class="text">{{ courseLanguage }}</span>
         </p>
         <div class="star">
           <div class="star_wrapper">
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 0.0">
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 0.5">
-              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 1.0">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 1.5">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 2.0">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 2.5">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 3.0">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 3.5">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 4.0">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-blank-svg" src="assets/images/course_icon/star-gray.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 4.5">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-half-svg" src="assets/images/course_icon/star-half-filled.svg" alt="aio" />
             </label>
             <label class="Pagerating" *ngIf="arr.COURSE_DETAIL.COURSE_RATING == 5.0">
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
-              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="study24x7" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
+              <img class="star-fill-svg" src="assets/images/course_icon/star-filled.svg" alt="aio" />
             </label>
           </div>
           <span class="rating cursor-pointer" (click)="scrollToRewiews()">{{
@@ -432,9 +432,9 @@
     <!-- <div class="courseComment" *ngIf="showMe">
     <div class="imp" [ngClass]="{ rytimp : importantCondition}">
         <span class="tik">
-            <img class="defoult" src="assets/images/svg-three/post_icon/imp1.svg" alt="study24x7">
-            <img class="hover" src="assets/images/svg-three/post_icon/f05050/imp1.svg" alt="study24x7">
-            <img class="active" src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="study24x7">
+            <img class="defoult" src="assets/images/svg-three/post_icon/imp1.svg" alt="aio">
+            <img class="hover" src="assets/images/svg-three/post_icon/f05050/imp1.svg" alt="aio">
+            <img class="active" src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="aio">
         </span>
 <span class="text" (click)="important()">Important</span>
 <span class="count" *ngIf="like!=0" (click)="impLikeShareFn();">{{like}}</span>
@@ -442,8 +442,8 @@
 
 <div class="comment">
     <span class="comment_icon">
-        <img class="defoult" src="assets/images/svg-three/post_icon/comment.svg" alt="study24x7">
-        <img class="hover" src="assets/images/svg-three/post_icon/f05050/comment.svg" alt="study24x7">
+        <img class="defoult" src="assets/images/svg-three/post_icon/comment.svg" alt="aio">
+        <img class="hover" src="assets/images/svg-three/post_icon/f05050/comment.svg" alt="aio">
     </span>
     <span class="text">Comment</span>
     <span class="count" id="{{post_id}}_comm_count" *ngIf="comment!=0" [innerHTML]="comment"></span>
@@ -451,8 +451,8 @@
 
 <div class="share">
     <span class="shreIcon">
-        <img class="defoult" src="assets/images/svg-three/post_icon/share.svg" alt="study24x7">
-        <img class="hover" src="assets/images/svg-three/post_icon/f05050/share.svg" alt="study24x7">
+        <img class="defoult" src="assets/images/svg-three/post_icon/share.svg" alt="aio">
+        <img class="hover" src="assets/images/svg-three/post_icon/f05050/share.svg" alt="aio">
 
     </span>
     <span class="text" (click)="sharePostview()">Share</span>
@@ -558,7 +558,7 @@
     <div class="writecomment clearfix main-comment" [ngClass]="{ 'comment-present': viewCommentList }">
       <figure class="comment-profile cursor-pointer" routerLink="/profile/{{arr.USER_NAME}}">
         <img src="{{ _constantService.profilePic() }}" alt="{{
-            'study24x7 ' +
+            'aio ' +
               this._constantService.getSessionDataBYKey('full_name')
           }}" (error)="updateProfilePic($event)" />
       </figure>

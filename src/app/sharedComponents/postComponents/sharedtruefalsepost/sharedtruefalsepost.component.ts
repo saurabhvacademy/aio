@@ -248,7 +248,7 @@ export class SharedtruefalsepostComponent implements OnInit {
 
         this.myProfileParent = this.arr['MY_PROFILE_PARENT'];
         if (this.arr != null) {
-            this.altName = "study24x7 " + this.arr['KEYWORDS'];
+            this.altName = "aio " + this.arr['KEYWORDS'];
             if (this._constantService.getSessionDataBYKey('u_id') == this.arr.SHARED_POST_DATA.USER_ID) {
                 this.arr['MY_PROFILE'] = true;
             }

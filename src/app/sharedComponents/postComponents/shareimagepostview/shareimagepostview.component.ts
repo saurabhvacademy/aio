@@ -75,7 +75,7 @@ export class ShareimagepostviewComponent implements OnInit,AfterViewInit {
     this.socialLinkedInShareUrl = "https://www.linkedin.com/sharing/share-offsite/?url="+this.postPublicShareLink;
     this.socialTelegramUrl = "https://telegram.me/share/url?url="+this.postPublicShareLink;
         this.postTyp = this.postdata['TYPE'];
-        this.altName = "study24x7 " + this.postdata['KEYWORDS'];
+        this.altName = "aio " + this.postdata['KEYWORDS'];
 
         this.shrpost_id = this.postdata['SHARED_POST_DATA']['USER_POST_ID'];
         this.setInterestObj();

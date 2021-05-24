@@ -3,7 +3,7 @@
   <div class="container" [perfectScrollbar]="config" style="position:relative;">
     <div class="page_container" *ngFor="let imgId of pageSugg; let i = index">
       <span class="image" routerLink="/page/{{imgId.ID}}">
-        <img src="{{imgId.PROFILE_PHOTO_PATH}}" alt="study24x7">
+        <img src="{{imgId.PROFILE_PHOTO_PATH}}" alt="aio">
       </span>
       <a title="{{imgId.TITLE}}" class="pagename" routerLink="/page/{{imgId.ID}}">
         {{imgId.TITLE}}
@@ -22,7 +22,7 @@
     <div routerLink="/profile/{{username}}/#Pages:suggestedpages" class="footer_heading">
         View all &nbsp;
         <span>
-            <img alt="study24x7" class="greater" src="assets/images/svg-three/greater.svg">
+            <img alt="aio" class="greater" src="assets/images/svg-three/greater.svg">
         </span>
     </div>
 </div>

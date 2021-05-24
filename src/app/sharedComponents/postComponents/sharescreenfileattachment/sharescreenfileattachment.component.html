@@ -46,18 +46,18 @@
                         </div>
                         <div class="profile-and-content">
                             <div class='post_profile'>
-                                <span *ngIf="isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="study24x7 {{user_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/page/{{pg_id}}"></span>
+                                <span *ngIf="isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="aio {{user_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/page/{{pg_id}}"></span>
                                     <div class="profiledetail">
                                       <div>
                                         <span title="{{full_name}}" class='name cursor-pointer' routerLink='/page/{{pg_id}}'>{{user_name |trimData:30}}</span>
                                        </div>
                                        <div>
                                         <span class="follwer_count">{{followerCount}} followers</span>
-                                        <span class="follow_dote"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7"></span>
+                                        <span class="follow_dote"><img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio"></span>
                                         <span class="follwer_count">{{time}}</span>
                                         </div>
                                          </div></span>
-                                <span *ngIf="!isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="study24x7 {{full_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/profile/{{user_name}}"></span>
+                                <span *ngIf="!isPagePost"><span class="post_profilepic cursor-pointer"><img src="{{profile_pic_path}}" alt="aio {{full_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/profile/{{user_name}}"></span>
                                     <div class="profiledetail">
                                         <span title="{{full_name}}" class='name cursor-pointer' routerLink='/profile/{{user_name}}'>{{full_name |trimData:30}}</span>
                                         <div>
@@ -121,9 +121,9 @@
                     <div class='postsave'>
                         <button [disabled]="loader === true"  type="submit" class="confirm_btn popup_btn btn btn-primary red_rds" (click)="sharePost()" *ngIf="postdata['EDIT_POST']==false && shareLinkPost==1" >
                             <span class="text" *ngIf="showText">Share</span>
-                            <span class="loader"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader"></span></button>
+                            <span class="loader"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="loader"></span></button>
                             <button [disabled]="loader === true"  type="submit" class="confirm_btn popup_btn btn btn-primary gray_rds"  *ngIf="postdata['EDIT_POST'] && shareLinkPost==1" (click)="sharePost()">
-                            <span class="text" *ngIf="showText">Update</span><span class="loader"><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader"></span></button>
+                            <span class="text" *ngIf="showText">Update</span><span class="loader"><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="loader"></span></button>
                         <button  type="submit" class="cancel_btn popup_btn gray_rds"  (click)="sharefileattachmentpostviewhide()">Cancel</button>
                     </div>
                 </div>

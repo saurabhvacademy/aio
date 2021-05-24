@@ -59,7 +59,7 @@
                                             <span class="follwer_count">{{followerCount}} followers</span>
                                             <span class="follow_dote"><img
                                                     src="assets/images/svg-three/post_icon/dote1.svg"
-                                                    alt="study24x7"></span>
+                                                    alt="aio"></span>
                                             <span class="follwer_count cursor-pointer" *ngIf="postdata.VISIBILITY ==3"
                                                 routerLink="/post/{{postdata.USER_POST_ID}}">{{time}}</span>
                                             <span class="follwer_count cursor-pointer" *ngIf="postdata.VISIBILITY !=3"
@@ -108,12 +108,12 @@
                                     <a class="sharedlink_post shareLinkPostParentcontiner PostViewArticle"
                                         (click)="gotourl(link)" *ngIf="innerPostTyp == 1">
                                         <div class="articleImage" *ngIf="image_path !='' ">
-                                            <img src="{{image_path}}" alt="study24x7" #aritcleImage
+                                            <img src="{{image_path}}" alt="aio" #aritcleImage
                                                 style="visibility:hidden;">
                                             <span
                                                 [ngClass]="{'img-auto': setArticleClass == 1, 'img-contain': setArticleClass == 2, 'img-100':setArticleClass == 3, 'img-cover': setArticleClass == 4}"
                                                 [ngStyle]="{'background-image': getImgUrl(image_path)}"></span>
-                                            <!-- <img src="{{image_path}}" alt="study24x7"  #aritcleImage> -->
+                                            <!-- <img src="{{image_path}}" alt="aio"  #aritcleImage> -->
                                         </div>
 
                                         <div class="article_content"
@@ -137,12 +137,12 @@
                                 [disabled]="showPreloader === true" (click)="sharePost()"
                                 *ngIf="postdata['EDIT_POST']==false  && shareLinkPost==1">
                                 <span class="text" *ngIf="showText">Share</span><span class="preloder"><img
-                                        src="./assets/images/svg/preloader-25.svg" alt="study24x7"
+                                        src="./assets/images/svg/preloader-25.svg" alt="aio"
                                         *ngIf="showPreloader"></span></button>
                             <button type="submit" class="button24x7 redColorButton fright"
                                 [disabled]="showPreloader === true" (click)="sharePost()" *ngIf="postdata['EDIT_POST']">
                                 <span class="text" *ngIf="showText">Update</span><span class="preloder"><img
-                                        src="./assets/images/svg/preloader-25.svg" alt="study24x7"
+                                        src="./assets/images/svg/preloader-25.svg" alt="aio"
                                         *ngIf="showPreloader"></span></button>
                             <button type="submit" class="button24x7 whiteColorButton fleft"
                                 (click)="sharelinkpostviewhide()">Cancel</button>

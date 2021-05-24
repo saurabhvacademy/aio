@@ -82,7 +82,7 @@ export class SharescreenmultiplechoicepostComponent implements OnInit, AfterView
         this.postTyp = this.postdata['TYPE'];
         this.setInterestObj();
         this.tagsArr = this.postdata['INTERESTS'];
-        this.altName = "study24x7 " + this.postdata['KEYWORDS'];
+        this.altName = "aio " + this.postdata['KEYWORDS'];
         this.editPostId = this.postdata['USER_ID'] + ":" + this.postdata['USER_POST_ID'] + ":" + this.postdata['TYPE'];
         if (this.postTyp == 4) {
             this.postPublicShareLink = this._constantService.staticPostShareLink + this.postdata.SHARED_POST_DATA.URL;

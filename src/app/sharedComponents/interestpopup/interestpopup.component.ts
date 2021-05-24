@@ -90,7 +90,7 @@ export class InterestpopupComponent implements OnInit {
                 //this._constantService.setToken(responseData.TOKEN);
                 this._constantService.setSessionJsonPair('token', responseData.TOKEN);
                 // if(localCookie=='1'){
-                //     window.open("https://www.study24x7.com/article/553/how-to-create-your-first-course-on-study24x7","_self");
+                //     window.open("https://www.aio.com/article/553/how-to-create-your-first-course-on-aio","_self");
                 // }else{
                 var publicClickedUrl = this._constantService.getSessionDataBYKey('publicClickedURL');
                 if (publicClickedUrl) {

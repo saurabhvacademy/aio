@@ -224,7 +224,7 @@ export class TruefalsepostComponent implements OnInit {
         this.socialWhatsappLink = "https://api.whatsapp.com/send?text=" + this.postPublicShareLink;
 
 
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         this.correctAnswer = this.arr['ANSWER'].toString();
         this.post_key = this.arr['USER_ID'] + ':' + this.arr['USER_POST_ID'] + ':3';
         this.setInterestObj();

@@ -5,7 +5,7 @@
             <div class="paymentSuccessWrapper " *ngIf="statusPayment == 1">
                 <div class="topwrapper">
                     <span (click)="gotoCourse()" class="returnback">Return to Course</span>
-                    <img src="assets/images/svg-three/course/success.png" alt="study24x7">
+                    <img src="assets/images/svg-three/course/success.png" alt="aio">
                     <p>Payment successful</p>
                     <p class="publisher">Purchased to <span>{{pageTitle}}</span></p>
                 </div>
@@ -18,7 +18,7 @@
                             <h5>Safe payment online no credit card needed. payment on the go </h5>
                         </div>
                         <!-- <div class="right_p_wrapper">
-            <img src="assets/images/svg-three/course/printer.svg" alt="study24x7"> <span>Print reciept</span>
+            <img src="assets/images/svg-three/course/printer.svg" alt="aio"> <span>Print reciept</span>
           </div> -->
                     </div>
                     <div class="summary_wrapper">
@@ -26,11 +26,11 @@
                             <div class="heade">ORDER SUMMARY</div>
                             <div class="course_detail">
                                 <div class="courseimg">
-                                    <img src="{{courseCoverPath}}" alt="study24x7">
+                                    <img src="{{courseCoverPath}}" alt="aio">
                                 </div>
                                 <div class="coursesubdetail">
                                     <h4>COURSE</h4>
-                                    <h2>{{courseName}} <span class="priceShow"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{discountedPrice|number}}</span></h2>
+                                    <h2>{{courseName}} <span class="priceShow"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{discountedPrice|number}}</span></h2>
                                     <h5>By {{pageTitle}}</h5>
                                 </div>
                             </div>
@@ -42,13 +42,13 @@
                                         </h3>
                                     </div>
                                     <div class="rightPyment">
-                                        <h3>Subtotal <span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{discountedPrice|number}}</span></h3>
-                                        <!--                <h3>Tax<span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">30</span></h3>-->
-                                        <h3 *ngIf="walletAmount != 0 && walletAmount != ''">Wallet<span class="amount"> - <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{walletAmount|number}}</span></h3>
-                                        <!--<h3 *ngIf="walletAmount == 0">Wallet<span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{walletAmount}}</span></h3>-->
-                                        <h3 *ngIf="ifCouponExists"><span class="blue">Coupon Discount ({{couponCode}})</span><span style="margin-left: 4px;"> <img src="assets/images/svg-three/post_icon/report.svg" alt="study24x7"></span> <span style="color: #00bb24;"> - <img src="./assets/images/svg-one/rupee-grn.svg" alt="study24x7">{{couponAppliedCost}}</span></h3>
+                                        <h3>Subtotal <span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{discountedPrice|number}}</span></h3>
+                                        <!--                <h3>Tax<span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">30</span></h3>-->
+                                        <h3 *ngIf="walletAmount != 0 && walletAmount != ''">Wallet<span class="amount"> - <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{walletAmount|number}}</span></h3>
+                                        <!--<h3 *ngIf="walletAmount == 0">Wallet<span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{walletAmount}}</span></h3>-->
+                                        <h3 *ngIf="ifCouponExists"><span class="blue">Coupon Discount ({{couponCode}})</span><span style="margin-left: 4px;"> <img src="assets/images/svg-three/post_icon/report.svg" alt="aio"></span> <span style="color: #00bb24;"> - <img src="./assets/images/svg-one/rupee-grn.svg" alt="aio">{{couponAppliedCost}}</span></h3>
                                         <h4 *ngIf="ifCouponExists ">{{couponDesc}} {{paymentMethod}}</h4>
-                                        <h3 class="total">To Pay<span class="amount"> <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{totalPay|number}}</span></h3>
+                                        <h3 class="total">To Pay<span class="amount"> <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{totalPay|number}}</span></h3>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
             <div class="paymentSuccessWrapper " *ngIf="statusPayment == 2">
                 <div class="topwrapper">
                     <span (click)="gotoCourse()" class="returnback">Return to Course</span>
-                    <img src="assets/images/svg-three/course/unsuccess.png" alt="study24x7">
+                    <img src="assets/images/svg-three/course/unsuccess.png" alt="aio">
                     <p>Payment Unsuccessful</p>
                     <p class="publisher">Purchased to <span>{{pageTitle}}</span></p>
                 </div>
@@ -77,7 +77,7 @@
                             <h5>Please try again. In case money has been debited from your account it will be refunded within 5-7 days. </h5>
                         </div>
                         <!-- <div class="right_p_wrapper">
-            <img src="assets/images/svg-three/course/printer.svg" alt="study24x7"> <span>Print reciept</span>
+            <img src="assets/images/svg-three/course/printer.svg" alt="aio"> <span>Print reciept</span>
           </div> -->
                     </div>
                     <div class="summary_wrapper">
@@ -85,11 +85,11 @@
                             <div class="heade">ORDER SUMMARY</div>
                             <div class="course_detail">
                                 <div class="courseimg">
-                                    <img src="{{courseCoverPath}}" alt="study24x7">
+                                    <img src="{{courseCoverPath}}" alt="aio">
                                 </div>
                                 <div class="coursesubdetail">
                                     <h4>COURSE</h4>
-                                    <h2>{{courseName}} <span class="priceShow"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{discountedPrice|number}}</span></h2>
+                                    <h2>{{courseName}} <span class="priceShow"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{discountedPrice|number}}</span></h2>
                                     <h5>By {{pageTitle}}</h5>
 
                                 </div>
@@ -114,15 +114,15 @@
                                     <div class="rightPyment">
                                         <h3>Subtotal
                                             <span class="amount">
-                  <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{discountedPrice|number}}
+                  <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{discountedPrice|number}}
                   </span>
                                         </h3>
-                                        <!--<h3>Tax<span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">30</span></h3>-->
+                                        <!--<h3>Tax<span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">30</span></h3>-->
                                         <h3>Wallet
-                                            <span class="amount"> - <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{walletAmount|number}}</span></h3>
-                                        <h3 *ngIf="ifCouponExists"><span class="blue">Coupon Discount ({{couponCode}})</span><span style="margin-left: 4px;"> <img src="assets/images/svg-three/post_icon/report.svg" alt="study24x7"></span> <span class="blue"> - <img src="./assets/images/svg-one/rupee-grn.svg" alt="study24x7">{{couponAppliedCost}}</span></h3>
+                                            <span class="amount"> - <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{walletAmount|number}}</span></h3>
+                                        <h3 *ngIf="ifCouponExists"><span class="blue">Coupon Discount ({{couponCode}})</span><span style="margin-left: 4px;"> <img src="assets/images/svg-three/post_icon/report.svg" alt="aio"></span> <span class="blue"> - <img src="./assets/images/svg-one/rupee-grn.svg" alt="aio">{{couponAppliedCost}}</span></h3>
                                         <h4 *ngIf="ifCouponExists">{{couponDesc}} {{paymentMethod}}</h4>
-                                        <h3 class="total">To Pay<span class="amount"> <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{totalPay|number}}</span></h3>
+                                        <h3 class="total">To Pay<span class="amount"> <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{totalPay|number}}</span></h3>
                                     </div>
                                 </div>
                             </div>
@@ -131,14 +131,14 @@
                     </div>
                 </div>
                 <div class="contact">
-                    <a href="http://support.study24x7.com"><p>contact <span>Study24x7</span></p></a>
+                    <a href="http://support.aio.com"><p>contact <span>Study24x7</span></p></a>
                 </div>
 
             </div>
             <div class="paymentSuccessWrapper " *ngIf="statusPayment == 0">
                 <div class="topwrapper">
                     <span (click)="gotoCourse()" class="returnback">Return to Course</span>
-                    <img src="assets/images/svg-three/course/unsuccess.png" alt="study24x7">
+                    <img src="assets/images/svg-three/course/unsuccess.png" alt="aio">
                     <p>Payment Inprogress</p>
                     <p class="publisher">Purchased to <span>{{pageTitle}}</span></p>
                 </div>
@@ -151,7 +151,7 @@
                             <h5>Plese wait for 15 minutes. in case money has been debited from your account it will be refunded in 5-7 days. </h5>
                         </div>
                         <!-- <div class="right_p_wrapper">
-            <img src="assets/images/svg-three/course/printer.svg" alt="study24x7"> <span>Print reciept</span>
+            <img src="assets/images/svg-three/course/printer.svg" alt="aio"> <span>Print reciept</span>
           </div> -->
                     </div>
                     <div class="summary_wrapper">
@@ -159,12 +159,12 @@
                             <div class="heade">ORDER SUMMARY</div>
                             <div class="course_detail">
                                 <div class="courseimg">
-                                    <img src="{{courseCoverPath}}" alt="study24x7">
+                                    <img src="{{courseCoverPath}}" alt="aio">
                                 </div>
                                 <div class="coursesubdetail">
                                     <h4>COURSE</h4>
                                     <h2>{{courseName}} <span class="priceShow">
-                <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">
+                <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">
                 {{discountedPrice|number}}</span></h2>
                                     <h5>By {{pageTitle}}</h5>
 
@@ -179,12 +179,12 @@
                                         </h3>
                                     </div>
                                     <div class="rightPyment">
-                                        <h3>Subtotal <span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{discountedPrice|number}}</span></h3>
-                                        <!--<h3>Tax<span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">30</span></h3>-->
-                                        <h3>Wallet<span class="amount"> - <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{walletAmount|number}}</span></h3>
-                                        <h3 *ngIf="ifCouponExists"><span class="blue">Coupon Discount ({{couponCode}})</span> <span class="blue"> - <img src="./assets/images/svg-one/rupee-grn.svg" alt="study24x7">{{couponAppliedCost}}</span></h3>
+                                        <h3>Subtotal <span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{discountedPrice|number}}</span></h3>
+                                        <!--<h3>Tax<span class="amount"><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">30</span></h3>-->
+                                        <h3>Wallet<span class="amount"> - <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{walletAmount|number}}</span></h3>
+                                        <h3 *ngIf="ifCouponExists"><span class="blue">Coupon Discount ({{couponCode}})</span> <span class="blue"> - <img src="./assets/images/svg-one/rupee-grn.svg" alt="aio">{{couponAppliedCost}}</span></h3>
                                         <h4 *ngIf="ifCouponExists">{{couponDesc}} {{paymentMethod}}</h4>
-                                        <h3 class="total">To Pay<span class="amount"> <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{totalPay|number}}</span></h3>
+                                        <h3 class="total">To Pay<span class="amount"> <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{totalPay|number}}</span></h3>
                                     </div>
                                 </div>
                             </div>
@@ -192,7 +192,7 @@
                     </div>
                 </div>
                 <div class="contact">
-                    <a href="http://support.study24x7.com"><p>contact <span>Study24x7</span></p></a>
+                    <a href="http://support.aio.com"><p>contact <span>Study24x7</span></p></a>
                 </div>
 
             </div>
@@ -207,7 +207,7 @@
     <div class="bookmarrk">
        <div class="in_wrap">
          <span class="crs_heading">Quantum Physics : Session 1</span>
-         <span class="crs_rate"><span class="rate_p"><img src="src/assets/images/svg-one/rupee-redc.svg" alt="study24x7">1000</span><span class="rate_del"><img src="src/assets/images/svg-one/rupee-gray.svg" alt="study24x7">1400</span></span>
+         <span class="crs_rate"><span class="rate_p"><img src="src/assets/images/svg-one/rupee-redc.svg" alt="aio">1000</span><span class="rate_del"><img src="src/assets/images/svg-one/rupee-gray.svg" alt="aio">1400</span></span>
        </div>
        <div class="in_wrap_dwn">
          <span class="in_wrap_detail">

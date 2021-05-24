@@ -18,19 +18,19 @@
 
             <ul>
                 <li *ngIf="rDays">
-                    <span><img src="assets/images/svg-three/course/freetrial.png" alt="study24x7"></span>
+                    <span><img src="assets/images/svg-three/course/freetrial.png" alt="aio"></span>
                     <span class="contentCount">Free <span class="hightlight">{{rDays}}
                             {{rDays==1 ? 'day':'days'}}</span> trial classes</span>
                 </li>
                 <li>
-                    <span><img src="assets/images/course_icon/done-red.svg" alt="study24x7"></span>
+                    <span><img src="assets/images/course_icon/done-red.svg" alt="aio"></span>
                     <span class="contentCount">Total <span class="hightlight">{{sectionCount}}</span>
                         {{sectionCount >1 ? 'Modules' : 'Module'}} </span>
                     <!--<span class="contentCount" *ngIf="VISIBILABLE_CONTENT != 0">and {{VISIBILABLE_CONTENT}} free preview contents</span>-->
                 </li>
                 <li *ngIf="pdfCount != 0 || videoCount != 0 || quizzeCount != 0">
                     <span><img src="assets/images/svg-three/course/course_creation/lesson-red.svg"
-                            alt="study24x7"></span>
+                            alt="aio"></span>
                     <span class="contentCount" *ngIf="videoCount != 0"><span class="hightlight">{{videoCount}}</span>
                         {{videoCount > 1 ? 'Videos' : 'Video'}}</span>
 
@@ -45,15 +45,15 @@
                         {{quizzeCount > 1 ? 'Quizzes' : 'Quiz'}}</span>
                 </li>
                 <li *ngIf="liveStreamCount != 0">
-                    <span><img src="assets/images/svg-three/page_icon/iconwall_red.svg" alt="study24x7"></span>
+                    <span><img src="assets/images/svg-three/page_icon/iconwall_red.svg" alt="aio"></span>
                     <span class="contentCount">Contains Live Stream</span>
                 </li>
                 <li>
                     <span><img src="assets/images/svg-three/course/course_creation/downloadable-red.svg"
-                            alt="study24x7"></span> Downloadable on mobile
+                            alt="aio"></span> Downloadable on mobile
                 </li>
                 <li>
-                    <span><img src="assets/images/svg-three/course/publishedIcon.svg" alt="study24x7"></span> Published
+                    <span><img src="assets/images/svg-three/course/publishedIcon.svg" alt="aio"></span> Published
                     on <span class="hightlight">{{publishedDate |date :'dd MMM, yyyy'}}</span>
                 </li>
 
@@ -130,7 +130,7 @@
                 <div class="head" (click)="preview_dropdown('previewlist'+index,index)">
                     <h2>{{postData.decodeURIPostData(section.section_title)}}</h2>
                     <span class="downarrow" [ngClass]="{'rotateImg': index == 0}" id="{{'previewlisthead'+index}}">
-                        <img src="assets/images/svg-three/course/courseDetails/arrowrightIcon.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/course/courseDetails/arrowrightIcon.svg" alt="aio">
                     </span>
                 </div>
                 <div [ngClass]="{'contentHeightZero': index != 0,'contentHeight': index == 0}" class="content"
@@ -143,15 +143,15 @@
                                 <div class="listInnerWrapper">
                                     <span (click)="viewContent(content)" class="images leftImage verCenterAlign">
                                         <img src="assets/images/svg-three/course/courseDetails/gray_quiz.svg"
-                                            alt="study24x7"
+                                            alt="aio"
                                             *ngIf="content.CONTENT_TYPE == 3 || content.CONTENT_TYPE == 6">
                                         <img src="assets/images/svg-three/course/courseDetails/videoPlayIcon.svg"
-                                            alt="study24x7"
+                                            alt="aio"
                                             *ngIf="content.CONTENT_TYPE == 1 || content.CONTENT_TYPE == 4 || content.CONTENT_TYPE == 5 ">
                                         <img src="assets/images/svg-three/course/courseDetails/documentIcon.svg"
-                                            alt="study24x7" *ngIf="content.CONTENT_TYPE == 2">
+                                            alt="aio" *ngIf="content.CONTENT_TYPE == 2">
                                         <img src="assets/images/svg-three/course/courseDetails/videoLiveIcon.svg"
-                                            alt="study24x7" *ngIf="content.CONTENT_TYPE == 7">
+                                            alt="aio" *ngIf="content.CONTENT_TYPE == 7">
                                     </span>
                                     <div (click)="viewContent(content)">
                                         <p class="verCenterAlign"> {{content.TITLE}} <span
@@ -164,7 +164,7 @@
                                         <span class="liveStreamDetailWrapper" *ngIf="content.CONTENT_TYPE == 7">
                                             <span class="liveIcon">Live</span>
                                             <span class="detail">{{content.INFO}}</span>
-                                            <span class="dote"><img alt="study24x7"
+                                            <span class="dote"><img alt="aio"
                                                     src="assets/images/svg-three/post_icon/dote1-black.svg"></span>
                                             <span class="detail">
                                                 {{ content.streamingDate}}
@@ -180,18 +180,18 @@
 
                                         <span class="tik verCenterAlign" *ngIf="content.SEEN == '1'">
                                             <img src="assets/images/svg-three/course/courseDetails/documentReadIcon.svg"
-                                                alt="study24x7">
+                                                alt="aio">
                                         </span>
 
                                         <span class="images lock verCenterAlign"
                                             *ngIf="content.VISIBILITY ==1 && enrolled == 0 && !withoutToken">
                                             <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg"
-                                                alt="study24x7">
+                                                alt="aio">
                                         </span>
 
                                         <span class="images lock verCenterAlign" *ngIf="withoutToken">
                                             <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg"
-                                                alt="study24x7">
+                                                alt="aio">
                                         </span>
                                     </div>
                                     <a href="{{content.PATH+'base/'+content.CONTENT_UUID+'.pdf'}}" target="blank"
@@ -223,19 +223,19 @@
             </div>
             <ul>
                 <li *ngIf="rDays">
-                    <span><img src="assets/images/svg-three/course/freetrial.png" alt="study24x7"></span>
+                    <span><img src="assets/images/svg-three/course/freetrial.png" alt="aio"></span>
                     <span class="contentCount">Free <span class="hightlight">{{rDays}}
                             {{rDays==1 ? 'day':'days'}}</span> trial classes</span>
                 </li>
                 <li>
-                    <span><img src="assets/images/course_icon/done-red.svg" alt="study24x7"></span>
+                    <span><img src="assets/images/course_icon/done-red.svg" alt="aio"></span>
                     <span class="contentCount">Total <span class="hightlight">{{sectionCount}}</span>
                         {{sectionCount >1 ? 'Modules' : 'Module'}} </span>
                     <!--<span class="contentCount" *ngIf="VISIBILABLE_CONTENT != 0">and {{VISIBILABLE_CONTENT}} free preview contents</span>-->
                 </li>
                 <li *ngIf="pdfCount != 0 || videoCount != 0 || quizzeCount != 0">
                     <span><img src="assets/images/svg-three/course/course_creation/lesson-red.svg"
-                            alt="study24x7"></span>
+                            alt="aio"></span>
                     <span class="contentCount" *ngIf="videoCount != 0"><span class="hightlight">{{videoCount}}</span>
                         {{videoCount > 1 ? 'Videos' : 'Video'}}</span>
 
@@ -250,15 +250,15 @@
                         {{quizzeCount > 1 ? 'Quizzes' : 'Quiz'}}</span>
                 </li>
                 <li *ngIf="liveStreamCount != 0">
-                    <span><img src="assets/images/svg-three/page_icon/iconwall_red.svg" alt="study24x7"></span>
+                    <span><img src="assets/images/svg-three/page_icon/iconwall_red.svg" alt="aio"></span>
                     <span class="contentCount">Contains Live Stream</span>
                 </li>
                 <li>
                     <span><img src="assets/images/svg-three/course/course_creation/downloadable-red.svg"
-                            alt="study24x7"></span> Downloadable on mobile
+                            alt="aio"></span> Downloadable on mobile
                 </li>
                 <li>
-                    <span><img src="assets/images/svg-three/course/publishedIcon.svg" alt="study24x7"></span> Published
+                    <span><img src="assets/images/svg-three/course/publishedIcon.svg" alt="aio"></span> Published
                     on <span class="hightlight">{{publishedDate |date :'dd MMM, yyyy'}}</span>
                 </li>
 
@@ -267,16 +267,16 @@
 
             <!-- <ul>
             <li *ngIf="rDays">
-                <span><img src="assets/images/svg-three/course/freetrial.png" alt="study24x7"></span>
+                <span><img src="assets/images/svg-three/course/freetrial.png" alt="aio"></span>
                 <span class="contentCount">Free {{rDays}} {{rDays==1 ? 'day':'days'}} trial classes</span>
             </li>
             <li>
-                <span><img src="assets/images/course_icon/done.svg" alt="study24x7"></span>
+                <span><img src="assets/images/course_icon/done.svg" alt="aio"></span>
                 <span class="contentCount">Total {{sectionCount}} {{sectionCount >1 ? 'Modules' : 'Module'}} </span>
 
             </li>
             <li *ngIf="pdfCount != 0 || videoCount != 0 || quizzeCount != 0">
-                <span><img src="assets/images/svg-three/course/course_creation/lesson.svg" alt="study24x7"></span>
+                <span><img src="assets/images/svg-three/course/course_creation/lesson.svg" alt="aio"></span>
                 <span class="contentCount" *ngIf="videoCount != 0"><span style="color:#000;font-weight: 500;">{{videoCount}}</span> {{videoCount > 1 ? 'Videos' : 'Video'}}</span>
 
                 <span class="contentCount" *ngIf="quizzeCount != 0 && videoCount != 0">,</span>
@@ -288,14 +288,14 @@
                 <span class="contentCount" *ngIf="quizzeCount != 0"><span style="color:#000;font-weight: 500;">{{quizzeCount}}</span> {{quizzeCount > 1 ? 'Quizzes' : 'Quiz'}}</span>
             </li>
             <li *ngIf="liveStreamCount != 0">
-                <span><img src="assets/images/svg-three/page_icon/iconwall_gray.svg" alt="study24x7"></span>
+                <span><img src="assets/images/svg-three/page_icon/iconwall_gray.svg" alt="aio"></span>
                 <span class="contentCount">Contains Live Stream</span>
             </li>
             <li>
-                <span><img src="assets/images/svg-three/course/course_creation/downloadable.svg" alt="study24x7"></span> Downloadable on mobile
+                <span><img src="assets/images/svg-three/course/course_creation/downloadable.svg" alt="aio"></span> Downloadable on mobile
             </li>
             <li>
-                <span><img src="assets/images/svg-three/course/published.svg" alt="study24x7"></span> Published on <span style="color:#000;font-weight: 500;">{{publishedDate |date :'dd MMM, yyyy'}}</span>
+                <span><img src="assets/images/svg-three/course/published.svg" alt="aio"></span> Published on <span style="color:#000;font-weight: 500;">{{publishedDate |date :'dd MMM, yyyy'}}</span>
             </li>
 
 
@@ -370,7 +370,7 @@
                 <div class="head" (click)="preview_dropdown('previewlist'+index,index)">
                     <h2>{{postData.decodeURIPostData(section.section_title)}}</h2>
                     <span class="downarrow" [ngClass]="{'rotateImg': index == 0}" id="{{'previewlisthead'+index}}">
-                        <img src="assets/images/svg-three/course/courseDetails/arrowrightIcon.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/course/courseDetails/arrowrightIcon.svg" alt="aio">
                     </span>
                 </div>
                 <div [ngClass]="{'contentHeightZero': index != 0,'contentHeight': index == 0}" class="content"
@@ -384,15 +384,15 @@
                                 <div class="listInnerWrapper">
                                     <span class="images leftImage verCenterAlign">
                                         <img src="assets/images/svg-three/course/courseDetails/gray_quiz.svg"
-                                            alt="study24x7"
+                                            alt="aio"
                                             *ngIf="content.CONTENT_TYPE == 3 || content.CONTENT_TYPE == 6">
                                         <img src="assets/images/svg-three/course/courseDetails/videoPlayIcon.svg"
-                                            alt="study24x7"
+                                            alt="aio"
                                             *ngIf="content.CONTENT_TYPE == 1 || content.CONTENT_TYPE == 4 || content.CONTENT_TYPE == 5 ">
                                         <img src="assets/images/svg-three/course/courseDetails/documentIcon.svg"
-                                            alt="study24x7" *ngIf="content.CONTENT_TYPE == 2">
+                                            alt="aio" *ngIf="content.CONTENT_TYPE == 2">
                                         <img src="assets/images/svg-three/course/courseDetails/videoLiveIcon.svg"
-                                            alt="study24x7" *ngIf="content.CONTENT_TYPE == 7">
+                                            alt="aio" *ngIf="content.CONTENT_TYPE == 7">
                                     </span>
                                     <p class="verCenterAlign"> {{content.TITLE}} <span class="liveStrteamingMentorName"
                                             *ngIf="content.CONTENT_TYPE == 7">by {{content.mentorName}}</span> </p>
@@ -403,7 +403,7 @@
                                     <span class="liveStreamDetailWrapper" *ngIf="content.CONTENT_TYPE == 7">
                                         <span class="liveIcon">Live</span>
                                         <span class="detail">{{content.INFO}}</span>
-                                        <span class="dote"><img alt="study24x7"
+                                        <span class="dote"><img alt="aio"
                                                 src="assets/images/svg-three/post_icon/dote1-black.svg"></span>
                                         <span class="detail">
                                             {{ content.streamingDate}}
@@ -419,18 +419,18 @@
 
                                     <span class="tik verCenterAlign" *ngIf="content.SEEN == '1'">
                                         <img src="assets/images/svg-three/course/courseDetails/documentReadIcon.svg"
-                                            alt="study24x7">
+                                            alt="aio">
                                     </span>
 
                                     <span class="images lock verCenterAlign"
                                         *ngIf="content.VISIBILITY ==1 && enrolled == 0 && !withoutToken">
                                         <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg"
-                                            alt="study24x7">
+                                            alt="aio">
                                     </span>
 
                                     <span class="images lock verCenterAlign" *ngIf="withoutToken">
                                         <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg"
-                                            alt="study24x7">
+                                            alt="aio">
                                     </span>
 
 

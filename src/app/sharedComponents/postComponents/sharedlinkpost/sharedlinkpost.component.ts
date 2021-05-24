@@ -243,7 +243,7 @@ export class SharedlinkpostComponent implements OnInit {
                 }
             }
         }
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         this.link = this.arr['SHARED_POST_DATA']['SHARE_LINK']
         this.full_name = this.arr['USER_FULL_NAME'];
         this.u_id = this.arr['USER_ID'];

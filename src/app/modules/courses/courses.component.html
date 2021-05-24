@@ -329,7 +329,7 @@
             <!-- ==============================================================================  -->
 
             <div class="loader2" *ngIf="startLoader">
-                <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+                <img src="assets/images/24x7preloader.gif" alt="aio" >
             </div>
 
             <!-- =============================================================================   -->
@@ -344,7 +344,7 @@
 
             <div class="emptystate" style="height:425px;" *ngIf="EmptyState && startLoader==false">
                 <div class="emptystate_inner">
-                    <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                    <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="aio">
                     <p class="mainheading" style="padding-top:0px;">No Course found</p>
                     <!--            <p class="subHeading">Create your own course containing<br>
                                    interactive study content
@@ -682,7 +682,7 @@
 
 
                                 <span class="coursePrise price" *ngIf="corses.COURSE_TYPE!=0 && corses['COURSE_PRICE'].length != 0">
-                                    <!--                                  <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">-->
+                                    <!--                                  <img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">-->
                                     {{corses['COURSE_PRICE']['0']['DISCOUNT_COST'] | currency:'INR':symbol:'1.0'}}
                                 </span>
 
@@ -769,7 +769,7 @@
         <!-- ==============================================================================  -->
 
         <div class="loader2" *ngIf="startLoader2">
-            <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+            <img src="assets/images/24x7preloader.gif" alt="aio" >
         </div>
 
         <!-- =============================================================================   -->
@@ -784,7 +784,7 @@
 
         <div class="emptystate" style="height:425px;" *ngIf="EmptyState1==true  && startLoader2 ==false ">
              <div class="emptystate_inner">
-                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="aio">
                 <p class="mainheading" style="padding-top:0px;">Create a new course</p>
                 <p class="subHeading">Create your own course containing<br>
                     interactive study content
@@ -797,7 +797,7 @@
 
 <!--        <div class="emptystate" style="height:425px;" *ngIf="EmptyState1 &&  courseSearch =='' && startLoader2 == false ">
              <div class="emptystate_inner">
-                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="aio">
                 <p class="mainheading" style="padding-top:0px;">No Course found</p>
                 <p class="subHeading">Seems there is no course here<br>
                     try another course here
@@ -806,7 +806,7 @@
         </div>-->
 <!--        <div class="emptystate" style="height:425px;" *ngIf="(AllCourse==0 && courseList==0) && is_admin && startLoader2 ==false && courseSearch !=''">
              <div class="emptystate_inner">
-                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="aio">
                 <p class="mainheading" style="padding-top:0px;">No Course found</p>
                 <p class="subHeading">Seems there is no course here<br>
                     try another course here
@@ -1147,7 +1147,7 @@
               <!-- preloder for my course start  -->
               <!-- ==============================================================================  -->
               <div class="loader2" *ngIf="preloaderWithoutToken">
-                  <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+                  <img src="assets/images/24x7preloader.gif" alt="aio" >
               </div>
               <!-- =============================================================================   -->
               <!-- preloder for my course end  -->
@@ -1158,7 +1158,7 @@
               <!-- ==============================================================================  -->
               <div class="emptystate" style="height:425px;" *ngIf="courseDataWithoutToken.length == 0 && !preloaderWithoutToken">
                   <div class="emptystate_inner">
-                      <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="study24x7">
+                      <img src="assets/images/course_icon/create_course.svg" class="emptyimg emptyreview width150" alt="aio">
                       <p class="mainheading" style="padding-top:0px;">No Course found</p>
                   </div>
               </div>

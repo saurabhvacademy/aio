@@ -235,7 +235,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
         if (!this._cookie.get('study247')) {
             // this._cookie.set('study247', this._encryptionService.encrypt(this._constantService.getSessionDataBYKey('token')));
-            document.cookie = "study247=study24x7";
+            document.cookie = "study247=aio";
 
         }
         if (/Android/i.test(navigator.userAgent)) {

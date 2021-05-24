@@ -149,11 +149,11 @@ $contentWidth: 960px; */
 
 .leftSecArea .loginSearch { width: 370px; margin-top: 20px; height: 60px; }
 
-.leftSecArea .infoSecone .iconImage { background-image: url("https://img1.study24x7.com/Educators.4bc51beae84c0a3b8dc7.svg"); }
+.leftSecArea .infoSecone .iconImage { background-image: url("https://img1.aio.com/Educators.4bc51beae84c0a3b8dc7.svg"); }
 
-.leftSecArea .infoSectwo .iconImage { background-image: url("https://img1.study24x7.com/collaboration.ae95a66195166c8707ee.svg"); }
+.leftSecArea .infoSectwo .iconImage { background-image: url("https://img1.aio.com/collaboration.ae95a66195166c8707ee.svg"); }
 
-.leftSecArea .infoSecthree .iconImage { background-image: url("https://img1.study24x7.com/mobile.5e126db3104684991f95.svg"); margin-left: 20px; }
+.leftSecArea .infoSecthree .iconImage { background-image: url("https://img1.aio.com/mobile.5e126db3104684991f95.svg"); margin-left: 20px; }
 
 .bannerbg { width: 100%; float: left; z-index: 0; background-repeat: no-repeat; background-size: cover; background: #f05050; background: -moz-linear-gradient(top, #f05050 0%, #ef4343 100%, #60abf8 100%); background: -webkit-linear-gradient(top, #f05050 0%, #ef4343 100%, #60abf8 100%); background: linear-gradient(to bottom, #f05050 0%, #ef4343 100%, #60abf8 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f05050', endColorstr='#60abf8',GradientType=0 ); height: calc(100vh - 608px); min-height: 150px; }
 

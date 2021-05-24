@@ -27,7 +27,7 @@
                                 <li *ngFor="let notify of activitylog;let i=index;" (click)="goToPost(i)" >
 
                                     <div class="profileimg_know">
-                                        <img _ngcontent-c1="" src="{{notify.PROFILE_PIC_PATH}}" (error)="updateProfilePic($event)" alt="study24x7">
+                                        <img _ngcontent-c1="" src="{{notify.PROFILE_PIC_PATH}}" (error)="updateProfilePic($event)" alt="aio">
                                     </div>
                                     <div class='prfl_detail ntfi_pro_detail'>
                                         <div class="profilename cursolnoneactivity" [innerHTML]="notify.ACTIVITY"></div>

@@ -28,7 +28,7 @@ export class DownloadAppComponent implements OnInit {
     if(this.deviceOperatingSystem=='Android'){
       window.open('https://play.google.com/store/apps/details?id=com.stdy24x7&hl=en', "_blank");
     }else if(this.deviceOperatingSystem=='IOS'){
-      window.open('https://itunes.apple.com/in/app/study24x7/id1444868244?ls=1&mt=8', "_blank");
+      window.open('https://itunes.apple.com/in/app/aio/id1444868244?ls=1&mt=8', "_blank");
     }
 
   }

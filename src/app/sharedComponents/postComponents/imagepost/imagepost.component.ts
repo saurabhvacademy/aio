@@ -259,7 +259,7 @@ export class ImagepostComponent implements OnInit, AfterViewInit {
             } else {
                 this.post_data = '';
             }
-            this.altName = "study24x7 " + this.arr['KEYWORDS'];
+            this.altName = "aio " + this.arr['KEYWORDS'];
             if (this.arr['PAGE_UUID'] != '' && this.arr['PAGE_UUID'] != null) {
                 this.pg_uuid = this.arr['PAGE_UUID'];
                 this.isPagePost = true;

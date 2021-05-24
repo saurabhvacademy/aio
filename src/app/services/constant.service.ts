@@ -74,7 +74,7 @@ export class ConstantService {
   screenShareExtentionId = "acbjloehclednkmokadabncnbfekpepl";
   videoCDNUrl = "https://strm.akamaized.net/WebRTCAppEE/streams/";
   auth2: any;
-  baseAssetPath = "https://uatimg1.study24x7.com/assets";
+  baseAssetPath = "https://uatimg1.aio.com/assets";
   staticArticleShareLink: string;
   article_service_url: string;
   googleAnalyticsUAId: string = '';
@@ -172,36 +172,36 @@ export class ConstantService {
         region: "ap-south-1",
       };
     } else if (this.platformDefinition == "staging") {
-      this.master_service_url = "https://mastersuat.study24x7.net:8443/4.0.0.1";
-      this.user_service_url = "https://usersuat.study24x7.net:8443/4.0.0.1";
+      this.master_service_url = "https://mastersuat.aio.net:8443/4.0.0.1";
+      this.user_service_url = "https://usersuat.aio.net:8443/4.0.0.1";
       this.notification_service_url =
-        "https://notificationsuat.study24x7.net:8443/4.0.0.1";
+        "https://notificationsuat.aio.net:8443/4.0.0.1";
       this.connection_service_url =
-        "https://connectionsuat.study24x7.net:8443/4.0.0.1";
-      this.post_service_url = "https://postsuat.study24x7.net:8443/4.0.0.1";
+        "https://connectionsuat.aio.net:8443/4.0.0.1";
+      this.post_service_url = "https://postsuat.aio.net:8443/4.0.0.1";
       this.message_service_url =
-        "https://messagesuat.study24x7.net:8443/4.0.0.1";
-      this.search_service_url = "https://searchuat.study24x7.net:8443/4.0.0.1";
+        "https://messagesuat.aio.net:8443/4.0.0.1";
+      this.search_service_url = "https://searchuat.aio.net:8443/4.0.0.1";
       this.ldrBoard_service_url =
-        "https://rewarduat.study24x7.net:8443/4.0.0.1";
+        "https://rewarduat.aio.net:8443/4.0.0.1";
 
       this.suggestion_service_url =
-        "https://suggestionsuat.study24x7.net:8443/4.0.0.1";
+        "https://suggestionsuat.aio.net:8443/4.0.0.1";
       this.trending_service_url =
-        "http://trendingsuat.study24x7.net:8443/4.0.0.1";
+        "http://trendingsuat.aio.net:8443/4.0.0.1";
       this.setting_service_url =
-        "https://settingsuat.study24x7.net:8443/4.0.0.1";
-      this.saved_service_url = "https://saveduat.study24x7.net:8443/4.0.0.1";
-      this.file_service_url = "https://fileuat.study24x7.net:8443/4.0.0.1";
-      this.page_service_url = "https://pageuat.study24x7.net:8443/4.0.0.1";
+        "https://settingsuat.aio.net:8443/4.0.0.1";
+      this.saved_service_url = "https://saveduat.aio.net:8443/4.0.0.1";
+      this.file_service_url = "https://fileuat.aio.net:8443/4.0.0.1";
+      this.page_service_url = "https://pageuat.aio.net:8443/4.0.0.1";
       this.purchase_service_url =
-        "https://purchaseuat.study24x7.net:8443/4.0.0.1";
-      this.course_service_url = "https://courseuat.study24x7.net:8443/4.0.0.1";
-      this.videoServerURL = "https://videouat.study24x7.net/bitmovin.php";
+        "https://purchaseuat.aio.net:8443/4.0.0.1";
+      this.course_service_url = "https://courseuat.aio.net:8443/4.0.0.1";
+      this.videoServerURL = "https://videouat.aio.net/bitmovin.php";
       this.payuPaymentServerURL =
-        "https://paymentuat.study24x7.net/payumoney/payu.php";
+        "https://paymentuat.aio.net/payumoney/payu.php";
       this.paytmPaymentServerURL =
-        "https://paymentuat.study24x7.net/paytm/paytm.php";
+        "https://paymentuat.aio.net/paytm/paytm.php";
       this.libraryBucketPath =
         "https://s3.ap-south-1.amazonaws.com/247-cors-test/assets/course_Lib_Img/Course-images-"; this.staticPostShareLink = "https://study.hellouser.co.in/post/";
       this.googleClientId =
@@ -210,9 +210,9 @@ export class ConstantService {
       this.ckeditorPath = "https://study.hellouser.co.in/ckeditor/";
       this.askAssistantPath = "/inbox/support.study5065";
       this.article_service_url =
-        "https://articleuat.study24x7.net:8443/4.0.0.1";
-      this.utility_service_url = "https://utilityuat.study24x7.net:8443/4.0.0.1";
-      this.websocketURL = "https://videouat.study24x7.net:3011";
+        "https://articleuat.aio.net:8443/4.0.0.1";
+      this.utility_service_url = "https://utilityuat.aio.net:8443/4.0.0.1";
+      this.websocketURL = "https://videouat.aio.net:3011";
       this.antMediaStreamUrl = "rtmp://testmedia.hellouser.co.in/WebRTCAppEE/";
       this.antmediaURL = "testmedia.hellouser.co.in";
       this.screenShareExtentionId = "acbjloehclednkmokadabncnbfekpepl";
@@ -329,31 +329,31 @@ export class ConstantService {
         region: "ap-south-1",
       };
     } else if (this.platformDefinition == "test_uat") {
-      this.master_service_url = "https://mastersuat.study24x7.net/4.0.0.1";
-      this.user_service_url = "https://usersuat.study24x7.net/4.0.0.1";
+      this.master_service_url = "https://mastersuat.aio.net/4.0.0.1";
+      this.user_service_url = "https://usersuat.aio.net/4.0.0.1";
       this.notification_service_url =
-        "https://notificationsuat.study24x7.net/4.0.0.1";
+        "https://notificationsuat.aio.net/4.0.0.1";
       this.connection_service_url =
-        "https://connectionsuat.study24x7.net/4.0.0.1";
-      this.post_service_url = "https://postsuat.study24x7.net/4.0.0.1";
-      this.message_service_url = "https://messagesuat.study24x7.net/4.0.0.1";
-      this.search_service_url = "https://searchuat.study24x7.net/4.0.0.1";
-      this.ldrBoard_service_url = "https://rewarduat.study24x7.net/4.0.0.1";
+        "https://connectionsuat.aio.net/4.0.0.1";
+      this.post_service_url = "https://postsuat.aio.net/4.0.0.1";
+      this.message_service_url = "https://messagesuat.aio.net/4.0.0.1";
+      this.search_service_url = "https://searchuat.aio.net/4.0.0.1";
+      this.ldrBoard_service_url = "https://rewarduat.aio.net/4.0.0.1";
 
       this.suggestion_service_url =
-        "https://suggestionsuat.study24x7.net/4.0.0.1";
-      this.trending_service_url = "http://trendingsuat.study24x7.net/4.0.0.1";
-      this.setting_service_url = "https://settingsuat.study24x7.net/4.0.0.1";
-      this.saved_service_url = "https://saveduat.study24x7.net/4.0.0.1";
-      this.file_service_url = "https://fileuat.study24x7.net/4.0.0.1";
-      this.page_service_url = "https://pageuat.study24x7.net/4.0.0.1";
-      this.purchase_service_url = "https://purchaseuat.study24x7.net/4.0.0.1";
-      this.course_service_url = "https://courseuat.study24x7.net/4.0.0.1";
-      this.videoServerURL = "https://videouat.study24x7.net/bitmovin.php";
+        "https://suggestionsuat.aio.net/4.0.0.1";
+      this.trending_service_url = "http://trendingsuat.aio.net/4.0.0.1";
+      this.setting_service_url = "https://settingsuat.aio.net/4.0.0.1";
+      this.saved_service_url = "https://saveduat.aio.net/4.0.0.1";
+      this.file_service_url = "https://fileuat.aio.net/4.0.0.1";
+      this.page_service_url = "https://pageuat.aio.net/4.0.0.1";
+      this.purchase_service_url = "https://purchaseuat.aio.net/4.0.0.1";
+      this.course_service_url = "https://courseuat.aio.net/4.0.0.1";
+      this.videoServerURL = "https://videouat.aio.net/bitmovin.php";
       this.payuPaymentServerURL =
-        "https://paymentuat.study24x7.net/payumoney/payu.php";
+        "https://paymentuat.aio.net/payumoney/payu.php";
       this.paytmPaymentServerURL =
-        "https://paymentuat.study24x7.net/PAYTM/paytm.php";
+        "https://paymentuat.aio.net/PAYTM/paytm.php";
       this.libraryBucketPath =
         "https://s3.ap-south-1.amazonaws.com/247-cors-test/assets/course_Lib_Img/Course-images-"; this.staticPostShareLink = "https://study.hellouser.co.in/post/";
       this.googleClientId =
@@ -361,7 +361,7 @@ export class ConstantService {
       this.facebookAppId = "2192549784145974";
       this.ckeditorPath = "https://study.hellouser.co.in/ckeditor/";
       this.askAssistantPath = "/inbox/ask.assistant5753";
-      this.websocketURL = "https://videouat.study24x7.net:3011";
+      this.websocketURL = "https://videouat.aio.net:3011";
       this.antMediaStreamUrl = "rtmp://testmedia.hellouser.co.in/WebRTCAppEE/";
       this.antmediaURL = "testmedia.hellouser.co.in";
       this.screenShareExtentionId = "acbjloehclednkmokadabncnbfekpepl";
@@ -373,42 +373,42 @@ export class ConstantService {
         region: "ap-south-1",
       };
     } else if (this.platformDefinition == "production") {
-      this.master_service_url = "https://masters.study24x7.net/4.0.0.1";
-      this.user_service_url = "https://users.study24x7.net/4.0.0.1";
+      this.master_service_url = "https://masters.aio.net/4.0.0.1";
+      this.user_service_url = "https://users.aio.net/4.0.0.1";
       this.notification_service_url =
-        "https://notifications.study24x7.net/4.0.0.1";
-      this.connection_service_url = "https://connections.study24x7.net/4.0.0.1";
-      this.post_service_url = "https://posts.study24x7.net/4.0.0.1";
-      this.message_service_url = "https://messages.study24x7.net/4.0.0.1";
-      this.search_service_url = "https://search.study24x7.net/4.0.0.1";
-      this.ldrBoard_service_url = "https://reward.study24x7.net/4.0.0.1";
-      this.suggestion_service_url = "https://suggestions.study24x7.net/4.0.0.1";
-      this.trending_service_url = "http://trendings.study24x7.net/4.0.0.1";
-      this.setting_service_url = "https://settings.study24x7.net/4.0.0.1";
-      this.saved_service_url = "https://saved.study24x7.net/4.0.0.1";
-      this.file_service_url = "https://file.study24x7.net/4.0.0.1";
-      this.page_service_url = "https://page.study24x7.net/4.0.0.1";
-      this.purchase_service_url = "https://purchase.study24x7.net/4.0.0.1";
-      this.course_service_url = "https://course.study24x7.net/4.0.0.1";
-      this.videoServerURL = "https://video.study24x7.net/bitmovin.php";
+        "https://notifications.aio.net/4.0.0.1";
+      this.connection_service_url = "https://connections.aio.net/4.0.0.1";
+      this.post_service_url = "https://posts.aio.net/4.0.0.1";
+      this.message_service_url = "https://messages.aio.net/4.0.0.1";
+      this.search_service_url = "https://search.aio.net/4.0.0.1";
+      this.ldrBoard_service_url = "https://reward.aio.net/4.0.0.1";
+      this.suggestion_service_url = "https://suggestions.aio.net/4.0.0.1";
+      this.trending_service_url = "http://trendings.aio.net/4.0.0.1";
+      this.setting_service_url = "https://settings.aio.net/4.0.0.1";
+      this.saved_service_url = "https://saved.aio.net/4.0.0.1";
+      this.file_service_url = "https://file.aio.net/4.0.0.1";
+      this.page_service_url = "https://page.aio.net/4.0.0.1";
+      this.purchase_service_url = "https://purchase.aio.net/4.0.0.1";
+      this.course_service_url = "https://course.aio.net/4.0.0.1";
+      this.videoServerURL = "https://video.aio.net/bitmovin.php";
       this.payuPaymentServerURL =
-        "https://payment.study24x7.net/payumoney/payu.php";
+        "https://payment.aio.net/payumoney/payu.php";
       this.paytmPaymentServerURL =
-        "https://payment.study24x7.net/paytm/paytm.php";
+        "https://payment.aio.net/paytm/paytm.php";
       this.libraryBucketPath =
         "https://s3.ap-south-1.amazonaws.com/247-cors/assets/course_Lib_Img/Course-images-";
-      this.article_service_url = "https://article.study24x7.net/4.0.0.1";
-      this.utility_service_url = "https://utility.study24x7.net/4.0.0.1";
-      this.staticPostShareLink = "https://www.study24x7.com/post/";
-      this.staticArticleShareLink = "https://www.study24x7.com/article/";
+      this.article_service_url = "https://article.aio.net/4.0.0.1";
+      this.utility_service_url = "https://utility.aio.net/4.0.0.1";
+      this.staticPostShareLink = "https://www.aio.com/post/";
+      this.staticArticleShareLink = "https://www.aio.com/article/";
       this.googleClientId =
         "820432769646-rvnalptiheclr2n3um6fevdcduill802.apps.googleusercontent.com";
       this.facebookAppId = "309713967120907";
-      this.ckeditorPath = "https://www.study24x7.com/ckeditor/";
+      this.ckeditorPath = "https://www.aio.com/ckeditor/";
       this.askAssistantPath = "/inbox/ask.assistant6617";
       this.websocketURL = "https://orbit.hellouser.co.in:3011";
-      this.antMediaStreamUrl = "rtmp://media.study24x7.net/WebRTCAppEE/";
-      this.antmediaURL = "media.study24x7.net";
+      this.antMediaStreamUrl = "rtmp://media.aio.net/WebRTCAppEE/";
+      this.antmediaURL = "media.aio.net";
       this.screenShareExtentionId = "acbjloehclednkmokadabncnbfekpepl";
       this.videoCDNUrl = "https://studymediaaka.azureedge.net/";
       this.awsKey = {
@@ -2882,7 +2882,7 @@ export class ConstantService {
   }
 
   isExternalLink(link: string) {
-    if (link.includes("study24x7.com")) {
+    if (link.includes("aio.com")) {
       return false;
     }
     return true;

@@ -69,7 +69,7 @@ export class LoginheaderComponent implements OnInit {
 
 
         if (!this._cookie.get('study247')) {
-            document.cookie = "study247=study24x7";
+            document.cookie = "study247=aio";
 
         }
         if (window.innerWidth < 768) {

@@ -22,9 +22,9 @@
                                 <div class="course_index clearfix">
                                     <ul *ngFor="let content of section.SECTION_CONTENT_DATA; let j = index;">
                                         <li (click)="goToCourseContent(content.CONTENT_TYPE,content.CONTENT_UUID)">
-                                            <span *ngIf="(content.CONTENT_TYPE == 1 || content.CONTENT_TYPE == 4 || content.CONTENT_TYPE == 5)"><img src="assets/images/svg-three/course/course_creation/gray_video.svg" alt="study24x7"></span>
-                                            <span *ngIf="content.CONTENT_TYPE == 2"><img src="assets/images/svg-three/course/course_creation/gray_document.svg" alt="study24x7"></span>
-                                            <span *ngIf="content.CONTENT_TYPE == 3"><img src="assets/images/svg-three/course/course_creation/gray_quiz.svg" alt="study24x7"></span>
+                                            <span *ngIf="(content.CONTENT_TYPE == 1 || content.CONTENT_TYPE == 4 || content.CONTENT_TYPE == 5)"><img src="assets/images/svg-three/course/course_creation/gray_video.svg" alt="aio"></span>
+                                            <span *ngIf="content.CONTENT_TYPE == 2"><img src="assets/images/svg-three/course/course_creation/gray_document.svg" alt="aio"></span>
+                                            <span *ngIf="content.CONTENT_TYPE == 3"><img src="assets/images/svg-three/course/course_creation/gray_quiz.svg" alt="aio"></span>
                                             <span>&nbsp;</span>
                                             <span class="contetName">&nbsp;{{content.TITLE}}</span>
 
@@ -64,7 +64,7 @@
             <div class="topstrip">
                 <div class="t_left">
                     <span class="test_name">{{testName}}</span>
-                    <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="study24x7"  ></div>
+                    <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="aio"  ></div>
 
                 </div>
             </div>
@@ -190,7 +190,7 @@
              <div class="topstrip">
                 <div class="t_left">
                     <span class="test_name">{{testName}}</span>
-                    <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="study24x7"  ></div>
+                    <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="aio"  ></div>
                     <div class="select_lang" >
                         <!--<span (click)="show_lang_list()" class="drop_lang">Language <span  class="glyphicon glyphicon glyphicon-triangle-bottom" style="font-size:9px;"></span></span>-->
                         <span class="drop_lang" style="cursor:default;">Language <span  class="glyphicon glyphicon glyphicon-triangle-bottom" style="font-size:9px; cursor:pointer-event;"></span></span>
@@ -250,7 +250,7 @@
                                 <!--<span class="help_icon"> <span class="report">! &nbsp;REPORT</span></span>-->
 
                                 <span class="help_icon_help" *ngIf="isHintProvided">
-                                    <span class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="study24x7">&nbsp;HINT</span>
+                                    <span class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="aio">&nbsp;HINT</span>
                                     <span class="hint_dsgn" *ngIf="answerhint">
                                         <span class="close_div" (click)="hintfun()">
                                             <img class="default" src="assets/images/svg/tagcross-wh.svg">
@@ -259,7 +259,7 @@
                                             <span class="hint_wrapper">
 
                                                 <p [innerHTML]="hintText | safe : true"></p>
-                                                <p *ngIf="showHintImg"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
+                                                <p *ngIf="showHintImg"><img alt="aio" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
                                             </span>
                                         </div>
                                     </span>
@@ -297,7 +297,7 @@
                                                 </ul>
                                                 <div class="para_head_cont" contenteditable="false" id='ques_text12'>
                                                     <p [innerHTML]="questionText | safe : true"></p>
-                                                    <!--  <p *ngIf="quesImage"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p> -->
+                                                    <!--  <p *ngIf="quesImage"><img alt="aio" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p> -->
                                                 </div>
                                             </div>
                                             <div class="QuesTypeNote">
@@ -311,7 +311,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt1'>
                                                         <p [innerHTML] ="opt1_text | safe : true"></p>
-                                                        <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                        <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="aio" src="{{option_image1_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="b" id="scqSingle1" name="singlechoice"  class="radiobtn" type="radio">
@@ -319,7 +319,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt2'>
                                                         <p [innerHTML] ="opt2_text | safe : true"></p>
-                                                        <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                        <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="aio" src="{{option_image2_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="c"  id="scqSingle2" name="singlechoice"  class="radiobtn" type="radio">
@@ -327,7 +327,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt3'>
                                                         <p [innerHTML] ="opt3_text | safe : true"></p>
-                                                        <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                        <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="aio" src="{{option_image3_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="d" id="scqSingle3" name="singlechoice"  class="radiobtn" type="radio">
@@ -335,7 +335,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt4'>
                                                         <p [innerHTML] ="opt4_text | safe : true"></p>
-                                                        <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                        <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="aio" src="{{option_image4_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <div *ngIf="newOptionAdded > 0">
@@ -344,7 +344,7 @@
                                                         <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                         <span class="optncntnt" contenteditable="false" id='opt5'>
                                                             <p [innerHTML] ="opt5_text | safe : true"></p>
-                                                            <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                            <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="aio" src="{{option_image5_url}}" ></p>
                                                         </span>
                                                     </label>
                                                 </div>
@@ -354,7 +354,7 @@
                                                         <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                         <span class="optncntnt" contenteditable="false" id='opt6'>
                                                             <p [innerHTML] ="opt6_text | safe : true"></p>
-                                                            <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                            <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="aio" src="{{option_image6_url}}" ></p>
                                                         </span>
                                                     </label>
                                                 </div>
@@ -368,7 +368,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt1'>
                                                         <p [innerHTML] ="opt1_text | safe : true"></p>
-                                                        <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                        <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="aio" src="{{option_image1_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="b" id="multiResOpt2" name="multipleres"  class="radiobtn" type="checkbox" (change)="checkboxupdate($event)">
@@ -376,7 +376,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt2'>
                                                         <p [innerHTML] ="opt2_text | safe : true"></p>
-                                                        <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                        <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="aio" src="{{option_image2_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="c"  id="multiResOpt3" name="multipleres"  class="radiobtn" type="checkbox" (change)="checkboxupdate($event)">
@@ -384,7 +384,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt3'>
                                                         <p [innerHTML] ="opt3_text | safe : true"></p>
-                                                        <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                        <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="aio" src="{{option_image3_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="d" id="multiResOpt4" name="multipleres"  class="radiobtn" type="checkbox" (change)="checkboxupdate($event)">
@@ -392,7 +392,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt4'>
                                                         <p [innerHTML] ="opt4_text | safe : true"></p>
-                                                        <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                        <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="aio" src="{{option_image4_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <div *ngIf="newOptionAdded > 0">
@@ -401,7 +401,7 @@
                                                         <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                         <span class="optncntnt" contenteditable="false" id='opt5'>
                                                             <p [innerHTML] ="opt5_text | safe : true"></p>
-                                                            <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                            <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="aio" src="{{option_image5_url}}" ></p>
                                                         </span>
                                                     </label>
                                                 </div>
@@ -411,7 +411,7 @@
                                                         <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                         <span class="optncntnt" contenteditable="false" id='opt6'>
                                                             <p [innerHTML] ="opt6_text | safe : true"></p>
-                                                            <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                            <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="aio" src="{{option_image6_url}}" ></p>
                                                         </span>
                                                     </label>
                                                 </div>
@@ -437,7 +437,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing0">
                                                         <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt1'>{{opt1_text}}
-                                                            <p *ngIf="optImg1"><img alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                            <p *ngIf="optImg1"><img alt="aio" src="{{option_image1_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -493,7 +493,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt7'>{{opt7_text}}
-                                                                        <p *ngIf="optImg7"><img alt="study24x7" src="{{option_image7_url}}" ></p>
+                                                                        <p *ngIf="optImg7"><img alt="aio" src="{{option_image7_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -505,7 +505,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing1">
                                                         <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt2'>{{opt2_text}}
-                                                            <p *ngIf="optImg2"><img alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                            <p *ngIf="optImg2"><img alt="aio" src="{{option_image2_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -561,7 +561,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt8'>{{opt8_text}}
-                                                                        <p *ngIf="optImg8"><img alt="study24x7" src="{{option_image8_url}}" ></p>
+                                                                        <p *ngIf="optImg8"><img alt="aio" src="{{option_image8_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -573,7 +573,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing3">
                                                         <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt3'>{{opt3_text}}
-                                                            <p *ngIf="optImg3"><img alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                            <p *ngIf="optImg3"><img alt="aio" src="{{option_image3_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -629,7 +629,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt " contenteditable="false" id='opt9'>{{opt9_text}}
-                                                                        <p *ngIf="optImg9"><img alt="study24x7" src="option_image9_url" ></p>
+                                                                        <p *ngIf="optImg9"><img alt="aio" src="option_image9_url" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -641,7 +641,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing4">
                                                         <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt4'>{{opt4_text}}
-                                                            <p *ngIf="optImg4"><img alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                            <p *ngIf="optImg4"><img alt="aio" src="{{option_image4_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -697,7 +697,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt10'>{{opt10_text}}
-                                                                        <p *ngIf="optImg10" ><img alt="study24x7" src="{{option_image10_url}}" ></p>
+                                                                        <p *ngIf="optImg10" ><img alt="aio" src="{{option_image10_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -709,7 +709,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing5">
                                                         <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt5'>{{opt5_text}}
-                                                            <p *ngIf="optImg5"><img alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                            <p *ngIf="optImg5"><img alt="aio" src="{{option_image5_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -765,7 +765,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt11'>{{opt11_text}}
-                                                                        <p *ngIf="optImg11"><img alt="study24x7" src="{{option_image11_url}}" ></p>
+                                                                        <p *ngIf="optImg11"><img alt="aio" src="{{option_image11_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -777,7 +777,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing6">
                                                         <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt6'>{{opt6_text}}
-                                                            <p *ngIf="optImg6"><img alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                            <p *ngIf="optImg6"><img alt="aio" src="{{option_image6_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -833,7 +833,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt12'>{{opt12_text}}
-                                                                        <p *ngIf="optImg12"><img alt="study24x7" src="{{option_image12_url}}" ></p>
+                                                                        <p *ngIf="optImg12"><img alt="aio" src="{{option_image12_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -850,7 +850,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle10">
                                                         <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt1'>{{opt1_text}}
-                                                            <p *ngIf="optImg1"><img alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                            <p *ngIf="optImg1"><img alt="aio" src="{{option_image1_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -906,7 +906,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt7'>{{opt7_text}}
-                                                                        <p *ngIf="optImg7" ><img alt="study24x7" src="{{option_image7_url}}" ></p>
+                                                                        <p *ngIf="optImg7" ><img alt="aio" src="{{option_image7_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -918,7 +918,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle11">
                                                         <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt2'>{{opt2_text}}
-                                                            <p *ngIf="optImg2"><img alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                            <p *ngIf="optImg2"><img alt="aio" src="{{option_image2_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -974,7 +974,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt8'>{{opt8_text}}
-                                                                        <p *ngIf="optImg8"><img alt="study24x7" src="{{option_image8_url}}" ></p>
+                                                                        <p *ngIf="optImg8"><img alt="aio" src="{{option_image8_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -986,7 +986,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle12">
                                                         <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt3'>{{opt3_text}}
-                                                            <p *ngIf="optImg3"><img alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                            <p *ngIf="optImg3"><img alt="aio" src="{{option_image3_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -1042,7 +1042,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt9'>{{opt9_text}}
-                                                                        <p *ngIf="optImg9"><img alt="study24x7" src="option_image9_url" ></p>
+                                                                        <p *ngIf="optImg9"><img alt="aio" src="option_image9_url" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1054,7 +1054,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle13">
                                                         <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt4'>{{opt4_text}}
-                                                            <p *ngIf="optImg4"><img alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                            <p *ngIf="optImg4"><img alt="aio" src="{{option_image4_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -1110,7 +1110,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt10'>{{opt10_text}}
-                                                                        <p *ngIf="optImg10"><img alt="study24x7" src="{{option_image10_url}}" ></p>
+                                                                        <p *ngIf="optImg10"><img alt="aio" src="{{option_image10_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1122,7 +1122,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle14">
                                                         <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                         <div class="optncntnt">{{opt5_text}}
-                                                            <p *ngIf="optImg5"><img alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                            <p *ngIf="optImg5"><img alt="aio" src="{{option_image5_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -1178,7 +1178,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt11'>{{opt11_text}}
-                                                                        <p *ngIf="optImg11"><img alt="study24x7" src="{{option_image11_url}}" ></p>
+                                                                        <p *ngIf="optImg11"><img alt="aio" src="{{option_image11_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1190,7 +1190,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle15">
                                                         <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                         <div class="optncntnt" contenteditable="false" id='opt6'>{{opt6_text}}
-                                                            <p *ngIf="optImg6"><img alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                            <p *ngIf="optImg6"><img alt="aio" src="{{option_image6_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -1246,7 +1246,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt" contenteditable="false" id='opt12' >{{opt12_text}}
-                                                                        <p *ngIf="optImg12"><img alt="study24x7" src="{{option_image12_url}}" ></p>
+                                                                        <p *ngIf="optImg12"><img alt="aio" src="{{option_image12_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1411,7 +1411,7 @@
             <div class="topstrip">
                 <div class="t_left">
                     <span class="test_name">{{testName}}</span>
-                    <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="study24x7"  ></div>
+                    <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="aio"  ></div>
                     <div class="select_lang" >
                         <!--<span (click)="show_lang_list()" class="drop_lang">Language <span  class="glyphicon glyphicon glyphicon-triangle-bottom" style="font-size:9px;"></span></span>-->
                         <span class="drop_lang">Language <span  class="glyphicon glyphicon glyphicon-triangle-bottom" style="font-size:9px;"></span></span>
@@ -1516,7 +1516,7 @@
                                     </a>
                                 </div>
                                 <span class="help_icon_help" *ngIf="isHintProvided">
-                                    <span class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="study24x7"><span>&nbsp;HINT</span></span>
+                                    <span class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="aio"><span>&nbsp;HINT</span></span>
                                     <span class="hint_dsgn" *ngIf="answerhint">
                                         <span class="close_div" (click)="hintfun()">
                                             <img class="default" src="assets/images/svg/tagcross-wh.svg">
@@ -1524,7 +1524,7 @@
                                         <div style="min-height: 50px;max-height: 200px;position:relative;width: 100%;padding-right: 10px;" [perfectScrollbar]="config">
                                             <span class="hint_wrapper">
                                                 <p [innerHTML]="hintText | safe : true"></p>
-                                                <p *ngIf="showHintImg"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
+                                                <p *ngIf="showHintImg"><img alt="aio" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
                                             </span>
                                         </div>
                                     </span>
@@ -1560,7 +1560,7 @@
                                                 </ul>
                                                 <div class="para_head_cont" contenteditable="false" id='ques_text'>
                                                     <p [innerHTML]="questionText | safe : true"></p>
-                                                    <!-- <p *ngIf="quesImage"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p> -->
+                                                    <!-- <p *ngIf="quesImage"><img alt="aio" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p> -->
                                                 </div>
                                             </div>
                                             <div class="QuesTypeNote">
@@ -1574,7 +1574,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt1'>
                                                         <p [innerHTML] ="opt1_text | safe : true"></p>
-                                                        <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                        <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="aio" src="{{option_image1_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="b" id="scqSingle1" name="singlechoice"  class="radiobtn" type="radio">
@@ -1582,7 +1582,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt2'>
                                                         <p [innerHTML] ="opt2_text | safe : true"></p>
-                                                        <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                        <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="aio" src="{{option_image2_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="c"  id="scqSingle2" name="singlechoice"  class="radiobtn" type="radio">
@@ -1590,7 +1590,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt3'>
                                                         <p [innerHTML] ="opt3_text | safe : true"></p>
-                                                        <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                        <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="aio" src="{{option_image3_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="d" id="scqSingle3" name="singlechoice"  class="radiobtn" type="radio">
@@ -1598,7 +1598,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt4'>
                                                         <p [innerHTML] ="opt4_text | safe : true"></p>
-                                                        <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                        <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="aio" src="{{option_image4_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <div *ngIf="newOptionAdded > 0">
@@ -1607,7 +1607,7 @@
                                                         <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                         <span class="optncntnt" contenteditable="false" id='opt5'>
                                                             <p [innerHTML] ="opt5_text | safe : true"></p>
-                                                            <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                            <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="aio" src="{{option_image5_url}}" ></p>
                                                         </span>
                                                     </label>
                                                 </div>
@@ -1617,7 +1617,7 @@
                                                         <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                         <span class="optncntnt" contenteditable="false" id='opt6'>
                                                             <p [innerHTML] ="opt6_text | safe : true"></p>
-                                                            <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                            <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="aio" src="{{option_image6_url}}" ></p>
                                                         </span>
                                                     </label>
                                                 </div>
@@ -1631,7 +1631,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt1'>
                                                         <p [innerHTML] ="opt1_text | safe : true"></p>
-                                                        <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                        <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="aio" src="{{option_image1_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="b" id="multiResOpt2" name="multipleres"  class="radiobtn" type="checkbox" (change)="checkboxupdate($event)">
@@ -1639,7 +1639,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt2'>
                                                         <p [innerHTML] ="opt2_text | safe : true"></p>
-                                                        <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                        <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="aio" src="{{option_image2_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="c"  id="multiResOpt3" name="multipleres"  class="radiobtn" type="checkbox" (change)="checkboxupdate($event)">
@@ -1647,7 +1647,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt3'>
                                                         <p [innerHTML] ="opt3_text | safe : true"></p>
-                                                        <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                        <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="aio" src="{{option_image3_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <input value="d" id="multiResOpt4" name="multipleres"  class="radiobtn" type="checkbox" (change)="checkboxupdate($event)">
@@ -1655,7 +1655,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                     <span class="optncntnt" contenteditable="false" id='opt4'>
                                                         <p [innerHTML] ="opt4_text | safe : true"></p>
-                                                        <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                        <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="aio" src="{{option_image4_url}}" ></p>
                                                     </span>
                                                 </label>
                                                 <div *ngIf="newOptionAdded > 0">
@@ -1664,7 +1664,7 @@
                                                         <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                         <span class="optncntnt" contenteditable="false" id='opt5'>
                                                             <p [innerHTML] ="opt5_text | safe : true"></p>
-                                                            <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                            <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="aio" src="{{option_image5_url}}" ></p>
                                                         </span>
                                                     </label>
                                                 </div>
@@ -1675,7 +1675,7 @@
                                                         <div class="optncntnt" contenteditable="false" id='opt6'>
                                                             <!--{{opt6_text}}-->
                                                             [innerHTML] =  "opt6_text | safe : true"
-                                                            <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                            <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="aio" src="{{option_image6_url}}" ></p>
                                                         </div>
                                                     </label>
                                                 </div>
@@ -1701,7 +1701,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing0">
                                                         <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                         <div class="optncntnt">{{opt1_text}}
-                                                            <p *ngIf="optImg1"><img alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                            <p *ngIf="optImg1"><img alt="aio" src="{{option_image1_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -1757,7 +1757,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt7_text}}
-                                                                        <p *ngIf="optImg7"><img alt="study24x7" src="{{option_image7_url}}" ></p>
+                                                                        <p *ngIf="optImg7"><img alt="aio" src="{{option_image7_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1769,7 +1769,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing1">
                                                         <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                         <div class="optncntnt">{{opt2_text}}
-                                                            <p *ngIf="optImg2"><img alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                            <p *ngIf="optImg2"><img alt="aio" src="{{option_image2_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -1825,7 +1825,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt8_text}}
-                                                                        <p *ngIf="optImg8"><img alt="study24x7" src="{{option_image8_url}}" ></p>
+                                                                        <p *ngIf="optImg8"><img alt="aio" src="{{option_image8_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1837,7 +1837,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing3">
                                                         <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                         <div class="optncntnt">{{opt3_text}}
-                                                            <p *ngIf="optImg3"><img alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                            <p *ngIf="optImg3"><img alt="aio" src="{{option_image3_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -1893,7 +1893,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt9_text}}
-                                                                        <p *ngIf="optImg9"><img alt="study24x7" src="option_image9_url" ></p>
+                                                                        <p *ngIf="optImg9"><img alt="aio" src="option_image9_url" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1905,7 +1905,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing4">
                                                         <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                         <div class="optncntnt">{{opt4_text}}
-                                                            <p *ngIf="optImg4"><img alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                            <p *ngIf="optImg4"><img alt="aio" src="{{option_image4_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -1961,7 +1961,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt10_text}}
-                                                                        <p *ngIf="optImg10"><img alt="study24x7" src="{{option_image10_url}}" ></p>
+                                                                        <p *ngIf="optImg10"><img alt="aio" src="{{option_image10_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1973,7 +1973,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing5">
                                                         <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                         <div class="optncntnt">{{opt5_text}}
-                                                            <p *ngIf="optImg5"><img alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                            <p *ngIf="optImg5"><img alt="aio" src="{{option_image5_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -2029,7 +2029,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt11_text}}
-                                                                        <p *ngIf="optImg11"><img alt="study24x7" src="{{option_image11_url}}" ></p>
+                                                                        <p *ngIf="optImg11"><img alt="aio" src="{{option_image11_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2041,7 +2041,7 @@
                                                     <label class="option radio-sctns" for="matchfollowing6">
                                                         <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                         <div class="optncntnt">{{opt6_text}}
-                                                            <p *ngIf="optImg6"><img alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                            <p *ngIf="optImg6"><img alt="aio" src="{{option_image6_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -2097,7 +2097,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt12_text}}
-                                                                        <p *ngIf="optImg12"><img alt="study24x7" src="{{option_image12_url}}" ></p>
+                                                                        <p *ngIf="optImg12"><img alt="aio" src="{{option_image12_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2114,7 +2114,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle10">
                                                         <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                         <div class="optncntnt">{{opt1_text}}
-                                                            <p *ngIf="optImg1"><img alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                            <p *ngIf="optImg1"><img alt="aio" src="{{option_image1_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -2170,7 +2170,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt7_text}}
-                                                                        <p *ngIf="optImg7"><img alt="study24x7" src="{{option_image7_url}}" ></p>
+                                                                        <p *ngIf="optImg7"><img alt="aio" src="{{option_image7_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2182,7 +2182,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle11">
                                                         <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                         <div class="optncntnt">{{opt2_text}}
-                                                            <p *ngIf="optImg2"><img alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                            <p *ngIf="optImg2"><img alt="aio" src="{{option_image2_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -2238,7 +2238,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt8_text}}
-                                                                        <p *ngIf="optImg8"><img alt="study24x7" src="{{option_image8_url}}" ></p>
+                                                                        <p *ngIf="optImg8"><img alt="aio" src="{{option_image8_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2250,7 +2250,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle12">
                                                         <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                         <div class="optncntnt">{{opt3_text}}
-                                                            <p *ngIf="optImg3"><img alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                            <p *ngIf="optImg3"><img alt="aio" src="{{option_image3_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -2306,7 +2306,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt9_text}}
-                                                                        <p *ngIf="optImg9"><img alt="study24x7" src="option_image9_url" ></p>
+                                                                        <p *ngIf="optImg9"><img alt="aio" src="option_image9_url" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2318,7 +2318,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle13">
                                                         <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                         <div class="optncntnt">{{opt4_text}}
-                                                            <p *ngIf="optImg4"><img alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                            <p *ngIf="optImg4"><img alt="aio" src="{{option_image4_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -2374,7 +2374,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt10_text}}
-                                                                        <p *ngIf="optImg10"><img alt="study24x7" src="{{option_image10_url}}" ></p>
+                                                                        <p *ngIf="optImg10"><img alt="aio" src="{{option_image10_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2386,7 +2386,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle14">
                                                         <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                         <div class="optncntnt">{{opt5_text}}
-                                                            <p *ngIf="optImg5"><img alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                            <p *ngIf="optImg5"><img alt="aio" src="{{option_image5_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -2442,7 +2442,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt11_text}}
-                                                                        <p *ngIf="optImg11"><img alt="study24x7" src="{{option_image11_url}}" ></p>
+                                                                        <p *ngIf="optImg11"><img alt="aio" src="{{option_image11_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2454,7 +2454,7 @@
                                                     <label class="option radio-sctns" for="mcqSingle15">
                                                         <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                         <div class="optncntnt">{{opt6_text}}
-                                                            <p *ngIf="optImg6"><img alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                            <p *ngIf="optImg6"><img alt="aio" src="{{option_image6_url}}" ></p>
                                                             <span class="select_ans">Select Answer</span>
                                                             <span class="ans_selectbox">
                                                                 <span class="slt_circle">
@@ -2510,7 +2510,7 @@
                                                             <div  class="Ques_right_part ">
                                                                 <div  class="optionoutr">
                                                                     <div class="optncntnt">{{opt12_text}}
-                                                                        <p *ngIf="optImg12"><img alt="study24x7" src="{{option_image12_url}}" ></p>
+                                                                        <p *ngIf="optImg12"><img alt="aio" src="{{option_image12_url}}" ></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2835,7 +2835,7 @@
         <div class="test_wrapper test_exit_wrapper">
             <div class=" test_top_strip">
                 <p class="clearfix">
-                    <img src="./assets/images/svg/pause.svg" alt="study24x7"><span class="sp_left">TEST PAUSED</span>
+                    <img src="./assets/images/svg/pause.svg" alt="aio"><span class="sp_left">TEST PAUSED</span>
                 </p>
             </div>
             <div class=" mainmiddle1">
@@ -2855,8 +2855,8 @@
                     </div>
                     <div class="footrlft bottomstrip footer_btn">
                         <a class="  resume_btn btn_gry" href="javascript:void(0);" (click)="pauseTest();">RESUME TEST
-                            <!--                            <img class="hoverr" src="./assets/images/svg-three/play-f05050.svg" alt="study24x7">
-                                                        <img class="defaultt" src="./assets/images/svg-three/play-8c8c8c.svg" alt="study24x7">-->
+                            <!--                            <img class="hoverr" src="./assets/images/svg-three/play-f05050.svg" alt="aio">
+                                                        <img class="defaultt" src="./assets/images/svg-three/play-8c8c8c.svg" alt="aio">-->
                         </a>
                         <a class=" resume_btn" href="javascript:void(0);" ><span id="savennext_ssc" (click)="submitTest();">SUBMIT TEST</span></a>
                     </div>

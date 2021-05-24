@@ -84,7 +84,7 @@ export class SharescreensinglechoicepostComponent implements OnInit {
         this.setInterestObj();
         this.tagsArr = this.postdata['INTERESTS'];
         this.time = this.postdata['ADD_DATE_TIME'];
-        this.altName = "study24x7 " + this.postdata['KEYWORDS'];
+        this.altName = "aio " + this.postdata['KEYWORDS'];
         if (this.postTyp == 4) {
         this.postPublicShareLink = this._constantService.staticPostShareLink + this.postdata.SHARED_POST_DATA.URL;
 

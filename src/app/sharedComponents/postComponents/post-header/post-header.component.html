@@ -13,7 +13,7 @@
 
         <span (click)="routeTo('profile')" class="profileImage  "
           [ngClass]="{'sharedIconImage' : headerData.arr.TYPE==4}">
-          <img src="{{headerData.profile_pic_path}}" alt="study24x7 {{headerData.user_name |trimData:30}}">
+          <img src="{{headerData.profile_pic_path}}" alt="aio {{headerData.user_name |trimData:30}}">
         </span>
 
         <div class="postHeaderDetailWrapper" [ngClass]="{'sharedPostHeaderDetailWrapper' : headerData.arr.TYPE==4}">
@@ -43,30 +43,30 @@
               followers</span>
 
             <span class="dote" *ngIf="headerData.arr.TYPE!=4 && headerData.isPagePost">
-              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio">
             </span>
 
             <ng-container *ngIf="headerData.arr.VISIBILITY ==3">
               <span class="timeandFollow cursor-pointer textDecorationUnderline"
                 routerLink="/post/{{headerData.arr.USER_POST_ID}}">{{headerData.time}}</span>
               <span class="dote">
-                <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+                <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio">
               </span>
               <span class="previcy_icon">
-                <img src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7">
+                <img src="assets/images/svg-three/add_post/wall/public.svg" alt="aio">
               </span>
             </ng-container>
 
             <span class="timeandFollow cursor-pointer textDecorationUnderline" *ngIf="headerData.arr.VISIBILITY !=3"
               routerLink="/post/{{headerData.arr.USER_POST_ID}}">{{headerData.time}}</span>
             <span class="dote" *ngIf="headerData.arr.VISIBILITY !=3">
-              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio">
             </span>
             <span class="previcy_icon" *ngIf="headerData.arr.VISIBILITY ==2" style="width:13px;">
-              <img src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7">
+              <img src="assets/images/svg-three/add_post/wall/connection.svg" alt="aio">
             </span>
             <span class="previcy_icon" *ngIf="headerData.arr.VISIBILITY ==1">
-              <img src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7">
+              <img src="assets/images/svg-three/add_post/wall/private_new.svg" alt="aio">
             </span>
           </div>
         </div>
@@ -88,7 +88,7 @@
             Follow
           </span>
           <span *ngIf="headerData.followme" class="following cursolnone">
-            <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+            <img src="assets/images/svg/white_checkbox.svg" alt="aio">
             Following
           </span>
         </button>

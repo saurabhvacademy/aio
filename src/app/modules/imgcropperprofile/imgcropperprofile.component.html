@@ -20,7 +20,7 @@
             <div  class="middle_wrapperr" id="controlCropperSec" [ngStyle] ="{width:cropperSettings2.canvasWidth+'px', height:cropperSettings2.canvasHeight+'px' }" >
               <div class="middle_wrapperr_inner">
                 <div *ngIf="!data2.image" class="empty-state" [ngStyle] ="{width:cropperSettings2.canvasWidth+'px', height:cropperSettings2.canvasHeight+'px' }">
-                    <img src="./assets/images/svg-three/uploadimage.svg" alt="study24x7">
+                    <img src="./assets/images/svg-three/uploadimage.svg" alt="aio">
                 </div>
                 <img-cropper #cropper [image]="data2" [settings]="cropperSettings2"></img-cropper>
                 <span  class="result rounded" *ngIf="data2.image && false" >
@@ -36,7 +36,7 @@
                 <button class="redColorButton button24x7 fright"  (click)="uploadPic()">Apply</button>
                 <!--                <button [disabled]="showText === false && disabledPostBtn" class="btn btn-primary claim_btn" (click)="uploadPic()"  style="margin-top: 5px;">
                                     <span class="text" *ngIf="showText">Apply</span>
-                                    <span class="loader"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader && showText == false"></span>
+                                    <span class="loader"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="loader && showText == false"></span>
                                 </button>-->
             </div>
 

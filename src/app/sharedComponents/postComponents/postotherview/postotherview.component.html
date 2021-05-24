@@ -9,7 +9,7 @@
 
                 <div *ngIf="isPagePost">
                     <span class="profileImage  " routerLink="/page/{{pg_id}}">
-                        <img src="{{profile_pic_path}}" alt="study24x7 {{user_name |trimData:30}}">
+                        <img src="{{profile_pic_path}}" alt="aio {{user_name |trimData:30}}">
                     </span>
                     <!--click function add by vijay-->
                     <div class="postHeaderDetailWrapper">
@@ -21,24 +21,24 @@
                             <span class="timeandFollow" routerLink="/page/{{pg_id}}">{{arr['PAGE_FOLLOW_COUNT']}}
                                 followers</span>
                             <span class="dote">
-                                <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
-                                    alt="study24x7">
+                                <img src="https://img1.aio.com/assets/images/svg-three/post_icon/dote1.svg"
+                                    alt="aio">
                             </span>
                             <span class="timeandFollow cursor-pointer textDecorationUnderline"
                                 routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
                             <span class="dote">
-                                <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
-                                    alt="study24x7">
+                                <img src="https://img1.aio.com/assets/images/svg-three/post_icon/dote1.svg"
+                                    alt="aio">
                             </span>
                             <span class="previcy_icon"><img title="Public"
-                                    src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                                    src="assets/images/svg-three/add_post/wall/public.svg" alt="aio"></span>
                         </div>
                     </div>
                 </div>
 
                 <div *ngIf="!isPagePost">
                     <span class="profileImage" style="cursor:pointer" routerLink="/profile/{{arr.USER_NAME}}">
-                        <img src="{{profile_pic_path}}" alt="study24x7 {{full_name |trimData:30}}">
+                        <img src="{{profile_pic_path}}" alt="aio {{full_name |trimData:30}}">
                     </span>
 
                     <div class="postHeaderDetailWrapper">
@@ -50,10 +50,10 @@
                             <span class="timeandFollow cursor-pointer textDecorationUnderline"
                                 routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
                             <span class="dote"><img
-                                    src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
-                                    alt="study24x7"></span>
+                                    src="https://img1.aio.com/assets/images/svg-three/post_icon/dote1.svg"
+                                    alt="aio"></span>
                             <span class="previcy_icon"><img title="Public"
-                                    src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                                    src="assets/images/svg-three/add_post/wall/public.svg" alt="aio"></span>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                             style="float: left;"></p>
                         <div class="imgpostimgcontainer" style="display: block;margin-top: 0;float: none;">
                             <img src="{{image_path}}" class="imgpost_img" *ngIf="image_path!=''"
-                                alt="{{'study24x7 ' +altName}}">
+                                alt="{{'aio ' +altName}}">
                         </div>
 
                     </div>
@@ -206,7 +206,7 @@
                             class="sharedlink_post cursor-pointer shareLinkPostParentcontiner PostViewArticle"
                             *ngIf="innerPostTyp == 1">
                             <div class="articleImage" *ngIf="image_path !='' ">
-                                <img src="{{image_path}}" alt="study24x7" #aritcleImage style="visibility:hidden;">
+                                <img src="{{image_path}}" alt="aio" #aritcleImage style="visibility:hidden;">
                                 <span
                                     [ngClass]="{'img-auto': setArticleClass == 1, 'img-contain': setArticleClass == 2, 'img-100':setArticleClass == 3, 'img-cover': setArticleClass == 4}"
                                     [ngStyle]="{'background-image': getImgUrl(image_path)}"></span>
@@ -483,10 +483,10 @@
 
                             <div class="box-three result-box clearfix">
                                 <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
-                                        src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                        src="assets/images/svg/caret-down.svg" alt="aio"><span
                                         class="response-count">{{arr.INCORRECT_RESPONSE_COUNT}}</span> </div>
                                 <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
-                                        src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                        src="assets/images/svg/caret-up.svg" alt="aio"><span
                                         class="response-count">{{arr.CORRECT_RESPONSE_COUNT}}</span> </div>
                                 <div class="resultinfo title" *ngIf="resultDeclared && !my_profile">Total Responses
                                 </div>
@@ -752,10 +752,10 @@
 
                             <div class="box-three result-box clearfix">
                                 <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
-                                        src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                        src="assets/images/svg/caret-down.svg" alt="aio"><span
                                         class="response-count">{{arr.INCORRECT_RESPONSE_COUNT}}</span> </div>
                                 <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
-                                        src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                        src="assets/images/svg/caret-up.svg" alt="aio"><span
                                         class="response-count">{{arr.CORRECT_RESPONSE_COUNT}}</span> </div>
                                 <div class="resultinfo title" *ngIf="resultDeclared && !my_profile">Total Responses
                                 </div>
@@ -902,10 +902,10 @@
 
                         <div class="box-three result-box clearfix">
                             <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
-                                    src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                    src="assets/images/svg/caret-down.svg" alt="aio"><span
                                     class="response-count">{{arr.INCORRECT_RESPONSE_COUNT}}</span> </div>
                             <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
-                                    src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                    src="assets/images/svg/caret-up.svg" alt="aio"><span
                                     class="response-count">{{arr.CORRECT_RESPONSE_COUNT}}</span> </div>
                             <div class="resultinfo title" *ngIf="resultDeclared && !my_profile">Total Responses</div>
                         </div>
@@ -1019,7 +1019,7 @@
         <div class='postHeaderWrapper'>
             <div class="postHeaderInnerWrapper clearfix sharedPostHeaderTop ">
                 <span class="profileImage sharedIconImage"><img
-                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/share.svg"></span>
+                        src="https://img1.aio.com/assets/images/svg-three/post_icon/share.svg"></span>
                 <!-- click function add by vijay-->
                 <div class="postHeaderDetailWrapper sharedPostHeaderDetailWrapper">
                     <div *ngIf="!isPagePost">
@@ -1046,10 +1046,10 @@
                         <span class="timeandFollow cursor-pointer textDecorationUnderline"
                             routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
                         <span class="dote"><img
-                                src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
-                                alt="study24x7"></span>
+                                src="https://img1.aio.com/assets/images/svg-three/post_icon/dote1.svg"
+                                alt="aio"></span>
                         <span class="previcy_icon"><img title="Public"
-                                src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                                src="assets/images/svg-three/add_post/wall/public.svg" alt="aio"></span>
                     </div>
                 </div>
                 <div class="leftmenuWrapper" (click)="loginpopupFxn()">
@@ -1078,7 +1078,7 @@
                         <div *ngIf="!isPagePost">
                             <span style="cursor: pointer;" class="profileImage" routerLink="/profile/{{arr.USER_NAME}}">
                                 <img src="{{sharedPostUser_ProfilePicPath}}" (error)="updateSourcePic($event)"
-                                    alt="study24x7 {{sharedPostUser_fullName |trimData:30}}">
+                                    alt="aio {{sharedPostUser_fullName |trimData:30}}">
                             </span>
                             <div class="postHeaderDetails">
 
@@ -1092,10 +1092,10 @@
                                     routerLink="/post/{{arr.SHARED_POST_ID}}"
                                     style="float:left">{{sharedPostTime}}</span>
                                 <span class="dote"><img
-                                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
-                                        alt="study24x7"></span>
+                                        src="https://img1.aio.com/assets/images/svg-three/post_icon/dote1.svg"
+                                        alt="aio"></span>
                                 <span class="previcy_icon"><img title="Public"
-                                        src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                                        src="assets/images/svg-three/add_post/wall/public.svg" alt="aio"></span>
                             </div>
                         </div>
                         <div *ngIf="isPagePost">
@@ -1113,16 +1113,16 @@
                                     routerLink="/page/{{pg_id}}">{{arr['SHARED_POST_DATA']['PAGE_FOLLOW_COUNT']}}
                                     followers</span>
                                 <span class="dote"><img
-                                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
-                                        alt="study24x7"></span>
+                                        src="https://img1.aio.com/assets/images/svg-three/post_icon/dote1.svg"
+                                        alt="aio"></span>
 
                                 <span class="timeandFollow cursor-pointer textDecorationUnderline"
                                     routerLink="/post/{{arr.SHARED_POST_ID}}">{{sharedPostTime}}</span>
                                 <span class="dote"><img
-                                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/dote1.svg"
-                                        alt="study24x7"></span>
+                                        src="https://img1.aio.com/assets/images/svg-three/post_icon/dote1.svg"
+                                        alt="aio"></span>
                                 <span class="previcy_icon"><img title="Public"
-                                        src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7"></span>
+                                        src="assets/images/svg-three/add_post/wall/public.svg" alt="aio"></span>
 
 
                             </div>
@@ -1133,7 +1133,7 @@
                                         Follow
                                     </span>
                                     <span class="following">
-                                        <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+                                        <img src="assets/images/svg/white_checkbox.svg" alt="aio">
                                         Following
                                     </span>
                                 </button>
@@ -1563,11 +1563,11 @@
 
                                         <div class="box-three result-box clearfix">
                                             <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
-                                                    src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                                    src="assets/images/svg/caret-down.svg" alt="aio"><span
                                                     class="response-count">{{arr.SHARED_POST_DATA.INCORRECT_RESPONSE_COUNT}}</span>
                                             </div>
                                             <div class="resultinfo clearfix" *ngIf="resultDeclared && !my_profile"><img
-                                                    src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                                    src="assets/images/svg/caret-up.svg" alt="aio"><span
                                                     class="response-count">{{arr.SHARED_POST_DATA.CORRECT_RESPONSE_COUNT}}</span>
                                             </div>
                                             <div class="resultinfo title" *ngIf="resultDeclared && !my_profile">Total
@@ -1835,11 +1835,11 @@
                                         </div>
                                         <div class="box-three result-box clearfix">
                                             <div class="resultinfo clearfix" *ngIf="resultDeclared"><img
-                                                    src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                                    src="assets/images/svg/caret-down.svg" alt="aio"><span
                                                     class="response-count">{{arr.SHARED_POST_DATA.INCORRECT_RESPONSE_COUNT}}</span>
                                             </div>
                                             <div class="resultinfo clearfix" *ngIf="resultDeclared"><img
-                                                    src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                                    src="assets/images/svg/caret-up.svg" alt="aio"><span
                                                     class="response-count">{{arr.SHARED_POST_DATA.CORRECT_RESPONSE_COUNT}}</span>
                                             </div>
                                             <div class="resultinfo title">Total Responses</div>
@@ -1905,7 +1905,7 @@
                                             value="">
                                             <span>Submit</span>
                                             <span class="preloder"><img src="./assets/images/svg/preloader-25.svg"
-                                                    alt="study24x7" *ngIf="showPreloader"></span></button>
+                                                    alt="aio" *ngIf="showPreloader"></span></button>
                                         <div class="timeremaining" *ngIf="questionTime!=0">
                                             <span class="time-left-icon-wrap"><img
                                                     src="assets/images/svg/time-left.svg"></span>
@@ -1923,11 +1923,11 @@
                                     </div>
                                     <div class="box-three result-box clearfix">
                                         <div class="resultinfo clearfix" *ngIf="resultDeclared"><img
-                                                src="assets/images/svg/caret-down.svg" alt="study24x7"><span
+                                                src="assets/images/svg/caret-down.svg" alt="aio"><span
                                                 class="response-count">{{arr.SHARED_POST_DATA.INCORRECT_RESPONSE_COUNT}}</span>
                                         </div>
                                         <div class="resultinfo clearfix" *ngIf="resultDeclared"><img
-                                                src="assets/images/svg/caret-up.svg" alt="study24x7"><span
+                                                src="assets/images/svg/caret-up.svg" alt="aio"><span
                                                 class="response-count">{{arr.SHARED_POST_DATA.CORRECT_RESPONSE_COUNT}}</span>
                                         </div>
                                         <div class="resultinfo title">Total Responses</div>
@@ -2026,11 +2026,11 @@
                 <span class='post_footeroption dropdown-ppl-list-wrap'>
                     <span>
                         <span class="default">
-                            <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/imp1.svg"
+                            <img src="https://img1.aio.com/assets/images/svg-three/post_icon/imp1.svg"
                                 class="defaultimp defaultt ">
-                            <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/f05050/imp2.svg"
+                            <img src="https://img1.aio.com/assets/images/svg-three/post_icon/f05050/imp2.svg"
                                 class="activeimp">
-                            <img src="https://img1.study24x7.com/assets/images/svg-three/post_icon/f05050/imp1.svg"
+                            <img src="https://img1.aio.com/assets/images/svg-three/post_icon/f05050/imp1.svg"
                                 class="hoverr">
                         </span>
                         <span (click)="loginpopupFxn()">Important</span>
@@ -2042,7 +2042,7 @@
                     <span (click)="loginpopupFxn()">
                         <span class="default">
                             <img class="defaultt"
-                                src="https://img1.study24x7.com/assets/images/svg-three/post_icon/comment.svg">
+                                src="https://img1.aio.com/assets/images/svg-three/post_icon/comment.svg">
                             <img class="hoverr" src="assets/images/svg-three/post_icon/f05050/comment.svg">
                         </span>Comment</span>
                     <span id="{{post_id}}_comm_count" routerLink="/post/{{arr.USER_POST_ID}}" class="count-sq"
@@ -2054,9 +2054,9 @@
                         <span #shareList>
                             <span class='default' style="width:22px;">
                                 <img class="defaultt"
-                                    src="https://img1.study24x7.com/assets/images/svg-three/post_icon/share.svg">
+                                    src="https://img1.aio.com/assets/images/svg-three/post_icon/share.svg">
                                 <img class="hoverr"
-                                    src="https://img1.study24x7.com/assets/images/svg-three/post_icon/f05050/share.svg">
+                                    src="https://img1.aio.com/assets/images/svg-three/post_icon/f05050/share.svg">
                             </span><span (click)="showSharePostList($event)">
                                 &nbsp;Share
                             </span>
@@ -2070,7 +2070,7 @@
                         <li (click)="loginpopupFxn()">
                             <i>
                                 <span style="float:left;  "><img
-                                        src="https://img1.study24x7.com/assets/images/svg-three/post_icon/f05050/share.svg"
+                                        src="https://img1.aio.com/assets/images/svg-three/post_icon/f05050/share.svg"
                                         alt=""></span>
                                 <span class="text">Share</span>
                             </i>
@@ -2104,7 +2104,7 @@
         <div class='comment_outer' (click)="loginpopupFxn()">
             <div class="writecomment clearfix main-comment">
                 <figure class="comment-profile ">
-                    <img src="./assets/images/svg/empty-11.svg" alt="study24x7">
+                    <img src="./assets/images/svg/empty-11.svg" alt="aio">
                 </figure>
                 <div class='optionoutr'>
                     <div class="option_inputt setwdth placeholdercolor">

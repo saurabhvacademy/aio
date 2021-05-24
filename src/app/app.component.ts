@@ -60,11 +60,11 @@ export class AppComponent implements OnInit {
     scriptRecordRtc.async = true;
     scriptVideoConfig.async = true;
 
-    scriptAdapterLatest.src = "https://js.study24x7.com/assets/js/stream/adapter-latest.js";
-    scriptWebrtcAdapter.src = "https://js.study24x7.com/assets/js/stream/webrtc_adaptor.js";
-    scriptScreenCapturing.src = "https://js.study24x7.com/assets/js/stream/Screen-Capturing.js";
-    scriptRecordRtc.src = "https://js.study24x7.com/assets/js/stream/recordrtc.js";
-    scriptVideoConfig.src = "https://js.study24x7.com/assets/js/stream/videoconfig.js";
+    scriptAdapterLatest.src = "https://js.aio.com/assets/js/stream/adapter-latest.js";
+    scriptWebrtcAdapter.src = "https://js.aio.com/assets/js/stream/webrtc_adaptor.js";
+    scriptScreenCapturing.src = "https://js.aio.com/assets/js/stream/Screen-Capturing.js";
+    scriptRecordRtc.src = "https://js.aio.com/assets/js/stream/recordrtc.js";
+    scriptVideoConfig.src = "https://js.aio.com/assets/js/stream/videoconfig.js";
     document.getElementsByTagName("body")[0].appendChild(scriptAdapterLatest);
     document.getElementsByTagName("body")[0].appendChild(scriptWebrtcAdapter);
     document.getElementsByTagName("body")[0].appendChild(scriptScreenCapturing);
@@ -138,7 +138,7 @@ export class AppComponent implements OnInit {
     this.checkUserType();
     this.checkForPopup();
     if (!this._cookie.get('study247'))
-      this._cookie.set('study247', 'study24x7');
+      this._cookie.set('study247', 'aio');
 
 
     if (varCheckCookie && varCheckCookie == 1) {

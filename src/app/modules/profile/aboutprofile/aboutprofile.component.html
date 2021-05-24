@@ -3,7 +3,7 @@
     <!-- summary wrapper start -->
     <div class="maindiv summary-wrap main_summ main_abt_edit_wrap" >
         <h6 class='mainheading summary-sec-title' *ngIf="summaryDivShow !== 2">
-            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-description.png" alt="study24x7"> -->
+            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-description.png" alt="aio"> -->
             <span >
                 Summary
             </span>
@@ -30,7 +30,7 @@
                     <!-- <button class="btn-primary editbtn"   *ngIf="myprofile == 1 && !experienceAdd && expDetailsView==2" style="float:none;"> -->
                     <button (click)="show_abt_popup(1);" class="btn-roundBg-red btnflex btnflex-center" style="float:none;" *ngIf="EmptySumm">
                         <!-- <span class="abt_img_wrapper">
-                            <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="aio">
                         </span> -->
                         Add Summary
                     </button>
@@ -42,7 +42,7 @@
                 <textarea class='generaltextarea gray_rds text_area_wrap' id="summ" [(ngModel)]="userSummary"  (Paste)="post_data.onPaste($event);OnFocus($event);"></textarea>
                 <div class="footer_message footer_inner clearfix">
                     <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary" (click)="submitSummary();"><span class="test" *ngIf="showText">Save</span>
-                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span></button>
                     <button  class="btn-secondary graybutton btn_alg btn_sbmt" (click)="summaryDiv(2);">Cancel</button>
                 </div>
             </div>
@@ -53,7 +53,7 @@
     <!-- Experience wrapper start  -->
     <div class="maindiv margintop exp-wrap main_wrap main_summ main_abt_edit_wrap">
         <h6 class='mainheading' *ngIf="expDetailsView !== 2">
-            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-exp.png" alt="study24x7"> -->
+            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-exp.png" alt="aio"> -->
             <span >Experience </span>
             <span class="rightedit educat" (click)="show_abt_popup(3)" *ngIf="myprofile == 1 && !experienceAdd && expDetailsView!=2" ><img src="assets/images/redPlus.svg" alt=""></span>
             <!-- <button class="edit-summary"  (click)="experienceAddBox();" *ngIf="myprofile == 1 && !experienceAdd && expDetailsView!=2" > -->
@@ -194,7 +194,7 @@
                     <div class="clearfix"></div>
                     <div class="footer_message footer_inner clearfix">
                         <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary second_primary"  (click)="submitExpDetails('')"><span class="text" *ngIf="showText">Save</span>
-                            <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                            <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span></button>
                         <button  class="btn-secondary graybutton btn_alg btn_sbmt"   (click)="hideExpBox();">Cancel </button>
 
                     </div>
@@ -206,7 +206,7 @@
                     <li *ngFor="let experiences of experience;let i = index" id="exp_{{experiences.USER_EXPERIENCE_ID}}" >
                         <div class="abtdetailimg">
                             <!-- <img src='{{experiences.profile}}'> -->
-                            <img src="assets/images/svg-three/profile_about/about_exp.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/profile_about/about_exp.svg" alt="aio">
                         </div>
 
                         <div class='prfl_detail' [ngClass]="{'hide-on-edit':experienceshow && expEditIndex === i}" class="exppadd">
@@ -238,8 +238,8 @@
                         </div>
                         <!-- <div class="edit-info-wrap wrp_info" *ngIf="myprofile == 1" [ngClass]="{'hide-on-edit':experienceshow && expEditIndex === i}">
                         <span (click)="manageEditInfoPopup(i,'exp')" class="cursor-pointer">
-                        <img src="assets/images/svg-three/post_icon/dot_menu.svg" alt="study24x7" class="defaultt">
-                        <img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" alt="study24x7" class="hoverr"></span>
+                        <img src="assets/images/svg-three/post_icon/dot_menu.svg" alt="aio" class="defaultt">
+                        <img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" alt="aio" class="hoverr"></span>
                         <span class="drpdwn_post postdrop for-post" *ngIf="infoPopupStatus === i && infoPopupShowStatus && 'exp' == secName">
                         <ul (mouseleave)="this.infoPopupStatus = '' ">
                         <li (click)="updateExperienceDetails($event,i,experiences.FROM,experiences.TO)" id='{{experiences.USER_EXPERIENCE_ID}}' *ngIf="myprofile == 1">
@@ -385,7 +385,7 @@
                                 <div class="footer_message footer_inner clearfix">
 
                                     <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary" (click)="submitExpDetails(experiences.USER_EXPERIENCE_ID)"><span class="text" *ngIf="showText">Save</span>
-                                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span></button>
                                     <button  class="btn-secondary graybutton btn_alg btn_sbmt"  (click)="hideExpEditBox()">Cancel </button>
                                     <button  class="whiteColorRedBorderButton button24x7 fleft"  id='{{experiences.USER_EXPERIENCE_ID}}' (click)="delUserExp($event,i);">Delete </button>
                                 </div>
@@ -410,7 +410,7 @@
                         <!-- <button class="btn-primary editbtn " (click)="experienceAddBox();" (click)="show_exp();" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView === 2" style="float:none;"> -->
                         <button class="btn-roundBg-red btnflex btnflex-center"  (click)="show_abt_popup(3);" *ngIf="myprofile == 1 && !experienceAdd && expDetailsView==2" style="float:none;">
                             <!-- <span class="abt_img_wrapper">
-                                <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="study24x7">
+                                <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="aio">
                             </span> -->
                             Add Experience
                         </button>
@@ -556,7 +556,7 @@
 
     <div class="maindiv margintop edu-wrap main_wrap main_summ main_abt_edit_wrap">
         <h6 class='mainheading' *ngIf="eduDetailsView !== 2">
-            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-edu.png" alt="study24x7"> -->
+            <!-- <img class="title-img head_img" src="assets/images/icons-final/add-edu.png" alt="aio"> -->
             <span >Education </span>
             <span class="rightedit educat" (click)="show_abt_popup(2)" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView != 2" ><img src="assets/images/redPlus.svg" alt=""></span>
             <!-- <button class="edit-summary" (click)="educationAddBox()" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView != 2 "> -->
@@ -695,7 +695,7 @@
                 <div class="footer_message footer_inner clearfix">
 
                     <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary" (click)="submitEducationDetails('')"><span class="text" *ngIf="showText">Save</span>
-                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                        <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span></button>
                     <button  class="btn-secondary graybutton btn_alg btn_sbmt"   (click)="hideEduBox()">Cancel </button>
                 </div>
             </div>
@@ -704,7 +704,7 @@
                 <ul>
                     <li *ngFor="let education of education;let i = index" id="edu_{{education.USER_EDUCATION_ID}}" >
                         <div class="edu_inst_img">
-                            <img src="assets/images/svg-three/profile_about/about_edu.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/profile_about/about_edu.svg" alt="aio">
                         </div>
                         <div class='prfl_detail' [ngClass]="{'hide-on-edit':educationedit && eduEditIndex === i}" class="exppadd">
                              <div class="profilename " >
@@ -730,7 +730,7 @@
                             </div>
                         </div>
                         <!-- <div class="edit-info-wrap wrp_info" *ngIf="myprofile == 1" [ngClass]="{'hide-on-edit':educationedit && eduEditIndex === i}">
-                        <span (click)="manageEditInfoPopup(i,'edu')" class="cursor-pointer"><img src="assets/images/svg-three/post_icon/dot_menu.svg" alt="study24x7" class="defaultt"><img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" alt="study24x7" class="hoverr"></span>
+                        <span (click)="manageEditInfoPopup(i,'edu')" class="cursor-pointer"><img src="assets/images/svg-three/post_icon/dot_menu.svg" alt="aio" class="defaultt"><img src="assets/images/svg-three/post_icon/f05050/dot_menu.svg" alt="aio" class="hoverr"></span>
                         <span class="drpdwn_post postdrop for-post" *ngIf="infoPopupStatus === i && infoPopupShowStatus && 'edu' == secName">
                         <ul (mouseleave)="this.infoPopupStatus = '' ">
                         <li (click)="updateEducationDetails($event,i,education.FROM,education.TO)" id="{{education.USER_EDUCATION_ID}}" *ngIf="myprofile == 1">
@@ -887,7 +887,7 @@
                             <div class="footer_message footer_inner clearfix">
 
                                 <button [disabled]="showPreloader === true"  class="btn btn-primary second_primary" (click)="submitEducationDetails(education.USER_EDUCATION_ID)"><span class="text" *ngIf="showText">Save</span>
-                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span></button>
                                 <button  class="btn-secondary graybutton btn_alg btn_sbmt"   (click)="hideEduEditBox()">Cancel </button>
                                 <button  class="whiteColorRedBorderButton button24x7 fleft"   id='{{education.USER_EDUCATION_ID}}' (click)="delUserEdu($event,i);">Delete </button>
                             </div>
@@ -912,7 +912,7 @@
                         <span class="emptystates_heading2">Share your thoughts with the network</span>
                         <button class="btn-roundBg-red btnflex btnflex-center" (click)="show_abt_popup(2);" *ngIf="myprofile == 1 && educationAdd==false && eduDetailsView === 2" style="float:none;">
                             <!-- <span class="abt_img_wrapper">
-                                <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="study24x7">
+                                <img src="assets/images/svg-three/profile_about/abt_plus.svg" alt="aio">
                             </span> -->
                             Add Education
                         </button>
@@ -1116,7 +1116,7 @@
                     <div class="input_inner_wrapper">
                         <input type="text" name="" value="" placeholder="Ex. ABE Managment School" style="padding-left: 40px;" (keyup)="showInstitute()" (focus)="showInstitute()" [(ngModel)]="instituteName">
                         <span class="inputfiled_icon">
-                            <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="aio">
                         </span>
                     </div>
                     <div class="abt_info_list "  *ngIf="searchList" [perfectScrollbar]="config" style="position:relative"data-infinite-scroll
@@ -1127,7 +1127,7 @@
                         <ul >
                             <li *ngFor="let insArr of searchedInsArr" (click)="setInstitute(insArr.INSTITUTE_NAME,insArr.INSTITUTE_ID)">
                                 <!-- <div class="col-md-1 search_list_img_cont">
-                                     <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                                     <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="aio">
                                      </div>-->
                                 <div class="col-md-11 abt_search_list">
                                     <div class="abt_search_head1">{{insArr.INSTITUTE_NAME}}</div>
@@ -1157,7 +1157,7 @@
                         <ul >
                             <li *ngFor="let couArr of searchedCouArr" (click)="setCourse(couArr.COURSE_NAME,couArr.COURSE_ID)">
 <!--                                <div class="col-md-1 search_list_img_cont">
-                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="aio">
                                 </div>-->
                                 <div class="col-md-11 abt_search_list">
                                     <div class="abt_search_head1">{{couArr.COURSE_NAME}}</div>
@@ -1193,7 +1193,7 @@
                             <option id="12" value="12">December</option>
                         </select>
                         <span class="deopdownarrow">
-                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                         </span>
                     </div>
                     <div class="selectbox_innerwrap right">
@@ -1203,7 +1203,7 @@
                             <option *ngFor="let year of years; let i = index" [attr.data-index]="i">{{year}}</option>
                         </select>
                         <span class="deopdownarrow">
-                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                         </span>
                     </div>
                 </div>
@@ -1231,7 +1231,7 @@
                         </select>
 
                         <span class="deopdownarrow">
-                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                         </span>
                     </div>
                     <div class="selectbox_innerwrap right" *ngIf="!Presentselected">
@@ -1241,7 +1241,7 @@
                             <option *ngFor="let year of EduYears; let i = index" [attr.data-index]="i">{{year}}</option>
                         </select>
                         <span class="deopdownarrow">
-                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                         </span>
                     </div>
                 </div>
@@ -1315,7 +1315,7 @@
                     <div class="input_inner_wrapper">
                         <input type="text" name="" value="" placeholder="Ex. ABC Managment School" style="padding-left: 40px;" (keyup)="showOrganisation()" (focus)="showOrganisation()" [(ngModel)]="organisationName">
                         <span class="inputfiled_icon">
-                            <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="aio">
                         </span>
                     </div>
                     <div class="abt_info_list"  *ngIf="searchListOrg"  [perfectScrollbar]="config" style="position:relative"  data-infinite-scroll
@@ -1326,7 +1326,7 @@
                         <ul>
                             <li *ngFor="let orgArr of searchedOrgArr" (click)="setOrganization(orgArr.ORGANIZATION_NAME,orgArr.ORGANIZATION_ID)">
 <!--                                <div class="col-md-1 search_list_img_cont">
-                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="aio">
                                 </div>-->
                                 <div class="col-md-11 abt_search_list">
                                     <div class="abt_search_head1">{{orgArr.ORGANIZATION_NAME}}</div>
@@ -1356,7 +1356,7 @@
                         <ul>
                             <li *ngFor="let posArr of searchedPosArr" (click)="setPosition(posArr.POSITION_NAME,posArr.POSITION_ID)">
 <!--                                <div class="col-md-1 search_list_img_cont">
-                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="study24x7">
+                                    <img src="assets/images/svg-three/profile_about/uni_icon.svg" alt="aio">
                                 </div>-->
                                 <div class="col-md-11 abt_search_list">
                                     <div class="abt_search_head1">{{posArr.POSITION_NAME}}</div>
@@ -1393,7 +1393,7 @@
 
                         </select>
                         <span class="deopdownarrow">
-                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                         </span>
                     </div>
                     <div class="selectbox_innerwrap right">
@@ -1403,7 +1403,7 @@
                             <option *ngFor="let year of years; let i = index" [attr.data-index]="i" >{{year}}</option>
                         </select>
                         <span class="deopdownarrow">
-                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                         </span>
                     </div>
                 </div>
@@ -1430,7 +1430,7 @@
 
                         </select>
                         <span class="deopdownarrow">
-                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                         </span>
                     </div>
                     <div class="selectbox_innerwrap right" *ngIf="!ExpPresentselected">
@@ -1440,7 +1440,7 @@
                             <option *ngFor="let year of ExpYears; let i = index" [attr.data-index]="i" >{{year}}</option>
                         </select>
                         <span class="deopdownarrow">
-                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                            <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                         </span>
                     </div>
                 </div>

@@ -250,7 +250,7 @@ export class AddpostComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         if (!this._cookie.get('study247')) {
             // this._cookie.set('study247', this._encryptionServices.encrypt(this._constantService.getSessionDataBYKey('token')));
-            document.cookie = "study247=study24x7";
+            document.cookie = "study247=aio";
 
         }
         if (this.rType == 3) {

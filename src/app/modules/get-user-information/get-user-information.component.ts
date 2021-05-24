@@ -17,7 +17,7 @@ declare var $: any;
   styleUrls: ['./get-user-information.component.scss',]
 })
 export class GetUserInformationComponent implements OnInit {
-  officialEmail = "sales@study24x7.com";
+  officialEmail = "sales@aio.com";
   fullName = '';
   contactNumber = '';
   emailAddress = '';
@@ -201,7 +201,7 @@ export class GetUserInformationComponent implements OnInit {
     formData.remarks = this.remarks;
 
     if (JSON.stringify(formData) != JSON.stringify(this.sentFormData)) {
-      this._constantService.postFormDataApi("https://www.study24x7.com/zh/zoho.php", formData).subscribe(data => {
+      this._constantService.postFormDataApi("https://www.aio.com/zh/zoho.php", formData).subscribe(data => {
         this.sentFormData = formData;
       })
 

@@ -62,13 +62,13 @@
                               <span style="cursor: pointer;" routerLink='/profile/{{toadayClass.MENTOR_DATA.USER_NAME}}'
                                 class="image"
                                 *ngIf="toadayClass.MENTOR_DATA && toadayClass.MENTOR_DATA.PROFILE_PHOTO_PATH">
-                                <img alt="study24x7"
+                                <img alt="aio"
                                   src="{{toadayClass.MENTOR_DATA.PROFILE_PHOTO_PATH +'profile/'+toadayClass.MENTOR_DATA.USER_ID+'_120x120.png'}}">
                               </span>
                               <span style="cursor: pointer;" routerLink='/profile/{{toadayClass.MENTOR_DATA.USER_NAME}}'
                                 class="image"
                                 *ngIf="toadayClass.MENTOR_DATA && toadayClass.MENTOR_DATA.PROFILE_PHOTO_PATH==null">
-                                <img alt="study24x7" src="{{_constantService.defaultImgPath}}">
+                                <img alt="aio" src="{{_constantService.defaultImgPath}}">
                               </span>
                               <span *ngIf=toadayClass.MENTOR_DATA style="cursor: pointer;"
                                 routerLink='/profile/{{toadayClass.MENTOR_DATA.USER_NAME}}' class="pagename"

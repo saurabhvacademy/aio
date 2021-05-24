@@ -132,10 +132,10 @@
                         <div class="profilename" routerLink="/profile/{{peoples.USER_NAME}}" title='{{ peoples.FULL_NAME}}'>{{ peoples.FULL_NAME|trimData:17}} </div>
 
                         <a *ngIf="!peoples.connectStatus" id="{{peoples.USER_ID}}" (click)="sendRequest($event,i)" class="connictionlink">
-                            <img src="assets/images/svg-three/add_frnd_1.svg" alt="study24x7" width="14">Connect
+                            <img src="assets/images/svg-three/add_frnd_1.svg" alt="aio" width="14">Connect
                         </a>
                         <a *ngIf="peoples.connectStatus" id="{{peoples.USER_ID}}" (click)="cancelFrndReq(i)" class="connictionlink">
-                            <img src="assets/images/svg-three/add_frnd_1.svg" alt="study24x7" width="14">Cancel request
+                            <img src="assets/images/svg-three/add_frnd_1.svg" alt="aio" width="14">Cancel request
                         </a>
                     </div>
 
@@ -149,7 +149,7 @@
         </perfect-scrollbar>
 
         <h6 class="footer_heading" routerLink="">
-            View all &nbsp; <span><img class="greater" src="assets/images/svg-three/greater.svg" alt="study24x7"></span>
+            View all &nbsp; <span><img class="greater" src="assets/images/svg-three/greater.svg" alt="aio"></span>
         </h6>
 
         <!-- <div class="emptystate" *ngIf = "suggestionPresent==false">

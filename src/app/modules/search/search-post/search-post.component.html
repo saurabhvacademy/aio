@@ -3,7 +3,7 @@
     <div class="post-header-inner-wrap clearfix">
       <span *ngIf="viewType == 1">
         <span class="post_profilepic cursor-pointer">
-          <img src="{{ page_Cover }}" alt="study24x7" routerLink="/page/{{ pg_uuid }}" />
+          <img src="{{ page_Cover }}" alt="aio" routerLink="/page/{{ pg_uuid }}" />
         </span>
         <div class="profiledetail">
           <span
@@ -14,15 +14,15 @@
           >
           <span class="follwer_count">{{ pageFllw }} followers</span>
           <span class="follow_dote">
-            <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7" />
+            <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio" />
           </span>
           <span>
             <span class="follwer_count cursor-pointer" routerLink="/post/{{ postId }}">{{ pageTime }}</span>
             <span class="dote">
-              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7" />
+              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio" />
             </span>
             <span class="previcy_icon">
-              <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7" />
+              <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="aio" />
             </span>
           </span>
         </div>
@@ -30,7 +30,7 @@
 
       <span *ngIf="viewType == 0">
         <span class="post_profilepic cursor-pointer">
-          <img src="{{ USER_PROFILE }}" alt="study24x7" routerLink="/profile/{{ postData.USER_NAME }}" />
+          <img src="{{ USER_PROFILE }}" alt="aio" routerLink="/profile/{{ postData.USER_NAME }}" />
         </span>
         <div class="profiledetail">
           <span title="{{ userName }}" class="name cursor-pointer" routerLink="/profile/{{ postData.USER_NAME }}">{{ userName }}</span>
@@ -39,10 +39,10 @@
               <span class="follwer_count cursor-pointer"
                 routerLink="/post/{{ postId }}">{{ postData.ADD_DATE_TIME }}</span>
               <span class="dote">
-                <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7" />
+                <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio" />
               </span>
               <span class="previcy_icon">
-                <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7" />
+                <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="aio" />
               </span>
             </span>
           </div>
@@ -56,7 +56,7 @@
             Follow
           </span>
           <span class="following cursolnone">
-            <img src="assets/images/svg/white_checkbox.svg" alt="study24x7" />
+            <img src="assets/images/svg/white_checkbox.svg" alt="aio" />
             Following
           </span>
         </button>
@@ -65,7 +65,7 @@
                 Follow
             </span>
             <span class="following cursolnone">
-                <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+                <img src="assets/images/svg/white_checkbox.svg" alt="aio">
                 Following
             </span>
         </button> -->

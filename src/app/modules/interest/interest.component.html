@@ -25,7 +25,7 @@
                         </div>
                         <div class="grid_accordian_outer_wrap">
                             <div class="accordian_panel_wrapper"  *ngFor="let item of interests; let i=index;">
-                                <!--<span class="interest_icon_left"><img src="./assets/images/interest/greyicon/8.svg" alt="study24x7"></span>-->
+                                <!--<span class="interest_icon_left"><img src="./assets/images/interest/greyicon/8.svg" alt="aio"></span>-->
                                 <div class="interest_accordian_wrap">
                                     <div class="panel-group panel_group_wrap clearfix">
                                         <div class="panel panel-default panel_dwrap">
@@ -69,7 +69,7 @@
 
                             <div class="interest-popupfooter">
                                 <button (click)="updateUserInterest();"  class='button24x7 redColorButton fright buttonPadding20' >
-                                    <span *ngIf="!loader">Save</span><span ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader"></span> </button>
+                                    <span *ngIf="!loader">Save</span><span ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="loader"></span> </button>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
 <app-createpage (hidecreatepagePopup)="hidePageCreatePopup($event)" ></app-createpage>
 </div>
 <!--<div class="help-icon" routerLink="/inbox/ask.assistant6617" (click)="_constantService.setFriendUserId(2)">
-  <img src="./assets/images/svg-three/wall/help.svg" alt="study24x7">
+  <img src="./assets/images/svg-three/wall/help.svg" alt="aio">
   <p>Need any help?</p>
 </div>-->
 <!--<app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="sessionLogout($event);" [dataObj]="dataConf"></app-confirmationpopup>-->

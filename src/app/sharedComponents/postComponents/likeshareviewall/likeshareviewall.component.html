@@ -5,19 +5,19 @@
                 <!-- <div class="main_head" [innerHTML]="text"> -->
                 <div class="main_head">
                     <div *ngIf="this.data['type'] == 1" class="count">
-                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="aio">
                         <span>Important {{data['count']}}</span>
                     </div>
                     <div *ngIf="this.data['type'] == 2" class="count">
-                        <img src="assets/images/svg-three/post_icon/f05050/share.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/post_icon/f05050/share.svg" alt="aio">
                         <span>Shared {{data['count']}}</span>
                     </div>
                     <div *ngIf="this.data['type'] == 3" class="count">
-                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="aio">
                         <span>Important {{data['count']}}</span>
                     </div>
                     <div *ngIf="this.data['type'] == 4" class="count">
-                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="study24x7">
+                        <img src="assets/images/svg-three/post_icon/f05050/imp2.svg" alt="aio">
                         <span>Important {{data['count']}}</span>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                          [scrollWindow]="true"  [perfectScrollbar]="config" style="position: relative;">
                          <div class="profile-wrap clearfix" *ngFor="let list of userList; let i = index">
                          <div class="profile-inner-wrap clearfix" style="padding: 15px 15px;">
-                                <figure><img src="{{list.PROFILE_PHOTO_PATH}}" alt="study24x7 {{list.USER_FULL_NAME}}" routerLink="/profile/{{list.USER_NAME}}"></figure>
+                                <figure><img src="{{list.PROFILE_PHOTO_PATH}}" alt="aio {{list.USER_FULL_NAME}}" routerLink="/profile/{{list.USER_NAME}}"></figure>
                                 <div class="name-user-wrap">
                                     <a href="javascript:void(0)" routerLink="/profile/{{list.USER_NAME}}">{{list.USER_FULL_NAME |trimData:17}}</a>
                                     <span class="grayinfo" routerLink="/profile/{{list.USER_NAME}}">{{list.USER_NAME}}</span>

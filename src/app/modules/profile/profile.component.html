@@ -31,7 +31,7 @@
                     <div *ngIf="screenSize>600" class="overlay_gradient"></div>
                     <img src="assets/images/profile-banner.png" *ngIf="coverPicPath == null">
                     <img src="{{coverPicPath}}" style="width:100%;height:100%;" *ngIf="coverPicPath != null"
-                        alt="{{'study24x7 ' +altName}}">
+                        alt="{{'aio ' +altName}}">
                     <span style="" class="cover-pic-preloader" *ngIf="coverPicImgUpload">
                         <img style="width:100px;margin-left: -50px;" src="assets/images/svg/preloader-25.svg">
                     </span>
@@ -39,7 +39,7 @@
                         <div *ngIf="screenSize>600" class="profile_picture">
                             <div class="whitebg"></div>
                             <img src="{{profilePicPath}}" (error)="updateSourcePic($event)" (click)="postImageShow(1)"
-                                alt="{{'study24x7 ' +altName}}">
+                                alt="{{'aio ' +altName}}">
                             <div class="changeprofile" *ngIf="myprofile === 2">
                                 <div (click)="openprofilepopup()">
                                     <label class="fileupload_image " for="profileload">
@@ -87,7 +87,7 @@
                     <div class="profileName">
                         <div class="imageDiv">
                             <img src="{{profilePicPath}}" (error)="updateSourcePic($event)" (click)="postImageShow(1)"
-                                alt="{{'study24x7 ' +altName}}">
+                                alt="{{'aio ' +altName}}">
                             <div (click)="openprofilepopup()" *ngIf="myprofile==2" class="updateProfilePic">
                                 <img class="uploadUserPic" src="assets/images/redchangeImg.svg" alt="">
                             </div>
@@ -709,7 +709,7 @@
                                 </span>
                             </div>
                             <div class="newpage_innerright">
-                                <img src="assets/images/svg-three/new-page.svg" alt="study24x7">
+                                <img src="assets/images/svg-three/new-page.svg" alt="aio">
                             </div>
 
                         </div>
@@ -723,7 +723,7 @@
                                     <img class="defaultt" src="assets/images/svg/tagcross.svg">
                                     <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
                                 </span>
-                                <div class="inner_left"><img src="assets/images/svg-three/walltip1.svg" alt="study24x7">
+                                <div class="inner_left"><img src="assets/images/svg-three/walltip1.svg" alt="aio">
                                 </div>
                                 <div class="inner_right">
                                     <p class="headng_1">Upload Profile</p>
@@ -738,7 +738,7 @@
                                     <img class="defaultt" src="assets/images/svg/tagcross.svg">
                                     <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
                                 </span>
-                                <div class="inner_left"><img src="assets/images/svg-three/walltip1.svg" alt="study24x7">
+                                <div class="inner_left"><img src="assets/images/svg-three/walltip1.svg" alt="aio">
                                 </div>
                                 <div class="inner_right">
                                     <p class="headng_1">Upload Cover</p>
@@ -757,7 +757,7 @@
                                     <img class="hoverr" src="assets/images/svg/tagcross-gray.svg">
                                 </span>
                                 <div class="inner_left"><img src="assets/images/svg-three/profile_about/exp2.svg"
-                                        alt="study24x7"></div>
+                                        alt="aio"></div>
                                 <div class="inner_right">
                                     <p class="headng_1">Add experience and education details</p>
                                     <p class="headng_2">Share about your steps taken in education and professional
@@ -838,7 +838,7 @@
                         <p class="footer_bottom" style="color:#9ba1ab;margin-top: 5px">
                             <a routerLink="/privacy" target="_blank">Privacy Policy</a><span> | </span>
                             <a routerLink="/termandcondition" target="_blank">Terms of Use</a><span> | </span>
-                            <a href="http://support.study24x7.com/" target="_blank">Support</a>
+                            <a href="http://support.aio.com/" target="_blank">Support</a>
                             <a>{{this._constantService.version}}</a>
                         </p>
                         <footer> © {{current_year}} @Edubabble Learning Pvt. Ltd. </footer>
@@ -932,7 +932,7 @@
                     <div class="profileName">
                         <div class="imageDiv">
                             <img src="{{profilePicPath}}" (error)="updateSourcePic($event)" (click)="postImageShow(1)"
-                                alt="{{'study24x7 ' +altName}}">
+                                alt="{{'aio ' +altName}}">
                         </div>
                         <div class="nameDiv">
                             <p class="userName"> {{otherUserDetails.FULL_NAME |trimData:30}}</p>

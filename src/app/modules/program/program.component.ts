@@ -28,7 +28,7 @@ export class ProgramComponent implements OnInit {
   showContactDetailsPopup = false;
   showThankyou = false;
   loader = false;
-  targetMailId = "saurabh.sharma@study24x7.com";
+  targetMailId = "saurabh.sharma@aio.com";
   scrolled = false;
   error: any = {};
   constructor(
@@ -122,11 +122,11 @@ export class ProgramComponent implements OnInit {
     //   url = "http://192.168.0.237:8123/4.0.0.1/mail/sndDynmcMlV1";
     // }
     if (origin.includes('study.hellouser.co.in')) {
-      url = "https://mailuat.study24x7.net:8443/4.0.0.1/mail/sndDynmcMlV1";
-      this.email = "saurabh.sharma@study24x7.com"
+      url = "https://mailuat.aio.net:8443/4.0.0.1/mail/sndDynmcMlV1";
+      this.email = "saurabh.sharma@aio.com"
     }
-    if (origin.includes('study24x7.com')) {
-      url = " https://mail.study24x7.net/4.0.0.1/mail/sndDynmcMlV1";
+    if (origin.includes('aio.com')) {
+      url = " https://mail.aio.net/4.0.0.1/mail/sndDynmcMlV1";
       this.email = "aghor.singh@gingerwebs.in";
     }
     var options = {

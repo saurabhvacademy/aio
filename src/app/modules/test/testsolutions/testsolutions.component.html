@@ -22,9 +22,9 @@
                         <div class="course_index clearfix">
                             <ul *ngFor="let content of section.SECTION_CONTENT_DATA; let j = index;">
                                 <li (click)="goToCourseContent(content.CONTENT_TYPE,content.CONTENT_UUID)">
-                                    <span *ngIf="content.CONTENT_TYPE==1 || content.CONTENT_TYPE==4 || content.CONTENT_TYPE==5"><img src="assets/images/svg-three/course/course_creation/gray_video.svg" alt="study24x7"></span>
-                                    <span *ngIf="content.CONTENT_TYPE == 2"><img src="assets/images/svg-three/course/course_creation/gray_document.svg" alt="study24x7"></span>
-                                    <span *ngIf="content.CONTENT_TYPE == 3"><img src="assets/images/svg-three/course/course_creation/gray_quiz.svg" alt="study24x7"></span>
+                                    <span *ngIf="content.CONTENT_TYPE==1 || content.CONTENT_TYPE==4 || content.CONTENT_TYPE==5"><img src="assets/images/svg-three/course/course_creation/gray_video.svg" alt="aio"></span>
+                                    <span *ngIf="content.CONTENT_TYPE == 2"><img src="assets/images/svg-three/course/course_creation/gray_document.svg" alt="aio"></span>
+                                    <span *ngIf="content.CONTENT_TYPE == 3"><img src="assets/images/svg-three/course/course_creation/gray_quiz.svg" alt="aio"></span>
                                      <span>{{j+1}}&nbsp;:</span>
                                     <span class="contetName">&nbsp;{{content.TITLE}}</span>
                                     <span>
@@ -54,7 +54,7 @@
         <div class="topstrip solutionTopstrip">
             <div class="t_left">
                 <span class="test_name">{{testName}}</span>
-                <div class="toggle_grid" (click)="showMenu()" ><img src="assets/images/svg/menu-caret.svg" alt="study24x7" ></div>
+                <div class="toggle_grid" (click)="showMenu()" ><img src="assets/images/svg/menu-caret.svg" alt="aio" ></div>
                 <div class="select_lang" >
                     <!--<span (click)="show_lang_list()" class="drop_lang">Language <span  class="glyphicon glyphicon glyphicon-triangle-bottom" style="font-size:9px;"></span></span>-->
                     <span class="drop_val">{{visibleLang}}</span>
@@ -119,7 +119,7 @@
                             </span> -->
                             <!--<span class="help_icon"> <span class="report">! &nbsp;REPORT</span></span>-->
                             <span class="help_icon_help" *ngIf="isHintProvided">
-                                <span  class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="study24x7"> &nbsp;HINT</span>
+                                <span  class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="aio"> &nbsp;HINT</span>
                                 <span class="hint_dsgn" *ngIf="answerhint">
                                   <span class="close_div" (click)="hintfun()">
                                       <img class="default" src="assets/images/svg/tagcross-wh.svg">
@@ -128,7 +128,7 @@
                                     <span class="hint_wrapper"  style="position: relative;display:block;">
 
                                         <p [innerHTML]="hintText | safe : true"></p>
-                                        <p *ngIf="showHintImg"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
+                                        <p *ngIf="showHintImg"><img alt="aio" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
                                     </span>
                                       </div>
                                 </span>
@@ -166,7 +166,7 @@
                                             </ul>
                                             <div class="para_head_cont">
                                                 <p [innerHTML]="questionText | safe : true"></p>
-                                                <p *ngIf="quesImage"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p>
+                                                <p *ngIf="quesImage"><img alt="aio" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p>
                                             </div>
                                         </div>
                                         <div class="QuesTypeNote">
@@ -180,13 +180,13 @@
                                                 <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                 <div class="optncntnt">
                                                     <p [innerHTML]="opt1_text | safe : true"></p>
-                                                    <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                    <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="aio" src="{{option_image1_url}}" ></p>
                                                     <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                         <div class="que_solution_solv">
                                                             <div class="solution_hding">Solution</div>
                                                             <div class="solution_cntnt">
 
-                                                                <p [innerHTML] = "solutionText | safe : true" *ngIf="showSolImg"><img style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML] = "solutionText | safe : true" *ngIf="showSolImg"><img style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -200,13 +200,13 @@
                                                 <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                 <div class="optncntnt">
                                                     <p [innerHTML]="opt2_text | safe : true"></p>
-                                                    <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                    <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="aio" src="{{option_image2_url}}" ></p>
                                                     <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                         <div class="que_solution_solv">
                                                             <div class="solution_hding">Solution</div>
                                                             <div class="solution_cntnt">
 
-                                                                <p [innerHTML] =  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML] =  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -220,13 +220,13 @@
                                                 <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                 <div class="optncntnt">
                                                     <p [innerHTML]="opt3_text | safe : true"></p>
-                                                    <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                    <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="aio" src="{{option_image3_url}}" ></p>
                                                     <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                         <div class="que_solution_solv">
                                                             <div class="solution_hding">Solution</div>
                                                             <div class="solution_cntnt">
 
-                                                                <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -240,13 +240,13 @@
                                                 <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                 <div class="optncntnt">
                                                     <p [innerHTML]="opt4_text | safe : true"></p>
-                                                    <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                    <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="aio" src="{{option_image4_url}}" ></p>
                                                     <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                         <div class="que_solution_solv">
                                                             <div class="solution_hding">Solution</div>
                                                             <div class="solution_cntnt">
 
-                                                                <p [innerHTML] = "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML] = "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -261,13 +261,13 @@
                                                     <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                     <div class="optncntnt">
                                                         <p [innerHTML]="opt5_text | safe : true"></p>
-                                                        <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                        <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="aio" src="{{option_image5_url}}" ></p>
                                                         <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                             <div class="que_solution_solv">
                                                                 <div class="solution_hding">Solution</div>
                                                                 <div class="solution_cntnt">
 
-                                                                    <p [innerHTML] =  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                    <p [innerHTML] =  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -283,13 +283,13 @@
                                                     <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                     <div class="optncntnt">
                                                         <p [innerHTML]="opt6_text | safe : true"></p>
-                                                        <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                        <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="aio" src="{{option_image6_url}}" ></p>
                                                         <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                             <div class="que_solution_solv">
                                                                 <div class="solution_hding">Solution</div>
                                                                 <div class="solution_cntnt">
 
-                                                                    <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                    <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -309,13 +309,13 @@
                                                 <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                 <div class="optncntnt">
                                                     <p [innerHTML]="opt1_text | safe : true"></p>
-                                                    <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                    <p *ngIf="optImg1"><img style="margin-top: 5px;" alt="aio" src="{{option_image1_url}}" ></p>
                                                     <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                         <div class="que_solution_solv">
                                                             <div class="solution_hding">Solution</div>
                                                             <div class="solution_cntnt">
 
-                                                                <p [innerHTML]=  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML]=  "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -329,13 +329,13 @@
                                                 <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                 <div class="optncntnt">
                                                     <p [innerHTML]="opt2_text | safe : true"></p>
-                                                    <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                    <p *ngIf="optImg2"><img style="margin-top: 5px;" alt="aio" src="{{option_image2_url}}" ></p>
                                                     <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                         <div class="que_solution_solv">
                                                             <div class="solution_hding">Solution</div>
                                                             <div class="solution_cntnt">
 
-                                                                <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML]= "solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -349,13 +349,13 @@
                                                 <div class="optncrcl"><span class="optnvalue">C</span></div>
                                                 <div class="optncntnt">
                                                    <p [innerHTML]="opt3_text | safe : true"></p>
-                                                    <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                    <p *ngIf="optImg3"><img style="margin-top: 5px;" alt="aio" src="{{option_image3_url}}" ></p>
                                                     <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                         <div class="que_solution_solv">
                                                             <div class="solution_hding">Solution</div>
                                                             <div class="solution_cntnt">
 
-                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -369,13 +369,13 @@
                                                 <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                 <div class="optncntnt">
                                                     <p [innerHTML]="opt4_text | safe : true"></p>
-                                                    <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                    <p *ngIf="optImg4"><img style="margin-top: 5px;" alt="aio" src="{{option_image4_url}}" ></p>
                                                     <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                         <div class="que_solution_solv">
                                                             <div class="solution_hding">Solution</div>
                                                             <div class="solution_cntnt">
 
-                                                                <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -390,13 +390,13 @@
                                                     <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                     <div class="optncntnt">
                                                         <p [innerHTML]="opt5_text | safe : true"></p>
-                                                        <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                        <p *ngIf="optImg5"><img style="margin-top: 5px;" alt="aio" src="{{option_image5_url}}" ></p>
                                                         <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                             <div class="que_solution_solv">
                                                                 <div class="solution_hding">Solution</div>
                                                                 <div class="solution_cntnt">
 
-                                                                    <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                    <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -412,13 +412,13 @@
                                                     <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                     <div class="optncntnt">
                                                        <p [innerHTML]="opt6_text | safe : true"></p>
-                                                        <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                        <p *ngIf="optImg6"><img style="margin-top: 5px;" alt="aio" src="{{option_image6_url}}" ></p>
                                                         <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                             <div class="que_solution_solv">
                                                                 <div class="solution_hding">Solution</div>
                                                                 <div class="solution_cntnt">
 
-                                                                    <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                    <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -443,7 +443,7 @@
                                                             <div class="solution_cntnt">
                                                                 <!--{{solutionText}}-->
 
-                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -462,7 +462,7 @@
                                                             <div class="solution_cntnt">
                                                                 <!--{{solutionText}}-->
 
-                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -483,7 +483,7 @@
                                                     <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                     <div class="optncntnt">
 
-                                                        <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                        <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" alt="aio" src="{{option_image1_url}}" ></p>
                                                     </div>
                                                     <div class="que_result">
                                                         <span class="quesresult_right r_ques s_ques">
@@ -527,7 +527,7 @@
                                                                 <div class="optncntnt">
                                                                     <!--{{opt7_text}}-->
 
-                                                                    <p  [innerHTML]="opt7_text | safe : true" ><img *ngIf="optImg7" alt="study24x7" src="{{option_image7_url}}" ></p>
+                                                                    <p  [innerHTML]="opt7_text | safe : true" ><img *ngIf="optImg7" alt="aio" src="{{option_image7_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -539,7 +539,7 @@
                                                 <label class="option radio-sctns" for="mcqSingle10">
                                                     <div class="optncrcl"><span class="optnvalue">B</span></div>
                                                     <div class="optncntnt">{{opt2_text}}
-                                                        <p *ngIf="optImg2"><img alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                        <p *ngIf="optImg2"><img alt="aio" src="{{option_image2_url}}" ></p>
                                                     </div>
                                                     <div class="que_result">
                                                         <span class="quesresult_right r_ques s_ques">
@@ -583,7 +583,7 @@
                                                                 <div class="optncntnt">
 
 
-                                                                    <p  [innerHTML]="opt8_text | safe : true" ><img *ngIf="optImg8" alt="study24x7" src="{{option_image8_url}}" ></p>
+                                                                    <p  [innerHTML]="opt8_text | safe : true" ><img *ngIf="optImg8" alt="aio" src="{{option_image8_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -597,7 +597,7 @@
                                                     <div class="optncntnt">
 
                                                         <!--{{opt3_text}}-->
-                                                        <p   [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                        <p   [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" alt="aio" src="{{option_image3_url}}" ></p>
                                                     </div>
                                                     <div class="que_result">
                                                         <span class="quesresult_right r_ques s_ques">
@@ -641,7 +641,7 @@
                                                                 <div class="optncntnt">
                                                                     <!--{{opt9_text}}-->
 
-                                                                    <p [innerHTML]="opt9_text | safe : true" ><img *ngIf="optImg9" alt="study24x7" src="{{option_image9_url}}" ></p>
+                                                                    <p [innerHTML]="opt9_text | safe : true" ><img *ngIf="optImg9" alt="aio" src="{{option_image9_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -653,7 +653,7 @@
                                                 <label class="option radio-sctns" for="mcqSingle10">
                                                     <div class="optncrcl"><span class="optnvalue">D</span></div>
                                                     <div class="optncntnt">{{opt4_text}}
-                                                        <p *ngIf="optImg4"><img alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                        <p *ngIf="optImg4"><img alt="aio" src="{{option_image4_url}}" ></p>
                                                     </div>
                                                     <div class="que_result">
                                                         <span class="quesresult_right r_ques s_ques">
@@ -697,7 +697,7 @@
                                                                 <div class="optncntnt">
                                                                     <!--{{opt10_text}}-->
 
-                                                                    <p  [innerHTML]="opt10_text | safe : true" ><img *ngIf="optImg10" alt="study24x7" src="{{option_image10_url}}" ></p>
+                                                                    <p  [innerHTML]="opt10_text | safe : true" ><img *ngIf="optImg10" alt="aio" src="{{option_image10_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -709,7 +709,7 @@
                                                 <label class="option radio-sctns" for="mcqSingle10">
                                                     <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                     <div class="optncntnt">{{opt5_text}}
-                                                        <p *ngIf="optImg5"><img alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                        <p *ngIf="optImg5"><img alt="aio" src="{{option_image5_url}}" ></p>
                                                     </div>
                                                     <div class="que_result">
                                                         <span class="quesresult_right r_ques s_ques">
@@ -753,7 +753,7 @@
                                                                 <div class="optncntnt">
                                                                     <!--{{opt11_text}}-->
 
-                                                                    <p  [innerHTML]="opt11_text | safe : true" ><img *ngIf="optImg11" alt="study24x7" src="{{option_image11_url}}" ></p>
+                                                                    <p  [innerHTML]="opt11_text | safe : true" ><img *ngIf="optImg11" alt="aio" src="{{option_image11_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -767,7 +767,7 @@
                                                     <div class="optncntnt">
 
                                                         <!--{{opt6_text}}-->
-                                                        <p   [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                        <p   [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" alt="aio" src="{{option_image6_url}}" ></p>
                                                     </div>
                                                     <div class="que_result">
                                                         <span class="quesresult_right r_ques s_ques">
@@ -811,7 +811,7 @@
                                                                 <div class="optncntnt">
                                                                     <!--{{opt12_text}}-->
 
-                                                                    <p  [innerHTML]="opt12_text | safe : true" ><img *ngIf="optImg12" alt="study24x7" src="{{option_image12_url}}" ></p>
+                                                                    <p  [innerHTML]="opt12_text | safe : true" ><img *ngIf="optImg12" alt="aio" src="{{option_image12_url}}" ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -824,7 +824,7 @@
                                                 <div class="solution_cntnt">
                                                     <!--{{solutionText}}-->
 
-                                                    <p   [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                    <p   [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -833,7 +833,7 @@
                                                 <div class="solution_cntnt">
                                                     <!--{{solutionText}}-->
 
-                                                    <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                    <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                 </div>
                                         </div>
 
@@ -853,7 +853,7 @@
                                                         <br>
                                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard <span class="testwrong_ans">photosynthesis</span> dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                                     </p>
-                                                    <!-- <p><img alt="study24x7" src="https://s3-ap-southeast-1.amazonaws.com/gw-thinksaas-deploy/9/questionImage/que-12-06-2018-102829.png"></p> -->
+                                                    <!-- <p><img alt="aio" src="https://s3-ap-southeast-1.amazonaws.com/gw-thinksaas-deploy/9/questionImage/que-12-06-2018-102829.png"></p> -->
                                                 </div>
                                                 <div class="que_result">
                                                     <span class="quesresult_your y_ques">
@@ -959,7 +959,7 @@
           <div class="topstrip solutionTopstrip">
               <div class="t_left">
                   <span class="test_name">{{testName}}</span>
-                  <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="study24x7"  ></div>
+                  <div class="toggle_grid" (click)="showMenu()"><img src="assets/images/svg/menu-caret.svg" alt="aio"  ></div>
                   <div class="select_lang" >
 <!--                      <span (click)="show_lang_list()" class="drop_lang">Language <span  class="glyphicon glyphicon glyphicon-triangle-bottom" style="font-size:9px;"></span></span>-->
                       <span class="drop_val">{{visibleLang}}</span>
@@ -1045,7 +1045,7 @@
                                 </a>
                               </div>
                               <span class="help_icon_help" *ngIf="isHintProvided">
-                                  <span  class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="study24x7"> <span>&nbsp;HINT</span></span>
+                                  <span  class="report hel_p_rpt" (click)="hintfun()"><img src="assets/images/svg/help-hint.svg" alt="aio"> <span>&nbsp;HINT</span></span>
                                   <span class="hint_dsgn" *ngIf="answerhint">
                                     <span class="close_div" (click)="hintfun()">
                                         <img class="default" src="assets/images/svg/tagcross-wh.svg">
@@ -1055,7 +1055,7 @@
 
 
                                           <p [innerHTML]="hintText | safe : true"></p>
-                                          <p *ngIf="showHintImg"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
+                                          <p *ngIf="showHintImg"><img alt="aio" style=" margin-top: 10px;" src="{{image_upload_hint_url}}"></p>
                                       </span>
                                       </div>
                                   </span>
@@ -1094,7 +1094,7 @@
                                               </ul>
                                               <div class="para_head_cont">
                                                   <p [innerHTML]="questionText | safe : true"></p>
-                                                  <p *ngIf="quesImage"><img alt="study24x7" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p>
+                                                  <p *ngIf="quesImage"><img alt="aio" style=" margin-top: 10px;" src="{{image_upload_question_url}}"></p>
                                               </div>
                                           </div>
                                           <div class="QuesTypeNote">
@@ -1108,14 +1108,14 @@
                                                   <div class="optncrcl"><span class="optnvalue">A</span></div>
                                                   <div class="optncntnt">
                                                       <!--{{opt1_text}}-->
-                                                      <p  [innerHTML]="opt1_text | safe : true" ><img style="margin-top: 5px;" *ngIf="optImg1" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                      <p  [innerHTML]="opt1_text | safe : true" ><img style="margin-top: 5px;" *ngIf="optImg1" alt="aio" src="{{option_image1_url}}" ></p>
                                                       <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                           <div class="que_solution_solv">
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
                                                                   <!--{{solutionText}}-->
 
-                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1130,13 +1130,13 @@
                                                   <div class="optncntnt">
                                                       <!--{{opt2_text}}-->
 
-                                                      <p  [innerHTML]="opt2_text | safe : true" ><img style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" *ngIf="optImg2" ></p>
+                                                      <p  [innerHTML]="opt2_text | safe : true" ><img style="margin-top: 5px;" alt="aio" src="{{option_image2_url}}" *ngIf="optImg2" ></p>
                                                       <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                           <div class="que_solution_solv">
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
 
-                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1151,13 +1151,13 @@
                                                   <div class="optncntnt">
                                                       <!--{{opt3_text}}-->
 
-                                                      <p [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                      <p [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" style="margin-top: 5px;" alt="aio" src="{{option_image3_url}}" ></p>
                                                       <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                           <div class="que_solution_solv">
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
 
-                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1173,13 +1173,13 @@
                                                       <!--{{opt4_text}}-->
 
 
-                                                      <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                      <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" style="margin-top: 5px;" alt="aio" src="{{option_image4_url}}" ></p>
                                                       <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                           <div class="que_solution_solv">
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
 
-                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1195,14 +1195,14 @@
                                                       <div class="optncntnt">
                                                           <!--{{opt5_text}}-->
 
-                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" style="margin-top: 5px;" alt="aio" src="{{option_image5_url}}" ></p>
                                                           <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                               <div class="que_solution_solv">
                                                                   <div class="solution_hding">Solution</div>
                                                                   <div class="solution_cntnt">
                                                                       <!--{{solutionText}}-->
 
-                                                                      <p [innerHTML]="solutionText | safe : true"><img  *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                      <p [innerHTML]="solutionText | safe : true"><img  *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1219,13 +1219,13 @@
                                                       <div class="optncntnt">
                                                           <!--{{opt6_text}}-->
 
-                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" style="margin-top: 5px;" alt="aio" src="{{option_image6_url}}" ></p>
                                                           <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                               <div class="que_solution_solv">
                                                                   <div class="solution_hding">Solution</div>
                                                                   <div class="solution_cntnt">
 
-                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1246,14 +1246,14 @@
                                                   <div class="optncntnt">
                                                       <!--{{opt1_text}}-->
 
-                                                      <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" style="margin-top: 5px;" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                      <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" style="margin-top: 5px;" alt="aio" src="{{option_image1_url}}" ></p>
                                                       <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                           <div class="que_solution_solv">
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
                                                                   <!--{{solutionText}}-->
 
-                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1268,13 +1268,13 @@
                                                   <div class="optncntnt">
                                                       <!--{{opt2_text}}-->
 
-                                                      <p [innerHTML]="opt2_text | safe : true" ><img *ngIf="optImg2" style="margin-top: 5px;" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                      <p [innerHTML]="opt2_text | safe : true" ><img *ngIf="optImg2" style="margin-top: 5px;" alt="aio" src="{{option_image2_url}}" ></p>
                                                       <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                           <div class="que_solution_solv">
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
 
-                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p  [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1289,13 +1289,13 @@
                                                   <div class="optncntnt">
                                                       <!--{{opt3_text}}-->
 
-                                                      <p  [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" style="margin-top: 5px;" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                      <p  [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" style="margin-top: 5px;" alt="aio" src="{{option_image3_url}}" ></p>
                                                       <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                           <div class="que_solution_solv">
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
 
-                                                                  <p  [innerHTML]="solutionText | safe : true"><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p  [innerHTML]="solutionText | safe : true"><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1310,14 +1310,14 @@
                                                   <div class="optncntnt">
                                                       <!--{{opt4_text}}-->
 
-                                                      <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" style="margin-top: 5px;" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                      <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" style="margin-top: 5px;" alt="aio" src="{{option_image4_url}}" ></p>
                                                       <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                           <div class="que_solution_solv">
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
                                                                   <!--{{solutionText}}-->
 
-                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1333,7 +1333,7 @@
                                                       <div class="optncntnt">
                                                           <!--{{opt5_text}}-->
 
-                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" style="margin-top: 5px;" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" style="margin-top: 5px;" alt="aio" src="{{option_image5_url}}" ></p>
                                                           <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                               <div class="que_solution_solv">
                                                                   <div class="solution_hding">Solution</div>
@@ -1341,7 +1341,7 @@
                                                                       <!--{{solutionText}}-->
 
 
-                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1358,13 +1358,13 @@
                                                       <div class="optncntnt">
                                                           <!--{{opt6_text}}-->
 
-                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" style="margin-top: 5px;" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" style="margin-top: 5px;" alt="aio" src="{{option_image6_url}}" ></p>
                                                           <div class="solutin_div" *ngIf="isSolutionPresentOld">
                                                               <div class="que_solution_solv">
                                                                   <div class="solution_hding">Solution</div>
                                                                   <div class="solution_cntnt">
 
-                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1388,7 +1388,7 @@
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
 
-                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1406,7 +1406,7 @@
                                                               <div class="solution_hding">Solution</div>
                                                               <div class="solution_cntnt">
 
-                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                                  <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -1428,7 +1428,7 @@
                                                       <div class="optncntnt">
                                                           <!--{{opt1_text}}-->
 
-                                                          <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" alt="study24x7" src="{{option_image1_url}}" ></p>
+                                                          <p [innerHTML]="opt1_text | safe : true" ><img *ngIf="optImg1" alt="aio" src="{{option_image1_url}}" ></p>
                                                       </div>
                                                       <div class="que_result">
                                                           <span class="quesresult_right r_ques s_ques">
@@ -1472,7 +1472,7 @@
                                                                   <div class="optncntnt">
                                                                       <!--{{opt7_text}}-->
 
-                                                                      <p [innerHTML]="opt7_text | safe : true"><img *ngIf="optImg7" alt="study24x7" src="{{option_image7_url}}" ></p>
+                                                                      <p [innerHTML]="opt7_text | safe : true"><img *ngIf="optImg7" alt="aio" src="{{option_image7_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1486,7 +1486,7 @@
                                                       <div class="optncntnt">
                                                           <!--{{opt2_text}}-->
 
-                                                          <p  [innerHTML]="opt2_text | safe : true" ><img *ngIf="optImg2" alt="study24x7" src="{{option_image2_url}}" ></p>
+                                                          <p  [innerHTML]="opt2_text | safe : true" ><img *ngIf="optImg2" alt="aio" src="{{option_image2_url}}" ></p>
                                                       </div>
                                                       <div class="que_result">
                                                           <span class="quesresult_right r_ques s_ques">
@@ -1530,7 +1530,7 @@
                                                                   <div class="optncntnt">
                                                                       <!--{{opt8_text}}-->
 
-                                                                      <p [innerHTML]="opt8_text | safe : true" ><img *ngIf="optImg8" alt="study24x7" src="{{option_image8_url}}" ></p>
+                                                                      <p [innerHTML]="opt8_text | safe : true" ><img *ngIf="optImg8" alt="aio" src="{{option_image8_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1544,7 +1544,7 @@
                                                       <div class="optncntnt">
                                                           <!--{{opt3_text}}-->
 
-                                                          <p [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" alt="study24x7" src="{{option_image3_url}}" ></p>
+                                                          <p [innerHTML]="opt3_text | safe : true" ><img *ngIf="optImg3" alt="aio" src="{{option_image3_url}}" ></p>
                                                       </div>
                                                       <div class="que_result">
                                                           <span class="quesresult_right r_ques s_ques">
@@ -1588,7 +1588,7 @@
                                                                   <div class="optncntnt">
                                                                       <!--{{opt9_text}}-->
 
-                                                                      <p [innerHTML]="opt9_text | safe : true" ><img *ngIf="optImg9" alt="study24x7" src="{{option_image9_url}}" ></p>
+                                                                      <p [innerHTML]="opt9_text | safe : true" ><img *ngIf="optImg9" alt="aio" src="{{option_image9_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1602,7 +1602,7 @@
                                                       <div class="optncntnt">
                                                           <!--{{opt4_text}}-->
 
-                                                          <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" alt="study24x7" src="{{option_image4_url}}" ></p>
+                                                          <p [innerHTML]="opt4_text | safe : true" ><img *ngIf="optImg4" alt="aio" src="{{option_image4_url}}" ></p>
                                                       </div>
                                                       <div class="que_result">
                                                           <span class="quesresult_right r_ques s_ques">
@@ -1645,7 +1645,7 @@
                                                               <div  class="optionoutr">
                                                                   <div class="optncntnt">
 
-                                                                      <p [innerHTML]="opt10_text | safe : true" ><img *ngIf="optImg10" alt="study24x7" src="{{option_image10_url}}" ></p>
+                                                                      <p [innerHTML]="opt10_text | safe : true" ><img *ngIf="optImg10" alt="aio" src="{{option_image10_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1657,7 +1657,7 @@
                                                   <label class="option radio-sctns" for="mcqSingle10">
                                                       <div class="optncrcl"><span class="optnvalue">E</span></div>
                                                       <div class="optncntnt">
-                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" alt="study24x7" src="{{option_image5_url}}" ></p>
+                                                          <p [innerHTML]="opt5_text | safe : true" ><img *ngIf="optImg5" alt="aio" src="{{option_image5_url}}" ></p>
                                                       </div>
                                                       <div class="que_result">
                                                           <span class="quesresult_right r_ques s_ques">
@@ -1700,7 +1700,7 @@
                                                               <div  class="optionoutr">
                                                                   <div class="optncntnt">
 
-                                                                      <p [innerHTML]="opt11_text | safe : true" ><img *ngIf="optImg11" alt="study24x7" src="{{option_image11_url}}" ></p>
+                                                                      <p [innerHTML]="opt11_text | safe : true" ><img *ngIf="optImg11" alt="aio" src="{{option_image11_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1712,7 +1712,7 @@
                                                   <label class="option radio-sctns" for="mcqSingle10">
                                                       <div class="optncrcl"><span class="optnvalue">F</span></div>
                                                       <div class="optncntnt">
-                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" alt="study24x7" src="{{option_image6_url}}" ></p>
+                                                          <p [innerHTML]="opt6_text | safe : true" ><img *ngIf="optImg6" alt="aio" src="{{option_image6_url}}" ></p>
                                                       </div>
                                                       <div class="que_result">
                                                           <span class="quesresult_right r_ques s_ques">
@@ -1755,7 +1755,7 @@
                                                               <div  class="optionoutr">
                                                                   <div class="optncntnt">
 
-                                                                      <p [innerHTML]="opt12_text | safe : true" ><img *ngIf="optImg12" alt="study24x7" src="{{option_image12_url}}" ></p>
+                                                                      <p [innerHTML]="opt12_text | safe : true" ><img *ngIf="optImg12" alt="aio" src="{{option_image12_url}}" ></p>
                                                                   </div>
                                                               </div>
                                                           </div>
@@ -1768,7 +1768,7 @@
                                                   <div class="solution_cntnt">
                                                       <!--{{solutionText}}-->
 
-                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                   </div>
                                               </div>
                                           </div>
@@ -1776,7 +1776,7 @@
                                                   <div class="solution_hding">Solution</div>
                                                   <div class="solution_cntnt">
 
-                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="study24x7" src="{{image_upload_solution_url}}" ></p>
+                                                      <p [innerHTML]="solutionText | safe : true" ><img *ngIf="showSolImg" style="margin-top: 5px;" alt="aio" src="{{image_upload_solution_url}}" ></p>
                                                   </div>
                                           </div>
 
@@ -1796,7 +1796,7 @@
                                                           <br>
                                                           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard <span class="testwrong_ans">photosynthesis</span> dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                                       </p>
-                                                      <!-- <p><img alt="study24x7" src="https://s3-ap-southeast-1.amazonaws.com/gw-thinksaas-deploy/9/questionImage/que-12-06-2018-102829.png"></p> -->
+                                                      <!-- <p><img alt="aio" src="https://s3-ap-southeast-1.amazonaws.com/gw-thinksaas-deploy/9/questionImage/que-12-06-2018-102829.png"></p> -->
                                                   </div>
                                                   <div class="que_result">
                                                       <span class="quesresult_your y_ques">

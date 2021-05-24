@@ -218,7 +218,7 @@ export class SharedvideopostComponent implements OnInit {
                 }
             }
         }
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         this.link = this.arr['SHARE_LINK']
         this.full_name = this.arr['USER_FULL_NAME'];
         this.u_id = this.arr['USER_ID'];

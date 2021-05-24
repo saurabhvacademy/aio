@@ -20,11 +20,11 @@
         </div>
         <div class="star_rating course_name">
           <div class="stars">
-            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="study24x7"></label>
-            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="study24x7"></label>
-            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="study24x7"></label>
-            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-half-empty-filled.svg" alt="study24x7"></label>
-            <label class="star"><img src="assets/images/svg-one/icons8-star-pokemon.svg" alt="study24x7"></label>
+            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="aio"></label>
+            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="aio"></label>
+            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-filled-filled.svg" alt="aio"></label>
+            <label class="star fill" ><img src="assets/images/svg-one/icons8-star-half-empty-filled.svg" alt="aio"></label>
+            <label class="star"><img src="assets/images/svg-one/icons8-star-pokemon.svg" alt="aio"></label>
           </div>
           <span>4<label>(2400)</label></span>
           <span  class="course_type"><img _ngcontent-c5="" src="assets/images/svg-one/rupee.svg"> 700</span>
@@ -50,10 +50,10 @@
         <carousel>
             <slide *ngFor="let courseData of similarCourse;let i= index " (click)="goToCourse(courseData.COURSE_URL, courseData.PAGE_UUID)" >
                 <div class="coverWrapper">
-                <img class="sliderImg" src="{{courseData.COURSE_COVER_PHOTO_PATH}}" alt="study24x7" style="">
+                <img class="sliderImg" src="{{courseData.COURSE_COVER_PHOTO_PATH}}" alt="aio" style="">
 
                 <div class="profileLogo">
-                    <img src="{{courseData.PAGE_PROFILE_PHOTO_PATH}}" alt="study24x7">
+                    <img src="{{courseData.PAGE_PROFILE_PHOTO_PATH}}" alt="aio">
                 </div>
               </div>
                 <div class="courseDetailWrapper">
@@ -142,14 +142,14 @@
                         <span class="rating">{{courseData.COURSE_RATING}}</span>
                         <span class="number">({{courseData.TOTAL_COURSE_RATING_COUNT}})</span>
                     </div>
-                    <h3 class="enroll_course"><span><img src="assets/images/svg-three/course/course_creation/enrollments.svg" alt="study24x7"></span>{{courseData.TOTAL_ENROLLED_USER}} Enrollments</h3>
+                    <h3 class="enroll_course"><span><img src="assets/images/svg-three/course/course_creation/enrollments.svg" alt="aio"></span>{{courseData.TOTAL_ENROLLED_USER}} Enrollments</h3>
                     <h3 class="course_validity" *ngIf="courseData.RVALIDITY!=''">
-                        <span><img src="assets/images/svg-three/course/course_creation/validity.svg" alt="study24x7"></span>
+                        <span><img src="assets/images/svg-three/course/course_creation/validity.svg" alt="aio"></span>
                         Validity {{courseData.RVALIDITY}}
                     </h3>
                     <h3 class="course_price" *ngIf="courseData.COURSE_TYPE ==1">
                         <span>{{courseData.DISCOUNT_COST}}</span>
-                        <span><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7"></span>
+                        <span><img src="assets/images/svg-three/course/course_creation/rupe.svg" alt="aio"></span>
                     </h3>
                     <h3 class="course_price" *ngIf="courseData.COURSE_TYPE ==0">
                         <span>FREE</span>

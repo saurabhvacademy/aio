@@ -196,7 +196,7 @@
                         <div class="footer_message f_right clearfix">
                             <button  [disabled]="showPreloader" class="button24x7 redColorButton" (click)="updateUsrdetails();"><span class="show" *ngIf="showText">Save</span>
                                 <span class="preloder">
-                                    <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader">
+                                    <img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader">
                                 </span>
                             </button>
                         </div>
@@ -225,7 +225,7 @@
                                                 Generate OTP
                                             </span>
                                             <span class="loader">
-                                                <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="prloader">
+                                                <img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="prloader">
                                             </span>
                                         </button>
                                     </div>
@@ -253,7 +253,7 @@
                                                     Verify OTP
                                                 </span>
                                                 <span class="loader">
-                                                    <img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="loader">
+                                                    <img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="loader">
                                                 </span>
                                             </button>
                                         </div>
@@ -302,7 +302,7 @@
 
                             <div class="footer_message">
                                 <button [disabled]="showPreloader === true" class="btn btn-primary btn_sbmt button_width"  (click)="changePassword()" ><span class="text" *ngIf="showText">Save</span>
-                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span></button>
                                 <button [disabled]="showPreloader" class="cancel_button button_width" (click)="settingpage(2)">Cancel</button>
                             </div>
                         </div>
@@ -326,7 +326,7 @@
 
                     <div class="footer_message">
                         <button   [disabled]="showPreloader === true" class="btn btn-primary button_width" ><span class="text" *ngIf="showText">Save</span>
-                            <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                            <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span></button>
                         <button  [disabled]="showPreloader" class="cancel_button button_width" routerLink="/home">Cancel</button>
                     </div>
                 </div>
@@ -375,7 +375,7 @@
                                         <input type="text" class="gray_rds" value=" " id="chng_email" [(ngModel)]="new_email">
                                         <div class="footer_message">
                                             <button  [disabled]="showPreloader === true" class="button24x7 redColorButton"  (click)="editemail(2)"  ><span class="text" *ngIf="showText">Save</span>
-                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span></button>
+                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span></button>
                                             <button [disabled]="showPreloader === true" class="button24x7 whiteColorButton cancelSetting" (click)="cancel1()" >Cancel</button>
                                         </div>
                                     </div>
@@ -399,7 +399,7 @@
                                         </div>
                                         <div class=" margintop verify-btn verifyOtp">
                                             <button [disabled]="showPreloader === true" class="button24x7 redColorButton" (click)="verifyOtpForEmailMobileChange('e')"><span class="text" *ngIf="showText">Verify</span>
-                                                <span class="preloder"><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader" ></span></button>
+                                                <span class="preloder"><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader" ></span></button>
                                         </div>
                                         <span *ngIf="shwResend" class="link cursor-pointer link_counter"  (click)="sendOtpForEmailMobileChange('e')">Resend Code</span>
                                         <span *ngIf="!shwResend" class="cursor-pointer link_counter"  >{{countDisplay}}</span>
@@ -411,7 +411,7 @@
                                             </div>
                                             <div class=" margintop verify-btn verifyOtp">
                                                 <button [disabled]="showPreloader === true" class="button24x7 redColorButton" (click)="verificationSubmit('e')"><span class="text" *ngIf="showText">Verify</span>
-                                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader && showText===false" ></span></button>
+                                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader && showText===false" ></span></button>
                                             </div>
                                             <span *ngIf="shwResend" class="link cursor-pointer link_counter" (click)="VerificationCode('e')">Resend code</span>
                                             <span *ngIf="!shwResend" class="cursor-pointer link_counter" >{{countDisplay}}</span>
@@ -461,7 +461,7 @@
                                         <div class="footer_message">
                                             <button [disabled]="showPreloader === true" class="button24x7 redColorButton"  (click)="editphone(2)">
                                                 <span class="text" *ngIf="showText">Save</span>
-                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader"></span>  </button>
+                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader"></span>  </button>
                                             <button  [disabled]="showPreloader === true" class="button24x7 whiteColorButton cancelSetting" (click)="cancel()" >Cancel</button>
                                         </div>
                                     </div>
@@ -487,7 +487,7 @@
                                         <div class=" margintop verify-btn">
                                             <button [disabled]="showPreloader === true"  class="btn btn-primary btn_sbmt button_width" (click)="verifyOtpForEmailMobileChange('m')">
                                                 <span class="text" *ngIf="showText">Verify</span>
-                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader && showText===false"></span></button>
+                                                <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader && showText===false"></span></button>
                                             <span *ngIf="shwResend" (click)="sendOtpForEmailMobileChange('m')" class="link_counter link">Resend code</span>
                                             <span *ngIf="!shwResend" class="link_counter">{{countDisplay}}</span></div>
                                     </div>
@@ -498,7 +498,7 @@
                                             </div>
                                             <div class=" margintop verify-btn">
                                                 <button [disabled]="showPreloader === true" class="btn btn-primary button_width" (click)="verificationSubmit('m')"><span class="text" *ngIf="showText">Verify</span>
-                                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="study24x7" *ngIf="showPreloader && showText===false" ></span></button>
+                                                    <span class="preloder"  ><img src="./assets/images/svg/preloader-25.svg" alt="aio" *ngIf="showPreloader && showText===false" ></span></button>
                                             </div>
                                             <span *ngIf="showResend" class="link cursor-pointer link_counter"  (click)="VerificationCode('m')">Resend Code</span>
 
@@ -526,7 +526,7 @@
                     <div class="inner_wrapper">
                         <div class="sub_heading">
                             <span class="img">
-                                <img src="./assets/images/svg-three/head/noti-01.svg" alt="study24x7">
+                                <img src="./assets/images/svg-three/head/noti-01.svg" alt="aio">
                             </span>
                             <span class="text"></span>
                         </div>
@@ -538,7 +538,7 @@
                                     <li>
                                         <div class="sub_div_left">
                                             <span class="img_icon">
-                                                <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                                <img src="assets/images/svg/securityred.svg" alt="aio">
                                             </span>
                                             <span class="inner_text">PUBLIC</span>
                                             <p>You'll always get notifications about activity that involves you.</p>
@@ -555,7 +555,7 @@
                                     <li>
                                         <div class="sub_div_left">
                                             <span class="img_icon">
-                                                <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                                <img src="assets/images/svg/securityred.svg" alt="aio">
                                             </span>
                                             <span class="inner_text">RELATED TO USER</span>
                                             <p>You'll always get notifications about activity that involves you.</p>
@@ -573,7 +573,7 @@
                                     <li>
                                         <div class="sub_div_left">
                                             <span class="img_icon">
-                                                <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                                <img src="assets/images/svg/securityred.svg" alt="aio">
                                             </span>
                                             <span class="inner_text">PAGES</span>
                                             <p>Pages you manage</p>
@@ -589,7 +589,7 @@
                                     <li>
                                         <div class="sub_div_left">
                                             <span class="img_icon">
-                                                <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                                <img src="assets/images/svg/securityred.svg" alt="aio">
                                             </span>
                                             <span class="inner_text">SECURITY</span>
                                             <p>You'll always get notifications about activity that involves your security.</p>
@@ -612,7 +612,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">Missing activities</span>
 <!--                                    <p>
@@ -630,7 +630,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When someone accept your request</span>
 <!--                                    <p>
@@ -648,7 +648,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When someone sent you connection request.</span>
 <!--                                    <p>
@@ -666,7 +666,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When someone interested in your post.</span>
 <!--                                    <p>
@@ -684,7 +684,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When you have more than 10 unseen notifications.</span>
 <!--                                    <p>
@@ -702,7 +702,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When result of question you posted is disclosed.</span>
 <!--                                    <p>
@@ -720,7 +720,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When someone shared your post.</span>
 <!--                                    <p>
@@ -738,7 +738,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When someone accept your invitation.</span>
 <!--                                    <p>
@@ -756,7 +756,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When result of question you responded is disclosed.</span>
 <!--                                    <p>
@@ -774,7 +774,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">When someone responded on your question posted.</span>
 <!--                                    <p>
@@ -792,7 +792,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">On page invitation</span>
 <!--                                    <p>
@@ -811,7 +811,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">Welcome to STUDY24X7</span>
                                     <p>
@@ -831,7 +831,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text"> Email Verification Code</span>
                                     <p>
@@ -851,7 +851,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">OTP for Verification </span>
                                     <p>
@@ -871,7 +871,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">Email Verification Complete</span>
                                     <p>
@@ -891,7 +891,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">OTP for Password Reset</span>
                                     <p>
@@ -911,7 +911,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text"> Password change notification</span>
                                     <p>
@@ -931,7 +931,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text"> XXXXXXXXXXXX invited to join Study24x7 "The most exciting edusocial platform"</span>
                                     <p>
@@ -951,7 +951,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">Verification code for page claim</span>
                                     <p>
@@ -970,7 +970,7 @@
                             <li>
                                 <div class="sub_div_left">
                                     <span class="img_icon">
-                                        <img src="assets/images/svg/securityred.svg" alt="study24x7">
+                                        <img src="assets/images/svg/securityred.svg" alt="aio">
                                     </span>
                                     <span class="inner_text">SECURITY M</span>
                                     <p>

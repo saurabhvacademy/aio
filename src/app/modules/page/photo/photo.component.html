@@ -10,7 +10,7 @@
                      <h3>Photo update by Allomora</h3>
                      <div class="sortlistmainwrapper"  #sortlistcover>
                          <div class="sortmenu" (click)="showsortlist();">Sort by
-                             <img src="assets/images/svg-three/add_post/downarrow.svg" alt="study24x7">
+                             <img src="assets/images/svg-three/add_post/downarrow.svg" alt="aio">
                          </div>
                          <div class="sortphotolist" *ngIf="sortlist">
                              <ul>
@@ -24,7 +24,7 @@
          <div class="col-md-3 col-sm-4 col-xs-6 img_center"  *ngIf="user_type==1 && !emptyGallery && !withouttoken">
             <div class="imgcont">
                 <div class="mainimg mainimg1 uploadimage">
-                    <img class="uploadimg" src="assets/images/svg-three/emptyimage.svg" alt="study24x7">
+                    <img class="uploadimg" src="assets/images/svg-three/emptyimage.svg" alt="aio">
                     <input type="file" name="" value=" " id="photo" accept="image/*" (change)="uploadImage($event)">
                     <label   name="button" class="imguploadbutton" for="photo"><span *ngIf="!showPreloader">Upload Image</span>
                         <span class="preloder"><img src="./assets/images/svg/preloader-25.svg"
@@ -40,7 +40,7 @@
             <div  class="mainimg imgcont innerimg_container" (click)="show_img_popup(j);" [ngStyle]="{'background-image': getUrl(j)}">
               <div class="mainimg">
                     <!-- <p>{{ayush}}</p> -->
-                    <!-- <img src="{{img.FILE_PATH}}profile/{{img.PAGE_GALLERY_UUID}}.png" alt="study24x7"> -->
+                    <!-- <img src="{{img.FILE_PATH}}profile/{{img.PAGE_GALLERY_UUID}}.png" alt="aio"> -->
                     <span class="delete_img" *ngIf="user_type==1" (click)="removeImage(img.PAGE_GALLERY_UUID,j)"><img src="assets/images/svg/dustbindropwhite.svg"></span>
                     <div class="onhover">
                         <div class="blackshadow"></div>
@@ -77,7 +77,7 @@
         </div>
 
         <div class="loader2" *ngIf="loadGallery">
-            <img src="assets/images/24x7preloader.gif" alt="study24x7" >
+            <img src="assets/images/24x7preloader.gif" alt="aio" >
         </div>
 
     </div>

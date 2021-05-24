@@ -7,7 +7,7 @@
         <div class="menuHead">
             <span (click)="goBackToCourse()">
                 <span class="backToCourse" >
-                    <img src="./assets/images/svg-three/course/course_creation/arrow.svg" alt="study24x7">
+                    <img src="./assets/images/svg-three/course/course_creation/arrow.svg" alt="aio">
                 </span>
                 <h4 class="cursor-pointer">Back to Course</h4>
             </span>
@@ -31,15 +31,15 @@
                         <ng-container *ngFor="let content of section.SECTION_CONTENT_DATA; let j = index;">
                             <li *ngIf="(content.CONTENT_TYPE == 7 && _constantService.getSessionDataBYKey('STREAM_FLAG') == 1) || content.CONTENT_TYPE != 7" (click)="UpdateSeenContent(content);" [ngClass]="{'cursor-remove':content.VISIBILITY ==1}">
                                 <span *ngIf="content.CONTENT_TYPE==1 || content.CONTENT_TYPE==4 || content.CONTENT_TYPE==5">
-                                    <img src="assets/images/svg-three/course/courseDetails/videoPlayIcon.svg" alt="study24x7"></span>
-                                <span *ngIf="content.CONTENT_TYPE == 2"><img src="assets/images/svg-three/course/courseDetails/documentIcon.svg" alt="study24x7"></span>
-                                <span *ngIf="content.CONTENT_TYPE == 7"><img src="assets/images/svg-three/course/courseDetails/videoLiveIcon.svg" alt="study24x7"></span>
-                                <span *ngIf="content.CONTENT_TYPE == 3 || content.CONTENT_TYPE == 6"><img src="assets/images/svg-three/course/courseDetails/gray_quiz.svg" alt="study24x7"></span>
+                                    <img src="assets/images/svg-three/course/courseDetails/videoPlayIcon.svg" alt="aio"></span>
+                                <span *ngIf="content.CONTENT_TYPE == 2"><img src="assets/images/svg-three/course/courseDetails/documentIcon.svg" alt="aio"></span>
+                                <span *ngIf="content.CONTENT_TYPE == 7"><img src="assets/images/svg-three/course/courseDetails/videoLiveIcon.svg" alt="aio"></span>
+                                <span *ngIf="content.CONTENT_TYPE == 3 || content.CONTENT_TYPE == 6"><img src="assets/images/svg-three/course/courseDetails/gray_quiz.svg" alt="aio"></span>
                                 <span>&nbsp;</span>
                                 <span class="contetName">&nbsp;{{content.TITLE}}</span>
 
                                 <span style="cursor: default;" class="images lock verCenterAlign" *ngIf="content.VISIBILITY ==1">
-                                    <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg" alt="study24x7">
+                                    <img src="assets/images/svg-three/course/courseDetails/lockIcon.svg" alt="aio">
                                 </span>
 
                                 <span>
@@ -71,7 +71,7 @@
     </div>
 </div>
 <div class="loader2 inner_lesson_menu"  *ngIf="preLoaderLeftPannel">
-    <img src="assets/images/24x7preloader.gif" style="width: 140px;" alt="study24x7" >
+    <img src="assets/images/24x7preloader.gif" style="width: 140px;" alt="aio" >
 </div>
 
 <app-confirmationpopup *ngIf="openConfirmation" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

@@ -5,10 +5,10 @@
     <div  class="col-md-3 col-sm-4 col-xs-12 right payment_sec_right" >
         <div class="paymentCard">
             <div class="cardImg">
-                <img src={{coursePaymentData.coverPic}} alt="study24x7">
+                <img src={{coursePaymentData.coverPic}} alt="aio">
 
                 <div class="logo">
-                    <img src="{{pp}}" alt="study24x7">
+                    <img src="{{pp}}" alt="aio">
                 </div>
 
             </div>
@@ -17,13 +17,13 @@
                 <h3>{{coursePaymentData.COURSE_TITLE}}</h3>
                 <h6>By {{coursePaymentData.pageTitle}} </h6>
                 <p>Order Summary</p>
-                <p>Subtotal <span><img src="./assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{coursePaymentData.initialAmount}}</span></p>
-                <!-- <p class="tax">Tax <span><img src="src/assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{coursePaymentData.taxAmount}}</span></p> -->
-                <p class="tax">Wallet<span>- <img src="./assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{coursePaymentData.walletDeductionAmount}}</span></p>
+                <p>Subtotal <span><img src="./assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{coursePaymentData.initialAmount}}</span></p>
+                <!-- <p class="tax">Tax <span><img src="src/assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{coursePaymentData.taxAmount}}</span></p> -->
+                <p class="tax">Wallet<span>- <img src="./assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{coursePaymentData.walletDeductionAmount}}</span></p>
                 <p *ngIf="couponAdded" class="tax coupondiscount"><span style="float:left;color:#00bb24;">Coupon Discount {{'('+enteredCoupon+')'}}</span>
-                    <span (click)="removeCoupon($event, '1')" class="close"><img src="assets/images/svg/addpost_tagcross.svg" alt="study24x7"></span>
-                    <span> <img src="./assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{coursePaymentData.PROMO_DISCOUNT}}</span></p>
-                <p class="total">To Pay <span><img src="./assets/images/svg-three/course/course_creation/rupe.svg" alt="study24x7">{{coursePaymentData.finalAmount}}</span></p>
+                    <span (click)="removeCoupon($event, '1')" class="close"><img src="assets/images/svg/addpost_tagcross.svg" alt="aio"></span>
+                    <span> <img src="./assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{coursePaymentData.PROMO_DISCOUNT}}</span></p>
+                <p class="total">To Pay <span><img src="./assets/images/svg-three/course/course_creation/rupe.svg" alt="aio">{{coursePaymentData.finalAmount}}</span></p>
 
 
                 <button type="button" name="button" class="paybutton" (click)="verifyPopup()"> Make Payment</button>
@@ -52,20 +52,20 @@
                 <div class="inner_wrapper" (click)="seletPaymenttWallet()" [ngClass]="{'onselect_inner_wrapper':selectWallet}">
 
                     <div class="tik">
-                        <img class="white" src="./assets/images/svg/white_checkbox.svg" alt="study24x7">
-                        <img class="gray" src="./assets/images/svg/gray_checkbox.svg" alt="study24x7">
+                        <img class="white" src="./assets/images/svg/white_checkbox.svg" alt="aio">
+                        <img class="gray" src="./assets/images/svg/gray_checkbox.svg" alt="aio">
                     </div>
                     <div class="textContainer">
                         <h3>Study 24X7 wallet</h3>
                         <h4 class="balance">Available Balance
                             <span>
-                                <img src="./assets/images/svg-three/course/course_creation/green_rupe.svg" alt="study24x7">
+                                <img src="./assets/images/svg-three/course/course_creation/green_rupe.svg" alt="aio">
                                 {{walletBalance}}
                             </span>
                         </h4>
                     </div>
                     <button type="button" name="button" class="button24x7 redeemed_btn">
-                        <span><img src="./assets/images/svg/white_checkbox.svg" alt="study24x7"></span>
+                        <span><img src="./assets/images/svg/white_checkbox.svg" alt="aio"></span>
                         REDEEMED
                     </button>
 
@@ -84,15 +84,15 @@
             <!-- <input class="paymentmethod" style="display:none" type="radio" name="paymentmethod" value="" id="paytm">
               <label for="paytm" class="payment">
                 <div class="tik">
-                  <img class="white" src="assets/images/svg/white_checkbox.svg" alt="study24x7">
-                  <img class="gray" src="assets/images/svg/gray_checkbox.svg" alt="study24x7">
+                  <img class="white" src="assets/images/svg/white_checkbox.svg" alt="aio">
+                  <img class="gray" src="assets/images/svg/gray_checkbox.svg" alt="aio">
                 </div>
                 <div class="textContainer">
                   <h3>Study 24X7 wallet</h3>
                   <h4>Safe payment online, no credit card needed payment on the go</h4>
                   <h4 class="discount">15% off on this 2 transactions
                       <span class="discounthover">
-                      <img src="assets/images/svg-three/post_icon/report.svg" alt="study24x7">
+                      <img src="assets/images/svg-three/post_icon/report.svg" alt="aio">
                       <div class="termandcondition">
                         <div class="bluetriangle"></div>
                         <div class="graytriangle"></div>
@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="imagecontainer">
-                   <img src="assets/images/svg-three/course/Paytm.png" alt="study24x7">
+                   <img src="assets/images/svg-three/course/Paytm.png" alt="aio">
                 </div>
               </label> -->
 
@@ -132,25 +132,25 @@
             <!-- <input class="paymentmethod" style="display:none" type="radio" name="paymentmethod" value="" id="paypal">
               <label for="paypal" class="payment">
                 <div class="tik">
-                  <img class="white" src="assets/images/svg/white_checkbox.svg" alt="study24x7">
-                  <img class="gray" src="assets/images/svg/gray_checkbox.svg" alt="study24x7">
+                  <img class="white" src="assets/images/svg/white_checkbox.svg" alt="aio">
+                  <img class="gray" src="assets/images/svg/gray_checkbox.svg" alt="aio">
                 </div>
                 <div class="textContainer">
                   <h3>Study 24X7 wallet</h3>
                   <h4>Payt, is an indian e-commerce payment system and digital wallet company</h4> -->
-            <!-- <h4 class="discount">15% off on this 2 transactions <img src="assets/images/svg-three/post_icon/report.svg" alt="study24x7"></h4> -->
+            <!-- <h4 class="discount">15% off on this 2 transactions <img src="assets/images/svg-three/post_icon/report.svg" alt="aio"></h4> -->
             <!-- </div> -->
 
             <!-- <div class="imagecontainer">
-               <img src="assets/images/svg-three/course/paypal.png" alt="study24x7">
+               <img src="assets/images/svg-three/course/paypal.png" alt="aio">
             </div>
           </label> -->
                   <!-- paytm money  -->
                   <input class="paymentmethod" style="display:none" type="radio" name="paymentmethod" value="" id="paytm" (click)="payuSelected(1)">
                   <label for="paytm" class="payment">
                       <div class="tik">
-                          <img class="white" src="./assets/images/svg/white_checkbox.svg" alt="study24x7">
-                          <img class="gray" src="./assets/images/svg/gray_checkbox.svg" alt="study24x7">
+                          <img class="white" src="./assets/images/svg/white_checkbox.svg" alt="aio">
+                          <img class="gray" src="./assets/images/svg/gray_checkbox.svg" alt="aio">
                       </div>
                       <div class="textContainer">
                           <h3>Paytm</h3>
@@ -158,24 +158,24 @@
                       </div>
 
                       <div class="imagecontainer">
-                          <img src="./assets/images/svg-three/course/Paytm.png" alt="study24x7">
+                          <img src="./assets/images/svg-three/course/Paytm.png" alt="aio">
                       </div>
                   </label>
             <!-- payu money  -->
             <input class="paymentmethod" style="display:none" type="radio" name="paymentmethod" value="" id="payu" (click)="payuSelected(0)">
             <label for="payu" class="payment">
                 <div class="tik">
-                    <img class="white" src="./assets/images/svg/white_checkbox.svg" alt="study24x7">
-                    <img class="gray" src="./assets/images/svg/gray_checkbox.svg" alt="study24x7">
+                    <img class="white" src="./assets/images/svg/white_checkbox.svg" alt="aio">
+                    <img class="gray" src="./assets/images/svg/gray_checkbox.svg" alt="aio">
                 </div>
                 <div class="textContainer">
                     <h3>PayU Money</h3>
                     <h4>Secure payment gateway, integrated with web and mobile applications to accept and process payments with ease.</h4>
-                    <!-- <h4 class="discount">15% off on this 2 transactions <img src="assets/images/svg-three/post_icon/report.svg" alt="study24x7"></h4> -->
+                    <!-- <h4 class="discount">15% off on this 2 transactions <img src="assets/images/svg-three/post_icon/report.svg" alt="aio"></h4> -->
                 </div>
 
                 <div class="imagecontainer">
-                    <img src="./assets/images/svg-three/course/payu.png" alt="study24x7">
+                    <img src="./assets/images/svg-three/course/payu.png" alt="aio">
                 </div>
             </label>
 
@@ -228,8 +228,8 @@
             <label class="offer" for="offer2">
 
               <div class="tik">
-                <img class="white" src="assets/images/svg/white_checkbox.svg" alt="study24x7">
-                <img class="gray" src="assets/images/svg/gray_checkbox.svg" alt="study24x7">
+                <img class="white" src="assets/images/svg/white_checkbox.svg" alt="aio">
+                <img class="gray" src="assets/images/svg/gray_checkbox.svg" alt="aio">
               </div>
 
               <p>

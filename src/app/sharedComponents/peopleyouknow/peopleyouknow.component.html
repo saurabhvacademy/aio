@@ -58,7 +58,7 @@
                         <p  *ngIf="peoples.IS_TEACHER==3" class="typeVisitor" >Educator & Learner</p>
 
                         <button id="{{peoples.USER_ID}}" (click)="sendRequest(peoples.USER_ID,i)" *ngIf="!peoples.connectStatus"  class="btntextRow">
-                            <img  src="assets/images/svg-icon/add-frnd-red.svg" alt="study24x7" width="14">
+                            <img  src="assets/images/svg-icon/add-frnd-red.svg" alt="aio" width="14">
                             <span class="btntext"> Connect</span>
                         </button>
                         <button *ngIf="peoples.connectStatus"  class="btntextdisable">
@@ -66,7 +66,7 @@
                         </button>
                         </div>
                         <!-- <button *ngIf="peoples.connectStatus" id="{{peoples.USER_ID}}" (click)="cancelFrndReq(i)" class="btntextdisable">
-                            <img src="assets/images/svg-three/add_frnd_1.svg" alt="study24x7" width="14">Cancel request
+                            <img src="assets/images/svg-three/add_frnd_1.svg" alt="aio" width="14">Cancel request
                         </button> -->
                      </div>
                      <!-- <button class="graybutton" id="{{peoples.USER_ID}}" (click)="sendRequest($event,i)"> -->
@@ -80,7 +80,7 @@
         </perfect-scrollbar>
 
         <h6 class="footer_heading" routerLink="/profile/{{this._constantService.getSessionDataBYKey('username')}}/#connection:suggestion"  *ngIf = "suggestionPresent==true">
-            View all &nbsp; <span><img class="greater" src="assets/images/svg-three/greater.svg" alt="study24x7"></span>
+            View all &nbsp; <span><img class="greater" src="assets/images/svg-three/greater.svg" alt="aio"></span>
         </h6>
 
         <div class="emptystate" *ngIf = "suggestionPresent==false">

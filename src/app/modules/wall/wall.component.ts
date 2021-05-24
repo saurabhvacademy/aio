@@ -221,7 +221,7 @@ export class WallComponent implements OnInit, AfterViewInit, OnDestroy {
 
         if (!this._cookie.get('study247')) {
             // this._cookie.set('study247', this._encryptionService.encrypt(this._constantService.getSessionDataBYKey('token')));
-            document.cookie = "study247=study24x7";
+            document.cookie = "study247=aio";
         }
         this.getLiveStreamStatus();
         document.body.classList.remove("body-overflow-y");

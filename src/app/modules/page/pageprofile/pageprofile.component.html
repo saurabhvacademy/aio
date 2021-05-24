@@ -30,9 +30,9 @@
                     </div>
                     <div class="overlay_gradient" (click)="postImageShow(2);"></div>
                     <img src="assets/images/profile-banner.png" *ngIf="coverPicPath == null"
-                        alt="study24x7 {{pageTitle}}">
+                        alt="aio {{pageTitle}}">
                     <img src="{{coverPicPath}}" style="width:100%" *ngIf="coverPicPath != null"
-                        alt="study24x7 {{pageTitle}}">
+                        alt="aio {{pageTitle}}">
                     <span class="cover-pic-preloader" *ngIf="coverPicImgUpload">
                         <img style="width:100px;margin-left: -50px;" src="assets/images/svg/preloader-25.svg">
                     </span>
@@ -40,7 +40,7 @@
                     <div class='profile_Detail remove_shadow'>
                         <div class="profile_picture">
                             <div class="whitebg"></div>
-                            <img src="{{profilePicPath}}" (click)="postImageShow(1);" alt="study24x7 {{pageTitle}}">
+                            <img src="{{profilePicPath}}" (click)="postImageShow(1);" alt="aio {{pageTitle}}">
 
                             <div class="changeprofile usruplimg" *ngIf="user_type==1">
 
@@ -859,7 +859,7 @@
                             class="footer_bottom" style="color:#9ba1ab;">
                             <a routerLink="/privacy" target="_blank">Privacy Policy</a> <span> | </span>
                             <a routerLink="/termandcondition" target="_blank">Terms of Use <span> | </span></a>
-                            <a href="http://support.study24x7.com/" target="_blank">Support</a>
+                            <a href="http://support.aio.com/" target="_blank">Support</a>
                             <a>{{this._constantService.version}}</a>
                         </p>
                         <footer
@@ -1523,9 +1523,9 @@ header new registration button end
                 <div class="coverphoto prfmargintop">
                     <div class="overlay_gradient"></div>
                     <img src="assets/images/profile-banner.png" *ngIf="coverPicPath == null"
-                        alt="study24x7 {{pageTitle}}">
+                        alt="aio {{pageTitle}}">
                     <img src="{{coverPicPath}}" style="width:100%" *ngIf="coverPicPath != null"
-                        alt="study24x7 {{pageTitle}}">
+                        alt="aio {{pageTitle}}">
                     <span class="cover-pic-preloader" *ngIf="coverPicImgUpload"><img style=""
                             src="assets/images/svg/preloader-25.svg"></span>
                     <div class='profile_Detail remove_shadow'>
@@ -1817,7 +1817,7 @@ header new registration button end
                         <p *ngIf="pageprofiletab != 9" class="footer_bottom" style="color:#9ba1ab;">
                             <a routerLink="/privacy" target="_blank"> Privacy Policy <span> | </span> </a>
                             <a routerLink="/termandcondition" target="_blank">Terms & Conditions <span> | </span></a>
-                            <a href="http://support.study24x7.com/" target="_blank">Support</a>
+                            <a href="http://support.aio.com/" target="_blank">Support</a>
                         </p>
                         <footer *ngIf="pageprofiletab != 9" class="footer_bottom"> © 2020 @Edubabble Learning Pvt. Ltd.
                         </footer>

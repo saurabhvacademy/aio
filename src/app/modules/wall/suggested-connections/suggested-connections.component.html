@@ -11,7 +11,7 @@
             <div class="imgSec">
               <img class="profileimg"
               src='{{ connection.PROFILE_PHOTO_PATH }}' routerLink="/profile/{{connection.USER_NAME}}" (error)="updateSourcePic($event)"
-                alt="study24x7">
+                alt="aio">
               <div style="cursor: pointer;" class="removeConnection btn-a" (click) = "delSuggestion(connection.USER_ID,i)">
                 <img src="assets/images/svg-icon/cross-icon-with-bg.svg">
               </div>
@@ -43,7 +43,7 @@
   <div class="bottomSec"  >
   <div style="cursor: pointer;" routerLink="/profile/{{this._constantService.getSessionDataBYKey('username')}}/#connection:suggestion">
     All suggested connections
-<span><img  alt="study24x7" src="assets/images/svg-three/greater.svg" class="greater"></span>
+<span><img  alt="aio" src="assets/images/svg-three/greater.svg" class="greater"></span>
   </div></div>
 </div>
 <app-confirmationpopup *ngIf="alert" (closeComfirmPopupThread)="closePopup($event);" [dataObj]="dataConf"></app-confirmationpopup>

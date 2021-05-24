@@ -249,7 +249,7 @@ export class ArticleComponent implements OnInit, AfterViewInit {
 
                 var tooltip = this.quillEditor.theme.tooltip;
                 var input = tooltip.root.querySelector('input[data-link]');
-                input.dataset.link = 'www.study24x7.com';
+                input.dataset.link = 'www.aio.com';
                
 
 

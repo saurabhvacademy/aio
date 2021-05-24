@@ -2675,14 +2675,14 @@
                                                 <div *ngIf="question.IMAGE_UUID != '' || question.QSTN_TEXT != ''">
                                                     <span [ngClass]="{'removeClick':(editableVal=='0')}">
                                                         <span (click)="deleteQuestionFromTest(question.QSTN_ID,question.LANG_ID, i);" class="ques_no_list_right del">
-                                                            <img src="assets/images/svg/dustbindrop.svg" alt="study24x7">
+                                                            <img src="assets/images/svg/dustbindrop.svg" alt="aio">
                                                         </span>
                                                     </span>
 
                                                     <div class="eassyInnerListing" (click)="getQuestionData(question.QSTN_ID,question.LANG_ID);">
                                                         <span class="ques_no_list">{{question.QSTN_ID}}.</span>
                                                         <span class="attachmentImg" *ngIf="question.IMAGE_UUID != '' || question.IS_IMAGE">
-                                                              <img src="assets/images/svg-three/post_icon/paperclip.svg" alt="study24x7">
+                                                              <img src="assets/images/svg-three/post_icon/paperclip.svg" alt="aio">
                                                         </span>
                                                         <p innerHTML="{{question.STATIC_TEXT}}"></p>
                                                     </div>
@@ -2696,7 +2696,7 @@
                                                         <div class="attachInnerEassy">
                                                             <span class="ques_no_list"><span>{{question.ESSAY_ID}}. </span>Essay</span>
                                                             <!--<span class="attachmentImg">
-                                                                <img src="assets/images/svg-three/post_icon/img.svg" alt="study24x7">
+                                                                <img src="assets/images/svg-three/post_icon/img.svg" alt="aio">
                                                             </span>-->
                                                             <p>{{question.ESSAY_TEXT}}</p>
                                                         </div>
@@ -2749,14 +2749,14 @@
                                                         <li class="question_list  Unattempted_ques_list" *ngFor="let essay of essayList; let essayInd = index;" (click)="getEssayData(essay.ESSAY_ID,essay.LANG_ID);">
                                                             <span [ngClass]="{'removeClick':(editableVal=='0')}">
                                                                 <span *ngIf="!essay.ONEVIEW" (click)="deleteEssayFromTest(essay.ESSAY_ID,essay.LANG_ID, essayInd);" class="ques_no_list_right delete">
-                                                                    <img src="assets/images/svg/dustbindrop.svg" alt="study24x7">
+                                                                    <img src="assets/images/svg/dustbindrop.svg" alt="aio">
                                                                 </span>
                                                             </span>
                                                             <div class="Unattempted_inner_ques_list_wrappe">
                                                                 <span class="ques_no_list">{{essay.ESSAY_ID}}.</span>
 
                                                                 <span class="attachmentImg" *ngIf="essay.IS_IMAGE">
-                                                                    <img src="assets/images/svg-three/post_icon/paperclip.svg" alt="study24x7">
+                                                                    <img src="assets/images/svg-three/post_icon/paperclip.svg" alt="aio">
                                                                 </span>
 
                                                                 <span  class="ques_no_list_right" style="position:relative;z-index:10;">
@@ -2808,10 +2808,10 @@
                                             <div class="tophead">
                                                 <span class="count">{{question.QSTN_ID}}</span>
                                                 <span class="ckeckBox">
-                                                    <img src="assets/images/svg-three/course/course_creation/white_checkbox.svg" alt="study24x7">
+                                                    <img src="assets/images/svg-three/course/course_creation/white_checkbox.svg" alt="aio">
                                                 </span>
                                                 <span class="attachmentImg" *ngIf="question.IMAGE_UUID != '' || question.IS_IMAGE">
-                                                      <img src="assets/images/svg-three/post_icon/paperclip.svg" alt="study24x7">
+                                                      <img src="assets/images/svg-three/post_icon/paperclip.svg" alt="aio">
                                                 </span>
                                             </div>
 
@@ -3010,8 +3010,8 @@
         <div class="header">
             <h3>Quiz Summary</h3>
             <span class="close_div" (click)="quizCreationContinue()">
-                <img class="defaultt" src="assets/images/svg/tagcross-gray.svg" alt="study24x7">
-                <img class="hoverr" src="assets/images/svg/tagcross-r.svg" alt="study24x7">
+                <img class="defaultt" src="assets/images/svg/tagcross-gray.svg" alt="aio">
+                <img class="hoverr" src="assets/images/svg/tagcross-r.svg" alt="aio">
             </span>
         </div>
 

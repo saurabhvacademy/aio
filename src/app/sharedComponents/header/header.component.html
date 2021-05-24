@@ -7,7 +7,7 @@
                 <div class="col-md-3 col-sm-3 clearfix comp_logo" id="logo">
                     <a routerLinkActive="router-link-active" routerLink='/home/all'>
                         <!-- <img  src="assets/images/svg-three/Logo.png" alt="stud24x7" class="logo_header"> -->
-                        <img src="https://img1.study24x7.com/assets/images/svg-three/Logo.png" alt="stud24x7"
+                        <img src="https://img1.aio.com/assets/images/svg-three/Logo.png" alt="stud24x7"
                             class="logo_header">
 
                         <!-- <img src="./assets/images/svg-three/mlogo.png" alt="stud24x7" class='mlogo' > -->
@@ -114,7 +114,7 @@
                       <li class='profile_list' (click)="redirectToProfile(username)">
                           <span class='profile_hdr'>
                               <img src="{{profileImageUrl}}" (error)="updateSourcePic($event)"
-                                  alt="{{'study24x7 ' + this._constantService.getSessionDataBYKey('full_name')}}">
+                                  alt="{{'aio ' + this._constantService.getSessionDataBYKey('full_name')}}">
 
                           </span>
                       </li>
@@ -134,7 +134,7 @@
                         <li class='profile_list' (click)="toggleHeaderDropdown(4)">
                             <span class='profile_hdr'>
                                 <img src="{{profileImageUrl}}" (error)="updateSourcePic($event)"
-                                    alt="{{'study24x7 ' + this._constantService.getSessionDataBYKey('full_name')}}">
+                                    alt="{{'aio ' + this._constantService.getSessionDataBYKey('full_name')}}">
 
                             </span>
                             <!-- <span class="glyphicon glyphicon-triangle-bottom"></span> -->
@@ -192,7 +192,7 @@
                                         View all
                                         <span>
                                             <img class="greater" src="assets/images/svg-three/greater.svg"
-                                                alt="study24x7">
+                                                alt="aio">
                                         </span>
                                     </a>
                                 </div>
@@ -288,7 +288,7 @@
                                                             id='{{requests.USER_ID}}'>
                                                             <span class="noteficationcrose">
                                                                 <img src="./assets/images/svg-three/cancel.svg"
-                                                                    alt="study24x7">
+                                                                    alt="aio">
                                                             </span>
                                                         </button>
                                                         <button class="btn btn-primary" _ngcontent-c7=""
@@ -317,7 +317,7 @@
                                         View all
                                         <span>
                                             <img class="greater" src="assets/images/svg-three/greater.svg"
-                                                alt="study24x7">
+                                                alt="aio">
                                         </span>
                                     </a>
                                 </div>
@@ -359,7 +359,7 @@
         </a>
     </span>
     <span *ngIf="deviceType == 2" id="AppId" class="centerAlign " [ngClass]="{'activeButton': showAppCntrlBtn == true}">
-        <a href="https://itunes.apple.com/in/app/study24x7/id1444868244?ls=1&mt=8" target="_blank" class="image">
+        <a href="https://itunes.apple.com/in/app/aio/id1444868244?ls=1&mt=8" target="_blank" class="image">
             <button>Open in App</button>
         </a>
     </span>

@@ -11,7 +11,7 @@
     <div *ngIf="content.CONTENT_TYPE==1"  class="videoPlayer" id="{{'player'+content.CONTENT_UUID}}">
       <div class="previewTime">Free Preview <span>{{countDisplay}}</span></div>
       <div class="playerclose" (click)="close()">
-        <img alt="study24x7" src="assets/images/svg-three/live-wall/crossIcon.svg">
+        <img alt="aio" src="assets/images/svg-three/live-wall/crossIcon.svg">
       </div>
     </div>
     <div *ngIf="content.CONTENT_TYPE==4" >
@@ -25,10 +25,10 @@
       <div class="courseinfo">
         <div  class="profilethumb_wrapper">
           <span  class="image" *ngIf="content.PAGE_PROFILE_PHOTO_PATH">
-            <img alt="study24x7" style="width:100%;float:left;margin-top:-1px;" src="{{content.PAGE_PROFILE_PHOTO_PATH
+            <img alt="aio" style="width:100%;float:left;margin-top:-1px;" src="{{content.PAGE_PROFILE_PHOTO_PATH
               +'profile/'+content.PAGE_UUID+'_120x120.png'}}"></span>
               <span  class="image" *ngIf="content.PAGE_PROFILE_PHOTO_PATH==null">
-                <img alt="study24x7" style="width:100%;float:left;margin-top:-1px;" src="{{_constentService.defaultImgPath}}"></span>
+                <img alt="aio" style="width:100%;float:left;margin-top:-1px;" src="{{_constentService.defaultImgPath}}"></span>
             <span  title="Justtt"  class="pagename">{{postData.decodeURIPostData(content.STREAM_TITLE)}}</span>
             <span  class="content_detail">{{postData.decodeURIPostData(content.COURSE_TITLE)}}</span>
             <div class="viewCourse">

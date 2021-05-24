@@ -89,7 +89,7 @@ export class SharescreencoursepostviewComponent implements OnInit {
             }
         }
 
-        this.altName = "study24x7 " + this.postdata['KEYWORDS'];
+        this.altName = "aio " + this.postdata['KEYWORDS'];
         this.postTyp = this.postdata['TYPE'];
         this.interestObj = JSON.parse(this._constantService.getSessionDataBYKey('interests'));
         this.tagsArr = this.postdata['INTERESTS'];

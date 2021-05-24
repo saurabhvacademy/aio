@@ -77,7 +77,7 @@ export class SharescreenfileattachmentComponent implements OnInit {
 //        if(this.postdata['EDIT_POST'] == true){
 //
 //        }
-        this.altName = "study24x7 " + this.postdata['KEYWORDS'];
+        this.altName = "aio " + this.postdata['KEYWORDS'];
         this.postTyp = this.postdata['TYPE'];
         if (this.postTyp == 4) {
             this.u_id = this.postdata['SHARED_POST_DATA']['USER_ID'];

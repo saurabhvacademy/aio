@@ -9,7 +9,7 @@
       <ng-container *ngIf="isPagePost">
 
         <span class="profileImage cursor-pointer">
-          <img src="{{profile_pic_path}}" alt="study24x7 {{user_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/page/{{pg_id}}">
+          <img src="{{profile_pic_path}}" alt="aio {{user_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/page/{{pg_id}}">
         </span>
 
         <div class="postHeaderDetailWrapper">
@@ -19,28 +19,28 @@
           <span class="timeandFollow">{{arr['PAGE_FOLLOW_COUNT']}} followers</span>
 
           <span class="dote">
-            <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+            <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio">
           </span>
 
           <ng-container *ngIf="arr.VISIBILITY ==3">
             <span class="timeandFollow cursor-pointer textDecorationUnderline"  routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
             <span class="dote" >
-              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio">
             </span>
             <span class="previcy_icon">
-              <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7">
+              <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="aio">
             </span>
           </ng-container>
 
           <span class="timeandFollow cursor-pointer textDecorationUnderline" *ngIf="arr.VISIBILITY !=3" routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
           <span class="dote" *ngIf="arr.VISIBILITY !=3">
-            <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+            <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio">
           </span>
           <span class="previcy_icon" *ngIf="arr.VISIBILITY ==2" style="width:13px;">
-            <img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7">
+            <img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="aio">
           </span>
           <span class="previcy_icon" *ngIf="arr.VISIBILITY ==1" >
-            <img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7">
+            <img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="aio">
           </span>
         </div>
 
@@ -52,7 +52,7 @@
       <ng-container  *ngIf="!isPagePost">
 
         <div class="profileImage cursor-pointer">
-          <img src="{{my_profile?userProfilePic:profile_pic_path}}" alt="study24x7 {{full_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/profile/{{user_name}}">
+          <img src="{{my_profile?userProfilePic:profile_pic_path}}" alt="aio {{full_name |trimData:30}}" (error)="updateSourcePic($event)" routerLink="/profile/{{user_name}}">
         </div>
 
         <div class="postHeaderDetailWrapper">
@@ -67,26 +67,26 @@
               <span class="timeandFollow cursor-pointer textDecorationUnderline"  routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
 
               <span class="dote" >
-                <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+                <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio">
               </span>
 
               <span class="previcy_icon">
-                <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="study24x7">
+                <img title="Public" src="assets/images/svg-three/add_post/wall/public.svg" alt="aio">
               </span>
             </ng-container>
 
             <span class="timeandFollow cursor-pointer textDecorationUnderline" *ngIf="arr.VISIBILITY !=3" routerLink="/post/{{arr.USER_POST_ID}}">{{time}}</span>
 
             <span class="dote" *ngIf="arr.VISIBILITY !=3">
-              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="study24x7">
+              <img src="assets/images/svg-three/post_icon/dote1.svg" alt="aio">
             </span>
 
             <span class="previcy_icon connectionWidth" *ngIf="arr.VISIBILITY ==2" style="width:13px;">
-              <img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="study24x7">
+              <img title="Connections" src="assets/images/svg-three/add_post/wall/connection.svg" alt="aio">
             </span>
 
             <span class="previcy_icon" *ngIf="arr.VISIBILITY ==1">
-              <img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="study24x7">
+              <img title="Private" src="assets/images/svg-three/add_post/wall/private_new.svg" alt="aio">
             </span>
 
           </div>
@@ -106,7 +106,7 @@
             Follow
           </span>
           <span class="following cursolnone">
-            <img src="assets/images/svg/white_checkbox.svg" alt="study24x7">
+            <img src="assets/images/svg/white_checkbox.svg" alt="aio">
             Following
           </span>
         </button>
@@ -295,7 +295,7 @@
   <div class="writecomment clearfix main-comment" [ngClass]="{'comment-present':viewCommentList}" >
 
     <figure class="comment-profile cursor-pointer">
-      <img src="{{userProfilePic}}" alt="{{'study24x7 ' +this._constantService.getSessionDataBYKey('full_name')}}" >
+      <img src="{{userProfilePic}}" alt="{{'aio ' +this._constantService.getSessionDataBYKey('full_name')}}" >
     </figure>
 
       <div class='commentBoxWrapper'>

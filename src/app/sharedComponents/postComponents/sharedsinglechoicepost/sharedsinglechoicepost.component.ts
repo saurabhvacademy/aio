@@ -313,7 +313,7 @@ export class SharedsinglechoicepostComponent implements OnInit, AfterViewInit {
         if(this._constantService.getSessionDataBYKey('interests')) {
         this.setInterestObj();
         }
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         if (this.arr['INTERESTS'].length > 4) {
             for (var i = 0; i < 4; i++) {
                 this.tagsArr[i] = this.arr['INTERESTS'][i];

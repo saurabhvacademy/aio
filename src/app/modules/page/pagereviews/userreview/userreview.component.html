@@ -113,8 +113,8 @@
 
 <div class="comment_outer clearfix">
     <div class="writecomment clearfix main-comment comment-present">
-        <figure class="comment-profile cursor-pointer"><img src="{{_constantService.profilePic()}}" alt="study24x7"></figure>
-        <!--<figure  class="comment-profile cursor-pointer"><img alt="study24x7" src="https://s3.ap-south-1.amazonaws.com/247-user/profile/{{_constantService.getUserId()}}_60x60.png?v=1523873513276"></figure>-->
+        <figure class="comment-profile cursor-pointer"><img src="{{_constantService.profilePic()}}" alt="aio"></figure>
+        <!--<figure  class="comment-profile cursor-pointer"><img alt="aio" src="https://s3.ap-south-1.amazonaws.com/247-user/profile/{{_constantService.getUserId()}}_60x60.png?v=1523873513276"></figure>-->
         <div class="optionoutr">
             <div *ngIf="!withoutToken" class="option_inputt" contenteditable="true" (focusout)="showPlaceHolder($event)" (focus)="hidePlaceHolder($event)" (paste)="postData.onPaste($event)" (contextmenu)="postData.onPaste($event)" (keyup)="addComment($event)" (keyup.enter)="false;"
                 id='{{u_id}}_{{reviewId}}_comm' (keydown.enter)="confirmText(c_data, $event);false">

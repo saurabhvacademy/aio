@@ -239,7 +239,7 @@ export class SinglechoicepostComponent implements OnInit, AfterViewInit {
         //        this.myResponseStatus = this.arr['RESPONSE'];
         //
         //        if (this.responseStatus == 1) {this.resultDeclared = true;}
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
         if (this.arr['ANSWER'] == 'a') {
             this.correctAnswer = 'A';
         }

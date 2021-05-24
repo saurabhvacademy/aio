@@ -35,7 +35,7 @@
 			function startStream(){
 				
 						var websocketURL = "ws://" + antmediaURL + ":5080/WebRTCAppEE/websocket";
-						//var websocketURL = "wss://" + 'media.study24x7.net' + ":5443/WebRTCAppEE/websocket";
+						//var websocketURL = "wss://" + 'media.aio.net' + ":5443/WebRTCAppEE/websocket";
 						//var websocketURL = "wss://" + 'test.hellouser.co.in' + ":5443/WebRTCAppEE/websocket";
 						if (location.protocol.startsWith("https")) {
 							websocketURL = "wss://" + antmediaURL + ":5443/WebRTCAppEE/websocket";

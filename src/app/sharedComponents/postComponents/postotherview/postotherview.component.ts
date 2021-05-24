@@ -197,7 +197,7 @@ export class PostotherviewComponent implements OnInit {
         this.post_id = this.arr['USER_POST_ID'];
         this.u_id = this.arr['USER_ID'];
         this.innerPostTyp = this.arr['LINK_PTYPE'];
-        this.altName = "study24x7 " + this.arr['KEYWORDS'];
+        this.altName = "aio " + this.arr['KEYWORDS'];
 
         this.setInterestObj();
         if (this.arr['INTERESTS'].length > 4) {
