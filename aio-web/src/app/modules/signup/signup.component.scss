@@ -1,0 +1,51 @@
+.component .form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: solid 2px blue;
+    border-radius: 5px;
+    background: #abf1ff;
+    box-shadow: none;
+    min-width: 320px;
+    .header {
+        text-align: center;
+        border-bottom: solid 1px gray;
+        background: darkblue;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 5px;
+    }
+    .fields-container {
+        padding: 5px;
+        background: white;
+        .field {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            margin: 10px 0;
+            border-bottom: solid 1px #abf1ff;
+            input {
+                background: none;
+                padding: 5px 0;
+            }
+            .hint{
+                font-size: 8px;
+                line-height: 10px;
+            }
+            .field-label{
+                flex:1;
+            }
+            mat-form-field{
+                flex:2;
+            }
+        }
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        background: white;
+        padding: 10px;
+      
+    }
+}

@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { UserApiUrlsService } from 'src/app/services/constant-services/user-api.service';
 
 
 
@@ -12,8 +15,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    FormsModule, MatInputModule, MatIconModule
+  ],
+  providers:[
+    UserApiUrlsService
   ]
 })
 export class LoginModule { }
