@@ -24,6 +24,9 @@ speed-measure-plugin*.json
 .settings/
 *.sublime-workspace
 
+# Angular CLI cache
+.angular
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
