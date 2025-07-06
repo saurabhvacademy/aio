@@ -42,16 +42,25 @@ export class LoginComponent implements OnInit {
 
   login(): any {
     if (this.registrationForm.status == "INVALID") {
+    alert('Login clicked');
+
       return false;
     }
     let params = {
       email: this.registrationForm.value.email,
       password: this.registrationForm.value.password
     }
-    this._userApiService.loginUser(params).subscribe(users => {
-
+    this._userApiService.loginUser(params).subscribe({
+      next: (res: any) => {
+        // Save token or user info as needed
+        alert(res.msg || 'Login successful!');
+        // Optionally, redirect to dashboard or home
+        this._router.navigate(['/']);
+      },
+      error: (err) => {
+        alert(err.error?.msg || 'Login failed!');
+      }
     });
-
   }
 
   confirmPasswordValidator(): boolean | null {

@@ -13,28 +13,21 @@ export class UserApiUrlsService {
     private _httpClient: HttpClient
   ) { }
 
-  baseUrl = "http://localhost:3000";
+  usersBaseUrl = this._baseUrlService.getBaseUrl +"/api/users";
   headers = new HttpHeaders()
     .set('content-type', 'application/json')
-    .set('Access-Control-Allow-Origin', 'http://localhost:3000/');
+    .set('Access-Control-Allow-Origin', 'http://localhost:5000/');
 
   getUsers() {
-    return this._httpClient.get(this.baseUrl + '/users');
+    return this._httpClient.get(this.usersBaseUrl + '/users');
   }
 
   createUser(params: any) {
-    return this._httpClient.post(this.baseUrl + '/createUser', params);
+    return this._httpClient.post(this.usersBaseUrl + '/createUser', params);
   }
 
   loginUser(params: any) {
-    let url = this.baseUrl;
-    if (params.email) {
-      url = url + '/loginUser?pw=' + params.password;
-    }
-    if (params.password) {
-      url = url + '&email=' + params.email;
-    }
-    return this._httpClient.get(url);
+    return this._httpClient.post(this.usersBaseUrl + '/login', params, { headers: this.headers });
   }
 
 
