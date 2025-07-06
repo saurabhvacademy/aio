@@ -13,7 +13,7 @@ export class UserApiUrlsService {
     private _httpClient: HttpClient
   ) { }
 
-  usersBaseUrl = this._baseUrlService.getBaseUrl +"/api/users";
+  usersBaseUrl = this._baseUrlService.getBaseUrl() +"/api/users";
   headers = new HttpHeaders()
     .set('content-type', 'application/json')
     .set('Access-Control-Allow-Origin', 'http://localhost:5000/');
