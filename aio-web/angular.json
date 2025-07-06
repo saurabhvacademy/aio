@@ -80,10 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "aio-web:build:production"
+              "buildTarget": "aio-web:build:production"
             },
             "development": {
-              "browserTarget": "aio-web:build:development"
+              "buildTarget": "aio-web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aio-web:build"
+            "buildTarget": "aio-web:build"
           }
         },
         "test": {
