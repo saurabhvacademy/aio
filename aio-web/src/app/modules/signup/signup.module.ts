@@ -4,7 +4,7 @@ import { SignupComponent } from './signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserApiUrlsService } from 'src/app/services/constant-services/user-api.service';
 import { SignupRoutingModule } from './signup-routing.module';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
 
