@@ -7,6 +7,7 @@
     background: #abf1ff;
     box-shadow: none;
     min-width: 320px;
+
     .header {
         text-align: center;
         border-bottom: solid 1px gray;
@@ -16,36 +17,158 @@
         font-weight: bold;
         padding: 5px;
     }
+
     .fields-container {
         padding: 5px;
         background: white;
+
         .field {
             display: flex;
             justify-content: space-between;
             padding: 5px 0;
             margin: 10px 0;
             border-bottom: solid 1px #abf1ff;
+
             input {
                 background: none;
                 padding: 5px 0;
             }
-            .hint{
+
+            .hint {
                 font-size: 8px;
                 line-height: 10px;
             }
-            .field-label{
-                flex:1;
+
+            .field-label {
+                flex: 1;
             }
-            mat-form-field{
-                flex:2;
+
+            mat-form-field {
+                flex: 2;
+
+
+
+                @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+                .component {
+                    font-family: 'Bangers', cursive, sans-serif;
+                }
+
+                .component .form-container {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    border: 4px dashed #ff00cc;
+                    border-radius: 20px;
+                    background: linear-gradient(135deg, #faff00 0%, #ff00cc 100%);
+                    box-shadow: 0 0 30px 5px #ff00cc99, 0 0 10px 2px #00fff7cc;
+                    min-width: 340px;
+                    animation: funky-bounce 2s infinite alternate;
+                }
+
+                .component .form-container .header {
+                    text-align: center;
+                    border-bottom: 3px dotted #00fff7;
+                    background: linear-gradient(90deg, #ff00cc 0%, #00fff7 100%);
+                    color: #fff;
+                    font-size: 2.2rem;
+                    font-weight: bold;
+                    padding: 15px 0 10px 0;
+                    letter-spacing: 2px;
+                    text-shadow: 2px 2px 0 #faff00, 4px 4px 0 #ff00cc;
+                }
+
+                .component .form-container .fields-container {
+                    padding: 15px;
+                    background: rgba(255, 255, 255, 0.85);
+                    border-radius: 12px;
+                }
+
+                .component .form-container .fields-container .field {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 0;
+                    margin: 18px 0;
+                    border-bottom: 2px dashed #ff00cc;
+                }
+
+                .component .form-container .fields-container .field input {
+                    background: #faff00;
+                    padding: 10px 8px;
+                    border-radius: 8px;
+                    border: 2px solid #ff00cc;
+                    font-size: 1.1rem;
+                    color: #ff00cc;
+                    font-family: 'Bangers', cursive, sans-serif;
+                    transition: box-shadow 0.2s;
+                    box-shadow: 0 0 8px #00fff7;
+                }
+
+                .component .form-container .fields-container .field input:focus {
+                    outline: none;
+                    box-shadow: 0 0 16px #ff00cc, 0 0 8px #faff00;
+                }
+
+                .component .form-container .fields-container .field .hint {
+                    font-size: 1rem;
+                    color: #ff00cc;
+                    line-height: 1.2;
+                }
+
+                .component .form-container .fields-container .field .field-label {
+                    flex: 1;
+                }
+
+                .component .form-container .fields-container .field mat-form-field {
+                    flex: 2;
+                }
+
+                .component .form-container .footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 20px;
+                }
+
+                .component .form-container .footer .btn {
+                    font-family: 'Bangers', cursive, sans-serif;
+                    font-size: 1.3rem;
+                    padding: 10px 30px;
+                    border-radius: 30px;
+                    border: none;
+                    background: linear-gradient(90deg, #ff00cc 0%, #faff00 100%);
+                    color: #fff;
+                    box-shadow: 0 0 10px #00fff7, 0 0 5px #ff00cc;
+                    cursor: pointer;
+                    margin: 0 10px;
+                    transition: transform 0.2s, box-shadow 0.2s;
+                }
+
+                .component .form-container .footer .btn:hover {
+                    transform: scale(1.1) rotate(-2deg);
+                    box-shadow: 0 0 20px #ff00cc, 0 0 10px #faff00;
+                }
+
+                @keyframes funky-bounce {
+                    0% {
+                        transform: scale(1) rotate(-2deg);
+                    }
+
+                    100% {
+                        transform: scale(1.03) rotate(2deg);
+                    }
+                }
             }
         }
     }
+
     .footer {
         display: flex;
         justify-content: space-between;
         background: white;
         padding: 10px;
-      
+
     }
+
 }
