@@ -10,6 +10,7 @@
 # dependencies
 /aio-web/node_modules
 /aio-be/node_modules
+/aio-web/dist
 
 # profiling files
 chrome-profiler-events*.json

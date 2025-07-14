@@ -1,27 +1,96 @@
-# AioWeb
+==============================
+📦 AIO-WEB (Angular Frontend)
+==============================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
+## Overview:
+---------
+aio-web is a modern Angular web application designed as the frontend for a full-stack project. 
+It connects to a Node.js + Express backend and MongoDB Atlas database. The frontend is deployed 
+using GitHub Pages.
 
-## Development server
+## Live Demo:
+----------
+https://saurabhvacademy.github.io/aio
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Project Structure:
+------------------
+aio-web/
+├── src/               → Angular source code
+├── dist/              → Production build output
+├── angular.json       → Angular CLI config
+├── package.json       → Project dependencies and scripts
+└── README.txt
 
-## Code scaffolding
+## Features:
+---------
+- Angular 17+ app with SCSS styling
+- Angular Material & Bootstrap integration
+- REST API connectivity
+- GitHub Pages deployment
+- Ready for future authentication and feature modules
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation:
+-------------
+Prerequisites:
+- Node.js (v16+ recommended)
+- Angular CLI (Install via: npm install -g @angular/cli)
 
-## Build
+## Install dependencies:
+> npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Development Server:
+-------------------
+Run the app locally:
+> ng serve
 
-## Running unit tests
+## Then open in browser:
+http://localhost:4200/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Build for Production:
+---------------------
+> ng build --base-href=/aio/
 
-## Running end-to-end tests
+This will output your build files in:
+dist/aio-web/browser/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Deploy to GitHub Pages:
+-----------------------
+1. Install CLI deploy tool:
+   > npm install -g angular-cli-ghpages
 
-## Further help
+2. Build with base href:
+   > ng build --base-href=/aio/
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Deploy the correct folder:
+   > npx angular-cli-ghpages --dir=dist/aio-web/browser --base-href=/aio/
+
+## Backend API (aio-backend):
+--------------------------
+The frontend communicates with an Express.js backend deployed on Render.com.
+
+Example API call:
+https://aio-backend.onrender.com/api/hello
+
+Update Angular service to use this URL in environment.ts:
+export const environment = {
+  production: false,
+  apiBaseUrl: 'https://aio-backend.onrender.com/api'
+};
+
+## Planned Features:
+-----------------
+- JWT-based authentication
+- Lazy-loaded feature modules
+- Admin dashboard
+- Internationalization (i18n)
+- Unit & integration tests
+
+## Author:
+-------
+Saurabh Sharma
+Frontend & Full Stack Developer
+Email: saurabh@example.com  (replace with your real email)
+
+## License:
+--------
+This project is licensed under the MIT License.
