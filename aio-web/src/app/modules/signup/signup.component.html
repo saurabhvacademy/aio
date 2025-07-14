@@ -9,14 +9,14 @@
                     <mat-form-field appearance="outline">
                         <mat-label>Email</mat-label>
                         <input pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" matInput
-                            placeholder="This email will also be your user name" type="email" formControlName="email">
+                            placeholder="This email will be your user name" type="email" formControlName="email">
                     </mat-form-field>
                 </div>
                 <div class="field">
 
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" matInput placeholder="Min lenght 8 characters with atleast 1 number, 1 lowercase and 1 uppercase
+                        <input pattern="^(?=.*[a-z])(?=.*[A-Z]).+$" matInput placeholder="Min lenght 8 characters with atleast 1 number, 1 lowercase and 1 uppercase
                     character" [type]="hide ? 'password' : 'text'" formControlName="password">
                         <mat-hint>
                         </mat-hint>
@@ -26,7 +26,7 @@
 
                     <mat-form-field appearance="outline">
                         <mat-label> Confirm Password</mat-label>
-                        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" matInput placeholder="Must be same as password" [type]="hide ? 'password' : 'text'"
+                        <input pattern="^(?=.*[a-z])(?=.*[A-Z]).+$" matInput placeholder="Must be same as password" [type]="hide ? 'password' : 'text'"
                             formControlName="confirmPassword">
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                             [attr.aria-pressed]="hide">
