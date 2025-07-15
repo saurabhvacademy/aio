@@ -1,0 +1,52 @@
+.reaction-game-container {
+  max-width: 400px;
+  min-height: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
+}
+.difficulty-list {
+  margin: 1rem 0;
+}
+.difficulty-list button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.difficulty-list button.selected {
+  background: #1976d2;
+  color: #fff;
+}
+.start-btn {
+  background: #43a047;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.shape {
+  width: 80px;
+  height: 80px;
+  background: #ff7043;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: pop 0.2s;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+@keyframes pop {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
