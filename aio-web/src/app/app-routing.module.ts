@@ -7,7 +7,8 @@ import { AuthGuard } from './services/auth-services/auth.guard';
 const routes: Routes = [
     {
     path: '',
-    loadChildren: () => import('./modules/signup/signup.module').then(m => m.SignupModule)
+    loadChildren: () => import('./modules/signup/signup.module').then(m => m.SignupModule),
+    pathMatch: 'full'
   },
   {
     path: 'login',
