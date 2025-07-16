@@ -15,7 +15,6 @@ export class AuthService {
   }
 
   public isLoggedIn(){
-    this._router.navigate(['/register']);
     return localStorage.getItem('ACCESS_TOKEN') !== null;
 
   }
