@@ -7,11 +7,20 @@ import { PublicHomeComponent } from './public-home/public-home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({ declarations: [
-        AppComponent,
-        PublicHomeComponent
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    PublicHomeComponent
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NavigationBarComponent
+  ],
+  providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 export class AppModule { }

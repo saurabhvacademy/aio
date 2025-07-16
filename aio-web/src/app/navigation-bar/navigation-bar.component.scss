@@ -1,0 +1,33 @@
+.nav-bar {
+  width: 100%;
+  background: linear-gradient(90deg, #1976d2 0%, #43a047 100%);
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-bar li {
+  color: #fff;
+  font-weight: 500;
+  margin: 0 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+.nav-bar li:hover {
+  background: rgba(255,255,255,0.15);
+  color: #ffe082;
+}
+.nav-bar .logout {
+  margin-left: auto;
+  background: #ff7043;
+  color: #fff;
+  font-weight: bold;
+}

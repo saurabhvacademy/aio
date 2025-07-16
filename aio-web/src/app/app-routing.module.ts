@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: PublicHomeComponent,
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
     canActivate: [AuthGuard]
   },
   {
