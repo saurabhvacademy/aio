@@ -8,7 +8,8 @@ export class BaseUrlService {
   constructor() { }
 
   getBaseUrl(){
-    return 'https://aio-be.onrender.com';
+    // return 'https://aio-be.onrender.com';
+    return 'http://localhost:5000'
   }
 
 }

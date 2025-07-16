@@ -4,6 +4,7 @@ import { UntypedFormControl } from '@angular/forms';
 import { User } from 'src/app/modals/user.modal';
 import { UserApiUrlsService } from 'src/app/services/constant-services/user-api.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth-services/auth.service';
 
 @Component({
     selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _userApiService: UserApiUrlsService,
     private _formBuilder: UntypedFormBuilder,
-    private _router: Router
+    private _router: Router,
+    private authService: AuthService
   ) { }
   user = new User("", "", 0, 0);
 
@@ -56,7 +58,8 @@ export class LoginComponent implements OnInit {
         // Save token or user info as needed
         alert(res.msg || 'Login successful!');
         // Optionally, redirect to dashboard or home
-        this._router.navigate(['/']);
+        this.authService.login(res.token);
+        this._router.navigate(['/dashboard']);
       },
       error: (err) => {
         alert(err.error?.msg || 'Login failed!');

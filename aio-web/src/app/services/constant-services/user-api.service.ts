@@ -23,7 +23,7 @@ export class UserApiUrlsService {
   }
 
   createUser(params: any) {
-    return this._httpClient.post(this.usersBaseUrl + '/createUser', params);
+    return this._httpClient.post(this.usersBaseUrl + '/register', params);
   }
 
   loginUser(params: any) {

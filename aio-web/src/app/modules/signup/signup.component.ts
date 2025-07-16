@@ -15,6 +15,8 @@ export class SignupComponent implements OnInit {
   hide = true;
   registrationForm = new UntypedFormGroup({
     email: new UntypedFormControl(null),
+    firstName: new UntypedFormControl(null),
+    lastName: new UntypedFormControl(null),
     password: new UntypedFormControl(null),
     confirmPassword: new UntypedFormControl(null)
 
@@ -34,6 +36,8 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.registrationForm = new UntypedFormGroup({
       email: new UntypedFormControl('', Validators.required),
+      firstName: new UntypedFormControl('', Validators.required),
+      lastName: new UntypedFormControl(''),
       password: new UntypedFormControl('', Validators.required),
       confirmPassword: new UntypedFormControl('', Validators.required)
 
@@ -51,7 +55,7 @@ export class SignupComponent implements OnInit {
       return false;
     }
     let params = {
-      name: '',
+      name: this.registrationForm.value.firstName + " " + this.registrationForm.value.lastName,
       email: this.registrationForm.value.email,
       password: this.registrationForm.value.password
     }
