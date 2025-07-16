@@ -3,6 +3,7 @@
   background: linear-gradient(90deg, #1976d2 0%, #43a047 100%);
   padding: 0.5rem 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: relative;
 }
 .nav-bar ul {
   display: flex;
@@ -11,23 +12,60 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 .nav-bar li {
   color: #fff;
   font-weight: 500;
-  margin: 0 1.2rem;
+  margin: 0 0.5rem;
   cursor: pointer;
   transition: color 0.2s, background 0.2s;
   padding: 0.5rem 1rem;
   border-radius: 6px;
+  font-size: 1rem;
 }
 .nav-bar li:hover {
   background: rgba(255,255,255,0.15);
   color: #ffe082;
 }
 .nav-bar .logout {
-  margin-left: auto;
   background: #ff7043;
   color: #fff;
   font-weight: bold;
+}
+@media (max-width: 600px) {
+  .nav-bar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    background: #1976d2;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    z-index: 10;
+    display: none;
+  }
+  .nav-bar.open ul {
+    display: flex;
+  }
+  .nav-bar .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 0.7rem;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+  }
+  .nav-bar li {
+    margin: 0.5rem 1rem;
+    width: 100%;
+    text-align: left;
+  }
+}
+.menu-toggle {
+  display: none;
 }

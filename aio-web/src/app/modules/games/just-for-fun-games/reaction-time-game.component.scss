@@ -11,15 +11,19 @@
 }
 .difficulty-list {
   margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .difficulty-list button {
-  margin: 0 0.5rem;
+  margin: 0.3rem 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   border: none;
   background: #eee;
   cursor: pointer;
   transition: background 0.2s;
+  font-size: 1rem;
 }
 .difficulty-list button.selected {
   background: #1976d2;
@@ -36,8 +40,8 @@
   margin-top: 1rem;
 }
 .shape {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: #ff7043;
   border-radius: 50%;
   cursor: pointer;
@@ -45,6 +49,17 @@
   position: absolute;
   z-index: 2;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+@media (max-width: 600px) {
+  .reaction-game-container {
+    max-width: 98vw;
+    min-height: 300px;
+    padding: 1rem;
+  }
+  .shape {
+    width: 40px;
+    height: 40px;
+  }
 }
 @keyframes pop {
   from { transform: scale(0.5); }
