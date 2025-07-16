@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent {
+  menuOpen = false;
+
   constructor(private router: Router) {}
 
   goTo(route: string) {
@@ -18,5 +20,13 @@ export class NavigationBarComponent {
     // For now, just redirect to login
     localStorage.setItem('ACCESS_TOKEN', '');
     this.router.navigate(['/login']);
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 }

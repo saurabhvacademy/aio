@@ -1,13 +1,14 @@
-<nav class="nav-bar">
+<nav class="nav-bar" [class.open]="menuOpen">
+  <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button>
   <ul>
-    <li (click)="goTo('/dashboard/1')">Dashboard</li>
-    <li>Contact Us</li>
-    <li (click)="goTo('/games')">Games</li>
-    <li>Tools</li>
-    <li>Learning</li>
-    <li>Stats</li>
-    <li (click)="goTo('/login')">Login</li>
-    <li (click)="goTo('/register')">Register</li>
-    <li class="logout" (click)="logout()">Logout</li>
+    <li (click)="goTo('/dashboard/1'); closeMenu()">Dashboard</li>
+    <li (click)="closeMenu()">Contact Us</li>
+    <li (click)="goTo('/games'); closeMenu()">Games</li>
+    <li (click)="closeMenu()">Tools</li>
+    <li (click)="closeMenu()">Learning</li>
+    <li (click)="closeMenu()">Stats</li>
+    <li (click)="goTo('/login'); closeMenu()">Login</li>
+    <li (click)="goTo('/register'); closeMenu()">Register</li>
+    <li class="logout" (click)="logout(); closeMenu()">Logout</li>
   </ul>
 </nav>
