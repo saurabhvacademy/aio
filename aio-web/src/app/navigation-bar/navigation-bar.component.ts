@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 export class NavigationBarComponent {
   menuOpen = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { console.log("AIO-7");}
 
   get isLoggedIn(): boolean {
-    // Adjust this logic as per your auth implementation
-    return !!localStorage.getItem('ACCESS_TOKEN');
+    const token = localStorage.getItem('ACCESS_TOKEN');
+    return !!token && token !== '';
   }
 
   goTo(route: string) {
@@ -21,9 +21,9 @@ export class NavigationBarComponent {
   }
 
   logout() {
-    localStorage.setItem('ACCESS_TOKEN', '');
-    this.router.navigate(['/login']);
-  }
+  localStorage.removeItem('ACCESS_TOKEN');
+  this.router.navigate(['/login']);
+}
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
