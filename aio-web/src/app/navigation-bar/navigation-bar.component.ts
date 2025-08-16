@@ -11,13 +11,16 @@ export class NavigationBarComponent {
 
   constructor(private router: Router) {}
 
+  get isLoggedIn(): boolean {
+    // Adjust this logic as per your auth implementation
+    return !!localStorage.getItem('ACCESS_TOKEN');
+  }
+
   goTo(route: string) {
     this.router.navigate([route]);
   }
 
   logout() {
-    // Add logout logic here (clear tokens, etc.)
-    // For now, just redirect to login
     localStorage.setItem('ACCESS_TOKEN', '');
     this.router.navigate(['/login']);
   }

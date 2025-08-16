@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'just-for-fun-games',
     loadChildren: () => import('./just-for-fun-games/just-for-fun-games.module').then(m => m.JustForFunGamesModule)
-  }
+  },
 ];
 
 @NgModule({

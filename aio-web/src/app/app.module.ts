@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NavigationBarComponent
+    NavigationBarComponent,
+    CommonModule
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())]
 })
