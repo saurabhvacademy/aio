@@ -1,0 +1,14 @@
+<nav class="nav-bar" [class.open]="menuOpen">
+  <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button>
+  <ul>
+    <li (click)="goTo('/dashboard/1'); closeMenu()">Dashboard</li>
+    <li (click)="closeMenu()">Contact Us</li>
+    <li (click)="goTo('/games'); closeMenu()">Games</li>
+    <li (click)="closeMenu()">Tools</li>
+    <li (click)="closeMenu()">Learning</li>
+    <li (click)="closeMenu()">Stats</li>
+    <li *ngIf="!isLoggedIn" (click)="goTo('/login'); closeMenu()">Login</li>
+    <li *ngIf="!isLoggedIn" (click)="goTo('/register'); closeMenu()">Register</li>
+    <li class="logout" (click)="logout(); closeMenu()">Logout</li>
+  </ul>
+</nav>

@@ -1,0 +1,37 @@
+<div class="reaction-game-container" (click)="missClick()">
+  <h2>Reaction Time Game</h2>
+  <div *ngIf="!gameStarted">
+    <label>Select Difficulty:</label>
+    <div class="difficulty-list">
+      <button *ngFor="let diff of difficulties"
+              [class.selected]="selectedDifficulty.value === diff.value"
+              (click)="selectDifficulty(diff); $event.stopPropagation()">{{ diff.label }}</button>
+    </div>
+    <button class="start-btn" (click)="startGame(); $event.stopPropagation()">Start</button>
+  </div>
+
+  <div *ngIf="waiting">
+    <p>Get ready...</p>
+  </div>
+
+  <div *ngIf="shapes.length">
+    <div *ngFor="let shape of shapes; let i = index">
+    <div  
+         class="shape" 
+         *ngIf="shape.visible"
+         [ngStyle]="{'top.px': shape.top, 'left.px': shape.left, 'position': 'absolute'}"
+         (click)="shapeClicked(i); $event.stopPropagation()">
+    </div>
+    </div>
+  </div>
+
+  <div *ngIf="message">
+    <p>{{ message }}</p>
+    <div *ngIf="score.length">
+      <p>Your Scores:</p>
+      <ul>
+        <li *ngFor="let s of score">{{ s }} ms</li>
+      </ul>
+    </div>
+  </div>
+</div>
